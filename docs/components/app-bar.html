@@ -29,8 +29,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">App Bar 应用栏</m3e-heading>
         <p>
-          The <code>m3e-app-bar</code> component is a prominent user interface component that provides consistent access
-          to key actions, navigation, and contextual information at the top of an application screen.
+          <code>m3e-app-bar</code> 组件是一个醒目的界面组件,在应用屏幕顶部提供对关键操作、导航与上下文信息的一致访问。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/app-bar";</pre></m3e-card>
@@ -39,25 +38,13 @@
         <p>本节提供该模块组件的用法示例与配置指引。</p>
         <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
-          The <code>m3e-app-bar</code> component provides a structured layout for top-level navigation and contextual
-          information. It exposes the following named slots:
+          <code>m3e-app-bar</code> 组件为顶级导航与上下文信息提供结构化布局。它暴露以下具名插槽:
         </p>
         <ul>
-          <li>
-            <code>leading</code> — typically a navigation affordance such as a back arrow or menu button. Positioned at
-            the start of the bar.
-          </li>
-          <li>
-            <code>title</code> — The primary label for the current view or context. Usually a short, expressive heading.
-          </li>
-          <li>
-            <code>subtitle</code> — An optional secondary label that provides additional context or hierarchy beneath
-            the title.
-          </li>
-          <li>
-            <code>trailing</code> — One or more action buttons aligned to the end of the bar. Common examples include
-            search, bookmark, or overflow menus.
-          </li>
+          <li><code>leading</code> —— 通常是一个导航控件,例如返回箭头或菜单按钮。位于应用栏的起始端。</li>
+          <li><code>title</code> —— 当前视图或上下文的主要标签。通常是简短、醒目的标题。</li>
+          <li><code>subtitle</code> —— 可选的次级标签,在标题下方提供额外的上下文或层级信息。</li>
+          <li><code>trailing</code> —— 一个或多个对齐到应用栏末端的操作按钮。常见示例包括搜索、书签或更多(overflow)菜单。</li>
         </ul>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -90,8 +77,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          There are three size variants: <code>small</code> (default), <code>medium</code>, and <code>large</code>. Use
-          the <code>size</code> attribute to control an app bar's size.
+          有三种尺寸变体:<code>small</code>(默认)、<code>medium</code> 与 <code>large</code>。使用 <code>size</code> 特性控制应用栏的尺寸。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -132,16 +118,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Centered</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">居中</m3e-heading>
         <p>
-          A <code>centered</code> app bar ensures that its primary content — the <code>title</code> and optional
-          <code>subtitle</code> — remains visually centered within the available horizontal space, regardless of the
-          number or size of elements in the <code>leading</code> or <code>trailing</code> slots.
+          <code>centered</code> 应用栏可确保其主要内容 —— <code>title</code> 与可选的 <code>subtitle</code> —— 始终在可用水平空间内保持视觉居中,无论 <code>leading</code> 或 <code>trailing</code> 插槽中元素的数量或尺寸如何变化。
         </p>
         <p>
-          This is achieved through layout symmetry, not equal spacing. The title area is anchored to the center of the
-          container, while icons on either side are allowed to vary in number or width without shifting the title's
-          position.
+          这是通过布局对称而非等距实现的。标题区域锚定在容器的中心,两侧图标的数量或宽度可以变化,而不会使标题的位置发生偏移。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -169,24 +151,16 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Scroll effects</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">滚动效果</m3e-heading>
         <p>
-          An <code>m3e-app-bar</code> can be attached to a scrollable container using the <code>for</code> attribute,
-          which references the container's id. This establishes a scroll contract between the app bar and its content
-          region. As the user scrolls:
+          <code>m3e-app-bar</code> 可以通过 <code>for</code> 特性附着到一个可滚动容器上,该特性引用容器的 id。这在应用栏与其内容区域之间建立了一种滚动契约。当用户滚动时:
         </p>
         <ul>
-          <li>
-            The app bar's background becomes elevated — typically via a shadow or surface tone — to signal separation
-            from the content.
-          </li>
-          <li>
-            When the scroll position returns to the top, the elevation is removed, restoring a flat visual hierarchy.
-          </li>
+          <li>应用栏的背景会抬升 —— 通常表现为阴影或表面色调 —— 以表示与内容分离。</li>
+          <li>当滚动位置回到顶部时,抬升效果会被移除,恢复为扁平的视觉层级。</li>
         </ul>
         <p>
-          This behavior enhances contextual clarity, signaling that content is in motion while preserving the app bar's
-          role as a stable anchor.
+          这种行为增强了上下文的清晰度,提示内容正在滚动,同时保持应用栏作为稳定锚点的作用。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -237,19 +211,17 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, app bars are given the ARIA <code>role="banner"</code> to identify them as the site-wide landmark
-          region for branding, navigation, or contextual identity. This role signals to assistive technologies that the
-          app bar serves as the top-level heading for the page or application.
+          默认情况下,应用栏会被赋予 ARIA <code>role="banner"</code>,将其标识为用于品牌、导航或上下文身份的站点级地标区域。该角色告诉辅助技术:应用栏是该页面或应用的顶级标题。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -258,13 +230,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -290,12 +262,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-app-bar</m3e-heading>
