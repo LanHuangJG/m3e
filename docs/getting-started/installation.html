@@ -47,14 +47,7 @@
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          Each package uses
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
-            target="_blank"
-            >JavaScript Modules</a
-          >
-          and documents their native module support. To use a module directly in a browser without a bundler, use a
-          module script similar to the following.
+          每个包都使用 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers" target="_blank">JavaScript Modules</a>,并说明了各自对原生模块的支持。要在不借助构建工具的情况下直接在浏览器中使用某个模块,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -63,14 +56,7 @@
           >
         </m3e-card>
         <p>
-          In addition, you must also use an
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
-            target="_blank"
-            >import map</a
-          >
-          to include dependencies. The following is an example import map that imports all entry points for
-          <code>@m3e/web/core</code>.
+          此外,你还必须使用一个 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap" target="_blank">import map</a> 来引入依赖。下面是一个示例 import map,它导入了 <code>@m3e/web/core</code> 的所有入口。
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -101,11 +87,7 @@
 
         <m3e-heading variant="headline" size="medium" level="2">Editor integration</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
-          <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
-            >Custom Elements Manifest</a
-          >
-          to support enhanced editor tooling and developer experience.
+          <code>@m3e/web</code> 包附带一份 <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank">Custom Elements Manifest</a>,以支持增强的编辑器工具与开发体验。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">Visual Studio Code</m3e-heading>
