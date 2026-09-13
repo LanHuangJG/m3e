@@ -29,8 +29,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Card 卡片</m3e-heading>
         <p>
-          The <code>m3e-card</code> component is a flexible, expressive container for presenting a unified subject—text,
-          media, and actions—on a visually distinct surface.
+          <code>m3e-card</code> 组件是一个灵活、富有表现力的容器,用于在一个视觉上独立于背景的表面上呈现统一的主题——文本、媒体与操作。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/card";</pre></m3e-card>
 
@@ -39,28 +38,23 @@
 
         <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
-          The <code>m3e-card</code> component provides a modular layout for structured content blocks. It exposes the
-          following named slots:
+          <code>m3e-card</code> 组件为结构化内容块提供模块化布局。它暴露以下具名插槽:
         </p>
         <ul>
           <li>
-            <code>header</code> — Renders the header region of the card. Typically used for titles, icons, or
-            introductory context.
+            <code>header</code> —— 渲染卡片的头部区域。通常用于标题、图标或引导性上下文。
           </li>
           <li>
-            <code>content</code> — Renders the padded content region. Ideal for body text, form fields, or structured
-            information.
+            <code>content</code> —— 渲染带内边距的内容区域。适合正文、表单字段或结构化信息。
           </li>
           <li>
-            <code>actions</code> — Renders the action region. Use for buttons, toggles, or interactive controls aligned
-            to the card's intent.
+            <code>actions</code> —— 渲染操作区域。用于与卡片意图对齐的按钮、开关或交互控件。
           </li>
           <li>
-            <code>footer</code> — Renders the footer region. Suitable for metadata, disclaimers, or secondary actions.
+            <code>footer</code> —— 渲染页脚区域。适合元数据、免责声明或次要操作。
           </li>
           <li>
-            <code>(default)</code> — Renders the default content of the card without padding. Use for full-bleed layouts
-            or custom compositions.
+            <code>(default)</code> —— 渲染卡片默认内容,不带内边距。用于通栏布局或自定义组合。
           </li>
         </ul>
         <m3e-card variant="outlined" class="showcase">
@@ -88,8 +82,7 @@
           >
         </m3e-card>
         <p>
-          You can change the horizontal alignment of the <code>actions</code> slot by adding an
-          <code>end</code> attribute to the slotted element.
+          你可以通过给插槽元素添加 <code>end</code> 特性,更改 <code>actions</code> 插槽的水平对齐方式。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -114,7 +107,7 @@
           >
         </m3e-card>
 
-        <p>When using the default slot, the <code>m3e-card</code> will not add any padding.</p>
+        <p>使用默认插槽时,<code>m3e-card</code> 不会添加任何内边距。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-card>Card content</m3e-card>
@@ -126,8 +119,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are three card appearance variants: <code>filled</code> (default), <code>outlined</code>, and
-          <code>elevated</code>. Use the <code>variant</code> attribute to control a card's appearance.
+          卡片有三种外观变体:<code>filled</code>(默认)、<code>outlined</code> 与
+          <code>elevated</code>。使用 <code>variant</code> 特性控制卡片的外观。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -148,10 +141,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Inline</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">内联</m3e-heading>
         <p>
-          By default, cards are rendered as block-level elements. Use the <code>inline</code> attribute to make a card
-          render inline with surrounding content.
+          默认情况下,卡片渲染为块级元素。使用 <code>inline</code> 特性让卡片与周围内容同行渲染。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -169,8 +161,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
-          By default, cards are oriented vertically. Use the <code>orientation</code> attribute to change the
-          orientation to <code>horizontal</code> or <code>vertical</code> (default).
+          默认情况下,卡片为纵向排列。使用 <code>orientation</code> 特性把方向改为 <code>horizontal</code> 或 <code>vertical</code>(默认)。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -189,11 +180,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Actionable</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">可操作</m3e-heading>
         <p>
-          Use the <code>actionable</code> attribute to configure a card as an actionable surface, allowing users to
-          interact with the entire card as a single affordance. This pattern is ideal for navigation, selection, or
-          triggering contextual behavior.
+          使用 <code>actionable</code> 特性把卡片配置为可操作表面,让用户把整张卡片作为单一交互目标进行交互。这种模式非常适合导航、选择或触发上下文相关的行为。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -215,12 +204,11 @@
 
         <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 an actionable card. By default, disabled cards are not
-          focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 特性禁用可操作的卡片。默认情况下,被禁用的卡片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
-            >focusability of disabled controls</a
+            >禁用控件的可聚焦性</a
           >
-          to increase their discoverability.
+          以提升其可发现性。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -248,8 +236,7 @@
 
         <m3e-heading variant="title" size="medium" level="4">链接</m3e-heading>
         <p>
-          Actionable cards can also behave like links by specifying a URL using the <code>href</code> attribute. You can
-          also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          可操作的卡片也可以通过 <code>href</code> 特性指定 URL,表现得像链接。你还可以像原生 a 标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -268,34 +255,27 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, cards are not given an ARIA role, indicating that they are treated as neutral, non-semantic
-          elements in the accessibility tree unless explicitly referenced or annotated.
+          默认情况下,卡片不会被赋予 ARIA 角色,表示除非被显式引用或标注,否则它们在无障碍树中被视为中性的非语义元素。
         </p>
         <p>
-          Actionable cards are given ARIA <code>role="button"</code> indicating they are clickable elements that trigger
-          actions.
+          可操作的卡片被赋予 ARIA <code>role="button"</code>,表示它们是可点击、会触发操作的元素。
         </p>
         <p>
-          When disabling using either the <code>disabled</code> or <code>disabled-interactive</code> attribute,
-          <code>aria-disabled="true"</code> is used to convey to assistive technologies that the actionable card is
-          disabled. If disabled using <code>disabled-interactive</code>, <code>tabindex</code> is retained to convey
-          that the card continues to be interactive.
+          当使用 <code>disabled</code> 或 <code>disabled-interactive</code> 特性禁用时,会使用
+          <code>aria-disabled="true"</code> 向辅助技术传达该可操作卡片已禁用。如果通过 <code>disabled-interactive</code> 禁用,则保留 <code>tabindex</code>,以表明卡片仍然可交互。
         </p>
         <p>
-          When <code>href</code> is specified, the ARIA role <code>link</code> is used instead of <code>button</code> to
-          convey the actionable card provides an interactive reference to a resource. In addition, the component
-          presents an internal anchor, hidden from assistive technologies, used to invoke native browser features such a
-          context menu options and tooltips.
+          当指定了 <code>href</code> 时,会使用 ARIA 角色 <code>link</code> 而非 <code>button</code>,以表明该可操作卡片提供了指向某个资源的交互引用。此外,组件会呈现一个对辅助技术隐藏的内部 a 标签,用于调用原生浏览器特性,例如上下文菜单选项与工具提示。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -304,13 +284,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -336,12 +316,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-card</m3e-heading>
