@@ -29,11 +29,7 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Datepicker 日期选择器</m3e-heading>
-        <p>
-          The <code>m3e-datepicker</code> component presents a temporary, structured surface for selecting dates across
-          month, year, and multi-year views. It supports single-date and range selection, enforces minimum, maximum, and
-          blackout constraints, and exposes styling hooks for highlighting special date states.
-        </p>
+        <p><code>m3e-datepicker</code> 组件提供一个临时性的结构化界面,可在月、年、多年视图中选择日期。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/datepicker";</pre></m3e-card>
 
@@ -41,11 +37,7 @@
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
-        <p>
-          Use the <code>m3e-datepicker-toggle</code> to open a <code>m3e-datepicker</code>. This component should be
-          nested inside a clickable element and be associated with a picker by setting the for attribute to the id of
-          the picker to open.
-        </p>
+        <p>使用 <code>m3e-datepicker-toggle</code> 打开 <code>m3e-datepicker</code>。该组件应嵌套在一个可点击元素内部,并把 for 特性设为要打开的选择器的 id 来建立关联。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -77,16 +69,8 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">Date input</m3e-heading>
-        <p>
-          The <code>m3e-date-input</code> provides a segmented date field that integrates directly with
-          <code>m3e-datepicker</code>. It can be used in place of a standard <code>input</code> when you want built-in
-          parsing, formatting, and precise segment editing.
-        </p>
-        <p>
-          The examples on this page use a standard <code>input</code> to demonstrate the full
-          <code>m3e-datepicker</code> API. When using <code>m3e-date-input</code>, many of these props are not required
-          because the input manages the value and the picker simply writes the selected date back to the field.
-        </p>
+        <p><code>m3e-date-input</code> 提供一个分段式日期输入框,可与 <code>m3e-datepicker</code> 直接集成。当你想要内建的解析、格式化与精确的分段编辑时,可以用它替代标准 <code>input</code>。</p>
+        <p>本页示例使用标准 <code>input</code> 来演示完整的 <code>m3e-datepicker</code> API。使用 <code>m3e-date-input</code> 时,其中许多属性并非必需,因为输入框会自行管理取值,选择器只需把选中的日期写回字段。</p>
         <p>See <a href="../components/date-input.html">Date Input 日期输入</a> for details.</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -118,27 +102,15 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
-        <p>
-          The <code>m3e-datepicker</code> supports three appearance variants: <code>docked</code> (default),
-          <code>modal</code>, and <code>auto</code>. Use the <code>variant</code> attribute to control how the picker is
-          presented. When set to <code>auto</code>, the picker automatically selects the appropriate appearance based on
-          the current screen size.
-        </p>
-        <p>
-          When using the <code>modal</code> variant, the value of the <code>label</code> attribute is used as the header
-          text for the modal dialog.
-        </p>
-        <p>All examples in this page use <code>variant="auto"</code>.</p>
+        <p><code>m3e-datepicker</code> 支持三种外观变体:<code>docked</code>(默认)、<code>modal</code> 与 <code>auto</code>。使用 <code>variant</code> 属性控制选择器的呈现方式。设为 <code>auto</code> 时,会根据当前屏幕尺寸自动选择合适的呈现方式。</p>
+        <p>使用 <code>modal</code> 变体时,<code>label</code> 特性的值会作为模态对话框的标题文本。</p>
+        <p>本页所有示例均使用 <code>variant="auto"</code>。</p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">&lt;m3e-datepicker variant=&quot;auto&quot;&gt;&lt;/m3e-datepicker&gt;</pre>
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">日期选择</m3e-heading>
-        <p>
-          Use the <code>date</code> attribute to set the currently selected date, and listen for the
-          <code>change</code> event to react when the user selects a new one. You can also enable the
-          <code>clearable</code> attribute to display a button that clears the current selection.
-        </p>
+        <p>使用 <code>date</code> 属性设置当前选中的日期,并监听 <code>change</code> 事件以响应用户的新选择。你也可以启用 <code>clearable</code> 属性,显示一个清除当前选择的按钮。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="outlined">
@@ -171,35 +143,18 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
-        <p>
-          Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO
-          date but does not include a time or timezone. To ensure predictable behavior across environments,
-          <code>m3e-datepicker</code> uses a consistent, standards-aligned parsing model instead of relying on the
-          browser's built-in <code>Date.parse()</code> rules.
-        </p>
-        <p>
-          When <code>m3e-datepicker</code> receives a date string, it automatically detects whether the value matches
-          one of the ISO-8601 formats that can be parsed safely and unambiguously:
-        </p>
+        <p>不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code></code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的规则。</p>
+        <p>当 <code>m3e-datepicker</code> 收到日期字符串时,会自动判断该值是否属于可安全、无歧义解析的 ISO-8601 格式:</p>
         <ul>
-          <li><code>yyyy-MM-dd</code> — local date (no time, no timezone)</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss</code> — local date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> — UTC date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> — date and time with an explicit timezone offset</li>
+          <li><code> —— 本地日期(不含时间与时区)</li>
+          <li><code> —— 本地日期与时间</li>
+          <li><code> —— UTC 日期与时间</li>
+          <li><code> —— 带明确时区偏移的日期与时间</li>
         </ul>
-        <p>
-          Strings in these formats are converted into local <code>Date</code> objects without unexpected timezone
-          shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted
-          as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or
-          unsupported. For the most reliable results, use one of the formats above.
-        </p>
+        <p>符合上述格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区偏移,从而避免“仅日期的值被按 UTC 解析后漂移到前一天或后一天”的问题。如果字符串不符合这些 ISO 兼容格式,解析可能不明确或不受支持。为获得最可靠的结果,请使用上面列出的格式。</p>
 
         <m3e-heading variant="headline" size="small" level="3">起始日期</m3e-heading>
-        <p>
-          By default, a datepicker opens to the selected date, or to today if no date is set. You can override this by
-          using the <code>start-at</code> attribute to specify the date that <code>m3e-datepicker</code> should
-          initially display.
-        </p>
+        <p>默认情况下,日期选择器打开时定位到已选日期;未设置则定位到今天。你可以用 <code>start-at</code> 特性指定 <code>m3e-datepicker</code> 初始显示的日期。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="outlined">
@@ -222,11 +177,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">初始视图</m3e-heading>
-        <p>
-          The <code>start-view</code> attribute can be used to set the view that will show up when the calendar first
-          opens. It can be set to <code>month</code>, <code>year</code>, or <code>multi-year</code>; by default it will
-          open to <code>month</code> view.
-        </p>
+        <p><code>start-view</code> 特性可设置日历首次打开时显示的视图,可选 <code>month</code>、<code>year</code> 或 <code>multi-year</code>;默认打开 <code>month</code> 视图。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="outlined">
@@ -249,11 +200,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">日期范围</m3e-heading>
-        <p>
-          To select a range of dates instead of a single date, use the <code>range</code>, or
-          <code>range-start</code> and <code>range-end</code> attributes. Setting <code>range</code> or
-          <code>range-start</code> puts the calendar into range-selection mode.
-        </p>
+        <p>要选择日期范围而非单个日期,使用 <code>range</code>,或 <code>range-start</code> 与 <code>range-end</code> 特性。设置 <code>range</code> 或 <code>range-start</code> 会让日历进入范围选择模式。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field id="range-field" variant="outlined">
@@ -306,11 +253,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">最小与最大日期</m3e-heading>
-        <p>
-          Use the <code>min-date</code> and <code>max-date</code> to disable all dates on the calendar before or after
-          the respective values and prevent the user from advancing the calendar past the month or year (depending on
-          current view) containing the minimum or maximum date.
-        </p>
+        <p>使用 <code>min-date</code> 与 <code>max-date</code> 禁用日历上早于/晚于对应值的全部日期,并阻止用户把日历翻到包含最小/最大日期的月或年之外(取决于当前视图)。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="outlined">
@@ -344,11 +287,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">禁用日期</m3e-heading>
-        <p>
-          In addition to <code>min-date</code> and <code>max-date</code> constraints, you can use the
-          <code>blackoutDates</code> property to specify a function used to determine whether a date is disabled and
-          cannot be selected by the user.
-        </p>
+        <p>除 <code>min-date</code> 与 <code>max-date</code> 约束外,你还可以用 <code>blackoutDates</code> 属性指定一个函数,用于判断某个日期是否被禁用、无法被用户选择。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="outlined">
@@ -370,13 +309,7 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">特殊日期</m3e-heading>
-        <p>
-          Use the <code>specialDates</code> property to specify a function used to determine whether a date has a
-          highlighted look and feel. You can use the <code>--m3e-calendar-item-special-container-color</code>,
-          <code>--m3e-calendar-item-special-color</code>, <code>--m3e-calendar-item-special-ripple-color</code>,
-          <code>--m3e-calendar-item-special-hover-color</code>, and
-          <code>--m3e-calendar-item-special-focus-color</code> CSS properties to style special dates.
-        </p>
+        <p>使用 <code>specialDates</code> 属性指定一个函数,用于判断某个日期是否以高亮样式展示。你可以用 <code>、<code>、<code>、<code> 与 <code> 这些 CSS 属性来设置特殊日期的样式。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -399,77 +332,38 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
         </m3e-card>
 
         <m3e-heading variant="headline" size="medium" level="2">国际化</m3e-heading>
-        <p>
-          <code>m3e-datepicker</code> uses the Gregorian calendar, and all date formatting is handled by the browser's
-          <code>Intl</code> APIs based on the active locale.
-        </p>
+        <p><code>m3e-datepicker</code> 使用公历,所有日期格式化均由浏览器基于当前区域设置的 <code>Intl</code> API 处理。</p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
-        <p>
-          Datepickers are given ARIA <code>role="dialog"</code> to identify the picker surface as a discrete interactive
-          region that opens above the page and requires user attention. When the picker is shown in its modal variant,
-          it also sets <code>aria-modal="true"</code> to indicate that the rest of the page is inert and that focus is
-          trapped within the dialog until it is dismissed. In docked mode, the picker omits
-          <code>aria-modal</code> entirely, since the surrounding page remains interactive and the surface behaves like
-          an anchored popover rather than a blocking dialog.
-        </p>
-        <p>
-          Datepicker toggles add <code>aria-haspopup="dialog"</code> to its parenting element indicating to assistive
-          technologies that activating the control will open a dialog.
-        </p>
-        <p>
-          The calendar is fully accessible and exposes clear semantics for assistive technologies. The header contains
-          navigation controls, each with an accessible label that can be customized through attributes. The calendar
-          grid is implemented using <code>role="grid"</code>, with each date cell using <code>role="gridcell"</code> and
-          containing a focusable element with <code>role="button"</code>. Selected dates and range boundaries are
-          indicated using <code>aria-pressed</code>, while today's date is marked with <code>aria-current="date"</code>.
-          Each cell includes a visually hidden, locale-aware full date string for screen readers, while the visible text
-          shows only the day number. Day-of-week headers use abbreviated labels but include visually hidden full names
-          (such as “Monday”) to ensure clear, unambiguous announcements.
-        </p>
+        <p>日期选择器带有 ARIA <code>role="dialog"</code>,把这个选择界面标识为打开于页面之上、需要用户关注的一个独立交互区域。当选择器以模态变体显示时,还会设置 <code>aria-modal="true"</code>,表明页面其余部分处于惰性状态,焦点被圈定在对话框内直至关闭。停靠模式下则完全省略 aria-modal,因为周边页面仍可交互,此时的界面表现为锚定浮层而非阻断式对话框。</p>
+        <p>日期选择器开关会在其父元素上添加 <code>aria-haspopup="dialog"</code>,告知辅助技术:激活该控件将打开一个对话框。</p>
+        <p>日历具备完整的无障碍支持,为辅助技术暴露清晰的语义。头部包含导航控件,每个控件都有可通过特性自定义的无障碍标签。日历网格以 <code> 实现,每个日期单元格使用 <code> 并包含带 <code> 的可聚焦元素。选中的日期与范围边界用 <code> 标示,今天则用 <code> 标记。每个单元格包含一个视觉隐藏、跟随区域设置的完整日期字符串供屏幕阅读器朗读,可见文本只显示日数字。星期表头使用缩写标签,但同时包含视觉隐藏的全名(如“星期一”),确保朗读清晰无歧义。</p>
         <ul>
-          <li>
-            <code>previous-month-label</code> — Accessible label for the button that navigates to the previous month.
-          </li>
-          <li><code>next-month-label</code> — Accessible label for the button that navigates to the next month.</li>
-          <li>
-            <code>previous-year-label</code> — Accessible label for the button that navigates to the previous year.
-          </li>
-          <li><code>next-year-label</code> — Accessible label for the button that navigates to the next year.</li>
-          <li>
-            <code>previous-multi-year-label</code> — Accessible label for the button that navigates to the previous
-            24-year range.
-          </li>
-          <li>
-            <code>next-multi-year-label</code> — Accessible label for the button that navigates to the next 24-year
-            range.
-          </li>
+          <li><code> —— 跳转到上一月的按钮的无障碍标签。</li>
+          <li><code> —— 跳转到下一月的按钮的无障碍标签。</li>
+          <li><code> —— 跳转到上一年的按钮的无障碍标签。</li>
+          <li><code> —— 跳转到下一年的按钮的无障碍标签。</li>
+          <li><code> —— 跳转到上一个 24 年区间的按钮的无障碍标签。</li>
+          <li><code> —— 跳转到下一个 24 年区间的按钮的无障碍标签。</li>
         </ul>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
-        <p>
-          The <code>@m3e/web</code> package uses
-          <a
+        <p><code>@m3e/web</code> 包使用 <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
-        </p>
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。</p>
 
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
 &lt;script type=&quot;module&quot; src=&quot;/node_modules/@m3e/web/dist/datepicker.js&quot;&gt;&lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>
-          In addition, you must use an
-          <a
+        <p>此外,你还必须使用一个 <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
-          >
-          to include dependencies.
-        </p>
+          > 来引入依赖。</p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
 &lt;script type=&quot;importmap&quot;&gt;
@@ -501,14 +395,9 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
         <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
-        <p>
-          The <code>@m3e/web</code> package includes a
-          <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
+        <p><code>@m3e/web</code> 包附带 <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
-          >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
-        </p>
+          >(<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。</p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-datepicker</m3e-heading>
         <api-viewer only="m3e-datepicker"> </api-viewer>
