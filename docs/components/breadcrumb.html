@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Breadcrumb 面包屑</m3e-heading>
         <p>
-          The <code>m3e-breadcrumb</code> and <code>m3e-breadcrumb-item</code> components work together to display a
-          hierarchical navigation trail.
+          <code>m3e-breadcrumb</code> 与 <code>m3e-breadcrumb-item</code> 组件协同工作,展示一条层级化的导航路径。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/breadcrumb";</pre></m3e-card>
@@ -39,10 +38,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
-          To create a breadcrumb trail, place your items inside an <code>m3e-breadcrumb</code> element. Each
-          <code>m3e-breadcrumb-item</code> represents one level in the navigation hierarchy, starting with the broadest
-          level and ending with the most specific. The final item is treated as the current level automatically, while
-          the earlier items describe the path that leads to it.
+          要创建面包屑路径,请把条目放入一个 <code>m3e-breadcrumb</code> 元素中。每个
+          <code>m3e-breadcrumb-item</code> 代表导航层级中的一级,从最宽泛的层级开始,到最具体的层级结束。最后一个条目会自动被视为当前层级,而靠前的条目则描述通向它的路径。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -66,9 +63,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
-          Breadcrumb items can also behave like links by specifying a URL using the <code>href</code> attribute. You can
-          also specify <code>target</code>, and <code>rel</code> similar to native anchor tags. Links are not supported
-          for the last item in a breadcrumb because the current level is not interactive.
+          面包屑条目也可以通过 <code>href</code> 特性指定 URL,表现得像链接。你还可以像原生 a 标签一样指定 <code>target</code> 与 <code>rel</code>。面包屑的最后一项不支持链接,因为当前层级不可交互。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -96,11 +91,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
         <p>
-          Use the <code>icon</code> slot to render an icon before the label of an item. For icon-only items, simply
-          place an icon in the default slot. Use <code>item-label</code> to provide an accessible label to the inner
-          button of an icon-only item.
+          使用 <code>icon</code> 插槽在条目标签之前渲染一个图标。对于纯图标条目,只需把图标放入默认插槽。使用 <code>item-label</code> 为纯图标条目的内部按钮提供无障碍标签。
         </p>
-        <p>When using <code>m3e-icon</code>, the icon in the current breadcrumb item will automatically be filled.</p>
+        <p>使用 <code>m3e-icon</code> 时,当前面包屑条目中的图标会自动填充。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-breadcrumb>
@@ -126,10 +119,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Custom separators</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">自定义分隔符</m3e-heading>
         <p>
-          Use the <code>separator</code> slot to provide a custom visual separator. The slotted element is cloned into
-          each item's shadow root, replacing the default separator.
+          使用 <code>separator</code> 插槽提供自定义的视觉分隔符。通过插槽传入的元素会被克隆到每个条目的 shadow root 中,替换默认分隔符。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -152,10 +144,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Wrapping</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">换行</m3e-heading>
         <p>
-          Breadcrumbs do not wrap by default. When horizontal space is limited, the last item is truncated with an
-          ellipsis. Use the <code>wrap</code> attribute if you want the breadcrumb to wrap lines instead.
+          面包屑默认不换行。当水平空间有限时,最后一项会以省略号截断。如果你希望面包屑改为换行,请使用 <code>wrap</code> 特性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -178,13 +169,9 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Breadcrumbs are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Breadcrumbs support negative density scales down to -3, with each step reducing the
-          visual height by one density unit. Regardless of visual size, breadcrumb items maintain a 48x48dp minimum
-          touch target to ensure reliable accessibility.
+          面包屑能感知密度,并会根据 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整垂直间距。默认密度尺寸为 4dp。面包屑支持最低到 -3 的负密度档位,每一档将视觉高度减少一个密度单位。无论视觉尺寸如何,面包屑条目都保持 48x48dp 的最小触控目标,以确保可靠的无障碍体验。
         </p>
-        <p>The following illustrates applying density to a breadcrumb.</p>
+        <p>下面展示如何为面包屑应用密度。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -231,41 +218,33 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Breadcrumbs are given ARIA <code>role="navigation"</code>, indicating that the component represents a
-          navigational landmark. Internally, breadcrumbs organize items within a list, with each item exposed using ARIA
-          <code>role="listitem"</code> to identify it as a step in the breadcrumb trail for assistive technologies. Each
-          breadcrumb item encapsulates its slotted content in either an element with <code>role="button"</code> or
-          <code>role="link"</code>, with the role chosen based on whether an <code>href</code> attribute is set.
+          面包屑被赋予 ARIA <code>role="navigation"</code>,表示该组件代表一个导航地标。在内部,面包屑把条目组织在一个列表中,每个条目通过 ARIA
+          <code>role="listitem"</code> 暴露,以便辅助技术将其识别为面包屑路径中的一步。每个面包屑条目把其插槽内容封装在一个带 <code>role="button"</code> 或
+          <code>role="link"</code> 的元素中,具体角色取决于是否设置了 <code>href</code> 特性。
         </p>
         <p>
-          Separators have <code>aria-hidden="true"</code> to ensure they are always hidden from assistive technologies.
+          分隔符带有 <code>aria-hidden="true"</code>,以确保它们始终对辅助技术隐藏。
         </p>
         <p>
-          When disabled, a breadcrumb item applies <code>aria-disabled="true"</code> to the internal button or link to
-          convey to assistive technologies that the item is present but not actionable.
+          当禁用时,面包屑条目会在内部按钮或链接上应用 <code>aria-disabled="true"</code>,向辅助技术传达该条目存在但不可操作。
         </p>
         <p>
-          When <code>current</code> is set, the item becomes non-interactive and exposes only
-          <code>role="listitem"</code>. No internal button or link is rendered, and no interactive role is applied. The
-          component reflects the value of <code>current</code> to <code>aria-current</code> on the internal wrapper
-          element that contains the slotted content. If no <code>current</code> value is explicitly provided, the last
-          breadcrumb item automatically receives <code>aria-current="page"</code> to indicate the user's current
-          position. The <code>current</code> attribute accepts the same values as the ARIA
-          <code>aria-current</code> attribute, including <code>page</code>, <code>step</code>, <code>location</code>,
-          <code>date</code>, <code>time</code>, and <code>true</code>.
+          当设置了 <code>current</code> 时,条目变为不可交互,并且只暴露
+          <code>role="listitem"</code>。不会渲染内部按钮或链接,也不会应用交互角色。该组件会把 <code>current</code> 的值反映到包含插槽内容的内部包装元素的 <code>aria-current</code> 上。如果没有显式提供 <code>current</code> 值,最后一个面包屑条目会自动获得 <code>aria-current="page"</code>,以表示用户当前所在的位置。<code>current</code> 特性接受与 ARIA
+          <code>aria-current</code> 特性相同的取值,包括 <code>page</code>、<code>step</code>、<code>location</code>、
+          <code>date</code>、<code>time</code> 与 <code>true</code>。
         </p>
         <p>
-          For icon-only items, use the <code>item-label</code> attribute to provide an accessible name for the item's
-          internal button or link.
+          对于纯图标条目,使用 <code>item-label</code> 特性为条目的内部按钮或链接提供无障碍名称。
         </p>
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -274,13 +253,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -305,12 +284,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-breadcrumb</m3e-heading>
