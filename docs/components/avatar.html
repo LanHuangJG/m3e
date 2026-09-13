@@ -28,15 +28,13 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Avatar 头像</m3e-heading>
         <p>
-          The <code>m3e-avatar</code> component is a reusable identity primitive that displays visual or textual
-          representation with consistent sizing, shape, and typography.
+          <code>m3e-avatar</code> 组件是一个可复用的身份基础元素,以一致的尺寸、形状与排版呈现视觉或文本化的身份表示。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/avatar";</pre></m3e-card>
 
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>
-          The <code>m3e-avatar</code> component accepts multiple content types, allowing it to render textual initials,
-          images, or icons depending on what is provided in its slot.
+          <code>m3e-avatar</code> 组件接受多种内容类型,可根据插槽中提供的内容渲染文本首字母、图片或图标。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -64,18 +62,17 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, avatars are not given an ARIA role, indicating that they are treated as neutral, non-semantic
-          elements in the accessibility tree unless explicitly referenced or annotated.
+          默认情况下,头像不会被赋予 ARIA 角色,表示除非被显式引用或标注,否则它们在无障碍树中被视为中性的非语义元素。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -84,13 +81,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -117,12 +114,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-avatar</m3e-heading>
