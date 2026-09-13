@@ -143,13 +143,13 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
-        <p>不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code></code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的规则。</p>
+        <p>不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code>m3e-datepicker</code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的 <code>Date.parse()</code> 规则。</p>
         <p>当 <code>m3e-datepicker</code> 收到日期字符串时,会自动判断该值是否属于可安全、无歧义解析的 ISO-8601 格式:</p>
         <ul>
-          <li><code> —— 本地日期(不含时间与时区)</li>
-          <li><code> —— 本地日期与时间</li>
-          <li><code> —— UTC 日期与时间</li>
-          <li><code> —— 带明确时区偏移的日期与时间</li>
+          <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li>
         </ul>
         <p>符合上述格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区偏移,从而避免“仅日期的值被按 UTC 解析后漂移到前一天或后一天”的问题。如果字符串不符合这些 ISO 兼容格式,解析可能不明确或不受支持。为获得最可靠的结果,请使用上面列出的格式。</p>
 
@@ -309,7 +309,7 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">特殊日期</m3e-heading>
-        <p>使用 <code>specialDates</code> 属性指定一个函数,用于判断某个日期是否以高亮样式展示。你可以用 <code>、<code>、<code>、<code> 与 <code> 这些 CSS 属性来设置特殊日期的样式。</p>
+        <p>使用 <code>specialDates</code> 属性指定一个函数,用于判断某个日期是否以高亮样式展示。你可以用 <code>--m3e-calendar-item-special-container-color</code>、<code>--m3e-calendar-item-special-color</code>、<code>--m3e-calendar-item-special-ripple-color</code>、<code>--m3e-calendar-item-special-hover-color</code> 与 <code>--m3e-calendar-item-special-focus-color</code> 这些 CSS 属性来设置特殊日期的样式。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -337,14 +337,14 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>日期选择器带有 ARIA <code>role="dialog"</code>,把这个选择界面标识为打开于页面之上、需要用户关注的一个独立交互区域。当选择器以模态变体显示时,还会设置 <code>aria-modal="true"</code>,表明页面其余部分处于惰性状态,焦点被圈定在对话框内直至关闭。停靠模式下则完全省略 aria-modal,因为周边页面仍可交互,此时的界面表现为锚定浮层而非阻断式对话框。</p>
         <p>日期选择器开关会在其父元素上添加 <code>aria-haspopup="dialog"</code>,告知辅助技术:激活该控件将打开一个对话框。</p>
-        <p>日历具备完整的无障碍支持,为辅助技术暴露清晰的语义。头部包含导航控件,每个控件都有可通过特性自定义的无障碍标签。日历网格以 <code> 实现,每个日期单元格使用 <code> 并包含带 <code> 的可聚焦元素。选中的日期与范围边界用 <code> 标示,今天则用 <code> 标记。每个单元格包含一个视觉隐藏、跟随区域设置的完整日期字符串供屏幕阅读器朗读,可见文本只显示日数字。星期表头使用缩写标签,但同时包含视觉隐藏的全名(如“星期一”),确保朗读清晰无歧义。</p>
+        <p>日历具备完整的无障碍支持,为辅助技术暴露清晰的语义。头部包含导航控件,每个控件都有可通过特性自定义的无障碍标签。日历网格以 <code>role="grid"</code> 实现,每个日期单元格使用 <code>role="gridcell"</code> 并包含带 <code>role="button"</code> 的可聚焦元素。选中的日期与范围边界用 <code>aria-pressed</code> 标示,今天则用 <code>aria-current="date"</code> 标记。每个单元格包含一个视觉隐藏、跟随区域设置的完整日期字符串供屏幕阅读器朗读,可见文本只显示日数字。星期表头使用缩写标签,但同时包含视觉隐藏的全名(如“星期一”),确保朗读清晰无歧义。</p>
         <ul>
-          <li><code> —— 跳转到上一月的按钮的无障碍标签。</li>
-          <li><code> —— 跳转到下一月的按钮的无障碍标签。</li>
-          <li><code> —— 跳转到上一年的按钮的无障碍标签。</li>
-          <li><code> —— 跳转到下一年的按钮的无障碍标签。</li>
-          <li><code> —— 跳转到上一个 24 年区间的按钮的无障碍标签。</li>
-          <li><code> —— 跳转到下一个 24 年区间的按钮的无障碍标签。</li>
+          <li><code>previous-month-label</code> —— 跳转到上一月的按钮的无障碍标签。</li>
+          <li><code>next-month-label</code> —— 跳转到下一月的按钮的无障碍标签。</li>
+          <li><code>previous-year-label</code> —— 跳转到上一年的按钮的无障碍标签。</li>
+          <li><code>next-year-label</code> —— 跳转到下一年的按钮的无障碍标签。</li>
+          <li><code>previous-multi-year-label</code> —— 跳转到上一个 24 年区间的按钮的无障碍标签。</li>
+          <li><code>next-multi-year-label</code> —— 跳转到下一个 24 年区间的按钮的无障碍标签。</li>
         </ul>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
