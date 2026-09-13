@@ -29,7 +29,7 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Checkbox 复选框</m3e-heading>
-        <p>The <code>m3e-checkbox</code> component enables users to select one or more options from a set.</p>
+        <p><code>m3e-checkbox</code> 组件让用户从一组选项中选中一个或多个。</p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/checkbox";</pre></m3e-card>
 
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
@@ -37,9 +37,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          Checkboxes may be standalone, pre-checked, or indeterminate. When clicked, a cancellable
-          <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To
-          cancel checked state changes, call <code>preventDefault</code> during <code>beforeinput</code>.
+          复选框可以是独立、预先勾选或不确定状态。点击时会发出可取消的
+          <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要取消勾选状态变化,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -57,7 +56,7 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">标签</m3e-heading>
-        <p>Associate a label with a checkbox using the <code>label</code> element.</p>
+        <p>使用 <code>label</code> 元素为复选框关联标签。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <label><m3e-checkbox></m3e-checkbox> Checkbox 1</label>
@@ -75,26 +74,23 @@
 
         <m3e-heading variant="headline" size="small" level="3">表单关联</m3e-heading>
         <p>
-          This component participates in form submission as a
+          该组件以
           <a
             href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face"
             target="_blank"
             rel="noopener noreferrer"
-            >form-associated custom element</a
+            >表单关联自定义元素</a
           >
-          (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which
-          the component's value is submitted in a form. When checked and not disabled, <code>value</code> (defaults to
-          <code>"on"</code>) is submitted.
+          (FACE)的身份参与表单提交,把自身状态贡献给表单数据。<code>name</code> 特性定义该组件的值在表单中提交时使用的键。当处于勾选且未禁用状态时,会提交 <code>value</code>(默认为
+          <code>"on"</code>)。
         </p>
         <p>
-          The component honors the <code>disabled</code> state as a <strong>property-only</strong> control. When
-          disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM.
+          该组件把 <code>disabled</code> 状态视为<strong>仅属性(property)</strong>控件。在运行时禁用它时,<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 a checkbox. Associated labels are automatically styled to
-          show disabled.
+          使用 <code>disabled</code> 特性禁用复选框。关联的标签会自动呈现为禁用样式。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -114,9 +110,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">必填</m3e-heading>
         <p>
-          Use the <code>required</code> attribute to control whether a checkbox must be checked. The
-          <code>invalid</code> event fires when a form is submitted and the element fails constraint validation. When
-          invalid, labels are automatically styled accordingly.
+          使用 <code>required</code> 特性控制复选框是否必须勾选。<code>invalid</code> 事件会在表单提交且该元素未通过约束校验时触发。处于无效状态时,标签会自动呈现相应样式。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -141,15 +135,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Checkboxes are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Checkboxes support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. Regardless of visual size, checkboxes maintain a 48x48dp minimum touch target to
-          ensure reliable accessibility.
+          复选框能感知密度,并会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整垂直间距。默认密度尺寸为 4dp。复选框支持最低到 -3 的负密度档位,每一档将视觉高度减少一个密度单位。无论视觉尺寸如何,复选框都保持 48x48dp 的最小触控目标,以确保可靠的无障碍体验。
         </p>
         <p>
-          The following illustrates applying density to a checkbox. Interact with each checkbox to see how density
-          impacts its state layer.
+          下面展示如何为复选框应用密度。与每个复选框交互,观察密度如何影响其状态层。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -180,29 +170,27 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Checkboxes are given the ARIA <code>role="checkbox"</code> aligning its semantic identity with native checkbox
-          controls. This ensures screen readers and assistive technologies interpret its behavior correctly.
+          复选框被赋予 ARIA <code>role="checkbox"</code>,使其语义身份与原生复选框控件对齐。这确保屏幕阅读器与辅助技术能正确理解其行为。
         </p>
-        <p>The component manages and reflects its state via <code>aria-checked</code>:</p>
+        <p>该组件通过 <code>aria-checked</code> 管理并反映其状态:</p>
         <ul>
-          <li><code>aria-checked="true"</code> → checked</li>
-          <li><code>aria-checked="false"</code> → unchecked</li>
-          <li><code>aria-checked="mixed"</code> → indeterminate</li>
+          <li><code>aria-checked="true"</code> → 已勾选</li>
+          <li><code>aria-checked="false"</code> → 未勾选</li>
+          <li><code>aria-checked="mixed"</code> → 不确定</li>
         </ul>
         <p>
-          When disabled using the <code>disabled</code> attribute, <code>aria-disabled="true"</code> is used to convey
-          to assistive technologies that the checkbox is disabled. When disabled at runtime, it does <em>not</em> sprout
-          a <code>disabled</code> attribute into the DOM.
+          当通过 <code>disabled</code> 特性禁用时,会使用 <code>aria-disabled="true"</code> 向辅助技术传达该复选框已禁用。在运行时禁用它时,<em>不会</em>向 DOM 中生成
+          <code>disabled</code> 特性。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -211,13 +199,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -243,12 +231,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-checkbox</m3e-heading>
