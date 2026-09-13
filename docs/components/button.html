@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Button 按钮</m3e-heading>
         <p>
-          The <code>m3e-button</code> component is a semantic, expressive UI primitive users interact with to perform an
-          action.
+          <code>m3e-button</code> 组件是一个语义化、富有表现力的界面基础元素,供用户交互以执行某个操作。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/button";</pre></m3e-card>
 
@@ -37,9 +36,7 @@
         <p>本节提供该模块组件的用法示例与配置指引。</p>
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          按钮有五种外观变体: <code>elevated</code>, <code>filled</code>, <code>tonal</code>,
-          <code>outlined</code>, and <code>text</code> (default). Use the <code>variant</code> attribute to change the
-          appearance.
+          按钮有五种外观变体: <code>elevated</code>、<code>filled</code>、<code>tonal</code>、<code>outlined</code> 与 <code>text</code>(默认)。使用 <code>variant</code> 特性更改外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -59,8 +56,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">形状</m3e-heading>
         <p>
-          Buttons can come in two shapes: <code>rounded</code> (default) or <code>square</code>. Use the
-          <code>shape</code> attribute to control the shape of a button.
+          按钮有两种形状:<code>rounded</code>(默认)或 <code>square</code>。使用 <code>shape</code> 特性控制按钮的形状。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -80,9 +76,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          There are five size variants which can be used to add or remove emphasis:
-          <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and
-          <code>extra-large</code>. Use the <code>size</code> attribute to control a button's size.
+          有五种尺寸变体,可用于增加或减弱强调:
+          <code>extra-small</code>、<code>small</code>(默认)、<code>medium</code>、<code>large</code> 与
+          <code>extra-large</code>。使用 <code>size</code> 特性控制按钮的尺寸。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -102,10 +98,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
         <p>
-          Use the <code>icon</code> slot to render an icon before the button's label. In addition, use the
-          <code>trailing-icon</code> slot to render an icon after the button's label. While not required, the following
-          example uses the <code>m3e-icon</code> component from <code>@m3e/icon</code> to present icons using Material
-          Symbols.
+          使用 <code>icon</code> 插槽在按钮标签之前渲染一个图标。此外,使用
+          <code>trailing-icon</code> 插槽在按钮标签之后渲染一个图标。虽然不是必须的,但下面的示例使用来自 <code>@m3e/icon</code> 的 <code>m3e-icon</code> 组件,通过 Material Symbols 呈现图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -128,10 +122,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">切换</m3e-heading>
         <p>
-          Use the <code>toggle</code> attribute to control whether a button can be used for binary selection and the
-          <code>selected</code> attribute to control the selected state. When clicked, a cancellable
-          <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To
-          cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>.
+          使用 <code>toggle</code> 特性控制按钮是否可用于二元选择,并使用 <code>selected</code> 特性控制选中状态。点击时会发出可取消的
+          <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要取消选择变化,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -148,9 +140,8 @@
           >
         </m3e-card>
         <p>
-          In addition, you can use the <code>selected</code> and <code>selected-icon</code> slots to specify an
-          alternate label and icon when selected. When using the <code>m3e-icon</code> to present icons, the icon will
-          automatically be filled when a button is selected.
+          此外,你可以使用 <code>selected</code> 与 <code>selected-icon</code> 插槽,在选中时指定替代的标签与图标。使用 <code>m3e-icon</code>
+          呈现图标时,按钮被选中后图标会自动填充。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -176,12 +167,11 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 a button. By default, disabled buttons are not focusable
-          with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 特性禁用按钮。默认情况下,被禁用的按钮无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
-            >focusability of disabled controls</a
+            >禁用控件的可聚焦性</a
           >
-          to increase their discoverability.
+          以提升其可发现性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -198,16 +188,14 @@
 
         <m3e-heading variant="headline" size="small" level="3">类型</m3e-heading>
         <p>
-          Use the <code>type</code> attribute to control the behavior of a button. By default, <code>type</code> is
-          <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to submit or reset a
-          parenting form when clicked. When submitting a form, you can use the <code>name</code> and
-          <code>value</code> attributes to specify a value.
+          使用 <code>type</code> 特性控制按钮的行为。默认情况下,<code>type</code> 为
+          <code>button</code>。你可以把它改为 <code>submit</code> 或 <code>reset</code>,以便在点击时提交或重置其父级表单。提交表单时,可以用 <code>name</code> 与
+          <code>value</code> 特性指定提交的值。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
-          Buttons can also behave like links by specifying a URL using the <code>href</code> attribute. You can also
-          specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          按钮也可以通过 <code>href</code> 特性指定 URL,表现得像链接。你还可以像原生 a 标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -226,15 +214,10 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Buttons are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Buttons support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. Regardless of visual size, buttons maintain a 48x48dp minimum touch target to
-          ensure reliable accessibility.
+          按钮能感知密度,并会根据 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整垂直间距。默认密度尺寸为 4dp。按钮支持最低到 -3 的负密度档位,每一档将视觉高度减少一个密度单位。无论视觉尺寸如何,按钮都保持 48x48dp 的最小触控目标,以确保可靠的无障碍体验。
         </p>
         <p>
-          The following illustrates applying density to the <code>extra-small</code> and <code>small</code> sized
-          buttons.
+          下面展示如何为 <code>extra-small</code> 与 <code>small</code> 尺寸的按钮应用密度。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -297,35 +280,28 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, buttons are given the ARIA role <code>button</code>, indicating they are clickable elements that
-          trigger actions.
+          默认情况下,按钮被赋予 ARIA 角色 <code>button</code>,表示它们是可点击、会触发操作的元素。
         </p>
         <p>
-          Icons slots have <code>aria-hidden="true"</code> to ensure icons are always hidden from assistive
-          technologies.
+          图标插槽带有 <code>aria-hidden="true"</code>,以确保图标始终对辅助技术隐藏。
         </p>
         <p>
-          When disabling using either the <code>disabled</code> or <code>disabled-interactive</code> attribute,
-          <code>aria-disabled="true"</code> is used to convey to assistive technologies that the button is disabled. If
-          disabled using <code>disabled-interactive</code>, <code>tabindex</code> is retained to convey that the button
-          continues to be interactive.
+          当使用 <code>disabled</code> 或 <code>disabled-interactive</code> 特性禁用时,会使用
+          <code>aria-disabled="true"</code> 向辅助技术传达按钮已禁用。如果通过 <code>disabled-interactive</code> 禁用,则保留 <code>tabindex</code>,以表明按钮仍然可交互。
         </p>
         <p>
-          When <code>href</code> is specified, the ARIA role <code>link</code> is used instead of <code>button</code> to
-          convey the button provides an interactive reference to a resource. In addition, the component presents an
-          internal anchor, hidden from assistive technologies, used to invoke native browser features such a context
-          menu options and tooltips.
+          当指定了 <code>href</code> 时,会使用 ARIA 角色 <code>link</code> 而非 <code>button</code>,以表明该按钮提供了指向某个资源的交互引用。此外,组件会呈现一个对辅助技术隐藏的内部 a 标签,用于调用原生浏览器特性,例如上下文菜单选项与工具提示。
         </p>
-        <p>For toggle buttons, <code>aria-pressed</code> is used to convey the selected state, even when disabled.</p>
+        <p>对于切换按钮,即使处于禁用状态,也会使用 <code>aria-pressed</code> 来表示选中状态。</p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -334,13 +310,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include dependencies.
+          来引入依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -366,12 +342,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-button</m3e-heading>
