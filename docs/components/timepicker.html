@@ -121,7 +121,7 @@
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           <code>m3e-timepicker</code> 支持三种外观变体:<code>docked</code>(默认)、
-          <code>modal</code> 与 <code>auto</code>。使用 <code>variant</code> 属性控制选择器的
+          <code>modal</code> 与 <code>auto</code>。使用 <code>variant</code> 特性控制选择器的
           呈现方式。设为 <code>auto</code> 时,会根据当前屏幕尺寸
           自动选择合适的呈现方式。
         </p>
@@ -133,7 +133,7 @@
         <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
           <code>m3e-timepicker</code> 支持三种方向:<code>vertical</code>(默认)、
-          <code>horizontal</code> 与 <code>auto</code>。使用 <code>orientation</code> 属性控制
+          <code>horizontal</code> 与 <code>auto</code>。使用 <code>orientation</code> 特性控制
           选择器的方向。设为 <code>auto</code> 时,会根据当前屏幕尺寸自动选择
           合适的方向。
         </p>
@@ -166,7 +166,7 @@
         <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
         <p>
           <code>m3e-timepicker</code> 支持两种模式:<code>dial</code>(默认)与 <code>input</code>。使用
-          <code>mode</code> 属性设置默认模式。使用 <code>hide-mode-toggle</code> 属性
+          <code>mode</code> 特性设置默认模式。使用 <code>hide-mode-toggle</code> 特性
           隐藏用于在模式之间切换的按钮。
         </p>
         <p>
@@ -195,7 +195,7 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">时间选择</m3e-heading>
-        <p>使用 <code>date</code> 属性设置当前选中的时间。</p>
+        <p>使用 <code>date</code> 特性设置当前选中的时间。</p>
         <p>
           只要选择器持有一个完整、有效的时间,确定按钮就会启用,包括
           初始值本就有效且用户未作更改的情况。时与分字段都必须包含
@@ -265,7 +265,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">小时格式</m3e-heading>
         <p>
-          <code>format</code> 属性控制时间选择器使用的小时周期。它接受
+          <code>format</code> 特性控制时间选择器使用的小时周期。它接受
           <code>"12"</code>(默认)、<code>"24"</code> 或 <code>"auto"</code>。
         </p>
 
@@ -296,7 +296,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">最小与最大时间</m3e-heading>
         <p>
-          使用 <code>min-time</code> 与 <code>max-time</code> 属性禁用选择器中早于/晚于对应值的
+          使用 <code>min-time</code> 与 <code>max-time</code> 特性禁用选择器中早于/晚于对应值的
           全部时间。
         </p>
         <m3e-card variant="outlined" class="showcase">
@@ -348,7 +348,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">秒</m3e-heading>
-        <p>使用 <code>show-seconds</code> 属性在时间选择器中显示秒分段。</p>
+        <p>使用 <code>show-seconds</code> 特性在时间选择器中显示秒分段。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -374,7 +374,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           允许你在自定义布局中使用它们,或独立于 <code>m3e-timepicker</code> 使用。
         </p>
         <p>
-          <code>m3e-timepicker-input</code> 上可以使用 <code>for</code> 属性,以按 ID 引用一个
+          <code>m3e-timepicker-input</code> 上可以使用 <code>for</code> 特性,以按 ID 引用一个
           <code>m3e-timepicker-dial</code>。使用该属性时,输入框会自动把其属性同步到
           所引用的表盘,让两个组件保持同步,无需手动接线事件。
         </p>

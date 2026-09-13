@@ -41,7 +41,7 @@
         <p>
           <code>m3e-nav-rail</code> 支持三种模式:<code>compact</code>(默认)、<code>expanded</code> 与
           <code>auto</code>。在紧凑模式下,条目竖向排列。展开时,条目横向排列。使用 <code>auto</code> 时,
-          方向会自适应,由视口尺寸决定。使用 <code>mode</code> 属性更改栏的模式。
+          方向会自适应,由视口尺寸决定。使用 <code>mode</code> 特性更改栏的模式。
         </p>
         <p>下面的示例展示了一种常见布局。</p>
         <ul>
@@ -107,7 +107,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
-          <code>m3e-nav-rail</code> 仅支持单选。使用 <code>m3e-nav-item</code> 的 <code>selected</code> 属性
+          <code>m3e-nav-rail</code> 仅支持单选。使用 <code>m3e-nav-item</code> 的 <code>selected</code> 特性
           指定栏中选中哪个条目。点击时,会先派发一个可取消的 <code>beforeinput</code> 事件,随后是
           <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用
           <code>preventDefault</code>。
@@ -119,7 +119,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用条目。默认情况下,被禁用的条目无法通过键盘聚焦。你可以使用
+          使用 <code>disabled</code> 特性禁用条目。默认情况下,被禁用的条目无法通过键盘聚焦。你可以使用
           <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >禁用控件的可聚焦性</a
