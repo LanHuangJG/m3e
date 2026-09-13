@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Badge 徽标</m3e-heading>
         <p>
-          The <code>m3e-badge</code> component is a compact visual indicator for counts, presence, or emphasis that can
-          be attached to icons, buttons, or other components.
+          <code>m3e-badge</code> 组件是一种紧凑的视觉指示器,用于表示计数、在线状态或强调,可附加到图标、按钮或其他组件上。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/badge";</pre></m3e-card>
 
@@ -38,8 +37,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          There are three size variants for a badge: <code>small</code>, <code>medium</code> (default), and
-          <code>large</code>. Use the <code>size</code> attribute to control a badge's size.
+          徽标有三种尺寸变体:<code>small</code>、<code>medium</code>(默认)与 <code>large</code>。使用 <code>size</code> 特性控制徽标的尺寸。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -56,31 +54,27 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Anchoring</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">锚定</m3e-heading>
         <p>
-          An <code>m3e-badge</code> can be anchored to another element using the <code>for</code> attribute, which
-          references the target element's <code>id</code>. This creates a semantic and visual link, allowing the badge
-          to track its anchor even across layout shifts.
+          <code>m3e-badge</code> 可以通过 <code>for</code> 特性锚定到另一个元素上,该特性引用目标元素的 <code>id</code>。这会建立语义与视觉上的关联,使徽标即使在布局变化时也能跟踪其锚点。
         </p>
         <p>
-          To control placement, use the <code>position</code> attribute. These values define where the badge appears
-          relative to its anchor:
+          使用 <code>position</code> 特性控制摆放位置。这些取值定义了徽标相对于其锚点出现的位置:
         </p>
         <ul>
           <li>
-            <code>above-after</code> (default) — Above the anchor, aligned to its end edge (right in LTR, left in RTL)
+            <code>above-after</code>(默认)—— 位于锚点上方,对齐到其末端边缘(LTR 为右,RTL 为左)
           </li>
-          <li><code>above-before</code> — Above the anchor, aligned to its start edge (left in LTR, right in RTL)</li>
-          <li><code>below-before</code> — Below the anchor, aligned to its start edge</li>
-          <li><code>below-after</code> — Below the anchor, aligned to its end edge</li>
-          <li><code>before</code> — Inline with the anchor, placed before it (left in LTR, right in RTL)</li>
-          <li><code>after</code> — Inline with the anchor, placed after it (right in LTR, left in RTL)</li>
-          <li><code>above</code> — Centered above the anchor</li>
-          <li><code>below</code> — Centered below the anchor</li>
+          <li><code>above-before</code> —— 位于锚点上方,对齐到其起始边缘(LTR 为左,RTL 为右)</li>
+          <li><code>below-before</code> —— 位于锚点下方,对齐到其起始边缘</li>
+          <li><code>below-after</code> —— 位于锚点下方,对齐到其末端边缘</li>
+          <li><code>before</code> —— 与锚点同行,放在其之前(LTR 为左,RTL 为右)</li>
+          <li><code>after</code> —— 与锚点同行,放在其之后(LTR 为右,RTL 为左)</li>
+          <li><code>above</code> —— 居中于锚点上方</li>
+          <li><code>below</code> —— 居中于锚点下方</li>
         </ul>
         <p>
-          These positions are <em>bidi-aware</em>, adapting automatically to left-to-right and right-to-left layouts.
-          They honor expressive anchoring and layout clarity, even across responsive shifts.
+          这些位置是<em>双向文本感知</em>的,会自动适配从左到右与从右到左的布局。即便在响应式变化中,它们也能保持富有表现力的锚定与清晰的布局。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -111,19 +105,18 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, badges are not given an ARIA role, indicating that they are treated as neutral, non-semantic
-          elements in the accessibility tree unless explicitly referenced or annotated.
+          默认情况下,徽标不会被赋予 ARIA 角色,表示除非被显式引用或标注,否则它们在无障碍树中被视为中性的非语义元素。
         </p>
-        <p>Use <code>aria-describedby</code> when attaching a badge to an interactive element.</p>
+        <p>把徽标附加到交互元素上时,请使用 <code>aria-describedby</code>。</p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -132,13 +125,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -167,12 +160,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-badge</m3e-heading>
