@@ -1,0 +1,160 @@
+55	For production builds, use the minified files to ensure optimal load performance.
+55	The package includes a
+55	Custom Elements Manifest
+54	The package uses
+54	. To use it directly in a browser without a bundler, use a module script similar to the following.
+54	In addition, you must use an
+54	( ), which documents the properties, attributes, slots, events and CSS custom properties of each component.
+54	You can explore the API below, or integrate the manifest into your own tooling.
+34	to include dependencies.
+20	to include additional dependencies.
+15	MM/DD/YYYY
+14	sprout a attribute into the DOM.
+13	.density-3 { --md-sys-density-scale: -3; } /* Additional classes omitted for brevity */
+10	for more information.
+10	Add to a note
+10	Embed in a document
+9	focusability of disabled controls
+9	to increase their discoverability.
+9	form-associated custom element
+9	control. When disabled at runtime, it does
+7	.density-3 { --md-sys-density-scale: -3; }
+6	Choose your favorite fruit
+5	Top 10 hiking trails
+5	Discover popular trails
+5	Fill out your name
+5	Fill out your address
+4	This component participates in form submission as a
+4	The component honors the state as a
+4	Select an option
+3	Icons slots have to ensure icons are always hidden from assistive technologies.
+3	Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO date but does not include a time or timezone. To ensure predictable behavior across environments, uses a consistent, standards-aligned parsing model instead of relying on the browser's built-in rules.
+3	When receives a date string, it automatically detects whether the value matches one of the ISO-8601 formats that can be parsed safely and unambiguously:
+3	— local date (no time, no timezone)
+3	— local date and time
+3	— UTC date and time
+3	— date and time with an explicit timezone offset
+3	Strings in these formats are converted into local objects without unexpected timezone shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or unsupported. For the most reliable results, use one of the formats above.
+3	document.querySelector("#blackout-dates").blackoutDates = (date) => isWeekend(date);
+3	Use the attribute to control the selected state of a . When clicked, a cancellable event is emitted followed by an and event. To cancel selection change, call during .
+3	Date-time Field
+3	MM/DD/YYYY HH:MM
+3	On Primary Container
+3	On Secondary Container
+3	On Tertiary Container
+3	On Error Container
+3	On Surface Variant
+3	Inverse On Surface
+2	The following illustrates applying density to both the and 's panel via use of the attribute.
+2	Options are given ARIA , indicating that each item represents a selectable choice within a listbox context. This role enables assistive technologies to interpret and announce the options appropriately, supporting accessible navigation and selection behavior.
+2	The attribute reflects whether an option is currently selected. When an option is selected, is exposed to assistive technologies; otherwise, it is .
+2	The attribute is applied to the element to indicate which option is currently active within the listbox. Instead of moving DOM focus to each option, the select retains focus while updating to reference the of the focused . This approach preserves focus management and enables assistive technologies to announce the active option during keyboard navigation, ensuring accessible and predictable interaction.
+2	The attribute reflects the current state of the listbox popup. When the listbox is open, is set on the element; when collapsed, it is set to . This dynamic state enables screen readers to announce whether the listbox is expanded or collapsed, supporting accessible navigation and interaction.
+2	Because is designed for single-item selection, you should avoid placing additional interactive elements—such as buttons, checkboxes, or toggles—inside . Nesting interactive controls within options disrupts expected navigation and interferes with screen reader behavior.
+2	You also need a module script for due to it being a dependency.
+2	NOTE: this page is presented in a nested .
+2	Lorem ipsum dolor sit amet
+2	There are two appearance variants: (default) and . Use the attribute to change the appearance.
+2	The following illustrates applying density to both the and variants.
+2	The attribute can be used to set the view that will show up when the calendar first opens. It can be set to , , or ; by default it will open to view.
+2	Use the property to specify a function used to determine whether a date has a highlighted look and feel. You can use the , , , , and CSS properties to style special dates.
+2	document.querySelector("#special-dates").specialDates = (date) => isHoliday(date);
+2	uses the Gregorian calendar, and all date formatting is handled by the browser's APIs based on the active locale.
+2	The calendar is fully accessible and exposes clear semantics for assistive technologies. The header contains navigation controls, each with an accessible label that can be customized through attributes. The calendar grid is implemented using , with each date cell using and containing a focusable element with . Selected dates and range boundaries are indicated using , while today's date is marked with . Each cell includes a visually hidden, locale-aware full date string for screen readers, while the visible text shows only the day number. Day-of-week headers use abbreviated labels but include visually hidden full names (such as “Monday”) to ensure clear, unambiguous announcements.
+2	— Accessible label for the button that navigates to the previous month.
+2	— Accessible label for the button that navigates to the next month.
+2	— Accessible label for the button that navigates to the previous year.
+2	— Accessible label for the button that navigates to the next year.
+2	— Accessible label for the button that navigates to the previous 24-year range.
+2	— Accessible label for the button that navigates to the next 24-year range.
+2	The component provides a modular layout for structured content blocks. It exposes the following named slots:
+2	(FACE), contributing its state to the form data. The attribute defines the key under which the component's value is submitted in a form. When checked and not disabled, (defaults to ) is submitted.
+2	The provides a single slot, , to present an icon before a chip's label. Trailing icons are not supported for this chip type.
+2	The component honors the state (on the chip set itself) as a
+2	Use the to open a . This component should be nested inside a clickable element and be associated with a picker by setting the for attribute to the id of the picker to open.
+2	<m3e-list> <m3e-list-item>Item 1</m3e-list-item> <m3e-divider></m3e-divider> <m3e-list-item>Item 2</m3e-list-item> <m3e-divider></m3e-divider> <m3e-list-item>Item 3</m3e-list-item> </m3e-list>
+2	I am content for the first panel
+2	I am content for the second panel
+2	I am content for the third panel
+2	Slots have to ensure icons are always hidden from assistive technologies.
+2	Check voice mail
+2	As illustrated above, items are specified using the component. Use the default slot to specify an item's label and use the slot to specify an icon.
+2	<m3e-nav-item><m3e-icon slot="icon" name="news"></m3e-icon>News</m3e-nav-item>
+2	In addition, you can use the slots to specify an alternate icon when selected. When using the to present icons, the icon will automatically be filled when an item is selected.
+2	Items can also behave like links by specifying a URL using the attribute. You can also specify , and similar to native anchor tags.
+2	Items are given the ARIA role , indicating they are clickable elements that trigger actions and is used to convey the selected state.
+2	When disabling using either the or attribute, is used to convey to assistive technologies that the item is disabled. If disabled using , is retained to convey that the item continues to be interactive.
+2	When is specified, the ARIA role is used instead of to convey the item provides an interactive reference to a resource. In addition, the component presents an internal anchor, hidden from assistive technologies, used to invoke native browser features such a context menu options and tooltips.
+2	Focus is managed on the container using , and the currently active item is referenced via , which points to the ID of the focused . This enables roving focus without shifting DOM focus, ensuring accessible keyboard navigation and consistent screen reader feedback.
+2	Disabling an item sets signaling to assistive technologies that the item is not interactive.
+2	The exposes the following named slots:
+2	Pagination buttons are intentionally excluded from the tab order and strong focus indicators are not supported. This reduces focus noise and streamlines keyboard navigation.
+2	Use the and attributes to provide accessible labels to pagination buttons.
+2	ARIA Tabs design pattern
+2	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+2	New settings available
+2	Now you can adjust the uploaded image quality, and upgrade your available storage space.
+1	The component is a prominent user interface component that provides consistent access to key actions, navigation, and contextual information at the top of an application screen.
+1	The component provides a structured layout for top-level navigation and contextual information. It exposes the following named slots:
+1	— typically a navigation affordance such as a back arrow or menu button. Positioned at the start of the bar.
+1	— The primary label for the current view or context. Usually a short, expressive heading.
+1	— An optional secondary label that provides additional context or hierarchy beneath the title.
+1	— One or more action buttons aligned to the end of the bar. Common examples include search, bookmark, or overflow menus.
+1	<m3e-app-bar> <m3e-icon-button slot="leading" aria-label="Back"> <m3e-icon name="arrow_back"></m3e-icon> </m3e-icon-button> <span slot="title">Top 10 hiking trails</span> <span slot="subtitle">Discover popular trails</span> <m3e-icon-button slot="trailing" aria-label="Bookmark" variant="tonal"> <m3e-icon name="bookmark" filled></m3e-icon> </m3e-icon-button> </m3e-app-bar>
+1	There are three size variants: (default), , and . Use the attribute to control an app bar's size.
+1	<m3e-app-bar size="medium"> <!-- Content omitted for brevity --> </m3e-app-bar> <m3e-app-bar size="large"> <!-- Content omitted for brevity --> </m3e-app-bar>
+1	A app bar ensures that its primary content — the and optional — remains visually centered within the available horizontal space, regardless of the number or size of elements in the or slots.
+1	This is achieved through layout symmetry, not equal spacing. The title area is anchored to the center of the container, while icons on either side are allowed to vary in number or width without shifting the title's position.
+1	<m3e-app-bar centered> <!-- Content omitted for brevity --> </m3e-app-bar>
+1	An can be attached to a scrollable container using the attribute, which references the container's id. This establishes a scroll contract between the app bar and its content region. As the user scrolls:
+1	The app bar's background becomes elevated — typically via a shadow or surface tone — to signal separation from the content.
+1	When the scroll position returns to the top, the elevation is removed, restoring a flat visual hierarchy.
+1	This behavior enhances contextual clarity, signaling that content is in motion while preserving the app bar's role as a stable anchor.
+1	Scroll down to see the elevation effect
+1	<div id="scrollContainer"> <m3e-app-bar for="scrollContainer"> <!-- Content omitted for brevity --> </m3e-app-bar> <div class="scroll-item">Scroll down to see the elevation effect</div> </div> <m3e-app-bar centered> <style> #scrollContainer { overflow-y: auto; height: 300px; } m3e-app-bar[for="scrollContainer"] { position: sticky; top: 0; } .scroll-item { height: 400px; display: flex; align-items: center; justify-content: center; } </style>
+1	By default, app bars are given the ARIA to identify them as the site-wide landmark region for branding, navigation, or contextual identity. This role signals to assistive technologies that the app bar serves as the top-level heading for the page or application.
+1	The component enhances an field with a panel of suggested options.
+1	Begin by declaring the element and populating it with a set of elements. Each option represents a selectable value. When the user selects an option, its textual content becomes the input's displayed label and a event is emitted. You can access the selected option via the property, or read its committed value through the property.
+1	To bind the autocomplete panel to an input, use the attribute on , setting it to match the of the target element.
+1	<m3e-form-field> <label slot="label" for="fruit">Choose your favorite fruit</label> <input id="fruit" /> </m3e-form-field> <m3e-autocomplete for="fruit"> <m3e-option>Apples</m3e-option> <m3e-option>Oranges</m3e-option> <m3e-option>Bananas</m3e-option> <m3e-option>Grapes</m3e-option> </m3e-autocomplete>
+1	By default, will filter options using a case insensitive substring match. You can use the attribute to control this behavior. Supported values include: (default), , and . In addition, use the attribute to control whether matching is case-sensitive.
+1	The following example illustrates a case-sensitive prefix match.
+1	<m3e-form-field> <label slot="label" for="fruit">Choose your favorite fruit</label> <input id="fruit" value="Apple" /> </m3e-form-field> <m3e-autocomplete for="fruit" filter="starts-with" case-sensitive> <!-- Options omitted for brevity --> </m3e-autocomplete>
+1	Alternatively, you can provide a callback function using the property to control this behavior. Custom filters do not support automatic text highlighting, because the component cannot determine which parts of the text matched.
+1	The following example shows how to set with logic for a custom case-insensitive prefix match.
+1	<m3e-form-field> <label slot="label" for="fruit">Choose your favorite fruit</label> <input id="fruit" value="Apple" /> </m3e-form-field> <m3e-autocomplete class="custom-filter" for="fruit"> <!-- Options omitted for brevity --> </m3e-autocomplete>
+1	window.addEventListener("DOMContentLoaded", () => { for (const autocomplete of document.querySelectorAll("m3e-autocomplete.custom-filter")) { autocomplete.filter = (option, term) => option.value.toLocaleLowerCase().startsWith(term.toLocaleLowerCase()); } });
+1	Use the attribute to control the text announced and displayed when no options match. The slot can be used to provide custom visual content for the empty state. Alternatively, use the attribute to suppress the empty-state UI entirely.
+1	<m3e-form-field> <label slot="label" for="fruit">Choose your favorite fruit</label> <input id="fruit" value="Pear" /> </m3e-form-field> <m3e-autocomplete for="fruit" no-data-label="No data"> <!-- Options omitted for brevity --> </m3e-autocomplete>
+1	The emits a event that can be used to lazy-load options. The event fires only when the control is enabled and not read-only, under the following conditions:
+1	The receives focus while no options are available. This can be used to load initial options.
+1	The value changes. This can be used to fetch options that match the current term using the event's property.
+1	Use the attribute to control whether the presents a loading UI. The attribute controls the text announced and displayed when enabled and the slot can be used to provide custom visual content for the loading state. Use the attribute to suppress the loading-state UI entirely. will still be announced when hidden.
+1	The following example illustrates lazy loading initial data when the is focused. In addition, a is presented in the slot. See
+1	<m3e-form-field> <label slot="label" for="state">State</label> <input id="state" /> </m3e-form-field> <m3e-autocomplete for="state" class="lazy"> <m3e-loading-indicator slot="loading"></m3e-loading-indicator> </m3e-autocomplete>
+1	const lazy = document.querySelector("m3e-autocomplete.lazy"); lazy.addEventListener("query", () => { if (!lazy.querySelector("m3e-option")) { lazy.loading = true; setTimeout(() => { usStates.forEach((state) => { const option = document.createElement("m3e-option"); option.innerText = state; lazy.appendChild(option); }); lazy.loading = false; }, 2000); } });
+1	Search as you type
+1	The next example performs a search only after the user pauses typing. The loading indicator is not shown while the user is typing and appears only when an actual search request is made. If the user begins typing while a search is in progress, the loading indicator remains visible, the in-flight request is canceled, and a new search is started after debouncing. This example sets to disable built-in filtering.
+1	<m3e-form-field> <label slot="label" for="state">State</label> <input id="state" /> </m3e-form-field> <m3e-autocomplete for="state" filter="none" class="search"> <m3e-loading-indicator slot="loading"></m3e-loading-indicator> </m3e-autocomplete>
+1	const search = document.querySelector("m3e-autocomplete.search"); let debounceTimer = -1; let activeRequest = null; search.addEventListener("query", (e) => { const term = e.detail.term?.trim().toLowerCase(); // User is typing → reset debounce, but do NOT show loading yet clearTimeout(debounceTimer); // If user cleared the field if (!term) { // Cancel any in‑flight request if (activeRequest) activeRequest.abort(); // Reset UI search.querySelectorAll("m3e-option").forEach((x) => x.remove()); search.hideNoData = true; search.loading = false; return; } // Now a real search is happening → show loading search.loading = true; search.hideNoData = false; // If a request is already loading, keep showing loading // but cancel the old request if (activeRequest) activeRequest.abort(); // Start debounce debounceTimer = setTimeout(() => { // Clear old results (so we don't show stale data) search.querySelectorAll("m3e-option").forEach((x) => x.remove()); // Create a cancellable "request" const controller = new AbortController(); activeRequest = controller; // Simulate async search setTimeout(() => { // If canceled, do nothing if (controller.signal.aborted) return; // Populate results usStates .filter((x) => x.toLowerCase().includes(term)) .forEach((state) => { const option = document.createElement("m3e-option"); option.innerText = state; search.appendChild(option); }); search.loading = false; activeRequest = null; }, 2000); }, 300); // debounce delay });
+1	Requiring an option to be selected
+1	By default, accepts any value typed into the input field, regardless of whether it matches a listed option. To enforce selection from the available options, use the attribute.
+1	When is set, the autocomplete behaves as follows:
+1	If the user opens the panel with
+1	no selected option
+1	and types a new value, then closes the panel without selecting anything, the input resets to an empty string.
+1	If the user opens the panel with a
+1	and types a value that does not match that option, then closes the panel without selecting anything, the input resets to the selected option's label.
+1	If the user opens and closes the panel without modifying the input, the existing value is retained.
+1	<m3e-form-field> <label slot="label" for="fruit">Choose your favorite fruit</label> <input id="fruit" value="Apple" /> </m3e-form-field> <m3e-autocomplete for="fruit" required> <!-- Options omitted for brevity --> </m3e-autocomplete>
+1	Use the attribute to control whether the first option will automatically be activated.
+1	<m3e-form-field> <label slot="label" for="fruit">Choose your favorite fruit</label> <input id="fruit" /> </m3e-form-field> <m3e-autocomplete for="fruit" auto-activate> <!-- Options omitted for brevity --> </m3e-autocomplete>
+1	The pairs with to surface suggestions that users can select and convert into chips. See
+1	Choose your favorite fruits
+1	<m3e-form-field> <label slot="label" for="fruit">Choose your favorite fruits</label> <m3e-input-chip-set aria-label="Enter favorite fruits"> <input id="fruit" slot="input" placeholder="Add fruit..." /> </m3e-input-chip-set> </m3e-form-field> <m3e-autocomplete for="fruit"> <!-- Options omitted for brevity --> </m3e-autocomplete>
+1	Form fields and autocomplete panels are density-aware and adjust their vertical spacing based on the and custom CSS properties. The default density size is 4dp. Both support negative density scales down to -3, with each step reducing the visual height by one density unit.
+1	<m3e-form-field class="density-3"> <label slot="label" for="fld">Density -3</label> <input id="fld" /> </m3e-form-field> <m3e-autocomplete for="fld" panel-class="density-3"> <!-- Options omitted for brevity --> </m3e-autocomplete> <!-- Additional fields omitted for brevity -->
+1	The component follows the ARIA interaction pattern. The associated text input receives , while the dropdown panel applies to convey its structure to assistive technologies.
+1	When disabled using the attribute, is used to convey to assistive technologies that an option is disabled.
+1	The and attributes are applied to the element to establish an explicit relationship with the listbox popup. Both attributes reference the of the listbox container, ensuring assistive technologies recognize the connection between the trigger and the controlled content. While indicates that the select governs the visibility and behavior of the listbox, asserts DOM ownership when the listbox is rendered outside the input's subtree.
+1	The component provides built-in ARIA-friendly announcements for loading, no-data, and results updates. These announcements are exposed through a polite region so assistive technologies receive timely, non-interruptive updates as the user types.

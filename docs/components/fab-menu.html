@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>FAB Menu for M3E</title>
+    <title>FAB 菜单 Menu · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="FAB Menu for M3E" />
+    <meta name="description" content="FAB 菜单 Menu · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,10 +36,10 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/fab-menu";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Anatomy</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
           The <code>m3e-fab-menu</code> is used in conjunction with a <code>m3e-fab</code> to create a menu opened when
           a FAB is activated.
@@ -101,7 +101,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Variants</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           The <code>m3e-fab-menu</code> supports three appearance variants: <code>primary</code> (default),
           <code>secondary</code>, and <code>tertiary</code>. Use the <code>variant</code> attribute to change the
@@ -163,12 +163,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Icons</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
         <p>
           Use the <code>icon</code> slot of a <code>m3e-fab-menu-item</code> to present an icon before an item's label.
           While not required, the following example uses the <code>m3e-icon</code> component from
           <code>@m3e/icon</code> to present icons using Material Symbols. See
-          <a href="../components/icon.html">Icon</a> for more information.
+          <a href="../components/icon.html">Icon 图标</a> for more information.
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -179,7 +179,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
           You can disable a <code>m3e-fab-menu-item</code> using the <code>disabled</code> attribute. In addition, if
           the <code>m3e-fab</code> is disabled, the <code>m3e-fab-menu</code> will not be opened on click.
@@ -216,7 +216,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Links</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
           Menu items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also
           specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
@@ -245,7 +245,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           FAB menus are given ARIA <code>role="menu"</code> and items are given <code>role="menuitem"</code> indicating
           that the menu behaves like a contextual action list.
@@ -261,7 +261,7 @@
           technologies, used to invoke native browser features such a context menu options and tooltips.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -314,9 +314,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -325,7 +325,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
 
         <m3e-heading variant="headline" size="small" level="3">m3e-fab-menu</m3e-heading>
         <api-viewer only="m3e-fab-menu"> </api-viewer>
@@ -335,7 +335,7 @@
         <api-viewer only="m3e-fab-menu-trigger"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
+        <span slot="overline">本页目录</span>
         <span slot="title">FAB Menu</span>
       </m3e-toc>
     </div>

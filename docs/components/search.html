@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Search for M3E</title>
+    <title>搜索框 Search · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Search for M3E" />
+    <meta name="description" content="搜索框 Search · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Search</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Search 搜索框</m3e-heading>
 
         <p>
           The <code>m3e-search-bar</code> and <code>m3e-search-view</code> components provide a Material 3 expressive
@@ -36,8 +36,8 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/search";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Search bar</m3e-heading>
         <p>
@@ -46,7 +46,7 @@
           <code>m3e-search-view</code>, which provides a complete search experience.
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Anatomy</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">结构解析</m3e-heading>
         <p>The <code>m3e-search-bar</code> exposes the following named slots:</p>
 
         <ul>
@@ -57,15 +57,14 @@
           <li><code>trailing</code> — Content aligned to the end of the bar, such as an avatar or overflow menu.</li>
         </ul>
 
-        <m3e-heading variant="title" size="medium" level="4">Clearable</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">可清除</m3e-heading>
         <p>
           Use the <code>clearable</code> attribute to control whether the bar displays a clear button. When activated,
           this button clears the input and emits a <code>clear</code> event.
         </p>
 
         <m3e-heading variant="title" size="medium" level="4">Typical usage</m3e-heading>
-        <p>
-          The following example illustrates typical usage of a <code>m3e-search-bar</code> with a leading icon and the
+        <p>a的following example illustrates typical usage。<code>m3e-search-bar</code> with a leading icon and the
           ability to clear the current search text.
         </p>
 
@@ -93,7 +92,7 @@
           search.
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Anatomy</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">结构解析</m3e-heading>
         <p>The <code>m3e-search-view</code> exposes the following named slots:</p>
         <ul>
           <li><code>closed-leading</code> — When the view is closed, renders content positioned before the input.</li>
@@ -104,7 +103,7 @@
           <li><em>(default)</em> — When the view is open, renders the results content of the view.</li>
         </ul>
 
-        <m3e-heading variant="title" size="medium" level="4">Modes</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">模式</m3e-heading>
         <p>
           Use the <code>mode</code> attribute to control how results are presented. Supported values include
           <code>fullscreen</code>, <code>docked</code> (default), and <code>auto</code>, which selects the appropriate
@@ -165,7 +164,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Appearance variants</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">外观变体</m3e-heading>
 
         <p>Use the <code>contained</code> attribute to a persistent, filled search container when open.</p>
         <p>The following example illustrates use of <code>contained</code> in the <code>docked</code> mode.</p>
@@ -255,7 +254,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           The search bar automatically normalizes its slotted <code>input</code> to ensure correct search semantics
           across browsers and assistive technologies. It applies <code>role="searchbox"</code>,
@@ -275,7 +274,7 @@
           ensures assistive technologies receive meaningful feedback without re-announcing the full list of results.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -323,9 +322,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -334,15 +333,15 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-search-bar</m3e-heading>
         <api-viewer only="m3e-search-bar"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-search-view</m3e-heading>
         <api-viewer only="m3e-search-view"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">Search</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Search 搜索框</span>
       </m3e-toc>
     </div>
   </body>

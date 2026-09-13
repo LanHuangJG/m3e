@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Dialog for M3E</title>
+    <title>对话框 Dialog · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Dialog for M3E" />
+    <meta name="description" content="对话框 Dialog · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,13 +26,13 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Dialog</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Dialog 对话框</m3e-heading>
         <p>The <code>m3e-dialog</code> component presents important prompts, alerts, and actions in user flows.</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/dialog";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
         <p>
           <strong>NOTE: this page is presented in a nested <code>iframe</code>.</strong>
         </p>
@@ -41,7 +41,7 @@
           <li>The dialog is positioned relative the current window.</li>
         </ul>
 
-        <m3e-heading variant="headline" size="small" level="3">Anatomy</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
           The <code>m3e-dialog</code> component supports structured composition through named slots, enabling flexible
           layout and expressive content delivery:
@@ -115,7 +115,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Actions</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">操作</m3e-heading>
         <p>
           When closed, the <code>m3e-dialog</code> emits a <code>closed</code> event. Actions are used to designate a
           return value, set on the dialog when closed. Use the <code>m3e-dialog-action</code> component define an
@@ -151,7 +151,7 @@
           <code>disable-close</code> attribute of the <code>m3e-dialog</code> to disable this behavior.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Focus management</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">焦点管理</m3e-heading>
         <p>
           The component provides an accessible experience by providing a focus trap used to keep focus within a dialog.
           Use the <code>no-focus-trap</code> attribute of the <code>m3e-dialog</code> to disable this behavior.
@@ -161,7 +161,7 @@
           the dialog is opened.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           The <code>m3e-dialog</code> presents an internal <code>dialog</code> element labelled by the content of the
           <code>header</code> slot. You can use the <code>alert</code> attribute to specify whether the ARIA
@@ -172,7 +172,7 @@
           technologies that activating the control will open a dialog.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -218,9 +218,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -229,7 +229,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-dialog</m3e-heading>
         <api-viewer only="m3e-dialog"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-dialog-trigger</m3e-heading>
@@ -238,8 +238,8 @@
         <api-viewer only="m3e-dialog-action"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Dialog</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Dialog 对话框</span>
       </m3e-toc>
     </div>
   </body>

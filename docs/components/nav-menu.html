@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Nav Menu for M3E</title>
+    <title>Nav 菜单 Menu · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Nav Menu for M3E" />
+    <meta name="description" content="Nav 菜单 Menu · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Menu</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Menu 导航菜单</m3e-heading>
         <p>
           The <code>m3e-nav-menu</code> component is a hierarchical menu optimized for sidebars and drawers on larger
           devices. It enables users to explore nested menu structures and seamlessly switch between application views.
@@ -35,8 +35,8 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/nav-menu";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Multilevel menus</m3e-heading>
         <p>
@@ -54,21 +54,21 @@
             <m3e-nav-menu>
               <m3e-nav-menu-item open>
                 <m3e-icon slot="icon" name="rocket_launch" aria-hidden="true"></m3e-icon>
-                <span slot="label">Getting Started</span>
+                <span slot="label">Getting Started 开始使用</span>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="widgets" aria-hidden="true"></m3e-icon>
-                  <span slot="label">Overview</span>
+                  <span slot="label">Overview 概览</span>
                 </m3e-nav-menu-item>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="package_2" aria-hidden="true"></m3e-icon>
-                  <span slot="label">Installation</span>
+                  <span slot="label">Installation 安装</span>
                 </m3e-nav-menu-item>
               </m3e-nav-menu-item>
               <m3e-nav-menu-item>
                 <span slot="label">Actions</span>
-                <m3e-nav-menu-item><span slot="label">Button</span></m3e-nav-menu-item>
-                <m3e-nav-menu-item><span slot="label">Icon</span></m3e-nav-menu-item>
-                <m3e-nav-menu-item><span slot="label">Icon Button</span></m3e-nav-menu-item>
+                <m3e-nav-menu-item><span slot="label">Button 按钮</span></m3e-nav-menu-item>
+                <m3e-nav-menu-item><span slot="label">Icon 图标</span></m3e-nav-menu-item>
+                <m3e-nav-menu-item><span slot="label">Icon Button 图标按钮</span></m3e-nav-menu-item>
               </m3e-nav-menu-item>
             </m3e-nav-menu>
           </div>
@@ -97,14 +97,14 @@
         <p>
           You can use a <code>m3e-nav-menu-item-group</code> to group top-level items in a menu. Use the
           <code>label</code> slot to specify a group's label. Use a <code>m3e-divider</code> to separate groups in a
-          menu. See <a href="../components/divider.html">Divider</a> for more information.
+          menu. See <a href="../components/divider.html">Divider 分隔线</a> for more information.
         </p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-nav-menu>
               <m3e-nav-menu-item-group>
-                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">Mail</m3e-heading>
+                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">邮件</m3e-heading>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="mail"></m3e-icon>
                   <span slot="label">Inbox</span>
@@ -125,7 +125,7 @@
               </m3e-nav-menu-item-group>
               <m3e-divider></m3e-divider>
               <m3e-nav-menu-item-group>
-                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">Personal folders</m3e-heading>
+                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">个人文件夹</m3e-heading>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="folder"></m3e-icon>
                   <span slot="label">Family</span>
@@ -159,7 +159,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
           Use the <code>disabled</code> attribute of a <code>m3e-nav-menu-item</code> to disable the item and any
           children. Disabling an item with children will not automatically close it.
@@ -170,21 +170,21 @@
             <m3e-nav-menu>
               <m3e-nav-menu-item open disabled>
                 <m3e-icon slot="icon" name="rocket_launch" aria-hidden="true"></m3e-icon>
-                <span slot="label">Getting Started</span>
+                <span slot="label">Getting Started 开始使用</span>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="widgets" aria-hidden="true"></m3e-icon>
-                  <span slot="label">Overview</span>
+                  <span slot="label">Overview 概览</span>
                 </m3e-nav-menu-item>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="package_2" aria-hidden="true"></m3e-icon>
-                  <span slot="label">Installation</span>
+                  <span slot="label">Installation 安装</span>
                 </m3e-nav-menu-item>
               </m3e-nav-menu-item>
               <m3e-nav-menu-item open>
                 <span slot="label">Actions</span>
-                <m3e-nav-menu-item disabled><span slot="label">Button</span></m3e-nav-menu-item>
-                <m3e-nav-menu-item><span slot="label">Icon</span></m3e-nav-menu-item>
-                <m3e-nav-menu-item><span slot="label">Icon Button</span></m3e-nav-menu-item>
+                <m3e-nav-menu-item disabled><span slot="label">Button 按钮</span></m3e-nav-menu-item>
+                <m3e-nav-menu-item><span slot="label">Icon 图标</span></m3e-nav-menu-item>
+                <m3e-nav-menu-item><span slot="label">Icon Button 图标按钮</span></m3e-nav-menu-item>
               </m3e-nav-menu-item>
             </m3e-nav-menu>
           </div>
@@ -210,7 +210,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Nav menus are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -224,7 +224,7 @@
           <div slot="content">
             <m3e-nav-menu class="density-3">
               <m3e-nav-menu-item-group>
-                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">Mail</m3e-heading>
+                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">邮件</m3e-heading>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="mail"></m3e-icon>
                   <span slot="label">Inbox</span>
@@ -245,7 +245,7 @@
               </m3e-nav-menu-item-group>
               <m3e-divider></m3e-divider>
               <m3e-nav-menu-item-group>
-                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">Personal folders</m3e-heading>
+                <m3e-heading m3e-toc-ignore slot="label" variant="label" size="large">个人文件夹</m3e-heading>
                 <m3e-nav-menu-item>
                   <m3e-icon slot="icon" name="folder"></m3e-icon>
                   <span slot="label">Family</span>
@@ -274,7 +274,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Nav menus are given ARIA <code>role="tree"</code>, and items are assigned <code>role="treeitem"</code>,
           indicating a structured, hierarchical navigation model that supports keyboard interaction, semantic grouping,
@@ -300,7 +300,7 @@
           not interactive.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -346,9 +346,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -357,7 +357,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-nav-menu</m3e-heading>
         <api-viewer only="m3e-nav-menu"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-nav-menu-item</m3e-heading>
@@ -366,8 +366,8 @@
         <api-viewer only="m3e-nav-menu-item-group"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Nav Menu</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Nav Menu 导航菜单</span>
       </m3e-toc>
     </div>
   </body>

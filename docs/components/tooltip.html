@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Tooltip for M3E</title>
+    <title>工具提示 Tooltip · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Tooltip for M3E" />
+    <meta name="description" content="工具提示 Tooltip · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Tooltip</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Tooltip 工具提示</m3e-heading>
         <p>
           The <code>@m3e/web/tooltip</code> module provides plain and rich tooltip components for delivering contextual
           guidance, from simple hover descriptions to multi-line, expressive content anchored to a control.
@@ -34,8 +34,8 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/tooltip";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Plain tooltip</m3e-heading>
         <p>
@@ -59,7 +59,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Positioning</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">定位</m3e-heading>
         <p>
           By default, tooltips are positioned below the element. You can control a tooltip's position using the
           <code>position</code> attribute. Supported values include <code>above</code>, <code>below</code> (default),
@@ -81,8 +81,8 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
-        <p>Use the <code>disabled</code> attribute to disable a tooltip from showing.</p>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
+        <p>使用 <code>disabled</code> 属性禁用 a tooltip from showing.</p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
 &lt;m3e-icon-button id=&quot;button&quot;&gt;
@@ -143,7 +143,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Actions</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">操作</m3e-heading>
         <p>
           Including interactive content in a rich tooltip promotes it to dialog-like behavior. The surface becomes
           dismissible and keyboard-navigable, and must be opened through an explicit user action on the trigger.
@@ -187,7 +187,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Positioning</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">定位</m3e-heading>
         <p>
           By default, rich tooltips are positioned below and after the element. You can control a tooltip's position
           using the
@@ -197,7 +197,7 @@
           left-to-right and right-to-left text directions.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Plain and non-interactive tooltips add an <code>aria-describedby</code> description that provides a reference
           to a visually hidden element containing the tooltip's message. This allows screen readers to announce the
@@ -211,7 +211,7 @@
           <code>role="dialog"</code> and is automatically labelled by tooltip's <code>subhead</code>.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -259,9 +259,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -270,7 +270,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-tooltip</m3e-heading>
         <api-viewer only="m3e-tooltip"></api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-rich-tooltip</m3e-heading>
@@ -278,8 +278,8 @@
       </m3e-content-pane>
 
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">Tooltip</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Tooltip 工具提示</span>
       </m3e-toc>
     </div>
   </body>

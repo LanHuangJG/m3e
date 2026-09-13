@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Progress Indicator for M3E</title>
+    <title>进度指示器 Progress Indicator · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Progress Indicator for M3E" />
+    <meta name="description" content="进度指示器 Progress Indicator · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Progress Indicator</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Progress Indicator 进度指示器</m3e-heading>
         <p>
           The <code>m3e-linear-progress-indicator</code> and <code>m3e-circular-progress-indicator</code> components
           provide accessible, animated progress indicators for tracking the completion of tasks or processes.
@@ -36,8 +36,8 @@
           <pre slot="content">import "@m3e/web/progress-indicator";</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Circular</m3e-heading>
         <p>
@@ -45,9 +45,9 @@
           This component supports two modes (determinate and indeterminate) and two appearance variants (<code
             >flat</code
           >
-          and <code>wavy</code>). Use the <code>variant</code> attribute to change the appearance.
+          and <code>wavy</code>). 使用 <code>variant</code> 属性更改外观。
         </p>
-        <m3e-heading variant="title" size="medium" level="4">Determinate</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">确定进度</m3e-heading>
         <p>
           By default, circular progress indicators are determinate. Use the
           <code>value</code> attribute to indicate completion percentage and use <code>max</code> to specify the total
@@ -66,7 +66,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Indeterminate</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">不确定进度</m3e-heading>
         <p>
           Use the <code>indeterminate</code> attribute to change the mode to indeterminate. In this mode,
           <code>value</code> and <code>max</code> are ignored.
@@ -95,7 +95,7 @@
           <code>variant</code> to set the appearance to either <code>flat</code> (default) or <code>wavy</code>.
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Determinate</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">确定进度</m3e-heading>
         <p>
           Use the <code>determinate</code> mode where the percentage of the operation complete is known. Use the
           <code>value</code> attribute to indicate completion percentage and use <code>max</code> to specify the total
@@ -119,7 +119,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Indeterminate</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">不确定进度</m3e-heading>
         <p>
           Use the <code>indeterminate</code> mode to express that something is happening, but without conveying discrete
           progress. In this mode, <code>value</code> and <code>max</code> are ignored.
@@ -187,7 +187,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Progress indicators implement the ARIA <code>role="progressbar"</code> pattern. They set
           <code>aria-valuemin</code> to <code>0</code>, <code>aria-valuenow</code> to <code>value</code>, and
@@ -198,7 +198,7 @@
           progress indicator.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -243,9 +243,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -254,15 +254,15 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-circular-progress-indicator</m3e-heading>
         <api-viewer only="m3e-circular-progress-indicator"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-linear-progress-indicator</m3e-heading>
         <api-viewer only="m3e-linear-progress-indicator"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">Progress Indicator</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Progress Indicator 进度指示器</span>
       </m3e-toc>
     </div>
   </body>

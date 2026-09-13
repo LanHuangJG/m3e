@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Icon Button for M3E</title>
+    <title>Icon 按钮 Button · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Icon Button for M3E" />
+    <meta name="description" content="Icon 按钮 Button · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,16 +26,16 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Icon Button</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Icon Button 图标按钮</m3e-heading>
         <p>
           The <code>m3e-icon-button</code> component is an icon button users interact with to perform a supplementary
           action.
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/icon-button";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
-        <m3e-heading variant="headline" size="small" level="3">Variants</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
+        <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           There are four icon button appearance variants: <code>filled</code>, <code>tonal</code>,
           <code>outlined</code>, and <code>standard</code> (default). Use the <code>variant</code> attribute to change
@@ -62,7 +62,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Shapes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">形状</m3e-heading>
         <p>
           Icon buttons can come in two shapes: <code>rounded</code> (default) or <code>square</code>. Use the
           <code>shape</code> attribute to control the shape of a button.
@@ -92,7 +92,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Sizes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
           There are five size variants which can be used to add or remove emphasis:
           <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and
@@ -153,7 +153,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Toggle</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">切换</m3e-heading>
         <p>
           Use the <code>toggle</code> attribute to control whether an icon button can be used for binary selection and
           the <code>selected</code> attribute to control the selected state. When clicked, a cancellable
@@ -233,9 +233,9 @@
           </div>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable an icon button. By default, disabled icon buttons are not
+          使用 <code>disabled</code> 属性禁用 an icon button. By default, disabled icon buttons are not
           focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
@@ -263,7 +263,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Types</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">类型</m3e-heading>
         <p>
           Use the <code>type</code> attribute to control the behavior of an icon button. By default,
           <code>type</code> is <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to
@@ -271,7 +271,7 @@
           <code>value</code> attributes to specify a value.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Links</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
           Icon buttons can also behave like links by specifying a URL using the <code>href</code> attribute. You can
           also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
@@ -296,7 +296,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Icon buttons are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -359,7 +359,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           By default, icon buttons are given the ARIA role <code>button</code>, indicating they are clickable elements
           that trigger actions.
@@ -385,7 +385,7 @@
           For toggle icon buttons, <code>aria-pressed</code> is used to convey the selected state, even when disabled.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -429,9 +429,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -440,13 +440,13 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-icon-button</m3e-heading>
         <api-viewer only="m3e-icon-button"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Icon Button</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Icon Button 图标按钮</span>
       </m3e-toc>
     </div>
   </body>

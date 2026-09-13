@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Nav Bar for M3E</title>
+    <title>导航栏 Nav Bar · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Nav Bar for M3E" />
+    <meta name="description" content="导航栏 Nav Bar · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Bar</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Bar 导航栏</m3e-heading>
         <p>
           The <code>m3e-nav-bar</code> is a horizontal bar, typically used on smaller devices, that allows a user to
           switch between 3-5 views.
@@ -34,10 +34,10 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/nav-bar";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Modes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
         <p>
           The <code>m3e-nav-bar</code> supports three modes: <code>compact</code> (default), <code>expanded</code>, and
           <code>auto</code>. In a compact mode, items are oriented vertically and fill the available space of the bar.
@@ -78,7 +78,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Items</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">条目</m3e-heading>
         <p>
           As illustrated above, items are specified using the <code>m3e-nav-item</code> component. Use the default slot
           to specify an item's label and use the <code>icon</code> slot to specify an icon.
@@ -89,7 +89,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Selection</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
           The <code>m3e-nav-bar</code> only supports single-select. Use the <code>selected</code> attribute of
           <code>m3e-nav-item</code> to specify which item in a bar is selected. When clicked, a cancellable
@@ -120,9 +120,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable an item. By default, disabled items are not focusable with
+          使用 <code>disabled</code> 属性禁用 an item. By default, disabled items are not focusable with
           the keyboard. You can use the <code>disabled-interactive</code> attribute to support
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
@@ -149,7 +149,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Links</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
           Items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also
           specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
@@ -173,7 +173,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Navigation bars are given ARIA <code>role="navigation"</code>, indicating that the region serves as a
           navigational landmark and helps assistive technologies identify it as a container for site or app navigation
@@ -200,7 +200,7 @@
           menu options and tooltips.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -247,9 +247,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -258,15 +258,15 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-nav-bar</m3e-heading>
         <api-viewer only="m3e-nav-bar"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-nav-item</m3e-heading>
         <api-viewer only="m3e-nav-item"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Nav Bar</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Nav Bar 导航栏</span>
       </m3e-toc>
     </div>
   </body>

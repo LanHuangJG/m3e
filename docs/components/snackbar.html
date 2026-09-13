@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Snackbar for M3E</title>
+    <title>消息条 Snackbar · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Snackbar for M3E" />
+    <meta name="description" content="消息条 Snackbar · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Snackbar</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Snackbar 消息条</m3e-heading>
         <p>
           The <code>@m3e/web/snackbar</code> module provides the <code>M3eSnackbar</code> global service on
           <code>window</code> (<code>globalThis</code>) used to present short updates about application processes at the
@@ -36,8 +36,8 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/snackbar";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Snackbar service</m3e-heading>
         <p>Use the <code>open</code> method of the <code>M3eSnackbar</code> service to open a snackbar.</p>
@@ -53,7 +53,7 @@ M3eSnackbar.open(&quot;File deleted&quot;);
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Actions</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">操作</m3e-heading>
         <p>You can include a single action and callback when opening a snackbar message.</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -70,7 +70,7 @@ M3eSnackbar.open(&quot;File deleted&quot;, &quot;Undo&quot;, {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Dismissal</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">关闭方式</m3e-heading>
         <p>A snackbar message can optionally include a dismiss button.</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -100,13 +100,13 @@ M3eSnackbar.open(&quot;File deleted&quot;, &quot;Undo&quot;, {
           </li>
         </ul>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Snackbar messages are given ARIA <code>role="status"</code> and <code>aria-live="polite"</code>, indicating
           that they are polite live regions intended to be announced by assistive technologies without requiring focus.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -152,9 +152,9 @@ M3eSnackbar.open(&quot;File deleted&quot;, &quot;Undo&quot;, {
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -163,14 +163,14 @@ M3eSnackbar.open(&quot;File deleted&quot;, &quot;Undo&quot;, {
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-snackbar</m3e-heading>
         <api-viewer only="m3e-snackbar"> </api-viewer>
       </m3e-content-pane>
 
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Snackbar</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Snackbar 消息条</span>
       </m3e-toc>
     </div>
   </body>

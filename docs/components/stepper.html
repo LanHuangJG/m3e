@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Stepper for M3E</title>
+    <title>步骤条 Stepper · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Stepper for M3E" />
+    <meta name="description" content="步骤条 Stepper · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,17 +26,17 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Stepper</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Stepper 步骤条</m3e-heading>
         <p>
           The <code>m3e-stepper</code> component provides a wizard-like workflow by dividing content into logical steps.
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/stepper";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           Use <code>m3e-stepper</code>, <code>m3e-step</code>, and <code>m3e-step-panel</code> to construct a
           wizard-like workflow. Both <code>m3e-step</code> and <code>m3e-step-panel</code> must be direct children of
@@ -129,7 +129,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Orientation</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
           The <code>m3e-stepper</code> supports three orientations: <code>horizontal</code> (default),
           <code>vertical</code>, and <code>auto</code>. Using <code>auto</code>, the orientation is responsive and
@@ -396,7 +396,7 @@
           or, when invalid, an error message. By default, optional steps have hint text of <code>(Optional)</code>.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Steppers implement the
           <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank">ARIA Tabs design pattern</a> and are
@@ -413,7 +413,7 @@
           <code>aria-disabled="true"</code> communicates its inactive state.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -460,9 +460,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -471,7 +471,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-step</m3e-heading>
         <api-viewer only="m3e-step"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-step-panel</m3e-heading>
@@ -487,8 +487,8 @@
       </m3e-content-pane>
 
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Stepper</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Stepper 步骤条</span>
       </m3e-toc>
     </div>
   </body>

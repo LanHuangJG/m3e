@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Textarea Autosize for M3E</title>
+    <title>自适应文本域 Textarea Autosize · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Textarea Autosize for M3E" />
+    <meta name="description" content="自适应文本域 Textarea Autosize · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Textarea Autosize</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Textarea Autosize 自适应文本域</m3e-heading>
         <p>
           The <code>m3e-textarea-autosize</code> component automatically adjusts the height of a linked
           <code>textarea</code> to fit its content, preserving layout integrity and user experience. This non-visual
@@ -37,20 +37,20 @@
           <pre slot="content">import "@m3e/web/textarea-autosize";</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           Use the <code>m3e-textarea-autosize</code> component to make a <code>textarea</code> automatically resize to
           fit its content. Use the <code>for</code> attribute to specify the <code>textarea</code> to autosize. The
           following example illustrates use of the <code>m3e-textarea-autosize</code> alongside a
-          <code>m3e-form-field</code>. See <a href="../components/form-field.html">Form Field</a> for more information.
+          <code>m3e-form-field</code>. See <a href="../components/form-field.html">Form Field 表单容器</a> for more information.
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="filled">
-              <label slot="label" for="field">Textarea Autosize</label>
+              <label slot="label" for="field">Textarea Autosize 自适应文本域</label>
               <textarea id="field">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea
               >
@@ -78,7 +78,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="filled">
-              <label slot="label" for="field2">Textarea Autosize</label>
+              <label slot="label" for="field2">Textarea Autosize 自适应文本域</label>
               <textarea id="field2">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea
               >
@@ -98,21 +98,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
-        <p>Use the <code>disabled</code> attribute to disable autosize.</p>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
+        <p>使用 <code>disabled</code> 属性禁用 autosize.</p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
 &lt;m3e-textarea-autosize for=&quot;field&quot; disabled&gt;&lt;/m3e-textarea-autosize&gt;</pre
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           The component is given ARIA <code>role="none"</code> indicating the element is presentational and should be
           ignored by assistive technologies.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -156,9 +156,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -167,13 +167,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-textarea-autosize</m3e-heading>
         <api-viewer only="m3e-textarea-autosize"></api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Textarea Autosize</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Textarea Autosize 自适应文本域</span>
       </m3e-toc>
     </div>
   </body>

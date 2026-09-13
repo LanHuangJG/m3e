@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Date Input for M3E</title>
+    <title>日期输入 Date Input · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Date Input for M3E" />
+    <meta name="description" content="日期输入 Date Input · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,25 +29,25 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Date Input</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Date Input 日期输入</m3e-heading>
         <p>
           The <code>m3e-date-input</code> component provides a segmented input for editing date and/or time values. It
           supports date-only, time-only, and combined date/time entry, and integrates with <code>m3e-form-field</code>,
           <code>m3e-datepicker</code> and <code>m3e-timepicker</code>. Each segment is independently editable for
-          precise, accessible, form-friendly interaction. See <a href="../components/form-field.html">Form Field</a>,
-          <a href="../components/datepicker.html">Datepicker</a>, and
-          <a href="../components/timepicker.html">Timepicker</a> for details.
+          precise, accessible, form-friendly interaction. See <a href="../components/form-field.html">Form Field 表单容器</a>,
+          <a href="../components/datepicker.html">Datepicker 日期选择器</a>, and
+          <a href="../components/timepicker.html">Timepicker 时间选择器</a> for details.
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/date-input";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           The <code>m3e-date-input</code> is intended to be used inside <code>m3e-form-field</code>. The example below
-          shows that usage. See <a href="../components/form-field.html">Form Field</a> for details.
+          shows that usage. See <a href="../components/form-field.html">Form Field 表单容器</a> for details.
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -95,7 +95,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Date string handling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
         <p>
           Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO
           date but does not include a time or timezone. To ensure predictable behavior across environments,
@@ -119,7 +119,7 @@
           unsupported. For the most reliable results, use one of the formats above.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Form Associated</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">表单关联</m3e-heading>
         <p>
           This component participates in form submission as a
           <a
@@ -187,8 +187,8 @@
         <p>
           The <code>m3e-datepicker</code> and <code>m3e-timepicker</code> integrate with
           <code>m3e-date-input</code> using the <code>for</code> attribute, which binds the picker to the input by
-          referencing the input's ID. See <a href="../components/datepicker.html">Datepicker</a>, and
-          <a href="../components/timepicker.html">Timepicker</a> for details.
+          referencing the input's ID. See <a href="../components/datepicker.html">Datepicker 日期选择器</a>, and
+          <a href="../components/timepicker.html">Timepicker 时间选择器</a> for details.
         </p>
         <p>
           When a picker is bound to <code>m3e-date-input</code>, the input's own configuration takes precedence.
@@ -285,7 +285,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Hour format</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">小时格式</m3e-heading>
         <p>
           The <code>time-format</code> attribute controls the hour cycle used by the input. It accepts
           <code>"12"</code> (default), <code>"24"</code>, or <code>"auto"</code>.
@@ -329,7 +329,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Seconds</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">秒</m3e-heading>
         <p>Use the <code>show-seconds</code> attribute to display the seconds segment when editing time.</p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -364,9 +364,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable the input. When associated with a picker, the picker's
+          使用 <code>disabled</code> 属性禁用 the input. When associated with a picker, the picker's
           toggle button will automatically be disabled when the input is disabled to ensure the user cannot open a
           picker for a value that cannot be edited.
         </p>
@@ -418,7 +418,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Required</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">必填</m3e-heading>
         <p>Apply the <code>required</code> attribute to mark the input as a mandatory field.</p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -440,7 +440,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Min and max dates</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">最小与最大日期</m3e-heading>
         <p>
           Use the <code>min-date</code> and <code>max-date</code> attributes to mark dates before or after the
           respective values as invalid.
@@ -465,7 +465,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Blackout dates</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用日期</m3e-heading>
         <p>
           In addition to <code>min-date</code> and <code>max-date</code> constraints, you can use the
           <code>blackoutDates</code> property to specify a function used to determine whether a date invalid.
@@ -485,7 +485,7 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Min and max times</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">最小与最大时间</m3e-heading>
         <p>
           Use the <code>min-time</code> and <code>max-time</code> attributes to mark times before or after the
           respective values as invalid.
@@ -521,7 +521,7 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Blackout times</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用时段</m3e-heading>
         <p>
           In addition to <code>min-time</code> and <code>max-time</code> constraints, the
           <code>blackoutTimes</code> property lets you provide a function that determines whether a given time is
@@ -550,11 +550,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           messages continue to use the component's defaults.
         </p>
 
-        <p>
-          The component uses a set of validation flags to indicate which specific rule failed. Each flag corresponds to
-          a particular validation condition, and the component sets one or more of these flags when the current value is
-          invalid. These flags drive both the built-in validation messages and any custom messages you provide through
-          <code>validationMessages</code>. Only the flags that evaluate to <code>true</code> are considered active.
+        <p>validation flags to indicate which specific rule failed. Each flag corresponds to a particular validation condition, and the 组件 sets one or more of these flags when the current 值 is invalid. These flags drive both the built-in validation messages and any custom messages you provide through的组件 uses a set。<code>validationMessages</code>. Only the flags that evaluate to <code>true</code> are considered active.
         </p>
 
         <p>Supported flags include:</p>
@@ -573,7 +569,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
 
         <p>These flags are combined to determine the final validation state and the message shown to the user.</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Internationalization</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">国际化</m3e-heading>
         <p>The date and time format is automatically determined by the user's locale and cannot be customized.</p>
         <p>
           Segment order follows <code>Intl.DateTimeFormat().formatToParts()</code>, ensuring the correct reading order
@@ -581,7 +577,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           component and remain consistent across locales.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           The <code>m3e-date-input</code> component exposes each date and time segment as an individual
           <code>spinbutton</code> for assistive technologies. Screen readers announce the segment label (month, day,
@@ -611,7 +607,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           correctly announced by assistive technologies.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -654,9 +650,9 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -665,13 +661,13 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-date-input</m3e-heading>
         <api-viewer only="m3e-date-input"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">Date Input</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Date Input 日期输入</span>
       </m3e-toc>
     </div>
   </body>

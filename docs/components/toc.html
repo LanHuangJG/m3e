@@ -32,8 +32,8 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/toc";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Generating a TOC</m3e-heading>
         <p>
@@ -72,7 +72,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Heading</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">Heading 标题</m3e-heading>
         <p>
           Use the <code>overline</code> and <code>title</code> slots to provide heading content for a TOC. The overline
           is limited to a single line and the title is limited to two lines. If content overflows, it will be truncated
@@ -97,7 +97,7 @@
           <code>h1</code> is present but an <code>h2</code> is, the depth starts at level 2.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           The <code>m3e-toc</code> component is marked with <code>role="navigation"</code> to signal its purpose as a
           navigational landmark.
@@ -105,7 +105,7 @@
         <p>
           To ensure assistive technologies announce it meaningfully, TOCs should labeled using both the overline and
           title via <code>aria-labelledby</code>. This dual-labeling approach preserves expressive hierarchy—where the
-          overline provides contextual framing (e.g., “On this page”) and the title conveys specific content.
+          overline provides contextual framing (e.g., “本页目录”) and the title conveys specific content.
         </p>
         <p>
           Individual items are organized within an unordered list and given ARIA <code>role="link"</code> to convey
@@ -118,7 +118,7 @@
           enhancing orientation and navigational clarity for screen reader users.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -163,9 +163,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -174,14 +174,14 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-toc</m3e-heading>
         <api-viewer only="m3e-toc"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-toc-item</m3e-heading>
         <api-viewer only="m3e-toc-item"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
+        <span slot="overline">本页目录</span>
         <span slot="title">TOC</span>
       </m3e-toc>
     </div>

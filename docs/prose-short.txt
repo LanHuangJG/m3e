@@ -1,0 +1,253 @@
+The package includes a
+Custom Elements Manifest
+The package uses
+In addition, you must use an
+to include dependencies.
+to include additional dependencies.
+MM/DD/YYYY
+sprout a attribute into the DOM.
+for more information.
+Add to a note
+Embed in a document
+focusability of disabled controls
+to increase their discoverability.
+form-associated custom element
+control. When disabled at runtime, it does
+.density-3 { --md-sys-density-scale: -3; }
+Choose your favorite fruit
+Top 10 hiking trails
+Discover popular trails
+Fill out your name
+Fill out your address
+The component honors the state as a
+Select an option
+— local date (no time, no timezone)
+— local date and time
+— UTC date and time
+document.querySelector("#blackout-dates").blackoutDates = (date) => isWeekend(date);
+Date-time Field
+MM/DD/YYYY HH:MM
+On Primary Container
+On Secondary Container
+On Tertiary Container
+On Error Container
+On Surface Variant
+Inverse On Surface
+<script type="module" src="/node_modules/@m3e/web/dist/option.js"></script>
+Lorem ipsum dolor sit amet
+<script type="module" src="/node_modules/@m3e/web/dist/button.js"></script>
+document.querySelector("#special-dates").specialDates = (date) => isHoliday(date);
+I am content for the first panel
+I am content for the second panel
+I am content for the third panel
+<script type="module" src="/node_modules/@m3e/web/dist/fab.js"></script>
+Check voice mail
+<m3e-nav-item><m3e-icon slot="icon" name="news"></m3e-icon>News</m3e-nav-item>
+The exposes the following named slots:
+ARIA Tabs design pattern
+New settings available
+Scroll down to see the elevation effect
+<script type="module" src="/node_modules/@m3e/web/dist/app-bar.js"></script>
+Search as you type
+Requiring an option to be selected
+If the user opens the panel with
+no selected option
+Choose your favorite fruits
+<script type="module" src="/node_modules/@m3e/web/dist/autocomplete.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/avatar.js"></script>
+<m3e-badge size="small">10</m3e-badge> <m3e-badge size="medium">10</m3e-badge> <m3e-badge size="large">10</m3e-badge>
+— Centered above the anchor
+— Centered below the anchor
+These positions are
+<script type="module" src="/node_modules/@m3e/web/dist/badge.js"></script>
+Open bottom sheet
+Bottom sheets come in two variants:
+Open modal bottom sheet
+Open draggable modal bottom sheet
+Open draggable modal bottom sheet with detents
+Types of detents
+Bottom sheets support two kinds of detents:
+unit-based detents
+Starting at creates a “peek” experience.
+Starting at shows content immediately.
+Open hideable modal bottom sheet
+Open hideable modal bottom sheet with detents
+<script type="module" src="/node_modules/@m3e/web/dist/bottom-sheet.js"></script>
+m3e-bottom-sheet-trigger
+m3e-bottom-sheet-action
+<m3e-breadcrumb> <m3e-breadcrumb-item>Dashboard</m3e-breadcrumb-item> <m3e-breadcrumb-item>Reports</m3e-breadcrumb-item> <m3e-breadcrumb-item>Annual</m3e-breadcrumb-item> </m3e-breadcrumb>
+Consectetur adipiscing elit sed do
+Tempor incididunt ut labore et dolore
+Magna aliqua ut enim ad minim veniam
+<script type="module" src="/node_modules/@m3e/web/dist/breadcrumb.js"></script>
+Standard button groups can contain textual buttons.
+<script type="module" src="/node_modules/@m3e/web/dist/button-group.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/button.js"></script> <script type="module" src="/node_modules/@m3e/web/dist/icon-button.js"></script>
+<m3e-button variant="filled" disabled>Disabled</m3e-button> <m3e-button variant="filled" disabled-interactive>Disabled Interactive</m3e-button>
+<m3e-calendar id="special-dates" start-at="2026-04-01"></m3e-calendar>
+<script type="module" src="/node_modules/@m3e/web/dist/calendar.js"></script>
+<m3e-card inline> <div slot="content">Inline</div> </m3e-card>
+<m3e-card actionable href="https://www.google.com" target="_blank"> <div slot="content">Google</div> </m3e-card>
+<script type="module" src="/node_modules/@m3e/web/dist/card.js"></script>
+<m3e-checkbox></m3e-checkbox> <m3e-checkbox checked></m3e-checkbox> <m3e-checkbox indeterminate></m3e-checkbox>
+I accept the Terms and Conditions
+<script type="module" src="/node_modules/@m3e/web/dist/checkbox.js"></script>
+Non-interactive chips
+<m3e-chip-set> <m3e-chip>Confidential</m3e-chip> <m3e-chip>Draft</m3e-chip> <m3e-chip>Finance</m3e-chip> <m3e-chip>Presentation</m3e-chip> </m3e-chip-set>
+<m3e-chip>Outlined</m3e-chip> <m3e-chip variant="elevated">Elevated</m3e-chip>
+<m3e-chip-set vertical> <m3e-chip>Confidential</m3e-chip> <m3e-chip>Draft</m3e-chip> <m3e-chip>Finance</m3e-chip> <m3e-chip>Presentation</m3e-chip> </m3e-chip-set>
+<m3e-chip> <m3e-icon slot="icon" name="finance"></m3e-icon> Finance </m3e-chip>
+<m3e-assist-chip>Outlined Assist</m3e-assist-chip> <m3e-assist-chip variant="elevated">Elevated Assist</m3e-assist-chip>
+<m3e-assist-chip> <m3e-icon slot="icon" name="finance"></m3e-icon> Finance </m3e-assist-chip>
+<m3e-assist-chip disabled>Disabled</m3e-assist-chip> <m3e-assist-chip disabled-interactive>Disabled Interactive</m3e-assist-chip>
+<m3e-assist-chip href="https://www.google.com" target="_blank"> Google< </m3e-assist-chip>
+<m3e-filter-chip-set> <m3e-filter-chip>Outlined</m3e-filter-chip> <m3e-filter-chip variant="elevated">Elevated</m3e-filter-chip> </m3e-filter-chip-set>
+<m3e-suggestion-chip>Outlined Suggestion</m3e-suggestion-chip> <m3e-suggestion-chip variant="elevated">Elevated Suggestion</m3e-suggestion-chip>
+Try budget planner
+<m3e-suggestion-chip disabled>Disabled</m3e-suggestion-chip> <m3e-suggestion-chip disabled-interactive>Disabled Interactive</m3e-suggestion-chip>
+<m3e-suggestion-chip href="https://www.google.com" target="_blank"> Google< </m3e-suggestion-chip>
+<script type="module" src="/node_modules/@m3e/web/dist/chips.js"></script>
+m3e-filter-chip-set
+m3e-input-chip-set
+<script type="module" src="/node_modules/@m3e/web/dist/content-pane.js"></script>
+Date and time pickers
+HH:MM:SS
+MM/DD/YYYY HH:MM:SS
+Supported flags include:
+<script type="module" src="/node_modules/@m3e/web/dist/date-input.js"></script>
+Date Range Field
+MM/DD/YYYY - MM/DD/YYYY
+<script type="module" src="/node_modules/@m3e/web/dist/datepicker.js"></script>
+<m3e-button> <m3e-dialog-action return-value="ok">Close</m3e-dialog-action> </m3e-button>
+<script type="module" src="/node_modules/@m3e/web/dist/dialog.js"></script>
+<m3e-divider></m3e-divider> <m3e-divider inset></m3e-divider> <m3e-divider inset-start></m3e-divider> <m3e-divider inset-end></m3e-divider>
+<script type="module" src="/node_modules/@m3e/web/dist/divider.js"></script>
+The supports four expressive drawer modes:
+(default): Drawers remain visible alongside content.
+: Drawers shift main content when opened.
+: Drawers overlay content without displacement.
+<m3e-drawer-container> <nav slot="start"></nav> <main></main> <aside slot="end"></aside> </m3e-drawer-container>
+<script type="module" src="/node_modules/@m3e/web/dist/drawer-container.js"></script>
+<m3e-expansion-panel> <span slot="header">Panel header</span> Panel contents </m3e-expansion-panel>
+Use the attribute to hide the toggle.
+<script type="module" src="/node_modules/@m3e/web/dist/expansion-panel.js"></script>
+<m3e-fab-menu-item> <m3e-icon slot="icon" name="email" filled></m3e-icon> Email </m3e-fab-menu-item>
+<script type="module" src="/node_modules/@m3e/web/dist/fab-menu.js"></script>
+m3e-fab-menu-item
+m3e-fab-menu-trigger
+Always float label
+Custom error message
+Hiding the required marker
+Prefix and suffix
+<script type="module" src="/node_modules/@m3e/web/dist/form-field.js"></script>
+Typescale variants and sizes
+<script type="module" src="/node_modules/@m3e/web/dist/heading.js"></script>
+<m3e-icon-button variant="tonal" href="https://www.google.com" target="_blank"> <m3e-icon name="open_in_new_window"></m3e-icon> </m3e-icon-button>
+<script type="module" src="/node_modules/@m3e/web/dist/icon-button.js"></script>
+Material Symbol Guide
+Material Symbol Library
+Fonts CSS API
+Can I Use's Variable Fonts
+<script type="module" src="/node_modules/@m3e/web/dist/icon.js"></script>
+<m3e-action-list> <m3e-list-action href="https://www.google.com" target="_blank">Google</m3e-list-action> </m3e-action-list>
+<script type="module" src="/node_modules/@m3e/web/dist/list.js"></script>
+m3e-expandable-list-item
+<m3e-loading-indicator></m3e-loading-indicator> <m3e-loading-indicator variant="contained"></m3e-loading-indicator>
+<script type="module" src="/node_modules/@m3e/web/dist/loading-indicator.js"></script>
+Menu items with icons
+Menu with disabled items
+Menu with checkboxes
+Menu with radios
+Menu with radio groups
+Menu with submenus
+The following illustrates applying density to menus.
+<script type="module" src="/node_modules/@m3e/web/dist/menu.js"></script>
+m3e-menu-item-checkbox
+m3e-menu-item-radio
+m3e-menu-item-group
+<script type="module" src="/node_modules/@m3e/web/dist/nav-bar.js"></script>
+Grouping top-level items
+<script type="module" src="/node_modules/@m3e/web/dist/nav-menu.js"></script>
+m3e-nav-menu-item
+m3e-nav-menu-item-group
+The following example illustrates a common layout.
+Top-level destinations are specified using from the
+<script type="module" src="/node_modules/@m3e/web/dist/nav-rail.js"></script>
+m3e-nav-rail-toggle
+— The current page size.
+<m3e-paginator length="100" page-sizes="10,50,all" page-size="all"></m3e-paginator>
+<m3e-paginator length="100" show-first-last-buttons></m3e-paginator>
+<m3e-paginator class="density-3" length="100" show-first-last-buttons></m3e-paginator>
+<script type="module" src="/node_modules/@m3e/web/dist/paginator.js"></script>
+<m3e-circular-progress-indicator value="25">25</m3e-circular-progress-indicator> <m3e-circular-progress-indicator variant="wavy" value="25">25</m3e-circular-progress-indicator>
+<m3e-circular-progress-indicator indeterminate></m3e-circular-progress-indicator> <m3e-circular-progress-indicator variant="wavy" indeterminate></m3e-circular-progress-indicator>
+<m3e-linear-progress-indicator value="25"></m3e-linear-progress-indicator> <m3e-linear-progress-indicator variant="wavy" value="25"></m3e-linear-progress-indicator>
+<m3e-linear-progress-indicator mode="indeterminate"></m3e-linear-progress-indicator> <m3e-linear-progress-indicator variant="wavy" mode="indeterminate"></m3e-linear-progress-indicator>
+<m3e-linear-progress-indicator mode="query"></m3e-linear-progress-indicator> <m3e-linear-progress-indicator variant="wavy" mode="query"></m3e-linear-progress-indicator>
+<script type="module" src="/node_modules/@m3e/web/dist/progress-indicator.js"></script>
+m3e-circular-progress-indicator
+m3e-linear-progress-indicator
+Radios are typically placed inside a .
+Radios participate in form submission as a
+Radios honor the state as a
+<script type="module" src="/node_modules/@m3e/web/dist/radio-group.js"></script>
+Hiding the search icon
+<script type="module" src="/node_modules/@m3e/web/dist/search.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/segmented-button.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/select.js"></script>
+Material Design 3 Shape Library
+to to add emphasis and decorative flair.
+Images and video
+<script type="module" src="/node_modules/@m3e/web/dist/shape.js"></script>
+Use the attribute to reveal loaded content.
+<script type="module" src="/node_modules/@m3e/web/dist/skeleton.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/slide-group.js"></script>
+<m3e-slider> <m3e-slider-thumb></m3e-slider-thumb> </m3e-slider>
+<m3e-slider min="1" max="5" step="0.5"> <m3e-slider-thumb value="1.5"></m3e-slider-thumb> </m3e-slider>
+<m3e-slider> <m3e-slider-thumb value="20"></m3e-slider-thumb> <m3e-slider-thumb value="80"></m3e-slider-thumb> </m3e-slider>
+Negative value ranges
+<m3e-slider min="-50"> <m3e-slider-thumb value="-20"></m3e-slider-thumb> </m3e-slider>
+<m3e-slider orientation="vertical"> <m3e-slider-thumb value="50"></m3e-slider-thumb> </m3e-slider>
+<m3e-slider labelled> <m3e-slider-thumb value="20"></m3e-slider-thumb> </m3e-slider>
+<m3e-slider discrete step="10"> <m3e-slider-thumb value="20"></m3e-slider-thumb> </m3e-slider>
+<m3e-slider labelled disabled> <m3e-slider-thumb value="20"></m3e-slider-thumb> </m3e-slider>
+<script type="module" src="/node_modules/@m3e/web/dist/slider.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/snackbar.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/split-button.js"></script>
+<m3e-split-pane value="50"> <m3e-card slot="start"></m3e-card> <m3e-card slot="end"></m3e-card> </m3e-split-pane>
+Min and max sizes
+<script type="module" src="/node_modules/@m3e/web/dist/split-pane.js"></script>
+<m3e-step-panel> <div slot="actions"> <m3e-button><m3e-stepper-previous>Back</m3e-stepper-previous></m3e-button> <m3e-button><m3e-stepper-next>Next</m3e-stepper-next></m3e-button> </div> </m3e-step-panel>
+Hint and error text
+Steppers implement the
+<script type="module" src="/node_modules/@m3e/web/dist/stepper.js"></script>
+<m3e-switch icons="selected" checked></m3e-switch> <m3e-switch icons="both"></m3e-switch>
+<script type="module" src="/node_modules/@m3e/web/dist/switch.js"></script>
+Tabs implement the
+<script type="module" src="/node_modules/@m3e/web/dist/tabs.js"></script>
+Min and max rows
+<m3e-textarea-autosize for="field" disabled></m3e-textarea-autosize>
+<script type="module" src="/node_modules/@m3e/web/dist/textarea-autosize.js"></script>
+(most compact) to (most spacious)
+Spacious density increases spacing for relaxed layouts
+<script type="module" src="/node_modules/@m3e/web/dist/theme.js"></script>
+À-la-carte usage
+<m3e-timepicker-input id="input" for="dial"></m3e-timepicker-input> <m3e-timepicker-dial id="dial"></m3e-timepicker-dial> <span id="inputValue"></span>
+<script type="module" src="/node_modules/@m3e/web/dist/timepicker.js"></script>
+TOC Example for M3E
+<m3e-toc for="d1"> <span slot="overline">Overline</span> <span slot="title">Title</span> </m3e-toc>
+<script type="module" src="/node_modules/@m3e/web/dist/toc.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/toolbar.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/tooltip.js"></script>
+<script type="module" src="/node_modules/@m3e/web/dist/tree.js"></script>
+. In Next.js, you
+use them inside a boundary.
+Vue and Web Components
+Each package uses
+In addition, you must also use an
+Visual Studio Code
+Custom Elements Manifest Language Server
+{ "html.customData": ["./node_modules/@m3e/web/dist/html-custom-data.json"], "css.customData": ["./node_modules/@m3e/web/dist/css-custom-data.json"] }
+, built entirely with
+Left to right
+Right to left

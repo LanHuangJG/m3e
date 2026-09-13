@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Drawer Container for M3E</title>
+    <title>抽屉容器 Drawer Container · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Drawer Container for M3E" />
+    <meta name="description" content="抽屉容器 Drawer Container · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Drawer Container</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Drawer Container 抽屉容器</m3e-heading>
         <p>
           The <code>m3e-drawer-container</code> is a responsive layout container that manages collapsible left and right
           drawers alongside main content.
@@ -37,8 +37,8 @@
           <pre slot="content">import "@m3e/web/drawer-container";</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Drawers</m3e-heading>
         <p>
@@ -65,7 +65,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Sizes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
           You can control the drawer widths using the <code>--m3e-drawer-container-width</code> CSS custom property or
           by explicitly setting the width of a drawer.
@@ -87,7 +87,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Modes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
 
         <p>The <code>&lt;m3e-drawer-container&gt;</code> supports four expressive drawer modes:</p>
         <ul>
@@ -137,7 +137,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Dividers</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">分隔线</m3e-heading>
         <p>
           Use the <code>start-divider</code> or <code>end-divider</code> to separate the drawer from the content using a
           divider when <code>mode="side"</code>. When the <code>mode="auto"</code> and resolves to <code>side</code>,
@@ -161,15 +161,14 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Toggle</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">切换</m3e-heading>
         <p>
           Use the <code>m3e-drawer-toggle</code> to toggle the opened state of a drawer. This component should be nested
           inside a clickable element and be associated with a slotted drawer by setting the <code>for</code> attribute
           to the <code>id</code> of a drawer.
         </p>
-        <p>
-          The following example illustrates use of a <code>m3e-icon-button</code> to toggle a drawer. See
-          <a href="../components/icon-button.html">Icon Button</a> for more information.
+        <p>a的following example illustrates use。<code>m3e-icon-button</code> to toggle a drawer. See
+          <a href="../components/icon-button.html">Icon Button 图标按钮</a> for more information.
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -198,7 +197,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           The <code>m3e-drawer-container</code> is not given an ARIA role, indicating that it is treated as a neutral,
           non-semantic element in the accessibility tree.
@@ -229,7 +228,7 @@
           dynamically update <code>aria-expanded</code> to indicate whether the drawer is open.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -276,9 +275,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -287,15 +286,15 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-drawer-container</m3e-heading>
         <api-viewer only="m3e-drawer-container"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-drawer-toggle</m3e-heading>
         <api-viewer only="m3e-drawer-toggle"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Drawer Container</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Drawer Container 抽屉容器</span>
       </m3e-toc>
     </div>
   </body>

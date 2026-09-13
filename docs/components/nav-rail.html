@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Nav Rail for M3E</title>
+    <title>导航侧栏 Nav Rail · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Nav Rail for M3E" />
+    <meta name="description" content="导航侧栏 Nav Rail · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,18 +26,18 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Rail</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Rail 导航侧栏</m3e-heading>
         <p>
-          The <code>m3e-nav-rail</code> extends <a href="../components/nav-bar.html">Nav Bar</a> to provide a vertical
+          The <code>m3e-nav-rail</code> extends <a href="../components/nav-bar.html">Nav Bar 导航栏</a> to provide a vertical
           bar, typically used on larger devices, that allows a user to switch between views.
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/nav-rail";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Modes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
         <p>
           The <code>m3e-nav-rail</code> supports three modes: <code>compact</code> (default), <code>expanded</code>, and
           <code>auto</code>. In a compact mode, items are oriented vertically. When expanded, items are oriented
@@ -53,7 +53,7 @@
           <li>An extended <code>m3e-fab</code> will automatically transition to reflect the mode of the rail.</li>
           <li>
             Top-level destinations are specified using <code>m3e-nav-item</code> from the
-            <a href="../components/nav-bar.html">Nav Bar</a> module.
+            <a href="../components/nav-bar.html">Nav Bar 导航栏</a> module.
           </li>
         </ul>
         <m3e-card variant="outlined" class="showcase">
@@ -95,7 +95,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Items</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">条目</m3e-heading>
         <p>
           As illustrated above, items are specified using the <code>m3e-nav-item</code> component. Use the default slot
           to specify an item's label and use the <code>icon</code> slot to specify an icon.
@@ -106,7 +106,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Selection</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
           The <code>m3e-nav-rail</code> only supports single-select. Use the <code>selected</code> attribute of
           <code>m3e-nav-item</code> to specify which item in a rail is selected. When clicked, a cancellable
@@ -119,9 +119,9 @@
           selected.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable an item. By default, disabled items are not focusable with
+          使用 <code>disabled</code> 属性禁用 an item. By default, disabled items are not focusable with
           the keyboard. You can use the <code>disabled-interactive</code> attribute to support
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
@@ -129,13 +129,13 @@
           to increase their discoverability.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Links</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
           Items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also
           specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Navigation rails are given ARIA <code>role="navigation"</code>, indicating that the region serves as a
           navigational landmark and helps assistive technologies identify it as a container for site or app navigation
@@ -166,7 +166,7 @@
           update <code>aria-expanded</code> to indicate whether the rail is expanded.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -214,9 +214,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -225,15 +225,15 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-nav-rail</m3e-heading>
         <api-viewer only="m3e-nav-rail"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-nav-rail-toggle</m3e-heading>
         <api-viewer only="m3e-nav-rail-toggle"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Nav Rail</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Nav Rail 导航侧栏</span>
       </m3e-toc>
     </div>
   </body>

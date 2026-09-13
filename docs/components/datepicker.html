@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Datepicker for M3E</title>
+    <title>日期选择器 Datepicker · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Datepicker for M3E" />
+    <meta name="description" content="日期选择器 Datepicker · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,7 +28,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Datepicker</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Datepicker 日期选择器</m3e-heading>
         <p>
           The <code>m3e-datepicker</code> component presents a temporary, structured surface for selecting dates across
           month, year, and multi-year views. It supports single-date and range selection, enforces minimum, maximum, and
@@ -37,10 +37,10 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/datepicker";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           Use the <code>m3e-datepicker-toggle</code> to open a <code>m3e-datepicker</code>. This component should be
           nested inside a clickable element and be associated with a picker by setting the for attribute to the id of
@@ -87,7 +87,7 @@
           <code>m3e-datepicker</code> API. When using <code>m3e-date-input</code>, many of these props are not required
           because the input manages the value and the picker simply writes the selected date back to the field.
         </p>
-        <p>See <a href="../components/date-input.html">Date Input</a> for details.</p>
+        <p>See <a href="../components/date-input.html">Date Input 日期输入</a> for details.</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="outlined">
@@ -117,7 +117,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Variants</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           The <code>m3e-datepicker</code> supports three appearance variants: <code>docked</code> (default),
           <code>modal</code>, and <code>auto</code>. Use the <code>variant</code> attribute to control how the picker is
@@ -133,7 +133,7 @@
           <pre slot="content">&lt;m3e-datepicker variant=&quot;auto&quot;&gt;&lt;/m3e-datepicker&gt;</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Date selection</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">日期选择</m3e-heading>
         <p>
           Use the <code>date</code> attribute to set the currently selected date, and listen for the
           <code>change</code> event to react when the user selects a new one. You can also enable the
@@ -170,7 +170,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Date string handling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
         <p>
           Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO
           date but does not include a time or timezone. To ensure predictable behavior across environments,
@@ -194,7 +194,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           unsupported. For the most reliable results, use one of the formats above.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Start date</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">起始日期</m3e-heading>
         <p>
           By default, a datepicker opens to the selected date, or to today if no date is set. You can override this by
           using the <code>start-at</code> attribute to specify the date that <code>m3e-datepicker</code> should
@@ -221,7 +221,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Start view</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">初始视图</m3e-heading>
         <p>
           The <code>start-view</code> attribute can be used to set the view that will show up when the calendar first
           opens. It can be set to <code>month</code>, <code>year</code>, or <code>multi-year</code>; by default it will
@@ -248,7 +248,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Date ranges</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">日期范围</m3e-heading>
         <p>
           To select a range of dates instead of a single date, use the <code>range</code>, or
           <code>range-start</code> and <code>range-end</code> attributes. Setting <code>range</code> or
@@ -305,7 +305,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Min and max dates</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">最小与最大日期</m3e-heading>
         <p>
           Use the <code>min-date</code> and <code>max-date</code> to disable all dates on the calendar before or after
           the respective values and prevent the user from advancing the calendar past the month or year (depending on
@@ -343,7 +343,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Blackout dates</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用日期</m3e-heading>
         <p>
           In addition to <code>min-date</code> and <code>max-date</code> constraints, you can use the
           <code>blackoutDates</code> property to specify a function used to determine whether a date is disabled and
@@ -369,7 +369,7 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Special dates</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">特殊日期</m3e-heading>
         <p>
           Use the <code>specialDates</code> property to specify a function used to determine whether a date has a
           highlighted look and feel. You can use the <code>--m3e-calendar-item-special-container-color</code>,
@@ -398,13 +398,13 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Internationalization</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">国际化</m3e-heading>
         <p>
           <code>m3e-datepicker</code> uses the Gregorian calendar, and all date formatting is handled by the browser's
           <code>Intl</code> APIs based on the active locale.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Datepickers are given ARIA <code>role="dialog"</code> to identify the picker surface as a discrete interactive
           region that opens above the page and requires user attention. When the picker is shown in its modal variant,
@@ -446,7 +446,7 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
           </li>
         </ul>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -498,9 +498,9 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -509,15 +509,15 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-datepicker</m3e-heading>
         <api-viewer only="m3e-datepicker"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-datepicker-toggle</m3e-heading>
         <api-viewer only="m3e-datepicker-toggle"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Datepicker</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Datepicker 日期选择器</span>
       </m3e-toc>
     </div>
   </body>

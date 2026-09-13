@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Checkbox for M3E</title>
+    <title>复选框 Checkbox · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Checkbox for M3E" />
+    <meta name="description" content="复选框 Checkbox · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,14 +28,14 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Checkbox</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Checkbox 复选框</m3e-heading>
         <p>The <code>m3e-checkbox</code> component enables users to select one or more options from a set.</p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/checkbox";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           Checkboxes may be standalone, pre-checked, or indeterminate. When clicked, a cancellable
           <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To
@@ -56,7 +56,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Labels</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">标签</m3e-heading>
         <p>Associate a label with a checkbox using the <code>label</code> element.</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -73,7 +73,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Form Associated</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">表单关联</m3e-heading>
         <p>
           This component participates in form submission as a
           <a
@@ -91,9 +91,9 @@
           disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable a checkbox. Associated labels are automatically styled to
+          使用 <code>disabled</code> 属性禁用 a checkbox. Associated labels are automatically styled to
           show disabled.
         </p>
         <m3e-card variant="outlined" class="showcase">
@@ -112,7 +112,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Required</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">必填</m3e-heading>
         <p>
           Use the <code>required</code> attribute to control whether a checkbox must be checked. The
           <code>invalid</code> event fires when a form is submitted and the element fails constraint validation. When
@@ -139,7 +139,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Checkboxes are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -178,7 +178,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Checkboxes are given the ARIA <code>role="checkbox"</code> aligning its semantic identity with native checkbox
           controls. This ensures screen readers and assistive technologies interpret its behavior correctly.
@@ -195,7 +195,7 @@
           a <code>disabled</code> attribute into the DOM.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -239,9 +239,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -250,13 +250,13 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-checkbox</m3e-heading>
         <api-viewer only="m3e-checkbox"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">Checkbox</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Checkbox 复选框</span>
       </m3e-toc>
     </div>
   </body>

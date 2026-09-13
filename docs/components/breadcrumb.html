@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Breadcrumb for M3E</title>
+    <title>面包屑 Breadcrumb · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Breadcrumb for M3E" />
+    <meta name="description" content="面包屑 Breadcrumb · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Breadcrumb</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Breadcrumb 面包屑</m3e-heading>
         <p>
           The <code>m3e-breadcrumb</code> and <code>m3e-breadcrumb-item</code> components work together to display a
           hierarchical navigation trail.
@@ -34,10 +34,10 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/breadcrumb";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Anatomy</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
           To create a breadcrumb trail, place your items inside an <code>m3e-breadcrumb</code> element. Each
           <code>m3e-breadcrumb-item</code> represents one level in the navigation hierarchy, starting with the broadest
@@ -64,7 +64,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Links</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
           Breadcrumb items can also behave like links by specifying a URL using the <code>href</code> attribute. You can
           also specify <code>target</code>, and <code>rel</code> similar to native anchor tags. Links are not supported
@@ -94,7 +94,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Icons</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
         <p>
           Use the <code>icon</code> slot to render an icon before the label of an item. For icon-only items, simply
           place an icon in the default slot. Use <code>item-label</code> to provide an accessible label to the inner
@@ -176,7 +176,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Breadcrumbs are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -229,7 +229,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Breadcrumbs are given ARIA <code>role="navigation"</code>, indicating that the component represents a
           navigational landmark. Internally, breadcrumbs organize items within a list, with each item exposed using ARIA
@@ -258,7 +258,7 @@
           For icon-only items, use the <code>item-label</code> attribute to provide an accessible name for the item's
           internal button or link.
         </p>
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -301,9 +301,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -312,15 +312,15 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-breadcrumb</m3e-heading>
         <api-viewer only="m3e-breadcrumb"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-breadcrumb-item</m3e-heading>
         <api-viewer only="m3e-breadcrumb-item"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Breadcrumb</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Breadcrumb 面包屑</span>
       </m3e-toc>
     </div>
   </body>

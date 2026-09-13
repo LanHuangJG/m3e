@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Chips for M3E</title>
+    <title>芯片 Chips · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Chips for M3E" />
+    <meta name="description" content="芯片 Chips · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Chips</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Chips 芯片</m3e-heading>
         <p>
           The <code>@m3e/web/chips</code> module provides expressive, accessible chip components for actions, input,
           filtering, and suggestions.
@@ -34,8 +34,8 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/chips";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
         <m3e-heading variant="headline" size="small" level="3">Non-interactive chips</m3e-heading>
         <p>
@@ -63,7 +63,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Variants</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">变体</m3e-heading>
         <p>
           All chip types support two appearance variants: <code>outlined</code> (default) and <code>elevated</code>. Use
           the <code>variant</code> attribute to change a chip's appearance.
@@ -81,7 +81,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Orientation</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">方向</m3e-heading>
         <p>Chips can be stacked vertically using the <code>vertical</code> attribute of a <code>m3e-chip-set</code>.</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -104,7 +104,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Icons</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
           The <code>m3e-chip</code> provides slots for two icons. Use the <code>icon</code> slot to present an icon
           before a chip's label and use the <code>trailing-icon</code> slot to present an icon after it. While not
@@ -142,7 +142,7 @@
 &lt;m3e-assist-chip variant=&quot;elevated&quot;&gt;Elevated Assist&lt;/m3e-assist-chip&gt;</pre
           >
         </m3e-card>
-        <m3e-heading variant="title" size="medium" level="4">Icons</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
           The <code>m3e-assist-chip</code> provides a single slot, <code>icon</code>, to present an icon before a chip's
           label. Trailing icons are not supported for this chip type.
@@ -161,9 +161,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable an assist chip. By default, disabled chips are not
+          使用 <code>disabled</code> 属性禁用 an assist chip. By default, disabled chips are not
           focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
@@ -183,7 +183,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Types</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">类型</m3e-heading>
         <p>
           Use the <code>type</code> attribute to control the behavior of an assist chip. By default,
           <code>type</code> is <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to
@@ -191,7 +191,7 @@
           <code>value</code> attributes to specify a value.
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Links</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">链接</m3e-heading>
         <p>
           Assist chips can also behave like links by specifying a URL using the <code>href</code> attribute. You can
           also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
@@ -230,7 +230,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Icons</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
           The <code>m3e-filter-chip</code> provides slots for two icons. Use the <code>icon</code> slot to present an
           icon before a chip's label and use the <code>trailing-icon</code> slot to present an icon after it.
@@ -259,7 +259,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Selection</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">选择</m3e-heading>
         <p>
           Filter chips support both single-select and multi-select modes. Use the
           <code>multi</code> attribute of <code>m3e-filter-chip-set</code> to allow multiple chips to be selected
@@ -297,9 +297,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable a filter chip. By default, disabled chips are not focusable
+          使用 <code>disabled</code> 属性禁用 a filter chip. By default, disabled chips are not focusable
           with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
@@ -355,7 +355,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Hiding the selection indicator</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">隐藏选择指示器</m3e-heading>
         <p>
           Use the <code>hide-selection-indicator</code> attribute of <code>m3e-filter-chip-set</code> to hide selection
           indicators. If a filter chip has an icon via use of the <code>icon</code> slot, the icon is retained upon
@@ -382,7 +382,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Form Associated</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">表单关联</m3e-heading>
         <p>
           Filter chips can participate in form submission as a
           <a
@@ -408,7 +408,7 @@
           The <code>m3e-input-chip-set</code> component enables users to input, display, and manage a collection of
           discrete values as input chips. Designed for expressive, accessible forms, it supports keyboard navigation,
           validation, and seamless integration with <code>m3e-form-field</code>. See
-          <a href="../components/form-field.html">Form Field</a> for more information.
+          <a href="../components/form-field.html">Form Field 表单容器</a> for more information.
         </p>
         <p>
           Use the <code>input</code> slot of the <code>m3e-input-chip-set</code> to designate the input element
@@ -514,7 +514,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
           Use the <code>disabled</code> attribute of <code>m3e-input-chip-set</code> to disable the chip set in its
           entirety, including its corresponding <code>input</code> and any prepopulated chips. In addition, chips cannot
@@ -547,7 +547,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Form Associated</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">表单关联</m3e-heading>
         <p>
           Input chips can participate in form submission as a
           <a
@@ -585,7 +585,7 @@
 &lt;m3e-suggestion-chip variant=&quot;elevated&quot;&gt;Elevated Suggestion&lt;/m3e-suggestion-chip&gt;</pre
           >
         </m3e-card>
-        <m3e-heading variant="title" size="medium" level="4">Icons</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
           The <code>m3e-suggestion-chip</code> provides a single slot, <code>icon</code>, to present an icon before a
           chip's label. Trailing icons are not supported for this chip type.
@@ -606,9 +606,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable a suggestion chip. By default, disabled chips are not
+          使用 <code>disabled</code> 属性禁用 a suggestion chip. By default, disabled chips are not
           focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
@@ -628,7 +628,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Types</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">类型</m3e-heading>
         <p>
           Use the <code>type</code> attribute to control the behavior of a suggestion chip. By default,
           <code>type</code> is <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to
@@ -636,7 +636,7 @@
           <code>value</code> attributes to specify a value.
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Links</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">链接</m3e-heading>
         <p>
           Suggestion chips can also behave like links by specifying a URL using the <code>href</code> attribute. You can
           also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
@@ -654,7 +654,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Chips are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -703,7 +703,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           By default, <code>m3e-chip</code> and <code>m3e-chip-set</code> are not given an ARIA role, indicating that
           they are treated as neutral, non-semantic elements in the accessibility tree unless explicitly referenced or
@@ -743,7 +743,7 @@
           clarity, predictability, and discoverability for users navigating via screen readers or keyboard.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -789,9 +789,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -800,7 +800,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-chip</m3e-heading>
         <api-viewer only="m3e-chip"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-chip-set</m3e-heading>
@@ -819,8 +819,8 @@
         <api-viewer only="m3e-suggestion-chip"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">Chips</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Chips 芯片</span>
       </m3e-toc>
     </div>
   </body>

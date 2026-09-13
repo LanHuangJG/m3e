@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Skeleton for M3E</title>
+    <title>骨架屏 Skeleton · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Skeleton for M3E" />
+    <meta name="description" content="骨架屏 Skeleton · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Skeleton</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Skeleton 骨架屏</m3e-heading>
         <p>
           The <code>m3e-skeleton</code> component provides a loading placeholder surface with flexible shape variants
           and motion-based animations that communicate loading state while preserving layout stability. It mimics the
@@ -36,10 +36,10 @@
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/skeleton";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           Use the <code>m3e-skeleton</code> component to generate loading placeholders for any top-level slotted
           elements. The component creates an overlay shape for each node, matching its geometry while preserving the
@@ -52,7 +52,7 @@
             <br /><br />
             <m3e-skeleton id="skeleton1">
               <m3e-card>
-                <m3e-heading slot="header" variant="display" size="small">Card Header</m3e-heading>
+                <m3e-heading slot="header" variant="display" size="small">卡片头部</m3e-heading>
                 <div slot="content">Card Content</div>
                 <div slot="actions">
                   <m3e-button variant="filled">Action</m3e-button>
@@ -77,7 +77,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Shape</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">Shape 形状</m3e-heading>
         <p>
           Use the <code>shape</code> attribute to define the geometry applied to all top level slotted content. Each
           node receives a corresponding skeleton overlay that reflects the selected shape. The
@@ -128,7 +128,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Animation</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">动画</m3e-heading>
         <p>
           Use the <code>animation</code> attribute to control how the skeleton communicates loading progress. When
           enabled, the component applies motion across all top level slotted content to indicate that data is being
@@ -198,7 +198,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           A skeleton's color uses the lowest perceptual contrast that remains reliably visible, keeping the placeholder
           subtle and non-intrusive.
@@ -211,7 +211,7 @@
           loading without being interrupted by decorative placeholders.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -254,9 +254,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -265,13 +265,13 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-skeleton</m3e-heading>
         <api-viewer only="m3e-skeleton"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Skeleton</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Skeleton 骨架屏</span>
       </m3e-toc>
     </div>
   </body>

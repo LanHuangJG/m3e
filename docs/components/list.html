@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>List for M3E</title>
+    <title>列表 List · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="List for M3E" />
+    <meta name="description" content="列表 List · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">List</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">List 列表</m3e-heading>
         <p>
           The <code>@m3e/web/list</code> module provides expressive, accessible components for organizing and displaying
           lists of items.
@@ -34,15 +34,15 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/list";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Lists</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">列表</m3e-heading>
         <p>
           To create a list of items, use the <code>m3e-list</code> component with one or more
           <code>m3e-list-item</code> components nested inside it.
         </p>
-        <m3e-heading variant="title" size="medium" level="4">Anatomy</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">结构解析</m3e-heading>
         <p>
           The <code>m3e-list-item</code> component provides a modular layout for structured content blocks. It exposes
           the following named slots:
@@ -81,7 +81,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Variants</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">变体</m3e-heading>
         <p>
           There are two appearance variants <code>standard</code> (default) and <code>segmented</code>. Use the
           <code>variant</code> attribute to control a list's appearance.
@@ -376,10 +376,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Dividers</m3e-heading>
-        <p>
-          The following example illustrates use of the <code>m3e-divider</code> to provide separators between items in a
-          <code>m3e-list</code>. For more information on dividers, see <a href="../components/divider.html">Divider</a>.
+        <m3e-heading variant="title" size="medium" level="4">分隔线</m3e-heading>
+        <p>the的following example illustrates use。<code>m3e-divider</code> to provide separators between items in a
+          <code>m3e-list</code>. For more information on dividers, see <a href="../components/divider.html">Divider 分隔线</a>.
         </p>
         <p>Dividers are only supported for the standard variant and are automatically hidden for segmented lists.</p>
 
@@ -473,7 +472,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
 
         <p>Individual list actions can be disabled using the <code>disabled</code> attribute.</p>
         <m3e-card variant="outlined" class="showcase">
@@ -514,7 +513,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Links</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">链接</m3e-heading>
         <p>
           List actions can also behave like links by specifying a URL using the <code>href</code> attribute. You can
           also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
@@ -755,7 +754,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Multiple selection</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">多选</m3e-heading>
         <p>
           Selection lists support both single-select and multi-select modes. Use the
           <code>multi</code> attribute to allow multiple options to be selected simultaneously.
@@ -798,7 +797,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Hiding the selection indicator</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">隐藏选择指示器</m3e-heading>
         <p>
           Use the <code>hide-selection-indicator</code> attribute of <code>m3e-selection-list</code> to hide selection
           indicators. If an option has an icon via use of the <code>trailing</code> slot, the icon is presented.
@@ -824,7 +823,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
 
         <p>
           Individual list options can be disabled using the <code>disabled</code> attribute and can be selected and
@@ -870,7 +869,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Form Associated</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">表单关联</m3e-heading>
         <p>
           Selection lists can participate in form submission as a
           <a
@@ -890,7 +889,7 @@
           <code>disabled</code> attribute into the DOM.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Lists are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -923,7 +922,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Lists are given the ARIA <code>role="list"</code> and list items are given <code>role="listitem"</code> to
           ensure that assistive technologies can correctly interpret the structure and semantics of the content.
@@ -959,7 +958,7 @@
           the item.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -1004,9 +1003,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -1015,7 +1014,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-list</m3e-heading>
         <api-viewer only="m3e-list"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-list-item</m3e-heading>
@@ -1032,8 +1031,8 @@
         <api-viewer only="m3e-expandable-list-item"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">List</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">List 列表</span>
       </m3e-toc>
     </div>
   </body>

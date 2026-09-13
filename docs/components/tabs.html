@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Tabs for M3E</title>
+    <title>标签页 Tabs · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Tabs for M3E" />
+    <meta name="description" content="标签页 Tabs · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Tabs</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Tabs 标签页</m3e-heading>
         <p>
           The <code>m3e-tabs</code> component provides a structured navigation surface for organizing content into
           distinct views, where only one view is visible at a time.
@@ -34,10 +34,10 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/tabs";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           Use <code>m3e-tabs</code>, <code>m3e-tab</code>, and <code>m3e-tab-panel</code> to construct tabbed views.
           Both <code>m3e-tab</code> and <code>m3e-tab-panel</code> must be direct children of <code>m3e-tabs</code>. To
@@ -86,7 +86,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Variants</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           Tabs come in the appearance variants: <code>primary</code> and <code>secondary</code> (default). Use the
           <code>variant</code> attribute of <code>m3e-tabs</code> to change the appearance.
@@ -158,8 +158,8 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
-        <p>Use the <code>disabled</code> attribute to disable individual tabs.</p>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
+        <p>使用 <code>disabled</code> 属性禁用 individual tabs.</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-tabs>
@@ -186,7 +186,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Pagination</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">分页</m3e-heading>
         <p>
           By default, directional pagination controls appear when the number of tabs exceeds the available horizontal
           space. You can disable this using the <code>disable-pagination</code> attribute. Set this to
@@ -224,7 +224,7 @@
         </m3e-card>
         <br />
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Tabs are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -259,7 +259,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Tabs implement the
           <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank">ARIA Tabs design pattern</a> and are
@@ -284,7 +284,7 @@
           labels to pagination buttons.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -332,9 +332,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -343,7 +343,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-tab</m3e-heading>
         <api-viewer only="m3e-tab"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-tab-panel</m3e-heading>
@@ -352,8 +352,8 @@
         <api-viewer only="m3e-tabs"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Tabs</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Tabs 标签页</span>
       </m3e-toc>
     </div>
   </body>

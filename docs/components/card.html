@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Card for M3E</title>
+    <title>卡片 Card · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Card for M3E" />
+    <meta name="description" content="卡片 Card · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,17 +27,17 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Card</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Card 卡片</m3e-heading>
         <p>
           The <code>m3e-card</code> component is a flexible, expressive container for presenting a unified subject—text,
           media, and actions—on a visually distinct surface.
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/card";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Anatomy</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
           The <code>m3e-card</code> component provides a modular layout for structured content blocks. It exposes the
           following named slots:
@@ -66,7 +66,7 @@
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-card>
-              <m3e-heading slot="header" variant="display" size="small">Card Header</m3e-heading>
+              <m3e-heading slot="header" variant="display" size="small">卡片头部</m3e-heading>
               <div slot="content">Card Content</div>
               <div slot="actions">
                 <m3e-button variant="filled">Action</m3e-button>
@@ -94,7 +94,7 @@
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-card>
-              <m3e-heading slot="header" variant="display" size="small">Card Header</m3e-heading>
+              <m3e-heading slot="header" variant="display" size="small">卡片头部</m3e-heading>
               <div slot="content">Card Content</div>
               <div slot="actions" end>
                 <m3e-button variant="filled">Action</m3e-button>
@@ -124,7 +124,7 @@
           <pre slot="content">&lt;m3e-card&gt;Card content&lt;/m3e-card&gt;</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Variants</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           There are three card appearance variants: <code>filled</code> (default), <code>outlined</code>, and
           <code>elevated</code>. Use the <code>variant</code> attribute to control a card's appearance.
@@ -167,7 +167,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Orientation</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
           By default, cards are oriented vertically. Use the <code>orientation</code> attribute to change the
           orientation to <code>horizontal</code> or <code>vertical</code> (default).
@@ -213,9 +213,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Disabling</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute to disable an actionable card. By default, disabled cards are not
+          使用 <code>disabled</code> 属性禁用 an actionable card. By default, disabled cards are not
           focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
@@ -246,7 +246,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Links</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">链接</m3e-heading>
         <p>
           Actionable cards can also behave like links by specifying a URL using the <code>href</code> attribute. You can
           also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
@@ -266,7 +266,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           By default, cards are not given an ARIA role, indicating that they are treated as neutral, non-semantic
           elements in the accessibility tree unless explicitly referenced or annotated.
@@ -288,7 +288,7 @@
           context menu options and tooltips.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -332,9 +332,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -343,13 +343,13 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-card</m3e-heading>
         <api-viewer only="m3e-card"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body" max-depth="4">
-        <span slot="overline">On this page</span>
-        <span slot="title">Card</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Card 卡片</span>
       </m3e-toc>
     </div>
   </body>

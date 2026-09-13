@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Timepicker for M3E</title>
+    <title>时间选择器 Timepicker · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Timepicker for M3E" />
+    <meta name="description" content="时间选择器 Timepicker · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Timepicker</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Timepicker 时间选择器</m3e-heading>
         <p>
           The <code>m3e-timepicker</code> component presents a temporary surface for selecting time using dial and
           keyboard modes. It supports hour and minute selection across 12-hour and 24-hour formats, enforces minimum and
@@ -36,10 +36,10 @@
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/timepicker";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
           Use the <code>m3e-timepicker-toggle</code> to open a <code>m3e-timepicker</code>. This component should be
           nested inside a clickable element and be associated with a picker by setting the for attribute to the id of
@@ -88,7 +88,7 @@
           these props are not required because the input manages the value and the picker simply writes the selected
           time back to the field.
         </p>
-        <p>See <a href="../components/date-input.html">Date Input</a> for details.</p>
+        <p>See <a href="../components/date-input.html">Date Input 日期输入</a> for details.</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -119,7 +119,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Variants</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           The <code>m3e-timepicker</code> supports three appearance variants: <code>docked</code> (default),
           <code>modal</code>, and <code>auto</code>. Use the <code>variant</code> attribute to control how the picker is
@@ -131,7 +131,7 @@
           <pre slot="content">&lt;m3e-timepicker variant=&quot;auto&quot;&gt;&lt;/m3e-timepicker&gt;</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Orientation</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
           The <code>m3e-timepicker</code> supports three orientations: <code>vertical</code> (default),
           <code>horizontal</code>, and <code>auto</code>. Use the <code>orientation</code> attribute to control how the
@@ -164,7 +164,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Modes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
         <p>
           The <code>m3e-timepicker</code> supports two modes, <code>dial</code> (default), and <code>input</code>. Use
           the <code>mode</code> attribute to set the default mode. Use the <code>hide-mode-toggle</code> attribute to
@@ -195,7 +195,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Time selection</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">时间选择</m3e-heading>
         <p>Use the <code>date</code> attribute to set the currently selected time.</p>
         <p>
           The OK button becomes enabled whenever the picker holds a complete, valid time, including cases where the
@@ -241,7 +241,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Date string handling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
         <p>
           Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO
           date but does not include a time or timezone. To ensure predictable behavior across environments,
@@ -265,7 +265,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           unsupported. For the most reliable results, use one of the formats above.
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Hour format</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">小时格式</m3e-heading>
         <p>
           The <code>format</code> attribute controls the hour cycle used by the timepicker. It accepts
           <code>"12"</code> (default), <code>"24"</code>, or <code>"auto"</code>.
@@ -296,7 +296,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           <pre slot="content">&lt;m3e-timepicker format=&quot;24&quot;&gt;&lt;/m3e-timepicker&gt;</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Min and max times</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">最小与最大时间</m3e-heading>
         <p>
           Use the <code>min-time</code> and <code>max-time</code> attributes to disable all times in the picker before
           or after the respective values.
@@ -321,7 +321,7 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Blackout times</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用时段</m3e-heading>
         <p>
           In addition to <code>min-time</code> and <code>max-time</code> constraints, the
           <code>blackoutTimes</code> property lets you provide a function that determines whether a given time is
@@ -349,7 +349,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Seconds</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">秒</m3e-heading>
         <p>Use the <code>show-seconds</code> attribute to display the seconds segment in the timepicker.</p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -409,7 +409,7 @@ document.querySelector(&quot;#input&quot;).addEventListener(&quot;change&quot;, 
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
 
         <p>
           Timepickers are given ARIA <code>role="dialog"</code> to identify the picker surface as a discrete interactive
@@ -424,7 +424,7 @@ document.querySelector(&quot;#input&quot;).addEventListener(&quot;change&quot;, 
           technologies that activating the control will open a dialog.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -474,9 +474,9 @@ document.querySelector(&quot;#input&quot;).addEventListener(&quot;change&quot;, 
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -485,7 +485,7 @@ document.querySelector(&quot;#input&quot;).addEventListener(&quot;change&quot;, 
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-timepicker</m3e-heading>
         <api-viewer only="m3e-timepicker"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-timepicker-dial</m3e-heading>
@@ -496,8 +496,8 @@ document.querySelector(&quot;#input&quot;).addEventListener(&quot;change&quot;, 
         <api-viewer only="m3e-timepicker-toggle"> </api-viewer>
       </m3e-content-pane>
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Timepicker</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Timepicker 时间选择器</span>
       </m3e-toc>
     </div>
   </body>

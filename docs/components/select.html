@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Select for M3E</title>
+    <title>下拉选择 Select · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Select for M3E" />
+    <meta name="description" content="下拉选择 Select · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,21 +26,20 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Select</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Select 下拉选择</m3e-heading>
         <p>
           The <code>m3e-select</code> component provides a form control for selecting a value from a set of predefined
           options.
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/select";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
 
-        <p>
-          The following example illustrates use of a <code>m3e-select</code> in conjunction with the
-          <code>m3e-form-field</code>. See <a href="../components/form-field.html">Form Field</a> for more information.
+        <p>a的following example illustrates use。<code>m3e-select</code> in conjunction with the
+          <code>m3e-form-field</code>. See <a href="../components/form-field.html">Form Field 表单容器</a> for more information.
         </p>
         <p>
           To define selectable options within a <code>m3e-select</code>, include one or more
@@ -162,7 +161,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Selection</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
           Selects support both single-select and multi-select modes. Use the
           <code>multi</code> attribute to allow multiple options to be selected simultaneously.
@@ -201,7 +200,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
           You can disable the entire select component or individual options by applying the
           <code>disabled</code> attribute to <code>m3e-select</code> or <code>m3e-option</code>, respectively.
@@ -256,7 +255,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Required</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">必填</m3e-heading>
         <p>
           Apply the <code>required</code> attribute to enforce selection. This ensures that users must choose at least
           one option before the field is considered valid. For multi-select configurations, at least one selected option
@@ -290,7 +289,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Form fields and select panels are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -367,7 +366,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           The <code>m3e-select</code> component follows the ARIA <code>combobox</code> interaction pattern. Selects are
           given the ARIA <code>role="combobox"</code>, while the dropdown panel applies <code>role="listbox"</code> to
@@ -420,7 +419,7 @@
           interactive controls within options disrupts expected navigation and interferes with screen reader behavior.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -474,9 +473,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -485,7 +484,7 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-select</m3e-heading>
         <api-viewer only="m3e-select"> </api-viewer>
         <m3e-heading variant="headline" size="small" level="3">m3e-option</m3e-heading>
@@ -495,8 +494,8 @@
       </m3e-content-pane>
 
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Select</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Select 下拉选择</span>
       </m3e-toc>
     </div>
   </body>

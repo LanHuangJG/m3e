@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Toolbar for M3E</title>
+    <title>工具栏 Toolbar · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Toolbar for M3E" />
+    <meta name="description" content="工具栏 Toolbar · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,15 +26,15 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Toolbar</m3e-heading>
+        <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Toolbar 工具栏</m3e-heading>
         <p>The <code>m3e-toolbar</code> component presents contextual actions, navigation, and controls.</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/toolbar";</pre></m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Usage</m3e-heading>
-        <p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+        <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
+        <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Variants</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
           There are two toolbar appearance variants: <code>standard</code> (default) and <code>vibrant</code>. Use the
           <code>variant</code> attribute to change the appearance.
@@ -102,7 +102,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Shapes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">形状</m3e-heading>
         <p>
           There are two shape variants: <code>square</code> (default) and <code>rounded</code>. Use the
           <code>shape</code> attribute to change the appearance.
@@ -136,7 +136,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Elevation</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">海拔</m3e-heading>
         <p>
           Use the <code>elevated</code> attribute to elevate a toolbar to a visually prominent surface, distinguishing
           it from the surrounding layout and signaling its importance or active context.
@@ -170,7 +170,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Orientation</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
           By default, toolbar are oriented horizontally. Use the <code>vertical</code> attribute to orient the toolbar
           vertically, stacking its interactive elements from top to bottom rather than left to right. This is useful for
@@ -205,7 +205,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Density</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
           Toolbars are density-aware and adjust their vertical spacing based on the
           <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
@@ -251,7 +251,7 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="medium" level="2">Accessibility</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
           Toolbars are given ARIA <code>role="toolbar"</code> indicating that the element serves as a container for a
           group of interactive controls, typically buttons, that perform actions related to a common context. This role
@@ -264,7 +264,7 @@
           relying on screen readers or keyboard interaction.
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Native module support</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
           The <code>@m3e/web</code> package uses
           <a
@@ -310,9 +310,9 @@
 &lt;/script&gt;</pre
           >
         </m3e-card>
-        <p>For production builds, use the minified files to ensure optimal load performance.</p>
+        <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">API</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
           The <code>@m3e/web</code> package includes a
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
@@ -321,14 +321,14 @@
           (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
           properties of each component.
         </p>
-        <p>You can explore the API below, or integrate the manifest into your own tooling.</p>
+        <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-toolbar</m3e-heading>
         <api-viewer only="m3e-toolbar"></api-viewer>
       </m3e-content-pane>
 
       <m3e-toc class="toc" for="body">
-        <span slot="overline">On this page</span>
-        <span slot="title">Toolbar</span>
+        <span slot="overline">本页目录</span>
+        <span slot="title">Toolbar 工具栏</span>
       </m3e-toc>
     </div>
   </body>
