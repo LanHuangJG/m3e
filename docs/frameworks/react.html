@@ -26,10 +26,9 @@
       <m3e-content-pane id="body">
         <m3e-heading variant="display" size="large" level="1">React</m3e-heading>
         <p>
-          The <strong>@m3e/react</strong> package provides idiomatic React bindings for all M3E Web Components. Each
-          component is exposed as its own React module, offering typed props, event mappings, and seamless integration
-          with the React rendering model. However, the React bindings are <strong>client-only</strong>. In Next.js, you
-          <strong>must</strong> use them inside a <code>"use client"</code> boundary.
+          <strong>@m3e/react</strong> 包为所有 M3E Web Components 提供地道的 React 绑定。每个组件都以独立的 React 模块暴露,提供类型化
+          props、事件映射,以及与 React 渲染模型的无缝集成。不过,React 绑定是 <strong>仅客户端</strong> 的。在 Next.js 中,你
+          <strong>必须</strong> 在 <code>"use client"</code> 边界内使用它们。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -37,26 +36,24 @@
         </m3e-card>
 
         <p>
-          After installation, import the React module for any component you want to use. Each module wraps the
-          corresponding <code>@m3e/web</code> module and exposes a familiar React component API.
+          安装后,为你想要使用的任意组件导入对应的 React 模块。每个模块都封装相应的 <code>@m3e/web</code> 模块,并暴露熟悉的 React
+          组件 API。
         </p>
 
-        <p>For example:</p>
+        <p>例如:</p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">import { M3eButton } from "@m3e/react/button";</pre>
         </m3e-card>
 
         <p>
-          React modules automatically register their underlying Web Component, so no additional side-effect imports from
-          <code>@m3e/web</code> are required.
+          React 模块会自动注册其底层的 Web Component,因此无需从 <code>@m3e/web</code> 额外进行副作用导入。
         </p>
 
         <p>
           <strong>
-            Alternatively, import the <code>@m3e/react/all</code> module to load every React binding at once.
+            或者,导入 <code>@m3e/react/all</code> 模块以一次性加载所有 React 绑定。
           </strong>
-          This option is convenient when you want full access to the M3E component suite without managing individual
-          modules.
+          当你希望完整使用 M3E 组件套件,又不想逐个管理模块时,这个选项很方便。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -64,9 +61,8 @@
         </m3e-card>
 
         <p>
-          Each React module mirrors the structure of its Web Component counterpart, ensuring a consistent mental model
-          across both ecosystems. Use individual modules for tree-shaking and minimal bundles, or the aggregated module
-          for rapid prototyping and full-suite development.
+          每个 React 模块都对应其 Web Component 对应物的结构,确保两种生态之间保持一致的心智模型。需要 tree-shaking
+          与最小化打包体积时使用单个模块,快速原型开发与全量套件开发时则使用聚合模块。
         </p>
       </m3e-content-pane>
     </div>

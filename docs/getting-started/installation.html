@@ -26,19 +26,19 @@
       <m3e-content-pane id="body">
         <m3e-heading variant="display" size="large" level="1">Installation 安装</m3e-heading>
         <p>
-          The M3E Web Component library is distributed as a single package under the
-          <strong>@m3e/web</strong> namespace.
+          M3E Web Component 库以单一包的形式分发,命名空间为
+          <strong>@m3e/web</strong>。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">npm i @m3e/web</pre></m3e-card>
-        <p>After installing the package, each component can be imported individually through its own module.</p>
-        <p>For example:</p>
+        <p>安装该包后,每个组件都可以通过各自的模块单独导入。</p>
+        <p>例如:</p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">import "@m3e/web/button";</pre>
         </m3e-card>
 
         <p>
-          <strong>Alternatively, import the <code>@m3e/web/all</code> module to load every component at once.</strong>
-          This option is convenient when you want full access to the M3E ecosystem without managing individual modules.
+          <strong>或者,导入 <code>@m3e/web/all</code> 模块以一次性加载所有组件。</strong>
+          当你希望完整使用 M3E 生态,又不想逐个管理模块时,这个选项很方便。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -85,23 +85,22 @@
         </m3e-card>
         <p>生产构建请使用压缩版文件,以获得最佳加载性能。</p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Editor integration</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">编辑器集成</m3e-heading>
         <p>
           <code>@m3e/web</code> 包附带一份 <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank">Custom Elements Manifest</a>,以支持增强的编辑器工具与开发体验。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">Visual Studio Code</m3e-heading>
         <p>
-          To enable autocomplete and hover documentation, install the
+          要启用自动补全与悬停文档,请安装
           <a href="https://marketplace.visualstudio.com/items?itemName=pwrs.cem-language-server-vscode" target="_blank"
             >Custom Elements Manifest Language Server</a
           >
-          extension. It will automatically detect the manifest bundled with this package and surface tag names,
-          attributes, slots, and events in supported files.
+          扩展。它会自动检测本包附带的清单,并在支持的文件中提示标签名、特性、插槽与事件。
         </p>
         <p>
-          Alternatively, you can explicitly reference the <code>html-custom-data.json</code> and
-          <code>css-custom-data.json</code> in your workspace settings.
+          或者,你也可以在工作区设置中显式引用 <code>html-custom-data.json</code> 与
+          <code>css-custom-data.json</code>。
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">

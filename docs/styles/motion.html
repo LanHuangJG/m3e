@@ -24,43 +24,37 @@
     <m3e-theme strong-focus></m3e-theme>
     <div class="panes">
       <m3e-content-pane id="body">
-        <m3e-heading variant="display" size="large" level="1">Motion</m3e-heading>
+        <m3e-heading variant="display" size="large" level="1">Motion 动效</m3e-heading>
         <p>
-          M3E primarily applies the
+          M3E 主要应用
           <a
             href="https://m3.material.io/styles/motion/easing-and-duration/applying-easing-and-duration"
             target="_blank"
           >
-            Material Design 3 easing and duration
+            Material Design 3 缓动与时长
           </a>
-          system to provide consistent, emotionally tuned transitions across components. A subset—including buttons,
-          loading indicators, and switches—have adopted the
+          系统,为各组件提供一致、经情绪调校的过渡效果。其中一部分组件 —— 包括按钮、加载指示器与开关 —— 已采用
           <a href="https://m3.material.io/styles/motion/overview/how-it-works" target="_blank">
-            Material Design 3 motion physics system </a
-          >, bringing spring-based dynamics and velocity-aware responsiveness to components where expressive motion is
-          essential.
+            Material Design 3 动效物理系统 </a
+          >,把基于弹簧的动态与速度感知的响应性带入那些表现力动效至关重要的组件。
         </p>
-        <m3e-heading variant="headline" size="medium" level="2">Design tokens</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">设计令牌</m3e-heading>
         <p>
-          The
           <a href="https://m3.material.io/foundations/design-tokens/overview" target="_blank"
-            >Material Design 3 design tokens</a
+            >Material Design 3 设计令牌</a
           >
-          are implemented as custom CSS properties. Design tokens are named, platform-agnostic variables that represent
-          visual design decisions—such as color, typography, spacing, and elevation—in a reusable, consistent format.
+          以 CSS 自定义属性形式实现。设计令牌是具名、与平台无关的变量,以可复用且一致的格式表达视觉设计决策 —— 例如颜色、字体排版、间距与高度。
         </p>
         <p>
-          Motion tokens are surfaced using the standardized prefix <code>--md-sys-motion-*</code> and are defaulted to
-          spec-aligned values. M3E provides the <a href="../components/theme.html">Theme</a> component which can be used
-          to systematically control whether <strong>standard</strong> or <strong>expressive</strong> motion schemes are
-          used through its <code>motion</code> attribute.
+          动效令牌使用标准前缀 <code>--md-sys-motion-*</code> 暴露,并默认采用贴合规范的取值。M3E 提供
+          <a href="../components/theme.html">Theme 主题</a> 组件,可通过其 <code>motion</code> 特性系统地控制使用
+          <strong>standard</strong> 还是 <strong>expressive</strong> 动效方案。
         </p>
 
-        <m3e-heading variant="headline" size="medium" level="2">Reduced motion</m3e-heading>
+        <m3e-heading variant="headline" size="medium" level="2">减弱动效</m3e-heading>
         <p>
-          M3E honors reduced motion system settings by dynamically disabling or simplifying transitions for users who
-          prefer minimal motion. Components respond to the <code>prefers-reduced-motion</code> media query, ensuring
-          that expressive motion never compromises comfort or accessibility.
+          M3E 遵循系统的减弱动效设置,为偏好最小动效的用户动态禁用或简化过渡。组件会响应
+          <code>prefers-reduced-motion</code> 媒体查询,确保表现力动效绝不会牺牲舒适度或无障碍体验。
         </p>
       </m3e-content-pane>
     </div>
