@@ -27,7 +27,7 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Button Group 按钮组</m3e-heading>
-        <p>The <code>m3e-button-group</code> component arranges multiple into a unified, expressive layout.</p>
+        <p><code>m3e-button-group</code> 组件把多个按钮排布成一个统一、富有表现力的布局。</p>
 
         <m3e-card variant="outlined" class="install">
           <pre slot="content">import "@m3e/web/button-group";</pre>
@@ -38,11 +38,11 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are two appearance variants: <code>standard</code> (default) and <code>connected</code>. Use the
-          <code>variant</code> attribute to change the appearance.
+          有两种外观变体:<code>standard</code>(默认)与 <code>connected</code>。使用
+          <code>variant</code> 特性更改外观。
         </p>
-        <m3e-heading variant="title" size="medium" level="4">Standard</m3e-heading>
-        <p>Standard button groups add interaction between adjacent buttons</p>
+        <m3e-heading variant="title" size="medium" level="4">标准</m3e-heading>
+        <p>标准按钮组会在相邻按钮之间添加交互。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button-group>
@@ -86,7 +86,7 @@
           >
         </m3e-card>
 
-        <p>Standard button groups can contain textual buttons.</p>
+        <p>标准按钮组可以包含文本按钮。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -115,7 +115,7 @@
           >
         </m3e-card>
 
-        <p>Standard button groups can contain mixed button types and supports narrow and wide icon button widths.</p>
+        <p>标准按钮组可以包含混合的按钮类型,并支持窄与宽两种图标按钮宽度。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button-group>
@@ -147,8 +147,7 @@
 
         <m3e-heading variant="title" size="medium" level="4">连通</m3e-heading>
         <p>
-          Connected button groups behave similarly to standard groups, except they don't affect adjacent buttons and
-          fill available space.
+          连通按钮组的行为与标准组类似,区别在于它们不会影响相邻按钮,并会填满可用空间。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -168,7 +167,7 @@
 &lt;/m3e-button-group&gt;</pre
           >
         </m3e-card>
-        <p>Icon buttons will also grow to fill available space.</p>
+        <p>图标按钮也会伸展以填满可用空间。</p>
         <m3e-card variant="outlined" class="example">
           <div slot="content">
             <m3e-button-group variant="connected">
@@ -187,10 +186,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          There are five size variants used to control spacing between button:
-          <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and
-          <code>extra-large</code>. Use the <code>size</code> attribute control spacing. To create buttons with a
-          uniform size, set each button's <code>size</code> to the same size as the button group.
+          有五种尺寸变体用于控制按钮之间的间距:
+          <code>extra-small</code>、<code>small</code>(默认)、<code>medium</code>、<code>large</code> 与
+          <code>extra-large</code>。使用 <code>size</code> 特性控制间距。要让按钮尺寸统一,请把每个按钮的 <code>size</code> 设为与按钮组相同的尺寸。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -234,7 +232,7 @@
 &lt;/m3e-button-group&gt;</pre
           >
         </m3e-card>
-        <p>Connected button groups always have the same spacing between buttons, regardless of size.</p>
+        <p>无论尺寸如何,连通按钮组的按钮间距始终保持一致。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button-group size="large" variant="connected">
@@ -255,8 +253,8 @@
         </m3e-card>
         <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
-          Button groups containing toggle buttons support both single-select and multi-select modes. Use the
-          <code>multi</code> attribute to allow multiple toggle buttons to be selected simultaneously.
+          包含切换按钮的按钮组同时支持单选与多选模式。使用
+          <code>multi</code> 特性允许多个切换按钮同时被选中。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -291,15 +289,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Buttons and icon buttons in a group are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Buttons support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. Regardless of visual size, buttons maintain a 48x48dp minimum touch target to
-          ensure reliable accessibility.
+          按钮组中的按钮与图标按钮都能感知密度,并会根据 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整垂直间距。默认密度尺寸为 4dp。按钮支持最低到 -3 的负密度档位,每一档将视觉高度减少一个密度单位。无论视觉尺寸如何,按钮都保持 48x48dp 的最小触控目标,以确保可靠的无障碍体验。
         </p>
         <p>
-          The following illustrates applying density to both the <code>standard</code> and
-          <code>connected</code> variants.
+          下面展示如何同时为 <code>standard</code> 与
+          <code>connected</code> 两种变体应用密度。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -383,24 +377,22 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, button groups are given the ARIA role <code>group</code>, indicating a set of related user
-          interface elements that are grouped together. For a single-select group containing one or more toggle buttons,
-          button groups are given the ARIA role <code>radiogroup</code> and buttons are given the role
-          <code>radio</code>.
+          默认情况下,按钮组被赋予 ARIA 角色 <code>group</code>,表示一组彼此相关的界面元素被归组在一起。对于包含一个或多个切换按钮的单选组,按钮组会被赋予 ARIA 角色
+          <code>radiogroup</code>,而按钮会被赋予角色
+          <code>radio</code>。
         </p>
         <p>
-          Always provide an accessible label via <code>aria-label</code> or <code>aria-labelledby</code> for each button
-          group.
+          请始终通过 <code>aria-label</code> 或 <code>aria-labelledby</code> 为每个按钮组提供无障碍标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -409,8 +401,7 @@
           >
         </m3e-card>
         <p>
-          You also need a module script for <code>@m3e/button</code> and <code>@m3e/icon-button</code> due to being a
-          dependency.
+          由于 <code>@m3e/button</code> 与 <code>@m3e/icon-button</code> 是依赖项,你还需要为它们引入 module 脚本。
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -419,13 +410,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -451,12 +442,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-button-group</m3e-heading>
