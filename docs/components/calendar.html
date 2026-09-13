@@ -29,9 +29,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Calendar 日历</m3e-heading>
         <p>
-          The <code>m3e-calendar</code> component provides structured navigation and selection across month, year, and
-          multi-year views. It supports single-date and range selection, applies disabled rules including minimum,
-          maximum, and blackout constraints, and provides styling hooks for special date states.
+          <code>m3e-calendar</code> 组件提供一个结构化的界面,可在月、年、多年视图中导航与选择。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/calendar";</pre></m3e-card>
 
@@ -40,32 +38,24 @@
 
         <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
         <p>
-          Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO
-          date but does not include a time or timezone. To ensure predictable behavior across environments,
-          <code>m3e-calendar</code> uses a consistent, standards-aligned parsing model instead of relying on the
-          browser's built-in <code>Date.parse()</code> rules.
+          不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code>m3e-calendar</code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的 <code>Date.parse()</code> 规则。
         </p>
         <p>
-          When <code>m3e-calendar</code> receives a date string, it automatically detects whether the value matches one
-          of the ISO-8601 formats that can be parsed safely and unambiguously:
+          当 <code>m3e-calendar</code> 收到日期字符串时,会自动判断该值是否属于可安全、无歧义解析的 ISO-8601 格式:
         </p>
         <ul>
-          <li><code>yyyy-MM-dd</code> — local date (no time, no timezone)</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss</code> — local date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> — UTC date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> — date and time with an explicit timezone offset</li>
+          <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li>
         </ul>
         <p>
-          Strings in these formats are converted into local <code>Date</code> objects without unexpected timezone
-          shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted
-          as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or
-          unsupported. For the most reliable results, use one of the formats above.
+          符合上述格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区偏移,从而避免“仅日期的值被按 UTC 解析后漂移到前一天或后一天”的问题。如果字符串不符合这些 ISO 兼容格式,解析可能不明确或不受支持。为获得最可靠的结果,请使用上面列出的格式。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">日期选择</m3e-heading>
         <p>
-          Set the <code>date</code> attribute to define the currently selected date. Listen for the
-          <code>change</code> event to respond when the user selects a new one.
+          设置 <code>date</code> 特性以定义当前选中的日期。监听 <code>change</code> 事件,以便在用户选择新日期时作出响应。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -93,9 +83,7 @@ calendar.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">起始日期</m3e-heading>
         <p>
-          By default, a calendar opens to the selected date, or to today if no date is set. You can override this by
-          using the <code>start-at</code> attribute to specify the date that <code>m3e-calendar</code> should initially
-          display.
+          默认情况下,日历打开时定位到已选日期;未设置则定位到今天。你可以用 <code>start-at</code> 特性指定 <code>m3e-calendar</code> 初始显示的日期。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -108,9 +96,7 @@ calendar.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">初始视图</m3e-heading>
         <p>
-          The <code>start-view</code> attribute can be used to set the view that will show up when the calendar first
-          opens. It can be set to <code>month</code>, <code>year</code>, or <code>multi-year</code>; by default it will
-          open to <code>month</code> view.
+          <code>start-view</code> 特性可设置日历首次打开时显示的视图,可选 <code>month</code>、<code>year</code> 或 <code>multi-year</code>;默认打开 <code>month</code> 视图。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -123,12 +109,10 @@ calendar.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">日期范围</m3e-heading>
         <p>
-          To select a range of dates instead of a single date, use the
-          <code>range-start</code> and <code>range-end</code> attributes. Setting <code>range-start</code> puts the
-          calendar into range-selection mode. When the user selects a date after the current <code>range-start</code>,
-          both <code>date</code> and <code>range-end</code> are updated to that value. If the user selects a date before
-          the current <code>range-start</code>, the range is reset and both <code>date</code> and
-          <code>range-start</code> are set to the newly selected date.
+          要选择一段日期范围而非单个日期,使用
+          <code>range-start</code> 与 <code>range-end</code> 特性。设置 <code>range-start</code> 会让日历进入范围选择模式。当用户选择晚于当前 <code>range-start</code> 的日期时,<code>date</code> 与 <code>range-end</code> 都会更新为该值。如果用户选择早于
+          当前 <code>range-start</code> 的日期,范围会被重置,<code>date</code> 与
+          <code>range-start</code> 都会设为新选中的日期。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -143,9 +127,7 @@ calendar.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">最小与最大日期</m3e-heading>
         <p>
-          Use the <code>min-date</code> and <code>max-date</code> to disable all dates on the calendar before or after
-          the respective values and prevent the user from advancing the calendar past the month or year (depending on
-          current view) containing the minimum or maximum date.
+          使用 <code>min-date</code> 与 <code>max-date</code> 禁用日历上早于/晚于对应值的全部日期,并阻止用户把日历翻到包含最小/最大日期的月或年之外(取决于当前视图)。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -160,8 +142,7 @@ calendar.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">禁用日期</m3e-heading>
         <p>
-          Use the <code>blackoutDates</code> property to specify a function used to determine whether a date is disabled
-          and cannot be selected by the user.
+          使用 <code>blackoutDates</code> 属性指定一个函数,用于判断某个日期是否被禁用、无法被用户选择。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -179,11 +160,10 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
 
         <m3e-heading variant="headline" size="small" level="3">特殊日期</m3e-heading>
         <p>
-          Use the <code>specialDates</code> property to specify a function used to determine whether a date has a
-          highlighted look and feel. You can use the <code>--m3e-calendar-item-special-container-color</code>,
-          <code>--m3e-calendar-item-special-color</code>, <code>--m3e-calendar-item-special-ripple-color</code>,
-          <code>--m3e-calendar-item-special-hover-color</code>, and
-          <code>--m3e-calendar-item-special-focus-color</code> CSS properties to style special dates.
+          使用 <code>specialDates</code> 属性指定一个函数,用于判断某个日期是否以高亮样式展示。你可以用 <code>--m3e-calendar-item-special-container-color</code>、
+          <code>--m3e-calendar-item-special-color</code>、<code>--m3e-calendar-item-special-ripple-color</code>、
+          <code>--m3e-calendar-item-special-hover-color</code> 与
+          <code>--m3e-calendar-item-special-focus-color</code> 这些 CSS 属性来设置特殊日期的样式。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -204,48 +184,38 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
 
         <m3e-heading variant="headline" size="medium" level="2">国际化</m3e-heading>
         <p>
-          <code>m3e-calendar</code> uses the Gregorian calendar, and all date formatting is handled by the browser's
-          <code>Intl</code> APIs based on the active locale.
+          <code>m3e-calendar</code> 使用公历,所有日期格式化均由浏览器基于当前区域设置的 <code>Intl</code> API 处理。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The calendar is fully accessible and exposes clear semantics for assistive technologies. The header contains
-          navigation controls, each with an accessible label that can be customized through attributes. The calendar
-          grid is implemented using <code>role="grid"</code>, with each date cell using <code>role="gridcell"</code> and
-          containing a focusable element with <code>role="button"</code>. Selected dates and range boundaries are
-          indicated using <code>aria-pressed</code>, while today's date is marked with <code>aria-current="date"</code>.
-          Each cell includes a visually hidden, locale-aware full date string for screen readers, while the visible text
-          shows only the day number. Day-of-week headers use abbreviated labels but include visually hidden full names
-          (such as “Monday”) to ensure clear, unambiguous announcements.
+          日历具备完整的无障碍支持,为辅助技术暴露清晰的语义。头部包含导航控件,每个控件都有可通过特性自定义的无障碍标签。日历网格以 <code>role="grid"</code> 实现,每个日期单元格使用 <code>role="gridcell"</code> 并包含带 <code>role="button"</code> 的可聚焦元素。选中的日期与范围边界用 <code>aria-pressed</code> 标示,今天则用 <code>aria-current="date"</code> 标记。每个单元格包含一个视觉隐藏、跟随区域设置的完整日期字符串供屏幕阅读器朗读,可见文本只显示日数字。星期表头使用缩写标签,但同时包含视觉隐藏的全名(如“星期一”),确保朗读清晰无歧义。
         </p>
         <ul>
           <li>
-            <code>previous-month-label</code> — Accessible label for the button that navigates to the previous month.
+            <code>previous-month-label</code> —— 跳转到上一月的按钮的无障碍标签。
           </li>
-          <li><code>next-month-label</code> — Accessible label for the button that navigates to the next month.</li>
+          <li><code>next-month-label</code> —— 跳转到下一月的按钮的无障碍标签。</li>
           <li>
-            <code>previous-year-label</code> — Accessible label for the button that navigates to the previous year.
+            <code>previous-year-label</code> —— 跳转到上一年的按钮的无障碍标签。
           </li>
-          <li><code>next-year-label</code> — Accessible label for the button that navigates to the next year.</li>
+          <li><code>next-year-label</code> —— 跳转到下一年的按钮的无障碍标签。</li>
           <li>
-            <code>previous-multi-year-label</code> — Accessible label for the button that navigates to the previous
-            24-year range.
+            <code>previous-multi-year-label</code> —— 跳转到上一个 24 年区间的按钮的无障碍标签。
           </li>
           <li>
-            <code>next-multi-year-label</code> — Accessible label for the button that navigates to the next 24-year
-            range.
+            <code>next-multi-year-label</code> —— 跳转到下一个 24 年区间的按钮的无障碍标签。
           </li>
         </ul>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -254,13 +224,13 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include dependencies.
+          来引入依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -293,12 +263,11 @@ document.querySelector(&quot;#special-dates&quot;).specialDates = (date) =&gt; i
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-calendar</m3e-heading>
