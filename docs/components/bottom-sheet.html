@@ -4,7 +4,7 @@
     <title>底部面板 Bottom Sheet · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="徽标 Badge · M3E" />
+    <meta name="description" content="底部面板 Bottom Sheet · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Bottom Sheet 底部面板</m3e-heading>
         <p>
-          The <code>m3e-bottom-sheet</code> component is a sheet used to show secondary content anchored to the bottom
-          of the screen.
+          <code>m3e-bottom-sheet</code> 组件是一种面板,用于展示锚定在屏幕底部的次要内容。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">import "@m3e/web/bottom-sheet";</pre>
@@ -38,21 +37,16 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
         <p>
-          <strong>NOTE: this page is presented in a nested <code>iframe</code>.</strong>
+          <strong>注意:本页展示在一个嵌套的 <code>iframe</code> 中。</strong>
         </p>
         <ul>
-          <li>The modal bottom sheet scrim will only overlay the current window.</li>
-          <li>The bottom sheet is positioned relative the current window.</li>
+          <li>模态底部面板的遮罩只会覆盖当前窗口。</li>
+          <li>底部面板相对于当前窗口定位。</li>
         </ul>
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          Use the <code>m3e-bottom-sheet</code> to present content anchored to the bottom of the screen. Bottom sheets
-          are closed by default. You can open a sheet using a <code>m3e-bottom-sheet-trigger</code> nested inside any
-          clickable element. You can also open a sheet declaratively with the <code>open</code> attribute or
-          programmatically with the <code>show</code> method. To close a sheet, use a
-          <code>m3e-bottom-sheet-action</code> inside a clickable element, remove the <code>open</code> attribute, or
-          call the <code>hide</code> method programmatically.
+          使用 <code>m3e-bottom-sheet</code> 呈现锚定在屏幕底部的内容。底部面板默认关闭。你可以在任意可点击元素内嵌套一个 <code>m3e-bottom-sheet-trigger</code> 来打开面板。也可以通过 <code>open</code> 特性以声明式打开,或通过 <code>show</code> 方法以编程方式打开。要关闭面板,可以在可点击元素内使用 <code>m3e-bottom-sheet-action</code>,移除 <code>open</code> 特性,或以编程方式调用 <code>hide</code> 方法。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -95,40 +89,30 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Lifecycle events</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">生命周期事件</m3e-heading>
         <p>
-          Bottom sheets emit four lifecycle events that reflect their transition between open and closed states. These
-          events fire whether the sheet is opened programmatically, by a trigger, by keyboard interaction, or through
-          user gestures.
+          底部面板会发出四个生命周期事件,反映其在打开与关闭状态之间的转换。无论面板是以编程方式、通过触发器、键盘交互还是用户手势打开,这些事件都会触发。
         </p>
         <ul>
           <li>
-            <code>opening</code> — Fired when the sheet begins opening. This event is cancelable, allowing you to
-            prevent the sheet from opening by calling <code>event.preventDefault()</code>.
+            <code>opening</code> —— 面板开始打开时触发。该事件可取消,你可以调用 <code>event.preventDefault()</code> 阻止面板打开。
           </li>
-          <li><code>opened</code> — Fired after the sheet finishes opening and reaches its initial detent.</li>
+          <li><code>opened</code> —— 面板完成打开并到达初始停靠点后触发。</li>
           <li>
-            <code>closing</code> — Fired when the sheet begins closing. This event is also cancelable, allowing you to
-            intercept or block dismissal (for example, to confirm unsaved changes).
+            <code>closing</code> —— 面板开始关闭时触发。该事件同样可取消,你可以拦截或阻止关闭(例如用于确认未保存的更改)。
           </li>
-          <li><code>closed</code> — Fired after the sheet finishes closing and is fully hidden.</li>
+          <li><code>closed</code> —— 面板完成关闭并完全隐藏后触发。</li>
         </ul>
         <p>
-          These events give you full control over the sheet's lifecycle, including validation, analytics, and custom
-          behaviors during open and close transitions.
+          这些事件让你能完全掌控面板的生命周期,包括打开与关闭过渡期间的校验、埋点分析与自定义行为。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          Bottom sheets come in two variants: <strong>standard</strong> and <strong>modal</strong>. Both share the same
-          anatomy and resizing behavior, but they differ in how they interact with the rest of the page. A standard
-          bottom sheet is non-blocking. It sits above the page without trapping focus or preventing interaction with the
-          underlying UI. A modal bottom sheet blocks interaction with the rest of the page until dismissed. It presents
-          a backdrop (scrim), traps focus, supports autofocus on open, and restores focus to the trigger when closed.
+          底部面板有两种变体:<strong>标准</strong>与<strong>模态</strong>。两者的结构与尺寸调整行为相同,但同页面其余部分的交互方式不同。标准底部面板是非阻塞的:它浮在页面上方,但不捕获焦点,也不阻止与下层界面的交互。模态底部面板在关闭前会阻止与页面其余部分的交互:它会呈现一层背景遮罩,捕获焦点,支持打开时自动聚焦,并在关闭时把焦点归还给触发元素。
         </p>
         <p>
-          Bottom sheets are standard by default. Add the <code>modal</code> attribute to
-          <code>m3e-bottom-sheet</code> to create a modal bottom sheet.
+          底部面板默认是标准类型。给 <code>m3e-bottom-sheet</code> 添加 <code>modal</code> 特性即可创建模态底部面板。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -158,35 +142,26 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Modal behavior</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">模态行为</m3e-heading>
         <p>
-          When opened in modal mode, the bottom sheet behaves like a dialog and takes exclusive control of user
-          interaction. Focus moves into the sheet automatically, and if any element inside the sheet has the
-          <code>autofocus</code> attribute, it receives focus first. While the sheet is open, the rest of the document
-          becomes inert, preventing keyboard and assistive-technology users from interacting with content behind the
-          sheet. Page scrolling is also locked to keep the underlying layout stable.
+          以模态模式打开时,底部面板的行为类似对话框,独占用户交互。焦点会自动移入面板;如果面板内有元素带有 <code>autofocus</code> 特性,它会最先获得焦点。面板打开期间,文档其余部分变为惰性,阻止键盘与辅助技术用户与面板背后的内容交互。页面滚动也会被锁定,以保持下层布局稳定。
         </p>
         <p>
-          Modal sheets display a scrim behind the sheet. Activating the scrim triggers a cancelable
-          <code>cancel</code> event, allowing the sheet to close unless the you intercept it. When the sheet closes,
-          focus is restored to the trigger that opened it, ensuring users return to their previous position in the page
-          without losing context.
+          模态面板会在其背后显示一层遮罩。激活遮罩会触发可取消的 <code>cancel</code> 事件,除非你拦截它,否则面板会关闭。面板关闭时,焦点会归还给打开它的触发元素,确保用户回到页面中先前的位置而不丢失上下文。
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Drag handles</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">拖拽手柄</m3e-heading>
         <p>
-          Bottom sheets support an optional drag handle at the top edge of the sheet. The handle consists of two parts:
+          底部面板支持在面板顶部边缘显示一个可选的拖拽手柄。该手柄由两部分组成:
         </p>
         <ul>
-          <li><strong>A draggable bar</strong> — a visual affordance that indicates the sheet can be dragged.</li>
+          <li><strong>可拖拽的横条</strong> —— 一个表示面板可被拖拽的视觉提示。</li>
           <li>
-            <strong>A handle button</strong> — an interactive control used to cycle detents, expand to full height, or
-            close the sheet when no detents are defined.
+            <strong>手柄按钮</strong> —— 一个交互控件,用于循环切换停靠点、展开到全高,或在未定义停靠点时关闭面板。
           </li>
         </ul>
         <p>
-          Add the <code>handle</code> attribute to <code>m3e-bottom-sheet</code> to display the drag handle and use the
-          <code>handle-label</code> attribute to provide an accessible label (defaults to "Drag handle").
+          给 <code>m3e-bottom-sheet</code> 添加 <code>handle</code> 特性即可显示拖拽手柄,并使用 <code>handle-label</code> 特性提供无障碍标签(默认值为 "Drag handle")。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -220,13 +195,10 @@
 
         <m3e-heading variant="headline" size="small" level="3">停靠点</m3e-heading>
         <p>
-          Detents define the vertical positions a bottom sheet can rest at. A sheet may have no detents, a single
-          detent, or multiple detents. Detents control how the sheet resizes, how it responds to drag gestures, and how
-          the handle button behaves.
+          停靠点定义底部面板可以停留的垂直位置。面板可以没有停靠点、只有一个停靠点,或有多个停靠点。停靠点控制面板如何调整尺寸、如何响应拖拽手势,以及手柄按钮的行为。
         </p>
         <p>
-          Detents are declared using the <code>detents</code> attribute on <code>m3e-bottom-sheet</code>. Each detent
-          represents a target height the sheet can snap to.
+          停靠点通过在 <code>m3e-bottom-sheet</code> 上的 <code>detents</code> 特性声明。每个停靠点代表面板可以吸附到的目标高度。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -257,40 +229,33 @@
 &lt;/m3e-bottom-sheet&gt;</pre
           >
         </m3e-card>
-        <m3e-heading variant="title" size="medium" level="4">Types of detents</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">停靠点类型</m3e-heading>
         <p>
-          Bottom sheets support two kinds of detents: <strong>named detents</strong> and
-          <strong>unit-based detents</strong>. Both define the vertical positions the sheet can snap to, but they serve
-          different purposes.
+          底部面板支持两种停靠点:<strong>具名停靠点</strong>与<strong>基于单位的停靠点</strong>。两者都定义面板可吸附到的垂直位置,但用途不同。
         </p>
         <p>
-          Named detents are semantic height presets including <code>collapsed</code>, <code>fit</code>,
-          <code>half</code>, and <code>full</code> that map to familiar bottom-sheet behaviors. They provide
-          predictable, expressive sizing without requiring you to think in pixels or percentages.
+          具名停靠点是语义化的高度预设,包括 <code>collapsed</code>、<code>fit</code>、
+          <code>half</code> 与 <code>full</code>,对应熟悉的底部面板行为。它们提供可预期、富有表现力的尺寸,无需你用像素或百分比来思考。
         </p>
         <p>
-          Unit-based detents use explicit measurements (percentages or pixels) to give you precise control over the
-          sheet's height. These behave just like named detents but allow for custom layouts and fine-tuned sizing.
+          基于单位的停靠点使用明确的度量(百分比或像素),让你精确控制面板高度。它们的行为与具名停靠点相同,但支持自定义布局与精细调整的尺寸。
         </p>
         <p>
-          You can mix and match named and unit-based detents in any order. The sheet snaps between them based on drag
-          gestures, velocity, and the order in which they are declared.
+          你可以任意顺序混用具名与基于单位的停靠点。面板会根据拖拽手势、速度以及声明顺序在它们之间吸附。
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Initial height</m3e-heading>
-        <p>The initial height defines the sheet's entry point into the interaction model. For example:</p>
+        <m3e-heading variant="title" size="medium" level="4">初始高度</m3e-heading>
+        <p>初始高度定义面板进入交互模型的起点。例如:</p>
         <ul>
-          <li>Starting at <code>collapsed</code> creates a “peek” experience.</li>
-          <li>Starting at <code>fit</code> shows content immediately.</li>
-          <li>Starting at <code>half</code> or <code>full</code> creates a more immersive modal feel.</li>
+          <li>从 <code>collapsed</code> 开始会营造“窥视”体验。</li>
+          <li>从 <code>fit</code> 开始会立即显示内容。</li>
+          <li>从 <code>half</code> 或 <code>full</code> 开始会营造更具沉浸感的模态体验。</li>
         </ul>
         <p>
-          When a bottom sheet opens, it snaps to its initial detent. By default, this is the first detent listed in the
-          <code>detents</code> attribute. You can override this by setting the <code>detent</code> attribute (zero-based
-          index), which selects the detent the sheet should open to.
+          底部面板打开时,会吸附到其初始停靠点。默认情况下,这是 <code>detents</code> 特性中列出的第一个停靠点。你可以通过设置 <code>detent</code> 特性(从 0 开始的索引)来覆盖,以选择面板打开时应到达的停靠点。
         </p>
 
-        <p>In the following example, the sheet opens at <code>half</code> instead of <code>fit</code>.</p>
+        <p>在下面的示例中,面板会打开到 <code>half</code> 而非 <code>fit</code>。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button>
@@ -321,8 +286,7 @@
           >
         </m3e-card>
         <p>
-          You can also set the initial detent on a <code>m3e-bottom-sheet-trigger</code> using its
-          <code>detent</code> attribute, allowing each trigger to open the sheet at a different height.
+          你也可以通过 <code>m3e-bottom-sheet-trigger</code> 的 <code>detent</code> 特性设置初始停靠点,让每个触发器都能以不同高度打开面板。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -358,20 +322,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Collapsed height</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">折叠高度</m3e-heading>
         <p>
-          The collapsed state always includes the sheet's header. This ensures the sheet remains visible, discoverable,
-          and interactive even at its lowest detent. You can optionally reveal a portion of the content area beneath the
-          header by setting the <code>--m3e-bottom-sheet-peek-height</code> CSS custom property. This value applies only
-          to the content area and defaults to <code>0px</code>, meaning the collapsed state shows the header alone.
+          折叠状态始终包含面板的头部。这样即便处于最低停靠点,面板仍保持可见、可发现且可交互。你可以通过设置 <code>--m3e-bottom-sheet-peek-height</code> 这个 CSS 自定义属性,选择性地露出头部下方的一部分内容区域。该值只作用于内容区域,默认值为 <code>0px</code>,即折叠状态只显示头部。
         </p>
         <p>
-          When the sheet is collapsed, the content area is always marked inert. This applies whenever the sheet's
-          rendered height falls at or below the combined height of the header and the configured peek height. In this
-          state, only the header is interactive; the content cannot receive focus, pointer events, or screen-reader
-          navigation. This prevents users from interacting with partially hidden elements and ensures the collapsed
-          state behaves as a non-interactive preview. The content becomes interactive again only after the sheet expands
-          above the collapsed height.
+          当面板折叠时,内容区域始终被标记为惰性。只要面板的渲染高度小于或等于头部与所配置窥视高度之和,就会如此。在这种状态下,只有头部可交互;内容无法获得焦点、指针事件或屏幕阅读器导航。这可防止用户与部分隐藏的元素交互,并确保折叠状态表现为不可交互的预览。只有当面板展开到超过折叠高度后,内容才重新变为可交互。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -414,11 +370,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Hideability</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">可隐藏性</m3e-heading>
         <p>
-          A bottom sheet is hideable when it can be dismissed by dragging downward past its lowest detent. This allows
-          the sheet to behave like a modal dialog or a temporary surface that can be fully removed from view. You enable
-          this behavior by adding the <code>hideable</code> attribute to <code>m3e-bottom-sheet</code>.
+          当底部面板可以被向下拖拽越过其最低停靠点而关闭时,它就是可隐藏的。这让面板能像模态对话框或临时浮层那样被完全移出视图。给 <code>m3e-bottom-sheet</code> 添加 <code>hideable</code> 特性即可启用该行为。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -478,16 +432,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Headers</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">头部</m3e-heading>
         <p>
-          The <code>m3e-bottom-sheet</code> provides a <code>header</code> named slot for supplying custom content
-          within the sheet's draggable header region. When a header is provided, it appears directly below the optional
-          drag handle. The handle, if enabled, is never replaced by custom header content.
+          <code>m3e-bottom-sheet</code> 提供一个名为 <code>header</code> 的具名插槽,用于在面板可拖拽的头部区域内提供自定义内容。提供头部后,它会显示在可选拖拽手柄的正下方。手柄若启用,永远不会被自定义头部内容取代。
         </p>
         <p>
-          If the handle is not enabled, the entire header region—including any slotted header content—remains draggable.
-          This ensures the sheet always preserves a reliable drag surface regardless of whether a handle is present. If
-          dragging is undesired, place header content in the default slot and omit the <code>handle</code> attribute.
+          如果未启用手柄,整个头部区域——包括任何通过插槽放入的头部内容——都保持可拖拽。这确保无论是否存在手柄,面板始终保留可靠的拖拽表面。如果不希望拖拽,请把头部内容放进默认插槽,并省略 <code>handle</code> 特性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -532,47 +482,31 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Standard bottom sheets use <code>role="region"</code>, which identifies the sheet as a labeled section of the
-          page. Because they are not modal, they do not trap focus, support autofocus, or block interaction with the
-          rest of the document.
+          标准底部面板使用 <code>role="region"</code>,把面板标识为页面中一个有标签的区域。由于它们不是模态的,因此不会捕获焦点、不支持自动聚焦,也不会阻止与文档其余部分的交互。
         </p>
         <p>
-          Bottom sheets are typically opened by a trigger element. The primary trigger exposes the correct ARIA
-          relationships so assistive technologies understand that activating it will reveal the sheet. The trigger
-          automatically receives <code>aria-controls</code> referencing the sheet's <code>id</code>, and its
-          <code>aria-expanded</code> attribute is updated as the sheet opens and closes. Standard sheets are also
-          labelled by their primary trigger when that trigger provides an <code>id</code>. Secondary triggers do not
-          participate in ARIA ownership and receive no accessibility attributes; they simply open the sheet. Triggers
-          are considered primary by default; use the <code>secondary</code> attribute on
-          <code>m3e-bottom-sheet-trigger</code> to opt out of ARIA ownership when multiple triggers open the same sheet.
+          底部面板通常由触发元素打开。主触发器会暴露正确的 ARIA 关系,使辅助技术理解激活它会显示该面板。触发器会自动获得引用面板 <code>id</code> 的 <code>aria-controls</code>,且其
+          <code>aria-expanded</code> 特性会随面板的打开与关闭而更新。当主触发器提供了 <code>id</code> 时,标准面板还会以该主触发器作为标签。次级触发器不参与 ARIA 归属,也不会获得任何无障碍特性;它们只是打开面板。触发器默认视为主触发器;当多个触发器打开同一面板时,可在
+          <code>m3e-bottom-sheet-trigger</code> 上使用 <code>secondary</code> 特性来退出 ARIA 归属。
         </p>
         <p>
-          Modal bottom sheets use <code>role="dialog"</code> and <code>aria-modal="true"</code>, which identify the
-          sheet as a blocking interaction surface. Unlike standard sheets, modal sheets trap focus, prevent interaction
-          with the rest of the page, and require an explicit action to dismiss. The sheet must have an accessible name,
-          provided by either <code>aria-labelledby</code> or <code>aria-label</code>, so assistive technologies can
-          announce its purpose when it opens.
+          模态底部面板使用 <code>role="dialog"</code> 与 <code>aria-modal="true"</code>,把面板标识为一个阻断式交互表面。与标准面板不同,模态面板会捕获焦点、阻止与页面其余部分的交互,并要求显式操作才能关闭。面板必须有一个无障碍名称,由 <code>aria-labelledby</code> 或 <code>aria-label</code> 提供,以便辅助技术在它打开时朗读其用途。
         </p>
         <p>
-          Modal sheets are also opened by a trigger element. The trigger communicates that activating it will open a
-          modal dialog by receiving <code>aria-haspopup="dialog"</code>.
+          模态面板同样由触发元素打开。触发器会获得 <code>aria-haspopup="dialog"</code>,以表明激活它将打开一个模态对话框。
         </p>
         <p>
-          Modal sheets trap focus and keyboard navigation is contained within the sheet while it is open. Tabbing cycles
-          through the sheet's focusable elements, wrapping from the last element back to the first. The rest of the page
-          is made inert, preventing background content from receiving focus or pointer interaction. When the sheet is
-          dismissed, focus returns to the trigger that opened it, preserving user context and aligning with established
-          dialog accessibility patterns.
+          模态面板会捕获焦点,打开期间键盘导航被限制在面板内。按 Tab 会在面板的可聚焦元素之间循环,从最后一个元素回到第一个。页面其余部分变为惰性,阻止背景内容获得焦点或指针交互。面板关闭时,焦点返回到打开它的触发器,保留用户上下文,并与既有的对话框无障碍模式一致。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package uses
+          <code>@m3e/web</code> 包使用
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#module_specifiers"
             target="_blank"
             >JavaScript Modules</a
-          >. To use it directly in a browser without a bundler, use a module script similar to the following.
+          >。要在不借助构建工具的情况下直接在浏览器中使用,请使用类似下面的 module 脚本。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -581,13 +515,13 @@
           >
         </m3e-card>
         <p>
-          In addition, you must use an
+          此外,你还必须使用一个
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap"
             target="_blank"
             >import map</a
           >
-          to include additional dependencies.
+          来引入更多依赖。
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">
@@ -614,12 +548,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">API 参考</m3e-heading>
         <p>
-          The <code>@m3e/web</code> package includes a
+          <code>@m3e/web</code> 包附带
           <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank"
             >Custom Elements Manifest</a
           >
-          (<code>custom-elements.json</code>), which documents the properties, attributes, slots, events and CSS custom
-          properties of each component.
+          (<code>custom-elements.json</code>),其中记录了每个组件的属性、特性、插槽、事件与 CSS 自定义属性。
         </p>
         <p>你可以在下方浏览 API,或把该清单集成到你自己的工具链中。</p>
         <m3e-heading variant="headline" size="small" level="3">m3e-bottom-sheet</m3e-heading>
