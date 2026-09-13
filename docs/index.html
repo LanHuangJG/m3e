@@ -24,10 +24,9 @@
   <body>
     <m3e-theme strong-focus>
       <m3e-app-bar class="docs-header-bar">
-        <m3e-icon-button slot="leading" aria-label="Menu" toggle>
+        <m3e-icon-button id="menu-button" slot="leading" aria-label="菜单" toggle>
           <m3e-icon name="menu"></m3e-icon>
           <m3e-icon slot="selected" name="menu_open"></m3e-icon>
-          <m3e-drawer-toggle for="nav-drawer"></m3e-drawer-toggle>
         </m3e-icon-button>
         <span slot="title" class="title">
           <span class="title-text">M3E — 面向所有框架的 Material 3 Expressive</span>
@@ -52,278 +51,299 @@
             </svg>
           </m3e-icon-button>
           <m3e-tooltip for="github-button">Github 仓库</m3e-tooltip>
-          <m3e-icon-button id="settings-button" aria-label="Settings" toggle>
-            <m3e-icon name="settings"></m3e-icon>
-            <m3e-drawer-toggle for="settings-drawer"></m3e-drawer-toggle>
-          </m3e-icon-button>
-          <m3e-tooltip for="settings-button">设置</m3e-tooltip>
         </span>
       </m3e-app-bar>
-      <m3e-drawer-container class="docs-drawer-container" start start-mode="auto" end-mode="auto">
-        <m3e-nav-menu id="nav-drawer" slot="start">
-          <m3e-nav-menu-item open>
+      <div class="docs-shell">
+        <m3e-nav-rail id="rail" mode="compact" aria-label="站点导航">
+          <m3e-nav-item id="rail-getting-started" data-panel="getting-started" selected>
             <m3e-icon slot="icon" name="rocket_launch"></m3e-icon>
-            <span slot="label">Getting Started 开始使用</span>
-            <m3e-nav-menu-item>
-              <m3e-icon slot="icon" name="near_me"></m3e-icon>
-              <a slot="label" target="content-frame" href="getting-started/overview.html">Overview 概览</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <m3e-icon slot="icon" name="package_2"></m3e-icon>
-              <a slot="label" target="content-frame" href="getting-started/installation.html">Installation 安装</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <m3e-icon slot="icon" name="language"></m3e-icon>
-              <a slot="label" target="content-frame" href="getting-started/browser-support.html">Browser Support 浏览器支持</a>
-            </m3e-nav-menu-item>
-          </m3e-nav-menu-item>
-          <m3e-nav-menu-item>
+            <span slot="label">开始使用</span>
+          </m3e-nav-item>
+          <m3e-nav-item id="rail-styles" data-panel="styles">
             <m3e-icon slot="icon" name="palette"></m3e-icon>
-            <span slot="label">Styles 样式</span>
-            <m3e-nav-menu-item>
-              <m3e-icon slot="icon" name="colorize"></m3e-icon>
-              <a slot="label" target="content-frame" href="styles/color.html">Color 颜色</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <m3e-icon slot="icon" name="density_medium"></m3e-icon>
-              <a slot="label" target="content-frame" href="styles/density.html">Density 密度</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <m3e-icon slot="icon" name="animation"></m3e-icon>
-              <a slot="label" target="content-frame" href="styles/motion.html">Motion 动效</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <m3e-icon slot="icon" name="text_fields"></m3e-icon>
-              <a slot="label" target="content-frame" href="styles/typography.html">Typography 字体排版</a>
-            </m3e-nav-menu-item>
-          </m3e-nav-menu-item>
-          <m3e-nav-menu-item>
+            <span slot="label">样式</span>
+          </m3e-nav-item>
+          <m3e-nav-item id="rail-frameworks" data-panel="frameworks">
             <m3e-icon slot="icon" name="integration_instructions"></m3e-icon>
-            <span slot="label">Frameworks 框架集成</span>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="frameworks/react.html">React</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="frameworks/vue.html">Vue</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="frameworks/angular.html">Angular</a>
-            </m3e-nav-menu-item>
-          </m3e-nav-menu-item>
-          <m3e-nav-menu-item open>
+            <span slot="label">框架集成</span>
+          </m3e-nav-item>
+          <m3e-nav-item id="rail-components" data-panel="components">
             <m3e-icon slot="icon" name="widgets"></m3e-icon>
-            <span slot="label">Components 组件</span>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/app-bar.html">App Bar 应用栏</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/autocomplete.html">Autocomplete 自动补全</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/avatar.html">Avatar 头像</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/badge.html">Badge 徽标</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/bottom-sheet.html">Bottom Sheet 底部面板</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/breadcrumb.html">Breadcrumb 面包屑</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/button.html">Button 按钮</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/button-group.html">Button Group 按钮组</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/calendar.html">Calendar 日历</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/card.html">Card 卡片</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/checkbox.html">Checkbox 复选框</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/chips.html">Chips 芯片</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/content-pane.html">Content Pane 内容面板</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/date-input.html">Date Input 日期输入</a>
-              <m3e-badge slot="badge">新增</m3e-badge>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/datepicker.html">Datepicker 日期选择器</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/dialog.html">Dialog 对话框</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/divider.html">Divider 分隔线</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/drawer-container.html">Drawer Container 抽屉容器</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/expansion-panel.html">Expansion Panel 折叠面板</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/fab.html">FAB</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/fab-menu.html">FAB Menu</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/form-field.html">Form Field 表单容器</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/heading.html">Heading 标题</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/icon.html">Icon 图标</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/icon-button.html">Icon Button 图标按钮</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/list.html">List 列表</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/loading-indicator.html">Loading Indicator 加载指示器</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/menu.html">Menu 菜单</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/nav-bar.html">Nav Bar 导航栏</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/nav-menu.html">Nav Menu 导航菜单</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/nav-rail.html">Nav Rail 导航侧栏</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/paginator.html">Paginator 分页器</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/progress-indicator.html">Progress Indicator 进度指示器</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/radio-group.html">Radio Group 单选组</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/search.html">Search 搜索框</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/segmented-button.html">Segmented Button 分段按钮</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/select.html">Select 下拉选择</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/shape.html">Shape 形状</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/skeleton.html">Skeleton 骨架屏</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/slide-group.html">Slide Group 滑动组</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/slider.html">Slider 滑块</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/snackbar.html">Snackbar 消息条</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/split-button.html">Split Button 分裂按钮</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/split-pane.html">Split Pane 分割面板</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/stepper.html">Stepper 步骤条</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/switch.html">Switch 开关</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/tabs.html">Tabs 标签页</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/textarea-autosize.html">Textarea Autosize 自适应文本域</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/theme.html">Theme 主题</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/timepicker.html">Timepicker 时间选择器</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/toc.html">TOC</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/toolbar.html">Toolbar 工具栏</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/tooltip.html">Tooltip 工具提示</a>
-            </m3e-nav-menu-item>
-            <m3e-nav-menu-item>
-              <a slot="label" target="content-frame" href="components/tree.html">Tree 树形控件</a>
-            </m3e-nav-menu-item>
-          </m3e-nav-menu-item>
-        </m3e-nav-menu>
+            <span slot="label">组件</span>
+          </m3e-nav-item>
+          <m3e-nav-item id="rail-settings" data-panel="settings">
+            <m3e-icon slot="icon" name="settings"></m3e-icon>
+            <span slot="label">设置</span>
+          </m3e-nav-item>
+        </m3e-nav-rail>
+        <aside class="docs-flyout" id="flyout" aria-label="站点导航">
+          <m3e-nav-menu data-panel="getting-started">
+            <m3e-nav-menu-item-group>
+              <m3e-heading slot="label" variant="label" size="large">开始使用</m3e-heading>
+              <m3e-nav-menu-item>
+                <m3e-icon slot="icon" name="near_me"></m3e-icon>
+                <a slot="label" target="content-frame" href="getting-started/overview.html">Overview 概览</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <m3e-icon slot="icon" name="package_2"></m3e-icon>
+                <a slot="label" target="content-frame" href="getting-started/installation.html">Installation 安装</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <m3e-icon slot="icon" name="language"></m3e-icon>
+                <a slot="label" target="content-frame" href="getting-started/browser-support.html">Browser Support 浏览器支持</a>
+              </m3e-nav-menu-item>
+            </m3e-nav-menu-item-group>
+          </m3e-nav-menu>
+          <m3e-nav-menu data-panel="styles" hidden>
+            <m3e-nav-menu-item-group>
+              <m3e-heading slot="label" variant="label" size="large">样式</m3e-heading>
+              <m3e-nav-menu-item>
+                <m3e-icon slot="icon" name="colorize"></m3e-icon>
+                <a slot="label" target="content-frame" href="styles/color.html">Color 颜色</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <m3e-icon slot="icon" name="density_medium"></m3e-icon>
+                <a slot="label" target="content-frame" href="styles/density.html">Density 密度</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <m3e-icon slot="icon" name="animation"></m3e-icon>
+                <a slot="label" target="content-frame" href="styles/motion.html">Motion 动效</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <m3e-icon slot="icon" name="text_fields"></m3e-icon>
+                <a slot="label" target="content-frame" href="styles/typography.html">Typography 字体排版</a>
+              </m3e-nav-menu-item>
+            </m3e-nav-menu-item-group>
+          </m3e-nav-menu>
+          <m3e-nav-menu data-panel="frameworks" hidden>
+            <m3e-nav-menu-item-group>
+              <m3e-heading slot="label" variant="label" size="large">框架集成</m3e-heading>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="frameworks/react.html">React</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="frameworks/vue.html">Vue</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="frameworks/angular.html">Angular</a>
+              </m3e-nav-menu-item>
+            </m3e-nav-menu-item-group>
+          </m3e-nav-menu>
+          <m3e-nav-menu data-panel="components" hidden>
+            <m3e-nav-menu-item-group>
+              <m3e-heading slot="label" variant="label" size="large">组件</m3e-heading>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/app-bar.html">App Bar 应用栏</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/autocomplete.html">Autocomplete 自动补全</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/avatar.html">Avatar 头像</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/badge.html">Badge 徽标</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/bottom-sheet.html">Bottom Sheet 底部面板</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/breadcrumb.html">Breadcrumb 面包屑</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/button.html">Button 按钮</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/button-group.html">Button Group 按钮组</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/calendar.html">Calendar 日历</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/card.html">Card 卡片</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/checkbox.html">Checkbox 复选框</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/chips.html">Chips 芯片</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/content-pane.html">Content Pane 内容面板</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/date-input.html">Date Input 日期输入</a>
+                <m3e-badge slot="badge">新增</m3e-badge>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/datepicker.html">Datepicker 日期选择器</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/dialog.html">Dialog 对话框</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/divider.html">Divider 分隔线</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/drawer-container.html">Drawer Container 抽屉容器</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/expansion-panel.html">Expansion Panel 折叠面板</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/fab.html">FAB</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/fab-menu.html">FAB Menu</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/form-field.html">Form Field 表单容器</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/heading.html">Heading 标题</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/icon.html">Icon 图标</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/icon-button.html">Icon Button 图标按钮</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/list.html">List 列表</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/loading-indicator.html">Loading Indicator 加载指示器</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/menu.html">Menu 菜单</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/nav-bar.html">Nav Bar 导航栏</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/nav-menu.html">Nav Menu 导航菜单</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/nav-rail.html">Nav Rail 导航侧栏</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/paginator.html">Paginator 分页器</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/progress-indicator.html">Progress Indicator 进度指示器</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/radio-group.html">Radio Group 单选组</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/search.html">Search 搜索框</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/segmented-button.html">Segmented Button 分段按钮</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/select.html">Select 下拉选择</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/shape.html">Shape 形状</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/skeleton.html">Skeleton 骨架屏</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/slide-group.html">Slide Group 滑动组</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/slider.html">Slider 滑块</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/snackbar.html">Snackbar 消息条</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/split-button.html">Split Button 分裂按钮</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/split-pane.html">Split Pane 分割面板</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/stepper.html">Stepper 步骤条</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/switch.html">Switch 开关</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/tabs.html">Tabs 标签页</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/textarea-autosize.html">Textarea Autosize 自适应文本域</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/theme.html">Theme 主题</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/timepicker.html">Timepicker 时间选择器</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/toc.html">TOC</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/toolbar.html">Toolbar 工具栏</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/tooltip.html">Tooltip 工具提示</a>
+              </m3e-nav-menu-item>
+              <m3e-nav-menu-item>
+                <a slot="label" target="content-frame" href="components/tree.html">Tree 树形控件</a>
+              </m3e-nav-menu-item>
+            </m3e-nav-menu-item-group>
+          </m3e-nav-menu>
+          <div class="settings-panel" data-panel="settings" hidden>
+            <m3e-heading id="color-header" variant="label" size="large">颜色</m3e-heading>
+            <input id="color" type="color" aria-labelledby="color-header" />
+            <m3e-heading id="color-scheme-header" variant="label" size="large">配色方案</m3e-heading>
+            <m3e-segmented-button id="color-scheme-button" aria-labelledby="color-scheme-header">
+              <m3e-button-segment value="light">
+                <m3e-icon slot="icon" name="light_mode"></m3e-icon>
+                浅色
+              </m3e-button-segment>
+              <m3e-button-segment checked value="auto">
+                <m3e-icon slot="icon" name="settings_brightness"></m3e-icon>
+                跟随系统
+              </m3e-button-segment>
+              <m3e-button-segment value="dark">
+                <m3e-icon slot="icon" name="dark_mode"></m3e-icon>
+                深色
+              </m3e-button-segment>
+            </m3e-segmented-button>
+            <m3e-heading id="contrast-header" variant="label" size="large">对比度</m3e-heading>
+            <m3e-segmented-button id="contrast-button" aria-labelledby="contrast-header">
+              <m3e-button-segment checked value="default">默认</m3e-button-segment>
+              <m3e-button-segment value="medium">中</m3e-button-segment>
+              <m3e-button-segment value="high">高</m3e-button-segment>
+            </m3e-segmented-button>
+            <m3e-heading id="directionality-header" variant="label" size="large">文字方向</m3e-heading>
+            <m3e-segmented-button id="directionality-button" aria-labelledby="directionality-header">
+              <m3e-button-segment checked value="ltr">
+                <m3e-icon slot="icon" name="format_textdirection_l_to_r"></m3e-icon>
+                从左到右
+              </m3e-button-segment>
+              <m3e-button-segment value="rtl">
+                <m3e-icon slot="icon" name="format_textdirection_r_to_l"></m3e-icon>
+                从右到左
+              </m3e-button-segment>
+            </m3e-segmented-button>
+            <m3e-heading id="text-size-header" variant="label" size="large">文字大小</m3e-heading>
+            <m3e-segmented-button id="text-size-button" aria-labelledby="text-size-header">
+              <m3e-button-segment checked value="16px"> 100% </m3e-button-segment>
+              <m3e-button-segment value="24px"> 150% </m3e-button-segment>
+              <m3e-button-segment value="32px"> 200% </m3e-button-segment>
+            </m3e-segmented-button>
+          </div>
+        </aside>
         <main>
           <iframe id="content-frame" class="docs-frame" title="Main content" name="content-frame" hidden></iframe>
         </main>
-        <div id="settings-drawer" role="complementary" slot="end">
-          <m3e-heading id="color-header" variant="label" size="large">颜色</m3e-heading>
-          <input id="color" type="color" aria-labelledby="color-header" />
-          <m3e-heading id="color-scheme-header" variant="label" size="large">配色方案</m3e-heading>
-          <m3e-segmented-button id="color-scheme-button" aria-labelledby="color-scheme-header">
-            <m3e-button-segment value="light">
-              <m3e-icon slot="icon" name="light_mode"></m3e-icon>
-              浅色
-            </m3e-button-segment>
-            <m3e-button-segment checked value="auto">
-              <m3e-icon slot="icon" name="settings_brightness"></m3e-icon>
-              跟随系统
-            </m3e-button-segment>
-            <m3e-button-segment value="dark">
-              <m3e-icon slot="icon" name="dark_mode"></m3e-icon>
-              深色
-            </m3e-button-segment>
-          </m3e-segmented-button>
-          <m3e-heading id="contrast-header" variant="label" size="large">对比度</m3e-heading>
-          <m3e-segmented-button id="contrast-button" aria-labelledby="contrast-header">
-            <m3e-button-segment checked value="default">默认</m3e-button-segment>
-            <m3e-button-segment value="medium">中</m3e-button-segment>
-            <m3e-button-segment value="high">高</m3e-button-segment>
-          </m3e-segmented-button>
-          <m3e-heading id="directionality-header" variant="label" size="large">文字方向</m3e-heading>
-          <m3e-segmented-button id="directionality-button" aria-labelledby="directionality-header">
-            <m3e-button-segment checked value="ltr">
-              <m3e-icon slot="icon" name="format_textdirection_l_to_r"></m3e-icon>
-              从左到右
-            </m3e-button-segment>
-            <m3e-button-segment value="rtl">
-              <m3e-icon slot="icon" name="format_textdirection_r_to_l"></m3e-icon>
-              从右到左
-            </m3e-button-segment>
-          </m3e-segmented-button>
-          <m3e-heading id="text-size-header" variant="label" size="large">文字大小</m3e-heading>
-          <m3e-segmented-button id="text-size-button" aria-labelledby="text-size-header">
-            <m3e-button-segment checked value="16px"> 100% </m3e-button-segment>
-            <m3e-button-segment checked value="24px"> 150% </m3e-button-segment>
-            <m3e-button-segment checked value="32px"> 200% </m3e-button-segment>
-          </m3e-segmented-button>
-        </div>
-      </m3e-drawer-container>
+      </div>
     </m3e-theme>
   </body>
 </html>

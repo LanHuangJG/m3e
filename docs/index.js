@@ -24,13 +24,73 @@ window.addEventListener("DOMContentLoaded", () => {
     if (menuItem) {
       menuItem.selected = true;
     }
+    selectPanel(groupForPath(currentUrl), false);
     frame.removeAttribute("hidden");
   });
 
   // Only allow "[segment/]*file.html" paths, no suspicious characters
   const allowedPathRegex = /^([a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\.html$/;
   const requestedPath = location.hash ? location.hash.substring(2) : "";
-  frame.src = allowedPathRegex.test(requestedPath) ? requestedPath : "getting-started/overview.html";
+  const initialPath = allowedPathRegex.test(requestedPath) ? requestedPath : "getting-started/overview.html";
+  frame.src = initialPath;
+
+  const rail = document.querySelector("#rail");
+  const flyout = document.querySelector("#flyout");
+  const menuButton = document.querySelector("#menu-button");
+  const railItems = rail ? [...rail.querySelectorAll("m3e-nav-item")] : [];
+
+  function groupForPath(path) {
+    const segment = (path || "").split("/")[0];
+    return ["getting-started", "styles", "frameworks", "components"].includes(segment) ? segment : "getting-started";
+  }
+
+  function selectPanel(key, open = true) {
+    if (!flyout) {
+      return;
+    }
+    for (const panel of flyout.querySelectorAll("[data-panel]")) {
+      panel.hidden = panel.dataset.panel !== key;
+    }
+    for (const item of railItems) {
+      const selected = item.dataset.panel === key;
+      if (item.selected !== selected) {
+        item.selected = selected;
+      }
+    }
+    if (open) {
+      flyout.hidden = false;
+      if (menuButton) {
+        menuButton.selected = true;
+      }
+    }
+  }
+
+  rail?.addEventListener("change", () => {
+    const item = railItems.find((x) => x.selected);
+    if (item) {
+      selectPanel(item.dataset.panel);
+    }
+  });
+
+  menuButton?.addEventListener("change", () => {
+    if (flyout) {
+      flyout.hidden = !menuButton.selected;
+    }
+  });
+
+  flyout?.addEventListener("click", (e) => {
+    if (!e.target.closest("a[href]")) {
+      return;
+    }
+    if (window.matchMedia("(max-width: 900px)").matches) {
+      flyout.hidden = true;
+      if (menuButton) {
+        menuButton.selected = false;
+      }
+    }
+  });
+
+  selectPanel(groupForPath(initialPath), true);
 
   const color = document.querySelector("#color");
   if (color) {

@@ -1,6 +1,8 @@
 :root {
   --md-sys-color-background: var(--md-sys-color-surface-container-low);
   --m3e-scrollbar-width: thin;
+  --docs-rail-width: 72px;
+  --docs-appbar-height: 64px;
 }
 html {
   overflow: hidden;
@@ -13,9 +15,6 @@ body {
   flex-direction: column;
   margin: 0;
 }
-main {
-  display: contents;
-}
 *:not(:defined) {
   visibility: hidden;
 }
@@ -23,6 +22,36 @@ main {
   flex: none;
   z-index: 4;
   --m3e-app-bar-container-color: var(--md-sys-color-surface-container-low);
+}
+.docs-shell {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+}
+#rail {
+  flex: none;
+  --m3e-nav-rail-compact-width: var(--docs-rail-width);
+  border-inline-end: 1px solid var(--md-sys-color-outline-variant);
+}
+.docs-flyout {
+  flex: none;
+  width: 300px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-block: 8px;
+  background: var(--md-sys-color-surface-container-low);
+  border-inline-end: 1px solid var(--md-sys-color-outline-variant);
+}
+.docs-flyout > [data-panel][hidden] {
+  display: none !important;
+}
+main {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  background: var(--md-sys-color-surface-container-lowest);
 }
 .docs-frame {
   display: block;
@@ -34,11 +63,7 @@ main {
 .docs-frame[hidden] {
   visibility: hidden;
 }
-.docs-drawer-container {
-  --m3e-drawer-container-color: var(--md-sys-color-surface-container-low);
-  --m3e-modal-drawer-container-color: var(--md-sys-color-surface-container);
-}
-#settings-drawer {
+.settings-panel {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -47,7 +72,7 @@ main {
   padding-block: 8px;
   overflow-x: auto;
 }
-#settings-drawer > m3e-segmented-button {
+.settings-panel > m3e-segmented-button {
   width: fit-content;
 }
 input[type="color"] {
@@ -82,6 +107,17 @@ input[type="color"]::-webkit-color-swatch {
 .title-version {
   flex: none;
   min-width: 0;
+}
+@media (max-width: 900px) {
+  .docs-flyout {
+    position: fixed;
+    top: var(--docs-appbar-height);
+    bottom: 0;
+    inset-inline-start: var(--docs-rail-width);
+    z-index: 3;
+    width: min(300px, 78vw);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
+  }
 }
 @media (prefers-color-scheme: dark) {
   html {
