@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Chips 芯片</m3e-heading>
         <p>
-          The <code>@m3e/web/chips</code> module provides expressive, accessible chip components for actions, input,
-          filtering, and suggestions.
+          <code>@m3e/web/chips</code> 模块提供富有表现力、可访问的芯片组件,用于操作、输入、过滤与建议。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/chips";</pre></m3e-card>
@@ -37,10 +36,9 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Non-interactive chips</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">非交互式芯片</m3e-heading>
         <p>
-          Use the <code>m3e-chip</code> component to present a non-interactive chip. You can optionally nest chips in a
-          <code>m3e-chip-set</code> which provides default spacing between chips.
+          使用 <code>m3e-chip</code> 组件呈现一个非交互式芯片。你可以选择把芯片嵌套在 <code>m3e-chip-set</code> 中,它提供芯片之间的默认间距。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -65,8 +63,7 @@
 
         <m3e-heading variant="title" size="medium" level="4">变体</m3e-heading>
         <p>
-          All chip types support two appearance variants: <code>outlined</code> (default) and <code>elevated</code>. Use
-          the <code>variant</code> attribute to change a chip's appearance.
+          所有芯片类型都支持两种外观变体:<code>outlined</code>(默认)与 <code>elevated</code>。使用 <code>variant</code> 特性更改芯片的外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -82,7 +79,7 @@
         </m3e-card>
 
         <m3e-heading variant="title" size="medium" level="4">方向</m3e-heading>
-        <p>Chips can be stacked vertically using the <code>vertical</code> attribute of a <code>m3e-chip-set</code>.</p>
+        <p>使用 <code>m3e-chip-set</code> 的 <code>vertical</code> 特性可以将芯片垂直堆叠。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-chip-set vertical>
@@ -106,10 +103,7 @@
 
         <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
-          The <code>m3e-chip</code> provides slots for two icons. Use the <code>icon</code> slot to present an icon
-          before a chip's label and use the <code>trailing-icon</code> slot to present an icon after it. While not
-          required, the following example uses the <code>m3e-icon</code> component from <code>@m3e/icon</code> to
-          present icons using Material Symbols.
+          <code>m3e-chip</code> 为两个图标提供插槽。使用 <code>icon</code> 插槽在芯片标签之前呈现图标,使用 <code>trailing-icon</code> 插槽在其后呈现图标。以下示例虽非必需,但使用了来自 <code>@m3e/icon</code> 的 <code>m3e-icon</code> 组件,通过 Material Symbols 呈现图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -125,10 +119,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Assist chips</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">辅助芯片</m3e-heading>
         <p>
-          Use the <code>m3e-assist-chip</code> to perform a smart or automated action that can span multiple
-          applications.
+          使用 <code>m3e-assist-chip</code> 执行可跨多个应用的智能或自动化操作。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -144,8 +137,7 @@
         </m3e-card>
         <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
-          The <code>m3e-assist-chip</code> provides a single slot, <code>icon</code>, to present an icon before a chip's
-          label. Trailing icons are not supported for this chip type.
+          <code>m3e-assist-chip</code> 提供单个插槽 <code>icon</code>,用于在芯片标签之前呈现图标。此芯片类型不支持尾部图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -163,12 +155,10 @@
 
         <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 an assist chip. By default, disabled chips are not
-          focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 属性禁用辅助芯片。默认情况下,禁用的芯片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
-            >focusability of disabled controls</a
-          >
-          to increase their discoverability.
+            >禁用控件的可聚焦性</a
+          >,以提高其可发现性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -185,16 +175,12 @@
 
         <m3e-heading variant="title" size="medium" level="4">类型</m3e-heading>
         <p>
-          Use the <code>type</code> attribute to control the behavior of an assist chip. By default,
-          <code>type</code> is <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to
-          submit or reset a parenting form when clicked. When submitting a form, you can use the <code>name</code> and
-          <code>value</code> attributes to specify a value.
+          使用 <code>type</code> 特性控制辅助芯片的行为。默认情况下,<code>type</code> 为 <code>button</code>。你可以将其改为 <code>submit</code> 或 <code>reset</code>,以便在点击时提交或重置其父表单。提交表单时,你可以使用 <code>name</code> 与 <code>value</code> 特性指定一个值。
         </p>
 
         <m3e-heading variant="title" size="medium" level="4">链接</m3e-heading>
         <p>
-          Assist chips can also behave like links by specifying a URL using the <code>href</code> attribute. You can
-          also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          辅助芯片也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以像原生锚点标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -208,10 +194,9 @@
 &lt;/m3e-assist-chip&gt;</pre
           >
         </m3e-card>
-        <m3e-heading variant="headline" size="small" level="3">Filter chips</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">过滤芯片</m3e-heading>
         <p>
-          Use the <code>m3e-filter-chip</code> and <code>m3e-filter-chip-set</code> components to present chips that
-          users can select or deselect to filter content or data sets.
+          使用 <code>m3e-filter-chip</code> 与 <code>m3e-filter-chip-set</code> 组件呈现芯片,用户可选择或取消选择它们来过滤内容或数据集。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -232,10 +217,9 @@
 
         <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
-          The <code>m3e-filter-chip</code> provides slots for two icons. Use the <code>icon</code> slot to present an
-          icon before a chip's label and use the <code>trailing-icon</code> slot to present an icon after it.
+          <code>m3e-filter-chip</code> 为两个图标提供插槽。使用 <code>icon</code> 插槽在芯片标签之前呈现图标,使用 <code>trailing-icon</code> 插槽在其后呈现图标。
         </p>
-        <p>When selected, a filter chip's icon is replaced with a check icon.</p>
+        <p>选中时,过滤芯片的图标会被替换为对勾图标。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-filter-chip-set aria-label="Filter by topic">
@@ -261,15 +245,10 @@
 
         <m3e-heading variant="title" size="medium" level="4">选择</m3e-heading>
         <p>
-          Filter chips support both single-select and multi-select modes. Use the
-          <code>multi</code> attribute of <code>m3e-filter-chip-set</code> to allow multiple chips to be selected
-          simultaneously.
+          过滤芯片同时支持单选与多选模式。使用 <code>m3e-filter-chip-set</code> 的 <code>multi</code> 特性允许多个芯片同时被选中。
         </p>
         <p>
-          Use the <code>selected</code> attribute to control the selected state of a <code>m3e-filter-chip</code>. When
-          clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and
-          <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during
-          <code>beforeinput</code>.
+          使用 <code>selected</code> 特性控制 <code>m3e-filter-chip</code> 的选中状态。点击时,会先发出一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -299,12 +278,10 @@
 
         <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 a filter chip. By default, disabled chips are not focusable
-          with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 属性禁用过滤芯片。默认情况下,禁用的芯片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
-            >focusability of disabled controls</a
-          >
-          to increase their discoverability.
+            >禁用控件的可聚焦性</a
+          >,以提高其可发现性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -332,8 +309,7 @@
           >
         </m3e-card>
         <p>
-          You can also use the <code>disabled</code> attribute of <code>m3e-filter-chip-set</code> to disable the chip
-          set in its entirety.
+          你也可以使用 <code>m3e-filter-chip-set</code> 的 <code>disabled</code> 特性来整体禁用芯片集。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -357,9 +333,7 @@
 
         <m3e-heading variant="title" size="medium" level="4">隐藏选择指示器</m3e-heading>
         <p>
-          Use the <code>hide-selection-indicator</code> attribute of <code>m3e-filter-chip-set</code> to hide selection
-          indicators. If a filter chip has an icon via use of the <code>icon</code> slot, the icon is retained upon
-          selection.
+          使用 <code>m3e-filter-chip-set</code> 的 <code>hide-selection-indicator</code> 特性隐藏选择指示器。如果过滤芯片通过 <code>icon</code> 插槽带有图标,选中时该图标会被保留。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -384,44 +358,29 @@
 
         <m3e-heading variant="title" size="medium" level="4">表单关联</m3e-heading>
         <p>
-          Filter chips can participate in form submission as a
+          过滤芯片可以作为
           <a
             href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face"
             target="_blank"
             rel="noopener noreferrer"
-            >form-associated custom element</a
+            >表单关联自定义元素</a
           >
-          (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which
-          the component's value is submitted in a form. The chip set's value is determined by selected chips. You can
-          use the <code>value</code> of a <code>m3e-filter-chip</code> to control a chip's value. Otherwise, the value
-          is derived from the chip's label (default slot). When multiple chips are selected, form data will include
-          multiple entries keyed by the same <code>name</code>.
+          (FACE)参与表单提交,将其状态贡献到表单数据中。<code>name</code> 特性定义了组件值在表单中提交时所用的键。芯片集的值由选中的芯片决定。你可以使用 <code>m3e-filter-chip</code> 的 <code>value</code> 控制芯片的值。否则,值派生自芯片的标签(默认插槽)。当有多个芯片被选中时,表单数据会包含多个以同一 <code>name</code> 为键的条目。
         </p>
         <p>
-          The component honors the <code>disabled</code> state (on the chip set itself) as a
-          <strong>property-only</strong> control. When disabled at runtime, it does <em>not</em> sprout a
-          <code>disabled</code> attribute into the DOM.
+          该组件将(芯片集自身的)<code>disabled</code> 状态视为<strong>仅属性</strong>控制。在运行时禁用时,它<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Input chips</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">输入芯片</m3e-heading>
         <p>
-          The <code>m3e-input-chip-set</code> component enables users to input, display, and manage a collection of
-          discrete values as input chips. Designed for expressive, accessible forms, it supports keyboard navigation,
-          validation, and seamless integration with <code>m3e-form-field</code>. See
-          <a href="../components/form-field.html">Form Field 表单容器</a> for more information.
+          <code>m3e-input-chip-set</code> 组件让用户能够以输入芯片的形式输入、显示和管理一组离散值。它面向富有表现力、可访问的表单而设计,支持键盘导航、校验,以及与 <code>m3e-form-field</code> 的无缝集成。更多信息请参见
+          <a href="../components/form-field.html">Form Field 表单容器</a>。
         </p>
         <p>
-          Use the <code>input</code> slot of the <code>m3e-input-chip-set</code> to designate the input element
-          associated with the component. When <code>change</code> is fired on the input, the chip set adds a new
-          removable <code>m3e-input-chip</code> to the set. Users can press <code>BACKSPACE</code> to remove chips or
-          click the remove button on individual chips. If a chip is focused, users can press <code>DELETE</code> to
-          remove the chip.
+          使用 <code>m3e-input-chip-set</code> 的 <code>input</code> 插槽指定与该组件关联的输入元素。当在输入框上触发 <code>change</code> 时,芯片集会向集合中添加一个新的可移除 <code>m3e-input-chip</code>。用户可以按 <code>BACKSPACE</code> 移除芯片,或点击单个芯片上的移除按钮。如果某个芯片已聚焦,用户可以按 <code>DELETE</code> 移除该芯片。
         </p>
         <p>
-          The <code>m3e-input-chip-set</code> component raises a <code>change</code> event when chips are added to, or
-          removed from, the set. Use the event's <code>detail.type</code> to determine whether the type of change was
-          <code>"add"</code> or <code>"remove"</code>. The event's <code>detail</code> also includes
-          <code>value</code> and <code>chip</code> properties.
+          当向集合中添加或移除芯片时,<code>m3e-input-chip-set</code> 组件会引发 <code>change</code> 事件。使用事件的 <code>detail.type</code> 判断变更类型是 <code>"add"</code> 还是 <code>"remove"</code>。事件的 <code>detail</code> 还包含 <code>value</code> 与 <code>chip</code> 属性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -444,12 +403,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Prepopulated chips</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">预填充芯片</m3e-heading>
         <p>
-          You can prepopulate a <code>m3e-input-chip-set</code> with chips using the
-          <code>m3e-input-chip</code> component. Use the <code>removable</code> attribute to control whether a button is
-          presented that allows the user to remove an input chip. This also controls whether <code>BACKSPACE</code> can
-          be used to delete a chip using the keyboard.
+          你可以使用 <code>m3e-input-chip</code> 组件为 <code>m3e-input-chip-set</code> 预填充芯片。使用 <code>removable</code> 特性控制是否呈现一个允许用户移除输入芯片的按钮。这也控制是否可以使用 <code>BACKSPACE</code> 通过键盘删除芯片。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -478,14 +434,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Max chips</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">最大芯片数</m3e-heading>
         <p>
-          Use the <code>max-chips</code> attribute to control how many chips are shown when the input is not focused.
-          When the number of chips exceeds this value, the component collapses the chip set and shows a summary
-          indicator (for example, <code>+2</code>) instead of rendering all chips.
+          使用 <code>max-chips</code> 特性控制输入框未聚焦时显示多少个芯片。当芯片数量超过该值时,组件会折叠芯片集并显示一个汇总指示器(例如 <code>+2</code>),而不是渲染全部芯片。
         </p>
 
-        <p>When the input is focused, all chips are displayed regardless of the <code>max-chips</code> setting.</p>
+        <p>当输入框聚焦时,无论 <code>max-chips</code> 设置如何,都会显示所有芯片。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -516,9 +470,7 @@
 
         <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute of <code>m3e-input-chip-set</code> to disable the chip set in its
-          entirety, including its corresponding <code>input</code> and any prepopulated chips. In addition, chips cannot
-          be removed when disabled.
+          使用 <code>m3e-input-chip-set</code> 的 <code>disabled</code> 特性整体禁用芯片集,包括其对应的 <code>input</code> 与任何预填充的芯片。此外,禁用时无法移除芯片。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -549,29 +501,22 @@
 
         <m3e-heading variant="title" size="medium" level="4">表单关联</m3e-heading>
         <p>
-          Input chips can participate in form submission as a
+          输入芯片可以作为
           <a
             href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face"
             target="_blank"
             rel="noopener noreferrer"
-            >form-associated custom element</a
+            >表单关联自定义元素</a
           >
-          (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which
-          the component's value is submitted in a form. The chip set's value is determined by its chips. When multiple
-          chips are specified, form data will include multiple entries keyed by the same <code>name</code>.
+          (FACE)参与表单提交,将其状态贡献到表单数据中。<code>name</code> 特性定义了组件值在表单中提交时所用的键。芯片集的值由其芯片决定。当指定多个芯片时,表单数据会包含多个以同一 <code>name</code> 为键的条目。
         </p>
         <p>
-          The component honors the <code>disabled</code> state (on the chip set itself) as a
-          <strong>property-only</strong> control. When disabled at runtime, it does <em>not</em> sprout a
-          <code>disabled</code> attribute into the DOM.
+          该组件将(芯片集自身的)<code>disabled</code> 状态视为<strong>仅属性</strong>控制。在运行时禁用时,它<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Suggestion chips</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">建议芯片</m3e-heading>
         <p>
-          Use the <code>m3e-suggestion-chip</code> component to offer users contextually relevant actions or responses.
-          This component is visually and functionally equivalent to <code>m3e-assist-chip</code>, differing only in
-          semantic intent. It encodes contextual suggestion rather than passive assistance, guiding user action through
-          implied relevance.
+          使用 <code>m3e-suggestion-chip</code> 组件向用户提供与上下文相关的操作或响应。该组件在视觉与功能上等同于 <code>m3e-assist-chip</code>,仅在语义意图上有所不同。它编码的是上下文建议而非被动辅助,通过隐含的相关性引导用户操作。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -587,8 +532,7 @@
         </m3e-card>
         <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
-          The <code>m3e-suggestion-chip</code> provides a single slot, <code>icon</code>, to present an icon before a
-          chip's label. Trailing icons are not supported for this chip type.
+          <code>m3e-suggestion-chip</code> 提供单个插槽 <code>icon</code>,用于在芯片标签之前呈现图标。此芯片类型不支持尾部图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -608,12 +552,10 @@
 
         <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 a suggestion chip. By default, disabled chips are not
-          focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 属性禁用建议芯片。默认情况下,禁用的芯片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
-            >focusability of disabled controls</a
-          >
-          to increase their discoverability.
+            >禁用控件的可聚焦性</a
+          >,以提高其可发现性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -630,16 +572,12 @@
 
         <m3e-heading variant="title" size="medium" level="4">类型</m3e-heading>
         <p>
-          Use the <code>type</code> attribute to control the behavior of a suggestion chip. By default,
-          <code>type</code> is <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to
-          submit or reset a parenting form when clicked. When submitting a form, you can use the <code>name</code> and
-          <code>value</code> attributes to specify a value.
+          使用 <code>type</code> 特性控制建议芯片的行为。默认情况下,<code>type</code> 为 <code>button</code>。你可以将其改为 <code>submit</code> 或 <code>reset</code>,以便在点击时提交或重置其父表单。提交表单时,你可以使用 <code>name</code> 与 <code>value</code> 特性指定一个值。
         </p>
 
         <m3e-heading variant="title" size="medium" level="4">链接</m3e-heading>
         <p>
-          Suggestion chips can also behave like links by specifying a URL using the <code>href</code> attribute. You can
-          also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          建议芯片也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以像原生锚点标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -656,13 +594,9 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Chips are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Chips support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. Regardless of visual size, chips maintain a 48x48dp minimum touch target to ensure
-          reliable accessibility.
+          芯片可感知密度,并根据 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> CSS 自定义属性调整其垂直间距。默认密度尺寸为 4dp。芯片支持低至 -3 的负密度缩放,每降低一步,视觉高度减少一个密度单位。无论视觉尺寸如何,芯片都保持 48x48dp 的最小触摸目标,以确保可靠的可访问性。
         </p>
-        <p>The following illustrates applying density to assist chips.</p>
+        <p>以下示例演示如何对辅助芯片应用密度。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -705,42 +639,22 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, <code>m3e-chip</code> and <code>m3e-chip-set</code> are not given an ARIA role, indicating that
-          they are treated as neutral, non-semantic elements in the accessibility tree unless explicitly referenced or
-          annotated.
+          默认情况下,<code>m3e-chip</code> 与 <code>m3e-chip-set</code> 未被赋予 ARIA 角色,表示除非被显式引用或标注,它们在无障碍树中被视为中性、无语义的元素。
         </p>
         <p>
-          Chip sets, regardless of variant (e.g., filter, input, suggestion), are annotated with
-          <code>aria-orientation="vertical"</code> when rendered in a vertical layout. This attribute communicates
-          directional flow to assistive technologies, ensuring spatial clarity and navigational predictability for
-          screen reader users.
+          无论变体如何(例如过滤、输入、建议),芯片集在以垂直布局渲染时都会被标注 <code>aria-orientation="vertical"</code>。该特性向辅助技术传达方向流,确保屏幕阅读器用户获得清晰的空间感与可预测的导航。
         </p>
         <p>
-          By default, action and suggestion chips are given the ARIA role <code>button</code>, indicating they are
-          clickable elements that trigger actions. When <code>href</code> is specified, the ARIA role
-          <code>link</code> is used instead of <code>button</code> to convey the chip provides an interactive reference
-          to a resource. In addition, the chip presents an internal anchor, hidden from assistive technologies, used to
-          invoke native browser features such a context menu options and tooltips.
+          默认情况下,操作芯片与建议芯片被赋予 ARIA 角色 <code>button</code>,表示它们是可以触发操作的可点击元素。当指定 <code>href</code> 时,会使用 ARIA 角色 <code>link</code> 而非 <code>button</code>,以表明该芯片提供了指向某个资源的交互式引用。此外,芯片会呈现一个对辅助技术隐藏的内部锚点,用于调用原生浏览器功能,如上下文菜单选项与工具提示。
         </p>
         <p>
-          When disabling using either the <code>disabled</code> or <code>disabled-interactive</code> attribute,
-          <code>aria-disabled="true"</code> is used to convey to assistive technologies that the chip is disabled. If
-          disabled using <code>disabled-interactive</code>, <code>tabindex</code> is retained to convey that the chip
-          continues to be interactive.
+          使用 <code>disabled</code> 或 <code>disabled-interactive</code> 特性禁用时,会使用 <code>aria-disabled="true"</code> 向辅助技术传达该芯片已禁用。如果使用 <code>disabled-interactive</code> 禁用,则保留 <code>tabindex</code>,以传达该芯片仍可交互。
         </p>
         <p>
-          Filter chip sets are given the ARIA <code>role="radiogroup"</code> and chips are given
-          <code>role="radio"</code> for single-select chip sets. For multi-select, sets are given
-          <code>role="group"</code> and chips are given <code>role="button"</code>. When selected, the chip's selection
-          state is reflected using <code>aria-checked</code> for single-select chips sets and
-          <code>aria-pressed</code> for multi-select chips sets.
+          对于单选芯片集,过滤芯片集被赋予 ARIA <code>role="radiogroup"</code>,芯片被赋予 <code>role="radio"</code>。对于多选,芯片集被赋予 <code>role="group"</code>,芯片被赋予 <code>role="button"</code>。选中时,芯片的选中状态会通过 <code>aria-checked</code>(单选芯片集)与 <code>aria-pressed</code>(多选芯片集)反映。
         </p>
         <p>
-          Input chip sets are given ARIA <code>role="grid"</code> and chips are given <code>role="row"</code>.
-          Additionally, the internal content of an input chip (icons and label) are given ARIA
-          <code>role="gridcell"</code> and the remove button's container is given <code>role="gridcell"</code>. This
-          pattern enables assistive technologies to interpret input chips as structured, interactive rows—enhancing
-          clarity, predictability, and discoverability for users navigating via screen readers or keyboard.
+          输入芯片集被赋予 ARIA <code>role="grid"</code>,芯片被赋予 <code>role="row"</code>。此外,输入芯片的内部内容(图标与标签)被赋予 ARIA <code>role="gridcell"</code>,移除按钮的容器也被赋予 <code>role="gridcell"</code>。这种模式使辅助技术能够把输入芯片解释为结构化、可交互的行——提升通过屏幕阅读器或键盘导航的用户的清晰度、可预测性与可发现性。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

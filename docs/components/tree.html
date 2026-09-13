@@ -28,8 +28,8 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Tree 树形控件</m3e-heading>
         <p>
-          The <code>m3e-tree</code> component presents hierarchical data in a structure that users can navigate, with
-          nested levels that open and collapse as needed.
+          <code>m3e-tree</code> 组件以用户可导航的结构呈现层级数据,其中的嵌套
+          层级可按需展开与折叠。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/tree";</pre></m3e-card>
@@ -39,10 +39,10 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          A basic tree consists of an <code>m3e-tree</code> component containing one or more <code>m3e-tree-item</code>.
-          Items can be nested to create deeper levels in the hierarchy. Each item supplies its text through the
-          <code>label</code> slot. Use the <code>open</code> attribute to control whether an item with nested children
-          is expanded.
+          基础树由一个 <code>m3e-tree</code> 组件构成,其中包含一个或多个 <code>m3e-tree-item</code>。
+          条目可以嵌套,以创建更深的层级。每个条目通过
+          <code>label</code> 插槽提供其文本。使用 <code>open</code> 特性控制带有嵌套子项的条目
+          是否展开。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -87,9 +87,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
-          Use the <code>selected</code> attribute to mark an item as selected. The <code>change</code> event fires when
-          the user changes selection, and the <code>selected</code> property provides access to the currently selected
-          item(s).
+          使用 <code>selected</code> 特性把条目标记为已选中。当用户更改选择时
+          会触发 <code>change</code> 事件,<code>selected</code> 属性则提供
+          对当前选中条目的访问。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -134,8 +134,8 @@
 
         <m3e-heading variant="title" size="medium" level="4">多选</m3e-heading>
         <p>
-          Trees support both single-select and multi-select modes. Use the <code>multi</code> attribute of
-          <code>m3e-tree</code> to allow multiple item to be selected simultaneously.
+          树形控件同时支持单选与多选模式。使用 <code>m3e-tree</code> 的
+          <code>multi</code> 特性允许同时选中多个条目。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -188,10 +188,10 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Cascade selection</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">级联选择</m3e-heading>
         <p>
-          Use the <code>cascade</code> attribute in conjunction with <code>multi</code> to enable cascade item
-          selection.
+          将 <code>cascade</code> 特性与 <code>multi</code> 搭配使用,即可启用条目级联
+          选择。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -245,7 +245,7 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
-        <p>Use the <code>icon</code> and <code>selected-icon</code> slots to present an icon for an item.</p>
+        <p>使用 <code>icon</code> 与 <code>selected-icon</code> 插槽为条目呈现图标。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-tree>
@@ -283,10 +283,10 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Toggle icons</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">切换图标</m3e-heading>
         <p>
-          Use the <code>toggle-icon</code> and <code>open-toggle-icon</code> to change the icons used to expand and
-          collapse an item.
+          使用 <code>toggle-icon</code> 与 <code>open-toggle-icon</code> 更改用于展开与
+          折叠条目的图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -321,13 +321,13 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Trees are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Trees support negative density scales down to -3, with each step reducing the visual
-          height by one density unit.
+          树形控件支持密度,会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整自身垂直间距。默认
+          密度大小为 4dp。树形控件支持最低至 -3 的负密度比例,每降低一档,视觉
+          高度减少一个密度单位。
         </p>
 
-        <p>The following illustrates applying -3 density to a tree.</p>
+        <p>以下演示如何对树形控件应用 -3 密度。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -365,28 +365,27 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Trees are given ARIA <code>role="tree"</code>, and items are assigned <code>role="treeitem"</code>, indicating
-          a structured, hierarchical navigation model that supports keyboard interaction, semantic grouping, and
-          accessible labeling.
+          树形控件被赋予 ARIA <code>role="tree"</code>,条目被赋予 <code>role="treeitem"</code>,表示
+          一种支持键盘交互、语义分组与无障碍标注的结构化层级导航模型。
         </p>
         <p>
-          Expandable items use <code>aria-expanded</code> to indicate visibility of nested content. When selected, the
-          item's selection state is reflected using <code>aria-selected</code> for single-select trees and
-          <code>aria-checked</code> for multi-select trees.
+          可展开条目使用 <code>aria-expanded</code> 表示嵌套内容的可见性。被选中时,
+          条目的选中状态会通过 <code>aria-selected</code>(单选树)与
+          <code>aria-checked</code>(多选树)来体现。
         </p>
         <p>
-          Focus is managed on the <code>m3e-tree</code> container using <code>tabindex="0"</code>, and the currently
-          active item is referenced via <code>aria-activedescendant</code>, which points to the ID of the focused
-          <code>m3e-tree-item</code>. This enables roving focus without shifting DOM focus, ensuring accessible keyboard
-          navigation and consistent screen reader feedback.
+          焦点通过 <code>tabindex="0"</code> 管理在 <code>m3e-tree</code> 容器上,当前
+          活动条目通过 <code>aria-activedescendant</code> 引用,它指向获得焦点的
+          <code>m3e-tree-item</code> 的 ID。这样无需转移 DOM 焦点即可实现游走焦点,确保无障碍的键盘
+          导航与一致的屏幕阅读器反馈。
         </p>
         <p>
-          Icons are given <code>aria-hidden="true"</code> ensure they're treated as purely decorative and excluded from
-          the accessibility tree.
+          图标被赋予 <code>aria-hidden="true"</code>,以确保它们被视为纯装饰,并被排除在
+          无障碍树之外。
         </p>
         <p>
-          Disabling an item sets <code>aria-disabled="true"</code> signaling to assistive technologies that the item is
-          not interactive.
+          禁用条目会设置 <code>aria-disabled="true"</code>,向辅助技术表明该条目
+          不可交互。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

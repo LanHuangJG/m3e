@@ -28,8 +28,8 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Tooltip 工具提示</m3e-heading>
         <p>
-          The <code>@m3e/web/tooltip</code> module provides plain and rich tooltip components for delivering contextual
-          guidance, from simple hover descriptions to multi-line, expressive content anchored to a control.
+          <code>@m3e/web/tooltip</code> 模块提供普通与丰富两种工具提示组件,用于传递上下文
+          指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/tooltip";</pre></m3e-card>
@@ -39,8 +39,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">Plain tooltip</m3e-heading>
         <p>
-          Use the <code>m3e-tooltip</code> component to define a plain tooltip, and apply the <code>for</code> attribute
-          to associate it with a specific UI element.
+          使用 <code>m3e-tooltip</code> 组件定义普通工具提示,并应用 <code>for</code> 特性
+          把它与特定的界面元素关联。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -61,16 +61,16 @@
 
         <m3e-heading variant="title" size="medium" level="4">定位</m3e-heading>
         <p>
-          By default, tooltips are positioned below the element. You can control a tooltip's position using the
-          <code>position</code> attribute. Supported values include <code>above</code>, <code>below</code> (default),
-          <code>before</code>, and <code>after</code>. The <code>before</code> and <code>after</code> positions are
-          BIDI-aware, adapting to left-to-right and right-to-left text directions.
+          默认情况下,工具提示定位在元素下方。你可以使用
+          <code>position</code> 特性控制工具提示的位置。支持的值包括 <code>above</code>、<code>below</code>(默认)、
+          <code>before</code> 与 <code>after</code>。<code>before</code> 与 <code>after</code> 位置可感知
+          BIDI,会自适应从左到右与从右到左的文本方向。
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Delays</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">延迟</m3e-heading>
         <p>
-          Use the <code>show-delay</code> and <code>hide-delay</code> attributes to control the amount of time, in
-          milliseconds, to show or hide a tooltip. The following snippet illustrates the default delays.
+          使用 <code>show-delay</code> 与 <code>hide-delay</code> 特性控制显示或隐藏工具提示的时间(以
+          毫秒计)。以下代码片段展示了默认延迟。
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -82,7 +82,7 @@
         </m3e-card>
 
         <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
-        <p>使用 <code>disabled</code> 属性禁用 a tooltip from showing.</p>
+        <p>使用 <code>disabled</code> 属性禁止工具提示显示。</p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
 &lt;m3e-icon-button id=&quot;button&quot;&gt;
@@ -92,33 +92,33 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Touch gestures</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">触摸手势</m3e-heading>
         <p>
-          On touch devices, tooltips use a long-press gesture to show and hide. This can conflict with native browser
-          gestures, such as text selection or drag interactions. To mitigate this, tooltips disables native gestures on
-          the tooltip trigger by default. However, this behavior may not be desirable for certain elements like inputs
-          or draggable components.
+          在触摸设备上,工具提示使用长按手势来显示与隐藏。这可能会与浏览器的原生
+          手势(如文本选择或拖拽交互)冲突。为缓解此问题,工具提示默认在
+          触发元素上禁用原生手势。然而,对于输入框
+          或可拖拽组件等特定元素,这种行为可能并不理想。
         </p>
-        <p>Use the <code>touch-gestures</code> attribute to specify how touch interactions are handled:</p>
+        <p>使用 <code>touch-gestures</code> 特性指定如何处理触摸交互:</p>
         <ul>
           <li>
-            <code>auto</code> — Enables touch gestures for all elements, while preserving native browser behaviors on
-            inputs, textareas, and draggable elements.
+            <code>auto</code> —— 为所有元素启用触摸手势,同时保留
+            输入框、文本域与可拖拽元素上的浏览器原生行为。
           </li>
           <li>
-            <code>on</code> — Enables touch gestures universally and disables all native browser gestures without
-            exception.
+            <code>on</code> —— 普遍启用触摸手势,并无例外地禁用
+            所有浏览器原生手势。
           </li>
           <li>
-            <code>off</code> — Disables touch gestures entirely, preventing tooltips from appearing on touch devices.
+            <code>off</code> —— 完全禁用触摸手势,让工具提示无法在触摸设备上出现。
           </li>
         </ul>
 
         <m3e-heading variant="headline" size="small" level="3">Rich tooltip</m3e-heading>
         <p>
-          Use the <code>m3e-rich-tooltip</code> component to define a rich tooltip, and apply the
-          <code>for</code> attribute to associate it with a specific UI element. The <code>subhead</code> slot specifies
-          the subhead content and the default slot specifies supplementary text.
+          使用 <code>m3e-rich-tooltip</code> 组件定义丰富工具提示,并应用
+          <code>for</code> 特性把它与特定的界面元素关联。<code>subhead</code> 插槽指定
+          副标题内容,默认插槽指定补充文本。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -145,14 +145,14 @@
 
         <m3e-heading variant="title" size="medium" level="4">操作</m3e-heading>
         <p>
-          Including interactive content in a rich tooltip promotes it to dialog-like behavior. The surface becomes
-          dismissible and keyboard-navigable, and must be opened through an explicit user action on the trigger.
+          在丰富工具提示中包含交互内容会使其升级为类似对话框的行为。该界面变为
+          可关闭且可通过键盘导航,并且必须通过用户在触发元素上的显式操作才能打开。
         </p>
         <p>
-          You can include actions in a rich tooltip using the <code>actions</code> slot. In addition, use the
-          <code>m3e-rich-tooltip-action</code> component, nested in a clickable element, to dismiss the tooltip. By
-          default, focus is returned to the trigger. Use the <code>disable-restore-focus</code> attribute of a
-          <code>m3e-rich-tooltip-action</code> to disable this behavior.
+          你可以使用 <code>actions</code> 插槽在丰富工具提示中包含操作。此外,使用
+          嵌套在可点击元素中的 <code>m3e-rich-tooltip-action</code> 组件来关闭工具提示。默认
+          情况下,焦点会返回触发元素。使用 <code>m3e-rich-tooltip-action</code> 的
+          <code>disable-restore-focus</code> 特性禁用此行为。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -189,26 +189,25 @@
 
         <m3e-heading variant="title" size="medium" level="4">定位</m3e-heading>
         <p>
-          By default, rich tooltips are positioned below and after the element. You can control a tooltip's position
-          using the
-          <code>position</code> attribute. Supported values include <code>above-before</code>,
-          <code>above-after</code>,<code>below-before</code>, <code>below-after</code> (default), <code>before</code>,
-          <code>after</code>, <code>above</code> and <code>below</code>. Positions are BIDI-aware, adapting to
-          left-to-right and right-to-left text directions.
+          默认情况下,丰富工具提示定位在元素的下方且之后。你可以使用
+          <code>position</code> 特性控制工具提示的位置。支持的值包括 <code>above-before</code>、
+          <code>above-after</code>、<code>below-before</code>、<code>below-after</code>(默认)、<code>before</code>、
+          <code>after</code>、<code>above</code> 与 <code>below</code>。位置可感知 BIDI,会自适应
+          从左到右与从右到左的文本方向。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Plain and non-interactive tooltips add an <code>aria-describedby</code> description that provides a reference
-          to a visually hidden element containing the tooltip's message. This allows screen readers to announce the
-          tooltip's contents when the user focuses on the tooltip's trigger. The element referenced by
-          <code>aria-describedby</code> is not the tooltip itself, but an invisible copy of its content that remains
-          present in the DOM.
+          普通且非交互的工具提示会添加一个 <code>aria-describedby</code> 描述,它引用
+          一个包含工具提示消息的视觉隐藏元素。这样,当用户
+          聚焦工具提示的触发元素时,屏幕阅读器就能朗读工具提示的内容。<code>aria-describedby</code> 引用的元素
+          并非工具提示本身,而是其内容的一份不可见副本,并始终
+          存在于 DOM 中。
         </p>
         <p>
-          Interactive rich tooltips add <code>aria-haspopup="dialog"</code> to their trigger to correctly expose a
-          dialog-like popup to assistive technologies. In addition, the tooltip's internal popover is given ARIA
-          <code>role="dialog"</code> and is automatically labelled by tooltip's <code>subhead</code>.
+          交互式丰富工具提示会在其触发元素上添加 <code>aria-haspopup="dialog"</code>,以正确地向辅助技术暴露一个
+          类似对话框的弹出层。此外,工具提示内部的浮层会被赋予 ARIA
+          <code>role="dialog"</code>,并自动以工具提示的 <code>subhead</code> 作为标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

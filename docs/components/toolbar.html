@@ -27,7 +27,7 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Toolbar 工具栏</m3e-heading>
-        <p>The <code>m3e-toolbar</code> component presents contextual actions, navigation, and controls.</p>
+        <p><code>m3e-toolbar</code> 组件用于呈现上下文操作、导航与控件。</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/toolbar";</pre></m3e-card>
 
@@ -36,8 +36,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are two toolbar appearance variants: <code>standard</code> (default) and <code>vibrant</code>. Use the
-          <code>variant</code> attribute to change the appearance.
+          工具栏有两种外观变体:<code>standard</code>(默认)与 <code>vibrant</code>。使用
+          <code>variant</code> 特性更改外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -104,8 +104,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">形状</m3e-heading>
         <p>
-          There are two shape variants: <code>square</code> (default) and <code>rounded</code>. Use the
-          <code>shape</code> attribute to change the appearance.
+          有两种形状变体:<code>square</code>(默认)与 <code>rounded</code>。使用
+          <code>shape</code> 特性更改外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -138,8 +138,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">海拔</m3e-heading>
         <p>
-          Use the <code>elevated</code> attribute to elevate a toolbar to a visually prominent surface, distinguishing
-          it from the surrounding layout and signaling its importance or active context.
+          使用 <code>elevated</code> 特性把工具栏提升为视觉上醒目的表面,使其有别于周围
+          布局,并传达其重要性或活动上下文。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -172,9 +172,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
-          By default, toolbar are oriented horizontally. Use the <code>vertical</code> attribute to orient the toolbar
-          vertically, stacking its interactive elements from top to bottom rather than left to right. This is useful for
-          side panels, compact layouts, or contexts where vertical alignment enhances clarity or accessibility.
+          默认情况下,工具栏为水平方向。使用 <code>vertical</code> 特性把工具栏设为
+          垂直方向,使其交互元素从上到下堆叠,而非从左到右。这对于
+          侧边面板、紧凑布局,或垂直对齐能提升清晰度与无障碍性的场景很有用。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -207,13 +207,13 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Toolbars are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Toolbars support negative density scales down to -3, with each step reducing the visual
-          height by one density unit.
+          工具栏支持密度,会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整自身垂直间距。默认
+          密度大小为 4dp。工具栏支持最低至 -3 的负密度比例,每降低一档,视觉
+          高度减少一个密度单位。
         </p>
 
-        <p>The following illustrates applying -3 density to a toolbar.</p>
+        <p>以下演示如何对工具栏应用 -3 密度。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -253,15 +253,15 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Toolbars are given ARIA <code>role="toolbar"</code> indicating that the element serves as a container for a
-          group of interactive controls, typically buttons, that perform actions related to a common context. This role
-          helps assistive technologies understand the grouping and purpose of the controls within, enhancing navigation
-          and discoverability.
+          工具栏被赋予 ARIA <code>role="toolbar"</code>,表示该元素是一组交互控件
+          (通常是按钮)的容器,这些控件执行与共同上下文相关的操作。该角色
+          有助于辅助技术理解其中控件的分组与用途,从而提升导航性
+          与可发现性。
         </p>
         <p>
-          Vertically oriented toolbars are given <code>aria-orientation="vertical"</code> to explicitly communicate
-          their layout direction to assistive technologies, enhancing navigation and spatial understanding for users
-          relying on screen readers or keyboard interaction.
+          垂直方向的工具栏会被赋予 <code>aria-orientation="vertical"</code>,以明确
+          向辅助技术传达其布局方向,从而提升依赖屏幕阅读器或键盘交互的用户的
+          导航与空间理解。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

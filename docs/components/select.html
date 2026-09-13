@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Select 下拉选择</m3e-heading>
         <p>
-          The <code>m3e-select</code> component provides a form control for selecting a value from a set of predefined
-          options.
+          <code>m3e-select</code> 组件提供一个表单控件,用于从一组预定义选项中选取值。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/select";</pre></m3e-card>
 
@@ -38,15 +37,13 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
 
-        <p>a的following example illustrates use。<code>m3e-select</code> in conjunction with the
-          <code>m3e-form-field</code>. See <a href="../components/form-field.html">Form Field 表单容器</a> for more information.
+        <p>下面的示例演示 <code>m3e-select</code> 与 <code>m3e-form-field</code> 配合使用。更多信息见
+          <a href="../components/form-field.html">Form Field 表单容器</a>。
         </p>
         <p>
-          To define selectable options within a <code>m3e-select</code>, include one or more
-          <code>m3e-option</code> elements as its children. Each <code>m3e-option</code> may specify a
-          <code>value</code> attribute, which determines the programmatic value submitted when the option is selected.
-          The textual content of the <code>m3e-option</code> element represents the label presented to the user in the
-          dropdown interface.
+          要在 <code>m3e-select</code> 中定义可选选项,请包含一个或多个 <code>m3e-option</code> 元素作为其子元素。
+          每个 <code>m3e-option</code> 可以指定 <code>value</code> 特性,它决定选项被选中时提交的程序化值。
+          <code>m3e-option</code> 元素的文本内容表示在下拉界面中呈现给用户的标签。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -75,12 +72,11 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Empty options</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">空选项</m3e-heading>
         <p>
-          To define an empty option, include a <code>m3e-option</code> without a value or content. Alternatively, set
-          the <code>value</code> attribute to <code>""</code> and include descriptive content such as "None". This
-          signals that no meaningful value has been selected. Empty options are commonly used to represent a placeholder
-          or default state prior to user interaction.
+          要定义一个空选项,请包含一个没有值或内容的 <code>m3e-option</code>。或者,把 <code>value</code> 特性
+          设为 <code>""</code>,并加入诸如 "None" 的描述性内容。这表示尚未选择任何有意义的值。空选项通常用于
+          表示用户交互之前的占位或默认状态。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -111,12 +107,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Option groups</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">选项组</m3e-heading>
         <p>
-          The <code>m3e-optgroup</code> component can be used to group common options under a subheading. The name of
-          the group can be set using the <code>label</code> slot.
+          <code>m3e-optgroup</code> 组件可用于把常见选项归入一个子标题之下。组的名称可以使用 <code>label</code>
+          插槽设置。
         </p>
-        <p>Nested groups are not supported—only a single level of grouping is permitted.</p>
+        <p>不支持嵌套组——只允许单层分组。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field>
@@ -163,14 +159,13 @@
 
         <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
-          Selects support both single-select and multi-select modes. Use the
-          <code>multi</code> attribute to allow multiple options to be selected simultaneously.
+          下拉选择同时支持单选与多选模式。使用 <code>multi</code> 特性允许同时选中多个选项。
         </p>
         <p>
-          Use the <code>selected</code> attribute to control the selected state of a <code>m3e-option</code>. When
-          clicked, a cancellable <code>beforeinput</code> event is emitted by the <code>m3e-select</code> followed by an
-          <code>input</code> and <code>change</code> event. To cancel selection change, call
-          <code>preventDefault</code> during <code>beforeinput</code>.
+          使用 <code>selected</code> 特性控制 <code>m3e-option</code> 的选中状态。点击时,
+          <code>m3e-select</code> 会派发一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与
+          <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用
+          <code>preventDefault</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -202,8 +197,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          You can disable the entire select component or individual options by applying the
-          <code>disabled</code> attribute to <code>m3e-select</code> or <code>m3e-option</code>, respectively.
+          你可以分别通过为 <code>m3e-select</code> 或 <code>m3e-option</code> 应用 <code>disabled</code>
+          特性来禁用整个下拉选择组件或单个选项。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -257,9 +252,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">必填</m3e-heading>
         <p>
-          Apply the <code>required</code> attribute to enforce selection. This ensures that users must choose at least
-          one option before the field is considered valid. For multi-select configurations, at least one selected option
-          satisfies the requirement.
+          应用 <code>required</code> 特性以强制选择。这确保用户必须至少选择一个选项,该字段才会被视为有效。
+          对于多选配置,至少选中一个选项即可满足要求。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -291,15 +285,14 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Form fields and select panels are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Both support negative density scales down to -3, with each step reducing the visual
-          height by one density unit.
+          表单字段与下拉面板支持密度,会根据 <code>--md-sys-density-scale</code> 与
+          <code>--md-sys-density-size</code> CSS 自定义属性调整其垂直间距。默认密度尺寸为 4dp。两者都支持
+          负密度,最低可到 -3,每一档将视觉高度减少一个密度单位。
         </p>
 
         <p>
-          The following illustrates applying density to both the <code>m3e-form-field</code> and
-          <code>m3e-select</code>'s panel via use of the <code>panel-class</code> attribute.
+          下面演示通过 <code>panel-class</code> 特性对 <code>m3e-form-field</code> 与 <code>m3e-select</code>
+          的面板同时应用密度。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -368,55 +361,46 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The <code>m3e-select</code> component follows the ARIA <code>combobox</code> interaction pattern. Selects are
-          given the ARIA <code>role="combobox"</code>, while the dropdown panel applies <code>role="listbox"</code> to
-          convey its structure to assistive technologies.
+          <code>m3e-select</code> 组件遵循 ARIA <code>combobox</code> 交互模式。下拉选择被赋予 ARIA
+          <code>role="combobox"</code>,而下拉面板应用 <code>role="listbox"</code> 向辅助技术传达其结构。
         </p>
         <p>
-          Options are given ARIA <code>role="option"</code>, indicating that each item represents a selectable choice
-          within a listbox context. This role enables assistive technologies to interpret and announce the options
-          appropriately, supporting accessible navigation and selection behavior.
+          选项被赋予 ARIA <code>role="option"</code>,表示每一项都是列表框上下文中的可选项。该角色使辅助技术
+          能够正确解读并播报选项,支持无障碍导航与选择行为。
         </p>
         <p>
-          Option groups are given ARIA <code>role="group"</code>, indicating that the grouped options form a
-          semantically related set within the listbox. This role helps assistive technologies convey structural
-          relationships between options, enhancing navigability and contextual understanding for screen reader users.
+          选项组被赋予 ARIA <code>role="group"</code>,表示这些分组选项在列表框中构成一个语义相关的集合。
+          该角色帮助辅助技术传达选项之间的结构关系,增强屏幕阅读器用户的可导航性与上下文理解。
         </p>
         <p>
-          The <code>aria-selected</code> attribute reflects whether an option is currently selected. When an option is
-          selected, <code>aria-selected="true"</code> is exposed to assistive technologies; otherwise, it is
-          <code>"false"</code>.
+          <code>aria-selected</code> 特性反映某个选项当前是否被选中。当选项被选中时,
+          <code>aria-selected="true"</code> 会暴露给辅助技术;否则为 <code>"false"</code>。
         </p>
         <p>
-          When disabled using the <code>disabled</code> attribute, <code>aria-disabled="true"</code> is used to convey
-          to assistive technologies that an option or select is disabled. When a <code>m3e-select</code> is disabled at
-          runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM.
+          使用 <code>disabled</code> 特性禁用时,会用 <code>aria-disabled="true"</code> 向辅助技术传达
+          某个选项或下拉选择已禁用。当 <code>m3e-select</code> 在运行时被禁用时,它<em>不会</em>在 DOM 中生成
+          <code>disabled</code> 特性。
         </p>
         <p>
-          The <code>aria-activedescendant</code> attribute is applied to the <code>m3e-select</code> element to indicate
-          which option is currently active within the listbox. Instead of moving DOM focus to each option, the select
-          retains focus while updating <code>aria-activedescendant</code> to reference the <code>id</code> of the
-          focused <code>m3e-option</code>. This approach preserves focus management and enables assistive technologies
-          to announce the active option during keyboard navigation, ensuring accessible and predictable interaction.
+          <code>aria-activedescendant</code> 特性应用于 <code>m3e-select</code> 元素,以指示列表框内当前活动
+          的选项。下拉选择不会把 DOM 焦点移到每个选项,而是保留焦点并更新
+          <code>aria-activedescendant</code> 以引用获得焦点选项的 <code>id</code>。这种方式保留了焦点管理,
+          并使辅助技术能在键盘导航期间播报活动选项,确保交互无障碍且可预测。
         </p>
         <p>
-          The <code>aria-owns</code> and <code>aria-controls</code> attributes are applied to the
-          <code>m3e-select</code> element to establish an explicit relationship with the listbox popup. Both attributes
-          reference the <code>id</code> of the listbox container, ensuring assistive technologies recognize the
-          connection between the trigger and the controlled content. While <code>aria-controls</code> indicates that the
-          select governs the visibility and behavior of the listbox, <code>aria-owns</code> asserts DOM ownership when
-          the listbox is rendered outside the select's subtree.
+          <code>aria-owns</code> 与 <code>aria-controls</code> 特性应用于 <code>m3e-select</code> 元素,以建立
+          与列表框浮层的显式关系。这两个特性都引用列表框容器的 <code>id</code>,确保辅助技术能识别触发器与
+          受控内容之间的关联。<code>aria-controls</code> 表示下拉选择管控列表框的可见性与行为,而当列表框
+          渲染在下拉选择的子树之外时,<code>aria-owns</code> 则声明 DOM 归属。
         </p>
         <p>
-          The <code>aria-expanded</code> attribute reflects the current state of the listbox popup. When the listbox is
-          open, <code>aria-expanded="true"</code> is set on the <code>m3e-select</code> element; when collapsed, it is
-          set to <code>false</code>. This dynamic state enables screen readers to announce whether the listbox is
-          expanded or collapsed, supporting accessible navigation and interaction.
+          <code>aria-expanded</code> 特性反映列表框浮层的当前状态。当列表框打开时,会在 <code>m3e-select</code>
+          元素上设置 <code>aria-expanded="true"</code>;折叠时设为 <code>false</code>。这种动态状态使屏幕阅读器
+          能够播报列表框是展开还是折叠,支持无障碍导航与交互。
         </p>
         <p>
-          Because <code>listbox</code> is designed for single-item selection, you should avoid placing additional
-          interactive elements—such as buttons, checkboxes, or toggles—inside <code>m3e-option</code>. Nesting
-          interactive controls within options disrupts expected navigation and interferes with screen reader behavior.
+          由于 <code>listbox</code> 是为单项选择设计的,你应避免在 <code>m3e-option</code> 内放置额外的交互式
+          元素——例如按钮、复选框或开关。在选项中嵌套交互式控件会扰乱预期的导航,并干扰屏幕阅读器的行为。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

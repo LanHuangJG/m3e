@@ -31,12 +31,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Date Input 日期输入</m3e-heading>
         <p>
-          The <code>m3e-date-input</code> component provides a segmented input for editing date and/or time values. It
-          supports date-only, time-only, and combined date/time entry, and integrates with <code>m3e-form-field</code>,
-          <code>m3e-datepicker</code> and <code>m3e-timepicker</code>. Each segment is independently editable for
-          precise, accessible, form-friendly interaction. See <a href="../components/form-field.html">Form Field 表单容器</a>,
-          <a href="../components/datepicker.html">Datepicker 日期选择器</a>, and
-          <a href="../components/timepicker.html">Timepicker 时间选择器</a> for details.
+          <code>m3e-date-input</code> 组件提供一个分段式输入框,用于编辑日期和/或时间值。它支持仅日期、仅时间以及日期/时间合并输入,并与 <code>m3e-form-field</code>、<code>m3e-datepicker</code> 及 <code>m3e-timepicker</code> 集成。每个分段都可独立编辑,以实现精确、可访问、对表单友好的交互。详情请参见 <a href="../components/form-field.html">Form Field 表单容器</a>、<a href="../components/datepicker.html">Datepicker 日期选择器</a> 与 <a href="../components/timepicker.html">Timepicker 时间选择器</a>。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/date-input";</pre></m3e-card>
@@ -46,8 +41,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          The <code>m3e-date-input</code> is intended to be used inside <code>m3e-form-field</code>. The example below
-          shows that usage. See <a href="../components/form-field.html">Form Field 表单容器</a> for details.
+          <code>m3e-date-input</code> 设计为在 <code>m3e-form-field</code> 内部使用。下面的示例展示了这种用法。详情请参见 <a href="../components/form-field.html">Form Field 表单容器</a>。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -69,11 +63,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Value binding</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">值绑定</m3e-heading>
         <p>
-          Use the <code>value</code> attribute to set or read the date. The <code>beforeinput</code> and
-          <code>input</code> fire only when all segments are fully populated. A <code>change</code>
-          fires when focus leaves the control.
+          使用 <code>value</code> 特性设置或读取日期。<code>beforeinput</code> 与 <code>input</code> 仅在所有分段都已完整填充时才触发。当焦点离开控件时触发 <code>change</code>。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -97,61 +89,48 @@
 
         <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
         <p>
-          Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO
-          date but does not include a time or timezone. To ensure predictable behavior across environments,
-          <code>m3e-date-input</code> uses a consistent, standards-aligned parsing model instead of relying on the
-          browser's built-in <code>Date.parse()</code> rules.
+          不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code>m3e-date-input</code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的 <code>Date.parse()</code> 规则。
         </p>
         <p>
-          When <code>m3e-date-input</code> receives a date string, it automatically detects whether the value matches
-          one of the ISO-8601 formats that can be parsed safely and unambiguously:
+          当 <code>m3e-date-input</code> 收到日期字符串时,会自动判断该值是否属于可安全、无歧义解析的 ISO-8601 格式之一:
         </p>
         <ul>
-          <li><code>yyyy-MM-dd</code> — local date (no time, no timezone)</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss</code> — local date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> — UTC date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> — date and time with an explicit timezone offset</li>
+          <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li>
         </ul>
         <p>
-          Strings in these formats are converted into local <code>Date</code> objects without unexpected timezone
-          shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted
-          as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or
-          unsupported. For the most reliable results, use one of the formats above.
+          符合这些格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区偏移。这避免了诸如“仅日期的值被按 UTC 解析后漂移到前一天或后一天”之类的问题。如果字符串不符合这些 ISO 兼容格式之一,解析可能不明确或不受支持。为获得最可靠的结果,请使用上面列出的格式之一。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">表单关联</m3e-heading>
         <p>
-          This component participates in form submission as a
+          该组件作为
           <a
             href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face"
             target="_blank"
             rel="noopener noreferrer"
-            >form-associated custom element</a
+            >表单关联自定义元素</a
           >
-          (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which
-          the component's value is submitted in a form. When not disabled, <code>value</code> is submitted as a string
-          value in ISO format.
+          (FACE)参与表单提交,将其状态贡献到表单数据中。<code>name</code> 特性定义了组件值在表单中提交时所用的键。未禁用时,<code>value</code> 会以 ISO 格式的字符串值提交。
         </p>
         <p>
-          The component honors the <code>disabled</code> state as a <strong>property-only</strong> control. When
-          disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM.
+          该组件将 <code>disabled</code> 状态视为<strong>仅属性</strong>控制。在运行时禁用时,它<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Editing modes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">编辑模式</m3e-heading>
         <p>
-          Use the <code>type</code> attribute to control whether <code>m3e-date-input</code> edits
-          <code>date</code> (default), <code>time</code>, or <code>datetime</code> values.
+          使用 <code>type</code> 特性控制 <code>m3e-date-input</code> 编辑的是 <code>date</code>(默认)、<code>time</code> 还是 <code>datetime</code> 值。
         </p>
         <p>
-          When editing <code>time</code>-only, the existing date portion of the value is preserved. When editing
-          <code>date</code>-only, the existing time portion is preserved.
+          仅编辑 <code>time</code> 时,值中现有的日期部分会被保留。仅编辑 <code>date</code> 时,现有的时间部分会被保留。
         </p>
         <p>
-          When creating a new <code>Date</code> in <code>date</code> mode, the time defaults to midnight. When creating
-          a new <code>Date</code> in <code>time</code> mode, the date defaults to the current day.
+          在 <code>date</code> 模式下创建新的 <code>Date</code> 时,时间默认为午夜。在 <code>time</code> 模式下创建新的 <code>Date</code> 时,日期默认为当天。
         </p>
 
-        <p>The following examples illustrate editing time and date/time values.</p>
+        <p>以下示例演示如何编辑时间与日期/时间值。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -183,23 +162,15 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Date and time pickers</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">日期与时间选择器</m3e-heading>
         <p>
-          The <code>m3e-datepicker</code> and <code>m3e-timepicker</code> integrate with
-          <code>m3e-date-input</code> using the <code>for</code> attribute, which binds the picker to the input by
-          referencing the input's ID. See <a href="../components/datepicker.html">Datepicker 日期选择器</a>, and
-          <a href="../components/timepicker.html">Timepicker 时间选择器</a> for details.
+          <code>m3e-datepicker</code> 与 <code>m3e-timepicker</code> 通过 <code>for</code> 特性与 <code>m3e-date-input</code> 集成,该特性通过引用输入框的 ID 把选择器绑定到输入框。详情请参见 <a href="../components/datepicker.html">Datepicker 日期选择器</a> 与 <a href="../components/timepicker.html">Timepicker 时间选择器</a>。
         </p>
         <p>
-          When a picker is bound to <code>m3e-date-input</code>, the input's own configuration takes precedence.
-          Properties such as <code>min-date</code>, <code>max-date</code>, <code>blackoutDates</code>,
-          <code>min-time</code>, <code>max-time</code>, <code>blackoutTimes</code>, <code>time-format</code>, and
-          <code>show-seconds</code> override the corresponding settings on the picker. This ensures the input and picker
-          remain consistent and enforce the same constraints.
+          当选择器绑定到 <code>m3e-date-input</code> 时,输入框自身的配置优先。诸如 <code>min-date</code>、<code>max-date</code>、<code>blackoutDates</code>、<code>min-time</code>、<code>max-time</code>、<code>blackoutTimes</code>、<code>time-format</code> 与 <code>show-seconds</code> 等属性会覆盖选择器上的对应设置。这确保输入框与选择器保持一致并强制执行相同的约束。
         </p>
         <p>
-          When <code>type="datetime"</code> is used, a single <code>m3e-date-input</code> may link to both a
-          <code>m3e-datepicker</code> and a <code>m3e-timepicker</code> for independent date and time selection.
+          使用 <code>type="datetime"</code> 时,单个 <code>m3e-date-input</code> 可以同时链接到 <code>m3e-datepicker</code> 与 <code>m3e-timepicker</code>,以独立选择日期与时间。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -287,14 +258,13 @@
 
         <m3e-heading variant="headline" size="small" level="3">小时格式</m3e-heading>
         <p>
-          The <code>time-format</code> attribute controls the hour cycle used by the input. It accepts
-          <code>"12"</code> (default), <code>"24"</code>, or <code>"auto"</code>.
+          <code>time-format</code> 特性控制输入框使用的小时制。它接受 <code>"12"</code>(默认)、<code>"24"</code> 或 <code>"auto"</code>。
         </p>
 
         <ul>
-          <li><code>"12"</code> — forces a 12-hour clock with an AM/PM meridiem.</li>
-          <li><code>"24"</code> — forces a 24-hour clock without a meridiem.</li>
-          <li><code>"auto"</code> — selects 12-hour or 24-hour based on the user's locale.</li>
+          <li><code>"12"</code> —— 强制使用带 AM/PM 指示符的 12 小时制。</li>
+          <li><code>"24"</code> —— 强制使用不带 AM/PM 指示符的 24 小时制。</li>
+          <li><code>"auto"</code> —— 根据用户区域设置选择 12 小时或 24 小时制。</li>
         </ul>
 
         <m3e-card variant="outlined" class="showcase">
@@ -330,7 +300,7 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">秒</m3e-heading>
-        <p>Use the <code>show-seconds</code> attribute to display the seconds segment when editing time.</p>
+        <p>使用 <code>show-seconds</code> 特性在编辑时间时显示秒分段。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -366,9 +336,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 the input. When associated with a picker, the picker's
-          toggle button will automatically be disabled when the input is disabled to ensure the user cannot open a
-          picker for a value that cannot be edited.
+          使用 <code>disabled</code> 属性禁用输入框。当与选择器关联时,输入框禁用后选择器的开关按钮会自动禁用,以确保用户无法为一个不可编辑的值打开选择器。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -390,13 +358,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Readonly</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">只读</m3e-heading>
         <p>
-          Use the <code>readonly</code> attribute to prevent editing while still allowing focus and segment navigation.
+          使用 <code>readonly</code> 特性阻止编辑,同时仍允许聚焦与分段导航。
         </p>
         <p>
-          Similar to disabled, when associated with a picker, the picker's toggle button will automatically be disabled
-          when the input is read-only.
+          与禁用类似,当与选择器关联时,输入框只读后选择器的开关按钮会自动禁用。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -419,7 +386,7 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">必填</m3e-heading>
-        <p>Apply the <code>required</code> attribute to mark the input as a mandatory field.</p>
+        <p>应用 <code>required</code> 特性把输入框标记为必填字段。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -442,8 +409,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">最小与最大日期</m3e-heading>
         <p>
-          Use the <code>min-date</code> and <code>max-date</code> attributes to mark dates before or after the
-          respective values as invalid.
+          使用 <code>min-date</code> 与 <code>max-date</code> 特性把早于或晚于对应值的日期标记为无效。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -467,8 +433,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用日期</m3e-heading>
         <p>
-          In addition to <code>min-date</code> and <code>max-date</code> constraints, you can use the
-          <code>blackoutDates</code> property to specify a function used to determine whether a date invalid.
+          除 <code>min-date</code> 与 <code>max-date</code> 约束外,你还可以使用 <code>blackoutDates</code> 属性指定一个函数,用于判断某个日期是否无效。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -487,8 +452,7 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
 
         <m3e-heading variant="headline" size="small" level="3">最小与最大时间</m3e-heading>
         <p>
-          Use the <code>min-time</code> and <code>max-time</code> attributes to mark times before or after the
-          respective values as invalid.
+          使用 <code>min-time</code> 与 <code>max-time</code> 特性把早于或晚于对应值的时间标记为无效。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -523,10 +487,7 @@ document.querySelector(&quot;#blackout-dates&quot;).blackoutDates = (date) =&gt;
 
         <m3e-heading variant="headline" size="small" level="3">禁用时段</m3e-heading>
         <p>
-          In addition to <code>min-time</code> and <code>max-time</code> constraints, the
-          <code>blackoutTimes</code> property lets you provide a function that determines whether a given time is
-          invalid. The function receives a <code>TimeParts</code> object containing the <code>hour</code>,
-          <code>minute</code>, and <code>second</code>values for the time being evaluated.
+          除 <code>min-time</code> 与 <code>max-time</code> 约束外,<code>blackoutTimes</code> 属性让你提供一个函数,用于判断给定时间是否无效。该函数接收一个 <code>TimeParts</code> 对象,包含正在求值的时间的 <code>hour</code>、<code>minute</code> 与 <code>second</code> 值。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -544,67 +505,51 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Validation messages</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">校验消息</m3e-heading>
         <p>
-          Use the <code>validationMessages</code> property to override specific validation messages. Unspecified
-          messages continue to use the component's defaults.
+          使用 <code>validationMessages</code> 属性覆盖特定的校验消息。未指定的消息继续使用组件的默认值。
         </p>
 
-        <p>validation flags to indicate which specific rule failed. Each flag corresponds to a particular validation condition, and the 组件 sets one or more of these flags when the current 值 is invalid. These flags drive both the built-in validation messages and any custom messages you provide through的组件 uses a set。<code>validationMessages</code>. Only the flags that evaluate to <code>true</code> are considered active.
+        <p>该组件使用一组校验标志来指示具体哪条规则未通过。每个标志对应一种特定的校验条件,当当前值无效时,组件会设置其中一个或多个标志。这些标志同时驱动内置校验消息以及你通过 <code>validationMessages</code> 提供的任何自定义消息。只有求值为 <code>true</code> 的标志才被视为激活。
         </p>
 
-        <p>Supported flags include:</p>
+        <p>支持的标志包括:</p>
 
         <ul>
-          <li><code>valueMissing</code> — No value is provided when one is required.</li>
-          <li><code>typeMismatch</code> — The segments of the input are partially populated.</li>
+          <li><code>valueMissing</code> —— 需要值时未提供值。</li>
+          <li><code>typeMismatch</code> —— 输入框的分段只被部分填充。</li>
           <li>
-            <code>rangeUnderflow</code> — The value is earlier than <code>min-date</code> and/or <code>min-time</code>.
+            <code>rangeUnderflow</code> —— 值早于 <code>min-date</code> 和/或 <code>min-time</code>。
           </li>
           <li>
-            <code>rangeOverflow</code> — The value is later than <code>max-date</code> and/or <code>max-time</code>.
+            <code>rangeOverflow</code> —— 值晚于 <code>max-date</code> 和/或 <code>max-time</code>。
           </li>
-          <li><code>customError</code> — The value falls within a disabled (blackout) range.</li>
+          <li><code>customError</code> —— 值落在禁用(blackout)范围内。</li>
         </ul>
 
-        <p>These flags are combined to determine the final validation state and the message shown to the user.</p>
+        <p>这些标志会被组合起来,以确定最终的校验状态以及向用户显示的消息。</p>
 
         <m3e-heading variant="headline" size="medium" level="2">国际化</m3e-heading>
-        <p>The date and time format is automatically determined by the user's locale and cannot be customized.</p>
+        <p>日期与时间格式由用户的区域设置自动决定,无法自定义。</p>
         <p>
-          Segment order follows <code>Intl.DateTimeFormat().formatToParts()</code>, ensuring the correct reading order
-          for all locales. Segment labels (<code>mm</code>, <code>dd</code>, <code>yyyy</code>) are provided by the
-          component and remain consistent across locales.
+          分段顺序遵循 <code>Intl.DateTimeFormat().formatToParts()</code>,确保所有区域设置都有正确的阅读顺序。分段标签(<code>mm</code>、<code>dd</code>、<code>yyyy</code>)由组件提供,并在各区域设置间保持一致。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The <code>m3e-date-input</code> component exposes each date and time segment as an individual
-          <code>spinbutton</code> for assistive technologies. Screen readers announce the segment label (month, day,
-          year, hour, minute, second), the current value, and the allowed range, ensuring clear feedback as the user
-          edits each part of the value.
+          <code>m3e-date-input</code> 组件把每个日期与时间分段作为独立的 <code>spinbutton</code> 暴露给辅助技术。屏幕阅读器会朗读分段标签(月、日、年、时、分、秒)、当前值以及允许范围,确保用户在编辑值的每一部分时都能获得清晰的反馈。
         </p>
 
         <p>
-          Keyboard interaction follows native segmented input patterns. Arrow keys increment or decrement the focused
-          segment, digit keys replace the segment value, and left/right arrows move between segments. Focus remains
-          within the component. Clearing a segment does not move focus, and additional delete/backspace presses navigate
-          to the previous segment.
+          键盘交互遵循原生分段输入模式。方向键对聚焦的分段进行递增或递减,数字键替换分段值,左右方向键在分段之间移动。焦点保持在组件内部。清除分段不会移动焦点,继续按删除/退格键会导航到上一个分段。
         </p>
 
         <p>
-          Validation states map to standard HTML constraint validation. Empty required fields report
-          <code>valueMissing</code>, and partially entered values report <code>typeMismatch</code>. Range constraints
-          use <code>rangeUnderflow</code> and <code>rangeOverflow</code> for values outside the configured
-          <code>min-date</code>, <code>max-date</code>, <code>min-time</code>, and <code>max-time</code>. Blackout dates
-          and times are reported as <code>customError</code>. All validity states integrate with
-          <code>m3e-form-field</code> error messaging.
+          校验状态映射到标准 HTML 约束校验。必填字段为空时会报告 <code>valueMissing</code>,部分输入的值会报告 <code>typeMismatch</code>。范围约束对超出已配置 <code>min-date</code>、<code>max-date</code>、<code>min-time</code> 与 <code>max-time</code> 的值使用 <code>rangeUnderflow</code> 与 <code>rangeOverflow</code>。屏蔽日期与时间会报告为 <code>customError</code>。所有有效性状态都与 <code>m3e-form-field</code> 的错误消息集成。
         </p>
 
         <p>
-          The component supports accessible naming by linking to an external label through
-          <code>aria-labelledby</code> or a <code>label</code> element using <code>for</code>, ensuring the field is
-          correctly announced by assistive technologies.
+          该组件通过 <code>aria-labelledby</code> 或使用 <code>for</code> 的 <code>label</code> 元素链接到外部标签来支持无障碍命名,确保字段被辅助技术正确朗读。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

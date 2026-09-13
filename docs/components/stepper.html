@@ -28,7 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Stepper 步骤条</m3e-heading>
         <p>
-          The <code>m3e-stepper</code> component provides a wizard-like workflow by dividing content into logical steps.
+          <code>m3e-stepper</code> 组件通过把内容划分为逻辑步骤,提供类似向导的工作流。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/stepper";</pre></m3e-card>
@@ -38,16 +38,12 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          Use <code>m3e-stepper</code>, <code>m3e-step</code>, and <code>m3e-step-panel</code> to construct a
-          wizard-like workflow. Both <code>m3e-step</code> and <code>m3e-step-panel</code> must be direct children of
-          <code>m3e-stepper</code>. To associate a step with its corresponding panel, set the <code>for</code> attribute
-          on <code>m3e-step</code> to match the ID of the target <code>m3e-step-panel</code>.
+          使用 <code>m3e-stepper</code>、<code>m3e-step</code> 与 <code>m3e-step-panel</code> 构建类似向导的工作流。<code>m3e-step</code> 与 <code>m3e-step-panel</code> 都必须是 <code>m3e-stepper</code> 的直接子元素。要把步骤与其对应的面板关联,请把 <code>m3e-step</code> 上的 <code>for</code> 特性设为匹配目标 <code>m3e-step-panel</code> 的 ID。
         </p>
         <p>
-          To select a step, apply the <code>selected</code> attribute to a single <code>m3e-step</code>. When a step is
-          activated, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and
-          <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during
-          <code>beforeinput</code>. Only one step may be selected at a time.
+          要选择某个步骤,请把 <code>selected</code> 特性应用到一个 <code>m3e-step</code> 上。当步骤被激活时,会发出一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与
+          <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用
+          <code>preventDefault</code>。同一时间只能选择一个步骤。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -131,9 +127,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
-          The <code>m3e-stepper</code> supports three orientations: <code>horizontal</code> (default),
-          <code>vertical</code>, and <code>auto</code>. Using <code>auto</code>, the orientation is responsive and
-          determined by viewport size. Use the <code>orientation</code> attribute to change a stepper's orientation.
+          <code>m3e-stepper</code> 支持三种方向:<code>horizontal</code>(默认)、
+          <code>vertical</code> 与 <code>auto</code>。使用 <code>auto</code> 时,方向是响应式的,由视口尺寸决定。使用 <code>orientation</code> 特性更改步骤条的方向。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -182,11 +177,10 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Header positions</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">头部位置</m3e-heading>
         <p>
-          When using a horizontal stepper, you can control where the stepper's content is positioned using the
-          <code>header-position</code> attribute. By default, the header is placed <code>above</code> content, but you
-          can change it to <code>below</code> to placed it under the content.
+          使用水平步骤条时,你可以通过 <code>header-position</code> 特性控制步骤条内容的定位位置。默认情况下,头部置于内容的
+          <code>above</code> 位置,但你可以把它改为 <code>below</code> 以置于内容下方。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -235,11 +229,10 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Label positions</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">标签位置</m3e-heading>
         <p>
-          When using a horizontal stepper, you can control where the step's label is positioned using the
-          <code>label-position</code> attribute. By default, labels are placed <code>after</code> a step's icon, but you
-          can change it to <code>below</code> to placed it under the icon.
+          使用水平步骤条时,你可以通过 <code>label-position</code> 特性控制步骤标签的定位位置。默认情况下,标签置于步骤图标的
+          <code>after</code> 位置,但你可以把它改为 <code>below</code> 以置于图标下方。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -288,12 +281,11 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Stepper buttons</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">步骤条按钮</m3e-heading>
         <p>
-          Panels provide an <code>actions</code> slot for placing navigation controls. The
-          <code>m3e-stepper-previous</code>, <code>m3e-stepper-next</code>, and
-          <code>m3e-stepper-reset</code> components can be used to navigate steps. Using the
-          <code>m3e-stepper-reset</code> will reset the stepper and any form data.
+          面板提供一个 <code>actions</code> 插槽,用于放置导航控件。<code>m3e-stepper-previous</code>、<code>m3e-stepper-next</code> 与
+          <code>m3e-stepper-reset</code> 组件可用于在步骤间导航。使用
+          <code>m3e-stepper-reset</code> 会重置步骤条以及任何表单数据。
         </p>
 
         <m3e-card variant="outlined" class="example">
@@ -307,18 +299,15 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Linear stepper</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">线性步骤条</m3e-heading>
         <p>
-          The <code>linear</code> attribute can be set on <code>m3e-stepper</code> to create a linear stepper that
-          requires the user to complete previous steps before proceeding to following steps.
+          可以在 <code>m3e-stepper</code> 上设置 <code>linear</code> 特性,创建线性步骤条,要求用户完成前面的步骤后才能继续后续步骤。
         </p>
         <p>
-          Linear steppers require use of a <code>form</code> per step whose validity status determines whether a user
-          can move to the next step.
+          线性步骤条要求每个步骤使用一个 <code>form</code>,其有效性状态决定用户能否进入下一个步骤。
         </p>
         <p>
-          A step is considered complete once the user transitions forward. Navigation back to an earlier step is allowed
-          only when that step is explicitly designated as editable via the <code>editable</code> attribute.
+          当用户向前切换后,该步骤即被视为已完成。只有当某个较早的步骤通过 <code>editable</code> 特性被显式指定为可编辑时,才允许导航回该步骤。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -370,47 +359,39 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Step types</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">步骤类型</m3e-heading>
         <p>
-          Use the <code>optional</code> attribute on <code>m3e-step</code> to indicate that completion is not required.
-          When navigating away from an optional step, its nested <code>form</code> is still validated; however, an
-          invalid state will neither block progression nor visually mark the step header as invalid.
+          使用 <code>m3e-step</code> 上的 <code>optional</code> 特性表示该步骤不要求完成。当从可选步骤导航离开时,其嵌套的 <code>form</code> 仍会被校验;不过,无效状态既不会阻止前进,也不会在视觉上把步骤头部标记为无效。
         </p>
         <p>
-          For linear steppers, use the <code>editable</code> attribute on <code>m3e-step</code> to allow a user to
-          navigate back to a previously completed step.
+          对于线性步骤条,使用 <code>m3e-step</code> 上的 <code>editable</code> 特性,允许用户导航回之前已完成的步骤。
         </p>
         <p>
-          You can use the <code>completed</code> and <code>invalid</code> attributes to programmatically control whether
-          a step is completed or invalid.
+          你可以使用 <code>completed</code> 与 <code>invalid</code> 特性以编程方式控制步骤是否已完成或无效。
         </p>
-        <m3e-heading variant="headline" size="small" level="3">Step icons</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">步骤图标</m3e-heading>
         <p>
-          You can override icons using the <code>icon</code>, <code>done-icon</code>, <code>edit-icon</code>, and
-          <code>error-icon</code>.
+          你可以使用 <code>icon</code>、<code>done-icon</code>、<code>edit-icon</code> 与
+          <code>error-icon</code> 覆盖图标。
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Hint and error text</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">提示与错误文本</m3e-heading>
         <p>
-          You can use the <code>hint</code> and <code>error</code> slots of a <code>m3e-step</code> to specify hint text
-          or, when invalid, an error message. By default, optional steps have hint text of <code>(Optional)</code>.
+          你可以使用 <code>m3e-step</code> 的 <code>hint</code> 与 <code>error</code> 插槽来指定提示文本,或在无效时指定错误消息。默认情况下,可选步骤的提示文本为 <code>(Optional)</code>。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Steppers implement the
-          <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank">ARIA Tabs design pattern</a> and are
-          composed of the <code>tablist</code>, <code>tab</code>, and <code>tabpanel</code> roles. The pattern includes
-          support for keyboard navigation, focus management, and accessible relationships between steps and their
-          associated panels.
+          步骤条实现
+          <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank">ARIA Tabs 设计模式</a>,由
+          <code>tablist</code>、<code>tab</code> 与 <code>tabpanel</code> 角色组成。该模式支持键盘导航、焦点管理,以及步骤与其关联面板之间的无障碍关系。
         </p>
         <p>
-          The <code>m3e-stepper</code> component hosts an internal <code>tablist</code>. It contains each
-          <code>m3e-step</code>, which is assigned the ARIA <code>role="tab"</code>. Corresponding
-          <code>m3e-step-panel</code> elements are given the ARIA <code>role="tabpanel"</code>. Each step is linked to
-          its associated panel using <code>aria-controls</code>, and the <code>aria-selected</code> attribute
-          communicates the selected state of a step to assistive technologies. When a step is disabled,
-          <code>aria-disabled="true"</code> communicates its inactive state.
+          <code>m3e-stepper</code> 组件承载一个内部的 <code>tablist</code>。它包含每个
+          <code>m3e-step</code>,这些步骤被赋予 ARIA <code>role="tab"</code>。对应的
+          <code>m3e-step-panel</code> 元素被赋予 ARIA <code>role="tabpanel"</code>。每个步骤通过 <code>aria-controls</code> 链接到其关联面板,<code>aria-selected</code> 特性
+          向辅助技术传达步骤的选中状态。当步骤被禁用时,
+          <code>aria-disabled="true"</code> 传达其非活动状态。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

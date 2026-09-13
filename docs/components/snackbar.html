@@ -29,9 +29,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Snackbar 消息条</m3e-heading>
         <p>
-          The <code>@m3e/web/snackbar</code> module provides the <code>M3eSnackbar</code> global service on
-          <code>window</code> (<code>globalThis</code>) used to present short updates about application processes at the
-          bottom of the screen from anywhere in an application.
+          <code>@m3e/web/snackbar</code> 模块在 <code>window</code>(<code>globalThis</code>)上提供 <code>M3eSnackbar</code> 全局服务,用于从应用中的任意位置在屏幕底部呈现关于应用进程的简短更新。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/snackbar";</pre></m3e-card>
@@ -39,8 +37,8 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Snackbar service</m3e-heading>
-        <p>Use the <code>open</code> method of the <code>M3eSnackbar</code> service to open a snackbar.</p>
+        <m3e-heading variant="headline" size="small" level="3">Snackbar 服务</m3e-heading>
+        <p>使用 <code>M3eSnackbar</code> 服务的 <code>open</code> 方法打开消息条。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button id="example1">Delete file</m3e-button>
@@ -54,7 +52,7 @@ M3eSnackbar.open(&quot;File deleted&quot;);
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">操作</m3e-heading>
-        <p>You can include a single action and callback when opening a snackbar message.</p>
+        <p>打开消息条消息时,可以包含单个操作与回调。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button id="example2">Delete file</m3e-button>
@@ -71,7 +69,7 @@ M3eSnackbar.open(&quot;File deleted&quot;, &quot;Undo&quot;, {
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">关闭方式</m3e-heading>
-        <p>A snackbar message can optionally include a dismiss button.</p>
+        <p>消息条消息可以选择性地包含一个关闭按钮。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button id="example3">Delete file</m3e-button>
@@ -81,29 +79,25 @@ M3eSnackbar.open(&quot;File deleted&quot;, &quot;Undo&quot;, {
           <pre slot="content">M3eSnackbar.open(&quot;File deleted&quot;, true);</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Options</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">选项</m3e-heading>
         <p>
-          When opening a snackbar message, you can pass a <code>SnackbarOptions</code> object that includes the
-          following properties.
+          打开消息条消息时,可以传入一个 <code>SnackbarOptions</code> 对象,其中包含以下属性。
         </p>
         <ul>
           <li>
-            <code>duration?: number</code> — The length of time, in milliseconds, to wait before automatically
-            dismissing the snackbar.
+            <code>duration?: number</code> —— 自动关闭消息条前等待的时间长度,单位为毫秒。
           </li>
           <li>
-            <code>closeLabel?: string</code> — The accessible label given to the close button used to dismiss the
-            snackbar.
+            <code>closeLabel?: string</code> —— 赋予用于关闭消息条的关闭按钮的无障碍标签。
           </li>
           <li>
-            <code>actionCallback?: () =&gt; void</code> — The callback function invoked when the action is clicked.
+            <code>actionCallback?: () =&gt; void</code> —— 点击操作时调用的回调函数。
           </li>
         </ul>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Snackbar messages are given ARIA <code>role="status"</code> and <code>aria-live="polite"</code>, indicating
-          that they are polite live regions intended to be announced by assistive technologies without requiring focus.
+          消息条消息会被赋予 ARIA <code>role="status"</code> 与 <code>aria-live="polite"</code>,表明它们是有礼貌的实时区域,旨在无需聚焦即可由辅助技术朗读。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

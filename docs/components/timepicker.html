@@ -29,9 +29,9 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Timepicker 时间选择器</m3e-heading>
         <p>
-          The <code>m3e-timepicker</code> component presents a temporary surface for selecting time using dial and
-          keyboard modes. It supports hour and minute selection across 12-hour and 24-hour formats, enforces minimum and
-          maximum constraints, and adapts between docked and modal layouts based on available space.
+          <code>m3e-timepicker</code> 组件提供一个临时界面,用于通过表盘与
+          键盘模式选择时间。它支持 12 小时与 24 小时格式下的时、分选择,强制最小与
+          最大约束,并能根据可用空间在停靠与模态布局之间自适应。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/timepicker";</pre></m3e-card>
@@ -41,9 +41,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          Use the <code>m3e-timepicker-toggle</code> to open a <code>m3e-timepicker</code>. This component should be
-          nested inside a clickable element and be associated with a picker by setting the for attribute to the id of
-          the picker to open.
+          使用 <code>m3e-timepicker-toggle</code> 打开 <code>m3e-timepicker</code>。该组件应
+          嵌套在一个可点击元素内部,并把 for 特性设为要打开的选择器的 id 来建立关联。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -78,17 +77,17 @@
 
         <m3e-heading variant="headline" size="small" level="3">Time input</m3e-heading>
         <p>
-          The <code>m3e-date-input</code> can also provide a segmented time field when configured with
-          <code>type="time"</code>. It integrates directly with <code>m3e-timepicker</code> and can be used in place of
-          a standard <code>input</code> when you want built-in parsing, formatting, and precise segment editing.
+          <code>m3e-date-input</code> 在配置
+          <code>type="time"</code> 时也可提供一个分段式时间输入框。它可直接与 <code>m3e-timepicker</code> 集成,当你想要内建的解析、格式化与精确的分段编辑时,可以用它替代
+          标准 <code>input</code>。
         </p>
         <p>
-          The examples on this page use a standard <code>input</code> to demonstrate the full
-          <code>m3e-timepicker</code> API. When using <code>m3e-date-input</code> with <code>type="time"</code>, many of
-          these props are not required because the input manages the value and the picker simply writes the selected
-          time back to the field.
+          本页示例使用标准 <code>input</code> 来演示完整的
+          <code>m3e-timepicker</code> API。使用 <code>m3e-date-input</code> 搭配 <code>type="time"</code> 时,其中
+          许多属性并非必需,因为输入框会自行管理取值,选择器只需把选中的
+          时间写回字段。
         </p>
-        <p>See <a href="../components/date-input.html">Date Input 日期输入</a> for details.</p>
+        <p>详细信息请参阅 <a href="../components/date-input.html">Date Input 日期输入</a>。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -121,26 +120,26 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          The <code>m3e-timepicker</code> supports three appearance variants: <code>docked</code> (default),
-          <code>modal</code>, and <code>auto</code>. Use the <code>variant</code> attribute to control how the picker is
-          presented. When set to <code>auto</code>, the picker automatically selects the appropriate appearance based on
-          the current screen size.
+          <code>m3e-timepicker</code> 支持三种外观变体:<code>docked</code>(默认)、
+          <code>modal</code> 与 <code>auto</code>。使用 <code>variant</code> 属性控制选择器的
+          呈现方式。设为 <code>auto</code> 时,会根据当前屏幕尺寸
+          自动选择合适的呈现方式。
         </p>
-        <p>All examples in this page use <code>variant="auto"</code>.</p>
+        <p>本页所有示例均使用 <code>variant="auto"</code>。</p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">&lt;m3e-timepicker variant=&quot;auto&quot;&gt;&lt;/m3e-timepicker&gt;</pre>
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">方向</m3e-heading>
         <p>
-          The <code>m3e-timepicker</code> supports three orientations: <code>vertical</code> (default),
-          <code>horizontal</code>, and <code>auto</code>. Use the <code>orientation</code> attribute to control how the
-          picker is orientated. When set to <code>auto</code>, the picker automatically selects the appropriate
-          orientation based on the current screen size.
+          <code>m3e-timepicker</code> 支持三种方向:<code>vertical</code>(默认)、
+          <code>horizontal</code> 与 <code>auto</code>。使用 <code>orientation</code> 属性控制
+          选择器的方向。设为 <code>auto</code> 时,会根据当前屏幕尺寸自动选择
+          合适的方向。
         </p>
         <p>
-          Typically, <code>orientation="auto"</code> should be pared with <code>variant="auto"</code> so that the picker
-          will swap between orientation and variant depending on viewport constraints.
+          通常,<code>orientation="auto"</code> 应与 <code>variant="auto"</code> 搭配使用,这样选择器
+          就能根据视口约束在方向与变体之间切换。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -166,13 +165,13 @@
 
         <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
         <p>
-          The <code>m3e-timepicker</code> supports two modes, <code>dial</code> (default), and <code>input</code>. Use
-          the <code>mode</code> attribute to set the default mode. Use the <code>hide-mode-toggle</code> attribute to
-          hide the button used to toggle between modes.
+          <code>m3e-timepicker</code> 支持两种模式:<code>dial</code>(默认)与 <code>input</code>。使用
+          <code>mode</code> 属性设置默认模式。使用 <code>hide-mode-toggle</code> 属性
+          隐藏用于在模式之间切换的按钮。
         </p>
         <p>
-          The following example illustrates the use of <code>mode="input"</code> and <code>hide-mode-toggle</code> to
-          force the timepicker to open in keyboard entry mode while preventing the user from switching back to the dial.
+          以下示例演示如何使用 <code>mode="input"</code> 与 <code>hide-mode-toggle</code>
+          强制时间选择器以键盘输入模式打开,同时阻止用户切回表盘。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -196,18 +195,18 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">时间选择</m3e-heading>
-        <p>Use the <code>date</code> attribute to set the currently selected time.</p>
+        <p>使用 <code>date</code> 属性设置当前选中的时间。</p>
         <p>
-          The OK button becomes enabled whenever the picker holds a complete, valid time, including cases where the
-          initial value was already valid and the user made no changes. Both the hour and minute fields must contain
-          valid, non-null values for the picker to construct a time; incomplete or invalid states keep the OK button
-          disabled. Clicking OK commits the current time to <code>date</code> and emits a <code>change</code> event. If
-          <code>date</code> is <code>null</code>, today's date is used.
+          只要选择器持有一个完整、有效的时间,确定按钮就会启用,包括
+          初始值本就有效且用户未作更改的情况。时与分字段都必须包含
+          有效、非空的值,选择器才能构造出时间;不完整或无效的状态会让确定按钮
+          保持禁用。点击确定会把当前时间提交到 <code>date</code>,并发出 <code>change</code> 事件。若
+          <code>date</code> 为 <code>null</code>,则使用今天的日期。
         </p>
         <p>
-          Clicking Cancel dismisses the picker without committing any value. The current <code>date</code> and time
-          remain unchanged, and no <code>change</code> event is emitted. Cancel is always a non-committing action,
-          regardless of whether the selection was complete, valid, or modified.
+          点击取消会关闭选择器且不提交任何值。当前的 <code>date</code> 与时间
+          保持不变,也不会发出 <code>change</code> 事件。无论选择是否完整、有效或被修改过,取消
+          始终是不提交的操作。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -243,41 +242,40 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">日期字符串处理</m3e-heading>
         <p>
-          Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO
-          date but does not include a time or timezone. To ensure predictable behavior across environments,
-          <code>m3e-timepicker</code> uses a consistent, standards-aligned parsing model instead of relying on the
-          browser's built-in <code>Date.parse()</code> rules.
+          不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO
+          日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,
+          <code>m3e-timepicker</code> 采用一套一致、贴合标准的解析模型,而不依赖
+          浏览器内置的 <code>Date.parse()</code> 规则。
         </p>
         <p>
-          When <code>m3e-timepicker</code> receives a date string, it automatically detects whether the value matches
-          one of the ISO-8601 formats that can be parsed safely and unambiguously:
+          当 <code>m3e-timepicker</code> 收到日期字符串时,会自动判断该值是否匹配
+          以下可安全、无歧义解析的 ISO-8601 格式之一:
         </p>
         <ul>
-          <li><code>yyyy-MM-dd</code> — local date (no time, no timezone)</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss</code> — local date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> — UTC date and time</li>
-          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> — date and time with an explicit timezone offset</li>
+          <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li>
+          <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li>
         </ul>
         <p>
-          Strings in these formats are converted into local <code>Date</code> objects without unexpected timezone
-          shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted
-          as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or
-          unsupported. For the most reliable results, use one of the formats above.
+          符合上述格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区
+          偏移。这样可以避免“仅日期的值被按 UTC 解析后漂移到前一天或后一天”之类的问题。如果字符串不符合这些 ISO 兼容模式,解析可能不明确或
+          不受支持。为获得最可靠的结果,请使用上面列出的格式。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">小时格式</m3e-heading>
         <p>
-          The <code>format</code> attribute controls the hour cycle used by the timepicker. It accepts
-          <code>"12"</code> (default), <code>"24"</code>, or <code>"auto"</code>.
+          <code>format</code> 属性控制时间选择器使用的小时周期。它接受
+          <code>"12"</code>(默认)、<code>"24"</code> 或 <code>"auto"</code>。
         </p>
 
         <ul>
-          <li><code>"12"</code> — forces a 12-hour clock with an AM/PM meridiem.</li>
-          <li><code>"24"</code> — forces a 24-hour clock without a meridiem.</li>
-          <li><code>"auto"</code> — selects 12-hour or 24-hour based on the user's locale.</li>
+          <li><code>"12"</code> —— 强制使用带 AM/PM 的 12 小时制。</li>
+          <li><code>"24"</code> —— 强制使用不带 AM/PM 的 24 小时制。</li>
+          <li><code>"auto"</code> —— 根据用户区域设置选择 12 小时制或 24 小时制。</li>
         </ul>
 
-        <p>The following example illustrates a 24-hour clock without a meridiem.</p>
+        <p>以下示例演示不带 AM/PM 的 24 小时制。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-form-field variant="outlined">
@@ -298,8 +296,8 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">最小与最大时间</m3e-heading>
         <p>
-          Use the <code>min-time</code> and <code>max-time</code> attributes to disable all times in the picker before
-          or after the respective values.
+          使用 <code>min-time</code> 与 <code>max-time</code> 属性禁用选择器中早于/晚于对应值的
+          全部时间。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -323,10 +321,10 @@ picker.addEventListener(&quot;change&quot;, () =&gt; {
 
         <m3e-heading variant="headline" size="small" level="3">禁用时段</m3e-heading>
         <p>
-          In addition to <code>min-time</code> and <code>max-time</code> constraints, the
-          <code>blackoutTimes</code> property lets you provide a function that determines whether a given time is
-          disabled and cannot be selected. The function receives a <code>TimeParts</code> object containing the
-          <code>hour</code>, <code>minute</code>, and <code>second</code>values for the time being evaluated.
+          除 <code>min-time</code> 与 <code>max-time</code> 约束外,
+          <code>blackoutTimes</code> 属性还允许你提供一个函数,用于判断某个时间是否被
+          禁用、无法被选择。该函数接收一个 <code>TimeParts</code> 对象,其中包含
+          所评估时间的 <code>hour</code>、<code>minute</code> 与 <code>second</code> 值。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -350,7 +348,7 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">秒</m3e-heading>
-        <p>Use the <code>show-seconds</code> attribute to display the seconds segment in the timepicker.</p>
+        <p>使用 <code>show-seconds</code> 属性在时间选择器中显示秒分段。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -370,15 +368,15 @@ document.querySelector(&quot;#blackout-times&quot;).blackoutTimes = (t) =&gt; t.
           <pre slot="content">&lt;m3e-timepicker show-seconds&gt;&lt;/m3e-timepicker&gt;</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">À-la-carte usage</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">按需单独使用</m3e-heading>
         <p>
-          The package includes the <code>m3e-timepicker-input</code> and <code>m3e-timepicker-dial</code> components,
-          allowing you to use them in custom layouts or independently of <code>m3e-timepicker</code>.
+          该包还包含 <code>m3e-timepicker-input</code> 与 <code>m3e-timepicker-dial</code> 组件,
+          允许你在自定义布局中使用它们,或独立于 <code>m3e-timepicker</code> 使用。
         </p>
         <p>
-          The <code>for</code> attribute can be used on <code>m3e-timepicker-input</code> to reference a
-          <code>m3e-timepicker-dial</code> by ID. When present, the input automatically synchronizes its properties to
-          the referenced dial, keeping both components in sync without requiring manual event wiring.
+          <code>m3e-timepicker-input</code> 上可以使用 <code>for</code> 属性,以按 ID 引用一个
+          <code>m3e-timepicker-dial</code>。使用该属性时,输入框会自动把其属性同步到
+          所引用的表盘,让两个组件保持同步,无需手动接线事件。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -412,16 +410,16 @@ document.querySelector(&quot;#input&quot;).addEventListener(&quot;change&quot;, 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
 
         <p>
-          Timepickers are given ARIA <code>role="dialog"</code> to identify the picker surface as a discrete interactive
-          region that opens above the page and requires user attention. When the picker is shown in its modal variant,
-          it also sets <code>aria-modal="true"</code> to indicate that the rest of the page is inert and that focus is
-          trapped within the dialog until it is dismissed. In docked mode, the picker omits
-          <code>aria-modal</code> entirely, since the surrounding page remains interactive and the surface behaves like
-          an anchored popover rather than a blocking dialog.
+          时间选择器被赋予 ARIA <code>role="dialog"</code>,以把这个选择界面标识为打开于页面之上、需要用户关注的一个独立交互
+          区域。当选择器以模态变体显示时,
+          还会设置 <code>aria-modal="true"</code>,表明页面其余部分处于惰性状态,焦点被
+          圈定在对话框内直至关闭。停靠模式下则完全省略
+          <code>aria-modal</code>,因为周边页面仍可交互,此时的界面表现为
+          锚定浮层而非阻断式对话框。
         </p>
         <p>
-          Timepicker toggles add <code>aria-haspopup="dialog"</code> to its parenting element indicating to assistive
-          technologies that activating the control will open a dialog.
+          时间选择器开关会在其父元素上添加 <code>aria-haspopup="dialog"</code>,告知辅助
+          技术:激活该控件将打开一个对话框。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Menu 菜单</m3e-heading>
         <p>
-          The <code>m3e-menu</code> component presents a list of choices on a temporary surface, typically anchored to a
-          trigger element.
+          <code>m3e-menu</code> 组件在临时表面上呈现一组选择,通常锚定到触发元素。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/menu";</pre></m3e-card>
@@ -39,9 +38,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          The <code>m3e-menu</code> is used in conjunction with a <code>m3e-menu-trigger</code> to create a menu opened
-          when the parenting element of the trigger is activated. Use the <code>for</code> attribute of the
-          <code>m3e-menu-trigger</code> to designate the menu to open.
+          <code>m3e-menu</code> 与 <code>m3e-menu-trigger</code> 配合使用,创建在触发器的父元素被激活时打开的菜单。使用
+          <code>m3e-menu-trigger</code> 的 <code>for</code> 特性指定要打开的菜单。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -68,8 +66,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are two appearance variants: <code>standard</code> (default) and <code>vibrant</code>. Use the
-          <code>variant</code> attribute to change the appearance.
+          有两种外观变体:<code>standard</code>(默认)与 <code>vibrant</code>。使用
+          <code>variant</code> 特性更改外观。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -95,21 +93,19 @@
 
         <m3e-heading variant="headline" size="small" level="3">菜单项</m3e-heading>
         <p>
-          The <code>&lt;m3e-menu&gt;</code> component supports three distinct types of menu items, each tailored for
-          different interaction patterns and semantic roles:
+          <code>&lt;m3e-menu&gt;</code> 组件支持三种不同的菜单项类型,每种都针对不同的交互模式与语义角色:
         </p>
         <ul>
           <li>
-            <code>m3e-menu-item</code> — A standard menu item typically used for navigation or triggering commands.
+            <code>m3e-menu-item</code> —— 标准菜单项,通常用于导航或触发命令。
           </li>
-          <li><code>m3e-menu-item-checkbox</code> — A toggleable menu item option used for multi-select scenarios.</li>
-          <li><code>m3e-menu-item-radio</code> — A toggleable menu item option used for single-select scenarios.</li>
+          <li><code>m3e-menu-item-checkbox</code> —— 可切换的菜单项选项,用于多选场景。</li>
+          <li><code>m3e-menu-item-radio</code> —— 可切换的菜单项选项,用于单选场景。</li>
         </ul>
 
         <m3e-heading variant="title" size="medium" level="4">图标</m3e-heading>
         <p>
-          All menu item types provide two named slots for icons. Use the <code>icon</code> slot to present an icon
-          before an item's label and use the <code>trailing-icon</code> slot to present an icon after it.
+          所有菜单项类型都提供两个用于图标的具名插槽。使用 <code>icon</code> 插槽在项目标签前呈现图标,使用 <code>trailing-icon</code> 插槽在其后呈现图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -154,7 +150,7 @@
         </m3e-card>
 
         <m3e-heading variant="title" size="medium" level="4">禁用</m3e-heading>
-        <p>使用 <code>disabled</code> 属性禁用 a menu item.</p>
+        <p>使用 <code>disabled</code> 特性禁用菜单项。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-button>
@@ -192,9 +188,9 @@
 
         <m3e-heading variant="title" size="medium" level="4">复选框</m3e-heading>
         <p>
-          Use a <code>m3e-menu-item-checkbox</code> to present a toggleable menu item that supports multi-select. The
-          <code>checked</code> attribute reflects the checked state of the menu item. If a menu item specifies an icon
-          using the <code>icon</code> slot, it will be replaced with a check icon when checked.
+          使用 <code>m3e-menu-item-checkbox</code> 呈现支持多选的可切换菜单项。
+          <code>checked</code> 特性反映菜单项的选中状态。如果菜单项通过 <code>icon</code> 插槽指定了图标,
+          则在选中时该图标会被替换为对勾图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -239,9 +235,9 @@
 
         <m3e-heading variant="title" size="medium" level="4">单选框</m3e-heading>
         <p>
-          Use a <code>m3e-menu-item-radio</code> to present a toggleable menu item that supports single-select. The
-          <code>checked</code> attribute reflects the checked state of the menu item. If a menu item specifies an icon
-          using the <code>icon</code> slot, it will be replaced with a check icon when checked.
+          使用 <code>m3e-menu-item-radio</code> 呈现支持单选的可切换菜单项。
+          <code>checked</code> 特性反映菜单项的选中状态。如果菜单项通过 <code>icon</code> 插槽指定了图标,
+          则在选中时该图标会被替换为对勾图标。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -265,9 +261,9 @@
         </m3e-card>
 
         <p>
-          Use a <code>m3e-menu-item-group</code> to organize multiple sets of radio items within a single
-          <code>m3e-menu</code>. Each group maintains its own selection state, allowing distinct radio groups to coexist
-          independently.
+          使用 <code>m3e-menu-item-group</code> 在单个
+          <code>m3e-menu</code> 内组织多组单选项目。每个分组维护各自的选择状态,使不同的单选组可以
+          独立共存。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -304,10 +300,10 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Submenus</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">子菜单</m3e-heading>
         <p>
-          Submenus are triggered by nesting a <code>m3e-menu-trigger</code> in a <code>m3e-menu-item</code> and
-          designating the submenu to open using the <code>for</code> attribute.
+          子菜单通过在 <code>m3e-menu-item</code> 中嵌套 <code>m3e-menu-trigger</code>,并使用
+          <code>for</code> 特性指定要打开的子菜单来触发。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -366,13 +362,13 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Menus are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Menus support negative density scales down to -3, with each step reducing the visual
-          height by one density unit.
+          菜单感知密度,会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整其垂直间距。默认
+          密度尺寸为 4dp。菜单支持低至 -3 的负密度比例,每降低一档,视觉
+          高度减少一个密度单位。
         </p>
 
-        <p>The following illustrates applying density to menus.</p>
+        <p>下面的示例演示了将密度应用于菜单。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -474,30 +470,28 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Menus are given the ARIA <code>role="menu"</code>, indicating that the serve as a container for a list of
-          interactive menu items.
+          菜单带有 ARIA <code>role="menu"</code>,表明它们充当交互式菜单项列表的容器。
         </p>
         <p>
-          Triggers augment their parenting elements with <code>aria-haspopup</code>, <code>aria-controls</code>, and
-          <code>aria-expanded</code> to create a relationship with the trigger's menu.
+          触发器通过 <code>aria-haspopup</code>、<code>aria-controls</code> 与
+          <code>aria-expanded</code> 增强其父元素,以建立与触发器菜单的关联。
         </p>
         <p>
-          When a menu is opened, the focus is set to the first enabled menu item. On close, focus is returned to the
-          trigger.
+          菜单打开时,焦点会设到第一个启用的菜单项。关闭时,焦点返回触发器。
         </p>
         <p>
-          Standard menu items are given ARIA <code>role="menuitem"</code>, checkboxes are given
-          <code>role="menuitemcheckbox"</code>, and radios are given <code>role="menuitemradio"</code>. The
-          <code>aria-checked</code> attribute reflects the checked state of an item.
+          标准菜单项带有 ARIA <code>role="menuitem"</code>,复选框带有
+          <code>role="menuitemcheckbox"</code>,单选框带有 <code>role="menuitemradio"</code>。
+          <code>aria-checked</code> 特性反映项目的选中状态。
         </p>
         <p>
-          Disabled menu items are given <code>aria-disabled="true"</code> in order to convey to assistive technologies
-          that the item is disabled. In addition, <code>tabindex</code> is removed to indicate the item is no longer
-          focusable.
+          禁用的菜单项带有 <code>aria-disabled="true"</code>,以向辅助技术传达
+          该项目已禁用。此外,会移除 <code>tabindex</code>,表示该项目不再
+          可聚焦。
         </p>
         <p>
-          Menu item groups are given ARIA <code>role="group"</code> and should be labelled using
-          <code>aria-label</code> or <code>aria-labelledby</code>.
+          菜单项分组带有 ARIA <code>role="group"</code>,应使用
+          <code>aria-label</code> 或 <code>aria-labelledby</code> 添加标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

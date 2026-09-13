@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Segmented Button 分段按钮</m3e-heading>
         <p>
-          The <code>m3e-segmented-button</code> component allows users to select one or more options from a horizontal
-          group.
+          <code>m3e-segmented-button</code> 组件允许用户从一个水平组中选择一个或多个选项。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -41,10 +40,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
-          A segmented button is defined using the <code>m3e-segmented-button</code> component, which serves as a
-          semantic container for a set of interactive segments. Each segment is represented by a
-          <code>m3e-button-segment</code> component, allowing users to select from multiple related options within a
-          unified control.
+          分段按钮使用 <code>m3e-segmented-button</code> 组件定义,它充当一组可交互分段的语义容器。每个分段由
+          <code>m3e-button-segment</code> 组件表示,允许用户在统一控件中从多个相关选项中进行选择。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -67,10 +64,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
         <p>
-          Use the <code>icon</code> slot of the <code>m3e-button-segment</code> to present an icon before a segment's
-          label.
+          使用 <code>m3e-button-segment</code> 的 <code>icon</code> 插槽在分段标签之前呈现一个图标。
         </p>
-        <p>When selected, a segments's icon is replaced with a check icon.</p>
+        <p>选中后,分段的图标会替换为对勾图标。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-segmented-button>
@@ -98,15 +94,13 @@
 
         <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
-          Segmented buttons support both single-select and multi-select modes. Use the
-          <code>multi</code> attribute of <code>m3e-segmented-button</code> to allow multiple segments to be selected
-          simultaneously.
+          分段按钮同时支持单选与多选模式。使用 <code>m3e-segmented-button</code> 的 <code>multi</code> 特性
+          允许同时选中多个分段。
         </p>
         <p>
-          Use the <code>checked</code> attribute to control the selected state of a <code>m3e-button-segment</code>.
-          When clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and
-          <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during
-          <code>beforeinput</code>.
+          使用 <code>checked</code> 特性控制 <code>m3e-button-segment</code> 的选中状态。点击时,会先派发一个
+          可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。要取消
+          选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -129,7 +123,7 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
-        <p>使用 <code>disabled</code> 属性禁用 an individual segment.</p>
+        <p>使用 <code>disabled</code> 属性禁用单个分段。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-segmented-button>
@@ -156,8 +150,7 @@
         </m3e-card>
 
         <p>
-          You can also use the <code>disabled</code> attribute of <code>m3e-segmented-button</code> to disable the
-          button in its entirety.
+          你也可以使用 <code>m3e-segmented-button</code> 的 <code>disabled</code> 特性完全禁用该按钮。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -187,9 +180,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">隐藏选择指示器</m3e-heading>
         <p>
-          Use the <code>hide-selection-indicator</code> attribute of <code>m3e-segmented-button</code> to hide selection
-          indicators. If a segment has an icon via use of the <code>icon</code> slot, the icon is retained upon
-          selection.
+          使用 <code>m3e-segmented-button</code> 的 <code>hide-selection-indicator</code> 特性隐藏选择指示器。
+          如果某个分段通过 <code>icon</code> 插槽设置了图标,该图标会在选中时保留。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -215,33 +207,29 @@
 
         <m3e-heading variant="headline" size="small" level="3">表单关联</m3e-heading>
         <p>
-          Segmented buttons can participate in form submission as a
+          分段按钮可以作为
           <a
             href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face"
             target="_blank"
             rel="noopener noreferrer"
-            >form-associated custom element</a
+            >表单关联自定义元素</a
           >
-          (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which
-          the component's value is submitted in a form. The button's value is determined by selected segments. You can
-          use the <code>value</code> of a <code>m3e-button-segment</code> to control a segments's value. When multiple
-          segments are selected, form data will include multiple entries keyed by the same <code>name</code>.
+          (FACE)参与表单提交,把自身状态贡献到表单数据中。<code>name</code> 特性定义组件的值在表单中提交时所用的键。
+          按钮的值由选中的分段决定。你可以使用 <code>m3e-button-segment</code> 的 <code>value</code> 控制分段的
+          值。选中多个分段时,表单数据会包含多个以同一 <code>name</code> 为键的条目。
         </p>
         <p>
-          The component honors the <code>disabled</code> state (on the segmented button itself) as a
-          <strong>property-only</strong> control. When disabled at runtime, it does <em>not</em> sprout a
-          <code>disabled</code> attribute into the DOM.
+          组件把 <code>disabled</code> 状态(分段按钮自身的)视为<strong>仅属性</strong>控件。运行时禁用时,
+          它<em>不会</em>在 DOM 中生成 <code>disabled</code> 特性。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Segmented buttons are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Segmented buttons support negative density scales down to -3, with each step reducing the
-          visual height by one density unit. Regardless of visual size, button segments maintain a 48x48dp minimum touch
-          target to ensure reliable accessibility.
+          分段按钮支持密度,会根据 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> CSS
+          自定义属性调整其垂直间距。默认密度尺寸为 4dp。分段按钮支持负密度,最低可到 -3,每一档将视觉高度
+          减少一个密度单位。无论视觉尺寸如何,按钮分段都保持 48x48dp 的最小触控目标,以确保可靠的无障碍体验。
         </p>
-        <p>The following illustrates applying density to a segmented button.</p>
+        <p>下面演示对分段按钮应用密度。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -295,23 +283,18 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Segmented buttons are given the ARIA <code>role="radiogroup"</code> and segments are given
-          <code>role="radio"</code> for single-select buttons. For multi-select, buttons are given
-          <code>role="group"</code> and segments are given <code>role="button"</code>. When selected, the segments's
-          selection state is reflected using <code>aria-checked</code> for single-select buttons and
-          <code>aria-pressed</code> for multi-select buttons.
+          单选的分段按钮被赋予 ARIA <code>role="radiogroup"</code>,分段被赋予 <code>role="radio"</code>。
+          对于多选,按钮被赋予 <code>role="group"</code>,分段被赋予 <code>role="button"</code>。选中时,分段
+          的选择状态通过单选的 <code>aria-checked</code> 与多选的 <code>aria-pressed</code> 反映。
         </p>
         <p>
-          For disabled single-select segmented buttons, <code>aria-disabled</code> is not applied to the button.
-          Instead, the disabled state is reflected by applying <code>aria-disabled="true"</code> to each nested segment,
-          ensuring assistive technologies correctly interpret the non-interactive status of individual options. For
-          disabled multi-select segmented buttons, <code>aria-disabled</code> is applied to the button as well as
-          individual segments. When a segmented button is disabled at runtime, it does <em>not</em> sprout a
-          <code>disabled</code> attribute into the DOM.
+          对于被禁用的单选分段按钮,<code>aria-disabled</code> 不会应用于按钮。取而代之的是,通过为每个嵌套分段
+          应用 <code>aria-disabled="true"</code> 来反映禁用状态,确保辅助技术正确解读各选项的不可交互状态。
+          对于被禁用的多选分段按钮,<code>aria-disabled</code> 会同时应用于按钮以及各个分段。当分段按钮在运行时
+          被禁用时,它<em>不会</em>在 DOM 中生成 <code>disabled</code> 特性。
         </p>
         <p>
-          Always provide an accessible label via <code>aria-label</code> or <code>aria-labelledby</code> for each
-          segmented button.
+          请始终为每个分段按钮通过 <code>aria-label</code> 或 <code>aria-labelledby</code> 提供无障碍标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

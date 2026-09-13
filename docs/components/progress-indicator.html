@@ -28,8 +28,8 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Progress Indicator 进度指示器</m3e-heading>
         <p>
-          The <code>m3e-linear-progress-indicator</code> and <code>m3e-circular-progress-indicator</code> components
-          provide accessible, animated progress indicators for tracking the completion of tasks or processes.
+          <code>m3e-linear-progress-indicator</code> 与 <code>m3e-circular-progress-indicator</code> 组件
+          提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -39,19 +39,18 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Circular</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">圆形</m3e-heading>
         <p>
-          Use the <code>m3e-circular-progress-indicator</code> to present a circular indicator of progress and activity.
-          This component supports two modes (determinate and indeterminate) and two appearance variants (<code
+          使用 <code>m3e-circular-progress-indicator</code> 呈现进度的圆形指示器。该组件支持两种模式
+          (确定与不确定)以及两种外观变体(<code
             >flat</code
           >
-          and <code>wavy</code>). 使用 <code>variant</code> 属性更改外观。
+          与 <code>wavy</code>)。使用 <code>variant</code> 属性更改外观。
         </p>
         <m3e-heading variant="title" size="medium" level="4">确定进度</m3e-heading>
         <p>
-          By default, circular progress indicators are determinate. Use the
-          <code>value</code> attribute to indicate completion percentage and use <code>max</code> to specify the total
-          number of steps or units of progress. In addition, you can provide content in the default slot.
+          默认情况下,圆形进度指示器是确定的。使用 <code>value</code> 属性指示完成百分比,使用
+          <code>max</code> 指定总步数或进度单位。此外,你可以在默认插槽中提供内容。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -68,8 +67,8 @@
 
         <m3e-heading variant="title" size="medium" level="4">不确定进度</m3e-heading>
         <p>
-          Use the <code>indeterminate</code> attribute to change the mode to indeterminate. In this mode,
-          <code>value</code> and <code>max</code> are ignored.
+          使用 <code>indeterminate</code> 属性将模式改为不确定。在此模式下,<code>value</code> 与
+          <code>max</code> 会被忽略。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -84,26 +83,23 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Linear</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">线性</m3e-heading>
         <p>
-          Use the <code>m3e-linear-progress-indicator</code> to present a horizontal bar for indicating progress and
-          activity. This component supports four modes: <code>determinate</code> (default), <code>indeterminate</code>,
-          <code>buffer</code>, and <code>query</code>.
+          使用 <code>m3e-linear-progress-indicator</code> 呈现用于指示进度与活动的水平条。该组件支持四种模式:
+          <code>determinate</code>(默认)、<code>indeterminate</code>、<code>buffer</code> 与 <code>query</code>。
         </p>
         <p>
-          Use the <code>mode</code> attribute to change the mode. As with a circular indicator, use
-          <code>variant</code> to set the appearance to either <code>flat</code> (default) or <code>wavy</code>.
+          使用 <code>mode</code> 属性更改模式。与圆形指示器一样,使用 <code>variant</code> 将外观设为
+          <code>flat</code>(默认)或 <code>wavy</code>。
         </p>
 
         <m3e-heading variant="title" size="medium" level="4">确定进度</m3e-heading>
         <p>
-          Use the <code>determinate</code> mode where the percentage of the operation complete is known. Use the
-          <code>value</code> attribute to indicate completion percentage and use <code>max</code> to specify the total
-          number of steps or units of progress. This is the default mode.
+          在已知操作完成百分比时使用 <code>determinate</code> 模式。使用 <code>value</code> 属性指示完成百分比,
+          使用 <code>max</code> 指定总步数或进度单位。这是默认模式。
         </p>
         <p>
-          When using the <code>wavy</code> variant, the indicator transitions to the flat appearance automatically when
-          progress reaches 100%.
+          使用 <code>wavy</code> 变体时,进度达到 100% 后指示器会自动过渡为扁平外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -121,8 +117,8 @@
 
         <m3e-heading variant="title" size="medium" level="4">不确定进度</m3e-heading>
         <p>
-          Use the <code>indeterminate</code> mode to express that something is happening, but without conveying discrete
-          progress. In this mode, <code>value</code> and <code>max</code> are ignored.
+          使用 <code>indeterminate</code> 模式表示某事正在发生,但不传达具体的进度。在此模式下,
+          <code>value</code> 与 <code>max</code> 会被忽略。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -140,13 +136,12 @@
 
         <m3e-heading variant="title" size="medium" level="4">Buffer</m3e-heading>
         <p>
-          Use the <code>buffer</code> mode to indicate some activity or loading from the server. In this mode,
-          <code>value</code> determines the progress of the primary bar while the <code>buffer-value</code> attribute is
-          used to show buffering progress.
+          使用 <code>buffer</code> 模式表示某些活动或来自服务器的加载。在此模式下,<code>value</code>
+          决定主进度条的进度,而 <code>buffer-value</code> 特性用于显示缓冲进度。
         </p>
         <p>
-          As with <code>determinate</code> mode, when using the <code>wavy</code> variant, the indicator transitions to
-          the flat appearance automatically when progress reaches 100%.
+          与 <code>determinate</code> 模式一样,使用 <code>wavy</code> 变体时,进度达到 100% 后指示器会自动
+          过渡为扁平外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -169,8 +164,8 @@
 
         <m3e-heading variant="title" size="medium" level="4">Query</m3e-heading>
         <p>
-          Use the <code>query</code> mode to indicate pre-loading before the actual loading starts. In this mode,
-          <code>value</code> and <code>max</code> are ignored.
+          使用 <code>query</code> 模式表示实际加载开始前的预加载。在此模式下,<code>value</code> 与
+          <code>max</code> 会被忽略。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -189,13 +184,12 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Progress indicators implement the ARIA <code>role="progressbar"</code> pattern. They set
-          <code>aria-valuemin</code> to <code>0</code>, <code>aria-valuenow</code> to <code>value</code>, and
-          <code>aria-valuemax</code> to <code>max</code>.
+          进度指示器实现 ARIA <code>role="progressbar"</code> 模式。它们把 <code>aria-valuemin</code> 设为
+          <code>0</code>,把 <code>aria-valuenow</code> 设为 <code>value</code>,把
+          <code>aria-valuemax</code> 设为 <code>max</code>。
         </p>
         <p>
-          Always provide an accessible label via <code>aria-label</code> or <code>aria-labelledby</code> for each
-          progress indicator.
+          请始终为每个进度指示器通过 <code>aria-label</code> 或 <code>aria-labelledby</code> 提供无障碍标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Split Button 分裂按钮</m3e-heading>
         <p>
-          The <code>m3e-split-button</code> component presents a primary action alongside a menu of related actions,
-          uniting two buttons in a single expressive surface.
+          <code>m3e-split-button</code> 组件在呈现一个主要操作的同时,附带一个相关操作菜单,把两个按钮统一在一个富有表现力的界面中。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -41,13 +40,10 @@
 
         <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
-          The <code>m3e-split-button</code> exposes two action slots: <code>leading-button</code> for the primary
-          intent, and <code>trailing-button</code> for invoking a menu of secondary options. The leading button executes
-          the main action directly, while the trailing button reveals contextual alternatives via an attached menu.
+          <code>m3e-split-button</code> 暴露两个操作插槽:<code>leading-button</code> 用于主要意图,<code>trailing-button</code> 用于调用次级选项菜单。前置按钮直接执行主操作,而后置按钮则通过附加菜单展示上下文相关的备选方案。
         </p>
-        <p>the的following example illustrates use。<code>m3e-button</code> for the leading button,
-          <code>m3e-icon-button</code> for the trailing button, and <code>m3e-menu</code> for presenting a menu of
-          secondary options.
+        <p>下面的示例演示了用法:<code>m3e-button</code> 用于前置按钮,
+          <code>m3e-icon-button</code> 用于后置按钮,<code>m3e-menu</code> 用于呈现次级选项菜单。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -86,9 +82,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are four split button appearance variants: <code>filled</code> (default), <code>tonal</code>,
-          <code>outlined</code>, and <code>elevated</code>. Use the <code>variant</code> attribute to change the
-          appearance.
+          分裂按钮有四种外观变体:<code>filled</code>(默认)、<code>tonal</code>、
+          <code>outlined</code> 与 <code>elevated</code>。使用 <code>variant</code> 特性更改外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -146,9 +141,9 @@
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          There are five size variants which can be used to add or remove emphasis:
-          <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and
-          <code>extra-large</code>. Use the <code>size</code> attribute to control the split button's size.
+          共有五种尺寸变体,可用于增加或减少强调:
+          <code>extra-small</code>、<code>small</code>(默认)、<code>medium</code>、<code>large</code> 与
+          <code>extra-large</code>。使用 <code>size</code> 特性控制分裂按钮的大小。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -212,13 +207,12 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Split buttons are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Buttons and menus support negative density scales down to -3, with each step reducing the
-          visual height by one density unit. Regardless of visual size, buttons maintain a 48x48dp minimum touch target
-          to ensure reliable accessibility.
+          分裂按钮会感知密度,并根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整其垂直间距。默认
+          密度尺寸为 4dp。按钮与菜单支持低至 -3 的负密度比例,每降低一档视觉高度减少一个密度单位。无论视觉尺寸如何,按钮都保持 48x48dp 的最小触摸目标
+          以确保可靠的无障碍体验。
         </p>
-        <p>split 按钮的following illustrates applying -3 密度 to the 按钮s and 菜单。</p>
+        <p>下面的示例演示了把 -3 密度应用到按钮与菜单。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -264,12 +258,10 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, split buttons are given the ARIA role <code>group</code>, indicating a set of related user
-          interface elements that are grouped together.
+          默认情况下,分裂按钮会被赋予 ARIA 角色 <code>group</code>,表示一组被归组在一起的相关界面元素。
         </p>
         <p>
-          Always provide an accessible label via <code>aria-label</code> or <code>aria-labelledby</code> for each split
-          button.
+          请始终通过 <code>aria-label</code> 或 <code>aria-labelledby</code> 为每个分裂按钮提供无障碍标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>FAB for M3E</title>
+    <title>FAB · M3E</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="FAB for M3E" />
+    <meta name="description" content="FAB · M3E" />
     <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">FAB</m3e-heading>
-        <p>The <code>m3e-fab</code> is a floating action button (FAB) used to present important actions.</p>
+        <p><code>m3e-fab</code> 是一个悬浮操作按钮(FAB),用于呈现重要操作。</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/fab";</pre></m3e-card>
 
@@ -35,10 +35,10 @@
         <p>本节提供该模块组件的用法示例与配置指引。</p>
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are seven FAB appearance variants: <code>primary</code>, <code>primary-container</code> (default),
-          <code>secondary</code>, and <code>secondary-container</code>, <code>tertiary</code>,
-          <code>tertiary-container</code>, and <code>surface</code>. Use the <code>variant</code> attribute to change
-          the appearance.
+          FAB 有七种外观变体:<code>primary</code>、<code>primary-container</code>(默认)、
+          <code>secondary</code>、<code>secondary-container</code>、<code>tertiary</code>、
+          <code>tertiary-container</code> 与 <code>surface</code>。使用 <code>variant</code> 特性更改
+          外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -60,10 +60,10 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Lowering</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">降低</m3e-heading>
         <p>
-          Use the <code>lowered</code> attribute to lower the elevation of a FAB to reduce emphasis. Lowering is
-          supported for all appearance variants.
+          使用 <code>lowered</code> 特性降低 FAB 的高度,以减弱强调。所有外观变体都支持
+          降低。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -87,9 +87,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          There are three size variants which can be used to add or remove emphasis:
-          <code>small</code>, <code>medium</code> (default), and <code>large</code>. Use the <code>size</code> attribute
-          to control a FAB's size.
+          有三种尺寸变体可用于增强或减弱强调:
+          <code>small</code>、<code>medium</code>(默认)与 <code>large</code>。使用 <code>size</code> 特性
+          控制 FAB 的尺寸。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -109,12 +109,12 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 a FAB. By default, disabled FABs are not focusable with the
-          keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 特性禁用 FAB。默认情况下,禁用的 FAB 无法通过
+          键盘获得焦点。你可以使用 <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
-            >focusability of disabled controls</a
+            >禁用控件的可聚焦性</a
           >
-          to increase their discoverability.
+          以提升其可发现性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -133,8 +133,8 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Extended FABs</m3e-heading>
-        <p>Use the <code>extended</code> attribute and <code>label</code> slot to create an extended FAB.</p>
+        <m3e-heading variant="headline" size="small" level="3">扩展 FAB</m3e-heading>
+        <p>使用 <code>extended</code> 特性与 <code>label</code> 插槽创建扩展 FAB。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-fab extended size="small">
@@ -163,16 +163,16 @@
 
         <m3e-heading variant="headline" size="small" level="3">类型</m3e-heading>
         <p>
-          Use the <code>type</code> attribute to control the behavior of a FAB. By default, <code>type</code> is
-          <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to submit or reset a
-          parenting form when clicked. When submitting a form, you can use the <code>name</code> and
-          <code>value</code> attributes to specify a value.
+          使用 <code>type</code> 特性控制 FAB 的行为。默认情况下,<code>type</code> 为
+          <code>button</code>。你可以把它改为 <code>submit</code> 或 <code>reset</code>,以便在点击时提交或重置其
+          父表单。提交表单时,你可以使用 <code>name</code> 与
+          <code>value</code> 特性指定一个值。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
-          FABs can also behave like links by specifying a URL using the <code>href</code> attribute. You can also
-          specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          FAB 也可以通过 <code>href</code> 特性指定 URL,从而表现得像链接。你还可以
+          像原生 anchor 标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -194,13 +194,13 @@
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
 
         <p>
-          FABs are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. FABs support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. Regardless of visual size, FABs maintain a 48x48dp minimum touch target to ensure
-          reliable accessibility.
+          FAB 具备密度感知能力,会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 自定义 CSS 属性调整其垂直间距。默认
+          密度大小为 4dp。FAB 支持低至 -3 的负密度刻度,每一步都会把视觉
+          高度减少一个密度单位。无论视觉尺寸如何,FAB 都保持 48x48dp 的最小触摸目标,以确保
+          可靠的无障碍体验。
         </p>
-        <p>The following illustrates applying density to the <code>small</code> and <code>medium</code> sizes.</p>
+        <p>下面演示对 <code>small</code> 与 <code>medium</code> 尺寸应用密度。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -222,25 +222,25 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, FABs are given the ARIA role <code>button</code>, indicating they are clickable elements that
-          trigger actions.
+          默认情况下,FAB 会被赋予 ARIA 角色 <code>button</code>,表示它们是可点击并
+          触发操作的元素。
         </p>
         <p>
-          Unless extended, always provide an accessible label via <code>aria-label</code> or
-          <code>aria-labelledby</code> for each FAB.
+          除非是扩展 FAB,否则应始终通过 <code>aria-label</code> 或
+          <code>aria-labelledby</code> 为每个 FAB 提供无障碍标签。
         </p>
-        <p>Slots have <code>aria-hidden="true"</code> to ensure icons are always hidden from assistive technologies.</p>
+        <p>插槽带有 <code>aria-hidden="true"</code>,以确保图标始终对辅助技术隐藏。</p>
         <p>
-          When disabling using either the <code>disabled</code> or <code>disabled-interactive</code> attribute,
-          <code>aria-disabled="true"</code> is used to convey to assistive technologies that the FAB is disabled. If
-          disabled using <code>disabled-interactive</code>, <code>tabindex</code> is retained to convey that the FAB
-          continues to be interactive.
+          当使用 <code>disabled</code> 或 <code>disabled-interactive</code> 特性禁用时,
+          <code>aria-disabled="true"</code> 会用于向辅助技术传达该 FAB 已禁用。如果
+          使用 <code>disabled-interactive</code> 禁用,则会保留 <code>tabindex</code>,以传达该 FAB
+          仍然可交互。
         </p>
         <p>
-          When <code>href</code> is specified, the ARIA role <code>link</code> is used instead of <code>button</code> to
-          convey the FAB provides an interactive reference to a resource. In addition, the component presents an
-          internal anchor, hidden from assistive technologies, used to invoke native browser features such a context
-          menu options and tooltips.
+          当指定 <code>href</code> 时,会使用 ARIA 角色 <code>link</code> 而非 <code>button</code>,以
+          传达该 FAB 提供了对资源的交互式引用。此外,该组件会呈现一个
+          对辅助技术隐藏的内部 anchor,用于调用原生浏览器功能,例如上下文
+          菜单选项与工具提示。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

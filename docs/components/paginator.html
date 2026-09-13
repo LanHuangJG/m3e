@@ -28,8 +28,8 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Paginator 分页器</m3e-heading>
         <p>
-          The <code>m3e-paginator</code> component is a compact, accessible paginator control for navigating paged data
-          sets. It provides semantic first/previous/next/last navigation controls and an optional page-size selector.
+          <code>m3e-paginator</code> 组件是一个紧凑、无障碍的分页控件,用于浏览分页数据集。它提供语义化的首页/上一页/
+          下一页/末页导航控件,以及可选的每页条数选择器。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/paginator";</pre></m3e-card>
 
@@ -38,22 +38,20 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          At minimum, you must specify the total number of items being paged and the page size. Use the
-          <code>length</code> and <code>page-size</code> attributes of the <code>m3e-paginator</code> component,
-          respectively. By default, <code>page-size</code> is set to 50.
+          至少需要指定要分页的项目总数与每页条数。分别使用 <code>m3e-paginator</code> 组件的
+          <code>length</code> 与 <code>page-size</code> 特性。默认情况下,<code>page-size</code> 设为 50。
         </p>
         <p>
-          When a user interacts with the paginator, it emits a <code>page</code> event. This event can be used to update
-          any associated data view and includes the following properties:
+          当用户与分页器交互时,它会派发一个 <code>page</code> 事件。该事件可用于更新任何关联的数据视图,
+          并包含以下属性:
         </p>
         <ul>
-          <li><strong>pageIndex</strong>: <em>number</em> — The zero-based index of the current page.</li>
+          <li><strong>pageIndex</strong>: <em>number</em> —— 当前页的从零开始的索引。</li>
           <li>
-            <strong>previousPageIndex</strong>: <em>number</em> (optional) — The zero-based index of the previously
-            selected page.
+            <strong>previousPageIndex</strong>: <em>number</em>(可选) —— 先前选中页的从零开始的索引。
           </li>
-          <li><strong>pageSize</strong>: <em>number | "all"</em> — The current page size.</li>
-          <li><strong>length</strong>: <em>number</em> — The total number of items being paged.</li>
+          <li><strong>pageSize</strong>: <em>number | "all"</em> —— 当前每页条数。</li>
+          <li><strong>length</strong>: <em>number</em> —— 要分页的项目总数。</li>
         </ul>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -64,18 +62,16 @@
           <pre slot="content">&lt;m3e-paginator length=&quot;100&quot;&gt;&lt;/m3e-paginator&gt;</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Page sizes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">每页条数</m3e-heading>
         <p>
-          The <code>page-sizes</code> attribute lets you define which page size options are available to users. It
-          accepts a comma-separated list of values and may include <code>"all"</code>. By default,
-          <code>page-sizes</code> is set to <code>"5,10,25,50,100"</code>.
+          <code>page-sizes</code> 特性让你定义用户可选的每页条数选项。它接受逗号分隔的值列表,
+          并可以包含 <code>"all"</code>。默认情况下,<code>page-sizes</code> 设为 <code>"5,10,25,50,100"</code>。
         </p>
         <p>
-          The current <code>page-size</code> will always appear in the dropdown, event if its not included in
-          <code>page-sizes</code>.
+          当前的 <code>page-size</code> 始终会出现在下拉列表中,即使它未包含在 <code>page-sizes</code> 中。
         </p>
         <p>
-          When <code>page-size</code> is set to <code>"all"</code>, the range label and navigation actions are hidden.
+          当 <code>page-size</code> 设为 <code>"all"</code> 时,范围标签与导航操作会被隐藏。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -88,10 +84,9 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Navigation actions</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">导航操作</m3e-heading>
         <p>
-          By default, the first and last page buttons are hidden. Use the <code>show-first-last-buttons</code> attribute
-          to show them.
+          默认情况下,首页与末页按钮是隐藏的。使用 <code>show-first-last-buttons</code> 特性来显示它们。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -106,13 +101,11 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Paginators are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Paginators support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. The internal form field accepts compact densities (-3 and -2) and ignores larger
-          values.
+          分页器支持密度,会根据 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> CSS
+          自定义属性调整其垂直间距。默认密度尺寸为 4dp。分页器支持负密度,最低可到 -3,每一档将视觉高度
+          减少一个密度单位。内部表单字段接受紧凑密度(-3 与 -2)并忽略更大的值。
         </p>
-        <p>The following illustrates applying -3 density to a paginator.</p>
+        <p>下面演示对分页器应用 -3 密度。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-paginator class="density-3" length="100" show-first-last-buttons></m3e-paginator>
@@ -135,13 +128,13 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The paginator uses ARIA <code>role="group"</code> to semantically group its child controls. You must add an
-          <code>aria-label</code> or <code>aria-labelledby</code> attribute to each <code>m3e-paginator</code> with a
-          label that describes the content controlled by the pagination control.
+          分页器使用 ARIA <code>role="group"</code> 对其子控件进行语义分组。你必须为每个
+          <code>m3e-paginator</code> 添加 <code>aria-label</code> 或 <code>aria-labelledby</code> 特性,
+          其标签应描述分页控件所控制的内容。
         </p>
         <p>
-          You can use the <code>first-page-label</code>, <code>previous-page-label</code>, <code>next-page-label</code>,
-          and <code>last-page-label</code> attributes to change the accessible labels of navigation actions.
+          你可以使用 <code>first-page-label</code>、<code>previous-page-label</code>、<code>next-page-label</code>
+          与 <code>last-page-label</code> 特性更改导航操作的无障碍标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

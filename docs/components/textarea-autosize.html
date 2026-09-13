@@ -28,9 +28,9 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Textarea Autosize 自适应文本域</m3e-heading>
         <p>
-          The <code>m3e-textarea-autosize</code> component automatically adjusts the height of a linked
-          <code>textarea</code> to fit its content, preserving layout integrity and user experience. This non-visual
-          element listens to input changes and applies dynamic resizing, constrained by optional row limits.
+          <code>m3e-textarea-autosize</code> 组件会自动调整所关联
+          <code>textarea</code> 的高度以适配其内容,从而保持布局完整性与用户体验。这个非可视
+          元素监听输入变化并应用动态调整大小,并受可选的行数上限约束。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -42,10 +42,10 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          Use the <code>m3e-textarea-autosize</code> component to make a <code>textarea</code> automatically resize to
-          fit its content. Use the <code>for</code> attribute to specify the <code>textarea</code> to autosize. The
-          following example illustrates use of the <code>m3e-textarea-autosize</code> alongside a
-          <code>m3e-form-field</code>. See <a href="../components/form-field.html">Form Field 表单容器</a> for more information.
+          使用 <code>m3e-textarea-autosize</code> 组件可以让 <code>textarea</code> 自动调整大小以
+          适配其内容。使用 <code>for</code> 特性指定要自动调整大小的 <code>textarea</code>。以下
+          示例演示如何将 <code>m3e-textarea-autosize</code> 与
+          <code>m3e-form-field</code> 一起使用。更多信息请参阅 <a href="../components/form-field.html">Form Field 表单容器</a>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -70,10 +70,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Min and max rows</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">最小与最大行数</m3e-heading>
         <p>
-          Use the <code>min-rows</code> and <code>max-rows</code> attributes to control the minimum and maximum number
-          of rows for a <code>textarea</code>.
+          使用 <code>min-rows</code> 与 <code>max-rows</code> 特性控制 <code>textarea</code> 的最小与最大行数。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -99,7 +98,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
-        <p>使用 <code>disabled</code> 属性禁用 autosize.</p>
+        <p>使用 <code>disabled</code> 属性禁用自动调整大小。</p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
 &lt;m3e-textarea-autosize for=&quot;field&quot; disabled&gt;&lt;/m3e-textarea-autosize&gt;</pre
@@ -108,8 +107,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The component is given ARIA <code>role="none"</code> indicating the element is presentational and should be
-          ignored by assistive technologies.
+          该组件被赋予 ARIA <code>role="none"</code>,表示该元素仅用于呈现,应被
+          辅助技术忽略。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

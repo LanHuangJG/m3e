@@ -40,35 +40,33 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Icon 图标</m3e-heading>
         <p>
-          The <code>m3e-icon</code> component makes it easy to use Material Symbols in your application. It supports
-          outlined, rounded, and sharp variants, as well as variable font features like fill, weight, grade, and optical
-          size. For more information, see the
+          <code>m3e-icon</code> 组件让在应用中使用 Material Symbols 变得简单。它支持 outlined、rounded 与 sharp 变体,以及
+          fill、weight、grade 与 optical size 等可变字体特性。更多信息请参阅
           <a href="https://developers.google.com/fonts/docs/material_symbols" target="_blank" rel="noopener noreferrer">
             Material Symbol Guide
           </a>
-          and
+          与
           <a href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer">
             Material Symbol Library </a
-          >.
+          >。
         </p>
 
         <p>
-          The Material Symbols font is the easiest way to incorporate Material Symbols into your application. Using the
+          Material Symbols 字体是把 Material Symbols 引入应用中最简单的方式。借助
           <a
             href="https://developers.google.com/fonts/docs/css2#forming_api_urls"
             target="_blank"
             rel="noopener noreferrer"
           >
             Fonts CSS API</a
-          >, you can use variable fonts to optimize icon usage within your application. See
+          >,你可以使用可变字体优化应用中的图标使用。请参阅
           <a href="https://caniuse.com/variable-fonts" target="_blank" rel="noopener noreferrer">
             Can I Use's Variable Fonts
           </a>
-          to determine whether your user's browser supports variable fonts.
+          以确定你的用户浏览器是否支持可变字体。
         </p>
         <p>
-          Alternatively, the <code>@m3e/icons</code> package provides SVG versions of Material Symbols that register
-          automatically with <code>m3e-icon</code>. See the SVG Icons section below for usage details.
+          或者,<code>@m3e/icons</code> 包提供 Material Symbols 的 SVG 版本,它们会自动注册到 <code>m3e-icon</code>。用法详见下文的 SVG 图标一节。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/icon";</pre></m3e-card>
@@ -76,11 +74,10 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Basic icons</m3e-heading>
-        <p>the的following illustrates the basic use。<code>m3e-icon</code> component. Use the
-          <code>name</code> attribute to specify the name of the
-          <a href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer">Material Symbol</a> to
-          present.
+        <m3e-heading variant="headline" size="small" level="3">基础图标</m3e-heading>
+        <p>下面的示例演示了 <code>m3e-icon</code> 组件的基本用法。使用
+          <code>name</code> 特性指定要呈现的
+          <a href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer">Material Symbol</a> 名称。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -91,8 +88,8 @@
           <pre slot="content">&lt;m3e-icon name=&quot;home&quot;&gt;&lt;/m3e-icon&gt;</pre>
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Variable fonts</m3e-heading>
-        <p>用于download a variable font for outlined icons with fill support的following illustrates a 链接。</p>
+        <m3e-heading variant="headline" size="small" level="3">可变字体</m3e-heading>
+        <p>下面的示例演示了如何链接一个支持 fill 的 outlined 图标可变字体。</p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
 &lt;link
@@ -104,35 +101,30 @@
 
         <m3e-heading variant="headline" size="small" level="3">外观变体</m3e-heading>
         <p>
-          The <code>m3e-icon</code> component supports appearance variants and fine-grained typographic controls for
-          fill, weight, grade, and optical size.
+          <code>m3e-icon</code> 组件支持外观变体,以及针对 fill、weight、grade 与 optical size 的细粒度排版控制。
         </p>
         <p>
-          Use the <code>variant</code> attribute to control the visual style of the icon. Supported values include:
-          <code>outlined</code> (default), <code>rounded</code>, and <code>sharp</code>. Use the
-          <code>filled</code> attribute to specify whether the icon is filled (<code>1</code>) or unfilled
-          (<code>0</code>). This attribute maps to the <code>FILL</code> axis of the variable font.
+          使用 <code>variant</code> 特性控制图标的视觉样式。支持的取值包括:
+          <code>outlined</code>(默认)、<code>rounded</code> 与 <code>sharp</code>。使用
+          <code>filled</code> 特性指定图标是填充(<code>1</code>)还是不填充
+          (<code>0</code>)。该特性映射到可变字体的 <code>FILL</code> 轴。
         </p>
         <p>
-          The <code>weight</code> attribute adjusts the thickness and boldness of the icon's strokes. It behaves like
-          font weight in text accepting values from <code>100</code> to <code>700</code>. Use the
-          <code>grade</code> attribute to adjust the stroke thickness of an icon. Supported values include:
-          <code>low</code>, <code>medium</code> (default) and <code>high</code>. This attribute maps to the
-          <code>GRAD</code> axis of the variable font with values like <code>-25</code>, <code>0</code>, or
-          <code>200</code>.
+          <code>weight</code> 特性调整图标笔画的粗细与浓淡。其行为类似文本中的字重,可接受 <code>100</code> 到 <code>700</code> 的取值。使用
+          <code>grade</code> 特性调整图标的笔画粗细。支持的取值包括:
+          <code>low</code>、<code>medium</code>(默认)与 <code>high</code>。该特性映射到可变字体的
+          <code>GRAD</code> 轴,取值为 <code>-25</code>、<code>0</code> 或
+          <code>200</code> 之类。
         </p>
         <p>
-          The <code>optical-size</code> attribute supports values from <code>20</code> to <code>48</code> indicating the
-          optical size of the icon.
+          <code>optical-size</code> 特性支持 <code>20</code> 到 <code>48</code> 的取值,用于指定图标的光学尺寸。
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">SVG icons</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">SVG 图标</m3e-heading>
 
         <p>
-          As an alternative to use of variable fonts, you can use the <code>@m3e/icons</code> package for applications
-          that prefer SVG-based icons. This package supplies SVG data sourced from
-          <code>@material-symbols/svg-400</code> and integrates with the existing <code>m3e-icon</code> component
-          through an internal icon registry.
+          作为可变字体的替代方案,对于偏好基于 SVG 的图标的应用,你可以使用 <code>@m3e/icons</code> 包。该包提供源自
+          <code>@material-symbols/svg-400</code> 的 SVG 数据,并通过内部图标注册表与现有的 <code>m3e-icon</code> 组件集成。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -153,29 +145,25 @@ import "@m3e/icons/outlined/notifications";</pre
           >
         </m3e-card>
         <p>
-          Icons are organized by Material Symbols variant families (<code>outlined</code>, <code>rounded</code>,
-          <code>sharp</code>). You can register a specific icon by importing its module:
+          图标按 Material Symbols 变体家族(<code>outlined</code>、<code>rounded</code>、
+          <code>sharp</code>)组织。你可以通过导入对应模块来注册特定图标:
         </p>
         <m3e-card variant="outlined" class="install">
           <pre slot="content">import "@m3e/icons/outlined/search";</pre>
         </m3e-card>
-        <p>Or register an entire variant family at once:</p>
+        <p>或者一次注册整个变体家族:</p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/icons/outlined";</pre></m3e-card>
 
         <p>
-          Each icon module performs a side-effect registration with the internal registry used by
-          <code>m3e-icon</code>. Once registered, the icon becomes available for rendering. If an icon is not
-          registered, it will fall back to the Material Symbols variable font.
+          每个图标模块都会对 <code>m3e-icon</code> 所使用的内部注册表执行副作用注册。注册后,该图标即可用于渲染。如果某个图标未注册,则会回退到 Material Symbols 可变字体。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Icons are given the ARIA <code>role="img"</code>, indicating that they represent meaningful visual content and
-          should be interpreted by assistive technologies as images.
+          图标带有 ARIA <code>role="img"</code>,表明它们表示有意义的视觉内容,辅助技术应将其解释为图像。
         </p>
         <p>
-          Include <code>aria-hidden="true"</code> if the icon is purely decorative. Otherwise, they must be labeled
-          using <code>aria-label</code> or <code>aria-labelledby</code>.
+          如果图标纯属装饰,请加上 <code>aria-hidden="true"</code>。否则,必须使用 <code>aria-label</code> 或 <code>aria-labelledby</code> 为其添加标签。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

@@ -29,8 +29,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Menu 导航菜单</m3e-heading>
         <p>
-          The <code>m3e-nav-menu</code> component is a hierarchical menu optimized for sidebars and drawers on larger
-          devices. It enables users to explore nested menu structures and seamlessly switch between application views.
+          <code>m3e-nav-menu</code> 组件是一个为较大设备上的侧边栏与抽屉优化的层级菜单。它使用户能够浏览嵌套菜单结构,并在应用视图之间无缝切换。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/nav-menu";</pre></m3e-card>
@@ -38,16 +37,16 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Multilevel menus</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">多级菜单</m3e-heading>
         <p>
-          Use the <code>m3e-nav-menu</code> and <code>m3e-nav-menu-item</code> to create a multilevel navigation menu.
+          使用 <code>m3e-nav-menu</code> 与 <code>m3e-nav-menu-item</code> 创建多级导航菜单。
         </p>
         <p>
-          Use the <code>label</code> slot of a <code>m3e-nav-menu-item</code> to specify an item's label. In addition,
-          use the <code>icon</code> slot to include an icon before the item's label and use the <code>badge</code> slot
-          to specify to specify a compact status indicator or supplementary text.
+          使用 <code>m3e-nav-menu-item</code> 的 <code>label</code> 插槽指定条目的标签。此外,
+          使用 <code>icon</code> 插槽在条目标签前加入图标,使用 <code>badge</code> 插槽
+          指定紧凑的状态指示器或补充文本。
         </p>
-        <p>To create multiple levels, nest one or more <code>m3e-nav-menu-item</code> components.</p>
+        <p>要创建多级结构,请嵌套一个或多个 <code>m3e-nav-menu-item</code> 组件。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -93,11 +92,11 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Grouping top-level items</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">对顶层条目分组</m3e-heading>
         <p>
-          You can use a <code>m3e-nav-menu-item-group</code> to group top-level items in a menu. Use the
-          <code>label</code> slot to specify a group's label. Use a <code>m3e-divider</code> to separate groups in a
-          menu. See <a href="../components/divider.html">Divider 分隔线</a> for more information.
+          你可以使用 <code>m3e-nav-menu-item-group</code> 对菜单中的顶层条目进行分组。使用
+          <code>label</code> 插槽指定分组的标签。使用 <code>m3e-divider</code> 分隔
+          菜单中的分组。更多信息请参阅 <a href="../components/divider.html">Divider 分隔线</a>。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -161,8 +160,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          Use the <code>disabled</code> attribute of a <code>m3e-nav-menu-item</code> to disable the item and any
-          children. Disabling an item with children will not automatically close it.
+          使用 <code>m3e-nav-menu-item</code> 的 <code>disabled</code> 特性禁用该条目及其所有
+          子项。禁用带有子项的条目不会自动将其收起。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -212,13 +211,13 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Nav menus are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Nav menus support negative density scales down to -3, with each step reducing the visual
-          height by one density unit.
+          导航菜单感知密度,会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整其垂直间距。默认
+          密度尺寸为 4dp。导航菜单支持低至 -3 的负密度比例,每降低一档,视觉
+          高度减少一个密度单位。
         </p>
 
-        <p>The following illustrates applying a -3 density to nav menu.</p>
+        <p>下面的示例演示了将 -3 密度应用于导航菜单。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -276,28 +275,26 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Nav menus are given ARIA <code>role="tree"</code>, and items are assigned <code>role="treeitem"</code>,
-          indicating a structured, hierarchical navigation model that supports keyboard interaction, semantic grouping,
-          and accessible labeling. Expandable items use <code>aria-expanded</code> to indicate visibility of nested
-          content, and current items may use <code>aria-current</code> to signal the active page or view.
+          导航菜单带有 ARIA <code>role="tree"</code>,条目被赋予 <code>role="treeitem"</code>,
+          表示一种结构化、层级化的导航模型,支持键盘交互、语义分组
+          与无障碍标签。可展开条目使用 <code>aria-expanded</code> 表示嵌套
+          内容的可见性,当前条目可以使用 <code>aria-current</code> 标示活动页面或视图。
         </p>
         <p>
-          Focus is managed on the <code>m3e-nav-menu</code> container using <code>tabindex="0"</code>, and the currently
-          active item is referenced via <code>aria-activedescendant</code>, which points to the ID of the focused
-          <code>m3e-nav-menu-item</code>. This enables roving focus without shifting DOM focus, ensuring accessible
-          keyboard navigation and consistent screen reader feedback.
+          焦点通过 <code>tabindex="0"</code> 在 <code>m3e-nav-menu</code> 容器上管理,当前
+          活动条目通过 <code>aria-activedescendant</code> 引用,该属性指向获得焦点的
+          <code>m3e-nav-menu-item</code> 的 ID。这样可以在不移动 DOM 焦点的情况下实现游走式焦点,确保无障碍的键盘导航
+          与一致的屏幕阅读器反馈。
         </p>
         <p>
-          Groups are given ARIA <code>role="group"</code>, indicating that their contents form a semantic unit within
-          the navigation tree and are labeled by the content of the group's <code>label</code> slot.
+          分组带有 ARIA <code>role="group"</code>,表示其内容在导航树中构成一个语义单元,并由分组 <code>label</code> 插槽的内容作为标签。
         </p>
         <p>
-          Icons and dividers are given <code>aria-hidden="true"</code> ensure they're treated as purely decorative and
-          excluded from the accessibility tree.
+          图标与分隔线带有 <code>aria-hidden="true"</code>,确保它们被视为纯装饰并从无障碍树中排除。
         </p>
         <p>
-          Disabling an item sets <code>aria-disabled="true"</code> signaling to assistive technologies that the item is
-          not interactive.
+          禁用条目会设置 <code>aria-disabled="true"</code>,向辅助技术表明该条目不可
+          交互。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

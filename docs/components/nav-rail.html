@@ -28,8 +28,8 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Nav Rail 导航侧栏</m3e-heading>
         <p>
-          The <code>m3e-nav-rail</code> extends <a href="../components/nav-bar.html">Nav Bar 导航栏</a> to provide a vertical
-          bar, typically used on larger devices, that allows a user to switch between views.
+          <code>m3e-nav-rail</code> 扩展了 <a href="../components/nav-bar.html">Nav Bar 导航栏</a>,提供一个竖向栏,
+          通常用于较大的设备,允许用户在视图之间切换。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/nav-rail";</pre></m3e-card>
@@ -39,21 +39,20 @@
 
         <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
         <p>
-          The <code>m3e-nav-rail</code> supports three modes: <code>compact</code> (default), <code>expanded</code>, and
-          <code>auto</code>. In a compact mode, items are oriented vertically. When expanded, items are oriented
-          horizontally. Using <code>auto</code>, the orientation is responsive and determined by viewport size. Use the
-          <code>mode</code> attribute to change a bar's mode.
+          <code>m3e-nav-rail</code> 支持三种模式:<code>compact</code>(默认)、<code>expanded</code> 与
+          <code>auto</code>。在紧凑模式下,条目竖向排列。展开时,条目横向排列。使用 <code>auto</code> 时,
+          方向会自适应,由视口尺寸决定。使用 <code>mode</code> 属性更改栏的模式。
         </p>
-        <p>The following example illustrates a common layout.</p>
+        <p>下面的示例展示了一种常见布局。</p>
         <ul>
           <li>
-            A <code>m3e-icon-button</code> is used in conjunction with the <code>m3e-nav-rail-toggle</code> to provide a
-            toggle button used to toggle between modes. The <code>for</code> attribute designates the rail to toggle.
+            <code>m3e-icon-button</code> 与 <code>m3e-nav-rail-toggle</code> 配合使用,提供一个用于在模式之间切换的
+            切换按钮。<code>for</code> 特性指定要切换的栏。
           </li>
-          <li>An extended <code>m3e-fab</code> will automatically transition to reflect the mode of the rail.</li>
+          <li>扩展的 <code>m3e-fab</code> 会自动过渡以反映栏的模式。</li>
           <li>
-            Top-level destinations are specified using <code>m3e-nav-item</code> from the
-            <a href="../components/nav-bar.html">Nav Bar 导航栏</a> module.
+            顶级目标使用来自
+            <a href="../components/nav-bar.html">Nav Bar 导航栏</a> 模块的 <code>m3e-nav-item</code> 指定。
           </li>
         </ul>
         <m3e-card variant="outlined" class="showcase">
@@ -97,8 +96,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">条目</m3e-heading>
         <p>
-          As illustrated above, items are specified using the <code>m3e-nav-item</code> component. Use the default slot
-          to specify an item's label and use the <code>icon</code> slot to specify an icon.
+          如上所示,条目使用 <code>m3e-nav-item</code> 组件指定。使用默认插槽指定条目的标签,使用
+          <code>icon</code> 插槽指定图标。
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -108,62 +107,58 @@
 
         <m3e-heading variant="headline" size="small" level="3">选择</m3e-heading>
         <p>
-          The <code>m3e-nav-rail</code> only supports single-select. Use the <code>selected</code> attribute of
-          <code>m3e-nav-item</code> to specify which item in a rail is selected. When clicked, a cancellable
-          <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To
-          cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>.
+          <code>m3e-nav-rail</code> 仅支持单选。使用 <code>m3e-nav-item</code> 的 <code>selected</code> 属性
+          指定栏中选中哪个条目。点击时,会先派发一个可取消的 <code>beforeinput</code> 事件,随后是
+          <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用
+          <code>preventDefault</code>。
         </p>
         <p>
-          In addition, you can use the <code>selected-icon</code> slots to specify an alternate icon when selected. When
-          using the <code>m3e-icon</code> to present icons, the icon will automatically be filled when an item is
-          selected.
+          此外,你可以使用 <code>selected-icon</code> 插槽指定选中时的备用图标。使用
+          <code>m3e-icon</code> 呈现图标时,条目被选中后图标会自动填充。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 an item. By default, disabled items are not focusable with
-          the keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 属性禁用条目。默认情况下,被禁用的条目无法通过键盘聚焦。你可以使用
+          <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
-            >focusability of disabled controls</a
+            >禁用控件的可聚焦性</a
           >
-          to increase their discoverability.
+          以提升它们的可发现性。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
-          Items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also
-          specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          条目也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以像原生锚点标签那样指定
+          <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Navigation rails are given ARIA <code>role="navigation"</code>, indicating that the region serves as a
-          navigational landmark and helps assistive technologies identify it as a container for site or app navigation
-          links. Always provide an accessible label via <code>aria-label</code> or <code>aria-labelledby</code>.
+          导航栏被赋予 ARIA <code>role="navigation"</code>,表示该区域充当导航地标,帮助辅助技术将其识别为
+          站点或应用导航链接的容器。请始终通过 <code>aria-label</code> 或 <code>aria-labelledby</code> 提供
+          无障碍标签。
         </p>
         <p>
-          Items are given the ARIA role <code>button</code>, indicating they are clickable elements that trigger actions
-          and <code>aria-current="true"</code> is used to convey the selected state.
+          条目被赋予 ARIA 角色 <code>button</code>,表示它们是可点击、会触发操作的元素,并使用
+          <code>aria-current="true"</code> 传达选中状态。
         </p>
         <p>
-          Icons slots have <code>aria-hidden="true"</code> to ensure icons are always hidden from assistive
-          technologies.
+          图标插槽带有 <code>aria-hidden="true"</code>,以确保图标始终对辅助技术隐藏。
         </p>
         <p>
-          When disabling using either the <code>disabled</code> or <code>disabled-interactive</code> attribute,
-          <code>aria-disabled="true"</code> is used to convey to assistive technologies that the item is disabled. If
-          disabled using <code>disabled-interactive</code>, <code>tabindex</code> is retained to convey that the item
-          continues to be interactive.
+          使用 <code>disabled</code> 或 <code>disabled-interactive</code> 特性禁用时,会用
+          <code>aria-disabled="true"</code> 向辅助技术传达该条目已禁用。如果使用
+          <code>disabled-interactive</code> 禁用,则保留 <code>tabindex</code>,以传达该条目仍可交互。
         </p>
         <p>
-          When <code>href</code> is specified, the ARIA role <code>link</code> is used instead of <code>button</code> to
-          convey the item provides an interactive reference to a resource. In addition, the component presents an
-          internal anchor, hidden from assistive technologies, used to invoke native browser features such a context
-          menu options and tooltips.
+          指定 <code>href</code> 时,会使用 ARIA 角色 <code>link</code> 而非 <code>button</code>,以传达该条目
+          提供了指向资源的交互式引用。此外,组件会呈现一个对辅助技术隐藏的内部锚点,用于调用原生浏览器特性,
+          例如上下文菜单选项与工具提示。
         </p>
         <p>
-          Rail toggles use <code>aria-controls</code> to associate its parenting element with the rail, and dynamically
-          update <code>aria-expanded</code> to indicate whether the rail is expanded.
+          栏切换器使用 <code>aria-controls</code> 将它的父元素与栏关联,并动态更新
+          <code>aria-expanded</code> 以指示栏是否已展开。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

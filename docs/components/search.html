@@ -29,9 +29,8 @@
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Search 搜索框</m3e-heading>
 
         <p>
-          The <code>m3e-search-bar</code> and <code>m3e-search-view</code> components provide a Material 3 expressive
-          search experience. The search bar offers a prominent entry point for text input, while the search view
-          presents suggestions, history, and results in contained, docked, or full screen configurations.
+          <code>m3e-search-bar</code> 与 <code>m3e-search-view</code> 组件提供 Material 3 表现力的搜索体验。
+          搜索栏提供醒目的文本输入入口,而搜索视图以包含式、停靠式或全屏配置呈现建议、历史与结果。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/search";</pre></m3e-card>
@@ -41,31 +40,29 @@
 
         <m3e-heading variant="headline" size="small" level="3">Search bar</m3e-heading>
         <p>
-          Use the <code>m3e-search-bar</code> as the entry point for search. It provides the interactive affordance that
-          activates search, but does not display results. To present suggestions, history, or results, use
-          <code>m3e-search-view</code>, which provides a complete search experience.
+          使用 <code>m3e-search-bar</code> 作为搜索入口。它提供激活搜索的交互提示,但不显示结果。要呈现建议、历史或
+          结果,请使用 <code>m3e-search-view</code>,它提供完整的搜索体验。
         </p>
 
         <m3e-heading variant="title" size="medium" level="4">结构解析</m3e-heading>
-        <p>The <code>m3e-search-bar</code> exposes the following named slots:</p>
+        <p><code>m3e-search-bar</code> 暴露以下具名插槽:</p>
 
         <ul>
           <li>
-            <code>leading</code> — Content positioned at the start of the bar, such as an icon or navigation affordance.
+            <code>leading</code> —— 位于栏开头的内容,例如图标或导航提示。
           </li>
-          <li><code>input</code> — The <code>input</code> element used to capture search text.</li>
-          <li><code>trailing</code> — Content aligned to the end of the bar, such as an avatar or overflow menu.</li>
+          <li><code>input</code> —— 用于捕获搜索文本的 <code>input</code> 元素。</li>
+          <li><code>trailing</code> —— 对齐到栏末尾的内容,例如头像或溢出菜单。</li>
         </ul>
 
         <m3e-heading variant="title" size="medium" level="4">可清除</m3e-heading>
         <p>
-          Use the <code>clearable</code> attribute to control whether the bar displays a clear button. When activated,
-          this button clears the input and emits a <code>clear</code> event.
+          使用 <code>clearable</code> 特性控制栏是否显示清除按钮。激活时,该按钮会清空输入并派发一个
+          <code>clear</code> 事件。
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Typical usage</m3e-heading>
-        <p>a的following example illustrates typical usage。<code>m3e-search-bar</code> with a leading icon and the
-          ability to clear the current search text.
+        <m3e-heading variant="title" size="medium" level="4">典型用法</m3e-heading>
+        <p>下面的示例演示典型用法:带前置图标并可清除当前搜索文本的 <code>m3e-search-bar</code>。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -87,33 +84,30 @@
 
         <m3e-heading variant="headline" size="small" level="3">Search view</m3e-heading>
         <p>
-          Use the <code>m3e-search-view</code> to display search suggestions and results. Unlike
-          <code>m3e-search-bar</code>, which only provides the entry point, the search view presents the results of a
-          search.
+          使用 <code>m3e-search-view</code> 显示搜索建议与结果。与仅提供入口的 <code>m3e-search-bar</code> 不同,
+          搜索视图会呈现搜索的结果。
         </p>
 
         <m3e-heading variant="title" size="medium" level="4">结构解析</m3e-heading>
-        <p>The <code>m3e-search-view</code> exposes the following named slots:</p>
+        <p><code>m3e-search-view</code> 暴露以下具名插槽:</p>
         <ul>
-          <li><code>closed-leading</code> — When the view is closed, renders content positioned before the input.</li>
-          <li><code>closed-trailing</code> — When the view is closed, renders content positioned after the input.</li>
-          <li><code>open-leading</code> — When the view is open, renders content positioned before the input.</li>
-          <li><code>open-trailing</code> — When the view is open, renders content after the input.</li>
-          <li><code>input</code> — Renders the <code>input</code> element used to capture search text.</li>
-          <li><em>(default)</em> — When the view is open, renders the results content of the view.</li>
+          <li><code>closed-leading</code> —— 视图关闭时,呈现位于输入框之前的内容。</li>
+          <li><code>closed-trailing</code> —— 视图关闭时,呈现位于输入框之后的内容。</li>
+          <li><code>open-leading</code> —— 视图打开时,呈现位于输入框之前的内容。</li>
+          <li><code>open-trailing</code> —— 视图打开时,呈现位于输入框之后的内容。</li>
+          <li><code>input</code> —— 呈现用于捕获搜索文本的 <code>input</code> 元素。</li>
+          <li><em>(default)</em> —— 视图打开时,呈现视图的结果内容。</li>
         </ul>
 
         <m3e-heading variant="title" size="medium" level="4">模式</m3e-heading>
         <p>
-          Use the <code>mode</code> attribute to control how results are presented. Supported values include
-          <code>fullscreen</code>, <code>docked</code> (default), and <code>auto</code>, which selects the appropriate
-          mode based on the current viewport breakpoint.
+          使用 <code>mode</code> 属性控制结果的呈现方式。支持的值包括 <code>fullscreen</code>、
+          <code>docked</code>(默认)与 <code>auto</code>,后者会根据当前视口断点选择合适的模式。
         </p>
 
         <p>
-          The following example illustrates the default <code>docked</code> mode. In this mode, the search view appears
-          as a surface anchored to the search bar, allowing users to explore results while maintaining context within
-          the surrounding layout.
+          下面的示例演示默认的 <code>docked</code> 模式。在此模式下,搜索视图呈现为锚定到搜索栏的浮层,
+          让用户能在周围布局中保持上下文的同时浏览结果。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -140,8 +134,8 @@
           >
         </m3e-card>
         <p>
-          The next example illustrates the <code>fullscreen</code> mode. In this mode, the search view occupies the
-          entire viewport, creating an immersive, focused search that temporarily replaces the surrounding UI.
+          下一个示例演示 <code>fullscreen</code> 模式。在此模式下,搜索视图占据整个视口,营造沉浸、专注的搜索,
+          并暂时替换周围的界面。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -166,8 +160,8 @@
 
         <m3e-heading variant="title" size="medium" level="4">外观变体</m3e-heading>
 
-        <p>Use the <code>contained</code> attribute to a persistent, filled search container when open.</p>
-        <p>The following example illustrates use of <code>contained</code> in the <code>docked</code> mode.</p>
+        <p>使用 <code>contained</code> 特性在打开时呈现持久、填充的搜索容器。</p>
+        <p>下面的示例演示在 <code>docked</code> 模式下使用 <code>contained</code>。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-search-view mode="docked" contained>
@@ -188,7 +182,7 @@
 &lt;/m3e-search-view&gt;</pre
           >
         </m3e-card>
-        <p>The next example illustrates use of <code>contained</code> in the <code>fullscreen</code> mode.</p>
+        <p>下一个示例演示在 <code>fullscreen</code> 模式下使用 <code>contained</code>。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-search-view mode="fullscreen" contained>
@@ -210,28 +204,24 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="title" size="medium" level="4">Loading results</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">加载结果</m3e-heading>
         <p>
-          The <code>m3e-search-view</code> emits a <code>query</code> event that can be used to load results. The event
-          fires under the following conditions:
+          <code>m3e-search-view</code> 派发一个 <code>query</code> 事件,可用于加载结果。该事件在以下条件下触发:
         </p>
         <ul>
-          <li>The <code>input</code> receives focus. This can be used to load initial suggestions.</li>
+          <li><code>input</code> 获得焦点。可用于加载初始建议。</li>
           <li>
-            The <code>input</code> value changes. This can be used to fetch results that match the current term using
-            the event's <code>detail.term</code> property.
+            <code>input</code> 的值发生变化。可用于通过事件的 <code>detail.term</code> 属性获取与当前词条匹配的结果。
           </li>
         </ul>
         <p>
-          In addition, a <code>clear</code> event is emitted when the user clicks the clear button. This action also
-          triggers a <code>query</code> event first, followed by <code>clear</code>, reflecting the component's input →
-          query → clear event sequence.
+          此外,当用户点击清除按钮时会派发一个 <code>clear</code> 事件。该操作还会先触发 <code>query</code> 事件,
+          随后是 <code>clear</code>,体现组件的 input → query → clear 事件序列。
         </p>
 
-        <m3e-heading variant="title" size="medium" level="4">Hiding the search icon</m3e-heading>
+        <m3e-heading variant="title" size="medium" level="4">隐藏搜索图标</m3e-heading>
         <p>
-          While its typical to show a search icon, you can use the <code>hide-search-icon</code> attribute to hide it
-          when a search view is closed.
+          虽然通常都会显示搜索图标,但当搜索视图关闭时,你可以使用 <code>hide-search-icon</code> 特性将其隐藏。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -256,22 +246,20 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The search bar automatically normalizes its slotted <code>input</code> to ensure correct search semantics
-          across browsers and assistive technologies. It applies <code>role="searchbox"</code>,
-          <code>inputmode="search"</code>, and <code>type="text"</code> when not already specified. Additionally,
-          <code>aria-haspopup="dialog"</code> is applied to inform assistive technologies that activating the input will
-          open a dialog, allowing screen readers to anticipate the resulting change in context.
+          搜索栏会自动规范化其插槽中的 <code>input</code>,以确保跨浏览器与辅助技术的正确搜索语义。它会应用
+          <code>role="searchbox"</code>、<code>inputmode="search"</code> 与 <code>type="text"</code>(若尚未指定)。
+          此外,还会应用 <code>aria-haspopup="dialog"</code>,告知辅助技术激活输入框会打开对话框,让屏幕阅读器
+          能够预判随之而来的上下文变化。
         </p>
         <p>
-          When open, the overlay region of the search view is given ARIA <code>role="dialog"</code> indicating that it
-          is a dedicated search surface. The dialog is labeled by its header via <code>aria-labelledby</code>, allowing
-          assistive technologies to announce the search context clearly. <code>aria-modal="true"</code> is used to
-          indicate only the content in the dialog can be interacted with.
+          打开时,搜索视图的浮层区域被赋予 ARIA <code>role="dialog"</code>,表示它是一个专用的搜索浮层。
+          该对话框通过 <code>aria-labelledby</code> 由其标题标注,让辅助技术能清晰地播报搜索上下文。
+          <code>aria-modal="true"</code> 用于表示只能与对话框中的内容交互。
         </p>
         <p>
-          The search view does not automatically announce dynamic updates. Instead, you are responsible for sending
-          short, textual updates to a dedicated<code>aria-live="polite"</code> element when search results change. This
-          ensures assistive technologies receive meaningful feedback without re-announcing the full list of results.
+          搜索视图不会自动播报动态更新。相反,当搜索结果变化时,你需要负责向专用的
+          <code>aria-live="polite"</code> 元素发送简短的文本更新。这确保辅助技术能收到有意义的反馈,
+          而无需重新播报完整的结果列表。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

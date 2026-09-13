@@ -29,9 +29,9 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">FAB Menu</m3e-heading>
         <p>
-          The <code>m3e-fab-menu</code> component presents a dynamic menu of related actions, elegantly revealed from a
-          floating action button (FAB). See <a href="../components/fab.html">FAB</a> for more information on using
-          floating action buttons.
+          <code>m3e-fab-menu</code> 组件呈现一个由相关操作组成的动态菜单,从
+          悬浮操作按钮(FAB)优雅地展开。有关使用
+          悬浮操作按钮的更多信息,请参阅 <a href="../components/fab.html">FAB</a>。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/fab-menu";</pre></m3e-card>
@@ -41,17 +41,17 @@
 
         <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
-          The <code>m3e-fab-menu</code> is used in conjunction with a <code>m3e-fab</code> to create a menu opened when
-          a FAB is activated.
+          <code>m3e-fab-menu</code> 与 <code>m3e-fab</code> 配合使用,创建一个在
+          FAB 被激活时打开的菜单。
         </p>
         <ul>
-          <li>Use a <code>m3e-fab-menu-trigger</code>, nested inside a <code>m3e-fab</code>, to trigger a menu.</li>
+          <li>使用嵌套在 <code>m3e-fab</code> 内部的 <code>m3e-fab-menu-trigger</code> 触发菜单。</li>
           <li>
-            Use the <code>for</code> attribute of the <code>m3e-fab-menu-trigger</code> to designate the menu to open.
+            使用 <code>m3e-fab-menu-trigger</code> 的 <code>for</code> 特性指定要打开的菜单。
           </li>
           <li>
-            Nest 2-6 <code>m3e-fab-menu-item</code> components inside a <code>m3e-fab-menu</code> to designate menu
-            items.
+            在 <code>m3e-fab-menu</code> 中嵌套 2-6 个 <code>m3e-fab-menu-item</code> 组件来指定菜单
+            项。
           </li>
         </ul>
         <m3e-card variant="outlined" class="showcase">
@@ -103,9 +103,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          The <code>m3e-fab-menu</code> supports three appearance variants: <code>primary</code> (default),
-          <code>secondary</code>, and <code>tertiary</code>. Use the <code>variant</code> attribute to change the
-          appearance.
+          <code>m3e-fab-menu</code> 支持三种外观变体:<code>primary</code>(默认)、
+          <code>secondary</code> 与 <code>tertiary</code>。使用 <code>variant</code> 特性更改
+          外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content" class="fab-example">
@@ -165,10 +165,10 @@
 
         <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
         <p>
-          Use the <code>icon</code> slot of a <code>m3e-fab-menu-item</code> to present an icon before an item's label.
-          While not required, the following example uses the <code>m3e-icon</code> component from
-          <code>@m3e/icon</code> to present icons using Material Symbols. See
-          <a href="../components/icon.html">Icon 图标</a> for more information.
+          使用 <code>m3e-fab-menu-item</code> 的 <code>icon</code> 插槽在菜单项标签之前呈现图标。
+          虽然并非必需,但下面的示例使用 <code>@m3e/icon</code> 中的
+          <code>m3e-icon</code> 组件,通过 Material Symbols 呈现图标。更多信息请参阅
+          <a href="../components/icon.html">Icon 图标</a>。
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -181,8 +181,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          You can disable a <code>m3e-fab-menu-item</code> using the <code>disabled</code> attribute. In addition, if
-          the <code>m3e-fab</code> is disabled, the <code>m3e-fab-menu</code> will not be opened on click.
+          你可以使用 <code>disabled</code> 特性禁用某个 <code>m3e-fab-menu-item</code>。此外,如果
+          <code>m3e-fab</code> 被禁用,点击时不会打开 <code>m3e-fab-menu</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content" class="fab-example">
@@ -218,8 +218,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
-          Menu items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also
-          specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          菜单项也可以通过 <code>href</code> 特性指定 URL,从而表现得像链接。你还可以
+          像原生 anchor 标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content" class="fab-example">
@@ -247,18 +247,18 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          FAB menus are given ARIA <code>role="menu"</code> and items are given <code>role="menuitem"</code> indicating
-          that the menu behaves like a contextual action list.
+          FAB 菜单会被赋予 ARIA <code>role="menu"</code>,菜单项会被赋予 <code>role="menuitem"</code>,表示
+          该菜单的行为类似上下文操作列表。
         </p>
         <p>
-          The <code>aria-controls</code> attribute of the <code>m3e-fab</code> is assigned the ID of the menu and
-          <code>aria-haspopup="menu"</code> indicates that the FAB will open a menu. In addition, the FAB's
-          <code>aria-expanded</code> attribute reflects the opened state of the menu.
+          <code>m3e-fab</code> 的 <code>aria-controls</code> 特性会被赋予菜单的 ID,
+          <code>aria-haspopup="menu"</code> 表示该 FAB 将打开一个菜单。此外,FAB 的
+          <code>aria-expanded</code> 特性会反映菜单的打开状态。
         </p>
         <p>
-          When <code>href</code> is specified for an item, the ARIA role does not change and continues to be
-          <code>menuitem</code>. In addition, the component presents an internal anchor, hidden from assistive
-          technologies, used to invoke native browser features such a context menu options and tooltips.
+          当为某个菜单项指定 <code>href</code> 时,其 ARIA 角色不会改变,仍然是
+          <code>menuitem</code>。此外,该组件会呈现一个对辅助技术隐藏的内部 anchor,
+          用于调用原生浏览器功能,例如上下文菜单选项与工具提示。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

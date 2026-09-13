@@ -29,8 +29,8 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Theme 主题</m3e-heading>
         <p>
-          The <code>m3e-theme</code> component is a non-visual element used to apply dynamic color, expressive motion,
-          density, and strong focus indicators to nested, theme-aware elements.
+          <code>m3e-theme</code> 组件是一个非可视元素,用于向嵌套的、感知主题的元素应用动态颜色、表现力动效、
+          密度与强焦点指示器。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/theme";</pre></m3e-card>
@@ -40,9 +40,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">颜色</m3e-heading>
         <p>
-          Use the <code>color</code> attribute to specify a HEX color from which to derive color palettes. This will set
-          CSS custom properties that reflect the standard Material Design 3 color palettes. For example,
-          <code>--md-sys-color-primary</code> is set to the primary color.
+          使用 <code>color</code> 特性指定一个 HEX 颜色,并据此派生颜色调色板。这会设置
+          一组反映标准 Material Design 3 调色板的 CSS 自定义属性。例如,
+          <code>--md-sys-color-primary</code> 会被设为该主色。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -186,15 +186,15 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Schemes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">配色方案</m3e-heading>
         <p>
-          Themes support three color schemes: <code>light</code>, <code>dark</code>, and <code>auto</code> (default).
-          Use the <code>scheme</code> attribute to specify the color scheme.
+          主题支持三种配色方案:<code>light</code>、<code>dark</code> 与 <code>auto</code>(默认)。
+          使用 <code>scheme</code> 特性指定配色方案。
         </p>
         <p>
-          When <code>auto</code> is used, the theme dynamically responds to system preferences by monitoring the media
-          queries <code>(prefers-color-scheme: light)</code> and <code>(prefers-color-scheme: dark)</code>, selecting
-          the appropriate color scheme based on the user's environment.
+          使用 <code>auto</code> 时,主题会通过监听媒体
+          查询 <code>(prefers-color-scheme: light)</code> 与 <code>(prefers-color-scheme: dark)</code> 动态响应系统偏好,
+          根据用户环境选择合适的配色方案。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -343,11 +343,11 @@
 
         <m3e-heading variant="headline" size="small" level="3">对比度</m3e-heading>
         <p>
-          Themes support three contrast levels: <code>standard</code> (default), <code>medium</code>, and
-          <code>high</code>. Use the <code>contrast</code> attribute to control how strongly tones are separated within
-          the theme.
+          主题支持三种对比度级别:<code>standard</code>(默认)、<code>medium</code> 与
+          <code>high</code>。使用 <code>contrast</code> 特性控制主题内
+          色调的分离强度。
         </p>
-        <p>The following illustrates how colors are adjusted for high contrast.</p>
+        <p>以下演示如何为高对比度调整颜色。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -493,29 +493,29 @@
 
         <m3e-heading variant="headline" size="small" level="3">密度</m3e-heading>
         <p>
-          Use the <code>density</code> attribute to control layout compactness across density-aware components within a
-          theme. It adjusts spacing, padding, and sizing to achieve a more compact or more spacious visual rhythm.
+          使用 <code>density</code> 特性控制主题内各感知密度的组件的布局紧凑程度。
+          它会调整间距、内边距与尺寸,以获得更紧凑或更宽松的视觉节奏。
         </p>
         <ul>
-          <li><strong>Valid values:</strong> <code>-3</code> (most compact) to <code>+1</code> (most spacious)</li>
-          <li><strong>Default:</strong> <code>0</code></li>
-          <li><strong>Scope:</strong> Applies globally to all components within the theme</li>
+          <li><strong>有效值:</strong> <code>-3</code>(最紧凑)到 <code>+1</code>(最宽松)</li>
+          <li><strong>默认值:</strong> <code>0</code></li>
+          <li><strong>作用范围:</strong> 全局应用于主题内的所有组件</li>
         </ul>
         <p>
-          When a theme is initialized with a <code>density</code> value, it sets the system token
-          <code>--md-sys-density-scale</code> to reflect that value. This token is used by density-aware components to
-          adjust their internal layout metrics.
+          当主题以某个 <code>density</code> 值初始化时,会把系统令牌
+          <code>--md-sys-density-scale</code> 设为该值。感知密度的组件会使用此令牌
+          调整其内部布局度量。
         </p>
         <ul>
-          <li>Compact density reduces vertical padding and component height</li>
-          <li>Spacious density increases spacing for relaxed layouts</li>
-          <li>Touch targets remain accessible and compliant with minimum size guidelines</li>
+          <li>紧凑密度会减少垂直内边距与组件高度</li>
+          <li>宽松密度会增大间距,以获得更舒缓的布局</li>
+          <li>触摸目标仍可访问,并符合最小尺寸准则</li>
         </ul>
         <p>
-          The following example demonstrates how <code>m3e-button</code> responds to theme-level density adjustments. A
-          medium-sized button is shown, which supports a minimum density of <code>-2</code>. Note that densities
-          <code>-3</code> and <code>-2</code> produce identical layout behavior for this size, as values below the
-          supported threshold are clamped to <code>-2</code>.
+          以下示例演示 <code>m3e-button</code> 如何响应主题级密度调整。图中
+          展示了一个中等尺寸按钮,它支持的最低密度为 <code>-2</code>。请注意,对于该尺寸,密度
+          <code>-3</code> 与 <code>-2</code> 产生相同的布局行为,因为低于
+          支持阈值的值会被钳制为 <code>-2</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -546,15 +546,15 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Motion</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">动效</m3e-heading>
         <p>
-          Themes support two motion schemes: <code>standard</code> (default) and <code>expressive</code>. These schemes
-          define how components animate across the system, using spring-based physics to guide spatial and effect
-          transitions. Use the <code>motion</code> attribute to control the motion scheme.
+          主题支持两种动效方案:<code>standard</code>(默认)与 <code>expressive</code>。这些方案
+          定义组件在整个系统中的动画方式,使用基于弹簧的物理效果来引导空间与效果
+          过渡。使用 <code>motion</code> 特性控制动效方案。
         </p>
         <p>
-          The following example illustrates how the <code>m3e-switch</code> adapts to the motion scheme. Note the spring
-          effect when clicking the expressive example.
+          以下示例演示 <code>m3e-switch</code> 如何适应动效方案。点击表现力
+          示例时,请注意其弹簧效果。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content" class="switch-example">
@@ -580,8 +580,8 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, themes are not given an ARIA role, indicating that they are treated as neutral, non-semantic
-          elements in the accessibility tree unless explicitly referenced or annotated.
+          默认情况下,主题不会被赋予 ARIA 角色,表示除非被显式引用或标注,否则在无障碍树中
+          它们被视为中性的非语义元素。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

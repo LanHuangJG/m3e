@@ -27,19 +27,19 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Heading 标题</m3e-heading>
-        <p>The <code>m3e-heading</code> component provides expressive, accessible headings for pages and sections</p>
+        <p><code>m3e-heading</code> 组件为页面与区块提供富有表现力、无障碍的标题。</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/heading";</pre></m3e-card>
 
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Typescale variants and sizes</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">字阶变体与尺寸</m3e-heading>
         <p>
-          The <code>m3e-heading</code> supports five variants: <code>display</code> (default), <code>headline</code>,
-          <code>title</code>, and <code>label</code>. It supports three size variants: <code>large</code>,
-          <code>medium</code> (default) and <code>small</code>. Use the <code>variant</code> and
-          <code>size</code> attributes to change the typescale of a heading.
+          <code>m3e-heading</code> 支持五种变体:<code>display</code>(默认)、<code>headline</code>、
+          <code>title</code> 与 <code>label</code>。它支持三种尺寸变体:<code>large</code>、
+          <code>medium</code>(默认)与 <code>small</code>。使用 <code>variant</code> 与
+          <code>size</code> 特性更改标题的字阶。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -66,8 +66,8 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Emphasized typescale</m3e-heading>
-        <p>Use the <code>emphasized</code> attribute to control whether a heading's typescale is emphasized.</p>
+        <m3e-heading variant="headline" size="small" level="3">强调字阶</m3e-heading>
+        <p>使用 <code>emphasized</code> 特性控制标题的字阶是否强调。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-heading variant="display" size="large" emphasized>Display Large</m3e-heading>
@@ -95,14 +95,14 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, headings are not given an ARIA role, indicating that they are treated as neutral, non-semantic
-          elements in the accessibility tree unless explicitly referenced or annotated.
+          默认情况下,标题不会被赋予 ARIA 角色,意味着除非被显式引用或标注,它们在无障碍树中被视为
+          中立、无语义的元素。
         </p>
         <p>
-          Use the <code>level</code> attribute to control whether a heading adopts the ARIA
-          <code>role="heading"</code> and <code>aria-level</code> attributes. When <code>level</code> is set,
-          <code>role="heading"</code> is applied and <code>aria-level</code> reflects the attribute's value. Supported
-          values range from <code>1</code> to <code>6</code>, aligning with semantic heading levels.
+          使用 <code>level</code> 特性控制标题是否采用 ARIA
+          <code>role="heading"</code> 与 <code>aria-level</code> 特性。设置 <code>level</code> 后,
+          会应用 <code>role="heading"</code>,且 <code>aria-level</code> 会反映该特性的值。支持的
+          值范围为 <code>1</code> 到 <code>6</code>,与语义化标题层级一致。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

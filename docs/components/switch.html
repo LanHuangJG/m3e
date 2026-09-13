@@ -28,7 +28,7 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Switch 开关</m3e-heading>
-        <p>The <code>m3e-switch</code> component is nn on/off control that can be toggled by clicking.</p>
+        <p><code>m3e-switch</code> 组件是一个可通过点击切换的开/关控件。</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/switch";</pre></m3e-card>
 
@@ -37,10 +37,10 @@
 
         <m3e-heading variant="headline" size="small" level="3">基础用法</m3e-heading>
         <p>
-          Use the <code>m3e-switch</code> component to create a switch (also known as a slide toggle). Use the
-          <code>checked</code> attribute to indicate whether the switch is "on". When clicked, a cancellable
-          <code>beforeinput</code> event is emitted followed by an <code>input</code> and<code>change</code> event. To
-          cancel checked state changes, call <code>preventDefault</code> during <code>beforeinput</code>.
+          使用 <code>m3e-switch</code> 组件创建开关(也称为滑动开关)。使用
+          <code>checked</code> 特性表示开关是否处于“开”状态。点击时会先发出一个可取消的
+          <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要
+          取消选中状态的变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -52,7 +52,7 @@
         </m3e-card>
 
         <m3e-heading variant="headline" size="small" level="3">标签</m3e-heading>
-        <p>Associate a label with a switch using the <code>label</code> element.</p>
+        <p>使用 <code>label</code> 元素为开关关联一个标签。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content" class="switch-box">
@@ -71,8 +71,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">图标</m3e-heading>
         <p>
-          You can control the icons to present using the <code>icons</code> attribute. Supports values include
-          <code>none</code> (default), <code>selected</code>, and <code>both</code>.
+          你可以用 <code>icons</code> 特性控制要显示的图标。支持的值包括
+          <code>none</code>(默认)、<code>selected</code> 与 <code>both</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content" class="switch-box">
@@ -89,26 +89,25 @@
 
         <m3e-heading variant="headline" size="small" level="3">表单关联</m3e-heading>
         <p>
-          This component participates in form submission as a
+          该组件作为
           <a
             href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face"
             target="_blank"
             rel="noopener noreferrer"
-            >form-associated custom element</a
+            >表单关联自定义元素</a
           >
-          (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which
-          the component's value is submitted in a form. When checked and not disabled, <code>value</code> (defaults to
-          <code>"on"</code>) is submitted.
+          (FACE)参与表单提交,并把自身状态贡献到表单数据中。<code>name</code> 特性定义组件值在表单中提交时所用的键。处于选中且未禁用时,会提交 <code>value</code>(默认值为
+          <code>"on"</code>)。
         </p>
         <p>
-          The component honors the <code>disabled</code> state as a <strong>property-only</strong> control. When
-          disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM.
+          该组件将 <code>disabled</code> 状态视为<strong>仅属性</strong>控件。在
+          运行时禁用时,它<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 a switch. Associated labels are automatically styled to
-          show disabled.
+          使用 <code>disabled</code> 属性禁用开关。关联的标签会自动应用样式以
+          显示为禁用状态。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content" class="switch-box">
@@ -128,13 +127,13 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Switches are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Switches support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. Regardless of visual size, switches maintain a 48x48dp minimum touch target to
-          ensure reliable accessibility.
+          开关支持密度,会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整自身垂直间距。默认
+          密度大小为 4dp。开关支持最低至 -3 的负密度比例,每降低一档,视觉
+          高度减少一个密度单位。无论视觉尺寸如何,开关都保持 48x48dp 的最小触摸目标,以
+          确保可靠的无障碍体验。
         </p>
-        <p>The following illustrates applying density to assist switches.</p>
+        <p>以下演示如何为开关应用密度。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -162,19 +161,17 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Switches are given the ARIA <code>role="switch"</code> aligning with their semantic purpose as binary state
-          toggles. This role communicates to assistive technologies that the component represents a two-state control,
-          similar to a checkbox but with a distinct interaction model.
+          开关被赋予 ARIA <code>role="switch"</code>,与其作为二元状态切换的语义用途一致。该角色向辅助技术表明:该组件表示一个双状态控件,类似复选框,但拥有不同的交互模型。
         </p>
         <p>
-          The component manages and reflects its state via the <code>aria-checked</code> attribute, where
-          <code>aria-checked="true"</code> indicates the switch is checked (on), and
-          <code>aria-checked="false"</code> indicates it is unchecked (off).
+          该组件通过 <code>aria-checked</code> 特性管理与反映自身状态,其中
+          <code>aria-checked="true"</code> 表示开关已选中(开),
+          <code>aria-checked="false"</code> 表示未选中(关)。
         </p>
         <p>
-          When disabled using the <code>disabled</code> attribute, <code>aria-disabled="true"</code> is used to convey
-          to assistive technologies that the switch is disabled. When disabled at runtime, it does <em>not</em> sprout a
-          <code>disabled</code> attribute into the DOM.
+          使用 <code>disabled</code> 特性禁用时,会用 <code>aria-disabled="true"</code> 向辅助技术传达
+          开关已禁用。在运行时禁用时,它<em>不会</em>向
+          DOM 中生成 <code>disabled</code> 特性。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

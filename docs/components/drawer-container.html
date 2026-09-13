@@ -29,8 +29,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Drawer Container 抽屉容器</m3e-heading>
         <p>
-          The <code>m3e-drawer-container</code> is a responsive layout container that manages collapsible left and right
-          drawers alongside main content.
+          <code>m3e-drawer-container</code> 是一个响应式布局容器,在主内容两侧管理可折叠的左侧与右侧抽屉。
         </p>
 
         <m3e-card variant="outlined" class="install">
@@ -40,11 +39,10 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Drawers</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">抽屉</m3e-heading>
         <p>
-          The <code>m3e-drawer-container</code> provides the <code>start</code> and <code>end</code> slots for
-          specifying drawer elements. The default slot presents the content between drawers. The <code>start</code> and
-          <code>end</code> attributes control whether the corresponding drawer is open.
+          <code>m3e-drawer-container</code> 提供 <code>start</code> 与 <code>end</code> 插槽,用于指定抽屉元素。默认插槽呈现抽屉之间的内容。<code>start</code> 与
+          <code>end</code> 特性控制对应抽屉是否打开。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -67,8 +65,7 @@
 
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          You can control the drawer widths using the <code>--m3e-drawer-container-width</code> CSS custom property or
-          by explicitly setting the width of a drawer.
+          你可以使用 <code>--m3e-drawer-container-width</code> CSS 自定义属性控制抽屉宽度,也可以显式设置某个抽屉的宽度。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -89,20 +86,19 @@
 
         <m3e-heading variant="headline" size="small" level="3">模式</m3e-heading>
 
-        <p>The <code>&lt;m3e-drawer-container&gt;</code> supports four expressive drawer modes:</p>
+        <p><code>&lt;m3e-drawer-container&gt;</code> 支持四种富有表现力的抽屉模式:</p>
         <ul>
-          <li><code>side</code> (default): Drawers remain visible alongside content.</li>
-          <li><code>push</code>: Drawers shift main content when opened.</li>
-          <li><code>over</code>: Drawers overlay content without displacement.</li>
-          <li><code>auto</code>: Mode adapts responsively based on viewport size.</li>
+          <li><code>side</code>(默认):抽屉始终显示在内容旁边。</li>
+          <li><code>push</code>:抽屉打开时推移主内容。</li>
+          <li><code>over</code>:抽屉覆盖在内容之上,不产生位移。</li>
+          <li><code>auto</code>:模式根据视口大小自适应。</li>
         </ul>
         <p>
-          The <code>push</code> and <code>over</code> modes present a scrim overlaying main content, a focus trap keeps
-          focus in drawers, and main content becomes inert. Clicking the scrim will automatically close drawers.
+          <code>push</code> 与 <code>over</code> 模式会在主内容之上呈现一层遮罩,焦点陷阱会把焦点保持在抽屉内,主内容变为不可交互。点击遮罩会自动关闭抽屉。
         </p>
         <p>
-          Use the <code>start-mode</code> attribute to control the behavior of the start drawer, and
-          <code>end-mode</code> to configure the end drawer independently.
+          使用 <code>start-mode</code> 特性控制起始抽屉的行为,使用
+          <code>end-mode</code> 独立配置结束抽屉。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -139,9 +135,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">分隔线</m3e-heading>
         <p>
-          Use the <code>start-divider</code> or <code>end-divider</code> to separate the drawer from the content using a
-          divider when <code>mode="side"</code>. When the <code>mode="auto"</code> and resolves to <code>side</code>,
-          the dividers are shown as well.
+          当 <code>mode="side"</code> 时,使用 <code>start-divider</code> 或 <code>end-divider</code> 以分隔线把抽屉与内容隔开。当 <code>mode="auto"</code> 解析为 <code>side</code> 时,
+          也会显示分隔线。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -163,12 +158,11 @@
 
         <m3e-heading variant="headline" size="small" level="3">切换</m3e-heading>
         <p>
-          Use the <code>m3e-drawer-toggle</code> to toggle the opened state of a drawer. This component should be nested
-          inside a clickable element and be associated with a slotted drawer by setting the <code>for</code> attribute
-          to the <code>id</code> of a drawer.
+          使用 <code>m3e-drawer-toggle</code> 切换抽屉的打开状态。该组件应嵌套
+          在一个可点击元素内部,并把 <code>for</code> 特性设为某个抽屉的 <code>id</code> 来建立关联。
         </p>
-        <p>a的following example illustrates use。<code>m3e-icon-button</code> to toggle a drawer. See
-          <a href="../components/icon-button.html">Icon Button 图标按钮</a> for more information.
+        <p>下面的示例演示如何使用 <code>m3e-icon-button</code> 切换抽屉。更多信息请参阅
+          <a href="../components/icon-button.html">Icon Button 图标按钮</a>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -199,20 +193,18 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The <code>m3e-drawer-container</code> is not given an ARIA role, indicating that it is treated as a neutral,
-          non-semantic element in the accessibility tree.
+          <code>m3e-drawer-container</code> 不会被赋予 ARIA 角色,意味着它在无障碍树中被视为中立、
+          无语义的元素。
         </p>
         <p>
-          Drawers should each be given an appropriate ARIA role. Consider using a <code>nav</code> element or ARIA
-          <code>role="navigation"</code> for start drawers that present links used to navigate an application. An end
-          drawer may use a <code>aside</code> element or be given the ARIA <code>role="complementary"</code> when its
-          content is related to the main content, but not essential to understanding it. Otherwise,
-          <code>role="region"</code> is a good fallback.
+          每个抽屉都应被赋予合适的 ARIA 角色。对于呈现应用导航链接的起始抽屉,可考虑使用 <code>nav</code> 元素或 ARIA
+          <code>role="navigation"</code>。当结束抽屉的内容与主内容相关、但对理解主内容并非必需时,
+          它可以使用 <code>aside</code> 元素或被赋予 ARIA <code>role="complementary"</code>。否则,
+          <code>role="region"</code> 是一个不错的回退选择。
         </p>
         <p>
-          Consider nesting a <code>main</code> element inside a <code>m3e-drawer-container</code>'s default slot when
-          its used as the primary drawer container for an application. Otherwise, consider using a single
-          <code>div</code> with ARIA <code>role="region"</code>.
+          当把 <code>m3e-drawer-container</code> 用作应用的主抽屉容器时,可考虑在它的默认插槽中嵌套一个 <code>main</code> 元素。否则,可考虑使用一个带 ARIA
+          <code>role="region"</code> 的单一 <code>div</code>。
         </p>
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -224,8 +216,8 @@
           >
         </m3e-card>
         <p>
-          Drawer toggles use <code>aria-controls</code> to associate its parenting element with the drawer, and
-          dynamically update <code>aria-expanded</code> to indicate whether the drawer is open.
+          抽屉切换控件使用 <code>aria-controls</code> 把其父元素与抽屉关联,并
+          动态更新 <code>aria-expanded</code> 以指示抽屉是否打开。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

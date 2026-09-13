@@ -27,36 +27,33 @@
     <div class="panes">
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Dialog 对话框</m3e-heading>
-        <p>The <code>m3e-dialog</code> component presents important prompts, alerts, and actions in user flows.</p>
+        <p><code>m3e-dialog</code> 组件在用户流程中呈现重要的提示、警告与操作。</p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/dialog";</pre></m3e-card>
 
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
         <p>
-          <strong>NOTE: this page is presented in a nested <code>iframe</code>.</strong>
+          <strong>注意:本页展示在嵌套的 <code>iframe</code> 中。</strong>
         </p>
         <ul>
-          <li>The dialog scrim will only overlay the current window.</li>
-          <li>The dialog is positioned relative the current window.</li>
+          <li>对话框遮罩只会覆盖当前窗口。</li>
+          <li>对话框相对于当前窗口定位。</li>
         </ul>
 
         <m3e-heading variant="headline" size="small" level="3">结构解析</m3e-heading>
         <p>
-          The <code>m3e-dialog</code> component supports structured composition through named slots, enabling flexible
-          layout and expressive content delivery:
+          <code>m3e-dialog</code> 组件通过具名插槽支持结构化组合,实现灵活的布局与富有表现力的内容呈现:
         </p>
         <ul>
-          <li><code>(default)</code> — Renders the main content of the dialog.</li>
+          <li><code>(default)</code> —— 渲染对话框的主要内容。</li>
           <li>
-            <code>header</code> — Renders the header of the dialog. Typically used for titles, summaries, or
-            introductory context.
+            <code>header</code> —— 渲染对话框的头部。通常用于标题、摘要或引言性上下文。
           </li>
           <li>
-            <code>actions</code> — Renders the actions of the dialog. Commonly includes buttons such as "OK", "Cancel",
-            or custom actions.
+            <code>actions</code> —— 渲染对话框的操作。通常包含 “OK”、“Cancel” 等按钮或自定义操作。
           </li>
-          <li><code>close-icon</code> — Renders the icon of the button used to dismiss the dialog.</li>
+          <li><code>close-icon</code> —— 渲染用于关闭对话框的按钮图标。</li>
         </ul>
 
         <m3e-card variant="outlined" class="showcase">
@@ -92,17 +89,14 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Opening</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">打开</m3e-heading>
         <p>
-          Use the <code>m3e-dialog-trigger</code> to open a dialog. This component should be nested inside a clickable
-          element and be associated with a dialog by setting the <code>for</code> attribute to the <code>id</code> of
-          the dialog to open.
+          使用 <code>m3e-dialog-trigger</code> 打开对话框。该组件应嵌套在一个可点击元素内部,并把 <code>for</code> 特性设为要打开的对话框的 <code>id</code> 来建立关联。
         </p>
         <p>
-          When its parent is clicked, it opens the dialog. When the dialog is closed, focus is stored to the parenting
-          element.
+          当点击其父元素时,会打开对话框。当对话框关闭时,焦点会恢复到父元素。
         </p>
-        <p>Alternatively, you can programmatically open a dialog using the <code>show</code> method.</p>
+        <p>或者,你可以使用 <code>show</code> 方法以编程方式打开对话框。</p>
 
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -117,16 +111,12 @@
 
         <m3e-heading variant="headline" size="small" level="3">操作</m3e-heading>
         <p>
-          When closed, the <code>m3e-dialog</code> emits a <code>closed</code> event. Actions are used to designate a
-          return value, set on the dialog when closed. Use the <code>m3e-dialog-action</code> component define an
-          action.
+          关闭时,<code>m3e-dialog</code> 会发出 <code>closed</code> 事件。操作用于指定一个返回值,在对话框关闭时设置到对话框上。使用 <code>m3e-dialog-action</code> 组件定义一个操作。
         </p>
         <p>
-          When the parenting element of a <code>m3e-dialog-action</code> is clicked, it sets the
-          <code>returnValue</code> property of its parenting <code>m3e-dialog</code> to the value of the
-          <code>return-value</code> attribute and closes the dialog.
+          当点击 <code>m3e-dialog-action</code> 的父元素时,它会把其父 <code>m3e-dialog</code> 的 <code>returnValue</code> 属性设为 <code>return-value</code> 特性的值,并关闭对话框。
         </p>
-        <p>Alternatively, you can programmatically close a dialog using the <code>hide</code> method.</p>
+        <p>或者,你可以使用 <code>hide</code> 方法以编程方式关闭对话框。</p>
 
         <m3e-card variant="outlined" class="example">
           <pre slot="content">
@@ -136,40 +126,30 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Dismissible</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">可关闭</m3e-heading>
         <p>
-          By default, a close (or dismiss) button is not presented for a dialog. Use the
-          <code>dismissible</code> attribute of the <code>m3e-dialog</code> to control this behavior. You can change the
-          icon using the <code>close-icon</code> slot and change the accessible label using the
-          <code>close-label</code> attribute.
+          默认情况下,对话框不呈现关闭(或消除)按钮。使用 <code>m3e-dialog</code> 的 <code>dismissible</code> 特性控制此行为。你可以使用 <code>close-icon</code> 插槽更改图标,并使用 <code>close-label</code> 特性更改无障碍标签。
         </p>
 
-        <m3e-heading variant="headline" size="small" level="3">Disabling close</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">禁用关闭</m3e-heading>
         <p>
-          The component provides an accessible experience by allowing users to click a dialog's backdrop or press
-          <code>ESCAPE</code> to close a dialog. When this occurs, the <code>cancel</code> event is emitted. Use the
-          <code>disable-close</code> attribute of the <code>m3e-dialog</code> to disable this behavior.
+          该组件允许用户点击对话框的背景板或按 <code>ESCAPE</code> 关闭对话框,从而提供可访问的体验。发生这种情况时,会发出 <code>cancel</code> 事件。使用 <code>m3e-dialog</code> 的 <code>disable-close</code> 特性禁用此行为。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">焦点管理</m3e-heading>
         <p>
-          The component provides an accessible experience by providing a focus trap used to keep focus within a dialog.
-          Use the <code>no-focus-trap</code> attribute of the <code>m3e-dialog</code> to disable this behavior.
+          该组件通过提供焦点陷阱把焦点保持在对话框内部,从而提供可访问的体验。使用 <code>m3e-dialog</code> 的 <code>no-focus-trap</code> 特性禁用此行为。
         </p>
         <p>
-          In addition, you can use the <code>autofocus</code> attribute to specify which action should be focused when
-          the dialog is opened.
+          此外,你可以使用 <code>autofocus</code> 特性指定对话框打开时哪个操作应获得焦点。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The <code>m3e-dialog</code> presents an internal <code>dialog</code> element labelled by the content of the
-          <code>header</code> slot. You can use the <code>alert</code> attribute to specify whether the ARIA
-          <code>role="alertdialog"</code> is applied to the internal dialog.
+          <code>m3e-dialog</code> 呈现一个内部 <code>dialog</code> 元素,其标签由 <code>header</code> 插槽的内容提供。你可以使用 <code>alert</code> 特性指定是否将 ARIA <code>role="alertdialog"</code> 应用于内部对话框。
         </p>
         <p>
-          Dialog triggers add <code>aria-haspopup="dialog"</code> to its parenting element indicating to assistive
-          technologies that activating the control will open a dialog.
+          对话框触发器会向其父元素添加 <code>aria-haspopup="dialog"</code>,向辅助技术表明激活该控件将打开对话框。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

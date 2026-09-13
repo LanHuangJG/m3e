@@ -28,8 +28,7 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Icon Button 图标按钮</m3e-heading>
         <p>
-          The <code>m3e-icon-button</code> component is an icon button users interact with to perform a supplementary
-          action.
+          <code>m3e-icon-button</code> 组件是一个图标按钮,用户通过它执行辅助操作。
         </p>
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/icon-button";</pre></m3e-card>
 
@@ -37,9 +36,8 @@
         <p>本节提供该模块组件的用法示例与配置指引。</p>
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are four icon button appearance variants: <code>filled</code>, <code>tonal</code>,
-          <code>outlined</code>, and <code>standard</code> (default). Use the <code>variant</code> attribute to change
-          the appearance.
+          图标按钮有四种外观变体:<code>filled</code>、<code>tonal</code>、
+          <code>outlined</code> 与 <code>standard</code>(默认)。使用 <code>variant</code> 特性更改外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -64,8 +62,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">形状</m3e-heading>
         <p>
-          Icon buttons can come in two shapes: <code>rounded</code> (default) or <code>square</code>. Use the
-          <code>shape</code> attribute to control the shape of a button.
+          图标按钮有两种形状:<code>rounded</code>(默认)或 <code>square</code>。使用
+          <code>shape</code> 特性控制按钮的形状。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -94,9 +92,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">尺寸</m3e-heading>
         <p>
-          There are five size variants which can be used to add or remove emphasis:
-          <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and
-          <code>extra-large</code>. Use the <code>size</code> attribute to control an icon button's size.
+          共有五种尺寸变体,可用于增强或弱化强调:
+          <code>extra-small</code>、<code>small</code>(默认)、<code>medium</code>、<code>large</code> 与
+          <code>extra-large</code>。使用 <code>size</code> 特性控制图标按钮的尺寸。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -126,11 +124,11 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Widths</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">宽度</m3e-heading>
         <p>
-          There are three width variants which can be used to add or remove emphasis: <code>default</code> (default),
-          <code>narrow</code>, and <code>wide</code>. Use the <code>width</code> attribute to control an icon button's
-          width.
+          共有三种宽度变体,可用于增强或弱化强调:<code>default</code>(默认)、
+          <code>narrow</code> 与 <code>wide</code>。使用 <code>width</code> 特性控制图标按钮的
+          宽度。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -155,10 +153,9 @@
 
         <m3e-heading variant="headline" size="small" level="3">切换</m3e-heading>
         <p>
-          Use the <code>toggle</code> attribute to control whether an icon button can be used for binary selection and
-          the <code>selected</code> attribute to control the selected state. When clicked, a cancellable
-          <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To
-          cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>.
+          使用 <code>toggle</code> 特性控制图标按钮是否可用于二元选择,使用 <code>selected</code> 特性控制选中状态。点击时会先派发一个可取消的
+          <code>beforeinput</code> 事件,随后派发 <code>input</code> 与 <code>change</code> 事件。要
+          取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -182,7 +179,7 @@
 &lt;!-- Additional variants omitted for brevity --&gt;</pre
           >
         </m3e-card>
-        <p>You can also change the icon presented for a selected toggle button using the <code>selected</code> slot.</p>
+        <p>你也可以使用 <code>selected</code> 插槽更改选中态切换按钮所呈现的图标。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-icon-button aria-label="Close" variant="tonal" toggle>
@@ -200,8 +197,7 @@
           >
         </m3e-card>
         <p>
-          When selected, icon buttons change shape. Rounded buttons become square and square buttons become rounded. The
-          following illustrates the selected states for both rounded and square icon buttons.
+          选中时,图标按钮会改变形状。圆角按钮变为方形,方形按钮变为圆角。下面的示例演示了圆角与方形图标按钮的选中状态。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -235,12 +231,12 @@
 
         <m3e-heading variant="headline" size="small" level="3">禁用</m3e-heading>
         <p>
-          使用 <code>disabled</code> 属性禁用 an icon button. By default, disabled icon buttons are not
-          focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support
+          使用 <code>disabled</code> 特性禁用图标按钮。默认情况下,禁用的图标按钮无法通过键盘
+          聚焦。你可以使用 <code>disabled-interactive</code> 特性支持
           <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank"
             >focusability of disabled controls</a
           >
-          to increase their discoverability.
+          以提高其可发现性。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -265,16 +261,16 @@
 
         <m3e-heading variant="headline" size="small" level="3">类型</m3e-heading>
         <p>
-          Use the <code>type</code> attribute to control the behavior of an icon button. By default,
-          <code>type</code> is <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to
-          submit or reset a parenting form when clicked. When submitting a form, you can use the <code>name</code> and
-          <code>value</code> attributes to specify a value.
+          使用 <code>type</code> 特性控制图标按钮的行为。默认情况下,
+          <code>type</code> 为 <code>button</code>。你可以将其改为 <code>submit</code> 或 <code>reset</code>,以便
+          在点击时提交或重置其父表单。提交表单时,你可以使用 <code>name</code> 与
+          <code>value</code> 特性指定值。
         </p>
 
         <m3e-heading variant="headline" size="small" level="3">链接</m3e-heading>
         <p>
-          Icon buttons can also behave like links by specifying a URL using the <code>href</code> attribute. You can
-          also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags.
+          图标按钮也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以
+          像原生锚点标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -298,15 +294,13 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Icon buttons are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Buttons support negative density scales down to -3, with each step reducing the visual
-          height by one density unit. Regardless of visual size, icon buttons maintain a 48x48dp minimum touch target to
-          ensure reliable accessibility.
+          图标按钮感知密度,会根据 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 这两个 CSS 自定义属性调整其垂直间距。默认
+          密度尺寸为 4dp。按钮支持低至 -3 的负密度比例,每降低一档,视觉高度减少一个密度单位。无论视觉尺寸如何,图标按钮都保持 48x48dp 的最小触摸目标,以
+          确保可靠的无障碍性。
         </p>
         <p>
-          The following illustrates applying density to the <code>extra-small</code> and <code>small</code> sized icon
-          buttons.
+          下面的示例演示了将密度应用于 <code>extra-small</code> 与 <code>small</code> 尺寸的图标
+          按钮。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -361,28 +355,26 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          By default, icon buttons are given the ARIA role <code>button</code>, indicating they are clickable elements
-          that trigger actions.
+          默认情况下,图标按钮带有 ARIA 角色 <code>button</code>,表明它们是可点击并触发操作的元素。
         </p>
         <p>
-          Always provide an accessible label via <code>aria-label</code> or <code>aria-labelledby</code> for each icon
-          button.
+          请始终通过 <code>aria-label</code> 或 <code>aria-labelledby</code> 为每个图标
+          按钮提供无障碍标签。
         </p>
-        <p>Slots have <code>aria-hidden="true"</code> to ensure icons are always hidden from assistive technologies.</p>
+        <p>插槽带有 <code>aria-hidden="true"</code>,以确保图标始终对辅助技术隐藏。</p>
         <p>
-          When disabling using either the <code>disabled</code> or <code>disabled-interactive</code> attribute,
-          <code>aria-disabled="true"</code> is used to convey to assistive technologies that the icon button is
-          disabled. If disabled using <code>disabled-interactive</code>, <code>tabindex</code> is retained to convey
-          that the icon button continues to be interactive.
-        </p>
-        <p>
-          When <code>href</code> is specified, the ARIA role <code>link</code> is used instead of <code>button</code> to
-          convey the icon button provides an interactive reference to a resource. In addition, the component presents an
-          internal anchor, hidden from assistive technologies, used to invoke native browser features such a context
-          menu options and tooltips.
+          当使用 <code>disabled</code> 或 <code>disabled-interactive</code> 特性禁用时,
+          <code>aria-disabled="true"</code> 用于向辅助技术传达该图标按钮已
+          禁用。如果通过 <code>disabled-interactive</code> 禁用,则会保留 <code>tabindex</code>,以传达
+          该图标按钮仍可交互。
         </p>
         <p>
-          For toggle icon buttons, <code>aria-pressed</code> is used to convey the selected state, even when disabled.
+          指定 <code>href</code> 时,会使用 ARIA 角色 <code>link</code> 而非 <code>button</code>,以
+          传达图标按钮提供了指向资源的可交互引用。此外,组件会呈现一个对辅助技术隐藏的内部锚点,
+          用于调用原生浏览器功能,如上下文菜单选项与工具提示。
+        </p>
+        <p>
+          对于切换型图标按钮,即使处于禁用状态,也会使用 <code>aria-pressed</code> 传达选中状态。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

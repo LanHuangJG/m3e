@@ -29,9 +29,9 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Form Field 表单容器</m3e-heading>
         <p>
-          The <code>m3e-form-field</code> is a container for form controls that applies Material Design styling and
-          behavior. Supported controls include: <code>input</code>, <code>select</code>, <code>textarea</code>, and
-          <code>m3e-input-chip-set</code>.
+          <code>m3e-form-field</code> 是表单控件的容器,应用 Material Design 的样式与
+          行为。支持的控件包括 <code>input</code>、<code>select</code>、<code>textarea</code> 与
+          <code>m3e-input-chip-set</code>。
         </p>
 
         <m3e-card variant="outlined" class="install"><pre slot="content">import "@m3e/web/form-field";</pre></m3e-card>
@@ -41,8 +41,8 @@
 
         <m3e-heading variant="headline" size="small" level="3">变体</m3e-heading>
         <p>
-          There are two form field appearance variants: <code>outlined</code> (default) and <code>filled</code>. Use the
-          <code>variant</code> attribute to change the appearance.
+          有两种表单容器外观变体:<code>outlined</code>(默认)与 <code>filled</code>。使用
+          <code>variant</code> 特性更改外观。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -66,12 +66,11 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Float label</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">浮动标签</m3e-heading>
         <p>
-          When a form field's control is empty, the label is presented over the control instead of above. You can change
-          this behavior using the
-          <code>float-label</code> attribute. Supported values include <code>always</code> and
-          <code>auto</code> (default).
+          当表单容器的控件为空时,标签会呈现在控件之上而非其上方。你可以使用
+          <code>float-label</code> 特性更改此行为。支持的值包括 <code>always</code> 与
+          <code>auto</code>(默认)。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -90,16 +89,16 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Hint labels</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">提示标签</m3e-heading>
         <p>
-          Hint labels are additional descriptive text that appear in a field's subscript. Use the
-          <code>hint</code> slot to specify a hint. By default, a field's subscript is hidden until focused or when a
-          field is invalid. Use the <code>hide-subscript</code> attribute to control this behavior. Supported values
-          include: <code>always</code>, <code>auto</code> (default), and <code>never</code>. Using
-          <code>always</code> will remove the space reserved for a field's subscript.
+          提示标签是出现在字段下标位置的附加描述性文本。使用
+          <code>hint</code> 插槽指定提示。默认情况下,字段的下标会隐藏,直到获得焦点或
+          字段无效时才显示。使用 <code>hide-subscript</code> 特性控制此行为。支持的值
+          包括 <code>always</code>、<code>auto</code>(默认)与 <code>never</code>。使用
+          <code>always</code> 会移除为字段下标保留的空间。
         </p>
-        <p>the的following example illustrates use。<code>hint</code> slot with <code>hide-subscript</code> set to
-          <code>never</code>.
+        <p>下面的示例演示如何使用 <code>hint</code> 插槽并把 <code>hide-subscript</code> 设为
+          <code>never</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -120,16 +119,16 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Error messages</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">错误消息</m3e-heading>
         <p>
-          Errors are hidden by default and only become visible after the user has interacted with the field—such as
-          focusing and then blurring—or after the parent form has been submitted. This behavior ensures that validation
-          feedback is contextually relevant and non-intrusive, appearing only when the user is likely to expect it.
+          错误默认隐藏,只有当用户与字段交互后——例如先聚焦再失焦——或父表单已提交后
+          才会显示。此行为确保验证反馈与上下文相关且不具侵入性,
+          只在用户可能预期时出现。
         </p>
         <p>
-          When an error message is shown, it occupies the same subscript region beneath the field that is normally used
-          for the hint label. To prevent visual overlap and maintain clarity, the hint is automatically hidden whenever
-          an error is displayed.
+          当显示错误消息时,它会占据字段下方通常用于
+          提示标签的同一片下标区域。为防止视觉重叠并保持清晰,只要
+          显示错误,提示就会自动隐藏。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -151,8 +150,8 @@
         </m3e-card>
 
         <p>
-          By default, the validation message of a field's control is presented in a field's subscript. You can specify
-          custom error messages using the <code>error</code> slot.
+          默认情况下,字段控件的验证消息会呈现在字段的下标中。你可以使用 <code>error</code> 插槽指定
+          自定义错误消息。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -175,10 +174,10 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Hiding the required marker</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">隐藏必填标记</m3e-heading>
         <p>
-          By default, required fields will present a marker next to the field's label. Use the
-          <code>hide-required-marker</code> attribute to remove it.
+          默认情况下,必填字段会在字段标签旁显示一个标记。使用
+          <code>hide-required-marker</code> 特性移除它。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -197,15 +196,15 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Prefix and suffix</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">前缀与后缀</m3e-heading>
         <p>
-          Content can be included before or after the field's control to serve as a prefix or suffix. This content is
-          rendered inside the same visual container that wraps the form control, ensuring consistent alignment, spacing,
-          and styling.
+          可以在字段控件之前或之后加入内容,作为前缀或后缀。这些内容
+          会渲染在包裹表单控件的同一视觉容器内,确保对齐、间距
+          与样式一致。
         </p>
         <p>
-          Use the <code>prefix</code> and <code>suffix</code> slots for icons and buttons. For textual content, use the
-          <code>prefix-text</code> and <code>suffix-text</code> slots.
+          使用 <code>prefix</code> 与 <code>suffix</code> 插槽放置图标与按钮。对于文本内容,使用
+          <code>prefix-text</code> 与 <code>suffix-text</code> 插槽。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -236,14 +235,14 @@
 
         <m3e-heading variant="headline" size="medium" level="2">密度</m3e-heading>
         <p>
-          Form fields are density-aware and adjust their vertical spacing based on the
-          <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. The default
-          density size is 4dp. Form fields support negative density scales down to -3, with each step reducing the
-          visual height by one density unit.
+          表单容器具备密度感知能力,会根据
+          <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> 自定义 CSS 属性调整其垂直间距。默认
+          密度大小为 4dp。表单容器支持低至 -3 的负密度刻度,每一步都会把
+          视觉高度减少一个密度单位。
         </p>
 
         <p>
-          The following illustrates applying density to both the <code>outlined</code> and <code>filled</code> variants.
+          下面演示对 <code>outlined</code> 与 <code>filled</code> 两种变体应用密度。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -308,9 +307,9 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          The <code>m3e-form-field</code> will hide hint labels and error messages from the accessibility tree and use a
-          visually hidden element to present them to assistive technologies. Their IDs are added to the
-          <code>aria-describedby</code> attribute of the field's control.
+          <code>m3e-form-field</code> 会把提示标签与错误消息从无障碍树中隐藏,并使用一个
+          视觉隐藏元素把它们呈现给辅助技术。它们的 ID 会被添加到
+          字段控件的 <code>aria-describedby</code> 特性中。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>

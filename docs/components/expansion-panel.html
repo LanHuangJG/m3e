@@ -28,14 +28,13 @@
       <m3e-content-pane id="body">
         <m3e-heading m3e-toc-ignore variant="display" size="large" level="1">Expansion Panel 折叠面板</m3e-heading>
         <p>
-          The <code>@m3e/web/expansion-panel</code> module provides components for organizing content in collapsible
-          sections and coordinated groups. It includes the following components:
+          <code>@m3e/web/expansion-panel</code> 模块提供用于在可折叠分区与协调组中组织内容的组件。它包含以下组件:
         </p>
         <ul>
           <li>
-            <code>m3e-expansion-panel</code> — A details-summary view for organizing content in collapsible sections.
+            <code>m3e-expansion-panel</code> —— 一种详情-摘要视图,用于在可折叠分区中组织内容。
           </li>
-          <li><code>m3e-accordion</code> — Organizes multiple expansion panels into a coordinated group.</li>
+          <li><code>m3e-accordion</code> —— 把多个折叠面板组织成一个协调的组。</li>
         </ul>
 
         <m3e-card variant="outlined" class="install">
@@ -45,10 +44,10 @@
         <m3e-heading variant="headline" size="medium" level="2">用法</m3e-heading>
         <p>本节提供该模块组件的用法示例与配置指引。</p>
 
-        <m3e-heading variant="headline" size="small" level="3">Standalone panels</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">独立面板</m3e-heading>
         <p>
-          You can use a standalone <code>m3e-expansion-panel</code> to present a collapsible details-summary section.
-          Use the <code>header</code> slot to specify the title of a panel and use the default slot for its content.
+          你可以使用独立的 <code>m3e-expansion-panel</code> 呈现一个可折叠的详情-摘要分区。
+          使用 <code>header</code> 插槽指定面板标题,使用默认插槽放置其内容。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -66,7 +65,7 @@
 &lt;/m3e-expansion-panel&gt;</pre
           >
         </m3e-card>
-        <p>Use the <code>open</code> attribute to control whether a panel is open (expanded).</p>
+        <p>使用 <code>open</code> 特性控制面板是否打开(展开)。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-expansion-panel open>
@@ -84,12 +83,12 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Toggles</m3e-heading>
+        <m3e-heading variant="headline" size="small" level="3">切换控件</m3e-heading>
         <p>
-          You can change the toggle position and direction using the <code>toggle-position</code> and
-          <code>toggle-direction</code> attributes. Supported positions include: <code>before</code> and
-          <code>after</code> (default). Supported directions include <code>vertical</code> (default) and
-          <code>horizontal</code>.
+          你可以使用 <code>toggle-position</code> 与
+          <code>toggle-direction</code> 特性更改切换控件的位置与方向。支持的位置包括 <code>before</code> 与
+          <code>after</code>(默认)。支持的方向包括 <code>vertical</code>(默认)与
+          <code>horizontal</code>。
         </p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -108,7 +107,7 @@
           >
         </m3e-card>
 
-        <p>Use the <code>hide-toggle</code> attribute to hide the toggle.</p>
+        <p>使用 <code>hide-toggle</code> 特性隐藏切换控件。</p>
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
             <m3e-expansion-panel hide-toggle>
@@ -126,8 +125,8 @@
           >
         </m3e-card>
 
-        <m3e-heading variant="headline" size="small" level="3">Accordion</m3e-heading>
-        <p>Use a <code>m3e-accordion</code> to create a coordinated group of panels.</p>
+        <m3e-heading variant="headline" size="small" level="3">手风琴</m3e-heading>
+        <p>使用 <code>m3e-accordion</code> 创建一组协调的面板。</p>
 
         <m3e-card variant="outlined" class="showcase">
           <div slot="content">
@@ -160,8 +159,8 @@
         </m3e-card>
 
         <p>
-          By default, only one panel can be open at a time. Use the <code>multi</code> attribute to allow multiple
-          panels to be open at the same time.
+          默认情况下,一次只能打开一个面板。使用 <code>multi</code> 特性允许多个
+          面板同时打开。
         </p>
 
         <m3e-card variant="outlined" class="showcase">
@@ -196,14 +195,14 @@
 
         <m3e-heading variant="headline" size="medium" level="2">无障碍</m3e-heading>
         <p>
-          Expansion panels imitate the experience of the native <code>detail</code> and <code>summary</code> elements.
-          Internally, a panel's header is given ARIA <code>role="button"</code> and the
-          <code>aria-controls</code> attribute with the panel's internal content wrapper's ID. Additionally, the
-          internal header's <code>aria-expanded</code> attribute reflects the expanded state of the panel.
+          折叠面板模拟原生 <code>detail</code> 与 <code>summary</code> 元素的体验。
+          在内部,面板的标题会被赋予 ARIA <code>role="button"</code> 以及带有面板内部内容包装器 ID 的
+          <code>aria-controls</code> 特性。此外,
+          内部标题的 <code>aria-expanded</code> 特性会反映面板的展开状态。
         </p>
         <p>
-          Because expansion panel headers are buttons, avoid adding interactive controls in the
-          <code>header</code> slot, including buttons and anchors.
+          由于折叠面板的标题是按钮,请避免在
+          <code>header</code> 插槽中添加交互式控件,包括按钮与链接。
         </p>
 
         <m3e-heading variant="headline" size="medium" level="2">原生模块支持</m3e-heading>
