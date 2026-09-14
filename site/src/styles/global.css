@@ -576,3 +576,49 @@ body.nav-open .scrim {
 .component-card .card-body {
   padding: 12px 16px 16px;
 }
+
+/* 正文代码块复制按钮 */
+.code-wrap {
+  position: relative;
+}
+.code-copy {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--md-sys-color-surface-container-high, #ece6f0);
+  color: var(--md-sys-color-on-surface-variant, #49454f);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.code-wrap:hover .code-copy,
+.code-copy:focus-visible {
+  opacity: 1;
+}
+.code-copy .icon {
+  width: 18px;
+  height: 18px;
+}
+.code-copy .icon-check {
+  display: none;
+}
+.code-copy.copied .icon-copy {
+  display: none;
+}
+.code-copy.copied .icon-check {
+  display: block;
+  color: var(--md-sys-color-primary, #6750a4);
+}
+@media (hover: none) {
+  .code-copy {
+    opacity: 1;
+  }
+}
