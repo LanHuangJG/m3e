@@ -283,14 +283,23 @@ a {
 }
 
 /* ---------- 手机 / 平板：底部导航 + 目录抽屉 ---------- */
-.docs-bottomnav {
-  padding-bottom: env(safe-area-inset-bottom);
+.bottomnav-wrap {
   position: fixed;
   inset-inline: 0;
   bottom: 0;
   z-index: 35;
-  --m3e-nav-bar-container-color: var(--md-sys-color-surface-container, #f3edf7);
-  border-top: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+  display: flex;
+  justify-content: center;
+  background: var(--md-sys-color-surface-container, #f3edf7);
+  border-block-start: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12);
+  padding-block-end: env(safe-area-inset-bottom);
+}
+.docs-bottomnav {
+  width: 100%;
+  max-width: 560px;
+  --m3e-nav-bar-height: 64px;
+  --m3e-nav-bar-container-color: transparent;
 }
 .docs-sheet {
   position: fixed;
@@ -339,7 +348,7 @@ a {
 }
 
 .has-bottomnav .main {
-  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  padding-bottom: calc(76px + env(safe-area-inset-bottom));
 }
 
 /* 组件总览：卡片网格 */

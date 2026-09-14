@@ -209,6 +209,7 @@ const prefix = lang === "zh" ? "" : "/en";
 
       <!-- 手机 / 平板：底部导航（组件详情页隐藏） -->
       {showBottomNav && (
+      <div class="bottomnav-wrap">
       <m3e-nav-bar class="docs-bottomnav" aria-label={UI.docs}>
         <m3e-nav-item href={`${prefix}/getting-started/overview/`} selected={active?.section === "getting-started" ? true : undefined}>
           <m3e-icon slot="icon" name="home"></m3e-icon>
@@ -231,6 +232,7 @@ const prefix = lang === "zh" ? "" : "/en";
           {lang === "zh" ? "目录" : "Contents"}
         </m3e-nav-item>
       </m3e-nav-bar>
+      </div>
       )}
 
       <!-- 手机：本页目录底部抽屉 -->
