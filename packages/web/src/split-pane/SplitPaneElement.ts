@@ -18,10 +18,10 @@ import {
   registerStyleSheet,
   setCustomState,
   spaceSeparatedStringConverter,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { Breakpoint, M3eBreakpointObserver } from "@m3e/web/core/layout";
-import { Direction, M3eDirectionality } from "@m3e/web/core/bidi";
+import { Breakpoint, M3eBreakpointObserver } from "m3e/core/layout";
+import { Direction, M3eDirectionality } from "m3e/core/bidi";
 
 import { isSplitPaneOrientation, SplitPaneOrientation } from "./SplitPaneOrientation";
 

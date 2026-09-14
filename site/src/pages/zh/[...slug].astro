@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from "astro:content";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import Demo from "../../components/Demo.astro";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("docs");
+  return docs
+    .filter((d) => d.id.startsWith("zh/"))
+    .map((d) => {
+      const slug = d.id.replace(/^zh\//, "");
+      return {
+        params: { slug },
+        props: { entry: d, lang: "zh" as const, path: `/zh/${slug}/`, altPath: `/${slug}/` },
+      };
+    });
+}
+
+const { entry, lang, path, altPath } = Astro.props;
+const { Content, headings } = await render(entry);
+---
+
+<DocsLayout
+  lang={lang}
+  title={entry.data.title}
+  description={entry.data.description}
+  path={path}
+  altPath={altPath}
+  activeId={entry.id}
+  toc={entry.data.toc}
+  headings={headings}
+>
+  <h1>{entry.data.title}</h1>
+  <Content components={{ Demo }} />
+</DocsLayout>

@@ -1,0 +1,131 @@
+---
+title: "List 列表"
+description: "m3e/list 模块提供富有表现力且无障碍的组件,用于组织和显示项目列表。"
+summary: "m3e/list 模块提供富有表现力且无障碍的组件,用于组织和显示项目列表。"
+section: components
+category: "containment"
+order: 26
+---
+
+<p> <code>m3e/list</code> 模块提供富有表现力且无障碍的组件,用于组织和显示项目列表。 </p>
+
+```js
+import "m3e/list";
+```
+
+## 用法
+
+### 列表
+
+<p> 要创建项目列表,请使用 <code>m3e-list</code> 组件,并在其中嵌套一个或多个 <code>m3e-list-item</code> 组件。 </p>
+
+#### 结构解析
+
+<p> <code>m3e-list-item</code> 组件为结构化内容块提供模块化布局。它暴露以下具名插槽: </p>
+<ul> <li><code>(default)</code> —— 渲染列表项的内容。</li> <li><code>leading</code> —— 渲染列表项的前置内容。</li> <li><code>overline</code> —— 渲染列表项的上标文本。</li> <li><code>supporting-text</code> —— 渲染列表项的辅助文本。</li> <li><code>trailing</code> —— 渲染列表项的后置内容。</li> </ul>
+
+<Demo name="zh/list/0" />
+
+#### 变体
+
+<p> 有两种外观变体:<code>standard</code>(默认)与 <code>segmented</code>。使用 <code>variant</code> 特性控制列表的外观。 </p>
+
+<Demo name="zh/list/1" />
+
+<Demo name="zh/list/2" />
+
+#### 多行项目
+
+<p> 列表项是响应式容器,会根据项目的行数自动调整其高度与内部间距,确保单行、双行与三行配置下的布局正确。 </p>
+
+<Demo name="zh/list/3" />
+
+#### 媒体内容
+
+<p> 列表项会根据检测到的项目行数自动调整前置与后置媒体——如视频、图片、头像与图标——的尺寸与位置,并在需要时预留空间,使视觉元素在单行、双行与三行配置下保持一致对齐。 </p>
+
+<Demo name="zh/list/4" />
+
+<Demo name="zh/list/5" />
+
+<Demo name="zh/list/6" />
+
+<Demo name="zh/list/7" />
+
+#### 分隔线
+
+<p>下面的示例演示了使用 <code>m3e-divider</code> 为 <code>m3e-list</code> 中的项目提供分隔线。有关分隔线的更多信息,请参阅 <a href="/zh/components/divider/">Divider 分隔线</a>。 </p>
+<p>分隔线仅支持 standard 变体,在 segmented 列表中会自动隐藏。</p>
+
+<Demo name="zh/list/8" />
+
+<p>还可以使用 <code>m3e-divider</code> 的 <code>inset</code> 特性让分隔线内缩。</p>
+
+<Demo name="zh/list/9" />
+
+### 操作列表
+
+<p> 使用 <code>m3e-action-list</code> 与 <code>m3e-list-action</code> 创建每个项目执行单一操作的列表。操作列表支持与 <code>m3e-list</code> 相同的外观变体, <code>m3e-list-action</code> 支持与 <code>m3e-list-item</code> 相同的插槽。 </p>
+
+<Demo name="zh/list/10" />
+
+<Demo name="zh/list/11" />
+
+#### 禁用
+
+<p>可以使用 <code>disabled</code> 特性禁用单个列表操作。</p>
+
+<Demo name="zh/list/12" />
+
+<Demo name="zh/list/13" />
+
+#### 链接
+
+<p> 列表操作也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以 像原生锚点标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
+
+<Demo name="zh/list/14" />
+
+### 嵌套列表
+
+<p> <code>m3e-list</code> 与 <code>m3e-action-list</code> 都可以使用 <code>m3e-expandable-list-item</code> 呈现可展开或折叠的层级内容。 <code>m3e-expandable-list-item</code> 提供展开式标题,用于切换嵌套列表的可见性,从而将相关操作或项目分组,而不会使父列表显得过于繁杂。 </p>
+<p>使用 <code>open</code> 特性控制可展开列表项是否打开。</p>
+
+<Demo name="zh/list/15" />
+
+<Demo name="zh/list/16" />
+
+### 选择列表
+
+<p> 使用 <code>m3e-selection-list</code> 与 <code>m3e-list-option</code> 创建用于选择值的列表, 其中每个项目代表一个选项。选择列表支持与 <code>m3e-list</code> 相同的外观变体, <code>m3e-list-option</code> 支持与 <code>m3e-list-item</code> 相同的插槽。 不过,除非隐藏选择指示器,否则选择指示器会替换 <code>trailing</code> 插槽中的内容。 </p>
+<p> 使用 <code>selected</code> 特性控制 <code>m3e-list-option</code> 的选中状态。点击 时,会先派发一个可取消的 <code>beforeinput</code> 事件,随后派发 <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
+
+<Demo name="zh/list/17" />
+
+<Demo name="zh/list/18" />
+
+#### 多选
+
+<p> 选择列表同时支持单选与多选模式。使用 <code>multi</code> 特性允许同时选中多个选项。 </p>
+
+<Demo name="zh/list/19" />
+
+<Demo name="zh/list/20" />
+
+#### 隐藏选择指示器
+
+<p> 使用 <code>m3e-selection-list</code> 的 <code>hide-selection-indicator</code> 特性隐藏选择 指示器。如果某个选项通过 <code>trailing</code> 插槽带有图标,则会呈现该图标。 </p>
+
+<Demo name="zh/list/21" />
+
+#### 禁用
+
+<p> 可以使用 <code>disabled</code> 特性禁用单个列表选项,选项可以同时处于选中与 禁用状态。 </p>
+
+<Demo name="zh/list/22" />
+
+<Demo name="zh/list/23" />
+
+#### 表单关联
+
+<p> 选择列表可以作为 <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">form-associated custom element</a> (FACE)参与表单提交,将其状态贡献到表单数据中。<code>name</code> 特性定义 组件值在表单中提交所用的键。列表的值由选中的选项决定。你可以使用 <code>m3e-list-option</code> 的 <code>value</code> 控制选项的值。当选中多个选项 时,表单数据会包含多个以同一 <code>name</code> 为键的条目。 </p>
+<p> 组件将(选项自身的)<code>disabled</code> 状态视为仅属性(property-only) 控制。运行时禁用时,它<em>不会</em>向 DOM 派生 <code>disabled</code> 特性。 </p>

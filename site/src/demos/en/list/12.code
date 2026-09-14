@@ -1,0 +1,4 @@
+<m3e-action-list>
+  <m3e-list-action disabled>Disabled action 1</m3e-list-action>
+  <!-- Additional actions omitted for brevity -->
+</m3e-action-list>

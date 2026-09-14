@@ -1,0 +1,2 @@
+<m3e-button variant="filled" disabled>Disabled</m3e-button>
+<m3e-button variant="filled" disabled-interactive>Disabled Interactive</m3e-button>

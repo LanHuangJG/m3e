@@ -1,0 +1,4 @@
+<m3e-card variant="filled">
+  <div slot="content">Filled</div>
+</m3e-card>
+<!-- Additional variants omitted for brevity -->

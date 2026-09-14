@@ -10,9 +10,9 @@ import {
   setCustomState,
   hasAssignedNodes,
   registerStyleSheet,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { M3eFloatingPanelElement } from "@m3e/web/core/anchoring";
+import { M3eFloatingPanelElement } from "m3e/core/anchoring";
 
 import { M3eOptGroupElement } from "./OptGroupElement";
 import { M3eOptionElement } from "./OptionElement";

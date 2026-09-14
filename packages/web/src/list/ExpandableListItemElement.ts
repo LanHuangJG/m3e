@@ -1,8 +1,8 @@
 import { css, CSSResultGroup, html, PropertyValues, unsafeCSS } from "lit";
 import { property, query } from "lit/decorators.js";
 
-import { customElement, DesignToken, setCustomState } from "@m3e/web/core";
-import { selectionManager } from "@m3e/web/core/a11y";
+import { customElement, DesignToken, setCustomState } from "m3e/core";
+import { selectionManager } from "m3e/core/a11y";
 
 import type { M3eListElement } from "./ListElement";
 import { M3eListItemButtonElement } from "./ListItemButtonElement";

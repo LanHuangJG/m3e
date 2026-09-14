@@ -1,6 +1,6 @@
 import { unsafeCSS } from "lit";
 
-import { DesignToken } from "@m3e/web/core";
+import { DesignToken } from "m3e/core";
 
 export const LoadingIndicatorToken = {
   activeIndicatorSize: unsafeCSS(`var(--m3e-loading-indicator-size, 38px)`),

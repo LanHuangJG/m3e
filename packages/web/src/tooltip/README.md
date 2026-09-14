@@ -1,9 +1,9 @@
-# @m3e/web/tooltip
+# m3e/tooltip
 
-The `@m3e/web/tooltip` module provides tooltip and rich‑tooltip components for delivering contextual guidance, from simple hover descriptions to multi‑line, expressive content anchored to a control.
+The `m3e/tooltip` module provides tooltip and rich‑tooltip components for delivering contextual guidance, from simple hover descriptions to multi‑line, expressive content anchored to a control.
 
 ```ts
-import "@m3e/web/tooltip";
+import "m3e/tooltip";
 ```
 
 ## 🗂️ Elements

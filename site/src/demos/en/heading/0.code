@@ -1,0 +1,4 @@
+<m3e-heading variant="display" size="large">Display Large</m3e-heading>
+<m3e-heading variant="display" size="medium">Display Medium</m3e-heading>
+<m3e-heading variant="display" size="small">Display Small</m3e-heading>
+<!-- Additional variants omitted for brevity -->

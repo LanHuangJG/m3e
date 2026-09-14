@@ -1,0 +1,299 @@
+---
+import { getCollection } from "astro:content";
+import "../styles/global.css";
+
+interface Props {
+  lang: "en" | "zh";
+  title: string;
+  description?: string;
+  /** 当前页路径，如 /components/button/ */
+  path: string;
+  /** 另一语言的对应路径 */
+  altPath: string;
+  activeId?: string;
+  toc?: boolean;
+  headings?: Array<{ depth: number; slug: string; text: string }>;
+}
+
+const {
+  lang,
+  title,
+  description = "",
+  path,
+  altPath,
+  activeId,
+  toc = true,
+  headings = [],
+} = Astro.props;
+
+const SECTIONS = {
+  "getting-started": { en: "Getting Started", zh: "开始使用", icon: "rocket_launch" },
+  styles: { en: "Styles", zh: "样式", icon: "palette" },
+  frameworks: { en: "Frameworks", zh: "框架集成", icon: "integration_instructions" },
+  components: { en: "Components", zh: "组件", icon: "widgets" },
+} as const;
+
+const UI = {
+  en: { menu: "Menu", github: "GitHub repository", npm: "npm package", docs: "Docs" },
+  zh: { menu: "菜单", github: "GitHub 仓库", npm: "npm 包", docs: "文档" },
+}[lang];
+
+const CATEGORY_ORDER = ["actions", "communication", "containment", "navigation", "selection", "basics"] as const;
+const CATEGORY_LABELS = {
+  actions: { en: "Actions", zh: "操作" },
+  communication: { en: "Communication", zh: "通信" },
+  containment: { en: "Containment", zh: "容器" },
+  navigation: { en: "Navigation", zh: "导航" },
+  selection: { en: "Selection", zh: "选择" },
+  basics: { en: "Basics", zh: "基础" },
+} as const;
+
+function pathFor(id: string): string {
+  const [, section, ...rest] = id.split("/");
+  const prefix = lang === "en" ? "" : `/${lang}`;
+  return `${prefix}/${section}/${rest.join("/")}/`;
+}
+
+const all = await getCollection("docs");
+const mine = all
+  .filter((d) => d.id.startsWith(`${lang}/`))
+  .map((d) => ({
+    id: d.id,
+    title: d.data.title,
+    section: d.data.section,
+    category: d.data.category,
+    order: d.data.order,
+    path: pathFor(d.id),
+  }))
+  .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
+
+const active = mine.find((d) => d.id === activeId);
+const isDetail = new RegExp("^/(zh/)?components/[^/]+/$").test(path);
+const showBottomNav = !isDetail;
+
+const nav = (Object.keys(SECTIONS) as Array<keyof typeof SECTIONS>)
+  .map((key) => {
+    const items = mine.filter((d) => d.section === key);
+    if (key === "components") {
+      const groups = CATEGORY_ORDER.map((cat) => ({
+        key: cat,
+        label: CATEGORY_LABELS[cat][lang],
+        items: items.filter((d) => d.category === cat),
+      })).filter((g) => g.items.length > 0);
+      return { key, label: SECTIONS[key][lang], icon: SECTIONS[key].icon, groups, items: [] };
+    }
+    return { key, label: SECTIONS[key][lang], icon: SECTIONS[key].icon, groups: null, items };
+  })
+  .filter((s) => (s.groups ? s.groups.length > 0 : s.items.length > 0));
+
+const canonical = new URL(path, Astro.site);
+const alternate = new URL(altPath, Astro.site);
+const homePath = lang === "en" ? "/" : "/zh/";
+const homeAlt = lang === "en" ? "/zh/" : "/";
+const prefix = lang === "en" ? "" : "/zh";
+---
+
+<!doctype html>
+<html lang={lang === "zh" ? "zh-CN" : "en"}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fef7ff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1c1b1e" />
+    <title>{title} · M3E</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={lang === "zh" ? "en" : "zh"} href={alternate} />
+    <link rel="alternate" hreflang={lang === "zh" ? "zh-CN" : "en"} href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={lang === "en" ? canonical : alternate} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} · M3E`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0"
+      rel="stylesheet"
+    />
+    <script type="module" src="/m3e/all.min.js"></script>
+  </head>
+  <body class={showBottomNav ? "has-bottomnav" : ""}>
+    <m3e-theme>
+      <header class="docs-appbar">
+        <m3e-app-bar>
+          {
+            isDetail && (
+              <m3e-icon-button class="back-button" slot="leading" data-back aria-label={lang === "zh" ? "返回" : "Back"}>
+                <m3e-icon name="arrow_back"></m3e-icon>
+              </m3e-icon-button>
+            )
+          }
+          <m3e-icon-button class="menu-button" slot="leading" aria-label={UI.menu}>
+            <m3e-icon name="menu"></m3e-icon>
+          </m3e-icon-button>
+          <a slot="title" class="title" href={homePath} aria-label="M3E">
+            <span class="title-text">M3E</span>
+          </a>
+          <span slot="trailing">
+            <m3e-icon-button id="github-button" aria-label={UI.github} href="https://github.com/matraic/m3e" target="_blank">
+              <m3e-icon name="code"></m3e-icon>
+            </m3e-icon-button>
+            <m3e-tooltip for="github-button">{UI.github}</m3e-tooltip>
+            <m3e-button variant="text" href={homeAlt}>{lang === "zh" ? "EN" : "中文"}</m3e-button>
+          </span>
+        </m3e-app-bar>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar" aria-label={UI.docs}>
+          <m3e-nav-menu>
+            {
+              nav.map((section) => (
+                <m3e-nav-menu-item open={section.key === active?.section ? true : undefined}>
+                  <m3e-icon slot="icon" name={section.icon}></m3e-icon>
+                  <span slot="label">{section.label}</span>
+                  {section.groups && (
+                    <m3e-nav-menu-item>
+                      <a slot="label" href={`${prefix}/components/`}>{lang === "zh" ? "全部组件" : "All components"}</a>
+                    </m3e-nav-menu-item>
+                  )}
+                  {section.groups
+                    ? section.groups.map((group) => (
+                        <m3e-nav-menu-item open={group.key === active?.category ? true : undefined}>
+                          <span slot="label">{group.label}</span>
+                          {group.items.map((item) => (
+                            <m3e-nav-menu-item selected={item.id === activeId ? true : undefined}>
+                              <a slot="label" href={item.path}>
+                                {item.title}
+                              </a>
+                            </m3e-nav-menu-item>
+                          ))}
+                        </m3e-nav-menu-item>
+                      ))
+                    : section.items.map((item) => (
+                        <m3e-nav-menu-item selected={item.id === activeId ? true : undefined}>
+                          <a slot="label" href={item.path}>
+                            {item.title}
+                          </a>
+                        </m3e-nav-menu-item>
+                      ))}
+                </m3e-nav-menu-item>
+              ))
+            }
+          </m3e-nav-menu>
+        </aside>
+        <div class="scrim"></div>
+
+        <main class="main">
+          <div class="content">
+            <article class="prose" id="doc-content">
+              <slot />
+            </article>
+            {
+              toc && (
+                <aside class="toc">
+                  <m3e-toc for="doc-content" max-depth="3">
+                    <span slot="overline">{lang === "zh" ? "本页目录" : "On this page"}</span>
+                    <span slot="title">{title}</span>
+                  </m3e-toc>
+                </aside>
+              )
+            }
+          </div>
+        </main>
+      </div>
+
+      <!-- 手机 / 平板：底部导航（组件详情页隐藏） -->
+      {showBottomNav && (
+      <m3e-nav-bar class="docs-bottomnav" aria-label={UI.docs}>
+        <m3e-nav-item href={homePath} selected={active?.section === "getting-started" ? true : undefined}>
+          <m3e-icon slot="icon" name="home"></m3e-icon>
+          {lang === "zh" ? "概览" : "Overview"}
+        </m3e-nav-item>
+        <m3e-nav-item href={`${prefix}/components/`} selected={active?.section === "components" ? true : undefined}>
+          <m3e-icon slot="icon" name="widgets"></m3e-icon>
+          {lang === "zh" ? "组件" : "Components"}
+        </m3e-nav-item>
+        <m3e-nav-item data-bottom-action="toc">
+          <m3e-icon slot="icon" name="list"></m3e-icon>
+          {lang === "zh" ? "目录" : "Contents"}
+        </m3e-nav-item>
+      </m3e-nav-bar>
+      )}
+
+      <!-- 手机：本页目录底部抽屉 -->
+      <div class="docs-sheet" id="toc-sheet" hidden>
+        <div class="docs-sheet__scrim" data-sheet-close></div>
+        <div class="docs-sheet__panel" role="dialog" aria-modal="true" aria-label={lang === "zh" ? "本页目录" : "On this page"}>
+          <div class="docs-sheet__handle" data-sheet-close></div>
+          <p class="docs-sheet__title">{lang === "zh" ? "本页目录" : "On this page"}</p>
+          <nav class="docs-sheet__list">
+            {headings.map((h) => (
+              <a
+                href={`#${h.slug}`}
+                data-sheet-close
+                style={`padding-inline-start:${(Math.max(h.depth, 2) - 1) * 14 + 16}px`}
+              >
+                {h.text}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </m3e-theme>
+
+    <script is:inline>
+      const body = document.body;
+      document.querySelector(".menu-button")?.addEventListener("click", () => body.classList.toggle("nav-open"));
+      document.querySelector(".scrim")?.addEventListener("click", () => body.classList.remove("nav-open"));
+      document.querySelectorAll(".sidebar a").forEach((a) =>
+        a.addEventListener("click", () => body.classList.remove("nav-open")),
+      );
+
+      // demo 块：复制 / 查看代码
+      document.addEventListener("click", async (e) => {
+        const btn = e.target.closest("[data-demo-action]");
+        if (!btn) return;
+        const demo = btn.closest(".demo");
+        const code = demo?.querySelector(".demo-code");
+        if (!code) return;
+        const action = btn.getAttribute("data-demo-action");
+        if (action === "toggle") {
+          code.hidden = !code.hidden;
+          demo.classList.toggle("code-open", !code.hidden);
+          btn.setAttribute("aria-expanded", String(!code.hidden));
+          if (!code.hidden) demo.scrollIntoView({ block: "nearest" });
+        } else if (action === "copy") {
+          const text = code.querySelector("code")?.innerText ?? "";
+          try {
+            await navigator.clipboard.writeText(text);
+            btn.classList.add("copied");
+            setTimeout(() => btn.classList.remove("copied"), 1200);
+          } catch {}
+        }
+      });
+      // 底部导航：组件 -> 打开侧栏；目录 -> 打开底部抽屉
+      const tocSheet = document.querySelector("#toc-sheet");
+      document.querySelectorAll("[data-bottom-action]").forEach((el) =>
+        el.addEventListener("click", () => {
+          const action = el.getAttribute("data-bottom-action");
+          if (action === "menu") body.classList.add("nav-open");
+          if (action === "toc") tocSheet?.removeAttribute("hidden");
+        }),
+      );
+      document.querySelectorAll("[data-sheet-close]").forEach((el) =>
+        el.addEventListener("click", () => tocSheet?.setAttribute("hidden", "")),
+      );
+      document.querySelectorAll("[data-back]").forEach((el) =>
+        el.addEventListener("click", () => history.back()),
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+---
+title: "Radio Group"
+description: "The m3e-radio-group and m3e-radio components enable single-choice selection within a
+          set of mutually exclusive options."
+summary: "The m3e-radio-group and m3e-radio components enable single-choice selection within a
+          set of mutually exclusive options."
+section: components
+category: "selection"
+order: 34
+---
+
+<p> The <code>m3e-radio-group</code> and <code>m3e-radio</code> components enable single-choice selection within a set of mutually exclusive options. </p>
+
+```js
+import "m3e/radio-group";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Radio groups
+
+<p>Radios are typically placed inside a <code>m3e-radio-group</code>.</p>
+
+<Demo name="en/radio-group/0" />
+
+### Labels
+
+<p> Associate a label with a radio using the <code>label</code> element. In addition, radio groups can also be labelled using a <code>label</code>. </p>
+
+<Demo name="en/radio-group/1" />
+
+### Form Associated
+
+<p> Radios participate in form submission as a <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">form-associated custom element</a> (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which the radio's value is submitted in a form. When checked and not disabled, <code>value</code> (defaults to <code>"on"</code>) is submitted. </p>
+<p> Radios honor the <code>disabled</code> state as a <strong>property-only</strong> control. When disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM. </p>
+<p>When using a radio group, the group's <code>name</code> is propagated to all nested radios.</p>
+
+### Disabling
+
+<p> Use the <code>disabled</code> attribute to disable an individual radio or a entire radio group. Associated labels are automatically styled to show disabled. </p>
+<p>The following example illustrates disabling individual radios in a group.</p>
+
+<Demo name="en/radio-group/2" />
+
+<p>The next example illustrates disabling an entire group.</p>
+
+<Demo name="en/radio-group/3" />
+
+### Required
+
+<p> Use the <code>required</code> attribute of a radio group to require an option to be checked. Associated labels are automatically styled to show the validity state. </p>
+<p> In the example below, press TAB to enter the radio group, then TAB again to exit without making a selection to see how validation is trigger. Selecting a radio will revalidate. </p>
+
+<Demo name="en/radio-group/4" />

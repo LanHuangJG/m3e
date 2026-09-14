@@ -1,9 +1,9 @@
-# @m3e/web/split-pane
+# m3e/split-pane
 
 The `m3e-split-pane` component delivers a Material 3-inspired split view with a movable drag handle, enabling responsive layout composition and precise pane resizing. It supports keyboard interaction, adaptive orientation, and optional detent snapping for consistent, accessible content distribution.
 
 ```ts
-import "@m3e/web/split-pane";
+import "m3e/split-pane";
 ```
 
 ## 🗂️ Elements

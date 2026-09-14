@@ -1,0 +1,10 @@
+<m3e-list>
+  <m3e-list-item>
+    <video slot="leading" autoplay loop poster="[YOUR IMAGE URL HERE]" preload="auto">
+      <source src="[YOUR VIDEO URL HERE]" type="video/mp4"/>
+    </video>
+    Label text
+    <m3e-icon slot="trailing" name="arrow_right"></m3e-icon>
+  </m3e-list-item>
+  <!-- Additional items omitted for brevity -->
+</m3e-list>

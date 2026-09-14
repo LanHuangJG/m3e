@@ -1,8 +1,8 @@
 import { css, CSSResultGroup, html, LitElement, unsafeCSS } from "lit";
 import { property } from "lit/decorators.js";
 
-import { customElement, DesignToken, Role } from "@m3e/web/core";
-import { M3eDirectionality } from "@m3e/web/core/bidi";
+import { customElement, DesignToken, Role } from "m3e/core";
+import { M3eDirectionality } from "m3e/core/bidi";
 
 import { TimepickerOrientation } from "./TimepickerOrientation";
 import { TimepickerPeriod } from "./TimepickerPeriod";

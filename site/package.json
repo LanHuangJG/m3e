@@ -1,0 +1,17 @@
+{
+  "name": "m3e-site",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "sync-lib": "cd .. && npm run build --workspace=m3e && cp packages/web/dist/all.min.js site/public/m3e/all.min.js"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "astro": "^5.0.0"
+  }
+}

@@ -1,0 +1,75 @@
+---
+title: "Tooltip"
+description: "The m3e/tooltip module provides plain and rich tooltip components for delivering contextual
+          guidance, from simple hover descriptions to multi-line, expressive content anchored to a control."
+summary: "The m3e/tooltip module provides plain and rich tooltip components for delivering contextual
+          guidance, from simple hover descriptions to multi-line, expressive content anchored to a control."
+section: components
+category: "communication"
+order: 53
+---
+
+<p> The <code>m3e/tooltip</code> module provides plain and rich tooltip components for delivering contextual guidance, from simple hover descriptions to multi-line, expressive content anchored to a control. </p>
+
+```js
+import "m3e/tooltip";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Plain tooltip
+
+<p> Use the <code>m3e-tooltip</code> component to define a plain tooltip, and apply the <code>for</code> attribute to associate it with a specific UI element. </p>
+
+<Demo name="en/tooltip/0" />
+
+#### Positioning
+
+<p> By default, tooltips are positioned below the element. You can control a tooltip's position using the <code>position</code> attribute. Supported values include <code>above</code>, <code>below</code> (default), <code>before</code>, and <code>after</code>. The <code>before</code> and <code>after</code> positions are BIDI-aware, adapting to left-to-right and right-to-left text directions. </p>
+
+#### Delays
+
+<p> Use the <code>show-delay</code> and <code>hide-delay</code> attributes to control the amount of time, in milliseconds, to show or hide a tooltip. The following snippet illustrates the default delays. </p>
+
+```html
+<m3e-icon-button id="button">
+  <m3e-icon name="arrow_back"></m3e-icon>
+</m3e-icon-button>
+<m3e-tooltip for="button" show-delay="0" hide-delay="200">Go Back</m3e-tooltip>
+```
+
+#### Disabling
+
+<p>Use the <code>disabled</code> attribute to disable a tooltip from showing.</p>
+
+```html
+<m3e-icon-button id="button">
+  <m3e-icon name="arrow_back"></m3e-icon>
+</m3e-icon-button>
+<m3e-tooltip for="button" disabled>Go Back</m3e-tooltip>
+```
+
+#### Touch gestures
+
+<p> On touch devices, tooltips use a long-press gesture to show and hide. This can conflict with native browser gestures, such as text selection or drag interactions. To mitigate this, tooltips disables native gestures on the tooltip trigger by default. However, this behavior may not be desirable for certain elements like inputs or draggable components. </p>
+<p>Use the <code>touch-gestures</code> attribute to specify how touch interactions are handled:</p>
+<ul> <li> <code>auto</code> — Enables touch gestures for all elements, while preserving native browser behaviors on inputs, textareas, and draggable elements. </li> <li> <code>on</code> — Enables touch gestures universally and disables all native browser gestures without exception. </li> <li> <code>off</code> — Disables touch gestures entirely, preventing tooltips from appearing on touch devices. </li> </ul>
+
+### Rich tooltip
+
+<p> Use the <code>m3e-rich-tooltip</code> component to define a rich tooltip, and apply the <code>for</code> attribute to associate it with a specific UI element. The <code>subhead</code> slot specifies the subhead content and the default slot specifies supplementary text. </p>
+
+<Demo name="en/tooltip/1" />
+
+#### Actions
+
+<p> Including interactive content in a rich tooltip promotes it to dialog-like behavior. The surface becomes dismissible and keyboard-navigable, and must be opened through an explicit user action on the trigger. </p>
+<p> You can include actions in a rich tooltip using the <code>actions</code> slot. In addition, use the <code>m3e-rich-tooltip-action</code> component, nested in a clickable element, to dismiss the tooltip. By default, focus is returned to the trigger. Use the <code>disable-restore-focus</code> attribute of a <code>m3e-rich-tooltip-action</code> to disable this behavior. </p>
+
+<Demo name="en/tooltip/2" />
+
+#### Positioning
+
+<p> By default, rich tooltips are positioned below and after the element. You can control a tooltip's position using the <code>position</code> attribute. Supported values include <code>above-before</code>, <code>above-after</code>,<code>below-before</code>, <code>below-after</code> (default), <code>before</code>, <code>after</code>, <code>above</code> and <code>below</code>. Positions are BIDI-aware, adapting to left-to-right and right-to-left text directions. </p>

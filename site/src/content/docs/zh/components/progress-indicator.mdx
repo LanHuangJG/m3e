@@ -1,0 +1,65 @@
+---
+title: "Progress Indicator 进度指示器"
+description: "m3e-linear-progress-indicator 与 m3e-circular-progress-indicator 组件
+          提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。"
+summary: "m3e-linear-progress-indicator 与 m3e-circular-progress-indicator 组件
+          提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。"
+section: components
+category: "communication"
+order: 33
+---
+
+<p> <code>m3e-linear-progress-indicator</code> 与 <code>m3e-circular-progress-indicator</code> 组件 提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。 </p>
+
+```js
+import "m3e/progress-indicator";
+```
+
+## 用法
+
+### 圆形
+
+<p> 使用 <code>m3e-circular-progress-indicator</code> 呈现进度的圆形指示器。该组件支持两种模式 (确定与不确定)以及两种外观变体(<code>flat</code> 与 <code>wavy</code>)。使用 <code>variant</code> 特性更改外观。 </p>
+
+#### 确定进度
+
+<p> 默认情况下,圆形进度指示器是确定的。使用 <code>value</code> 特性指示完成百分比,使用 <code>max</code> 指定总步数或进度单位。此外,你可以在默认插槽中提供内容。 </p>
+
+<Demo name="zh/progress-indicator/0" />
+
+#### 不确定进度
+
+<p> 使用 <code>indeterminate</code> 特性将模式改为不确定。在此模式下,<code>value</code> 与 <code>max</code> 会被忽略。 </p>
+
+<Demo name="zh/progress-indicator/1" />
+
+### 线性
+
+<p> 使用 <code>m3e-linear-progress-indicator</code> 呈现用于指示进度与活动的水平条。该组件支持四种模式: <code>determinate</code>(默认)、<code>indeterminate</code>、<code>buffer</code> 与 <code>query</code>。 </p>
+<p> 使用 <code>mode</code> 特性更改模式。与圆形指示器一样,使用 <code>variant</code> 将外观设为 <code>flat</code>(默认)或 <code>wavy</code>。 </p>
+
+#### 确定进度
+
+<p> 在已知操作完成百分比时使用 <code>determinate</code> 模式。使用 <code>value</code> 特性指示完成百分比, 使用 <code>max</code> 指定总步数或进度单位。这是默认模式。 </p>
+<p> 使用 <code>wavy</code> 变体时,进度达到 100% 后指示器会自动过渡为扁平外观。 </p>
+
+<Demo name="zh/progress-indicator/2" />
+
+#### 不确定进度
+
+<p> 使用 <code>indeterminate</code> 模式表示某事正在发生,但不传达具体的进度。在此模式下, <code>value</code> 与 <code>max</code> 会被忽略。 </p>
+
+<Demo name="zh/progress-indicator/3" />
+
+#### Buffer
+
+<p> 使用 <code>buffer</code> 模式表示某些活动或来自服务器的加载。在此模式下,<code>value</code> 决定主进度条的进度,而 <code>buffer-value</code> 特性用于显示缓冲进度。 </p>
+<p> 与 <code>determinate</code> 模式一样,使用 <code>wavy</code> 变体时,进度达到 100% 后指示器会自动 过渡为扁平外观。 </p>
+
+<Demo name="zh/progress-indicator/4" />
+
+#### Query
+
+<p> 使用 <code>query</code> 模式表示实际加载开始前的预加载。在此模式下,<code>value</code> 与 <code>max</code> 会被忽略。 </p>
+
+<Demo name="zh/progress-indicator/5" />

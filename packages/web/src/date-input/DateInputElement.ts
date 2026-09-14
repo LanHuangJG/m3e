@@ -27,9 +27,9 @@ import {
   validate,
   ValidationMessages,
   waitForUpdate,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import type { FormFieldControl } from "@m3e/web/form-field";
+import type { FormFieldControl } from "m3e/form-field";
 
 import { DateInputType, isDateInputType } from "./DateInputType";
 import { DateInputTimeFormat, isDateInputTimeFormat } from "./DateInputTimeFormat";

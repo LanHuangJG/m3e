@@ -1,0 +1,12 @@
+<m3e-form-field>
+  <label slot="label" for="select">Pokemon</label>
+  <m3e-select id="select">
+    <m3e-optgroup>
+      <span slot="label">Grass</span>
+      <m3e-option>Bulbasaur</m3e-option>
+      <m3e-option>Oddish</m3e-option>
+      <m3e-option>Bellsprout</m3e-option>
+    </m3e-optgroup>
+    <!-- Additional option groups omitted for brevity -->
+  </m3e-select>
+</m3e-form-field>

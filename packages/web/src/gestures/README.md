@@ -1,9 +1,9 @@
-# @m3e/web/gestures
+# m3e/gestures
 
-The `@m3e/web/gestures` module provides a gesture recognition subsystem supporting declarative and programmatic gesture detection. It uses a modular recognizer architecture with a priority-based disposition system that resolves competing claims on input.
+The `m3e/gestures` module provides a gesture recognition subsystem supporting declarative and programmatic gesture detection. It uses a modular recognizer architecture with a priority-based disposition system that resolves competing claims on input.
 
 ```ts
-import "@m3e/web/gestures";
+import "m3e/gestures";
 ```
 
 ## ✨ Features

@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 
-import { customElement } from "@m3e/web/core";
+import { customElement } from "m3e/core";
 
 import { ShapeName } from "./ShapeName";
 import { ShapeStyle } from "./ShapeStyle";

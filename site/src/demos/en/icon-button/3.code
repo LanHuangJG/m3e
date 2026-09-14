@@ -1,0 +1,6 @@
+<m3e-icon-button variant="tonal" width="narrow">
+  <m3e-icon name="add"></m3e-icon>
+</m3e-icon-button>
+<m3e-icon-button variant="tonal" width="wide">
+  <m3e-icon name="add"></m3e-icon>
+</m3e-icon-button>

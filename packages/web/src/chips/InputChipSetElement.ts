@@ -17,12 +17,12 @@ import {
   Touched,
   registerStyleSheet,
   waitForUpdate,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { ListKeyManager, ListManager } from "@m3e/web/core/a11y";
-import { M3eDirectionality } from "@m3e/web/core/bidi";
-import { FormFieldControl } from "@m3e/web/form-field";
-import type { M3eOptionElement } from "@m3e/web/option";
+import { ListKeyManager, ListManager } from "m3e/core/a11y";
+import { M3eDirectionality } from "m3e/core/bidi";
+import { FormFieldControl } from "m3e/form-field";
+import type { M3eOptionElement } from "m3e/option";
 
 import { M3eChipSetElement } from "./ChipSetElement";
 import { M3eInputChipElement } from "./InputChipElement";

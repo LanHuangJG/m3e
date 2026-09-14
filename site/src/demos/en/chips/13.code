@@ -1,0 +1,6 @@
+<m3e-filter-chip-set aria-label="Filter by topic" hide-selection-indicator>
+  <m3e-filter-chip>Design </m3e-filter-chip>
+  <m3e-filter-chip>Accessibility </m3e-filter-chip>
+  <m3e-filter-chip><m3e-icon slot="icon" name="motion_photos_on"></m3e-icon>Motion </m3e-filter-chip>
+  <m3e-filter-chip><m3e-icon slot="icon" name="description"></m3e-icon>Documentation </m3e-filter-chip>
+</m3e-filter-chip-set>>

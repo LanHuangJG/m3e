@@ -14,13 +14,13 @@ import {
   setCustomEnumState,
   setCustomState,
   VelocityTracker,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { SelectionManager, selectionManager } from "@m3e/web/core/a11y";
-import { M3eDirectionality } from "@m3e/web/core/bidi";
-import { M3eSlideGroupElement } from "@m3e/web/slide-group";
+import { SelectionManager, selectionManager } from "m3e/core/a11y";
+import { M3eDirectionality } from "m3e/core/bidi";
+import { M3eSlideGroupElement } from "m3e/slide-group";
 
-import "@m3e/web/slide-group";
+import "m3e/slide-group";
 
 import { M3eTabElement } from "./TabElement";
 import { isTabVariant, TabVariant } from "./TabVariant";

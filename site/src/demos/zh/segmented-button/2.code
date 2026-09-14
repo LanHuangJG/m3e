@@ -1,0 +1,5 @@
+<m3e-segmented-button multi>
+  <m3e-button-segment checked>8 oz</m3e-button-segment>
+  <m3e-button-segment checked>12 oz</m3e-button-segment>
+  <!-- Additional segments omitted for brevity -->
+</m3e-segmented-button>

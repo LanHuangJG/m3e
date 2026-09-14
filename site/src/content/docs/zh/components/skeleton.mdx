@@ -1,0 +1,65 @@
+---
+title: "Skeleton 骨架屏"
+description: "m3e-skeleton 组件提供一个加载占位界面,具备灵活的形状变体与基于动效的动画,在传达加载状态的同时保持布局稳定。它会在内容仍在加载时模仿其布局,确保在数据获取或渲染延迟期间获得流畅的用户体验。"
+summary: "m3e-skeleton 组件提供一个加载占位界面,具备灵活的形状变体与基于动效的动画,在传达加载状态的同时保持布局稳定。它会在内容仍在加载时模仿其布局,确保在数据获取或渲染延迟期间获得流畅的用户体验。"
+section: components
+category: "communication"
+order: 39
+---
+
+<p> <code>m3e-skeleton</code> 组件提供一个加载占位界面,具备灵活的形状变体与基于动效的动画,在传达加载状态的同时保持布局稳定。它会在内容仍在加载时模仿其布局,确保在数据获取或渲染延迟期间获得流畅的用户体验。 </p>
+
+```js
+import "m3e/skeleton";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 使用 <code>m3e-skeleton</code> 组件为任意顶层插槽元素生成加载占位符。该组件会为每个节点创建一个覆盖形状,匹配其几何形态,同时保留底层内容的布局。 </p>
+<p>使用 <code>loaded</code> 特性显示已加载的内容。</p>
+
+<Demo name="zh/skeleton/0" />
+
+### Shape 形状
+
+<p> 使用 <code>shape</code> 特性定义应用于所有顶层插槽内容的几何形态。每个节点都会收到一个反映所选形状的对应骨架覆盖层。<code>circular</code> 选项会根据元素尺寸生成圆形。<code>rounded</code> 选项应用大多数界面与控件使用的标准圆角令牌。<code>square</code> 选项不设圆角,呈现锐利边缘。<code>auto</code> 选项读取插槽元素实际的边框圆角并精确镜像,确保骨架无需额外配置即可与卡片、按钮、图像或任意自定义组件对齐。 </p>
+
+```html
+<m3e-skeleton shape="circular">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+<br />
+<m3e-skeleton shape="rounded">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+<br />
+<m3e-skeleton shape="square">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+<br />
+<m3e-skeleton shape="auto">
+  <div style="width: 100px; height: 100px; border-radius: 16px"></div>
+</m3e-skeleton>
+```
+
+### 动画
+
+<p> 使用 <code>animation</code> 特性控制骨架传达加载进度的方式。启用后,组件会在所有顶层插槽内容上应用动效,以表明正在获取数据。<code>wave</code> 选项渲染平滑的方向性扫掠,暗示工作正在进行。<code>pulse</code> 选项应用有节奏的淡入淡出效果,在不产生强烈方向性移动的情况下吸引注意。 </p>
+
+```html
+<m3e-skeleton shape="circular" animation="pulse">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+
+```
+
+<p> <code>none</code> 选项禁用动效并显示静态占位符,适用于偏好减少动态效果的环境,或需要安静加载状态的布局。 </p>
+
+```html
+<m3e-skeleton shape="circular" animation="none">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+
+```

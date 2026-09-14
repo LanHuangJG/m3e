@@ -1,0 +1,7 @@
+<m3e-list>
+  <m3e-list-item>Item 1</m3e-list-item>
+  <m3e-divider></m3e-divider>
+  <m3e-list-item>Item 2</m3e-list-item>
+  <m3e-divider></m3e-divider>
+  <m3e-list-item>Item 3</m3e-list-item>
+</m3e-list>

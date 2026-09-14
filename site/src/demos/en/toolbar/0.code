@@ -1,0 +1,20 @@
+<m3e-toolbar variant="standard">
+  <m3e-icon-button>
+    <m3e-icon name="arrow_back"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button>
+    <m3e-icon name="arrow_forward"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button width="wide" variant="filled">
+    <m3e-icon name="add"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button>
+    <m3e-icon name="picture_in_picture"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button>
+    <m3e-icon name="more_vert"></m3e-icon>
+  </m3e-icon-button>
+</m3e-toolbar>
+<m3e-toolbar variant="vibrant">
+  <!-- Content omitted for brevity -->
+</m3e-toolbar>

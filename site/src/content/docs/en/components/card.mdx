@@ -1,0 +1,71 @@
+---
+title: "Card"
+description: "The m3e-card component is a flexible, expressive container for presenting a unified subject—text,
+          media, and actions—on a visually distinct surface."
+summary: "The m3e-card component is a flexible, expressive container for presenting a unified subject—text,
+          media, and actions—on a visually distinct surface."
+section: components
+category: "containment"
+order: 10
+---
+
+<p> The <code>m3e-card</code> component is a flexible, expressive container for presenting a unified subject—text, media, and actions—on a visually distinct surface. </p>
+
+```js
+import "m3e/card";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Anatomy
+
+<p> The <code>m3e-card</code> component provides a modular layout for structured content blocks. It exposes the following named slots: </p>
+<ul> <li> <code>header</code> — Renders the header region of the card. Typically used for titles, icons, or introductory context. </li> <li> <code>content</code> — Renders the padded content region. Ideal for body text, form fields, or structured information. </li> <li> <code>actions</code> — Renders the action region. Use for buttons, toggles, or interactive controls aligned to the card's intent. </li> <li> <code>footer</code> — Renders the footer region. Suitable for metadata, disclaimers, or secondary actions. </li> <li> <code>(default)</code> — Renders the default content of the card without padding. Use for full-bleed layouts or custom compositions. </li> </ul>
+
+<Demo name="en/card/0" />
+
+<p> You can change the horizontal alignment of the <code>actions</code> slot by adding an <code>end</code> attribute to the slotted element. </p>
+
+<Demo name="en/card/1" />
+
+<p>When using the default slot, the <code>m3e-card</code> will not add any padding.</p>
+
+<Demo name="en/card/2" />
+
+### Variants
+
+<p> There are three card appearance variants: <code>filled</code> (default), <code>outlined</code>, and <code>elevated</code>. Use the <code>variant</code> attribute to control a card's appearance. </p>
+
+<Demo name="en/card/3" />
+
+### Inline
+
+<p> By default, cards are rendered as block-level elements. Use the <code>inline</code> attribute to make a card render inline with surrounding content. </p>
+
+<Demo name="en/card/4" />
+
+### Orientation
+
+<p> By default, cards are oriented vertically. Use the <code>orientation</code> attribute to change the orientation to <code>horizontal</code> or <code>vertical</code> (default). </p>
+
+<Demo name="en/card/5" />
+
+### Actionable
+
+<p> Use the <code>actionable</code> attribute to configure a card as an actionable surface, allowing users to interact with the entire card as a single affordance. This pattern is ideal for navigation, selection, or triggering contextual behavior. </p>
+
+<Demo name="en/card/6" />
+
+#### Disabling
+
+<p> Use the <code>disabled</code> attribute to disable an actionable card. By default, disabled cards are not focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">focusability of disabled controls</a> to increase their discoverability. </p>
+
+<Demo name="en/card/7" />
+
+#### Links
+
+<p> Actionable cards can also behave like links by specifying a URL using the <code>href</code> attribute. You can also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags. </p>
+
+<Demo name="en/card/8" />

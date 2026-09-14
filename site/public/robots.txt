@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://m3e.example.com/sitemap-index.xml

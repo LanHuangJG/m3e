@@ -1,0 +1,57 @@
+---
+title: "Segmented Button 分段按钮"
+description: "m3e-segmented-button 组件允许用户从一个水平组中选择一个或多个选项。"
+summary: "m3e-segmented-button 组件允许用户从一个水平组中选择一个或多个选项。"
+section: components
+category: "actions"
+order: 36
+---
+
+<p> <code>m3e-segmented-button</code> 组件允许用户从一个水平组中选择一个或多个选项。 </p>
+
+```js
+import "m3e/segmented-button";
+```
+
+## 用法
+
+### 结构解析
+
+<p> 分段按钮使用 <code>m3e-segmented-button</code> 组件定义,它充当一组可交互分段的语义容器。每个分段由 <code>m3e-button-segment</code> 组件表示,允许用户在统一控件中从多个相关选项中进行选择。 </p>
+
+<Demo name="zh/segmented-button/0" />
+
+### 图标
+
+<p> 使用 <code>m3e-button-segment</code> 的 <code>icon</code> 插槽在分段标签之前呈现一个图标。 </p>
+<p>选中后,分段的图标会替换为对勾图标。</p>
+
+<Demo name="zh/segmented-button/1" />
+
+### 选择
+
+<p> 分段按钮同时支持单选与多选模式。使用 <code>m3e-segmented-button</code> 的 <code>multi</code> 特性 允许同时选中多个分段。 </p>
+<p> 使用 <code>checked</code> 特性控制 <code>m3e-button-segment</code> 的选中状态。点击时,会先派发一个 可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。要取消 选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
+
+<Demo name="zh/segmented-button/2" />
+
+### 禁用
+
+<p>使用 <code>disabled</code> 特性禁用单个分段。</p>
+
+<Demo name="zh/segmented-button/3" />
+
+<p> 你也可以使用 <code>m3e-segmented-button</code> 的 <code>disabled</code> 特性完全禁用该按钮。 </p>
+
+<Demo name="zh/segmented-button/4" />
+
+### 隐藏选择指示器
+
+<p> 使用 <code>m3e-segmented-button</code> 的 <code>hide-selection-indicator</code> 特性隐藏选择指示器。 如果某个分段通过 <code>icon</code> 插槽设置了图标,该图标会在选中时保留。 </p>
+
+<Demo name="zh/segmented-button/5" />
+
+### 表单关联
+
+<p> 分段按钮可以作为 <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">表单关联自定义元素</a> (FACE)参与表单提交,把自身状态贡献到表单数据中。<code>name</code> 特性定义组件的值在表单中提交时所用的键。 按钮的值由选中的分段决定。你可以使用 <code>m3e-button-segment</code> 的 <code>value</code> 控制分段的 值。选中多个分段时,表单数据会包含多个以同一 <code>name</code> 为键的条目。 </p>
+<p> 组件把 <code>disabled</code> 状态(分段按钮自身的)视为<strong>仅属性</strong>控件。运行时禁用时, 它<em>不会</em>在 DOM 中生成 <code>disabled</code> 特性。 </p>

@@ -13,7 +13,7 @@ import {
   M3eFocusRingElement,
   Role,
   Touched,
-} from "@m3e/web/core";
+} from "m3e/core";
 
 /**
  * A thumb used to select a value in a slider.

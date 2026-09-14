@@ -1,0 +1,49 @@
+---
+title: "Nav Rail"
+description: "The m3e-nav-rail extends Nav Bar to provide a vertical
+          bar, typically used on larger devices, that allows a user to switch between views."
+summary: "The m3e-nav-rail extends Nav Bar to provide a vertical
+          bar, typically used on larger devices, that allows a user to switch between views."
+section: components
+category: "navigation"
+order: 31
+---
+
+<p> The <code>m3e-nav-rail</code> extends <a href="/components/nav-bar/">Nav Bar</a> to provide a vertical bar, typically used on larger devices, that allows a user to switch between views. </p>
+
+```js
+import "m3e/nav-rail";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Modes
+
+<p> The <code>m3e-nav-rail</code> supports three modes: <code>compact</code> (default), <code>expanded</code>, and <code>auto</code>. In a compact mode, items are oriented vertically. When expanded, items are oriented horizontally. Using <code>auto</code>, the orientation is responsive and determined by viewport size. Use the <code>mode</code> attribute to change a bar's mode. </p>
+<p>The following example illustrates a common layout.</p>
+<ul> <li> A <code>m3e-icon-button</code> is used in conjunction with the <code>m3e-nav-rail-toggle</code> to provide a toggle button used to toggle between modes. The <code>for</code> attribute designates the rail to toggle. </li> <li>An extended <code>m3e-fab</code> will automatically transition to reflect the mode of the rail.</li> <li> Top-level destinations are specified using <code>m3e-nav-item</code> from the <a href="/components/nav-bar/">Nav Bar</a> module. </li> </ul>
+
+<Demo name="en/nav-rail/0" />
+
+### Items
+
+<p> As illustrated above, items are specified using the <code>m3e-nav-item</code> component. Use the default slot to specify an item's label and use the <code>icon</code> slot to specify an icon. </p>
+
+```html
+<m3e-nav-item><m3e-icon slot="icon" name="news"></m3e-icon>News</m3e-nav-item>
+```
+
+### Selection
+
+<p> The <code>m3e-nav-rail</code> only supports single-select. Use the <code>selected</code> attribute of <code>m3e-nav-item</code> to specify which item in a rail is selected. When clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>. </p>
+<p> In addition, you can use the <code>selected-icon</code> slots to specify an alternate icon when selected. When using the <code>m3e-icon</code> to present icons, the icon will automatically be filled when an item is selected. </p>
+
+### Disabling
+
+<p> Use the <code>disabled</code> attribute to disable an item. By default, disabled items are not focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">focusability of disabled controls</a> to increase their discoverability. </p>
+
+### Links
+
+<p> Items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags. </p>

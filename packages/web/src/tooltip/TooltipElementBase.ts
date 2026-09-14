@@ -8,10 +8,10 @@ import {
   isDisabledMixin,
   LongPressController,
   ReconnectedCallback,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { M3ePlatform } from "@m3e/web/core/platform";
-import { AnchorPosition, positionAnchor } from "@m3e/web/core/anchoring";
+import { M3ePlatform } from "m3e/core/platform";
+import { AnchorPosition, positionAnchor } from "m3e/core/anchoring";
 
 import { isTooltipTouchGestures, TooltipTouchGestures } from "./TooltipTouchGestures";
 

@@ -1,0 +1,73 @@
+---
+title: "Skeleton"
+description: "The m3e-skeleton component provides a loading placeholder surface with flexible shape variants
+          and motion-based animations that communicate loading state while preserving layout stability. It mimics the
+          layout of content while it's still loading, ensuring a smooth user experience during data fetching or
+          rendering delays."
+summary: "The m3e-skeleton component provides a loading placeholder surface with flexible shape variants
+          and motion-based animations that communicate loading state while preserving layout stability. It mimics the
+          layout of content while it's still loading, ensuring a smooth user experience during data fetching or
+          rendering delays."
+section: components
+category: "communication"
+order: 39
+---
+
+<p> The <code>m3e-skeleton</code> component provides a loading placeholder surface with flexible shape variants and motion-based animations that communicate loading state while preserving layout stability. It mimics the layout of content while it's still loading, ensuring a smooth user experience during data fetching or rendering delays. </p>
+
+```js
+import "m3e/skeleton";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Use the <code>m3e-skeleton</code> component to generate loading placeholders for any top-level slotted elements. The component creates an overlay shape for each node, matching its geometry while preserving the layout of the underlying content. </p>
+<p>Use the <code>loaded</code> attribute to reveal loaded content.</p>
+
+<Demo name="en/skeleton/0" />
+
+### Shape
+
+<p> Use the <code>shape</code> attribute to define the geometry applied to all top level slotted content. Each node receives a corresponding skeleton overlay that reflects the selected shape. The <code>circular</code> option produces a circle based on the element size. The <code>rounded</code> option applies the standard radius token used by most surfaces and controls. The <code>square</code> option renders with no radius for a sharp edge appearance. The <code>auto</code> option reads the actual border radius of the slotted element and mirrors it exactly, ensuring the skeleton aligns with cards, buttons, images, or any custom component without additional configuration. </p>
+
+```html
+<m3e-skeleton shape="circular">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+<br />
+<m3e-skeleton shape="rounded">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+<br />
+<m3e-skeleton shape="square">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+<br />
+<m3e-skeleton shape="auto">
+  <div style="width: 100px; height: 100px; border-radius: 16px"></div>
+</m3e-skeleton>
+```
+
+### Animation
+
+<p> Use the <code>animation</code> attribute to control how the skeleton communicates loading progress. When enabled, the component applies motion across all top level slotted content to indicate that data is being fetched. The <code>wave</code> option renders a smooth directional sweep that suggests ongoing work. The <code>pulse</code> option applies a rhythmic fade in and fade out effect that draws attention without strong directional movement. </p>
+
+```html
+<m3e-skeleton shape="circular" animation="pulse">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+
+```
+
+<p> The <code>none</code> option disables motion and displays a static placeholder for environments that prefer reduced movement or for layouts that require a quiet loading state. </p>
+
+```html
+<m3e-skeleton shape="circular" animation="none">
+  <div style="width: 100px; height: 100px"></div>
+</m3e-skeleton>
+
+```

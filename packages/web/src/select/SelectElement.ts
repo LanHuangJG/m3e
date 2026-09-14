@@ -26,12 +26,12 @@ import {
   customElement,
   MutationController,
   ReconnectedCallback,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { ListKeyManager } from "@m3e/web/core/a11y";
+import { ListKeyManager } from "m3e/core/a11y";
 
-import type { M3eFormFieldElement, FormFieldControl } from "@m3e/web/form-field";
-import { M3eOptionElement, M3eOptionPanelElement } from "@m3e/web/option";
+import type { M3eFormFieldElement, FormFieldControl } from "m3e/form-field";
+import { M3eOptionElement, M3eOptionPanelElement } from "m3e/option";
 
 /**
  * A form control that allows users to select a value from a set of predefined options.

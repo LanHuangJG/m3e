@@ -18,7 +18,7 @@ import {
   hasAssignedNodes,
   customElement,
   setCustomEnumState,
-} from "@m3e/web/core";
+} from "m3e/core";
 
 import { CardVariant, isCardVariant } from "./CardVariant";
 

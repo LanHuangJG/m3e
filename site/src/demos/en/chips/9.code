@@ -1,0 +1,6 @@
+<m3e-filter-chip-set aria-label="Filter by topic">
+  <m3e-filter-chip selected>
+    <m3e-icon slot="icon" name="palette"></m3e-icon>Design
+  </m3e-filter-chip>
+  <!-- Additional chips omitted for brevity -->
+</m3e-filter-chip-set>

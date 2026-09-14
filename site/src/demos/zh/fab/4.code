@@ -1,0 +1,5 @@
+<m3e-fab extended size="small">
+  <m3e-icon name="add"></m3e-icon>
+  <span slot="label">Extended</span>
+</m3e-fab>
+<!-- Additional sizes omitted for brevity -->

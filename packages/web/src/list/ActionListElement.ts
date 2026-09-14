@@ -1,5 +1,5 @@
-import { customElement, waitForUpdate } from "@m3e/web/core";
-import { RovingTabIndexManager, selectionManager } from "@m3e/web/core/a11y";
+import { customElement, waitForUpdate } from "m3e/core";
+import { RovingTabIndexManager, selectionManager } from "m3e/core/a11y";
 
 import { M3eListElement } from "./ListElement";
 import { M3eListActionElement } from "./ListActionElement";

@@ -8,7 +8,7 @@ import {
   ReconnectedCallback,
   Role,
   setCustomEnumState,
-} from "@m3e/web/core";
+} from "m3e/core";
 
 import { isLoadingIndicatorVariant, LoadingIndicatorVariant } from "./LoadingIndicatorVariant";
 import { LoadingIndicatorToken } from "./LoadingIndicatorToken";

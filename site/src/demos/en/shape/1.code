@@ -1,0 +1,20 @@
+<m3e-shape name="sunny">
+  <img src="https://www.shutterstock.com/shutterstock/videos/1006393/thumb/1.jpg?ip=x480" />
+</m3e-shape>
+<m3e-shape name="sunny">
+  <video
+    autoplay
+    loop
+    poster="https://www.shutterstock.com/shutterstock/videos/1006393/thumb/1.jpg?ip=x480"
+    preload="auto"
+  >
+    <source
+      src="https://www.shutterstock.com/shutterstock/videos/1006393/preview/stock-footage-business-people-working-in-office.webm"
+      type="video/webm"
+    />
+    <source
+      src="https://www.shutterstock.com/shutterstock/videos/1006393/preview/stock-footage-business-people-working-in-office.mp4"
+      type="video/mp4"
+    />
+  </video>
+</m3e-shape>

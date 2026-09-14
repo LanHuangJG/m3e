@@ -1,11 +1,11 @@
 import React from "react";
 import { createComponent, EventName } from "@lit/react";
 
-import { M3eSwipeGestureElement, SwipeGestureDetail } from "@m3e/web/gestures/swipe";
-export type { SwipeGestureDetail, SwipeGestureAxis, SwipeGestureDirection } from "@m3e/web/gestures/swipe";
+import { M3eSwipeGestureElement, SwipeGestureDetail } from "m3e/gestures/swipe";
+export type { SwipeGestureDetail, SwipeGestureAxis, SwipeGestureDirection } from "m3e/gestures/swipe";
 
 /**
- * React binding for the `m3e-swipe-gesture` Web Component from `@m3e/web/gestures/swipe`.
+ * React binding for the `m3e-swipe-gesture` Web Component from `m3e/gestures/swipe`.
  *
  * This component renders the underlying `<m3e-swipe-gesture>` element and exposes its
  * properties, attributes, and events through an idiomatic React interface.

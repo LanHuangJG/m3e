@@ -1,0 +1,9 @@
+<m3e-tabs>
+  <m3e-tab selected for="videos">
+    <m3e-icon slot="icon" name="videocam"></m3e-icon>Video
+  </m3e-tab>
+  <m3e-tab disabled for="photos">
+    <m3e-icon slot="icon" name="photo"></m3e-icon>Photos
+  </m3e-tab>
+  <!-- Additional content omitted for brevity -->
+</m3e-tabs>

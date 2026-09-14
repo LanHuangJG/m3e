@@ -1,0 +1,45 @@
+---
+title: "Checkbox 复选框"
+description: "m3e-checkbox 组件让用户从一组选项中选中一个或多个。"
+summary: "m3e-checkbox 组件让用户从一组选项中选中一个或多个。"
+section: components
+category: "selection"
+order: 11
+---
+
+<p><code>m3e-checkbox</code> 组件让用户从一组选项中选中一个或多个。</p>
+
+```js
+import "m3e/checkbox";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 复选框可以是独立、预先勾选或不确定状态。点击时会发出可取消的 <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要取消勾选状态变化,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
+
+<Demo name="zh/checkbox/0" />
+
+### 标签
+
+<p>使用 <code>label</code> 元素为复选框关联标签。</p>
+
+<Demo name="zh/checkbox/1" />
+
+### 表单关联
+
+<p> 该组件以 <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">表单关联自定义元素</a> (FACE)的身份参与表单提交,把自身状态贡献给表单数据。<code>name</code> 特性定义该组件的值在表单中提交时使用的键。当处于勾选且未禁用状态时,会提交 <code>value</code>(默认为 <code>"on"</code>)。 </p>
+<p> 该组件把 <code>disabled</code> 状态视为<strong>仅属性(property)</strong>控件。在运行时禁用它时,<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。 </p>
+
+### 禁用
+
+<p> 使用 <code>disabled</code> 特性禁用复选框。关联的标签会自动呈现为禁用样式。 </p>
+
+<Demo name="zh/checkbox/2" />
+
+### 必填
+
+<p> 使用 <code>required</code> 特性控制复选框是否必须勾选。<code>invalid</code> 事件会在表单提交且该元素未通过约束校验时触发。处于无效状态时,标签会自动呈现相应样式。 </p>
+
+<Demo name="zh/checkbox/3" />

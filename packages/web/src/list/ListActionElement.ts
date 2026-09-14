@@ -2,8 +2,8 @@ import { css, CSSResultGroup, html } from "lit";
 import { property, query } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-import { customElement, LinkButton } from "@m3e/web/core";
-import { selectionManager } from "@m3e/web/core/a11y";
+import { customElement, LinkButton } from "m3e/core";
+import { selectionManager } from "m3e/core/a11y";
 
 import { M3eListItemElement } from "./ListItemElement";
 import { M3eListItemButtonElement } from "./ListItemButtonElement";

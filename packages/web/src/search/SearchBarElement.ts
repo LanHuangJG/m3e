@@ -2,9 +2,9 @@
 import { html, LitElement, nothing } from "lit";
 import { property } from "lit/decorators.js";
 
-import { AttachInternals, customElement, hasAssignedNodes, registerStyleSheet, setCustomState } from "@m3e/web/core";
+import { AttachInternals, customElement, hasAssignedNodes, registerStyleSheet, setCustomState } from "m3e/core";
 
-import "@m3e/web/icon-button";
+import "m3e/icon-button";
 
 import { SearchBarLightDomStyle, SearchBarStyle } from "./styles";
 

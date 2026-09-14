@@ -16,9 +16,9 @@ import {
   Role,
   Selected,
   setCustomState,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { selectionManager } from "@m3e/web/core/a11y";
+import { selectionManager } from "m3e/core/a11y";
 
 import type { M3eTreeElement } from "./TreeElement";
 

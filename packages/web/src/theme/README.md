@@ -1,11 +1,11 @@
-# @m3e/web/theme
+# m3e/theme
 
 The `m3e-theme` component is a non-visual element used to apply dynamic color, expressive motion, density, and strong focus indicators to nested, theme-aware elements.
 
 When `m3e-theme` is nested directly beneath the `<body>` of a document, the `<body>`'s `background-color` is set to the computed value of `--md-sys-color-background` and `color` is set to the computed value of `--md-sys-color-on-background`. In addition the document's `scrollbar-color` is set to the computed values of `--m3e-scrollbar-thumb-color` and `--m3e-scrollbar-track-color` which, when supported, cascades to all viewport scrollbars.
 
 ```ts
-import "@m3e/web/theme";
+import "m3e/theme";
 ```
 
 ## 🗂️ Elements

@@ -6,10 +6,10 @@ import {
   registerStyleSheet,
   setCustomState,
   SuppressInitialAnimation,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { M3eInteractivityChecker, RovingTabIndexManager, selectionManager } from "@m3e/web/core/a11y";
-import { M3eNavBarElement, NavItemOrientation } from "@m3e/web/nav-bar";
+import { M3eInteractivityChecker, RovingTabIndexManager, selectionManager } from "m3e/core/a11y";
+import { M3eNavBarElement, NavItemOrientation } from "m3e/nav-bar";
 
 /**
  * A vertical bar, typically used on larger devices, that allows a user to switch between views.

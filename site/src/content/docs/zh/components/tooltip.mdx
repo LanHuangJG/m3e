@@ -1,0 +1,73 @@
+---
+title: "Tooltip 工具提示"
+description: "m3e/tooltip 模块提供普通与丰富两种工具提示组件,用于传递上下文
+          指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。"
+summary: "m3e/tooltip 模块提供普通与丰富两种工具提示组件,用于传递上下文
+          指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。"
+section: components
+category: "communication"
+order: 53
+---
+
+<p> <code>m3e/tooltip</code> 模块提供普通与丰富两种工具提示组件,用于传递上下文 指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。 </p>
+
+```js
+import "m3e/tooltip";
+```
+
+## 用法
+
+### Plain tooltip
+
+<p> 使用 <code>m3e-tooltip</code> 组件定义普通工具提示,并应用 <code>for</code> 特性 把它与特定的界面元素关联。 </p>
+
+<Demo name="zh/tooltip/0" />
+
+#### 定位
+
+<p> 默认情况下,工具提示定位在元素下方。你可以使用 <code>position</code> 特性控制工具提示的位置。支持的值包括 <code>above</code>、<code>below</code>(默认)、 <code>before</code> 与 <code>after</code>。<code>before</code> 与 <code>after</code> 位置可感知 BIDI,会自适应从左到右与从右到左的文本方向。 </p>
+
+#### 延迟
+
+<p> 使用 <code>show-delay</code> 与 <code>hide-delay</code> 特性控制显示或隐藏工具提示的时间(以 毫秒计)。以下代码片段展示了默认延迟。 </p>
+
+```html
+<m3e-icon-button id="button">
+  <m3e-icon name="arrow_back"></m3e-icon>
+</m3e-icon-button>
+<m3e-tooltip for="button" show-delay="0" hide-delay="200">Go Back</m3e-tooltip>
+```
+
+#### 禁用
+
+<p>使用 <code>disabled</code> 特性禁止工具提示显示。</p>
+
+```html
+<m3e-icon-button id="button">
+  <m3e-icon name="arrow_back"></m3e-icon>
+</m3e-icon-button>
+<m3e-tooltip for="button" disabled>Go Back</m3e-tooltip>
+```
+
+#### 触摸手势
+
+<p> 在触摸设备上,工具提示使用长按手势来显示与隐藏。这可能会与浏览器的原生 手势(如文本选择或拖拽交互)冲突。为缓解此问题,工具提示默认在 触发元素上禁用原生手势。然而,对于输入框 或可拖拽组件等特定元素,这种行为可能并不理想。 </p>
+<p>使用 <code>touch-gestures</code> 特性指定如何处理触摸交互:</p>
+<ul> <li> <code>auto</code> —— 为所有元素启用触摸手势,同时保留 输入框、文本域与可拖拽元素上的浏览器原生行为。 </li> <li> <code>on</code> —— 普遍启用触摸手势,并无例外地禁用 所有浏览器原生手势。 </li> <li> <code>off</code> —— 完全禁用触摸手势,让工具提示无法在触摸设备上出现。 </li> </ul>
+
+### Rich tooltip
+
+<p> 使用 <code>m3e-rich-tooltip</code> 组件定义丰富工具提示,并应用 <code>for</code> 特性把它与特定的界面元素关联。<code>subhead</code> 插槽指定 副标题内容,默认插槽指定补充文本。 </p>
+
+<Demo name="zh/tooltip/1" />
+
+#### 操作
+
+<p> 在丰富工具提示中包含交互内容会使其升级为类似对话框的行为。该界面变为 可关闭且可通过键盘导航,并且必须通过用户在触发元素上的显式操作才能打开。 </p>
+<p> 你可以使用 <code>actions</code> 插槽在丰富工具提示中包含操作。此外,使用 嵌套在可点击元素中的 <code>m3e-rich-tooltip-action</code> 组件来关闭工具提示。默认 情况下,焦点会返回触发元素。使用 <code>m3e-rich-tooltip-action</code> 的 <code>disable-restore-focus</code> 特性禁用此行为。 </p>
+
+<Demo name="zh/tooltip/2" />
+
+#### 定位
+
+<p> 默认情况下,丰富工具提示定位在元素的下方且之后。你可以使用 <code>position</code> 特性控制工具提示的位置。支持的值包括 <code>above-before</code>、 <code>above-after</code>、<code>below-before</code>、<code>below-after</code>(默认)、<code>before</code>、 <code>after</code>、<code>above</code> 与 <code>below</code>。位置可感知 BIDI,会自适应 从左到右与从右到左的文本方向。 </p>

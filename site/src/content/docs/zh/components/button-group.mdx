@@ -1,0 +1,58 @@
+---
+title: "Button Group 按钮组"
+description: "m3e-button-group 组件把多个按钮排布成一个统一、富有表现力的布局。"
+summary: "m3e-button-group 组件把多个按钮排布成一个统一、富有表现力的布局。"
+section: components
+category: "actions"
+order: 8
+---
+
+<p><code>m3e-button-group</code> 组件把多个按钮排布成一个统一、富有表现力的布局。</p>
+
+```js
+import "m3e/button-group";
+```
+
+## 用法
+
+### 变体
+
+<p> 有两种外观变体:<code>standard</code>(默认)与 <code>connected</code>。使用 <code>variant</code> 特性更改外观。 </p>
+
+#### 标准
+
+<p>标准按钮组会在相邻按钮之间添加交互。</p>
+
+<Demo name="zh/button-group/0" />
+
+<p>标准按钮组可以包含文本按钮。</p>
+
+<Demo name="zh/button-group/1" />
+
+<p>标准按钮组可以包含混合的按钮类型,并支持窄与宽两种图标按钮宽度。</p>
+
+<Demo name="zh/button-group/2" />
+
+#### 连通
+
+<p> 连通按钮组的行为与标准组类似,区别在于它们不会影响相邻按钮,并会填满可用空间。 </p>
+
+<Demo name="zh/button-group/3" />
+
+<p>图标按钮也会伸展以填满可用空间。</p>
+
+### 尺寸
+
+<p> 有五种尺寸变体用于控制按钮之间的间距: <code>extra-small</code>、<code>small</code>(默认)、<code>medium</code>、<code>large</code> 与 <code>extra-large</code>。使用 <code>size</code> 特性控制间距。要让按钮尺寸统一,请把每个按钮的 <code>size</code> 设为与按钮组相同的尺寸。 </p>
+
+<Demo name="zh/button-group/4" />
+
+<p>无论尺寸如何,连通按钮组的按钮间距始终保持一致。</p>
+
+<Demo name="zh/button-group/5" />
+
+### 选择
+
+<p> 包含切换按钮的按钮组同时支持单选与多选模式。使用 <code>multi</code> 特性允许多个切换按钮同时被选中。 </p>
+
+<Demo name="zh/button-group/6" />

@@ -1,0 +1,61 @@
+---
+title: "Select"
+description: "The m3e-select component provides a form control for selecting a value from a set of predefined
+          options."
+summary: "The m3e-select component provides a form control for selecting a value from a set of predefined
+          options."
+section: components
+category: "selection"
+order: 37
+---
+
+<p> The <code>m3e-select</code> component provides a form control for selecting a value from a set of predefined options. </p>
+
+```js
+import "m3e/select";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> The following example illustrates use of a <code>m3e-select</code> in conjunction with the <code>m3e-form-field</code>. See <a href="/components/form-field/">Form Field</a> for more information. </p>
+<p> To define selectable options within a <code>m3e-select</code>, include one or more <code>m3e-option</code> elements as its children. Each <code>m3e-option</code> may specify a <code>value</code> attribute, which determines the programmatic value submitted when the option is selected. The textual content of the <code>m3e-option</code> element represents the label presented to the user in the dropdown interface. </p>
+
+<Demo name="en/select/0" />
+
+### Empty options
+
+<p> To define an empty option, include a <code>m3e-option</code> without a value or content. Alternatively, set the <code>value</code> attribute to <code>""</code> and include descriptive content such as "None". This signals that no meaningful value has been selected. Empty options are commonly used to represent a placeholder or default state prior to user interaction. </p>
+
+<Demo name="en/select/1" />
+
+### Option groups
+
+<p> The <code>m3e-optgroup</code> component can be used to group common options under a subheading. The name of the group can be set using the <code>label</code> slot. </p>
+<p>Nested groups are not supported—only a single level of grouping is permitted.</p>
+
+<Demo name="en/select/2" />
+
+### Selection
+
+<p> Selects support both single-select and multi-select modes. Use the <code>multi</code> attribute to allow multiple options to be selected simultaneously. </p>
+<p> Use the <code>selected</code> attribute to control the selected state of a <code>m3e-option</code>. When clicked, a cancellable <code>beforeinput</code> event is emitted by the <code>m3e-select</code> followed by an <code>input</code> and <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>. </p>
+
+<Demo name="en/select/3" />
+
+### Disabling
+
+<p> You can disable the entire select component or individual options by applying the <code>disabled</code> attribute to <code>m3e-select</code> or <code>m3e-option</code>, respectively. </p>
+
+<Demo name="en/select/4" />
+
+<Demo name="en/select/5" />
+
+### Required
+
+<p> Apply the <code>required</code> attribute to enforce selection. This ensures that users must choose at least one option before the field is considered valid. For multi-select configurations, at least one selected option satisfies the requirement. </p>
+
+<Demo name="en/select/6" />

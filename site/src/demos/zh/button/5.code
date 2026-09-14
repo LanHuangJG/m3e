@@ -1,0 +1,6 @@
+<m3e-button variant="filled" toggle>
+  <m3e-icon slot="icon" name="play_arrow"></m3e-icon>
+  <m3e-icon slot="selected-icon" name="stop"></m3e-icon>
+  Start
+  <span slot="selected">Stop</span>
+</m3e-button>

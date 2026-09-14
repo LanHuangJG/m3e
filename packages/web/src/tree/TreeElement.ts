@@ -10,10 +10,10 @@ import {
   registerStyleSheet,
   Role,
   scrollIntoViewIfNeeded,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { SelectionManager, selectionManager } from "@m3e/web/core/a11y";
-import { M3eDirectionality } from "@m3e/web/core/bidi";
+import { SelectionManager, selectionManager } from "m3e/core/a11y";
+import { M3eDirectionality } from "m3e/core/bidi";
 
 import { M3eTreeItemElement } from "./TreeItemElement";
 

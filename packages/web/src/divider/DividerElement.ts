@@ -1,7 +1,19 @@
 import { css, CSSResultGroup, html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 
-import { customElement, DesignToken, Role } from "@m3e/web/core";
+import { customElement, DesignToken, Role } from "m3e/core";
+
+/** viewBox 宽度，配合 preserveAspectRatio="none" 横向拉满 */
+const WAVE_WIDTH = 1200;
+/** 波幅（viewBox 单位，会随元素高度纵向缩放） */
+const WAVE_AMPLITUDE = 3;
+/** 波长（viewBox 单位） */
+const WAVE_WAVELENGTH = 80;
+const WAVE_HEIGHT = WAVE_AMPLITUDE * 2 + 2;
+let WAVE_PATH = `M0 ${WAVE_HEIGHT / 2}`;
+for (let x = 2; x <= WAVE_WIDTH; x += 2) {
+  WAVE_PATH += ` L${x} ${(WAVE_HEIGHT / 2 + WAVE_AMPLITUDE * Math.sin((x / WAVE_WAVELENGTH) * Math.PI * 2)).toFixed(2)}`;
+}
 
 /**
  * A thin line that separates content in lists or other containers.
@@ -20,6 +32,7 @@ import { customElement, DesignToken, Role } from "@m3e/web/core";
  *
  * @tag m3e-divider
  *
+ * @attr variant - The appearance of the divider: `solid` (default) or `wavy`.
  * @attr inset - Whether the divider is indented with equal padding on both sides.
  * @attr inset-start - Whether the divider is indented with padding on the leading side.
  * @attr inset-end - Whether the divider is indented with padding on the trailing side.
@@ -27,6 +40,8 @@ import { customElement, DesignToken, Role } from "@m3e/web/core";
  *
  * @cssprop --m3e-divider-thickness - Thickness of the divider line.
  * @cssprop --m3e-divider-color - Color of the divider line.
+ * @cssprop --m3e-divider-wavy-amplitude - Amplitude of the `wavy` variant.
+ * @cssprop --m3e-divider-wavy-height - Height of the `wavy` variant.
  * @cssprop --m3e-divider-inset-size - When inset, fallback inset size used when no specific start or end inset is provided.
  * @cssprop --m3e-divider-inset-start-size - When inset, leading inset size.
  * @cssprop --m3e-divider-inset-end-size - When inset, trailing inset size.
@@ -93,12 +108,37 @@ export class M3eDividerElement extends Role(LitElement, "separator") {
     :host(:not([vertical]):not([inset]):not([inset-end])) .line {
       right: 0;
     }
+    :host([variant="wavy"]:not([vertical])) {
+      height: var(
+        --m3e-divider-wavy-height,
+        calc(var(--m3e-divider-thickness, 2px) + 2 * var(--m3e-divider-wavy-amplitude, 3px))
+      );
+    }
+    :host([variant="wavy"]:not([vertical])) .wave {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    :host([variant="wavy"]:not([vertical])) .wave path {
+      fill: none;
+      stroke: var(--m3e-divider-color, ${DesignToken.color.outlineVariant});
+      stroke-width: var(--m3e-divider-thickness, 2px);
+    }
     @media (forced-colors: active) {
       .line {
         border-color: GrayText;
       }
+      :host([variant="wavy"]:not([vertical])) .wave path {
+        stroke: GrayText;
+      }
     }
   `;
+
+  /**
+   * The appearance of the divider.
+   * @default "solid"
+   */
+  @property({ reflect: true }) variant: "solid" | "wavy" = "solid";
 
   /**
    * Whether the divider is vertically aligned with adjacent content.
@@ -126,6 +166,11 @@ export class M3eDividerElement extends Role(LitElement, "separator") {
 
   /** @inheritdoc */
   protected override render(): unknown {
+    if (this.variant === "wavy" && !this.vertical) {
+      return html`<svg class="wave" viewBox="0 0 ${WAVE_WIDTH} ${WAVE_HEIGHT}" preserveAspectRatio="none" aria-hidden="true">
+        <path d=${WAVE_PATH} vector-effect="non-scaling-stroke"></path>
+      </svg>`;
+    }
     return html`<div class="line"></div>`;
   }
 }

@@ -1,0 +1,98 @@
+---
+title: "FAB Menu"
+description: "The m3e-fab-menu component presents a dynamic menu of related actions, elegantly revealed from a
+          floating action button (FAB). See FAB for more information on using
+          floating action buttons."
+summary: "The m3e-fab-menu component presents a dynamic menu of related actions, elegantly revealed from a
+          floating action button (FAB). See FAB for more information on using
+          floating action buttons."
+section: components
+category: "actions"
+order: 21
+---
+
+<p> The <code>m3e-fab-menu</code> component presents a dynamic menu of related actions, elegantly revealed from a floating action button (FAB). See <a href="/components/fab/">FAB</a> for more information on using floating action buttons. </p>
+
+```js
+import "m3e/fab-menu";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Anatomy
+
+<p> The <code>m3e-fab-menu</code> is used in conjunction with a <code>m3e-fab</code> to create a menu opened when a FAB is activated. </p>
+<ul> <li>Use a <code>m3e-fab-menu-trigger</code>, nested inside a <code>m3e-fab</code>, to trigger a menu.</li> <li> Use the <code>for</code> attribute of the <code>m3e-fab-menu-trigger</code> to designate the menu to open. </li> <li> Nest 2-6 <code>m3e-fab-menu-item</code> components inside a <code>m3e-fab-menu</code> to designate menu items. </li> </ul>
+
+```html
+<m3e-fab variant="primary" size="large">
+  <m3e-fab-menu-trigger for="fabmenu">
+    <m3e-icon name="edit"></m3e-icon>
+  </m3e-fab-menu-trigger>
+</m3e-fab>
+<m3e-fab-menu id="fabmenu">
+  <m3e-fab-menu-item>
+    <m3e-icon slot="icon" name="email" filled></m3e-icon>
+    Email
+  </m3e-fab-menu-item>
+  <m3e-fab-menu-item>
+    <m3e-icon slot="icon" name="chat" filled></m3e-icon>
+    Message
+  </m3e-fab-menu-item>
+  <m3e-fab-menu-item>
+    <m3e-icon slot="icon" name="folder" filled></m3e-icon>
+    Folder
+  </m3e-fab-menu-item>
+</m3e-fab-menu>
+```
+
+### Variants
+
+<p> The <code>m3e-fab-menu</code> supports three appearance variants: <code>primary</code> (default), <code>secondary</code>, and <code>tertiary</code>. Use the <code>variant</code> attribute to change the appearance. </p>
+
+```html
+<m3e-fab variant="secondary" size="large">
+  <m3e-fab-menu-trigger for="fabmenu">
+    <m3e-icon name="edit"></m3e-icon>
+  </m3e-fab-menu-trigger>
+</m3e-fab>
+<m3e-fab-menu id="fabmenu" variant="secondary">
+
+</m3e-fab-menu>
+
+```
+
+### Icons
+
+<p> Use the <code>icon</code> slot of a <code>m3e-fab-menu-item</code> to present an icon before an item's label. While not required, the following example uses the <code>m3e-icon</code> component from <code>m3e/icon</code> to present icons using Material Symbols. See <a href="/components/icon/">Icon</a> for more information. </p>
+
+```html
+<m3e-fab-menu-item>
+  <m3e-icon slot="icon" name="email" filled></m3e-icon>
+  Email
+</m3e-fab-menu-item>
+```
+
+### Disabling
+
+<p> You can disable a <code>m3e-fab-menu-item</code> using the <code>disabled</code> attribute. In addition, if the <code>m3e-fab</code> is disabled, the <code>m3e-fab-menu</code> will not be opened on click. </p>
+
+```html
+<m3e-fab-menu-item disabled>
+  <m3e-icon slot="icon" name="email" filled></m3e-icon>
+  Email
+</m3e-fab-menu-item>
+```
+
+### Links
+
+<p> Menu items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags. </p>
+
+```html
+<m3e-fab-menu-item href="https://www.google.com" target="_blank">
+  <m3e-icon slot="icon" name="open_in_new_window" filled></m3e-icon>
+  Google
+</m3e-fab-menu-item>
+```

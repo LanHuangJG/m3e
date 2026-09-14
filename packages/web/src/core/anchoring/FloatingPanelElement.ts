@@ -11,9 +11,9 @@ import {
   SuppressInitialAnimation,
   ResizeController,
   ClickOutsideController,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { Direction, M3eDirectionality } from "@m3e/web/core/bidi";
+import { Direction, M3eDirectionality } from "m3e/core/bidi";
 
 import { positionAnchor } from "./positionAnchor";
 import { FloatingPanelScrollStrategy } from "./FloatingPanelScrollStrategy";

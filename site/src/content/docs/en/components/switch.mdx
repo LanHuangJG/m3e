@@ -1,0 +1,58 @@
+---
+title: "Switch"
+description: "The m3e-switch component is nn on/off control that can be toggled by clicking."
+summary: "The m3e-switch component is nn on/off control that can be toggled by clicking."
+section: components
+category: "selection"
+order: 46
+---
+
+<p>The <code>m3e-switch</code> component is nn on/off control that can be toggled by clicking.</p>
+
+```js
+import "m3e/switch";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Use the <code>m3e-switch</code> component to create a switch (also known as a slide toggle). Use the <code>checked</code> attribute to indicate whether the switch is "on". When clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and<code>change</code> event. To cancel checked state changes, call <code>preventDefault</code> during <code>beforeinput</code>. </p>
+
+<Demo name="en/switch/0" />
+
+### Labels
+
+<p>Associate a label with a switch using the <code>label</code> element.</p>
+
+```html
+<label><m3e-switch></m3e-switch> Switch 1</label>
+<m3e-switch id="switch2"></m3e-switch>
+<label for="switch2"> Switch 2</label>
+```
+
+### Icons
+
+<p> You can control the icons to present using the <code>icons</code> attribute. Supports values include <code>none</code> (default), <code>selected</code>, and <code>both</code>. </p>
+
+```html
+<m3e-switch icons="selected" checked></m3e-switch>
+<m3e-switch icons="both"></m3e-switch>
+```
+
+### Form Associated
+
+<p> This component participates in form submission as a <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">form-associated custom element</a> (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which the component's value is submitted in a form. When checked and not disabled, <code>value</code> (defaults to <code>"on"</code>) is submitted. </p>
+<p> The component honors the <code>disabled</code> state as a <strong>property-only</strong> control. When disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM. </p>
+
+### Disabling
+
+<p> Use the <code>disabled</code> attribute to disable a switch. Associated labels are automatically styled to show disabled. </p>
+
+```html
+<label><m3e-switch disabled></m3e-switch>Disabled Switch 1</label>
+<m3e-switch id="chk3" disabled></m3e-switch>
+<label for="chk3">Disabled Switch 2</label>
+```

@@ -1,0 +1,52 @@
+---
+title: "Radio Group 单选组"
+description: "m3e-radio-group 与 m3e-radio 组件支持在一组互斥选项中做单选。"
+summary: "m3e-radio-group 与 m3e-radio 组件支持在一组互斥选项中做单选。"
+section: components
+category: "selection"
+order: 34
+---
+
+<p> <code>m3e-radio-group</code> 与 <code>m3e-radio</code> 组件支持在一组互斥选项中做单选。 </p>
+
+```js
+import "m3e/radio-group";
+```
+
+## 用法
+
+### 单选组
+
+<p>单选按钮通常放在 <code>m3e-radio-group</code> 内部。</p>
+
+<Demo name="zh/radio-group/0" />
+
+### 标签
+
+<p> 使用 <code>label</code> 元素为单选按钮关联标签。此外,单选组也可以用 <code>label</code> 标注。 </p>
+
+<Demo name="zh/radio-group/1" />
+
+### 表单关联
+
+<p> 单选按钮作为 <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">表单关联自定义元素</a> (FACE)参与表单提交,把自身状态贡献到表单数据中。<code>name</code> 特性定义单选按钮的值在表单中提交时所用的键。 当被选中且未禁用时,会提交 <code>value</code>(默认为 <code>"on"</code>)。 </p>
+<p> 单选按钮把 <code>disabled</code> 状态视为<strong>仅属性</strong>控件。运行时禁用时,它<em>不会</em>在 DOM 中 生成 <code>disabled</code> 特性。 </p>
+<p>使用单选组时,组的 <code>name</code> 会传播到所有嵌套的单选按钮。</p>
+
+### 禁用
+
+<p> 使用 <code>disabled</code> 特性禁用单个单选按钮或整个单选组。关联的标签会自动应用样式以显示禁用状态。 </p>
+<p>下面的示例演示禁用组中的单个单选按钮。</p>
+
+<Demo name="zh/radio-group/2" />
+
+<p>下一个示例演示禁用整个组。</p>
+
+<Demo name="zh/radio-group/3" />
+
+### 必填
+
+<p> 使用单选组的 <code>required</code> 特性要求必须选中一个选项。关联的标签会自动应用样式以显示校验状态。 </p>
+<p> 在下面的示例中,按 TAB 进入单选组,再按一次 TAB 不选择任何项离开,即可看到校验如何触发。选中一个单选按钮会重新校验。 </p>
+
+<Demo name="zh/radio-group/4" />

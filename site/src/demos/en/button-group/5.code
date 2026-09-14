@@ -1,0 +1,5 @@
+<m3e-button-group size="large" variant="connected">
+  <m3e-button variant="tonal" size="large" toggle>Start</m3e-button>
+  <m3e-button variant="tonal" size="large" toggle>Directions</m3e-button>
+  <m3e-button variant="tonal" size="large" toggle>Share</m3e-button>
+</m3e-button-group>

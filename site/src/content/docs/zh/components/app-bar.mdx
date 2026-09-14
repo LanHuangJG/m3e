@@ -1,0 +1,46 @@
+---
+title: "App Bar 应用栏"
+description: "m3e-app-bar 组件是一个醒目的界面组件,在应用屏幕顶部提供对关键操作、导航与上下文信息的一致访问。"
+summary: "m3e-app-bar 组件是一个醒目的界面组件,在应用屏幕顶部提供对关键操作、导航与上下文信息的一致访问。"
+section: components
+category: "navigation"
+order: 1
+---
+
+<p> <code>m3e-app-bar</code> 组件是一个醒目的界面组件,在应用屏幕顶部提供对关键操作、导航与上下文信息的一致访问。 </p>
+
+```js
+import "m3e/app-bar";
+```
+
+## 用法
+
+### 结构解析
+
+<p> <code>m3e-app-bar</code> 组件为顶级导航与上下文信息提供结构化布局。它暴露以下具名插槽: </p>
+<ul> <li><code>leading</code> —— 通常是一个导航控件,例如返回箭头或菜单按钮。位于应用栏的起始端。</li> <li><code>title</code> —— 当前视图或上下文的主要标签。通常是简短、醒目的标题。</li> <li><code>subtitle</code> —— 可选的次级标签,在标题下方提供额外的上下文或层级信息。</li> <li><code>trailing</code> —— 一个或多个对齐到应用栏末端的操作按钮。常见示例包括搜索、书签或更多(overflow)菜单。</li> </ul>
+
+<Demo name="zh/app-bar/0" />
+
+### 尺寸
+
+<p> 有三种尺寸变体:<code>small</code>(默认)、<code>medium</code> 与 <code>large</code>。使用 <code>size</code> 特性控制应用栏的尺寸。 </p>
+
+<Demo name="zh/app-bar/1" />
+
+<Demo name="zh/app-bar/2" />
+
+### 居中
+
+<p> <code>centered</code> 应用栏可确保其主要内容 —— <code>title</code> 与可选的 <code>subtitle</code> —— 始终在可用水平空间内保持视觉居中,无论 <code>leading</code> 或 <code>trailing</code> 插槽中元素的数量或尺寸如何变化。 </p>
+<p> 这是通过布局对称而非等距实现的。标题区域锚定在容器的中心,两侧图标的数量或宽度可以变化,而不会使标题的位置发生偏移。 </p>
+
+<Demo name="zh/app-bar/3" />
+
+### 滚动效果
+
+<p> <code>m3e-app-bar</code> 可以通过 <code>for</code> 特性附着到一个可滚动容器上,该特性引用容器的 id。这在应用栏与其内容区域之间建立了一种滚动契约。当用户滚动时: </p>
+<ul> <li>应用栏的背景会抬升 —— 通常表现为阴影或表面色调 —— 以表示与内容分离。</li> <li>当滚动位置回到顶部时,抬升效果会被移除,恢复为扁平的视觉层级。</li> </ul>
+<p> 这种行为增强了上下文的清晰度,提示内容正在滚动,同时保持应用栏作为稳定锚点的作用。 </p>
+
+<Demo name="zh/app-bar/4" />

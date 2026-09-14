@@ -28,7 +28,7 @@ import {
   customElement,
   addCustomState,
   setCustomEnumState,
-} from "@m3e/web/core";
+} from "m3e/core";
 
 import { ButtonShape, isButtonShape } from "./ButtonShape";
 import { ButtonSize, isButtonSize } from "./ButtonSize";

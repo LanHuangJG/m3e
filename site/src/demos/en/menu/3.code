@@ -1,0 +1,8 @@
+<!-- Trigger omitted for brevity -->
+<m3e-menu id="menu">
+  <m3e-menu-item disabled>
+    <m3e-icon slot="icon" name="dialpad"></m3e-icon>
+    Redial
+  </m3e-menu-item>
+  <!-- Additional items omitted for brevity -->
+</m3e-menu>

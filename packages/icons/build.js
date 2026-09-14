@@ -41,7 +41,7 @@ for (const variant of variants) {
 
     fs.writeFileSync(
       path.join(variantDistDir, `${iconName}.js`),
-      `import { registerIcon } from '@m3e/web/icon';
+      `import { registerIcon } from 'm3e/icon';
 registerIcon('${iconName}','${variant}',{outlined:'${svgPath}',filled:'${svgFillPath}'});`,
     );
   }

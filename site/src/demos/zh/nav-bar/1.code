@@ -1,0 +1,4 @@
+<m3e-nav-bar>
+  <m3e-nav-item selected><m3e-icon slot="icon" name="news"></m3e-icon>News</m3e-nav-item>
+  <!-- Additional items omitted for brevity -->
+</m3e-nav-bar>

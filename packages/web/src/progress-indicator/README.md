@@ -1,9 +1,9 @@
-# @m3e/web/progress-indicator
+# m3e/progress-indicator
 
 The `m3e-linear-progress-indicator` and `m3e-circular-progress-indicator` components provide accessible, animated progress indicators for tracking the completion of tasks or processes. Both components support multiple modes and are fully customizable via CSS custom properties.
 
 ```ts
-import "@m3e/web/progress-indicator";
+import "m3e/progress-indicator";
 ```
 
 ## 🗂️ Elements

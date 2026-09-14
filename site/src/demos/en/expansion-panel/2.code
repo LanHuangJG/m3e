@@ -1,0 +1,4 @@
+<m3e-expansion-panel toggle-position="before" toggle-direction="horizontal">
+  <span slot="header">Panel header</span>
+  Panel contents
+</m3e-expansion-panel>

@@ -1,0 +1,4 @@
+<m3e-assist-chip>
+  <m3e-icon slot="icon" name="finance"></m3e-icon>
+  Finance
+</m3e-assist-chip>

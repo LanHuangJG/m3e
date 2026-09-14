@@ -1,0 +1,6 @@
+<m3e-segmented-button disabled>
+  <m3e-button-segment>
+    <m3e-icon slot="icon" name="palette"></m3e-icon>Design
+  </m3e-button-segment>
+  <!-- Additional segments omitted for brevity -->
+</m3e-segmented-button>

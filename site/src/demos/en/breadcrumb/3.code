@@ -1,0 +1,5 @@
+<m3e-breadcrumb>
+  <span slot="separator">/</span>
+  <m3e-breadcrumb-item>Dashboard</m3e-breadcrumb-item>
+  <!-- Additional items omitted for brevity -->
+</m3e-breadcrumb>

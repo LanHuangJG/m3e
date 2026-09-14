@@ -1,0 +1,60 @@
+---
+title: "Button Group"
+description: "The m3e-button-group component arranges multiple into a unified, expressive layout."
+summary: "The m3e-button-group component arranges multiple into a unified, expressive layout."
+section: components
+category: "actions"
+order: 8
+---
+
+<p>The <code>m3e-button-group</code> component arranges multiple into a unified, expressive layout.</p>
+
+```js
+import "m3e/button-group";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Variants
+
+<p> There are two appearance variants: <code>standard</code> (default) and <code>connected</code>. Use the <code>variant</code> attribute to change the appearance. </p>
+
+#### Standard
+
+<p>Standard button groups add interaction between adjacent buttons</p>
+
+<Demo name="en/button-group/0" />
+
+<p>Standard button groups can contain textual buttons.</p>
+
+<Demo name="en/button-group/1" />
+
+<p>Standard button groups can contain mixed button types and supports narrow and wide icon button widths.</p>
+
+<Demo name="en/button-group/2" />
+
+#### Connected
+
+<p> Connected button groups behave similarly to standard groups, except they don't affect adjacent buttons and fill available space. </p>
+
+<Demo name="en/button-group/3" />
+
+<p>Icon buttons will also grow to fill available space.</p>
+
+### Sizes
+
+<p> There are five size variants used to control spacing between button: <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and <code>extra-large</code>. Use the <code>size</code> attribute control spacing. To create buttons with a uniform size, set each button's <code>size</code> to the same size as the button group. </p>
+
+<Demo name="en/button-group/4" />
+
+<p>Connected button groups always have the same spacing between buttons, regardless of size.</p>
+
+<Demo name="en/button-group/5" />
+
+### Selection
+
+<p> Button groups containing toggle buttons support both single-select and multi-select modes. Use the <code>multi</code> attribute to allow multiple toggle buttons to be selected simultaneously. </p>
+
+<Demo name="en/button-group/6" />

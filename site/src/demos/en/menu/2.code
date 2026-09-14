@@ -1,0 +1,15 @@
+<!-- Trigger omitted for brevity -->
+<m3e-menu id="menu">
+  <m3e-menu-item>
+    <m3e-icon slot="icon" name="dialpad"></m3e-icon>
+    Redial
+  </m3e-menu-item>
+  <m3e-menu-item>
+    <m3e-icon slot="icon" name="voicemail"></m3e-icon>
+    Check voice mail
+  </m3e-menu-item>
+  <m3e-menu-item>
+    <m3e-icon slot="icon" name="notifications_off"></m3e-icon>
+    Disable alerts
+  </m3e-menu-item>
+</m3e-menu>

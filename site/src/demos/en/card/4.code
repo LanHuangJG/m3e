@@ -1,0 +1,3 @@
+<m3e-card inline>
+  <div slot="content">Inline</div>
+</m3e-card>

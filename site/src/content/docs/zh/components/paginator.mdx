@@ -1,0 +1,40 @@
+---
+title: "Paginator 分页器"
+description: "m3e-paginator 组件是一个紧凑、无障碍的分页控件,用于浏览分页数据集。它提供语义化的首页/上一页/
+          下一页/末页导航控件,以及可选的每页条数选择器。"
+summary: "m3e-paginator 组件是一个紧凑、无障碍的分页控件,用于浏览分页数据集。它提供语义化的首页/上一页/
+          下一页/末页导航控件,以及可选的每页条数选择器。"
+section: components
+category: "navigation"
+order: 32
+---
+
+<p> <code>m3e-paginator</code> 组件是一个紧凑、无障碍的分页控件,用于浏览分页数据集。它提供语义化的首页/上一页/ 下一页/末页导航控件,以及可选的每页条数选择器。 </p>
+
+```js
+import "m3e/paginator";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 至少需要指定要分页的项目总数与每页条数。分别使用 <code>m3e-paginator</code> 组件的 <code>length</code> 与 <code>page-size</code> 特性。默认情况下,<code>page-size</code> 设为 50。 </p>
+<p> 当用户与分页器交互时,它会派发一个 <code>page</code> 事件。该事件可用于更新任何关联的数据视图, 并包含以下属性: </p>
+<ul> <li><strong>pageIndex</strong>: <em>number</em> —— 当前页的从零开始的索引。</li> <li> <strong>previousPageIndex</strong>: <em>number</em>(可选) —— 先前选中页的从零开始的索引。 </li> <li><strong>pageSize</strong>: <em>number | "all"</em> —— 当前每页条数。</li> <li><strong>length</strong>: <em>number</em> —— 要分页的项目总数。</li> </ul>
+
+<Demo name="zh/paginator/0" />
+
+### 每页条数
+
+<p> <code>page-sizes</code> 特性让你定义用户可选的每页条数选项。它接受逗号分隔的值列表, 并可以包含 <code>"all"</code>。默认情况下,<code>page-sizes</code> 设为 <code>"5,10,25,50,100"</code>。 </p>
+<p> 当前的 <code>page-size</code> 始终会出现在下拉列表中,即使它未包含在 <code>page-sizes</code> 中。 </p>
+<p> 当 <code>page-size</code> 设为 <code>"all"</code> 时,范围标签与导航操作会被隐藏。 </p>
+
+<Demo name="zh/paginator/1" />
+
+### 导航操作
+
+<p> 默认情况下,首页与末页按钮是隐藏的。使用 <code>show-first-last-buttons</code> 特性来显示它们。 </p>
+
+<Demo name="zh/paginator/2" />

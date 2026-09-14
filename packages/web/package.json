@@ -1,5 +1,5 @@
 {
-  "name": "@m3e/web",
+  "name": "m3e",
   "version": "2.7.12",
   "description": "Platform-native Web Components for M3E",
   "author": "matraic <matraic@yahoo.com>",

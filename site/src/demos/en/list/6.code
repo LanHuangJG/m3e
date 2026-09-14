@@ -1,0 +1,8 @@
+<m3e-list>
+  <m3e-list-item>
+    <img slot="leading" src="[YOUR IMAGE URL HERE]" />
+    Label text
+    <m3e-icon slot="trailing" name="arrow_right"></m3e-icon>
+  </m3e-list-item>
+  <!-- Additional items omitted for brevity -->
+</m3e-list>

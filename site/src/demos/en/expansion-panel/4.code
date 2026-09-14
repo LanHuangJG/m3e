@@ -1,0 +1,7 @@
+<m3e-accordion>
+  <m3e-expansion-panel open>
+    <span slot="header">Panel 1</span>
+    I am content for the first panel
+  </m3e-expansion-panel>
+  <!-- Additional panels omitted for brevity -->
+</m3e-accordion>

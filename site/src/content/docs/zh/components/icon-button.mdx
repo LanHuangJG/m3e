@@ -1,0 +1,70 @@
+---
+title: "Icon Button 图标按钮"
+description: "m3e-icon-button 组件是一个图标按钮,用户通过它执行辅助操作。"
+summary: "m3e-icon-button 组件是一个图标按钮,用户通过它执行辅助操作。"
+section: components
+category: "actions"
+order: 25
+---
+
+<p> <code>m3e-icon-button</code> 组件是一个图标按钮,用户通过它执行辅助操作。 </p>
+
+```js
+import "m3e/icon-button";
+```
+
+## 用法
+
+### 变体
+
+<p> 图标按钮有四种外观变体:<code>filled</code>、<code>tonal</code>、 <code>outlined</code> 与 <code>standard</code>(默认)。使用 <code>variant</code> 特性更改外观。 </p>
+
+<Demo name="zh/icon-button/0" />
+
+### 形状
+
+<p> 图标按钮有两种形状:<code>rounded</code>(默认)或 <code>square</code>。使用 <code>shape</code> 特性控制按钮的形状。 </p>
+
+<Demo name="zh/icon-button/1" />
+
+### 尺寸
+
+<p> 共有五种尺寸变体,可用于增强或弱化强调: <code>extra-small</code>、<code>small</code>(默认)、<code>medium</code>、<code>large</code> 与 <code>extra-large</code>。使用 <code>size</code> 特性控制图标按钮的尺寸。 </p>
+
+<Demo name="zh/icon-button/2" />
+
+### 宽度
+
+<p> 共有三种宽度变体,可用于增强或弱化强调:<code>default</code>(默认)、 <code>narrow</code> 与 <code>wide</code>。使用 <code>width</code> 特性控制图标按钮的 宽度。 </p>
+
+<Demo name="zh/icon-button/3" />
+
+### 切换
+
+<p> 使用 <code>toggle</code> 特性控制图标按钮是否可用于二元选择,使用 <code>selected</code> 特性控制选中状态。点击时会先派发一个可取消的 <code>beforeinput</code> 事件,随后派发 <code>input</code> 与 <code>change</code> 事件。要 取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
+
+<Demo name="zh/icon-button/4" />
+
+<p>你也可以使用 <code>selected</code> 插槽更改选中态切换按钮所呈现的图标。</p>
+
+<Demo name="zh/icon-button/5" />
+
+<p> 选中时,图标按钮会改变形状。圆角按钮变为方形,方形按钮变为圆角。下面的示例演示了圆角与方形图标按钮的选中状态。 </p>
+
+<Demo name="zh/icon-button/6" />
+
+### 禁用
+
+<p> 使用 <code>disabled</code> 特性禁用图标按钮。默认情况下,禁用的图标按钮无法通过键盘 聚焦。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">focusability of disabled controls</a> 以提高其可发现性。 </p>
+
+<Demo name="zh/icon-button/7" />
+
+### 类型
+
+<p> 使用 <code>type</code> 特性控制图标按钮的行为。默认情况下, <code>type</code> 为 <code>button</code>。你可以将其改为 <code>submit</code> 或 <code>reset</code>,以便 在点击时提交或重置其父表单。提交表单时,你可以使用 <code>name</code> 与 <code>value</code> 特性指定值。 </p>
+
+### 链接
+
+<p> 图标按钮也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以 像原生锚点标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
+
+<Demo name="zh/icon-button/8" />

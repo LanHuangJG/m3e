@@ -9,12 +9,12 @@ import {
   PressedController,
   Role,
   setCustomEnumState,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { M3eButtonElement, ButtonSize, isButtonSize } from "@m3e/web/button";
-import { M3eIconButtonElement } from "@m3e/web/icon-button";
+import { M3eButtonElement, ButtonSize, isButtonSize } from "m3e/button";
+import { M3eIconButtonElement } from "m3e/icon-button";
 
-import "@m3e/web/button-group";
+import "m3e/button-group";
 
 import { isSplitButtonVariant, SplitButtonVariant } from "./SplitButtonVariant";
 

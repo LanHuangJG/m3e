@@ -1,0 +1,47 @@
+---
+title: "Nav Rail 导航侧栏"
+description: "m3e-nav-rail 扩展了 Nav Bar 导航栏,提供一个竖向栏,
+          通常用于较大的设备,允许用户在视图之间切换。"
+summary: "m3e-nav-rail 扩展了 Nav Bar 导航栏,提供一个竖向栏,
+          通常用于较大的设备,允许用户在视图之间切换。"
+section: components
+category: "navigation"
+order: 31
+---
+
+<p> <code>m3e-nav-rail</code> 扩展了 <a href="/zh/components/nav-bar/">Nav Bar 导航栏</a>,提供一个竖向栏, 通常用于较大的设备,允许用户在视图之间切换。 </p>
+
+```js
+import "m3e/nav-rail";
+```
+
+## 用法
+
+### 模式
+
+<p> <code>m3e-nav-rail</code> 支持三种模式:<code>compact</code>(默认)、<code>expanded</code> 与 <code>auto</code>。在紧凑模式下,条目竖向排列。展开时,条目横向排列。使用 <code>auto</code> 时, 方向会自适应,由视口尺寸决定。使用 <code>mode</code> 特性更改栏的模式。 </p>
+<p>下面的示例展示了一种常见布局。</p>
+<ul> <li> <code>m3e-icon-button</code> 与 <code>m3e-nav-rail-toggle</code> 配合使用,提供一个用于在模式之间切换的 切换按钮。<code>for</code> 特性指定要切换的栏。 </li> <li>扩展的 <code>m3e-fab</code> 会自动过渡以反映栏的模式。</li> <li> 顶级目标使用来自 <a href="/zh/components/nav-bar/">Nav Bar 导航栏</a> 模块的 <code>m3e-nav-item</code> 指定。 </li> </ul>
+
+<Demo name="zh/nav-rail/0" />
+
+### 条目
+
+<p> 如上所示,条目使用 <code>m3e-nav-item</code> 组件指定。使用默认插槽指定条目的标签,使用 <code>icon</code> 插槽指定图标。 </p>
+
+```html
+<m3e-nav-item><m3e-icon slot="icon" name="news"></m3e-icon>News</m3e-nav-item>
+```
+
+### 选择
+
+<p> <code>m3e-nav-rail</code> 仅支持单选。使用 <code>m3e-nav-item</code> 的 <code>selected</code> 特性 指定栏中选中哪个条目。点击时,会先派发一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
+<p> 此外,你可以使用 <code>selected-icon</code> 插槽指定选中时的备用图标。使用 <code>m3e-icon</code> 呈现图标时,条目被选中后图标会自动填充。 </p>
+
+### 禁用
+
+<p> 使用 <code>disabled</code> 特性禁用条目。默认情况下,被禁用的条目无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">禁用控件的可聚焦性</a> 以提升它们的可发现性。 </p>
+
+### 链接
+
+<p> 条目也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以像原生锚点标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>

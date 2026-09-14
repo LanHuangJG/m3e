@@ -1,0 +1,16 @@
+<m3e-nav-menu>
+  <m3e-nav-menu-item-group>
+    <m3e-heading slot="label" variant="label" size="large">Mail</m3e-heading>
+    <m3e-nav-menu-item>
+      <m3e-icon slot="icon" name="mail"></m3e-icon>
+      <span slot="label">Inbox</span>
+      <span slot="badge">24</span>
+    </m3e-nav-menu-item>
+    <!-- Additional items omitted for brevity -->
+  </m3e-nav-menu-item-group>
+  <m3e-divider></m3e-divider>
+  <m3e-nav-menu-item-group>
+    <m3e-heading slot="label" variant="label" size="large">Personal folders</m3e-heading>
+    <!-- Items omitted for brevity -->;
+  </m3e-nav-menu-item-group>
+</m3e-nav-menu>

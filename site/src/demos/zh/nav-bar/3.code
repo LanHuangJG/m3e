@@ -1,0 +1,5 @@
+<m3e-nav-bar>
+  <m3e-nav-item href="https://www.google.com" target="_blank">
+    <m3e-icon slot="icon" name="news"></m3e-icon>News
+  </m3e-nav-item>
+</m3e-nav-bar>

@@ -3,3 +3,8 @@ node_modules/
 
 # Build outputs
 dist/
+# Astro docs site
+site/node_modules/
+site/dist/
+site/.astro/
+site/public/m3e/

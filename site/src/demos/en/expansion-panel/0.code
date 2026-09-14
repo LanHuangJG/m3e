@@ -1,0 +1,4 @@
+<m3e-expansion-panel>
+  <span slot="header">Panel header</span>
+  Panel contents
+</m3e-expansion-panel>

@@ -28,7 +28,7 @@ import {
   addCustomState,
   prefersReducedMotion,
   setCustomEnumState,
-} from "@m3e/web/core";
+} from "m3e/core";
 
 import { IconButtonSize, isIconButtonSize } from "./IconButtonSize";
 import { IconButtonShape, isIconButtonShape } from "./IconButtonShape";

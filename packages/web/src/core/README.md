@@ -1,9 +1,9 @@
-# @m3e/web/core
+# m3e/core
 
-The `@m3e/web/core` module delivers the essential primitives, utilities, and behavioral mixins for building Material 3 Web Components. It serves as the foundation for accessibility, layout, platform detection, design tokens, keycodes, and more.
+The `m3e/core` module delivers the essential primitives, utilities, and behavioral mixins for building Material 3 Web Components. It serves as the foundation for accessibility, layout, platform detection, design tokens, keycodes, and more.
 
 ```ts
-import "@m3e/web/core";
+import "m3e/core";
 ```
 
 ## ✨ Features
@@ -17,9 +17,9 @@ import "@m3e/web/core";
 
 ## 🗂️ Entry Points
 
-- `@m3e/web/core` (default): Main entry point for core exports
-- `@m3e/web/core/a11y`: Accessibility utilities and primitives
-- `@m3e/web/core/anchoring`: Anchoring utilities and primitives
-- `@m3e/web/core/bidi`: Bidirectional text utilities
-- `@m3e/web/core/layout`: Layout utilities and primitives
-- `@m3e/web/core/platform`: Platform detection utilities
+- `m3e/core` (default): Main entry point for core exports
+- `m3e/core/a11y`: Accessibility utilities and primitives
+- `m3e/core/anchoring`: Anchoring utilities and primitives
+- `m3e/core/bidi`: Bidirectional text utilities
+- `m3e/core/layout`: Layout utilities and primitives
+- `m3e/core/platform`: Platform detection utilities

@@ -1,6 +1,6 @@
 import { css, CSSResultGroup, html, LitElement, PropertyValues, unsafeCSS } from "lit";
 
-import { customElement, DesignToken, getScrollbarWidth, ReconnectedCallback } from "@m3e/web/core";
+import { customElement, DesignToken, getScrollbarWidth, ReconnectedCallback } from "m3e/core";
 
 /**
  * A shaped surface for vertically scrollable content.

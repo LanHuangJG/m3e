@@ -1,0 +1,17 @@
+<m3e-button-group size="large">
+  <m3e-icon-button size="large">
+    <m3e-icon name="arrow_back"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button size="large">
+    <m3e-icon name="arrow_forward"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button size="large" width="wide" variant="filled">
+    <m3e-icon name="add"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button size="large">
+    <m3e-icon name="picture_in_picture"></m3e-icon>
+  </m3e-icon-button>
+  <m3e-icon-button size="large">
+    <m3e-icon name="more_vert"></m3e-icon>
+  </m3e-icon-button>
+</m3e-button-group>

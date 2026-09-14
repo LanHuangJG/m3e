@@ -1,0 +1,47 @@
+---
+title: "Divider"
+description: "The m3e-divider component visually separates content within layouts, lists, or containers using a
+          thin, unobtrusive line."
+summary: "The m3e-divider component visually separates content within layouts, lists, or containers using a
+          thin, unobtrusive line."
+section: components
+category: "containment"
+order: 17
+---
+
+<p> The <code>m3e-divider</code> component visually separates content within layouts, lists, or containers using a thin, unobtrusive line. </p>
+
+```js
+import "m3e/divider";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Lists
+
+<p> The following example illustrates use of the <code>m3e-divider</code> to provide separators between items in a <code>m3e-list</code>. For more information on lists, see <a href="/components/list/">List</a>. </p>
+
+<Demo name="en/divider/0" />
+
+### Standalone
+
+<p>A <code>m3e-divider</code> can be used on its own to create a horizontal (or vertical) line.</p>
+
+### Inset
+
+<p> Use the <code>inset</code> attribute to control whether the divider is inset. Alternatively, use <code>inset-start</code> and <code>inset-end</code> to control the start or end inset. </p>
+
+<Demo name="en/divider/1" />
+
+### Orientation
+
+<p>Use the <code>vertical</code> attribute to control whether a divider is oriented vertically.</p>
+
+```html
+<m3e-divider vertical></m3e-divider>
+<m3e-divider vertical inset></m3e-divider>
+<m3e-divider vertical inset-start></m3e-divider>
+<m3e-divider vertical inset-end></m3e-divider>
+```

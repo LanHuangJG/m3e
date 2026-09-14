@@ -1,0 +1,79 @@
+---
+title: "Slider"
+description: "The m3e-slider component enables users to select a numeric value from a continuous or discrete
+          range."
+summary: "The m3e-slider component enables users to select a numeric value from a continuous or discrete
+          range."
+section: components
+category: "selection"
+order: 41
+---
+
+<p> The <code>m3e-slider</code> component enables users to select a numeric value from a continuous or discrete range. </p>
+
+```js
+import "m3e/slider";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> The <code>m3e-slider</code> allows for the selection of a value from a range similar to <code>&lt;input type="range"&gt;</code>. They require a <code>m3e-slider-thumb</code>, which is responsible for rendering the interactive handle, managing pointer and keyboard input, and conveying current value semantics </p>
+
+<Demo name="en/slider/0" />
+
+### Selecting a value
+
+<p> By default the minimum value of the slider is <code>0</code>, the maximum value is <code>100</code>, and the thumb moves in increments of <code>1</code>. These values can be changed by setting the <code>min</code>, <code>max</code>, and <code>step</code> attributes respectively. </p>
+<p> The thumb value is set to the minimum value unless otherwise specified using the <code>value</code> attribute of the <code>m3e-slider-thumb</code>. When changed through user interaction, a <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. </p>
+
+<Demo name="en/slider/1" />
+
+### Selecting a range
+
+<p>A <code>m3e-slider</code> can be converted into a range slider by specifying two thumbs.</p>
+
+<Demo name="en/slider/2" />
+
+### Negative value ranges
+
+<p>Negative value ranges are supported by setting the <code>min</code> attribute to a negative value.</p>
+
+<Demo name="en/slider/3" />
+
+### Orientation
+
+<p> By default, sliders are oriented horizontally. Use the <code>orientation</code> attribute to change the orientation to <code>horizontal</code> (default) or <code>vertical</code>. </p>
+
+<Demo name="en/slider/4" />
+
+### Sizes
+
+<p> There are five size variants which can be used to add or remove emphasis: <code>extra-small</code> (default), <code>small</code>, <code>medium</code>, <code>large</code>, and <code>extra-large</code>. Use the <code>size</code> attribute to control a slider's size. </p>
+
+<Demo name="en/slider/5" />
+
+### Labels
+
+<p> Use the <code>labelled</code> attribute of a <code>m3e-slider</code> to control whether to show thumb labels. By default, the value of a thumb is used as the label text. You can control label formatting by setting the <code>displayWith</code> property to a function that returns a label given a value. </p>
+
+<Demo name="en/slider/6" />
+
+### Tick marks
+
+<p> By default, tick marks are not presented. Use the <code>discrete</code> attribute to show them. You must also specify a <code>step</code> larger than <code>1</code> for tick marks to show. </p>
+
+<Demo name="en/slider/7" />
+
+### Disabling
+
+<p> Sliders can be disabled using the <code>disabled</code> attribute. If labelled, thumb labels are shown on hover. </p>
+
+<Demo name="en/slider/8" />
+
+<p>While uncommon, individual thumbs can also be disabled while allowing another thumb to be enabled.</p>
+
+<Demo name="en/slider/9" />

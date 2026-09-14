@@ -4,6 +4,6 @@
 
 - 原项目代码与文档:matraic,mMIT License(见 [LICENSE](./LICENSE))
 - 中文本地化:LanHuangJG,同样以 MIT 协议发布
-- 组件运行时仍从 npm CDN 加载 `@m3e/web`,组件本身的版权归原作者
+- 组件运行时仍从 npm CDN 加载 `m3e`,组件本身的版权归原作者
 
 如需原版英文文档,请访问上游项目。

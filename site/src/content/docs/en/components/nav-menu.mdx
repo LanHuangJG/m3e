@@ -1,0 +1,40 @@
+---
+title: "Nav Menu"
+description: "The m3e-nav-menu component is a hierarchical menu optimized for sidebars and drawers on larger
+          devices. It enables users to explore nested menu structures and seamlessly switch between application views."
+summary: "The m3e-nav-menu component is a hierarchical menu optimized for sidebars and drawers on larger
+          devices. It enables users to explore nested menu structures and seamlessly switch between application views."
+section: components
+category: "navigation"
+order: 30
+---
+
+<p> The <code>m3e-nav-menu</code> component is a hierarchical menu optimized for sidebars and drawers on larger devices. It enables users to explore nested menu structures and seamlessly switch between application views. </p>
+
+```js
+import "m3e/nav-menu";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Multilevel menus
+
+<p> Use the <code>m3e-nav-menu</code> and <code>m3e-nav-menu-item</code> to create a multilevel navigation menu. </p>
+<p> Use the <code>label</code> slot of a <code>m3e-nav-menu-item</code> to specify an item's label. In addition, use the <code>icon</code> slot to include an icon before the item's label and use the <code>badge</code> slot to specify to specify a compact status indicator or supplementary text. </p>
+<p>To create multiple levels, nest one or more <code>m3e-nav-menu-item</code> components.</p>
+
+<Demo name="en/nav-menu/0" />
+
+### Grouping top-level items
+
+<p> You can use a <code>m3e-nav-menu-item-group</code> to group top-level items in a menu. Use the <code>label</code> slot to specify a group's label. Use a <code>m3e-divider</code> to separate groups in a menu. See <a href="/components/divider/">Divider</a> for more information. </p>
+
+<Demo name="en/nav-menu/1" />
+
+### Disabling
+
+<p> Use the <code>disabled</code> attribute of a <code>m3e-nav-menu-item</code> to disable the item and any children. Disabling an item with children will not automatically close it. </p>
+
+<Demo name="en/nav-menu/2" />

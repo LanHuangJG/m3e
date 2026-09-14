@@ -1,0 +1,66 @@
+---
+title: "Dialog 对话框"
+description: "m3e-dialog 组件在用户流程中呈现重要的提示、警告与操作。"
+summary: "m3e-dialog 组件在用户流程中呈现重要的提示、警告与操作。"
+section: components
+category: "containment"
+order: 16
+---
+
+<p><code>m3e-dialog</code> 组件在用户流程中呈现重要的提示、警告与操作。</p>
+
+```js
+import "m3e/dialog";
+```
+
+## 用法
+
+<p> <strong>注意:本页展示在嵌套的 <code>iframe</code> 中。</strong> </p>
+<ul> <li>对话框遮罩只会覆盖当前窗口。</li> <li>对话框相对于当前窗口定位。</li> </ul>
+
+### 结构解析
+
+<p> <code>m3e-dialog</code> 组件通过具名插槽支持结构化组合,实现灵活的布局与富有表现力的内容呈现: </p>
+<ul> <li><code>(default)</code> —— 渲染对话框的主要内容。</li> <li> <code>header</code> —— 渲染对话框的头部。通常用于标题、摘要或引言性上下文。 </li> <li> <code>actions</code> —— 渲染对话框的操作。通常包含 “OK”、“Cancel” 等按钮或自定义操作。 </li> <li><code>close-icon</code> —— 渲染用于关闭对话框的按钮图标。</li> </ul>
+
+<Demo name="zh/dialog/0" />
+
+### 打开
+
+<p> 使用 <code>m3e-dialog-trigger</code> 打开对话框。该组件应嵌套在一个可点击元素内部,并把 <code>for</code> 特性设为要打开的对话框的 <code>id</code> 来建立关联。 </p>
+<p> 当点击其父元素时,会打开对话框。当对话框关闭时,焦点会恢复到父元素。 </p>
+<p>或者,你可以使用 <code>show</code> 方法以编程方式打开对话框。</p>
+
+```html
+<m3e-button variant="filled">
+  <m3e-dialog-trigger for="dlg">Open Dialog</m3e-dialog-trigger>
+</m3e-button>
+<m3e-dialog id="dlg" dismissible>
+
+</m3e-dialog>
+```
+
+### 操作
+
+<p> 关闭时,<code>m3e-dialog</code> 会发出 <code>closed</code> 事件。操作用于指定一个返回值,在对话框关闭时设置到对话框上。使用 <code>m3e-dialog-action</code> 组件定义一个操作。 </p>
+<p> 当点击 <code>m3e-dialog-action</code> 的父元素时,它会把其父 <code>m3e-dialog</code> 的 <code>returnValue</code> 属性设为 <code>return-value</code> 特性的值,并关闭对话框。 </p>
+<p>或者,你可以使用 <code>hide</code> 方法以编程方式关闭对话框。</p>
+
+```html
+<m3e-button>
+    <m3e-dialog-action return-value="ok">Close</m3e-dialog-action>
+</m3e-button>
+```
+
+### 可关闭
+
+<p> 默认情况下,对话框不呈现关闭(或消除)按钮。使用 <code>m3e-dialog</code> 的 <code>dismissible</code> 特性控制此行为。你可以使用 <code>close-icon</code> 插槽更改图标,并使用 <code>close-label</code> 特性更改无障碍标签。 </p>
+
+### 禁用关闭
+
+<p> 该组件允许用户点击对话框的背景板或按 <code>ESCAPE</code> 关闭对话框,从而提供可访问的体验。发生这种情况时,会发出 <code>cancel</code> 事件。使用 <code>m3e-dialog</code> 的 <code>disable-close</code> 特性禁用此行为。 </p>
+
+### 焦点管理
+
+<p> 该组件通过提供焦点陷阱把焦点保持在对话框内部,从而提供可访问的体验。使用 <code>m3e-dialog</code> 的 <code>no-focus-trap</code> 特性禁用此行为。 </p>
+<p> 此外,你可以使用 <code>autofocus</code> 特性指定对话框打开时哪个操作应获得焦点。 </p>

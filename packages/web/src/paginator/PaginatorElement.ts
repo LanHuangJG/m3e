@@ -11,16 +11,16 @@
 import { css, CSSResultGroup, html, LitElement, nothing, PropertyValues, unsafeCSS } from "lit";
 import { property } from "lit/decorators.js";
 
-import { AttachInternals, customElement, DesignToken, Role } from "@m3e/web/core";
-import { SupportsDirectionality } from "@m3e/web/core/bidi";
-import type { M3eSelectElement } from "@m3e/web/select";
-import type { FormFieldVariant } from "@m3e/web/form-field";
+import { AttachInternals, customElement, DesignToken, Role } from "m3e/core";
+import { SupportsDirectionality } from "m3e/core/bidi";
+import type { M3eSelectElement } from "m3e/select";
+import type { FormFieldVariant } from "m3e/form-field";
 
-import "@m3e/web/form-field";
-import "@m3e/web/select";
-import "@m3e/web/option";
-import "@m3e/web/icon-button";
-import "@m3e/web/tooltip";
+import "m3e/form-field";
+import "m3e/select";
+import "m3e/option";
+import "m3e/icon-button";
+import "m3e/tooltip";
 
 import { PaginatorPageEventDetail } from "./PaginatorPageEventDetail";
 

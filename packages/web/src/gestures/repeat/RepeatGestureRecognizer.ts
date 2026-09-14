@@ -9,7 +9,7 @@ import {
   GestureRecognizerBase,
   GestureRecognizerOptions,
   PointerInput,
-} from "@m3e/web/gestures";
+} from "m3e/gestures";
 
 /**
  * Encapsulates detail about a repeated gesture.

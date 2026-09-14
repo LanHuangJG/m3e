@@ -8,8 +8,8 @@ import {
   resolveFragmentUrl,
   safeStyleMap,
   setCustomEnumState,
-} from "@m3e/web/core";
-import { SupportsDirectionality } from "@m3e/web/core/bidi";
+} from "m3e/core";
+import { SupportsDirectionality } from "m3e/core/bidi";
 
 import { isLinearProgressMode, LinearProgressMode } from "./LinearProgressMode";
 import { ProgressElementIndicatorBase } from "./ProgressElementIndicatorBase";

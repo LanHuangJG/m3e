@@ -1,0 +1,35 @@
+---
+title: "Badge"
+description: "The m3e-badge component is a compact visual indicator for counts, presence, or emphasis that can
+          be attached to icons, buttons, or other components."
+summary: "The m3e-badge component is a compact visual indicator for counts, presence, or emphasis that can
+          be attached to icons, buttons, or other components."
+section: components
+category: "communication"
+order: 4
+---
+
+<p> The <code>m3e-badge</code> component is a compact visual indicator for counts, presence, or emphasis that can be attached to icons, buttons, or other components. </p>
+
+```js
+import "m3e/badge";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Sizes
+
+<p> There are three size variants for a badge: <code>small</code>, <code>medium</code> (default), and <code>large</code>. Use the <code>size</code> attribute to control a badge's size. </p>
+
+<Demo name="en/badge/0" />
+
+### Anchoring
+
+<p> An <code>m3e-badge</code> can be anchored to another element using the <code>for</code> attribute, which references the target element's <code>id</code>. This creates a semantic and visual link, allowing the badge to track its anchor even across layout shifts. </p>
+<p> To control placement, use the <code>position</code> attribute. These values define where the badge appears relative to its anchor: </p>
+<ul> <li> <code>above-after</code> (default) — Above the anchor, aligned to its end edge (right in LTR, left in RTL) </li> <li><code>above-before</code> — Above the anchor, aligned to its start edge (left in LTR, right in RTL)</li> <li><code>below-before</code> — Below the anchor, aligned to its start edge</li> <li><code>below-after</code> — Below the anchor, aligned to its end edge</li> <li><code>before</code> — Inline with the anchor, placed before it (left in LTR, right in RTL)</li> <li><code>after</code> — Inline with the anchor, placed after it (right in LTR, left in RTL)</li> <li><code>above</code> — Centered above the anchor</li> <li><code>below</code> — Centered below the anchor</li> </ul>
+<p> These positions are <em>bidi-aware</em>, adapting automatically to left-to-right and right-to-left layouts. They honor expressive anchoring and layout clarity, even across responsive shifts. </p>
+
+<Demo name="en/badge/1" />

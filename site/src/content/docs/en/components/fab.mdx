@@ -1,0 +1,58 @@
+---
+title: "FAB"
+description: "The m3e-fab is a floating action button (FAB) used to present important actions."
+summary: "The m3e-fab is a floating action button (FAB) used to present important actions."
+section: components
+category: "actions"
+order: 20
+---
+
+<p>The <code>m3e-fab</code> is a floating action button (FAB) used to present important actions.</p>
+
+```js
+import "m3e/fab";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Variants
+
+<p> There are seven FAB appearance variants: <code>primary</code>, <code>primary-container</code> (default), <code>secondary</code>, and <code>secondary-container</code>, <code>tertiary</code>, <code>tertiary-container</code>, and <code>surface</code>. Use the <code>variant</code> attribute to change the appearance. </p>
+
+<Demo name="en/fab/0" />
+
+### Lowering
+
+<p> Use the <code>lowered</code> attribute to lower the elevation of a FAB to reduce emphasis. Lowering is supported for all appearance variants. </p>
+
+<Demo name="en/fab/1" />
+
+### Sizes
+
+<p> There are three size variants which can be used to add or remove emphasis: <code>small</code>, <code>medium</code> (default), and <code>large</code>. Use the <code>size</code> attribute to control a FAB's size. </p>
+
+<Demo name="en/fab/2" />
+
+### Disabling
+
+<p> Use the <code>disabled</code> attribute to disable a FAB. By default, disabled FABs are not focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">focusability of disabled controls</a> to increase their discoverability. </p>
+
+<Demo name="en/fab/3" />
+
+### Extended FABs
+
+<p>Use the <code>extended</code> attribute and <code>label</code> slot to create an extended FAB.</p>
+
+<Demo name="en/fab/4" />
+
+### Types
+
+<p> Use the <code>type</code> attribute to control the behavior of a FAB. By default, <code>type</code> is <code>button</code>. You can change this to <code>submit</code> or <code>reset</code> to submit or reset a parenting form when clicked. When submitting a form, you can use the <code>name</code> and <code>value</code> attributes to specify a value. </p>
+
+### Links
+
+<p> FABs can also behave like links by specifying a URL using the <code>href</code> attribute. You can also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags. </p>
+
+<Demo name="en/fab/5" />

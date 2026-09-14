@@ -1,0 +1,3 @@
+<label><m3e-checkbox disabled></m3e-checkbox>Disabled Checkbox 1</label>
+<m3e-checkbox id="chk3" disabled></m3e-checkbox>
+<label for="chk3">Disabled Checkbox 2</label>

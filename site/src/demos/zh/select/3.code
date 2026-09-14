@@ -1,0 +1,8 @@
+<m3e-form-field>
+  <label slot="label" for="select">Toppings</label>
+  <m3e-select id="select" multi>
+    <m3e-option selected>Extra cheese</m3e-option>
+    <m3e-option selected>Mushroom</m3e-option>
+    <!-- Additional option groups omitted for brevity -->
+  </m3e-select>
+</m3e-form-field>

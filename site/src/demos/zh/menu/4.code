@@ -1,0 +1,15 @@
+<!-- Trigger omitted for brevity -->
+<m3e-menu id="menu">
+  <m3e-menu-item-checkbox checked>
+    <m3e-icon slot="icon" name="format_bold"></m3e-icon>
+    Bold
+  </m3e-menu-item-checkbox>
+  <m3e-menu-item-checkbox>
+    <m3e-icon slot="icon" name="format_italic"></m3e-icon>
+    Italic
+  </m3e-menu-item-checkbox>
+  <m3e-menu-item-checkbox>
+    <m3e-icon slot="icon" name="format_underlined"></m3e-icon>
+    Underline
+  </m3e-menu-item-checkbox>
+</m3e-menu>

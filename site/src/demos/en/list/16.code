@@ -1,0 +1,14 @@
+<m3e-action-list variant="segmented">
+  <m3e-expandable-list-item open>
+    <m3e-icon slot="leading" name="stars"></m3e-icon>
+    List item
+    <div slot="items">
+      <m3e-list-action>
+        <m3e-icon slot="leading" name="stars"></m3e-icon>
+        List item
+      </m3e-list-action>
+      <!-- Additional actions omitted for brevity -->
+    </div>
+  </m3e-expandable-list-item>
+  <!-- Additional items omitted for brevity -->
+</m3e-action-list>

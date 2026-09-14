@@ -14,9 +14,9 @@ import {
   Selected,
   setCustomState,
   TextHighlightMode,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { typeaheadLabel } from "@m3e/web/core/a11y";
+import { typeaheadLabel } from "m3e/core/a11y";
 
 /**
  * An option that can be selected.

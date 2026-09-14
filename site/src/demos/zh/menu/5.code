@@ -1,0 +1,5 @@
+<!-- Trigger omitted for brevity -->
+<m3e-menu id="menu">
+  <m3e-menu-item-radio checked>Ascending</m3e-menu-item-radio>
+  <m3e-menu-item-radio>Descending</m3e-menu-item-radio>
+</m3e-menu>

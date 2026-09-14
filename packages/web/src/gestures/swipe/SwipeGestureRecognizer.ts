@@ -7,9 +7,9 @@ import {
   GestureRecognizerBase,
   GestureRecognizerOptions,
   PointerInput,
-} from "@m3e/web/gestures";
+} from "m3e/gestures";
 
-import { PanGestureDetail, PanGestureOptions } from "@m3e/web/gestures/pan";
+import { PanGestureDetail, PanGestureOptions } from "m3e/gestures/pan";
 
 /**
  * Specifies the possible directions of a swipe gesture.

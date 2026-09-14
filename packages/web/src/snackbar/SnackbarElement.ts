@@ -3,10 +3,10 @@
 import { css, CSSResultGroup, html, LitElement, nothing, PropertyValues, unsafeCSS } from "lit";
 import { property } from "lit/decorators.js";
 
-import { customElement, DesignToken, registerStyleSheet, Role, waitForUpdate } from "@m3e/web/core";
+import { customElement, DesignToken, registerStyleSheet, Role, waitForUpdate } from "m3e/core";
 
-import "@m3e/web/button";
-import "@m3e/web/icon-button";
+import "m3e/button";
+import "m3e/icon-button";
 
 /**
  * Presents short updates about application processes at the bottom of the screen.

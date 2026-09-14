@@ -14,11 +14,11 @@ import {
   MutationController,
   ReconnectedCallback,
   waitForUpdate,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { ListKeyManager, M3eLiveAnnouncer } from "@m3e/web/core/a11y";
-import { M3eOptGroupElement, M3eOptionElement, M3eOptionPanelElement } from "@m3e/web/option";
-import type { M3eFormFieldElement } from "@m3e/web/form-field";
+import { ListKeyManager, M3eLiveAnnouncer } from "m3e/core/a11y";
+import { M3eOptGroupElement, M3eOptionElement, M3eOptionPanelElement } from "m3e/option";
+import type { M3eFormFieldElement } from "m3e/form-field";
 
 import { AutocompleteFilterMode } from "./AutocompleteFilterMode";
 import { AutocompleteQueryEventDetail } from "./AutocompleteQueryEventDetail";

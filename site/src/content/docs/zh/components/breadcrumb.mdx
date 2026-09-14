@@ -1,0 +1,47 @@
+---
+title: "Breadcrumb 面包屑"
+description: "m3e-breadcrumb 与 m3e-breadcrumb-item 组件协同工作,展示一条层级化的导航路径。"
+summary: "m3e-breadcrumb 与 m3e-breadcrumb-item 组件协同工作,展示一条层级化的导航路径。"
+section: components
+category: "navigation"
+order: 6
+---
+
+<p> <code>m3e-breadcrumb</code> 与 <code>m3e-breadcrumb-item</code> 组件协同工作,展示一条层级化的导航路径。 </p>
+
+```js
+import "m3e/breadcrumb";
+```
+
+## 用法
+
+### 结构解析
+
+<p> 要创建面包屑路径,请把条目放入一个 <code>m3e-breadcrumb</code> 元素中。每个 <code>m3e-breadcrumb-item</code> 代表导航层级中的一级,从最宽泛的层级开始,到最具体的层级结束。最后一个条目会自动被视为当前层级,而靠前的条目则描述通向它的路径。 </p>
+
+<Demo name="zh/breadcrumb/0" />
+
+### 链接
+
+<p> 面包屑条目也可以通过 <code>href</code> 特性指定 URL,表现得像链接。你还可以像原生 a 标签一样指定 <code>target</code> 与 <code>rel</code>。面包屑的最后一项不支持链接,因为当前层级不可交互。 </p>
+
+<Demo name="zh/breadcrumb/1" />
+
+### 图标
+
+<p> 使用 <code>icon</code> 插槽在条目标签之前渲染一个图标。对于纯图标条目,只需把图标放入默认插槽。使用 <code>item-label</code> 为纯图标条目的内部按钮提供无障碍标签。 </p>
+<p>使用 <code>m3e-icon</code> 时,当前面包屑条目中的图标会自动填充。</p>
+
+<Demo name="zh/breadcrumb/2" />
+
+### 自定义分隔符
+
+<p> 使用 <code>separator</code> 插槽提供自定义的视觉分隔符。通过插槽传入的元素会被克隆到每个条目的 shadow root 中,替换默认分隔符。 </p>
+
+<Demo name="zh/breadcrumb/3" />
+
+### 换行
+
+<p> 面包屑默认不换行。当水平空间有限时,最后一项会以省略号截断。如果你希望面包屑改为换行,请使用 <code>wrap</code> 特性。 </p>
+
+<Demo name="zh/breadcrumb/4" />

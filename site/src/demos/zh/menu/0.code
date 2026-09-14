@@ -1,0 +1,7 @@
+<m3e-button>
+  <m3e-menu-trigger for="menu">Menu</m3e-menu-trigger>
+</m3e-button>
+<m3e-menu id="menu">
+  <m3e-menu-item>Item 1</m3e-menu-item>
+  <m3e-menu-item>Item 2</m3e-menu-item>
+</m3e-menu>

@@ -1,0 +1,6 @@
+<m3e-button variant="tonal">
+  <m3e-icon slot="icon" name="send"></m3e-icon>Send
+</m3e-button>
+<m3e-button variant="tonal">
+  Open<m3e-icon slot="trailing-icon" name="open_in_new_window"></m3e-icon>
+</m3e-button>

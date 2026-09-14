@@ -1,8 +1,8 @@
 import { html } from "lit";
 import { state } from "lit/decorators.js";
 
-import { customElement, hasAssignedNodes, HoverController, LinkButton, Role, setCustomState } from "@m3e/web/core";
-import { M3eDirectionality } from "@m3e/web/core/bidi";
+import { customElement, hasAssignedNodes, HoverController, LinkButton, Role, setCustomState } from "m3e/core";
+import { M3eDirectionality } from "m3e/core/bidi";
 
 import type { M3eMenuElement } from "./MenuElement";
 import { MenuItemElementBase } from "./MenuItemElementBase";

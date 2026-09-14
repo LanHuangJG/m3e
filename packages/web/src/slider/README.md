@@ -1,9 +1,9 @@
-# @m3e/web/slider
+# m3e/slider
 
 The `m3e-slider` component enables users to select a numeric value from a continuous or discrete range. Designed according to Material 3 principles, it supports labeled value indicators, tick marks, and snapping behavior.
 
 ```ts
-import "@m3e/web/slider";
+import "m3e/slider";
 ```
 
 ## 🗂️ Elements

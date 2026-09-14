@@ -1,7 +1,7 @@
 import { css, CSSResultGroup, LitElement, PropertyValues } from "lit";
 import { property } from "lit/decorators.js";
 
-import { HtmlFor, spaceSeparatedStringConverter } from "@m3e/web/core";
+import { HtmlFor, spaceSeparatedStringConverter } from "m3e/core";
 
 import { GestureInputButton } from "./GestureInputButton";
 import { PointerType } from "./PointerInput";

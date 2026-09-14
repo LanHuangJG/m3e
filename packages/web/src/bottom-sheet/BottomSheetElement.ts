@@ -20,10 +20,10 @@ import {
   registerStyleSheet,
   InertController,
   hasAssignedNodes,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { isModifierAllowed, M3eInteractivityChecker } from "@m3e/web/core/a11y";
-import "@m3e/web/core/a11y";
+import { isModifierAllowed, M3eInteractivityChecker } from "m3e/core/a11y";
+import "m3e/core/a11y";
 
 /**
  * A sheet used to show secondary content anchored to the bottom of the screen.

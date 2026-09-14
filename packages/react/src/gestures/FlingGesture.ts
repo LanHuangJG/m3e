@@ -1,11 +1,11 @@
 import React from "react";
 import { createComponent, EventName } from "@lit/react";
 
-import { M3eFlingGestureElement, FlingGestureDetail } from "@m3e/web/gestures/fling";
-export type { FlingGestureDetail, FlingGestureAxis, FlingGestureDirection } from "@m3e/web/gestures/fling";
+import { M3eFlingGestureElement, FlingGestureDetail } from "m3e/gestures/fling";
+export type { FlingGestureDetail, FlingGestureAxis, FlingGestureDirection } from "m3e/gestures/fling";
 
 /**
- * React binding for the `m3e-fling-gesture` Web Component from `@m3e/web/gestures/fling`.
+ * React binding for the `m3e-fling-gesture` Web Component from `m3e/gestures/fling`.
  *
  * This component renders the underlying `<m3e-fling-gesture>` element and exposes its
  * properties, attributes, and events through an idiomatic React interface.

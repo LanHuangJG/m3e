@@ -1,0 +1,4 @@
+<m3e-icon-button variant="tonal" size="extra-small">
+    <m3e-icon name="add"></m3e-icon>
+</m3e-icon-button>
+<!-- Additional sizes omitted for brevity -->

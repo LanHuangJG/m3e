@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import DocsLayout from "../layouts/DocsLayout.astro";
+
+interface Props {
+  lang: "en" | "zh";
+}
+
+const { lang } = Astro.props;
+
+const CATEGORY_ORDER = ["actions", "communication", "containment", "navigation", "selection", "basics"] as const;
+const LABELS = {
+  actions: { en: "Actions", zh: "操作" },
+  communication: { en: "Communication", zh: "通信" },
+  containment: { en: "Containment", zh: "容器" },
+  navigation: { en: "Navigation", zh: "导航" },
+  selection: { en: "Selection", zh: "选择" },
+  basics: { en: "Basics", zh: "基础" },
+} as const;
+
+const T = {
+  en: {
+    h1: "Components",
+    description: "Browse every M3E web component, grouped by category.",
+  },
+  zh: {
+    h1: "组件",
+    description: "按类别浏览 M3E 的全部 Web Components 组件。",
+  },
+}[lang];
+
+const prefix = lang === "en" ? "" : "/zh";
+const all = await getCollection("docs");
+const mine = all
+  .filter((d) => d.id.startsWith(`${lang}/`) && d.data.section === "components")
+  .sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title));
+
+const pathFor = (id: string) => `${prefix}/${id.split("/").slice(1).join("/")}/`;
+const groups = CATEGORY_ORDER.map((cat) => ({
+  key: cat,
+  label: LABELS[cat][lang],
+  items: mine.filter((d) => d.data.category === cat),
+})).filter((g) => g.items.length > 0);
+---
+
+<DocsLayout
+  lang={lang}
+  title={T.h1}
+  description={T.description}
+  path={`${prefix}/components/`}
+  altPath={`${lang === "en" ? "/zh" : ""}/components/`}
+  toc={false}
+>
+  <h1>{T.h1}</h1>
+  <p>{T.description}</p>
+  {
+    groups.map((group) => (
+      <>
+        <h2>{group.label}</h2>
+        <div class="cards">
+          {group.items.map((d) => (
+            <m3e-card variant="outlined" actionable href={pathFor(d.id)}>
+              <div slot="content" class="card-body">
+                <span class="card-name">{d.data.title}</span>
+                <span class="card-desc">{d.data.summary || d.data.title}</span>
+              </div>
+            </m3e-card>
+          ))}
+        </div>
+      </>
+    ))
+  }
+</DocsLayout>

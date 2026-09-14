@@ -1,0 +1,4 @@
+<m3e-suggestion-chip>
+  <m3e-icon slot="icon" name="lightbulb"></m3e-icon>
+  Try budget planner
+</m3e-suggestion-chip>

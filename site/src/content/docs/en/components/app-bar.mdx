@@ -1,0 +1,50 @@
+---
+title: "App Bar"
+description: "The m3e-app-bar component is a prominent user interface component that provides consistent access
+          to key actions, navigation, and contextual information at the top of an application screen."
+summary: "The m3e-app-bar component is a prominent user interface component that provides consistent access
+          to key actions, navigation, and contextual information at the top of an application screen."
+section: components
+category: "navigation"
+order: 1
+---
+
+<p> The <code>m3e-app-bar</code> component is a prominent user interface component that provides consistent access to key actions, navigation, and contextual information at the top of an application screen. </p>
+
+```js
+import "m3e/app-bar";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Anatomy
+
+<p> The <code>m3e-app-bar</code> component provides a structured layout for top-level navigation and contextual information. It exposes the following named slots: </p>
+<ul> <li> <code>leading</code> — typically a navigation affordance such as a back arrow or menu button. Positioned at the start of the bar. </li> <li> <code>title</code> — The primary label for the current view or context. Usually a short, expressive heading. </li> <li> <code>subtitle</code> — An optional secondary label that provides additional context or hierarchy beneath the title. </li> <li> <code>trailing</code> — One or more action buttons aligned to the end of the bar. Common examples include search, bookmark, or overflow menus. </li> </ul>
+
+<Demo name="en/app-bar/0" />
+
+### Sizes
+
+<p> There are three size variants: <code>small</code> (default), <code>medium</code>, and <code>large</code>. Use the <code>size</code> attribute to control an app bar's size. </p>
+
+<Demo name="en/app-bar/1" />
+
+<Demo name="en/app-bar/2" />
+
+### Centered
+
+<p> A <code>centered</code> app bar ensures that its primary content — the <code>title</code> and optional <code>subtitle</code> — remains visually centered within the available horizontal space, regardless of the number or size of elements in the <code>leading</code> or <code>trailing</code> slots. </p>
+<p> This is achieved through layout symmetry, not equal spacing. The title area is anchored to the center of the container, while icons on either side are allowed to vary in number or width without shifting the title's position. </p>
+
+<Demo name="en/app-bar/3" />
+
+### Scroll effects
+
+<p> An <code>m3e-app-bar</code> can be attached to a scrollable container using the <code>for</code> attribute, which references the container's id. This establishes a scroll contract between the app bar and its content region. As the user scrolls: </p>
+<ul> <li> The app bar's background becomes elevated — typically via a shadow or surface tone — to signal separation from the content. </li> <li> When the scroll position returns to the top, the elevation is removed, restoring a flat visual hierarchy. </li> </ul>
+<p> This behavior enhances contextual clarity, signaling that content is in motion while preserving the app bar's role as a stable anchor. </p>
+
+<Demo name="en/app-bar/4" />

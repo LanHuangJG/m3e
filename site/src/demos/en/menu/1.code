@@ -1,0 +1,5 @@
+<!-- Trigger omitted for brevity -->
+<m3e-menu id="menu" variant="vibrant">
+  <m3e-menu-item>Item 1</m3e-menu-item>
+  <m3e-menu-item>Item 2</m3e-menu-item>
+</m3e-menu>

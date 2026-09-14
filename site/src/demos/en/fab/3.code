@@ -1,0 +1,6 @@
+<m3e-fab disabled>
+  <m3e-icon name="add"></m3e-icon>
+</m3e-fab>
+<m3e-fab disabled-interactive>
+  <m3e-icon name="add"></m3e-icon>
+</m3e-fab>

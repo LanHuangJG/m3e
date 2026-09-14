@@ -1,0 +1,4 @@
+<m3e-filter-chip-set>
+  <m3e-filter-chip>Outlined</m3e-filter-chip>
+  <m3e-filter-chip variant="elevated">Elevated</m3e-filter-chip>
+</m3e-filter-chip-set>

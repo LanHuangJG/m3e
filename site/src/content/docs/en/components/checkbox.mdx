@@ -1,0 +1,47 @@
+---
+title: "Checkbox"
+description: "The m3e-checkbox component enables users to select one or more options from a set."
+summary: "The m3e-checkbox component enables users to select one or more options from a set."
+section: components
+category: "selection"
+order: 11
+---
+
+<p>The <code>m3e-checkbox</code> component enables users to select one or more options from a set.</p>
+
+```js
+import "m3e/checkbox";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Checkboxes may be standalone, pre-checked, or indeterminate. When clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To cancel checked state changes, call <code>preventDefault</code> during <code>beforeinput</code>. </p>
+
+<Demo name="en/checkbox/0" />
+
+### Labels
+
+<p>Associate a label with a checkbox using the <code>label</code> element.</p>
+
+<Demo name="en/checkbox/1" />
+
+### Form Associated
+
+<p> This component participates in form submission as a <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">form-associated custom element</a> (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which the component's value is submitted in a form. When checked and not disabled, <code>value</code> (defaults to <code>"on"</code>) is submitted. </p>
+<p> The component honors the <code>disabled</code> state as a <strong>property-only</strong> control. When disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM. </p>
+
+### Disabling
+
+<p> Use the <code>disabled</code> attribute to disable a checkbox. Associated labels are automatically styled to show disabled. </p>
+
+<Demo name="en/checkbox/2" />
+
+### Required
+
+<p> Use the <code>required</code> attribute to control whether a checkbox must be checked. The <code>invalid</code> event fires when a form is submitted and the element fails constraint validation. When invalid, labels are automatically styled accordingly. </p>
+
+<Demo name="en/checkbox/3" />

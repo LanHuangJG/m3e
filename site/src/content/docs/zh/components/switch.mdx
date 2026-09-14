@@ -1,0 +1,56 @@
+---
+title: "Switch 开关"
+description: "m3e-switch 组件是一个可通过点击切换的开/关控件。"
+summary: "m3e-switch 组件是一个可通过点击切换的开/关控件。"
+section: components
+category: "selection"
+order: 46
+---
+
+<p><code>m3e-switch</code> 组件是一个可通过点击切换的开/关控件。</p>
+
+```js
+import "m3e/switch";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 使用 <code>m3e-switch</code> 组件创建开关(也称为滑动开关)。使用 <code>checked</code> 特性表示开关是否处于“开”状态。点击时会先发出一个可取消的 <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要 取消选中状态的变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
+
+<Demo name="zh/switch/0" />
+
+### 标签
+
+<p>使用 <code>label</code> 元素为开关关联一个标签。</p>
+
+```html
+<label><m3e-switch></m3e-switch> Switch 1</label>
+<m3e-switch id="switch2"></m3e-switch>
+<label for="switch2"> Switch 2</label>
+```
+
+### 图标
+
+<p> 你可以用 <code>icons</code> 特性控制要显示的图标。支持的值包括 <code>none</code>(默认)、<code>selected</code> 与 <code>both</code>。 </p>
+
+```html
+<m3e-switch icons="selected" checked></m3e-switch>
+<m3e-switch icons="both"></m3e-switch>
+```
+
+### 表单关联
+
+<p> 该组件作为 <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">表单关联自定义元素</a> (FACE)参与表单提交,并把自身状态贡献到表单数据中。<code>name</code> 特性定义组件值在表单中提交时所用的键。处于选中且未禁用时,会提交 <code>value</code>(默认值为 <code>"on"</code>)。 </p>
+<p> 该组件将 <code>disabled</code> 状态视为<strong>仅属性</strong>控件。在 运行时禁用时,它<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。 </p>
+
+### 禁用
+
+<p> 使用 <code>disabled</code> 特性禁用开关。关联的标签会自动应用样式以 显示为禁用状态。 </p>
+
+```html
+<label><m3e-switch disabled></m3e-switch>Disabled Switch 1</label>
+<m3e-switch id="chk3" disabled></m3e-switch>
+<label for="chk3">Disabled Switch 2</label>
+```

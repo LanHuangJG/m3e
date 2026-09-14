@@ -1,0 +1,57 @@
+---
+title: "Tabs 标签页"
+description: "m3e-tabs 组件提供一个结构化的导航界面,用于把内容组织为多个不同的视图,同一时间只显示其中一个视图。"
+summary: "m3e-tabs 组件提供一个结构化的导航界面,用于把内容组织为多个不同的视图,同一时间只显示其中一个视图。"
+section: components
+category: "navigation"
+order: 47
+---
+
+<p> <code>m3e-tabs</code> 组件提供一个结构化的导航界面,用于把内容组织为多个不同的视图,同一时间只显示其中一个视图。 </p>
+
+```js
+import "m3e/tabs";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 使用 <code>m3e-tabs</code>、<code>m3e-tab</code> 与 <code>m3e-tab-panel</code> 构建标签页视图。 <code>m3e-tab</code> 与 <code>m3e-tab-panel</code> 都必须是 <code>m3e-tabs</code> 的直接子元素。要 把标签与其对应的面板关联,请把 <code>m3e-tab</code> 上的 <code>for</code> 特性设为 目标 <code>m3e-tab-panel</code> 的 ID。 </p>
+<p> 要选中某个标签,请为单个 <code>m3e-tab</code> 应用 <code>selected</code> 特性。激活标签时 会先发出一个可取消的 <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。同一时间只能选中一个标签。 </p>
+<p> 标签的文本由其内容指定。你可以使用 <code>icon</code> 插槽在标签 文本之前渲染一个图标。 </p>
+
+<Demo name="zh/tabs/0" />
+
+### 变体
+
+<p> 标签页有两种外观变体:<code>primary</code> 与 <code>secondary</code>(默认)。使用 <code>m3e-tabs</code> 的 <code>variant</code> 特性更改外观。 </p>
+
+<Demo name="zh/tabs/1" />
+
+### 拉伸
+
+<p>使用 <code>stretch</code> 特性拉伸标签,以填满标题栏。</p>
+
+<Demo name="zh/tabs/2" />
+
+### 标题栏位置
+
+<p> 标签的标题栏可定位在面板的 <code>before</code>(默认)或 <code>after</code> 侧。使用 <code>header-position</code> 特性更改标题栏位置。 </p>
+
+<Demo name="zh/tabs/3" />
+
+### 禁用
+
+<p>使用 <code>disabled</code> 特性禁用单个标签。</p>
+
+<Demo name="zh/tabs/4" />
+
+### 分页
+
+<p> 默认情况下,当标签数量超出可用的水平空间时,会出现方向性的分页控件。你可以使用 <code>disable-pagination</code> 特性禁用它。把它设为 <code>auto</code> 可在触摸设备上禁用分页控件。 </p>
+<p> 以下示例演示标签溢出时的分页行为。要观察其实际效果,请缩小 屏幕宽度,直到出现方向性控件。 </p>
+
+<Demo name="zh/tabs/5" />
+
+<br />

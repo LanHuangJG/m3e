@@ -4,7 +4,7 @@ import {
   GestureRecognizerBase,
   GestureRecognizerOptions,
   PointerInput,
-} from "@m3e/web/gestures";
+} from "m3e/gestures";
 
 /** Encapsulates pointer detail about a tap gesture. */
 export interface TapPointerGestureDetail {

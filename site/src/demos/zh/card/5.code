@@ -1,0 +1,4 @@
+<m3e-card class="image-card" inline orientation="horizontal">
+  <img slot="header" src="[YOUR IMAGE URL HERE]" />
+  <div slot="content">Horizontal</div>
+</m3e-card>

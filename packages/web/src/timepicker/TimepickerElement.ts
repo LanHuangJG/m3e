@@ -22,16 +22,16 @@ import {
   HtmlFor,
   waitForUpdate,
   setCustomEnumState,
-} from "@m3e/web/core";
+} from "m3e/core";
 
-import { positionAnchor } from "@m3e/web/core/anchoring";
-import { Direction, M3eDirectionality } from "@m3e/web/core/bidi";
-import { Breakpoint, M3eBreakpointObserver } from "@m3e/web/core/layout";
-import type { M3eDateInputElement } from "@m3e/web/date-input";
+import { positionAnchor } from "m3e/core/anchoring";
+import { Direction, M3eDirectionality } from "m3e/core/bidi";
+import { Breakpoint, M3eBreakpointObserver } from "m3e/core/layout";
+import type { M3eDateInputElement } from "m3e/date-input";
 
-import "@m3e/web/core/a11y";
-import "@m3e/web/button";
-import "@m3e/web/icon-button";
+import "m3e/core/a11y";
+import "m3e/button";
+import "m3e/icon-button";
 
 import { M3eTimepickerInputElement } from "./TimepickerInputElement";
 import { isTimepickerVariant, TimepickerVariant } from "./TimepickerVariant";

@@ -1,0 +1,23 @@
+<m3e-button>
+  <m3e-menu-trigger for="menu1">Menu with submenus</m3e-menu-trigger>
+</m3e-button>
+<m3e-menu id="menu1">
+  <m3e-menu-item>
+    <m3e-menu-trigger for="submenu1">Fruits with A</m3e-menu-trigger>
+  </m3e-menu-item>
+  <m3e-menu-item>Grapes</m3e-menu-item>
+  <m3e-menu-item>Olive</m3e-menu-item>
+  <m3e-menu-item>Orange</m3e-menu-item>
+</m3e-menu>
+<m3e-menu id="submenu1">
+  <m3e-menu-item>Apricot</m3e-menu-item>
+  <m3e-menu-item>Avocado</m3e-menu-item>
+  <m3e-menu-item>
+    <m3e-menu-trigger for="submenu2">Apples</m3e-menu-trigger>
+  </m3e-menu-item>
+</m3e-menu>
+<m3e-menu id="submenu2">
+  <m3e-menu-item>Fuji</m3e-menu-item>
+  <m3e-menu-item>Granny Smith</m3e-menu-item>
+  <m3e-menu-item>Red Delicious</m3e-menu-item>
+</m3e-menu>

@@ -1,0 +1,8 @@
+<m3e-list>
+  <m3e-list-item>
+    <m3e-icon slot="leading" name="stars"></m3e-icon>
+    Label text
+    <m3e-icon slot="trailing" name="arrow_right"></m3e-icon>
+  </m3e-list-item>
+  <!-- Additional items omitted for brevity -->
+</m3e-list>

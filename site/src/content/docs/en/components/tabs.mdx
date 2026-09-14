@@ -1,0 +1,61 @@
+---
+title: "Tabs"
+description: "The m3e-tabs component provides a structured navigation surface for organizing content into
+          distinct views, where only one view is visible at a time."
+summary: "The m3e-tabs component provides a structured navigation surface for organizing content into
+          distinct views, where only one view is visible at a time."
+section: components
+category: "navigation"
+order: 47
+---
+
+<p> The <code>m3e-tabs</code> component provides a structured navigation surface for organizing content into distinct views, where only one view is visible at a time. </p>
+
+```js
+import "m3e/tabs";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Use <code>m3e-tabs</code>, <code>m3e-tab</code>, and <code>m3e-tab-panel</code> to construct tabbed views. Both <code>m3e-tab</code> and <code>m3e-tab-panel</code> must be direct children of <code>m3e-tabs</code>. To associate a tab with its corresponding panel, set the <code>for</code> attribute on <code>m3e-tab</code> to match the ID of the target <code>m3e-tab-panel</code>. </p>
+<p> To select a tab, apply the <code>selected</code> attribute to a single <code>m3e-tab</code>. When a tab is activated, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>. Only one tab may be selected at a time. </p>
+<p> A tab's label is specified by its content. You can use the <code>icon</code> slot to render an icon before a tab's label. </p>
+
+<Demo name="en/tabs/0" />
+
+### Variants
+
+<p> Tabs come in the appearance variants: <code>primary</code> and <code>secondary</code> (default). Use the <code>variant</code> attribute of <code>m3e-tabs</code> to change the appearance. </p>
+
+<Demo name="en/tabs/1" />
+
+### Stretching
+
+<p>Use the <code>stretch</code> attribute to stretch tabs to fill the header.</p>
+
+<Demo name="en/tabs/2" />
+
+### Header positions
+
+<p> A tab's header can be positioned <code>before</code> (default) or <code>after</code> panels. Use the <code>header-position</code> attribute to change the header position. </p>
+
+<Demo name="en/tabs/3" />
+
+### Disabling
+
+<p>Use the <code>disabled</code> attribute to disable individual tabs.</p>
+
+<Demo name="en/tabs/4" />
+
+### Pagination
+
+<p> By default, directional pagination controls appear when the number of tabs exceeds the available horizontal space. You can disable this using the <code>disable-pagination</code> attribute. Set this to <code>auto</code> to disable pagination controls on touch devices. </p>
+<p> The following example demonstrates pagination behavior when tabs overflow. To observe it in action, reduce your screen width until directional controls appear. </p>
+
+<Demo name="en/tabs/5" />
+
+<br />

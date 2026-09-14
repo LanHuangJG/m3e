@@ -1,0 +1,23 @@
+<div id="scrollContainer">
+  <m3e-app-bar for="scrollContainer">
+    <!-- Content omitted for brevity -->
+  </m3e-app-bar>
+  <div class="scroll-item">Scroll down to see the elevation effect</div>
+</div>
+<m3e-app-bar centered>
+<style>
+  #scrollContainer {
+    overflow-y: auto;
+    height: 300px;
+  }
+  m3e-app-bar[for="scrollContainer"] {
+    position: sticky;
+    top: 0;
+  }
+  .scroll-item {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

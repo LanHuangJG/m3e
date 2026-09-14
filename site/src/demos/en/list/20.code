@@ -1,0 +1,4 @@
+<m3e-selection-list variant="segmented" multi>
+  <m3e-list-option>Option 1</m3e-list-option>
+  <!-- Additional options omitted for brevity -->
+</m3e-selection-list>

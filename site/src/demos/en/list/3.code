@@ -1,0 +1,12 @@
+<m3e-list>
+  <m3e-list-item>Label text</m3e-list-item>
+  <m3e-list-item>
+    Label text
+    <span slot="supporting-text">Supporting text</span>
+  </m3e-list-item>
+  <m3e-list-item>
+    <span slot="overline">Overline</span>
+    Label text
+    <span slot="supporting-text">Supporting text</span>
+  </m3e-list-item>
+</m3e-list>

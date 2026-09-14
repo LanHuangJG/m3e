@@ -1,9 +1,9 @@
-# @m3e/web/nav-rail
+# m3e/nav-rail
 
-The `m3e-nav-rail` component extends `@m3e/nav-bar` to provide a vertical navigation rail and interactive items for switching between primary destinations in your application. Designed for larger devices, the nav rail supports compact and expanded modes, orientation, selection, and extensive theming via CSS custom properties.
+The `m3e-nav-rail` component extends `m3e/nav-bar` to provide a vertical navigation rail and interactive items for switching between primary destinations in your application. Designed for larger devices, the nav rail supports compact and expanded modes, orientation, selection, and extensive theming via CSS custom properties.
 
 ```ts
-import "@m3e/web/nav-rail";
+import "m3e/nav-rail";
 ```
 
 ## 🗂️ Elements

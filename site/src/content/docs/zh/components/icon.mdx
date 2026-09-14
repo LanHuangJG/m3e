@@ -1,0 +1,85 @@
+---
+title: "Icon 图标"
+description: "m3e-icon 组件让在应用中使用 Material Symbols 变得简单。它支持 outlined、rounded 与 sharp 变体,以及
+          fill、weight、grade 与 optical size 等可变字体特性。更多信息请参阅
+          
+            Material Symbol Guide
+          
+          与
+          
+            Material Symbol Library 。"
+summary: "m3e-icon 组件让在应用中使用 Material Symbols 变得简单。它支持 outlined、rounded 与 sharp 变体,以及
+          fill、weight、grade 与 optical size 等可变字体特性。更多信息请参阅
+          
+            Material Symbol Guide
+          
+          与
+          
+            Material Symbol Library 。"
+section: components
+category: "basics"
+order: 24
+---
+
+<p> <code>m3e-icon</code> 组件让在应用中使用 Material Symbols 变得简单。它支持 outlined、rounded 与 sharp 变体,以及 fill、weight、grade 与 optical size 等可变字体特性。更多信息请参阅 <a href="https://developers.google.com/fonts/docs/material_symbols" target="_blank" rel="noopener noreferrer"> Material Symbol Guide </a> 与 <a href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer"> Material Symbol Library </a>。 </p>
+
+<p> Material Symbols 字体是把 Material Symbols 引入应用中最简单的方式。借助 <a href="https://developers.google.com/fonts/docs/css2#forming_api_urls" target="_blank" rel="noopener noreferrer"> Fonts CSS API</a>,你可以使用可变字体优化应用中的图标使用。请参阅 <a href="https://caniuse.com/variable-fonts" target="_blank" rel="noopener noreferrer"> Can I Use's Variable Fonts </a> 以确定你的用户浏览器是否支持可变字体。 </p>
+<p> 或者,<code>m3e-icons</code> 包提供 Material Symbols 的 SVG 版本,它们会自动注册到 <code>m3e-icon</code>。用法详见下文的 SVG 图标一节。 </p>
+
+```js
+import "m3e/icon";
+```
+
+## 用法
+
+### 基础图标
+
+<p>下面的示例演示了 <code>m3e-icon</code> 组件的基本用法。使用 <code>name</code> 特性指定要呈现的 <a href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer">Material Symbol</a> 名称。 </p>
+
+<Demo name="zh/icon/0" />
+
+### 可变字体
+
+<p>下面的示例演示了如何链接一个支持 fill 的 outlined 图标可变字体。</p>
+
+```html
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0"
+  rel="stylesheet"
+/>
+```
+
+### 外观变体
+
+<p> <code>m3e-icon</code> 组件支持外观变体,以及针对 fill、weight、grade 与 optical size 的细粒度排版控制。 </p>
+<p> 使用 <code>variant</code> 特性控制图标的视觉样式。支持的取值包括: <code>outlined</code>(默认)、<code>rounded</code> 与 <code>sharp</code>。使用 <code>filled</code> 特性指定图标是填充(<code>1</code>)还是不填充 (<code>0</code>)。该特性映射到可变字体的 <code>FILL</code> 轴。 </p>
+<p> <code>weight</code> 特性调整图标笔画的粗细与浓淡。其行为类似文本中的字重,可接受 <code>100</code> 到 <code>700</code> 的取值。使用 <code>grade</code> 特性调整图标的笔画粗细。支持的取值包括: <code>low</code>、<code>medium</code>(默认)与 <code>high</code>。该特性映射到可变字体的 <code>GRAD</code> 轴,取值为 <code>-25</code>、<code>0</code> 或 <code>200</code> 之类。 </p>
+<p> <code>optical-size</code> 特性支持 <code>20</code> 到 <code>48</code> 的取值,用于指定图标的光学尺寸。 </p>
+
+### SVG 图标
+
+<p> 作为可变字体的替代方案,对于偏好基于 SVG 的图标的应用,你可以使用 <code>m3e-icons</code> 包。该包提供源自 <code>@material-symbols/svg-400</code> 的 SVG 数据,并通过内部图标注册表与现有的 <code>m3e-icon</code> 组件集成。 </p>
+
+<Demo name="zh/icon/1" />
+
+```js
+import "m3e-icons/outlined/search";
+import "m3e-icons/outlined/home";
+import "m3e-icons/outlined/settings";
+import "m3e-icons/outlined/favorite";
+import "m3e-icons/outlined/notifications";
+```
+
+<p> 图标按 Material Symbols 变体家族(<code>outlined</code>、<code>rounded</code>、 <code>sharp</code>)组织。你可以通过导入对应模块来注册特定图标: </p>
+
+```js
+import "m3e-icons/outlined/search";
+```
+
+<p>或者一次注册整个变体家族:</p>
+
+```js
+import "m3e-icons/outlined";
+```
+
+<p> 每个图标模块都会对 <code>m3e-icon</code> 所使用的内部注册表执行副作用注册。注册后,该图标即可用于渲染。如果某个图标未注册,则会回退到 Material Symbols 可变字体。 </p>
