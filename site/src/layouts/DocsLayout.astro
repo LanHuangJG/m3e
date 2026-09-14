@@ -70,6 +70,10 @@ const mine = all
   .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
 
 const active = mine.find((d) => d.id === activeId);
+const SECTION_KEYS = ["getting-started", "styles", "frameworks", "components"];
+const pathSegment = path.replace(/^\/en(?=\/|$)/, "").split("/").filter(Boolean)[0];
+const currentSection = active?.section ?? (SECTION_KEYS.includes(pathSegment) ? pathSegment : "getting-started");
+
 const isDetail = new RegExp("^/(en/)?components/[^/]+/$").test(path);
 const showBottomNav = !isDetail;
 
@@ -211,19 +215,19 @@ const prefix = lang === "zh" ? "" : "/en";
       {showBottomNav && (
       <div class="bottomnav-wrap">
       <m3e-nav-bar class="docs-bottomnav" aria-label={UI.docs}>
-        <m3e-nav-item href={`${prefix}/getting-started/overview/`} selected={active?.section === "getting-started" ? true : undefined}>
+        <m3e-nav-item href={`${prefix}/getting-started/overview/`} selected={currentSection === "getting-started" ? true : undefined}>
           <m3e-icon slot="icon" name="home"></m3e-icon>
           {lang === "zh" ? "概览" : "Overview"}
         </m3e-nav-item>
-        <m3e-nav-item href={`${prefix}/components/`} selected={active?.section === "components" ? true : undefined}>
+        <m3e-nav-item href={`${prefix}/components/`} selected={currentSection === "components" ? true : undefined}>
           <m3e-icon slot="icon" name="widgets"></m3e-icon>
           {lang === "zh" ? "组件" : "Components"}
         </m3e-nav-item>
-        <m3e-nav-item href={`${prefix}/styles/color/`} selected={active?.section === "styles" ? true : undefined}>
+        <m3e-nav-item href={`${prefix}/styles/color/`} selected={currentSection === "styles" ? true : undefined}>
           <m3e-icon slot="icon" name="palette"></m3e-icon>
           {lang === "zh" ? "样式" : "Styles"}
         </m3e-nav-item>
-        <m3e-nav-item href={`${prefix}/frameworks/react/`} selected={active?.section === "frameworks" ? true : undefined}>
+        <m3e-nav-item href={`${prefix}/frameworks/react/`} selected={currentSection === "frameworks" ? true : undefined}>
           <m3e-icon slot="icon" name="integration_instructions"></m3e-icon>
           {lang === "zh" ? "框架" : "Frameworks"}
         </m3e-nav-item>

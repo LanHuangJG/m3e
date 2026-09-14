@@ -600,3 +600,9 @@ a {
 
 /* 侧栏内的本页目录 */
 
+
+/* 跳过屏外渲染，减轻长列表/多 demo 页面 */
+.card-thumb {
+  content-visibility: auto;
+  contain-intrinsic-size: 112px;
+}
