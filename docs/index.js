@@ -36,12 +36,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const rail = document.querySelector("#rail");
   const flyout = document.querySelector("#flyout");
+  const scrim = document.querySelector("#scrim");
   const menuButton = document.querySelector("#menu-button");
   const railItems = rail ? [...rail.querySelectorAll("m3e-nav-item")] : [];
+  const isNarrow = () => window.matchMedia("(max-width: 900px)").matches;
 
   function groupForPath(path) {
     const segment = (path || "").split("/")[0];
     return ["getting-started", "styles", "frameworks", "components"].includes(segment) ? segment : "getting-started";
+  }
+
+  function setNavOpen(open) {
+    if (!flyout) {
+      return;
+    }
+    flyout.hidden = !open;
+    if (scrim) {
+      scrim.hidden = !open || !isNarrow();
+    }
+    if (menuButton && menuButton.selected !== open) {
+      menuButton.selected = open;
+    }
   }
 
   function selectPanel(key, open = true) {
@@ -58,10 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
     if (open) {
-      flyout.hidden = false;
-      if (menuButton) {
-        menuButton.selected = true;
-      }
+      setNavOpen(true);
     }
   }
 
@@ -72,25 +84,30 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  menuButton?.addEventListener("change", () => {
-    if (flyout) {
-      flyout.hidden = !menuButton.selected;
-    }
-  });
+  menuButton?.addEventListener("change", () => setNavOpen(menuButton.selected));
+
+  scrim?.addEventListener("click", () => setNavOpen(false));
 
   flyout?.addEventListener("click", (e) => {
     if (!e.target.closest("a[href]")) {
       return;
     }
-    if (window.matchMedia("(max-width: 900px)").matches) {
-      flyout.hidden = true;
-      if (menuButton) {
-        menuButton.selected = false;
-      }
+    if (isNarrow()) {
+      setNavOpen(false);
     }
   });
 
-  selectPanel(groupForPath(initialPath), true);
+  let wasNarrow = isNarrow();
+  window.addEventListener("resize", () => {
+    const now = isNarrow();
+    if (now !== wasNarrow) {
+      wasNarrow = now;
+      setNavOpen(!now);
+    }
+  });
+
+  selectPanel(groupForPath(initialPath), false);
+  setNavOpen(!isNarrow());
 
   const color = document.querySelector("#color");
   if (color) {

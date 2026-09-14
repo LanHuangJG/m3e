@@ -47,6 +47,13 @@ body {
 .docs-flyout > [data-panel][hidden] {
   display: none !important;
 }
+.docs-scrim {
+  display: none;
+  position: fixed;
+  inset: var(--docs-appbar-height) 0 0 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.32);
+}
 main {
   display: block;
   flex: 1 1 auto;
@@ -115,8 +122,24 @@ input[type="color"]::-webkit-color-swatch {
     bottom: 0;
     inset-inline-start: var(--docs-rail-width);
     z-index: 3;
-    width: min(300px, 78vw);
+    width: min(320px, 82vw);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
+  }
+  .docs-scrim:not([hidden]) {
+    display: block;
+  }
+}
+@media (max-width: 700px) {
+  #rail {
+    display: none;
+  }
+  .docs-flyout {
+    inset-inline-start: 0;
+    width: min(400px, 88vw);
+  }
+  /* 手机上 rail 隐藏,一次性把所有分组铺开,靠滚动浏览 */
+  .docs-flyout > [data-panel][hidden] {
+    display: block !important;
   }
 }
 @media (prefers-color-scheme: dark) {
