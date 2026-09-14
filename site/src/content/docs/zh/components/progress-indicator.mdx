@@ -1,9 +1,8 @@
 ---
 title: "Progress Indicator 进度指示器"
-description: "m3e-linear-progress-indicator 与 m3e-circular-progress-indicator 组件
-          提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。"
-summary: "m3e-linear-progress-indicator 与 m3e-circular-progress-indicator 组件
-          提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。"
+description: "m3e-linear-progress-indicator 与 m3e-circular-progress-indicator 组件 提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。"
+summary: "m3e-linear-progress-indicator 与 m3e-circular-progress-indicator 组件 提供无障碍、带过渡动画的进度指示器,用于跟踪任务或流程的完成情况。"
+script: ""
 section: components
 category: "communication"
 order: 33
@@ -25,13 +24,13 @@ import "m3e/progress-indicator";
 
 <p> 默认情况下,圆形进度指示器是确定的。使用 <code>value</code> 特性指示完成百分比,使用 <code>max</code> 指定总步数或进度单位。此外,你可以在默认插槽中提供内容。 </p>
 
-<Demo name="zh/progress-indicator/0" />
+<Demo name="zh/components/progress-indicator/0" />
 
 #### 不确定进度
 
 <p> 使用 <code>indeterminate</code> 特性将模式改为不确定。在此模式下,<code>value</code> 与 <code>max</code> 会被忽略。 </p>
 
-<Demo name="zh/progress-indicator/1" />
+<Demo name="zh/components/progress-indicator/1" />
 
 ### 线性
 
@@ -43,23 +42,23 @@ import "m3e/progress-indicator";
 <p> 在已知操作完成百分比时使用 <code>determinate</code> 模式。使用 <code>value</code> 特性指示完成百分比, 使用 <code>max</code> 指定总步数或进度单位。这是默认模式。 </p>
 <p> 使用 <code>wavy</code> 变体时,进度达到 100% 后指示器会自动过渡为扁平外观。 </p>
 
-<Demo name="zh/progress-indicator/2" />
+<Demo name="zh/components/progress-indicator/2" />
 
 #### 不确定进度
 
 <p> 使用 <code>indeterminate</code> 模式表示某事正在发生,但不传达具体的进度。在此模式下, <code>value</code> 与 <code>max</code> 会被忽略。 </p>
 
-<Demo name="zh/progress-indicator/3" />
+<Demo name="zh/components/progress-indicator/3" />
 
 #### Buffer
 
 <p> 使用 <code>buffer</code> 模式表示某些活动或来自服务器的加载。在此模式下,<code>value</code> 决定主进度条的进度,而 <code>buffer-value</code> 特性用于显示缓冲进度。 </p>
 <p> 与 <code>determinate</code> 模式一样,使用 <code>wavy</code> 变体时,进度达到 100% 后指示器会自动 过渡为扁平外观。 </p>
 
-<Demo name="zh/progress-indicator/4" />
+<Demo name="zh/components/progress-indicator/4" />
 
 #### Query
 
 <p> 使用 <code>query</code> 模式表示实际加载开始前的预加载。在此模式下,<code>value</code> 与 <code>max</code> 会被忽略。 </p>
 
-<Demo name="zh/progress-indicator/5" />
+<Demo name="zh/components/progress-indicator/5" />

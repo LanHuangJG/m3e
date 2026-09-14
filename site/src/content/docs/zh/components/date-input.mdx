@@ -1,0 +1,128 @@
+---
+title: "Date Input 日期输入"
+description: "m3e-date-input 组件提供一个分段式输入框,用于编辑日期和/或时间值。它支持仅日期、仅时间以及日期/时间合并输入,并与 m3e-form-field、m3e-datepicker 及 m3e-timepicker 集成。每个分段都可独立编辑,以实现精确、可访问、对表单友好的交互。详情请参见 Form Field 表单容器、Datepicker 日期选择器 与 Timepicker 时间选择器。"
+summary: "m3e-date-input 组件提供一个分段式输入框,用于编辑日期和/或时间值。它支持仅日期、仅时间以及日期/时间合并输入,并与 m3e-form-field、m3e-datepicker 及 m3e-timepicker 集成。每个分段都可独立编辑,以实现精确、可访问、对表单友好的交互。详情请参见 Form Field 表单容器、Datepicker 日期选择器 与 Timepicker 时间选择器。"
+script: "date-input"
+section: components
+category: "selection"
+order: 14
+---
+
+<p> <code>m3e-date-input</code> 组件提供一个分段式输入框,用于编辑日期和/或时间值。它支持仅日期、仅时间以及日期/时间合并输入,并与 <code>m3e-form-field</code>、<code>m3e-datepicker</code> 及 <code>m3e-timepicker</code> 集成。每个分段都可独立编辑,以实现精确、可访问、对表单友好的交互。详情请参见 <a href="/zh/components/form-field/">Form Field 表单容器</a>、<a href="/zh/components/datepicker/">Datepicker 日期选择器</a> 与 <a href="/zh/components/timepicker/">Timepicker 时间选择器</a>。 </p>
+
+```js
+import "m3e/date-input";
+```
+
+## 用法
+
+### 基础用法
+
+<p> <code>m3e-date-input</code> 设计为在 <code>m3e-form-field</code> 内部使用。下面的示例展示了这种用法。详情请参见 <a href="/zh/components/form-field/">Form Field 表单容器</a>。 </p>
+
+<Demo name="zh/components/date-input/0" />
+
+### 值绑定
+
+<p> 使用 <code>value</code> 特性设置或读取日期。<code>beforeinput</code> 与 <code>input</code> 仅在所有分段都已完整填充时才触发。当焦点离开控件时触发 <code>change</code>。 </p>
+
+<Demo name="zh/components/date-input/1" />
+
+### 日期字符串处理
+
+<p> 不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code>m3e-date-input</code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的 <code>Date.parse()</code> 规则。 </p>
+<p> 当 <code>m3e-date-input</code> 收到日期字符串时,会自动判断该值是否属于可安全、无歧义解析的 ISO-8601 格式之一: </p>
+<ul> <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li> <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li> </ul>
+<p> 符合这些格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区偏移。这避免了诸如“仅日期的值被按 UTC 解析后漂移到前一天或后一天”之类的问题。如果字符串不符合这些 ISO 兼容格式之一,解析可能不明确或不受支持。为获得最可靠的结果,请使用上面列出的格式之一。 </p>
+
+### 表单关联
+
+<p> 该组件作为 <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">表单关联自定义元素</a> (FACE)参与表单提交,将其状态贡献到表单数据中。<code>name</code> 特性定义了组件值在表单中提交时所用的键。未禁用时,<code>value</code> 会以 ISO 格式的字符串值提交。 </p>
+<p> 该组件将 <code>disabled</code> 状态视为<strong>仅属性</strong>控制。在运行时禁用时,它<em>不会</em>向 DOM 中生成 <code>disabled</code> 特性。 </p>
+
+### 编辑模式
+
+<p> 使用 <code>type</code> 特性控制 <code>m3e-date-input</code> 编辑的是 <code>date</code>(默认)、<code>time</code> 还是 <code>datetime</code> 值。 </p>
+<p> 仅编辑 <code>time</code> 时,值中现有的日期部分会被保留。仅编辑 <code>date</code> 时,现有的时间部分会被保留。 </p>
+<p> 在 <code>date</code> 模式下创建新的 <code>Date</code> 时,时间默认为午夜。在 <code>time</code> 模式下创建新的 <code>Date</code> 时,日期默认为当天。 </p>
+
+<p>以下示例演示如何编辑时间与日期/时间值。</p>
+
+<Demo name="zh/components/date-input/2" />
+
+### 日期与时间选择器
+
+<p> <code>m3e-datepicker</code> 与 <code>m3e-timepicker</code> 通过 <code>for</code> 特性与 <code>m3e-date-input</code> 集成,该特性通过引用输入框的 ID 把选择器绑定到输入框。详情请参见 <a href="/zh/components/datepicker/">Datepicker 日期选择器</a> 与 <a href="/zh/components/timepicker/">Timepicker 时间选择器</a>。 </p>
+<p> 当选择器绑定到 <code>m3e-date-input</code> 时,输入框自身的配置优先。诸如 <code>min-date</code>、<code>max-date</code>、<code>blackoutDates</code>、<code>min-time</code>、<code>max-time</code>、<code>blackoutTimes</code>、<code>time-format</code> 与 <code>show-seconds</code> 等属性会覆盖选择器上的对应设置。这确保输入框与选择器保持一致并强制执行相同的约束。 </p>
+<p> 使用 <code>type="datetime"</code> 时,单个 <code>m3e-date-input</code> 可以同时链接到 <code>m3e-datepicker</code> 与 <code>m3e-timepicker</code>,以独立选择日期与时间。 </p>
+
+<Demo name="zh/components/date-input/3" />
+
+### 小时格式
+
+<p> <code>time-format</code> 特性控制输入框使用的小时制。它接受 <code>"12"</code>(默认)、<code>"24"</code> 或 <code>"auto"</code>。 </p>
+
+<ul> <li><code>"12"</code> —— 强制使用带 AM/PM 指示符的 12 小时制。</li> <li><code>"24"</code> —— 强制使用不带 AM/PM 指示符的 24 小时制。</li> <li><code>"auto"</code> —— 根据用户区域设置选择 12 小时或 24 小时制。</li> </ul>
+
+<Demo name="zh/components/date-input/4" />
+
+### 秒
+
+<p>使用 <code>show-seconds</code> 特性在编辑时间时显示秒分段。</p>
+
+<Demo name="zh/components/date-input/5" />
+
+### 禁用
+
+<p> 使用 <code>disabled</code> 特性禁用输入框。当与选择器关联时,输入框禁用后选择器的开关按钮会自动禁用,以确保用户无法为一个不可编辑的值打开选择器。 </p>
+
+<Demo name="zh/components/date-input/6" />
+
+### 只读
+
+<p> 使用 <code>readonly</code> 特性阻止编辑,同时仍允许聚焦与分段导航。 </p>
+<p> 与禁用类似,当与选择器关联时,输入框只读后选择器的开关按钮会自动禁用。 </p>
+
+<Demo name="zh/components/date-input/7" />
+
+### 必填
+
+<p>应用 <code>required</code> 特性把输入框标记为必填字段。</p>
+
+<Demo name="zh/components/date-input/8" />
+
+### 最小与最大日期
+
+<p> 使用 <code>min-date</code> 与 <code>max-date</code> 特性把早于或晚于对应值的日期标记为无效。 </p>
+
+<Demo name="zh/components/date-input/9" />
+
+### 禁用日期
+
+<p> 除 <code>min-date</code> 与 <code>max-date</code> 约束外,你还可以使用 <code>blackoutDates</code> 属性指定一个函数,用于判断某个日期是否无效。 </p>
+
+<Demo name="zh/components/date-input/10" />
+
+### 最小与最大时间
+
+<p> 使用 <code>min-time</code> 与 <code>max-time</code> 特性把早于或晚于对应值的时间标记为无效。 </p>
+
+<Demo name="zh/components/date-input/11" />
+
+### 禁用时段
+
+<p> 除 <code>min-time</code> 与 <code>max-time</code> 约束外,<code>blackoutTimes</code> 属性让你提供一个函数,用于判断给定时间是否无效。该函数接收一个 <code>TimeParts</code> 对象,包含正在求值的时间的 <code>hour</code>、<code>minute</code> 与 <code>second</code> 值。 </p>
+
+<Demo name="zh/components/date-input/12" />
+
+### 校验消息
+
+<p> 使用 <code>validationMessages</code> 属性覆盖特定的校验消息。未指定的消息继续使用组件的默认值。 </p>
+
+<p>该组件使用一组校验标志来指示具体哪条规则未通过。每个标志对应一种特定的校验条件,当当前值无效时,组件会设置其中一个或多个标志。这些标志同时驱动内置校验消息以及你通过 <code>validationMessages</code> 提供的任何自定义消息。只有求值为 <code>true</code> 的标志才被视为激活。 </p>
+
+<p>支持的标志包括:</p>
+
+<ul> <li><code>valueMissing</code> —— 需要值时未提供值。</li> <li><code>typeMismatch</code> —— 输入框的分段只被部分填充。</li> <li> <code>rangeUnderflow</code> —— 值早于 <code>min-date</code> 和/或 <code>min-time</code>。 </li> <li> <code>rangeOverflow</code> —— 值晚于 <code>max-date</code> 和/或 <code>max-time</code>。 </li> <li><code>customError</code> —— 值落在禁用(blackout)范围内。</li> </ul>
+
+<p>这些标志会被组合起来,以确定最终的校验状态以及向用户显示的消息。</p>

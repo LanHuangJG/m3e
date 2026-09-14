@@ -1,9 +1,8 @@
 ---
 title: "Tabs"
-description: "The m3e-tabs component provides a structured navigation surface for organizing content into
-          distinct views, where only one view is visible at a time."
-summary: "The m3e-tabs component provides a structured navigation surface for organizing content into
-          distinct views, where only one view is visible at a time."
+description: "The m3e-tabs component provides a structured navigation surface for organizing content into distinct views, where only one view is visible at a time."
+summary: "The m3e-tabs component provides a structured navigation surface for organizing content into distinct views, where only one view is visible at a time."
+script: ""
 section: components
 category: "navigation"
 order: 47
@@ -25,37 +24,37 @@ import "m3e/tabs";
 <p> To select a tab, apply the <code>selected</code> attribute to a single <code>m3e-tab</code>. When a tab is activated, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>. Only one tab may be selected at a time. </p>
 <p> A tab's label is specified by its content. You can use the <code>icon</code> slot to render an icon before a tab's label. </p>
 
-<Demo name="en/tabs/0" />
+<Demo name="en/components/tabs/0" />
 
 ### Variants
 
 <p> Tabs come in the appearance variants: <code>primary</code> and <code>secondary</code> (default). Use the <code>variant</code> attribute of <code>m3e-tabs</code> to change the appearance. </p>
 
-<Demo name="en/tabs/1" />
+<Demo name="en/components/tabs/1" />
 
 ### Stretching
 
 <p>Use the <code>stretch</code> attribute to stretch tabs to fill the header.</p>
 
-<Demo name="en/tabs/2" />
+<Demo name="en/components/tabs/2" />
 
 ### Header positions
 
 <p> A tab's header can be positioned <code>before</code> (default) or <code>after</code> panels. Use the <code>header-position</code> attribute to change the header position. </p>
 
-<Demo name="en/tabs/3" />
+<Demo name="en/components/tabs/3" />
 
 ### Disabling
 
 <p>Use the <code>disabled</code> attribute to disable individual tabs.</p>
 
-<Demo name="en/tabs/4" />
+<Demo name="en/components/tabs/4" />
 
 ### Pagination
 
 <p> By default, directional pagination controls appear when the number of tabs exceeds the available horizontal space. You can disable this using the <code>disable-pagination</code> attribute. Set this to <code>auto</code> to disable pagination controls on touch devices. </p>
 <p> The following example demonstrates pagination behavior when tabs overflow. To observe it in action, reduce your screen width until directional controls appear. </p>
 
-<Demo name="en/tabs/5" />
+<Demo name="en/components/tabs/5" />
 
 <br />

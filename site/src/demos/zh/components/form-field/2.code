@@ -1,0 +1,5 @@
+<m3e-form-field hide-subscript="never">
+  <label slot="label" for="fld">Field w/ hint</label>
+  <input id="fld" />
+  <span slot="hint">Hint text</span>
+</m3e-form-field>

@@ -2,6 +2,7 @@
 title: "Select 下拉选择"
 description: "m3e-select 组件提供一个表单控件,用于从一组预定义选项中选取值。"
 summary: "m3e-select 组件提供一个表单控件,用于从一组预定义选项中选取值。"
+script: ""
 section: components
 category: "selection"
 order: 37
@@ -20,38 +21,38 @@ import "m3e/select";
 <p>下面的示例演示 <code>m3e-select</code> 与 <code>m3e-form-field</code> 配合使用。更多信息见 <a href="/zh/components/form-field/">Form Field 表单容器</a>。 </p>
 <p> 要在 <code>m3e-select</code> 中定义可选选项,请包含一个或多个 <code>m3e-option</code> 元素作为其子元素。 每个 <code>m3e-option</code> 可以指定 <code>value</code> 特性,它决定选项被选中时提交的程序化值。 <code>m3e-option</code> 元素的文本内容表示在下拉界面中呈现给用户的标签。 </p>
 
-<Demo name="zh/select/0" />
+<Demo name="zh/components/select/0" />
 
 ### 空选项
 
 <p> 要定义一个空选项,请包含一个没有值或内容的 <code>m3e-option</code>。或者,把 <code>value</code> 特性 设为 <code>""</code>,并加入诸如 "None" 的描述性内容。这表示尚未选择任何有意义的值。空选项通常用于 表示用户交互之前的占位或默认状态。 </p>
 
-<Demo name="zh/select/1" />
+<Demo name="zh/components/select/1" />
 
 ### 选项组
 
 <p> <code>m3e-optgroup</code> 组件可用于把常见选项归入一个子标题之下。组的名称可以使用 <code>label</code> 插槽设置。 </p>
 <p>不支持嵌套组——只允许单层分组。</p>
 
-<Demo name="zh/select/2" />
+<Demo name="zh/components/select/2" />
 
 ### 选择
 
 <p> 下拉选择同时支持单选与多选模式。使用 <code>multi</code> 特性允许同时选中多个选项。 </p>
 <p> 使用 <code>selected</code> 特性控制 <code>m3e-option</code> 的选中状态。点击时, <code>m3e-select</code> 会派发一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
 
-<Demo name="zh/select/3" />
+<Demo name="zh/components/select/3" />
 
 ### 禁用
 
 <p> 你可以分别通过为 <code>m3e-select</code> 或 <code>m3e-option</code> 应用 <code>disabled</code> 特性来禁用整个下拉选择组件或单个选项。 </p>
 
-<Demo name="zh/select/4" />
+<Demo name="zh/components/select/4" />
 
-<Demo name="zh/select/5" />
+<Demo name="zh/components/select/5" />
 
 ### 必填
 
 <p> 应用 <code>required</code> 特性以强制选择。这确保用户必须至少选择一个选项,该字段才会被视为有效。 对于多选配置,至少选中一个选项即可满足要求。 </p>
 
-<Demo name="zh/select/6" />
+<Demo name="zh/components/select/6" />

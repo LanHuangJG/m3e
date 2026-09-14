@@ -1,0 +1,7 @@
+<!-- Form field omitted for brevity -->
+<m3e-datepicker
+  id="picker1"
+  start-at="2026-04-01"
+  min-date="2026-01-01"
+  max-date="2026-04-30"
+></m3e-datepicker>

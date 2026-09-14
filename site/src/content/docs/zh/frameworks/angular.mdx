@@ -1,0 +1,23 @@
+---
+title: "Angular"
+description: "M3E 不需要专门的 Angular 绑定包。Angular 对 Web Components 提供一等支持,所有 M3E 组件都可以直接在 Angular 模板中使用,无需额外的包装器。"
+summary: "M3E 不需要专门的 Angular 绑定包。Angular 对 Web Components 提供一等支持,所有 M3E 组件都可以直接在 Angular 模板中使用,无需额外的包装器。"
+script: ""
+section: frameworks
+order: 3
+---
+
+<p> M3E 不需要专门的 Angular 绑定包。Angular 对 Web Components 提供一等支持,所有 M3E 组件都可以直接在 Angular 模板中使用,无需额外的包装器。 </p>
+
+<p> 不过,Angular 需要 <code>CUSTOM&#95;ELEMENTS&#95;SCHEMA</code> 才能识别自定义元素。请将其添加到模块定义中: </p>
+
+```html
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
+@NgModule({
+  declarations: [...],
+  imports: [...],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}
+```

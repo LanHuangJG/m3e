@@ -1,0 +1,32 @@
+---
+title: "React"
+description: "The @m3e/react package provides idiomatic React bindings for all M3E Web Components. Each component is exposed as its own React module, offering typed props, event mappings, and seamless integration with the React rendering model. However, the React bindings are client-only. In Next.js, you must use them inside a \"use client\" boundary."
+summary: "The @m3e/react package provides idiomatic React bindings for all M3E Web Components. Each component is exposed as its own React module, offering typed props, event mappings, and seamless integration with the React rendering model. However, the React bindings are client-only. In Next.js, you must use them inside a \"use client\" boundary."
+script: ""
+section: frameworks
+order: 1
+---
+
+<p> The <strong>m3e-react</strong> package provides idiomatic React bindings for all M3E Web Components. Each component is exposed as its own React module, offering typed props, event mappings, and seamless integration with the React rendering model. However, the React bindings are <strong>client-only</strong>. In Next.js, you <strong>must</strong> use them inside a <code>"use client"</code> boundary. </p>
+
+```js
+npm i m3e-react
+```
+
+<p> After installation, import the React module for any component you want to use. Each module wraps the corresponding <code>m3e</code> module and exposes a familiar React component API. </p>
+
+<p>For example:</p>
+
+```js
+import { M3eButton } from "m3e-react/button";
+```
+
+<p> React modules automatically register their underlying Web Component, so no additional side-effect imports from <code>m3e</code> are required. </p>
+
+<p> <strong> Alternatively, import the <code>m3e-react/all</code> module to load every React binding at once. </strong> This option is convenient when you want full access to the M3E component suite without managing individual modules. </p>
+
+```js
+import "m3e-react/all";
+```
+
+<p> Each React module mirrors the structure of its Web Component counterpart, ensuring a consistent mental model across both ecosystems. Use individual modules for tree-shaking and minimal bundles, or the aggregated module for rapid prototyping and full-suite development. </p>

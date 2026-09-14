@@ -1,0 +1,4 @@
+<m3e-split-pane value="50">
+  <m3e-card slot="start"></m3e-card>
+  <m3e-card slot="end" hidden></m3e-card>
+</m3e-split-pane>

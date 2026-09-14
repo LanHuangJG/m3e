@@ -1,0 +1,81 @@
+---
+title: "Search 搜索框"
+description: "m3e-search-bar 与 m3e-search-view 组件提供 Material 3 表现力的搜索体验。 搜索栏提供醒目的文本输入入口,而搜索视图以包含式、停靠式或全屏配置呈现建议、历史与结果。"
+summary: "m3e-search-bar 与 m3e-search-view 组件提供 Material 3 表现力的搜索体验。 搜索栏提供醒目的文本输入入口,而搜索视图以包含式、停靠式或全屏配置呈现建议、历史与结果。"
+script: ""
+section: components
+category: "navigation"
+order: 35
+---
+
+<p> <code>m3e-search-bar</code> 与 <code>m3e-search-view</code> 组件提供 Material 3 表现力的搜索体验。 搜索栏提供醒目的文本输入入口,而搜索视图以包含式、停靠式或全屏配置呈现建议、历史与结果。 </p>
+
+```js
+import "m3e/search";
+```
+
+## 用法
+
+### Search bar
+
+<p> 使用 <code>m3e-search-bar</code> 作为搜索入口。它提供激活搜索的交互提示,但不显示结果。要呈现建议、历史或 结果,请使用 <code>m3e-search-view</code>,它提供完整的搜索体验。 </p>
+
+#### 结构解析
+
+<p><code>m3e-search-bar</code> 暴露以下具名插槽:</p>
+
+<ul> <li> <code>leading</code> —— 位于栏开头的内容,例如图标或导航提示。 </li> <li><code>input</code> —— 用于捕获搜索文本的 <code>input</code> 元素。</li> <li><code>trailing</code> —— 对齐到栏末尾的内容,例如头像或溢出菜单。</li> </ul>
+
+#### 可清除
+
+<p> 使用 <code>clearable</code> 特性控制栏是否显示清除按钮。激活时,该按钮会清空输入并派发一个 <code>clear</code> 事件。 </p>
+
+#### 典型用法
+
+<p>下面的示例演示典型用法:带前置图标并可清除当前搜索文本的 <code>m3e-search-bar</code>。 </p>
+
+<Demo name="zh/components/search/0" />
+
+### Search view
+
+<p> 使用 <code>m3e-search-view</code> 显示搜索建议与结果。与仅提供入口的 <code>m3e-search-bar</code> 不同, 搜索视图会呈现搜索的结果。 </p>
+
+#### 结构解析
+
+<p><code>m3e-search-view</code> 暴露以下具名插槽:</p>
+<ul> <li><code>closed-leading</code> —— 视图关闭时,呈现位于输入框之前的内容。</li> <li><code>closed-trailing</code> —— 视图关闭时,呈现位于输入框之后的内容。</li> <li><code>open-leading</code> —— 视图打开时,呈现位于输入框之前的内容。</li> <li><code>open-trailing</code> —— 视图打开时,呈现位于输入框之后的内容。</li> <li><code>input</code> —— 呈现用于捕获搜索文本的 <code>input</code> 元素。</li> <li><em>(default)</em> —— 视图打开时,呈现视图的结果内容。</li> </ul>
+
+#### 模式
+
+<p> 使用 <code>mode</code> 特性控制结果的呈现方式。支持的值包括 <code>fullscreen</code>、 <code>docked</code>(默认)与 <code>auto</code>,后者会根据当前视口断点选择合适的模式。 </p>
+
+<p> 下面的示例演示默认的 <code>docked</code> 模式。在此模式下,搜索视图呈现为锚定到搜索栏的浮层, 让用户能在周围布局中保持上下文的同时浏览结果。 </p>
+
+<Demo name="zh/components/search/1" />
+
+<p> 下一个示例演示 <code>fullscreen</code> 模式。在此模式下,搜索视图占据整个视口,营造沉浸、专注的搜索, 并暂时替换周围的界面。 </p>
+
+<Demo name="zh/components/search/2" />
+
+#### 外观变体
+
+<p>使用 <code>contained</code> 特性在打开时呈现持久、填充的搜索容器。</p>
+<p>下面的示例演示在 <code>docked</code> 模式下使用 <code>contained</code>。</p>
+
+<Demo name="zh/components/search/3" />
+
+<p>下一个示例演示在 <code>fullscreen</code> 模式下使用 <code>contained</code>。</p>
+
+<Demo name="zh/components/search/4" />
+
+#### 加载结果
+
+<p> <code>m3e-search-view</code> 派发一个 <code>query</code> 事件,可用于加载结果。该事件在以下条件下触发: </p>
+<ul> <li><code>input</code> 获得焦点。可用于加载初始建议。</li> <li> <code>input</code> 的值发生变化。可用于通过事件的 <code>detail.term</code> 属性获取与当前词条匹配的结果。 </li> </ul>
+<p> 此外,当用户点击清除按钮时会派发一个 <code>clear</code> 事件。该操作还会先触发 <code>query</code> 事件, 随后是 <code>clear</code>,体现组件的 input → query → clear 事件序列。 </p>
+
+#### 隐藏搜索图标
+
+<p> 虽然通常都会显示搜索图标,但当搜索视图关闭时,你可以使用 <code>hide-search-icon</code> 特性将其隐藏。 </p>
+
+<Demo name="zh/components/search/5" />

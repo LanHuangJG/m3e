@@ -1,9 +1,8 @@
 ---
 title: "Progress Indicator"
-description: "The m3e-linear-progress-indicator and m3e-circular-progress-indicator components
-          provide accessible, animated progress indicators for tracking the completion of tasks or processes."
-summary: "The m3e-linear-progress-indicator and m3e-circular-progress-indicator components
-          provide accessible, animated progress indicators for tracking the completion of tasks or processes."
+description: "The m3e-linear-progress-indicator and m3e-circular-progress-indicator components provide accessible, animated progress indicators for tracking the completion of tasks or processes."
+summary: "The m3e-linear-progress-indicator and m3e-circular-progress-indicator components provide accessible, animated progress indicators for tracking the completion of tasks or processes."
+script: ""
 section: components
 category: "communication"
 order: 33
@@ -27,13 +26,13 @@ import "m3e/progress-indicator";
 
 <p> By default, circular progress indicators are determinate. Use the <code>value</code> attribute to indicate completion percentage and use <code>max</code> to specify the total number of steps or units of progress. In addition, you can provide content in the default slot. </p>
 
-<Demo name="en/progress-indicator/0" />
+<Demo name="en/components/progress-indicator/0" />
 
 #### Indeterminate
 
 <p> Use the <code>indeterminate</code> attribute to change the mode to indeterminate. In this mode, <code>value</code> and <code>max</code> are ignored. </p>
 
-<Demo name="en/progress-indicator/1" />
+<Demo name="en/components/progress-indicator/1" />
 
 ### Linear
 
@@ -45,23 +44,23 @@ import "m3e/progress-indicator";
 <p> Use the <code>determinate</code> mode where the percentage of the operation complete is known. Use the <code>value</code> attribute to indicate completion percentage and use <code>max</code> to specify the total number of steps or units of progress. This is the default mode. </p>
 <p> When using the <code>wavy</code> variant, the indicator transitions to the flat appearance automatically when progress reaches 100%. </p>
 
-<Demo name="en/progress-indicator/2" />
+<Demo name="en/components/progress-indicator/2" />
 
 #### Indeterminate
 
 <p> Use the <code>indeterminate</code> mode to express that something is happening, but without conveying discrete progress. In this mode, <code>value</code> and <code>max</code> are ignored. </p>
 
-<Demo name="en/progress-indicator/3" />
+<Demo name="en/components/progress-indicator/3" />
 
 #### Buffer
 
 <p> Use the <code>buffer</code> mode to indicate some activity or loading from the server. In this mode, <code>value</code> determines the progress of the primary bar while the <code>buffer-value</code> attribute is used to show buffering progress. </p>
 <p> As with <code>determinate</code> mode, when using the <code>wavy</code> variant, the indicator transitions to the flat appearance automatically when progress reaches 100%. </p>
 
-<Demo name="en/progress-indicator/4" />
+<Demo name="en/components/progress-indicator/4" />
 
 #### Query
 
 <p> Use the <code>query</code> mode to indicate pre-loading before the actual loading starts. In this mode, <code>value</code> and <code>max</code> are ignored. </p>
 
-<Demo name="en/progress-indicator/5" />
+<Demo name="en/components/progress-indicator/5" />

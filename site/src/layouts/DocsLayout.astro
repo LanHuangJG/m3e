@@ -13,6 +13,7 @@ interface Props {
   activeId?: string;
   toc?: boolean;
   headings?: Array<{ depth: number; slug: string; text: string }>;
+  script?: string;
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   activeId,
   toc = true,
   headings = [],
+  script = "",
 } = Astro.props;
 
 const SECTIONS = {
@@ -123,6 +125,7 @@ const prefix = lang === "en" ? "" : "/zh";
       rel="stylesheet"
     />
     <script type="module" src="/m3e/all.min.js"></script>
+    {script && <script type="module" src={`/js/${script}.js`}></script>}
   </head>
   <body class={showBottomNav ? "has-bottomnav" : ""}>
     <m3e-theme>

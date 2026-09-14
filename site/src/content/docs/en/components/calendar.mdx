@@ -1,0 +1,85 @@
+---
+title: "Calendar"
+description: "The m3e-calendar component provides structured navigation and selection across month, year, and multi-year views. It supports single-date and range selection, applies disabled rules including minimum, maximum, and blackout constraints, and provides styling hooks for special date states."
+summary: "The m3e-calendar component provides structured navigation and selection across month, year, and multi-year views. It supports single-date and range selection, applies disabled rules including minimum, maximum, and blackout constraints, and provides styling hooks for special date states."
+script: "calendar"
+section: components
+category: "selection"
+order: 9
+---
+
+<p> The <code>m3e-calendar</code> component provides structured navigation and selection across month, year, and multi-year views. It supports single-date and range selection, applies disabled rules including minimum, maximum, and blackout constraints, and provides styling hooks for special date states. </p>
+
+```js
+import "m3e/calendar";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Date string handling
+
+<p> Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO date but does not include a time or timezone. To ensure predictable behavior across environments, <code>m3e-calendar</code> uses a consistent, standards-aligned parsing model instead of relying on the browser's built-in <code>Date.parse()</code> rules. </p>
+<p> When <code>m3e-calendar</code> receives a date string, it automatically detects whether the value matches one of the ISO-8601 formats that can be parsed safely and unambiguously: </p>
+<ul> <li><code>yyyy-MM-dd</code> — local date (no time, no timezone)</li> <li><code>yyyy-MM-ddTHH:mm:ss</code> — local date and time</li> <li><code>yyyy-MM-ddTHH:mm:ssZ</code> — UTC date and time</li> <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> — date and time with an explicit timezone offset</li> </ul>
+<p> Strings in these formats are converted into local <code>Date</code> objects without unexpected timezone shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or unsupported. For the most reliable results, use one of the formats above. </p>
+
+### Date selection
+
+<p> Set the <code>date</code> attribute to define the currently selected date. Listen for the <code>change</code> event to respond when the user selects a new one. </p>
+
+<Demo name="en/components/calendar/0" />
+
+```js
+const calendar = document.querySelector("#calendar");
+const selectedDate = document.querySelector("#selected-date");
+selectedDate.textContent = "Selected Date:" + toLocaleDateString(calendar.date);
+calendar.addEventListener("change", () => {
+  selectedDate.textContent = "Selected Date:" + toLocaleDateString(calendar.date);
+});
+```
+
+### Start date
+
+<p> By default, a calendar opens to the selected date, or to today if no date is set. You can override this by using the <code>start-at</code> attribute to specify the date that <code>m3e-calendar</code> should initially display. </p>
+
+<Demo name="en/components/calendar/1" />
+
+### Start view
+
+<p> The <code>start-view</code> attribute can be used to set the view that will show up when the calendar first opens. It can be set to <code>month</code>, <code>year</code>, or <code>multi-year</code>; by default it will open to <code>month</code> view. </p>
+
+<Demo name="en/components/calendar/2" />
+
+### Date ranges
+
+<p> To select a range of dates instead of a single date, use the <code>range-start</code> and <code>range-end</code> attributes. Setting <code>range-start</code> puts the calendar into range-selection mode. When the user selects a date after the current <code>range-start</code>, both <code>date</code> and <code>range-end</code> are updated to that value. If the user selects a date before the current <code>range-start</code>, the range is reset and both <code>date</code> and <code>range-start</code> are set to the newly selected date. </p>
+
+<Demo name="en/components/calendar/3" />
+
+### Min and max dates
+
+<p> Use the <code>min-date</code> and <code>max-date</code> to disable all dates on the calendar before or after the respective values and prevent the user from advancing the calendar past the month or year (depending on current view) containing the minimum or maximum date. </p>
+
+<Demo name="en/components/calendar/4" />
+
+### Blackout dates
+
+<p> Use the <code>blackoutDates</code> property to specify a function used to determine whether a date is disabled and cannot be selected by the user. </p>
+
+<Demo name="en/components/calendar/5" />
+
+```js
+document.querySelector("#blackout-dates").blackoutDates = (date) => isWeekend(date);
+```
+
+### Special dates
+
+<p> Use the <code>specialDates</code> property to specify a function used to determine whether a date has a highlighted look and feel. You can use the <code>--m3e-calendar-item-special-container-color</code>, <code>--m3e-calendar-item-special-color</code>, <code>--m3e-calendar-item-special-ripple-color</code>, <code>--m3e-calendar-item-special-hover-color</code>, and <code>--m3e-calendar-item-special-focus-color</code> CSS properties to style special dates. </p>
+
+<Demo name="en/components/calendar/6" />
+
+```js
+document.querySelector("#special-dates").specialDates = (date) => isHoliday(date);
+```

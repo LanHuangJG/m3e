@@ -1,0 +1,7 @@
+<!-- Trigger omitted for brevity -->
+<m3e-bottom-sheet id="bottomSheet" modal handle hideable detents="collapsed fit half full">
+  <m3e-heading id="sheetTitle" slot="header" variant="title" size="large">
+    Choose a destination
+  </m3e-heading>
+    <!-- Content omitted for brevity -->
+</m3e-bottom-sheet>

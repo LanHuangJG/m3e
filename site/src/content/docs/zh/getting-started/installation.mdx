@@ -1,0 +1,43 @@
+---
+title: "Installation 安装"
+description: "M3E Web Component 库以单一包的形式分发,命名空间为 @m3e/web。"
+summary: "M3E Web Component 库以单一包的形式分发,命名空间为 @m3e/web。"
+script: ""
+section: getting-started
+order: 2
+---
+
+<p> M3E Web Component 库以单一包的形式分发,命名空间为 <strong>m3e</strong>。 </p>
+
+```js
+npm i m3e
+```
+
+<p>安装该包后,每个组件都可以通过各自的模块单独导入。</p>
+<p>例如:</p>
+
+```js
+import "m3e/button";
+```
+
+<p> <strong>或者,导入 <code>m3e/all</code> 模块以一次性加载所有组件。</strong> 当你希望完整使用 M3E 生态,又不想逐个管理模块时,这个选项很方便。 </p>
+
+```js
+import "m3e/all";
+```
+
+## 编辑器集成
+
+<p> <code>m3e</code> 包附带一份 <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank">Custom Elements Manifest</a>,以支持增强的编辑器工具与开发体验。 </p>
+
+### Visual Studio Code
+
+<p> 要启用自动补全与悬停文档,请安装 <a href="https://marketplace.visualstudio.com/items?itemName=pwrs.cem-language-server-vscode" target="_blank">Custom Elements Manifest Language Server</a> 扩展。它会自动检测本包附带的清单,并在支持的文件中提示标签名、特性、插槽与事件。 </p>
+<p> 或者,你也可以在工作区设置中显式引用 <code>html-custom-data.json</code> 与 <code>css-custom-data.json</code>。 </p>
+
+```css
+{
+  "html.customData": ["./node_modules/m3e/dist/html-custom-data.json"],
+  "css.customData": ["./node_modules/m3e/dist/css-custom-data.json"]
+}
+```

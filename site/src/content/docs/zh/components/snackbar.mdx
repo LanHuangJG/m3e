@@ -1,0 +1,40 @@
+---
+title: "Snackbar 消息条"
+description: "@m3e/web/snackbar 模块在 window(globalThis)上提供 M3eSnackbar 全局服务,用于从应用中的任意位置在屏幕底部呈现关于应用进程的简短更新。"
+summary: "@m3e/web/snackbar 模块在 window(globalThis)上提供 M3eSnackbar 全局服务,用于从应用中的任意位置在屏幕底部呈现关于应用进程的简短更新。"
+script: "snackbar"
+section: components
+category: "communication"
+order: 42
+---
+
+<p> <code>m3e/snackbar</code> 模块在 <code>window</code>(<code>globalThis</code>)上提供 <code>M3eSnackbar</code> 全局服务,用于从应用中的任意位置在屏幕底部呈现关于应用进程的简短更新。 </p>
+
+```js
+import "m3e/snackbar";
+```
+
+## 用法
+
+### Snackbar 服务
+
+<p>使用 <code>M3eSnackbar</code> 服务的 <code>open</code> 方法打开消息条。</p>
+
+<Demo name="zh/components/snackbar/0" />
+
+### 操作
+
+<p>打开消息条消息时,可以包含单个操作与回调。</p>
+
+<Demo name="zh/components/snackbar/1" />
+
+### 关闭方式
+
+<p>消息条消息可以选择性地包含一个关闭按钮。</p>
+
+<Demo name="zh/components/snackbar/2" />
+
+### 选项
+
+<p> 打开消息条消息时,可以传入一个 <code>SnackbarOptions</code> 对象,其中包含以下属性。 </p>
+<ul> <li> <code>duration?: number</code> —— 自动关闭消息条前等待的时间长度,单位为毫秒。 </li> <li> <code>closeLabel?: string</code> —— 赋予用于关闭消息条的关闭按钮的无障碍标签。 </li> <li> <code>actionCallback?: () =&gt; void</code> —— 点击操作时调用的回调函数。 </li> </ul>

@@ -1,0 +1,121 @@
+---
+title: "Timepicker 时间选择器"
+description: "m3e-timepicker 组件提供一个临时界面,用于通过表盘与 键盘模式选择时间。它支持 12 小时与 24 小时格式下的时、分选择,强制最小与 最大约束,并能根据可用空间在停靠与模态布局之间自适应。"
+summary: "m3e-timepicker 组件提供一个临时界面,用于通过表盘与 键盘模式选择时间。它支持 12 小时与 24 小时格式下的时、分选择,强制最小与 最大约束,并能根据可用空间在停靠与模态布局之间自适应。"
+script: "timepicker"
+section: components
+category: "selection"
+order: 50
+---
+
+<p> <code>m3e-timepicker</code> 组件提供一个临时界面,用于通过表盘与 键盘模式选择时间。它支持 12 小时与 24 小时格式下的时、分选择,强制最小与 最大约束,并能根据可用空间在停靠与模态布局之间自适应。 </p>
+
+```js
+import "m3e/timepicker";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 使用 <code>m3e-timepicker-toggle</code> 打开 <code>m3e-timepicker</code>。该组件应 嵌套在一个可点击元素内部,并把 for 特性设为要打开的选择器的 id 来建立关联。 </p>
+
+<Demo name="zh/components/timepicker/0" />
+
+### Time input
+
+<p> <code>m3e-date-input</code> 在配置 <code>type="time"</code> 时也可提供一个分段式时间输入框。它可直接与 <code>m3e-timepicker</code> 集成,当你想要内建的解析、格式化与精确的分段编辑时,可以用它替代 标准 <code>input</code>。 </p>
+<p> 本页示例使用标准 <code>input</code> 来演示完整的 <code>m3e-timepicker</code> API。使用 <code>m3e-date-input</code> 搭配 <code>type="time"</code> 时,其中 许多属性并非必需,因为输入框会自行管理取值,选择器只需把选中的 时间写回字段。 </p>
+<p>详细信息请参阅 <a href="/zh/components/date-input/">Date Input 日期输入</a>。</p>
+
+<Demo name="zh/components/timepicker/1" />
+
+### 变体
+
+<p> <code>m3e-timepicker</code> 支持三种外观变体:<code>docked</code>(默认)、 <code>modal</code> 与 <code>auto</code>。使用 <code>variant</code> 特性控制选择器的 呈现方式。设为 <code>auto</code> 时,会根据当前屏幕尺寸 自动选择合适的呈现方式。 </p>
+<p>本页所有示例均使用 <code>variant="auto"</code>。</p>
+
+```html
+<m3e-timepicker variant="auto"></m3e-timepicker>
+```
+
+### 方向
+
+<p> <code>m3e-timepicker</code> 支持三种方向:<code>vertical</code>(默认)、 <code>horizontal</code> 与 <code>auto</code>。使用 <code>orientation</code> 特性控制 选择器的方向。设为 <code>auto</code> 时,会根据当前屏幕尺寸自动选择 合适的方向。 </p>
+<p> 通常,<code>orientation="auto"</code> 应与 <code>variant="auto"</code> 搭配使用,这样选择器 就能根据视口约束在方向与变体之间切换。 </p>
+
+<Demo name="zh/components/timepicker/2" />
+
+### 模式
+
+<p> <code>m3e-timepicker</code> 支持两种模式:<code>dial</code>(默认)与 <code>input</code>。使用 <code>mode</code> 特性设置默认模式。使用 <code>hide-mode-toggle</code> 特性 隐藏用于在模式之间切换的按钮。 </p>
+<p> 以下示例演示如何使用 <code>mode="input"</code> 与 <code>hide-mode-toggle</code> 强制时间选择器以键盘输入模式打开,同时阻止用户切回表盘。 </p>
+
+<Demo name="zh/components/timepicker/3" />
+
+### 时间选择
+
+<p>使用 <code>date</code> 特性设置当前选中的时间。</p>
+<p> 只要选择器持有一个完整、有效的时间,确定按钮就会启用,包括 初始值本就有效且用户未作更改的情况。时与分字段都必须包含 有效、非空的值,选择器才能构造出时间;不完整或无效的状态会让确定按钮 保持禁用。点击确定会把当前时间提交到 <code>date</code>,并发出 <code>change</code> 事件。若 <code>date</code> 为 <code>null</code>,则使用今天的日期。 </p>
+<p> 点击取消会关闭选择器且不提交任何值。当前的 <code>date</code> 与时间 保持不变,也不会发出 <code>change</code> 事件。无论选择是否完整、有效或被修改过,取消 始终是不提交的操作。 </p>
+
+<Demo name="zh/components/timepicker/4" />
+
+```js
+const picker = document.querySelector("#timepicker");
+const field = document.querySelector("#field");
+field.value = toLocaleTimeString(picker.date);
+picker.addEventListener("change", () => {
+  field.value = toLocaleTimeString(picker.date);
+});
+```
+
+### 日期字符串处理
+
+<p> 不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为, <code>m3e-timepicker</code> 采用一套一致、贴合标准的解析模型,而不依赖 浏览器内置的 <code>Date.parse()</code> 规则。 </p>
+<p> 当 <code>m3e-timepicker</code> 收到日期字符串时,会自动判断该值是否匹配 以下可安全、无歧义解析的 ISO-8601 格式之一: </p>
+<ul> <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li> <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li> </ul>
+<p> 符合上述格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区 偏移。这样可以避免“仅日期的值被按 UTC 解析后漂移到前一天或后一天”之类的问题。如果字符串不符合这些 ISO 兼容模式,解析可能不明确或 不受支持。为获得最可靠的结果,请使用上面列出的格式。 </p>
+
+### 小时格式
+
+<p> <code>format</code> 特性控制时间选择器使用的小时周期。它接受 <code>"12"</code>(默认)、<code>"24"</code> 或 <code>"auto"</code>。 </p>
+
+<ul> <li><code>"12"</code> —— 强制使用带 AM/PM 的 12 小时制。</li> <li><code>"24"</code> —— 强制使用不带 AM/PM 的 24 小时制。</li> <li><code>"auto"</code> —— 根据用户区域设置选择 12 小时制或 24 小时制。</li> </ul>
+
+<p>以下示例演示不带 AM/PM 的 24 小时制。</p>
+
+<Demo name="zh/components/timepicker/5" />
+
+### 最小与最大时间
+
+<p> 使用 <code>min-time</code> 与 <code>max-time</code> 特性禁用选择器中早于/晚于对应值的 全部时间。 </p>
+
+<Demo name="zh/components/timepicker/6" />
+
+### 禁用时段
+
+<p> 除 <code>min-time</code> 与 <code>max-time</code> 约束外, <code>blackoutTimes</code> 属性还允许你提供一个函数,用于判断某个时间是否被 禁用、无法被选择。该函数接收一个 <code>TimeParts</code> 对象,其中包含 所评估时间的 <code>hour</code>、<code>minute</code> 与 <code>second</code> 值。 </p>
+
+<Demo name="zh/components/timepicker/7" />
+
+### 秒
+
+<p>使用 <code>show-seconds</code> 特性在时间选择器中显示秒分段。</p>
+
+<Demo name="zh/components/timepicker/8" />
+
+### 按需单独使用
+
+<p> 该包还包含 <code>m3e-timepicker-input</code> 与 <code>m3e-timepicker-dial</code> 组件, 允许你在自定义布局中使用它们,或独立于 <code>m3e-timepicker</code> 使用。 </p>
+<p> <code>m3e-timepicker-input</code> 上可以使用 <code>for</code> 特性,以按 ID 引用一个 <code>m3e-timepicker-dial</code>。使用该属性时,输入框会自动把其属性同步到 所引用的表盘,让两个组件保持同步,无需手动接线事件。 </p>
+
+<Demo name="zh/components/timepicker/9" />
+
+```js
+document.querySelector("#input").addEventListener("change", (e) => {
+  const picker = e.target;
+  document.querySelector("#inputValue").innerText =
+    `hour = ${picker.hour ?? ""}, minute = ${picker.minute ?? ""}`;
+});
+```

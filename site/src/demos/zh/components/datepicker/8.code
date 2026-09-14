@@ -1,0 +1,1 @@
+document.querySelector("#special-dates").specialDates = (date) => isHoliday(date);

@@ -1,9 +1,8 @@
 ---
 title: "Nav Bar"
-description: "The m3e-nav-bar is a horizontal bar, typically used on smaller devices, that allows a user to
-          switch between 3-5 views."
-summary: "The m3e-nav-bar is a horizontal bar, typically used on smaller devices, that allows a user to
-          switch between 3-5 views."
+description: "The m3e-nav-bar is a horizontal bar, typically used on smaller devices, that allows a user to switch between 3-5 views."
+summary: "The m3e-nav-bar is a horizontal bar, typically used on smaller devices, that allows a user to switch between 3-5 views."
+script: ""
 section: components
 category: "navigation"
 order: 29
@@ -24,7 +23,7 @@ import "m3e/nav-bar";
 <p> The <code>m3e-nav-bar</code> supports three modes: <code>compact</code> (default), <code>expanded</code>, and <code>auto</code>. In a compact mode, items are oriented vertically and fill the available space of the bar. When extended, items are oriented horizontally and are centered within the bar. Using <code>auto</code>, the orientation is responsive and determined by viewport size. Use the <code>mode</code> attribute to change a bar's mode. </p>
 <p>The following example illustrates both compact and expanded modes.</p>
 
-<Demo name="en/nav-bar/0" />
+<Demo name="en/components/nav-bar/0" />
 
 ### Items
 
@@ -39,16 +38,16 @@ import "m3e/nav-bar";
 <p> The <code>m3e-nav-bar</code> only supports single-select. Use the <code>selected</code> attribute of <code>m3e-nav-item</code> to specify which item in a bar is selected. When clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>. </p>
 <p> In addition, you can use the <code>selected-icon</code> slots to specify an alternate icon when selected. When using the <code>m3e-icon</code> to present icons, the icon will automatically be filled when an item is selected. </p>
 
-<Demo name="en/nav-bar/1" />
+<Demo name="en/components/nav-bar/1" />
 
 ### Disabling
 
 <p> Use the <code>disabled</code> attribute to disable an item. By default, disabled items are not focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">focusability of disabled controls</a> to increase their discoverability. </p>
 
-<Demo name="en/nav-bar/2" />
+<Demo name="en/components/nav-bar/2" />
 
 ### Links
 
 <p> Items can also behave like links by specifying a URL using the <code>href</code> attribute. You can also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags. </p>
 
-<Demo name="en/nav-bar/3" />
+<Demo name="en/components/nav-bar/3" />

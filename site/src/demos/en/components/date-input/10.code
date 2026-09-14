@@ -1,0 +1,1 @@
+document.querySelector("#blackout-dates").blackoutDates = (date) => isWeekend(date);

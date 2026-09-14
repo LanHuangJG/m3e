@@ -1,0 +1,62 @@
+---
+title: "Form Field"
+description: "The m3e-form-field is a container for form controls that applies Material Design styling and behavior. Supported controls include: input, select, textarea, and m3e-input-chip-set."
+summary: "The m3e-form-field is a container for form controls that applies Material Design styling and behavior. Supported controls include: input, select, textarea, and m3e-input-chip-set."
+script: ""
+section: components
+category: "selection"
+order: 22
+---
+
+<p> The <code>m3e-form-field</code> is a container for form controls that applies Material Design styling and behavior. Supported controls include: <code>input</code>, <code>select</code>, <code>textarea</code>, and <code>m3e-input-chip-set</code>. </p>
+
+```js
+import "m3e/form-field";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Variants
+
+<p> There are two form field appearance variants: <code>outlined</code> (default) and <code>filled</code>. Use the <code>variant</code> attribute to change the appearance. </p>
+
+<Demo name="en/components/form-field/0" />
+
+### Float label
+
+<p> When a form field's control is empty, the label is presented over the control instead of above. You can change this behavior using the <code>float-label</code> attribute. Supported values include <code>always</code> and <code>auto</code> (default). </p>
+
+<Demo name="en/components/form-field/1" />
+
+### Hint labels
+
+<p> Hint labels are additional descriptive text that appear in a field's subscript. Use the <code>hint</code> slot to specify a hint. By default, a field's subscript is hidden until focused or when a field is invalid. Use the <code>hide-subscript</code> attribute to control this behavior. Supported values include: <code>always</code>, <code>auto</code> (default), and <code>never</code>. Using <code>always</code> will remove the space reserved for a field's subscript. </p>
+<p> The following example illustrates use of the <code>hint</code> slot with <code>hide-subscript</code> set to <code>never</code>. </p>
+
+<Demo name="en/components/form-field/2" />
+
+### Error messages
+
+<p> Errors are hidden by default and only become visible after the user has interacted with the field—such as focusing and then blurring—or after the parent form has been submitted. This behavior ensures that validation feedback is contextually relevant and non-intrusive, appearing only when the user is likely to expect it. </p>
+<p> When an error message is shown, it occupies the same subscript region beneath the field that is normally used for the hint label. To prevent visual overlap and maintain clarity, the hint is automatically hidden whenever an error is displayed. </p>
+
+<Demo name="en/components/form-field/3" />
+
+<p> By default, the validation message of a field's control is presented in a field's subscript. You can specify custom error messages using the <code>error</code> slot. </p>
+
+<Demo name="en/components/form-field/4" />
+
+### Hiding the required marker
+
+<p> By default, required fields will present a marker next to the field's label. Use the <code>hide-required-marker</code> attribute to remove it. </p>
+
+<Demo name="en/components/form-field/5" />
+
+### Prefix and suffix
+
+<p> Content can be included before or after the field's control to serve as a prefix or suffix. This content is rendered inside the same visual container that wraps the form control, ensuring consistent alignment, spacing, and styling. </p>
+<p> Use the <code>prefix</code> and <code>suffix</code> slots for icons and buttons. For textual content, use the <code>prefix-text</code> and <code>suffix-text</code> slots. </p>
+
+<Demo name="en/components/form-field/6" />

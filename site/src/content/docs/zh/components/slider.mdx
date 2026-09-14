@@ -2,6 +2,7 @@
 title: "Slider 滑块"
 description: "m3e-slider 组件让用户可以从连续或离散范围中选择一个数值。"
 summary: "m3e-slider 组件让用户可以从连续或离散范围中选择一个数值。"
+script: ""
 section: components
 category: "selection"
 order: 41
@@ -19,57 +20,57 @@ import "m3e/slider";
 
 <p> <code>m3e-slider</code> 允许从范围中选择值,类似 <code>&lt;input type="range"&gt;</code>。它需要一个 <code>m3e-slider-thumb</code>,负责渲染可交互的滑块手柄、管理指针与键盘输入,并传达当前值的语义。 </p>
 
-<Demo name="zh/slider/0" />
+<Demo name="zh/components/slider/0" />
 
 ### 选择值
 
 <p> 默认情况下,滑块的最小值为 <code>0</code>,最大值为 <code>100</code>,滑块手柄以 <code>1</code> 为增量移动。这些值可以分别通过设置 <code>min</code>、 <code>max</code> 与 <code>step</code> 特性来更改。 </p>
 <p> 除非通过 <code>m3e-slider-thumb</code> 的 <code>value</code> 特性另行指定,否则滑块手柄的值会设为最小值。当通过用户交互更改时,会先发出 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。 </p>
 
-<Demo name="zh/slider/1" />
+<Demo name="zh/components/slider/1" />
 
 ### 选择范围
 
 <p>通过指定两个滑块手柄,可以把 <code>m3e-slider</code> 转换为范围滑块。</p>
 
-<Demo name="zh/slider/2" />
+<Demo name="zh/components/slider/2" />
 
 ### 负值范围
 
 <p>将 <code>min</code> 特性设为负值即可支持负值范围。</p>
 
-<Demo name="zh/slider/3" />
+<Demo name="zh/components/slider/3" />
 
 ### 方向
 
 <p> 默认情况下,滑块为水平方向。使用 <code>orientation</code> 特性可将方向改为 <code>horizontal</code>(默认)或 <code>vertical</code>。 </p>
 
-<Demo name="zh/slider/4" />
+<Demo name="zh/components/slider/4" />
 
 ### 尺寸
 
 <p> 共有五种尺寸变体,可用于增加或减少强调: <code>extra-small</code>(默认)、<code>small</code>、<code>medium</code>、<code>large</code> 与 <code>extra-large</code>。使用 <code>size</code> 特性控制滑块的大小。 </p>
 
-<Demo name="zh/slider/5" />
+<Demo name="zh/components/slider/5" />
 
 ### 标签
 
 <p> 使用 <code>m3e-slider</code> 的 <code>labelled</code> 特性控制是否显示滑块手柄标签。 默认情况下,手柄的值会用作标签文本。你可以把 <code>displayWith</code> 属性设为一个根据给定值返回标签的函数,以此控制标签的格式。 </p>
 
-<Demo name="zh/slider/6" />
+<Demo name="zh/components/slider/6" />
 
 ### 刻度标记
 
 <p> 默认情况下不显示刻度标记。使用 <code>discrete</code> 特性可显示它们。要让刻度标记显示,你还必须指定大于 <code>1</code> 的 <code>step</code>。 </p>
 
-<Demo name="zh/slider/7" />
+<Demo name="zh/components/slider/7" />
 
 ### 禁用
 
 <p> 可以使用 <code>disabled</code> 特性禁用滑块。如果启用了标签,悬停时会显示滑块手柄标签。 </p>
 
-<Demo name="zh/slider/8" />
+<Demo name="zh/components/slider/8" />
 
 <p>虽然不常见,但也可以禁用单个滑块手柄,同时允许另一个手柄保持启用。</p>
 
-<Demo name="zh/slider/9" />
+<Demo name="zh/components/slider/9" />

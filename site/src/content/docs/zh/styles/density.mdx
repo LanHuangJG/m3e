@@ -1,0 +1,23 @@
+---
+title: "Density 密度"
+description: "密度指 UI 元素在空间上的紧凑程度 —— 组件排列的疏密、周围留白的大小,以及在给定布局内能容纳多少内容。M3E 应用 Material Design 3 密度系统,让组件布局、间距与触摸目标适配不同场景 —— 从宽敞、适合触摸的表面,到紧凑、信息密集的环境。"
+summary: "密度指 UI 元素在空间上的紧凑程度 —— 组件排列的疏密、周围留白的大小,以及在给定布局内能容纳多少内容。M3E 应用 Material Design 3 密度系统,让组件布局、间距与触摸目标适配不同场景 —— 从宽敞、适合触摸的表面,到紧凑、信息密集的环境。"
+script: ""
+section: styles
+order: 2
+---
+
+<p> 密度指 UI 元素在空间上的紧凑程度 —— 组件排列的疏密、周围留白的大小,以及在给定布局内能容纳多少内容。M3E 应用 <a href="https://m3.material.io/foundations/layout/understanding-layout/density" target="_blank">Material Design 3 密度系统</a>,让组件布局、间距与触摸目标适配不同场景 —— 从宽敞、适合触摸的表面,到紧凑、信息密集的环境。 </p>
+
+## 设计令牌
+
+<p> <a href="https://m3.material.io/foundations/design-tokens/overview" target="_blank">Material Design 3 设计令牌</a> 以 CSS 自定义属性形式实现。设计令牌是具名、与平台无关的变量,以可复用且一致的格式表达视觉设计决策 —— 例如颜色、字体排版、间距与高度。 </p>
+<p> 密度令牌使用标准化的 <code>--md-sys-density-scale</code> 与 <code>--md-sys-density-size</code> CSS 自定义属性暴露。M3E 提供 <a href="/zh/components/theme/">Theme 主题</a> 组件,可通过其 <code>density</code> 特性系统地控制 <code>--md-sys-density-scale</code>。 </p>
+
+## 密度感知组件
+
+<p> 以下组件支持密度缩放:<code>autocomplete</code>、<code>breadcrumb</code>、 <code>button-group</code>、<code>button</code>、<code>checkbox</code>、<code>chips</code>、<code>fab</code>、 <code>form-field</code>、<code>icon button</code>、<code>list</code>、<code>menu</code>、 <code>nav menu</code>、<code>paginator</code>、<code>radio-group</code>、<code>segmented button</code>、 <code>select</code>、<code>split-button</code>、<code>switch</code>、<code>tabs</code>、<code>toolbar</code> 与 <code>tree</code>。每个组件都会根据当前密度比例调整其布局、间距与触摸目标。用法示例请参阅各组件的文档。 </p>
+
+## 触摸表面
+
+<p> 触摸表面保持最小尺寸 <code>48dp x 48dp</code>,确保在所有密度设置下都具备可访问、易于点按的目标。该阈值与 Material Design 3 指南保持一致,即使在紧凑布局中也会强制执行,从而保证鼠标与触摸输入的交互清晰度与可用性。 </p>

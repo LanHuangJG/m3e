@@ -1,0 +1,37 @@
+---
+title: "Textarea Autosize 自适应文本域"
+description: "m3e-textarea-autosize 组件会自动调整所关联 textarea 的高度以适配其内容,从而保持布局完整性与用户体验。这个非可视 元素监听输入变化并应用动态调整大小,并受可选的行数上限约束。"
+summary: "m3e-textarea-autosize 组件会自动调整所关联 textarea 的高度以适配其内容,从而保持布局完整性与用户体验。这个非可视 元素监听输入变化并应用动态调整大小,并受可选的行数上限约束。"
+script: ""
+section: components
+category: "selection"
+order: 48
+---
+
+<p> <code>m3e-textarea-autosize</code> 组件会自动调整所关联 <code>textarea</code> 的高度以适配其内容,从而保持布局完整性与用户体验。这个非可视 元素监听输入变化并应用动态调整大小,并受可选的行数上限约束。 </p>
+
+```js
+import "m3e/textarea-autosize";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 使用 <code>m3e-textarea-autosize</code> 组件可以让 <code>textarea</code> 自动调整大小以 适配其内容。使用 <code>for</code> 特性指定要自动调整大小的 <code>textarea</code>。以下 示例演示如何将 <code>m3e-textarea-autosize</code> 与 <code>m3e-form-field</code> 一起使用。更多信息请参阅 <a href="/zh/components/form-field/">Form Field 表单容器</a>。 </p>
+
+<Demo name="zh/components/textarea-autosize/0" />
+
+### 最小与最大行数
+
+<p> 使用 <code>min-rows</code> 与 <code>max-rows</code> 特性控制 <code>textarea</code> 的最小与最大行数。 </p>
+
+<Demo name="zh/components/textarea-autosize/1" />
+
+### 禁用
+
+<p>使用 <code>disabled</code> 特性禁用自动调整大小。</p>
+
+```html
+<m3e-textarea-autosize for="field" disabled></m3e-textarea-autosize>
+```

@@ -1,9 +1,8 @@
 ---
 title: "Tooltip"
-description: "The m3e/tooltip module provides plain and rich tooltip components for delivering contextual
-          guidance, from simple hover descriptions to multi-line, expressive content anchored to a control."
-summary: "The m3e/tooltip module provides plain and rich tooltip components for delivering contextual
-          guidance, from simple hover descriptions to multi-line, expressive content anchored to a control."
+description: "The @m3e/web/tooltip module provides plain and rich tooltip components for delivering contextual guidance, from simple hover descriptions to multi-line, expressive content anchored to a control."
+summary: "The @m3e/web/tooltip module provides plain and rich tooltip components for delivering contextual guidance, from simple hover descriptions to multi-line, expressive content anchored to a control."
+script: ""
 section: components
 category: "communication"
 order: 53
@@ -23,7 +22,7 @@ import "m3e/tooltip";
 
 <p> Use the <code>m3e-tooltip</code> component to define a plain tooltip, and apply the <code>for</code> attribute to associate it with a specific UI element. </p>
 
-<Demo name="en/tooltip/0" />
+<Demo name="en/components/tooltip/0" />
 
 #### Positioning
 
@@ -61,14 +60,14 @@ import "m3e/tooltip";
 
 <p> Use the <code>m3e-rich-tooltip</code> component to define a rich tooltip, and apply the <code>for</code> attribute to associate it with a specific UI element. The <code>subhead</code> slot specifies the subhead content and the default slot specifies supplementary text. </p>
 
-<Demo name="en/tooltip/1" />
+<Demo name="en/components/tooltip/1" />
 
 #### Actions
 
 <p> Including interactive content in a rich tooltip promotes it to dialog-like behavior. The surface becomes dismissible and keyboard-navigable, and must be opened through an explicit user action on the trigger. </p>
 <p> You can include actions in a rich tooltip using the <code>actions</code> slot. In addition, use the <code>m3e-rich-tooltip-action</code> component, nested in a clickable element, to dismiss the tooltip. By default, focus is returned to the trigger. Use the <code>disable-restore-focus</code> attribute of a <code>m3e-rich-tooltip-action</code> to disable this behavior. </p>
 
-<Demo name="en/tooltip/2" />
+<Demo name="en/components/tooltip/2" />
 
 #### Positioning
 

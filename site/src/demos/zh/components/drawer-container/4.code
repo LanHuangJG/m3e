@@ -1,0 +1,4 @@
+<m3e-drawer-container end end-mode="side" end-divider>
+  <div>Main content</div>
+  <div slot="end">End drawer</div>
+</m3e-drawer-container>

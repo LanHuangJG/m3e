@@ -2,6 +2,7 @@
 title: "Button 按钮"
 description: "m3e-button 组件是一个语义化、富有表现力的界面基础元素,供用户交互以执行某个操作。"
 summary: "m3e-button 组件是一个语义化、富有表现力的界面基础元素,供用户交互以执行某个操作。"
+script: ""
 section: components
 category: "actions"
 order: 7
@@ -19,41 +20,41 @@ import "m3e/button";
 
 <p> 按钮有五种外观变体: <code>elevated</code>、<code>filled</code>、<code>tonal</code>、<code>outlined</code> 与 <code>text</code>(默认)。使用 <code>variant</code> 特性更改外观。 </p>
 
-<Demo name="zh/button/0" />
+<Demo name="zh/components/button/0" />
 
 ### 形状
 
 <p> 按钮有两种形状:<code>rounded</code>(默认)或 <code>square</code>。使用 <code>shape</code> 特性控制按钮的形状。 </p>
 
-<Demo name="zh/button/1" />
+<Demo name="zh/components/button/1" />
 
 ### 尺寸
 
 <p> 有五种尺寸变体,可用于增加或减弱强调: <code>extra-small</code>、<code>small</code>(默认)、<code>medium</code>、<code>large</code> 与 <code>extra-large</code>。使用 <code>size</code> 特性控制按钮的尺寸。 </p>
 
-<Demo name="zh/button/2" />
+<Demo name="zh/components/button/2" />
 
 ### 图标
 
 <p> 使用 <code>icon</code> 插槽在按钮标签之前渲染一个图标。此外,使用 <code>trailing-icon</code> 插槽在按钮标签之后渲染一个图标。虽然不是必须的,但下面的示例使用来自 <code>m3e/icon</code> 的 <code>m3e-icon</code> 组件,通过 Material Symbols 呈现图标。 </p>
 
-<Demo name="zh/button/3" />
+<Demo name="zh/components/button/3" />
 
 ### 切换
 
 <p> 使用 <code>toggle</code> 特性控制按钮是否可用于二元选择,并使用 <code>selected</code> 特性控制选中状态。点击时会发出可取消的 <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要取消选择变化,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
 
-<Demo name="zh/button/4" />
+<Demo name="zh/components/button/4" />
 
 <p> 此外,你可以使用 <code>selected</code> 与 <code>selected-icon</code> 插槽,在选中时指定替代的标签与图标。使用 <code>m3e-icon</code> 呈现图标时,按钮被选中后图标会自动填充。 </p>
 
-<Demo name="zh/button/5" />
+<Demo name="zh/components/button/5" />
 
 ### 禁用
 
 <p> 使用 <code>disabled</code> 特性禁用按钮。默认情况下,被禁用的按钮无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">禁用控件的可聚焦性</a> 以提升其可发现性。 </p>
 
-<Demo name="zh/button/6" />
+<Demo name="zh/components/button/6" />
 
 ### 类型
 
@@ -63,4 +64,4 @@ import "m3e/button";
 
 <p> 按钮也可以通过 <code>href</code> 特性指定 URL,表现得像链接。你还可以像原生 a 标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
 
-<Demo name="zh/button/7" />
+<Demo name="zh/components/button/7" />

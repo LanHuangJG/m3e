@@ -1,9 +1,8 @@
 ---
 title: "Paginator"
-description: "The m3e-paginator component is a compact, accessible paginator control for navigating paged data
-          sets. It provides semantic first/previous/next/last navigation controls and an optional page-size selector."
-summary: "The m3e-paginator component is a compact, accessible paginator control for navigating paged data
-          sets. It provides semantic first/previous/next/last navigation controls and an optional page-size selector."
+description: "The m3e-paginator component is a compact, accessible paginator control for navigating paged data sets. It provides semantic first/previous/next/last navigation controls and an optional page-size selector."
+summary: "The m3e-paginator component is a compact, accessible paginator control for navigating paged data sets. It provides semantic first/previous/next/last navigation controls and an optional page-size selector."
+script: ""
 section: components
 category: "navigation"
 order: 32
@@ -25,7 +24,7 @@ import "m3e/paginator";
 <p> When a user interacts with the paginator, it emits a <code>page</code> event. This event can be used to update any associated data view and includes the following properties: </p>
 <ul> <li><strong>pageIndex</strong>: <em>number</em> — The zero-based index of the current page.</li> <li> <strong>previousPageIndex</strong>: <em>number</em> (optional) — The zero-based index of the previously selected page. </li> <li><strong>pageSize</strong>: <em>number | "all"</em> — The current page size.</li> <li><strong>length</strong>: <em>number</em> — The total number of items being paged.</li> </ul>
 
-<Demo name="en/paginator/0" />
+<Demo name="en/components/paginator/0" />
 
 ### Page sizes
 
@@ -33,10 +32,10 @@ import "m3e/paginator";
 <p> The current <code>page-size</code> will always appear in the dropdown, event if its not included in <code>page-sizes</code>. </p>
 <p> When <code>page-size</code> is set to <code>"all"</code>, the range label and navigation actions are hidden. </p>
 
-<Demo name="en/paginator/1" />
+<Demo name="en/components/paginator/1" />
 
 ### Navigation actions
 
 <p> By default, the first and last page buttons are hidden. Use the <code>show-first-last-buttons</code> attribute to show them. </p>
 
-<Demo name="en/paginator/2" />
+<Demo name="en/components/paginator/2" />

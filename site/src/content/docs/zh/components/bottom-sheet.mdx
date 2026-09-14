@@ -1,0 +1,102 @@
+---
+title: "Bottom Sheet 底部面板"
+description: "m3e-bottom-sheet 组件是一种面板,用于展示锚定在屏幕底部的次要内容。"
+summary: "m3e-bottom-sheet 组件是一种面板,用于展示锚定在屏幕底部的次要内容。"
+script: ""
+section: components
+category: "containment"
+order: 5
+---
+
+<p> <code>m3e-bottom-sheet</code> 组件是一种面板,用于展示锚定在屏幕底部的次要内容。 </p>
+
+```js
+import "m3e/bottom-sheet";
+```
+
+## 用法
+
+<p> <strong>注意:本页展示在一个嵌套的 <code>iframe</code> 中。</strong> </p>
+<ul> <li>模态底部面板的遮罩只会覆盖当前窗口。</li> <li>底部面板相对于当前窗口定位。</li> </ul>
+
+### 基础用法
+
+<p> 使用 <code>m3e-bottom-sheet</code> 呈现锚定在屏幕底部的内容。底部面板默认关闭。你可以在任意可点击元素内嵌套一个 <code>m3e-bottom-sheet-trigger</code> 来打开面板。也可以通过 <code>open</code> 特性以声明式打开,或通过 <code>show</code> 方法以编程方式打开。要关闭面板,可以在可点击元素内使用 <code>m3e-bottom-sheet-action</code>,移除 <code>open</code> 特性,或以编程方式调用 <code>hide</code> 方法。 </p>
+
+<Demo name="zh/components/bottom-sheet/0" />
+
+#### 生命周期事件
+
+<p> 底部面板会发出四个生命周期事件,反映其在打开与关闭状态之间的转换。无论面板是以编程方式、通过触发器、键盘交互还是用户手势打开,这些事件都会触发。 </p>
+<ul> <li> <code>opening</code> —— 面板开始打开时触发。该事件可取消,你可以调用 <code>event.preventDefault()</code> 阻止面板打开。 </li> <li><code>opened</code> —— 面板完成打开并到达初始停靠点后触发。</li> <li> <code>closing</code> —— 面板开始关闭时触发。该事件同样可取消,你可以拦截或阻止关闭(例如用于确认未保存的更改)。 </li> <li><code>closed</code> —— 面板完成关闭并完全隐藏后触发。</li> </ul>
+<p> 这些事件让你能完全掌控面板的生命周期,包括打开与关闭过渡期间的校验、埋点分析与自定义行为。 </p>
+
+### 变体
+
+<p> 底部面板有两种变体:<strong>标准</strong>与<strong>模态</strong>。两者的结构与尺寸调整行为相同,但同页面其余部分的交互方式不同。标准底部面板是非阻塞的:它浮在页面上方,但不捕获焦点,也不阻止与下层界面的交互。模态底部面板在关闭前会阻止与页面其余部分的交互:它会呈现一层背景遮罩,捕获焦点,支持打开时自动聚焦,并在关闭时把焦点归还给触发元素。 </p>
+<p> 底部面板默认是标准类型。给 <code>m3e-bottom-sheet</code> 添加 <code>modal</code> 特性即可创建模态底部面板。 </p>
+
+<Demo name="zh/components/bottom-sheet/1" />
+
+#### 模态行为
+
+<p> 以模态模式打开时,底部面板的行为类似对话框,独占用户交互。焦点会自动移入面板;如果面板内有元素带有 <code>autofocus</code> 特性,它会最先获得焦点。面板打开期间,文档其余部分变为惰性,阻止键盘与辅助技术用户与面板背后的内容交互。页面滚动也会被锁定,以保持下层布局稳定。 </p>
+<p> 模态面板会在其背后显示一层遮罩。激活遮罩会触发可取消的 <code>cancel</code> 事件,除非你拦截它,否则面板会关闭。面板关闭时,焦点会归还给打开它的触发元素,确保用户回到页面中先前的位置而不丢失上下文。 </p>
+
+### 拖拽手柄
+
+<p> 底部面板支持在面板顶部边缘显示一个可选的拖拽手柄。该手柄由两部分组成: </p>
+<ul> <li><strong>可拖拽的横条</strong> —— 一个表示面板可被拖拽的视觉提示。</li> <li> <strong>手柄按钮</strong> —— 一个交互控件,用于循环切换停靠点、展开到全高,或在未定义停靠点时关闭面板。 </li> </ul>
+<p> 给 <code>m3e-bottom-sheet</code> 添加 <code>handle</code> 特性即可显示拖拽手柄,并使用 <code>handle-label</code> 特性提供无障碍标签(默认值为 "Drag handle")。 </p>
+
+<Demo name="zh/components/bottom-sheet/2" />
+
+### 停靠点
+
+<p> 停靠点定义底部面板可以停留的垂直位置。面板可以没有停靠点、只有一个停靠点,或有多个停靠点。停靠点控制面板如何调整尺寸、如何响应拖拽手势,以及手柄按钮的行为。 </p>
+<p> 停靠点通过在 <code>m3e-bottom-sheet</code> 上的 <code>detents</code> 特性声明。每个停靠点代表面板可以吸附到的目标高度。 </p>
+
+<Demo name="zh/components/bottom-sheet/3" />
+
+#### 停靠点类型
+
+<p> 底部面板支持两种停靠点:<strong>具名停靠点</strong>与<strong>基于单位的停靠点</strong>。两者都定义面板可吸附到的垂直位置,但用途不同。 </p>
+<p> 具名停靠点是语义化的高度预设,包括 <code>collapsed</code>、<code>fit</code>、 <code>half</code> 与 <code>full</code>,对应熟悉的底部面板行为。它们提供可预期、富有表现力的尺寸,无需你用像素或百分比来思考。 </p>
+<p> 基于单位的停靠点使用明确的度量(百分比或像素),让你精确控制面板高度。它们的行为与具名停靠点相同,但支持自定义布局与精细调整的尺寸。 </p>
+<p> 你可以任意顺序混用具名与基于单位的停靠点。面板会根据拖拽手势、速度以及声明顺序在它们之间吸附。 </p>
+
+#### 初始高度
+
+<p>初始高度定义面板进入交互模型的起点。例如:</p>
+<ul> <li>从 <code>collapsed</code> 开始会营造“窥视”体验。</li> <li>从 <code>fit</code> 开始会立即显示内容。</li> <li>从 <code>half</code> 或 <code>full</code> 开始会营造更具沉浸感的模态体验。</li> </ul>
+<p> 底部面板打开时,会吸附到其初始停靠点。默认情况下,这是 <code>detents</code> 特性中列出的第一个停靠点。你可以通过设置 <code>detent</code> 特性(从 0 开始的索引)来覆盖,以选择面板打开时应到达的停靠点。 </p>
+
+<p>在下面的示例中,面板会打开到 <code>half</code> 而非 <code>fit</code>。</p>
+
+<Demo name="zh/components/bottom-sheet/4" />
+
+<p> 你也可以通过 <code>m3e-bottom-sheet-trigger</code> 的 <code>detent</code> 特性设置初始停靠点,让每个触发器都能以不同高度打开面板。 </p>
+
+<Demo name="zh/components/bottom-sheet/5" />
+
+#### 折叠高度
+
+<p> 折叠状态始终包含面板的头部。这样即便处于最低停靠点,面板仍保持可见、可发现且可交互。你可以通过设置 <code>--m3e-bottom-sheet-peek-height</code> 这个 CSS 自定义属性,选择性地露出头部下方的一部分内容区域。该值只作用于内容区域,默认值为 <code>0px</code>,即折叠状态只显示头部。 </p>
+<p> 当面板折叠时,内容区域始终被标记为惰性。只要面板的渲染高度小于或等于头部与所配置窥视高度之和,就会如此。在这种状态下,只有头部可交互;内容无法获得焦点、指针事件或屏幕阅读器导航。这可防止用户与部分隐藏的元素交互,并确保折叠状态表现为不可交互的预览。只有当面板展开到超过折叠高度后,内容才重新变为可交互。 </p>
+
+<Demo name="zh/components/bottom-sheet/6" />
+
+### 可隐藏性
+
+<p> 当底部面板可以被向下拖拽越过其最低停靠点而关闭时,它就是可隐藏的。这让面板能像模态对话框或临时浮层那样被完全移出视图。给 <code>m3e-bottom-sheet</code> 添加 <code>hideable</code> 特性即可启用该行为。 </p>
+
+<Demo name="zh/components/bottom-sheet/7" />
+
+<Demo name="zh/components/bottom-sheet/8" />
+
+### 头部
+
+<p> <code>m3e-bottom-sheet</code> 提供一个名为 <code>header</code> 的具名插槽,用于在面板可拖拽的头部区域内提供自定义内容。提供头部后,它会显示在可选拖拽手柄的正下方。手柄若启用,永远不会被自定义头部内容取代。 </p>
+<p> 如果未启用手柄,整个头部区域——包括任何通过插槽放入的头部内容——都保持可拖拽。这确保无论是否存在手柄,面板始终保留可靠的拖拽表面。如果不希望拖拽,请把头部内容放进默认插槽,并省略 <code>handle</code> 特性。 </p>
+
+<Demo name="zh/components/bottom-sheet/9" />

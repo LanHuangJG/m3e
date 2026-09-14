@@ -1,0 +1,9 @@
+<m3e-icon-button slot="leading-icon" aria-label="Menu" toggle>
+  <m3e-icon name="menu"></m3e-icon>
+  <m3e-icon slot="selected" name="menu_open"></m3e-icon>
+  <m3e-drawer-toggle for="nav-drawer"></m3e-drawer-toggle>
+</m3e-icon-button>
+<m3e-drawer-container start-mode="over">
+  <div slot="start" id="nav-drawer">Start drawer</div>
+  <div>Main content</div>
+</m3e-drawer-container>

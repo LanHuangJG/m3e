@@ -1,9 +1,8 @@
 ---
 title: "Nav Bar 导航栏"
-description: "m3e-nav-bar 是一个水平条,通常用于较小的设备,允许用户在
-          3-5 个视图之间切换。"
-summary: "m3e-nav-bar 是一个水平条,通常用于较小的设备,允许用户在
-          3-5 个视图之间切换。"
+description: "m3e-nav-bar 是一个水平条,通常用于较小的设备,允许用户在 3-5 个视图之间切换。"
+summary: "m3e-nav-bar 是一个水平条,通常用于较小的设备,允许用户在 3-5 个视图之间切换。"
+script: ""
 section: components
 category: "navigation"
 order: 29
@@ -22,7 +21,7 @@ import "m3e/nav-bar";
 <p> <code>m3e-nav-bar</code> 支持三种模式:<code>compact</code>(默认)、<code>expanded</code> 与 <code>auto</code>。在 compact 模式下,条目垂直排列并填满条内的可用空间。 展开时,条目水平排列并在条内居中。使用 <code>auto</code> 时, 排列方向是响应式的,由视口尺寸决定。使用 <code>mode</code> 特性更改 条的模式。 </p>
 <p>下面的示例演示了 compact 与 expanded 两种模式。</p>
 
-<Demo name="zh/nav-bar/0" />
+<Demo name="zh/components/nav-bar/0" />
 
 ### 条目
 
@@ -37,16 +36,16 @@ import "m3e/nav-bar";
 <p> <code>m3e-nav-bar</code> 仅支持单选。使用 <code>selected</code> 特性指定 <code>m3e-nav-item</code> 中哪个条目被选中。点击时,会先派发一个可取消的 <code>beforeinput</code> 事件,随后派发 <code>input</code> 与 <code>change</code> 事件。要 取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
 <p> 此外,你可以使用 <code>selected-icon</code> 插槽指定选中时的替代图标。使用 <code>m3e-icon</code> 呈现图标时,条目被选中后图标会自动填充。 </p>
 
-<Demo name="zh/nav-bar/1" />
+<Demo name="zh/components/nav-bar/1" />
 
 ### 禁用
 
 <p> 使用 <code>disabled</code> 特性禁用条目。默认情况下,禁用的条目无法通过键盘聚焦。 你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">focusability of disabled controls</a> 以提高其可发现性。 </p>
 
-<Demo name="zh/nav-bar/2" />
+<Demo name="zh/components/nav-bar/2" />
 
 ### 链接
 
 <p> 条目也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以 像原生锚点标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
 
-<Demo name="zh/nav-bar/3" />
+<Demo name="zh/components/nav-bar/3" />

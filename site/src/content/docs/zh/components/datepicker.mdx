@@ -1,0 +1,108 @@
+---
+title: "Datepicker 日期选择器"
+description: "m3e-datepicker 组件提供一个临时性的结构化界面,可在月、年、多年视图中选择日期。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。"
+summary: "m3e-datepicker 组件提供一个临时性的结构化界面,可在月、年、多年视图中选择日期。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。"
+script: "datepicker"
+section: components
+category: "selection"
+order: 15
+---
+
+<p><code>m3e-datepicker</code> 组件提供一个临时性的结构化界面,可在月、年、多年视图中选择日期。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。</p>
+
+```js
+import "m3e/datepicker";
+```
+
+## 用法
+
+### 基础用法
+
+<p>使用 <code>m3e-datepicker-toggle</code> 打开 <code>m3e-datepicker</code>。该组件应嵌套在一个可点击元素内部,并把 for 特性设为要打开的选择器的 id 来建立关联。</p>
+
+<Demo name="zh/components/datepicker/0" />
+
+### Date input
+
+<p><code>m3e-date-input</code> 提供一个分段式日期输入框,可与 <code>m3e-datepicker</code> 直接集成。当你想要内建的解析、格式化与精确的分段编辑时,可以用它替代标准 <code>input</code>。</p>
+<p>本页示例使用标准 <code>input</code> 来演示完整的 <code>m3e-datepicker</code> API。使用 <code>m3e-date-input</code> 时,其中许多属性并非必需,因为输入框会自行管理取值,选择器只需把选中的日期写回字段。</p>
+<p>更多信息见 <a href="/zh/components/date-input/">Date Input 日期输入</a>。</p>
+
+<Demo name="zh/components/datepicker/1" />
+
+### 变体
+
+<p><code>m3e-datepicker</code> 支持三种外观变体:<code>docked</code>(默认)、<code>modal</code> 与 <code>auto</code>。使用 <code>variant</code> 特性控制选择器的呈现方式。设为 <code>auto</code> 时,会根据当前屏幕尺寸自动选择合适的呈现方式。</p>
+<p>使用 <code>modal</code> 变体时,<code>label</code> 特性的值会作为模态对话框的标题文本。</p>
+<p>本页所有示例均使用 <code>variant="auto"</code>。</p>
+
+```html
+<m3e-datepicker variant="auto"></m3e-datepicker>
+```
+
+### 日期选择
+
+<p>使用 <code>date</code> 特性设置当前选中的日期,并监听 <code>change</code> 事件以响应用户的新选择。你也可以启用 <code>clearable</code> 特性,显示一个清除当前选择的按钮。</p>
+
+<Demo name="zh/components/datepicker/2" />
+
+```js
+const picker = document.querySelector("#datepicker");
+const field = document.querySelector("#field");
+field.value = toLocaleDateString(picker.date);
+picker.addEventListener("change", () => {
+  field.value = toLocaleDateString(picker.date);
+});
+```
+
+### 日期字符串处理
+
+<p>不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code>m3e-datepicker</code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的 <code>Date.parse()</code> 规则。</p>
+<p>当 <code>m3e-datepicker</code> 收到日期字符串时,会自动判断该值是否属于可安全、无歧义解析的 ISO-8601 格式:</p>
+<ul> <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li> <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li> </ul>
+<p>符合上述格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区偏移,从而避免“仅日期的值被按 UTC 解析后漂移到前一天或后一天”的问题。如果字符串不符合这些 ISO 兼容格式,解析可能不明确或不受支持。为获得最可靠的结果,请使用上面列出的格式。</p>
+
+### 起始日期
+
+<p>默认情况下,日期选择器打开时定位到已选日期;未设置则定位到今天。你可以用 <code>start-at</code> 特性指定 <code>m3e-datepicker</code> 初始显示的日期。</p>
+
+<Demo name="zh/components/datepicker/3" />
+
+### 初始视图
+
+<p><code>start-view</code> 特性可设置日历首次打开时显示的视图,可选 <code>month</code>、<code>year</code> 或 <code>multi-year</code>;默认打开 <code>month</code> 视图。</p>
+
+<Demo name="zh/components/datepicker/4" />
+
+### 日期范围
+
+<p>要选择日期范围而非单个日期,使用 <code>range</code>,或 <code>range-start</code> 与 <code>range-end</code> 特性。设置 <code>range</code> 或 <code>range-start</code> 会让日历进入范围选择模式。</p>
+
+<Demo name="zh/components/datepicker/5" />
+
+```js
+const picker = document.querySelector("#range-picker");
+const field = document.querySelector("#field");
+field.value = toLocaleDateString(picker.rangeStart) + " - " + toLocaleDateString(picker.rangeEnd);
+picker.addEventListener("change", () => {
+  field.value = toLocaleDateString(picker.rangeStart) + " - " + toLocaleDateString(picker.rangeEnd);
+});
+```
+
+### 最小与最大日期
+
+<p>使用 <code>min-date</code> 与 <code>max-date</code> 禁用日历上早于/晚于对应值的全部日期,并阻止用户把日历翻到包含最小/最大日期的月或年之外(取决于当前视图)。</p>
+
+<Demo name="zh/components/datepicker/6" />
+
+### 禁用日期
+
+<p>除 <code>min-date</code> 与 <code>max-date</code> 约束外,你还可以用 <code>blackoutDates</code> 属性指定一个函数,用于判断某个日期是否被禁用、无法被用户选择。</p>
+
+<Demo name="zh/components/datepicker/7" />
+
+### 特殊日期
+
+<p>使用 <code>specialDates</code> 属性指定一个函数,用于判断某个日期是否以高亮样式展示。你可以用 <code>--m3e-calendar-item-special-container-color</code>、<code>--m3e-calendar-item-special-color</code>、<code>--m3e-calendar-item-special-ripple-color</code>、<code>--m3e-calendar-item-special-hover-color</code> 与 <code>--m3e-calendar-item-special-focus-color</code> 这些 CSS 属性来设置特殊日期的样式。</p>
+
+<Demo name="zh/components/datepicker/8" />

@@ -1,0 +1,71 @@
+---
+title: "Split Pane 分割面板"
+description: "m3e-split-pane 组件提供一个受 Material 3 启发的分割视图,带有可移动的拖拽手柄,支持响应式布局组合与精确的面板尺寸调整。它支持键盘交互、自适应方向以及可选的停靠点吸附,以实现一致且无障碍的内容分布。"
+summary: "m3e-split-pane 组件提供一个受 Material 3 启发的分割视图,带有可移动的拖拽手柄,支持响应式布局组合与精确的面板尺寸调整。它支持键盘交互、自适应方向以及可选的停靠点吸附,以实现一致且无障碍的内容分布。"
+script: ""
+section: components
+category: "containment"
+order: 44
+---
+
+<p> <code>m3e-split-pane</code> 组件提供一个受 Material 3 启发的分割视图,带有可移动的拖拽手柄,支持响应式布局组合与精确的面板尺寸调整。它支持键盘交互、自适应方向以及可选的停靠点吸附,以实现一致且无障碍的内容分布。 </p>
+
+```js
+import "m3e/split-pane";
+```
+
+## 用法
+
+### 基础用法
+
+<p> <code>m3e-split-pane</code> 暴露两个插槽:<code>start</code>,在布局的逻辑起始侧渲染内容;以及 <code>end</code>,在逻辑结束侧渲染内容。<code>value</code> 特性控制起始面板占用可用空间的百分比,结束面板会自动填充剩余部分。默认情况下,<code>value</code> 为 50%。当用户交互导致 <code>value</code> 变化时,会发出一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。这让你既能响应实时调整大小,也能在用户结束与拖拽手柄的交互时提交最终调整。 </p>
+
+<Demo name="zh/components/split-pane/0" />
+
+### 方向
+
+<p> <code>m3e-split-pane</code> 支持三种方向:<code>horizontal</code>(默认)、 <code>vertical</code> 与 <code>auto</code>。使用 <code>auto</code> 时,方向是响应式的,由视口尺寸决定。使用 <code>orientation</code> 特性更改方向。 </p>
+
+<Demo name="zh/components/split-pane/1" />
+
+### 最小与最大尺寸
+
+<p> 使用 <code>min</code> 与 <code>max</code> 特性控制起始面板可占用的最小与最大百分比。 </p>
+
+<Demo name="zh/components/split-pane/2" />
+
+### 步长
+
+<p> 使用 <code>step</code> 特性控制每次键盘调整大小操作(例如按下方向键)时分割面板的 <code>value</code> 变化多少。 </p>
+
+<Demo name="zh/components/split-pane/3" />
+
+### 停靠点
+
+<p> 使用 <code>detents</code> 特性定义分割面板在调整大小期间可以吸附到的位置。分割面板可以没有停靠点、只有一个停靠点,或具有多个停靠点。停靠点会影响面板如何调整大小、如何响应拖拽手势,以及拖拽手柄在键盘交互中的行为。存在停靠点时,拖拽手柄会在用户移动它时吸附到最近的停靠点,并忽略 <code>step</code>;未定义停靠点时,分割面板自由调整大小,不进行吸附。 </p>
+<p> 双击拖拽手柄,或在其获得焦点时按下 <code>ENTER</code> 或 <code>SPACE</code>,会切换到下一个停靠点。使用 <code>wrap-detents</code> 特性可让切换在到达最后一个停靠点后回绕到第一个。 </p>
+
+<Demo name="zh/components/split-pane/4" />
+
+### 禁用
+
+<p> 使用 <code>disabled</code> 特性禁用调整大小。禁用时,拖拽手柄会从交互中隐藏,指针与键盘输入被忽略,分割面板保持固定在当前值。 </p>
+
+<Demo name="zh/components/split-pane/5" />
+
+### 条件渲染
+
+<p> 你可以通过从对应插槽中省略内容,或对插槽元素应用 <code>hidden</code> 特性,来有条件地渲染起始或结束面板。当某个插槽中所有已分配的元素都被隐藏时,分割面板会把该侧视为空,并更新布局,使可见面板完全占用可用空间,而不修改当前的 <code>value</code>。 </p>
+
+<Demo name="zh/components/split-pane/6" />
+
+### 嵌套面板
+
+<p> 分割面板可以嵌套以创建复杂布局,让你可以通过组合多个二元分割来构建多面板工作区。 </p>
+
+<Demo name="zh/components/split-pane/7" />
+
+### 表单关联
+
+<p> 该组件作为 <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">表单关联自定义元素</a> (FACE)参与表单提交,把其状态贡献给表单数据。<code>name</code> 特性定义组件值在表单中提交时所用的键。未禁用时,会提交当前的 <code>value</code>。 </p>
+<p> 该组件把 <code>disabled</code> 状态视为<strong>仅属性</strong>控件。在运行时禁用时,它<em>不会</em>把 <code>disabled</code> 特性写入 DOM。 </p>

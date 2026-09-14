@@ -1,0 +1,77 @@
+---
+title: "Stepper 步骤条"
+description: "m3e-stepper 组件通过把内容划分为逻辑步骤,提供类似向导的工作流。"
+summary: "m3e-stepper 组件通过把内容划分为逻辑步骤,提供类似向导的工作流。"
+script: ""
+section: components
+category: "navigation"
+order: 45
+---
+
+<p> <code>m3e-stepper</code> 组件通过把内容划分为逻辑步骤,提供类似向导的工作流。 </p>
+
+```js
+import "m3e/stepper";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 使用 <code>m3e-stepper</code>、<code>m3e-step</code> 与 <code>m3e-step-panel</code> 构建类似向导的工作流。<code>m3e-step</code> 与 <code>m3e-step-panel</code> 都必须是 <code>m3e-stepper</code> 的直接子元素。要把步骤与其对应的面板关联,请把 <code>m3e-step</code> 上的 <code>for</code> 特性设为匹配目标 <code>m3e-step-panel</code> 的 ID。 </p>
+<p> 要选择某个步骤,请把 <code>selected</code> 特性应用到一个 <code>m3e-step</code> 上。当步骤被激活时,会发出一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。同一时间只能选择一个步骤。 </p>
+
+<Demo name="zh/components/stepper/0" />
+
+### 方向
+
+<p> <code>m3e-stepper</code> 支持三种方向:<code>horizontal</code>(默认)、 <code>vertical</code> 与 <code>auto</code>。使用 <code>auto</code> 时,方向是响应式的,由视口尺寸决定。使用 <code>orientation</code> 特性更改步骤条的方向。 </p>
+
+<Demo name="zh/components/stepper/1" />
+
+### 头部位置
+
+<p> 使用水平步骤条时,你可以通过 <code>header-position</code> 特性控制步骤条内容的定位位置。默认情况下,头部置于内容的 <code>above</code> 位置,但你可以把它改为 <code>below</code> 以置于内容下方。 </p>
+
+<Demo name="zh/components/stepper/2" />
+
+### 标签位置
+
+<p> 使用水平步骤条时,你可以通过 <code>label-position</code> 特性控制步骤标签的定位位置。默认情况下,标签置于步骤图标的 <code>after</code> 位置,但你可以把它改为 <code>below</code> 以置于图标下方。 </p>
+
+<Demo name="zh/components/stepper/3" />
+
+### 步骤条按钮
+
+<p> 面板提供一个 <code>actions</code> 插槽,用于放置导航控件。<code>m3e-stepper-previous</code>、<code>m3e-stepper-next</code> 与 <code>m3e-stepper-reset</code> 组件可用于在步骤间导航。使用 <code>m3e-stepper-reset</code> 会重置步骤条以及任何表单数据。 </p>
+
+```html
+<m3e-step-panel>
+  <div slot="actions">
+    <m3e-button><m3e-stepper-previous>Back</m3e-stepper-previous></m3e-button>
+    <m3e-button><m3e-stepper-next>Next</m3e-stepper-next></m3e-button>
+  </div>
+</m3e-step-panel>
+```
+
+### 线性步骤条
+
+<p> 可以在 <code>m3e-stepper</code> 上设置 <code>linear</code> 特性,创建线性步骤条,要求用户完成前面的步骤后才能继续后续步骤。 </p>
+<p> 线性步骤条要求每个步骤使用一个 <code>form</code>,其有效性状态决定用户能否进入下一个步骤。 </p>
+<p> 当用户向前切换后,该步骤即被视为已完成。只有当某个较早的步骤通过 <code>editable</code> 特性被显式指定为可编辑时,才允许导航回该步骤。 </p>
+
+<Demo name="zh/components/stepper/4" />
+
+### 步骤类型
+
+<p> 使用 <code>m3e-step</code> 上的 <code>optional</code> 特性表示该步骤不要求完成。当从可选步骤导航离开时,其嵌套的 <code>form</code> 仍会被校验;不过,无效状态既不会阻止前进,也不会在视觉上把步骤头部标记为无效。 </p>
+<p> 对于线性步骤条,使用 <code>m3e-step</code> 上的 <code>editable</code> 特性,允许用户导航回之前已完成的步骤。 </p>
+<p> 你可以使用 <code>completed</code> 与 <code>invalid</code> 特性以编程方式控制步骤是否已完成或无效。 </p>
+
+### 步骤图标
+
+<p> 你可以使用 <code>icon</code>、<code>done-icon</code>、<code>edit-icon</code> 与 <code>error-icon</code> 覆盖图标。 </p>
+
+### 提示与错误文本
+
+<p> 你可以使用 <code>m3e-step</code> 的 <code>hint</code> 与 <code>error</code> 插槽来指定提示文本,或在无效时指定错误消息。默认情况下,可选步骤的提示文本为 <code>(Optional)</code>。 </p>

@@ -1,9 +1,8 @@
 ---
 title: "List"
-description: "The m3e/list module provides expressive, accessible components for organizing and displaying
-          lists of items."
-summary: "The m3e/list module provides expressive, accessible components for organizing and displaying
-          lists of items."
+description: "The @m3e/web/list module provides expressive, accessible components for organizing and displaying lists of items."
+summary: "The @m3e/web/list module provides expressive, accessible components for organizing and displaying lists of items."
+script: ""
 section: components
 category: "containment"
 order: 26
@@ -28,106 +27,106 @@ import "m3e/list";
 <p> The <code>m3e-list-item</code> component provides a modular layout for structured content blocks. It exposes the following named slots: </p>
 <ul> <li><code>(default)</code> — Renders the content of the list item.</li> <li><code>leading</code> — Renders the leading content of the list item.</li> <li><code>overline</code> — Renders the overline of the list item.</li> <li><code>supporting-text</code> — Renders the supporting text of the list item.</li> <li><code>trailing</code> — Renders the trailing content of the list item.</li> </ul>
 
-<Demo name="en/list/0" />
+<Demo name="en/components/list/0" />
 
 #### Variants
 
 <p> There are two appearance variants <code>standard</code> (default) and <code>segmented</code>. Use the <code>variant</code> attribute to control a list's appearance. </p>
 
-<Demo name="en/list/1" />
+<Demo name="en/components/list/1" />
 
-<Demo name="en/list/2" />
+<Demo name="en/components/list/2" />
 
 #### Multiline items
 
 <p> List items are responsive containers that automatically adapt their height and internal spacing according to the item's line count, ensuring correct layout for one-line, two-line, and three-line configurations. </p>
 
-<Demo name="en/list/3" />
+<Demo name="en/components/list/3" />
 
 #### Media content
 
 <p> List items automatically size and position leading and trailing media—such as videos, images, avatars, and icons—according to the item's detected line count, reserving space when needed to keep visuals consistently aligned across one-, two-, and three-line configurations. </p>
 
-<Demo name="en/list/4" />
+<Demo name="en/components/list/4" />
 
-<Demo name="en/list/5" />
+<Demo name="en/components/list/5" />
 
-<Demo name="en/list/6" />
+<Demo name="en/components/list/6" />
 
-<Demo name="en/list/7" />
+<Demo name="en/components/list/7" />
 
 #### Dividers
 
 <p> The following example illustrates use of the <code>m3e-divider</code> to provide separators between items in a <code>m3e-list</code>. For more information on dividers, see <a href="/components/divider/">Divider</a>. </p>
 <p>Dividers are only supported for the standard variant and are automatically hidden for segmented lists.</p>
 
-<Demo name="en/list/8" />
+<Demo name="en/components/list/8" />
 
 <p>Dividers can also be inset using the <code>inset</code> attribute of a <code>m3e-divider</code>.</p>
 
-<Demo name="en/list/9" />
+<Demo name="en/components/list/9" />
 
 ### Action lists
 
 <p> Use the <code>m3e-action-list</code> and <code>m3e-list-action</code> to create a list where each item performs a single action. Action lists support the same appearance variants as <code>m3e-list</code> and <code>m3e-list-action</code> supports the same slots as <code>m3e-list-item</code>. </p>
 
-<Demo name="en/list/10" />
+<Demo name="en/components/list/10" />
 
-<Demo name="en/list/11" />
+<Demo name="en/components/list/11" />
 
 #### Disabling
 
 <p>Individual list actions can be disabled using the <code>disabled</code> attribute.</p>
 
-<Demo name="en/list/12" />
+<Demo name="en/components/list/12" />
 
-<Demo name="en/list/13" />
+<Demo name="en/components/list/13" />
 
 #### Links
 
 <p> List actions can also behave like links by specifying a URL using the <code>href</code> attribute. You can also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags. </p>
 
-<Demo name="en/list/14" />
+<Demo name="en/components/list/14" />
 
 ### Nested lists
 
 <p> Both <code>m3e-list</code> and <code>m3e-action-list</code> can use an <code>m3e-expandable-list-item</code> to present hierarchical content that can be expanded or collapsed. The <code>m3e-expandable-list-item</code> provides a disclosure-style header that toggles the visibility of a nested list, allowing related actions or items to be grouped without overwhelming the parent list. </p>
 <p>Use the <code>open</code> attribute to control whether an expandable list item is open.</p>
 
-<Demo name="en/list/15" />
+<Demo name="en/components/list/15" />
 
-<Demo name="en/list/16" />
+<Demo name="en/components/list/16" />
 
 ### Selection lists
 
 <p> Use the <code>m3e-selection-list</code> and <code>m3e-list-option</code> to create a list for selecting values, where each item performs a single option. Selection lists support the same appearance variants as <code>m3e-list</code> and <code>m3e-list-option</code> supports the same slots as <code>m3e-list-item</code>. However, the selection indicator will replaces content in the <code>trailing</code> slot unless selection indicators are hidden. </p>
 <p> Use the <code>selected</code> attribute to control the selected state of a <code>m3e-list-option</code>. When clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>. </p>
 
-<Demo name="en/list/17" />
+<Demo name="en/components/list/17" />
 
-<Demo name="en/list/18" />
+<Demo name="en/components/list/18" />
 
 #### Multiple selection
 
 <p> Selection lists support both single-select and multi-select modes. Use the <code>multi</code> attribute to allow multiple options to be selected simultaneously. </p>
 
-<Demo name="en/list/19" />
+<Demo name="en/components/list/19" />
 
-<Demo name="en/list/20" />
+<Demo name="en/components/list/20" />
 
 #### Hiding the selection indicator
 
 <p> Use the <code>hide-selection-indicator</code> attribute of <code>m3e-selection-list</code> to hide selection indicators. If an option has an icon via use of the <code>trailing</code> slot, the icon is presented. </p>
 
-<Demo name="en/list/21" />
+<Demo name="en/components/list/21" />
 
 #### Disabling
 
 <p> Individual list options can be disabled using the <code>disabled</code> attribute and can be selected and disabled. </p>
 
-<Demo name="en/list/22" />
+<Demo name="en/components/list/22" />
 
-<Demo name="en/list/23" />
+<Demo name="en/components/list/23" />
 
 #### Form Associated
 

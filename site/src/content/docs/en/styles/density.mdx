@@ -1,0 +1,23 @@
+---
+title: "Density"
+description: "Density refers to the spatial compactness of UI elements—how tightly components are arranged, how much padding surrounds them, and how much content fits within a given layout. M3E applies the Material Design 3 density system to adapt component layout, spacing, and touch targets across varied contexts—from spacious, touch-friendly surfaces to compact, information-dense environments."
+summary: "Density refers to the spatial compactness of UI elements—how tightly components are arranged, how much padding surrounds them, and how much content fits within a given layout. M3E applies the Material Design 3 density system to adapt component layout, spacing, and touch targets across varied contexts—from spacious, touch-friendly surfaces to compact, information-dense environments."
+script: ""
+section: styles
+order: 2
+---
+
+<p> Density refers to the spatial compactness of UI elements—how tightly components are arranged, how much padding surrounds them, and how much content fits within a given layout. M3E applies the <a href="https://m3.material.io/foundations/layout/understanding-layout/density" target="_blank">Material Design 3 density system</a> to adapt component layout, spacing, and touch targets across varied contexts—from spacious, touch-friendly surfaces to compact, information-dense environments. </p>
+
+## Design tokens
+
+<p> The <a href="https://m3.material.io/foundations/design-tokens/overview" target="_blank">Material Design 3 design tokens</a> are implemented as custom CSS properties. Design tokens are named, platform-agnostic variables that represent visual design decisions—such as color, typography, spacing, and elevation—in a reusable, consistent format. </p>
+<p> Density tokens are surfaced using the standardized <code>--md-sys-density-scale</code> and <code>--md-sys-density-size</code> custom CSS properties. M3E provides the <a href="/components/theme/">Theme</a> component which can be used to systematically control <code>--md-sys-density-scale</code> using its <code>density</code> attribute. </p>
+
+## Density-aware components
+
+<p> The following components support density scaling: <code>autocomplete</code>, <code>breadcrumb</code>, <code>button-group</code>, <code>button</code>, <code>checkbox</code>, <code>chips</code>, <code>fab</code>, <code>form-field</code>, <code>icon button</code>, <code>list</code>, <code>menu</code>, <code>nav menu</code>, <code>paginator</code>, <code>radio-group</code>, <code>segmented button</code>, <code>select</code>, <code>split-button</code>, <code>switch</code>, <code>tabs</code>, <code>toolbar</code>, and <code>tree</code>. Each component adapts its layout, spacing, and touch targets based on the active density scale. Refer to the component's documentation for usage examples. </p>
+
+## Touch surfaces
+
+<p> Touch surfaces maintain a minimum size of <code>48dp x 48dp</code>, ensuring accessible, tap-friendly targets across all density settings. This threshold aligns with Material Design 3 guidelines and is enforced even in compact layouts, preserving interaction clarity and usability for both mouse and touch input. </p>

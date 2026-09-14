@@ -1,0 +1,1 @@
+document.querySelector("#blackout-times").blackoutTimes = (t) => t.hour < 8 || t.hour > 18;

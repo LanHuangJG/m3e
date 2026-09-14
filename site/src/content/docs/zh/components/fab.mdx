@@ -2,6 +2,7 @@
 title: "FAB"
 description: "m3e-fab 是一个悬浮操作按钮(FAB),用于呈现重要操作。"
 summary: "m3e-fab 是一个悬浮操作按钮(FAB),用于呈现重要操作。"
+script: ""
 section: components
 category: "actions"
 order: 20
@@ -19,31 +20,31 @@ import "m3e/fab";
 
 <p> FAB 有七种外观变体:<code>primary</code>、<code>primary-container</code>(默认)、 <code>secondary</code>、<code>secondary-container</code>、<code>tertiary</code>、 <code>tertiary-container</code> 与 <code>surface</code>。使用 <code>variant</code> 特性更改 外观。 </p>
 
-<Demo name="zh/fab/0" />
+<Demo name="zh/components/fab/0" />
 
 ### 降低
 
 <p> 使用 <code>lowered</code> 特性降低 FAB 的高度,以减弱强调。所有外观变体都支持 降低。 </p>
 
-<Demo name="zh/fab/1" />
+<Demo name="zh/components/fab/1" />
 
 ### 尺寸
 
 <p> 有三种尺寸变体可用于增强或减弱强调: <code>small</code>、<code>medium</code>(默认)与 <code>large</code>。使用 <code>size</code> 特性 控制 FAB 的尺寸。 </p>
 
-<Demo name="zh/fab/2" />
+<Demo name="zh/components/fab/2" />
 
 ### 禁用
 
 <p> 使用 <code>disabled</code> 特性禁用 FAB。默认情况下,禁用的 FAB 无法通过 键盘获得焦点。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">禁用控件的可聚焦性</a> 以提升其可发现性。 </p>
 
-<Demo name="zh/fab/3" />
+<Demo name="zh/components/fab/3" />
 
 ### 扩展 FAB
 
 <p>使用 <code>extended</code> 特性与 <code>label</code> 插槽创建扩展 FAB。</p>
 
-<Demo name="zh/fab/4" />
+<Demo name="zh/components/fab/4" />
 
 ### 类型
 
@@ -53,4 +54,4 @@ import "m3e/fab";
 
 <p> FAB 也可以通过 <code>href</code> 特性指定 URL,从而表现得像链接。你还可以 像原生 anchor 标签那样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
 
-<Demo name="zh/fab/5" />
+<Demo name="zh/components/fab/5" />

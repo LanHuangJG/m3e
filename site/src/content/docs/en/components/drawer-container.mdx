@@ -1,0 +1,55 @@
+---
+title: "Drawer Container"
+description: "The m3e-drawer-container is a responsive layout container that manages collapsible left and right drawers alongside main content."
+summary: "The m3e-drawer-container is a responsive layout container that manages collapsible left and right drawers alongside main content."
+script: ""
+section: components
+category: "navigation"
+order: 18
+---
+
+<p> The <code>m3e-drawer-container</code> is a responsive layout container that manages collapsible left and right drawers alongside main content. </p>
+
+```js
+import "m3e/drawer-container";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Drawers
+
+<p> The <code>m3e-drawer-container</code> provides the <code>start</code> and <code>end</code> slots for specifying drawer elements. The default slot presents the content between drawers. The <code>start</code> and <code>end</code> attributes control whether the corresponding drawer is open. </p>
+
+<Demo name="en/components/drawer-container/0" />
+
+### Sizes
+
+<p> You can control the drawer widths using the <code>--m3e-drawer-container-width</code> CSS custom property or by explicitly setting the width of a drawer. </p>
+
+<Demo name="en/components/drawer-container/1" />
+
+### Modes
+
+<p>The <code>&lt;m3e-drawer-container&gt;</code> supports four expressive drawer modes:</p>
+<ul> <li><code>side</code> (default): Drawers remain visible alongside content.</li> <li><code>push</code>: Drawers shift main content when opened.</li> <li><code>over</code>: Drawers overlay content without displacement.</li> <li><code>auto</code>: Mode adapts responsively based on viewport size.</li> </ul>
+<p> The <code>push</code> and <code>over</code> modes present a scrim overlaying main content, a focus trap keeps focus in drawers, and main content becomes inert. Clicking the scrim will automatically close drawers. </p>
+<p> Use the <code>start-mode</code> attribute to control the behavior of the start drawer, and <code>end-mode</code> to configure the end drawer independently. </p>
+
+<Demo name="en/components/drawer-container/2" />
+
+<Demo name="en/components/drawer-container/3" />
+
+### Dividers
+
+<p> Use the <code>start-divider</code> or <code>end-divider</code> to separate the drawer from the content using a divider when <code>mode="side"</code>. When the <code>mode="auto"</code> and resolves to <code>side</code>, the dividers are shown as well. </p>
+
+<Demo name="en/components/drawer-container/4" />
+
+### Toggle
+
+<p> Use the <code>m3e-drawer-toggle</code> to toggle the opened state of a drawer. This component should be nested inside a clickable element and be associated with a slotted drawer by setting the <code>for</code> attribute to the <code>id</code> of a drawer. </p>
+<p> The following example illustrates use of a <code>m3e-icon-button</code> to toggle a drawer. See <a href="/components/icon-button/">Icon Button</a> for more information. </p>
+
+<Demo name="en/components/drawer-container/5" />

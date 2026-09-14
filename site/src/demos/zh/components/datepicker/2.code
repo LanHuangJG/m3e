@@ -1,0 +1,2 @@
+<!-- Form field omitted for brevity -->
+<m3e-datepicker id="datepicker" date="2026-01-01" clearable></m3e-datepicker>

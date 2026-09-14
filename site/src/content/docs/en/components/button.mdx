@@ -1,9 +1,8 @@
 ---
 title: "Button"
-description: "The m3e-button component is a semantic, expressive UI primitive users interact with to perform an
-          action."
-summary: "The m3e-button component is a semantic, expressive UI primitive users interact with to perform an
-          action."
+description: "The m3e-button component is a semantic, expressive UI primitive users interact with to perform an action."
+summary: "The m3e-button component is a semantic, expressive UI primitive users interact with to perform an action."
+script: ""
 section: components
 category: "actions"
 order: 7
@@ -23,41 +22,41 @@ import "m3e/button";
 
 <p> There are five button appearance variants: <code>elevated</code>, <code>filled</code>, <code>tonal</code>, <code>outlined</code>, and <code>text</code> (default). Use the <code>variant</code> attribute to change the appearance. </p>
 
-<Demo name="en/button/0" />
+<Demo name="en/components/button/0" />
 
 ### Shapes
 
 <p> Buttons can come in two shapes: <code>rounded</code> (default) or <code>square</code>. Use the <code>shape</code> attribute to control the shape of a button. </p>
 
-<Demo name="en/button/1" />
+<Demo name="en/components/button/1" />
 
 ### Sizes
 
 <p> There are five size variants which can be used to add or remove emphasis: <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and <code>extra-large</code>. Use the <code>size</code> attribute to control a button's size. </p>
 
-<Demo name="en/button/2" />
+<Demo name="en/components/button/2" />
 
 ### Icons
 
 <p> Use the <code>icon</code> slot to render an icon before the button's label. In addition, use the <code>trailing-icon</code> slot to render an icon after the button's label. While not required, the following example uses the <code>m3e-icon</code> component from <code>m3e/icon</code> to present icons using Material Symbols. </p>
 
-<Demo name="en/button/3" />
+<Demo name="en/components/button/3" />
 
 ### Toggle
 
 <p> Use the <code>toggle</code> attribute to control whether a button can be used for binary selection and the <code>selected</code> attribute to control the selected state. When clicked, a cancellable <code>beforeinput</code> event is emitted followed by an <code>input</code> and <code>change</code> event. To cancel selection change, call <code>preventDefault</code> during <code>beforeinput</code>. </p>
 
-<Demo name="en/button/4" />
+<Demo name="en/components/button/4" />
 
 <p> In addition, you can use the <code>selected</code> and <code>selected-icon</code> slots to specify an alternate label and icon when selected. When using the <code>m3e-icon</code> to present icons, the icon will automatically be filled when a button is selected. </p>
 
-<Demo name="en/button/5" />
+<Demo name="en/components/button/5" />
 
 ### Disabling
 
 <p> Use the <code>disabled</code> attribute to disable a button. By default, disabled buttons are not focusable with the keyboard. You can use the <code>disabled-interactive</code> attribute to support <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">focusability of disabled controls</a> to increase their discoverability. </p>
 
-<Demo name="en/button/6" />
+<Demo name="en/components/button/6" />
 
 ### Types
 
@@ -67,4 +66,4 @@ import "m3e/button";
 
 <p> Buttons can also behave like links by specifying a URL using the <code>href</code> attribute. You can also specify <code>target</code>, <code>rel</code> and <code>download</code> similar to native anchor tags. </p>
 
-<Demo name="en/button/7" />
+<Demo name="en/components/button/7" />

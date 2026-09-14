@@ -1,0 +1,60 @@
+---
+title: "Form Field 表单容器"
+description: "m3e-form-field 是表单控件的容器,应用 Material Design 的样式与 行为。支持的控件包括 input、select、textarea 与 m3e-input-chip-set。"
+summary: "m3e-form-field 是表单控件的容器,应用 Material Design 的样式与 行为。支持的控件包括 input、select、textarea 与 m3e-input-chip-set。"
+script: ""
+section: components
+category: "selection"
+order: 22
+---
+
+<p> <code>m3e-form-field</code> 是表单控件的容器,应用 Material Design 的样式与 行为。支持的控件包括 <code>input</code>、<code>select</code>、<code>textarea</code> 与 <code>m3e-input-chip-set</code>。 </p>
+
+```js
+import "m3e/form-field";
+```
+
+## 用法
+
+### 变体
+
+<p> 有两种表单容器外观变体:<code>outlined</code>(默认)与 <code>filled</code>。使用 <code>variant</code> 特性更改外观。 </p>
+
+<Demo name="zh/components/form-field/0" />
+
+### 浮动标签
+
+<p> 当表单容器的控件为空时,标签会呈现在控件之上而非其上方。你可以使用 <code>float-label</code> 特性更改此行为。支持的值包括 <code>always</code> 与 <code>auto</code>(默认)。 </p>
+
+<Demo name="zh/components/form-field/1" />
+
+### 提示标签
+
+<p> 提示标签是出现在字段下标位置的附加描述性文本。使用 <code>hint</code> 插槽指定提示。默认情况下,字段的下标会隐藏,直到获得焦点或 字段无效时才显示。使用 <code>hide-subscript</code> 特性控制此行为。支持的值 包括 <code>always</code>、<code>auto</code>(默认)与 <code>never</code>。使用 <code>always</code> 会移除为字段下标保留的空间。 </p>
+<p>下面的示例演示如何使用 <code>hint</code> 插槽并把 <code>hide-subscript</code> 设为 <code>never</code>。 </p>
+
+<Demo name="zh/components/form-field/2" />
+
+### 错误消息
+
+<p> 错误默认隐藏,只有当用户与字段交互后——例如先聚焦再失焦——或父表单已提交后 才会显示。此行为确保验证反馈与上下文相关且不具侵入性, 只在用户可能预期时出现。 </p>
+<p> 当显示错误消息时,它会占据字段下方通常用于 提示标签的同一片下标区域。为防止视觉重叠并保持清晰,只要 显示错误,提示就会自动隐藏。 </p>
+
+<Demo name="zh/components/form-field/3" />
+
+<p> 默认情况下,字段控件的验证消息会呈现在字段的下标中。你可以使用 <code>error</code> 插槽指定 自定义错误消息。 </p>
+
+<Demo name="zh/components/form-field/4" />
+
+### 隐藏必填标记
+
+<p> 默认情况下,必填字段会在字段标签旁显示一个标记。使用 <code>hide-required-marker</code> 特性移除它。 </p>
+
+<Demo name="zh/components/form-field/5" />
+
+### 前缀与后缀
+
+<p> 可以在字段控件之前或之后加入内容,作为前缀或后缀。这些内容 会渲染在包裹表单控件的同一视觉容器内,确保对齐、间距 与样式一致。 </p>
+<p> 使用 <code>prefix</code> 与 <code>suffix</code> 插槽放置图标与按钮。对于文本内容,使用 <code>prefix-text</code> 与 <code>suffix-text</code> 插槽。 </p>
+
+<Demo name="zh/components/form-field/6" />

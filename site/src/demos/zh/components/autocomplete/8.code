@@ -1,0 +1,9 @@
+<m3e-form-field>
+  <label slot="label" for="fruit">Choose your favorite fruits</label>
+  <m3e-input-chip-set aria-label="Enter favorite fruits">
+    <input id="fruit" slot="input" placeholder="Add fruit..." />
+  </m3e-input-chip-set>
+</m3e-form-field>
+<m3e-autocomplete for="fruit">
+  <!-- Options omitted for brevity -->
+</m3e-autocomplete>

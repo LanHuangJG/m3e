@@ -1,0 +1,4 @@
+<m3e-form-field hide-required-marker>
+  <label slot="label" for="fld">Required field</label>
+  <input id="fld" required />
+</m3e-form-field>

@@ -1,0 +1,5 @@
+M3eSnackbar.open("File deleted", "Undo", {
+  actionCallback: () => {
+    // Undo logic here
+  },
+});

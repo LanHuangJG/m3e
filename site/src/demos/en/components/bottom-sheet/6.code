@@ -1,0 +1,9 @@
+<!-- Trigger omitted for brevity -->
+<m3e-bottom-sheet 
+  id="bottomSheet"
+  modal 
+  handle 
+  detents="collapsed fit half full"
+  style="--m3e-bottom-sheet-peek-height: 36px">
+  <!-- Content omitted for brevity -->
+</m3e-bottom-sheet>

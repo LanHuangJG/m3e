@@ -1,9 +1,8 @@
 ---
 title: "Tooltip 工具提示"
-description: "m3e/tooltip 模块提供普通与丰富两种工具提示组件,用于传递上下文
-          指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。"
-summary: "m3e/tooltip 模块提供普通与丰富两种工具提示组件,用于传递上下文
-          指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。"
+description: "@m3e/web/tooltip 模块提供普通与丰富两种工具提示组件,用于传递上下文 指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。"
+summary: "@m3e/web/tooltip 模块提供普通与丰富两种工具提示组件,用于传递上下文 指引,从简单的悬停描述到锚定在控件上的多行、富有表现力的内容。"
+script: ""
 section: components
 category: "communication"
 order: 53
@@ -21,7 +20,7 @@ import "m3e/tooltip";
 
 <p> 使用 <code>m3e-tooltip</code> 组件定义普通工具提示,并应用 <code>for</code> 特性 把它与特定的界面元素关联。 </p>
 
-<Demo name="zh/tooltip/0" />
+<Demo name="zh/components/tooltip/0" />
 
 #### 定位
 
@@ -59,14 +58,14 @@ import "m3e/tooltip";
 
 <p> 使用 <code>m3e-rich-tooltip</code> 组件定义丰富工具提示,并应用 <code>for</code> 特性把它与特定的界面元素关联。<code>subhead</code> 插槽指定 副标题内容,默认插槽指定补充文本。 </p>
 
-<Demo name="zh/tooltip/1" />
+<Demo name="zh/components/tooltip/1" />
 
 #### 操作
 
 <p> 在丰富工具提示中包含交互内容会使其升级为类似对话框的行为。该界面变为 可关闭且可通过键盘导航,并且必须通过用户在触发元素上的显式操作才能打开。 </p>
 <p> 你可以使用 <code>actions</code> 插槽在丰富工具提示中包含操作。此外,使用 嵌套在可点击元素中的 <code>m3e-rich-tooltip-action</code> 组件来关闭工具提示。默认 情况下,焦点会返回触发元素。使用 <code>m3e-rich-tooltip-action</code> 的 <code>disable-restore-focus</code> 特性禁用此行为。 </p>
 
-<Demo name="zh/tooltip/2" />
+<Demo name="zh/components/tooltip/2" />
 
 #### 定位
 

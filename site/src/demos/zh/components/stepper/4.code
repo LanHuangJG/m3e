@@ -1,0 +1,6 @@
+<m3e-stepper linear>
+  <m3e-step for="step1" editable>Fill out your name</m3e-step>
+  <m3e-step for="step2" editable>Fill out your address</m3e-step>
+  <m3e-step for="step3">Done</m3e-step>
+  <!-- Content omitted for brevity -->
+</m3e-stepper>

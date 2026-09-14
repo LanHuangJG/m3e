@@ -1,0 +1,5 @@
+<m3e-form-field variant="outlined">
+  <label slot="label" for="field">Date Field</label>
+  <m3e-date-input id="field" value="2026-01-01" readonly></m3e-date-input>
+  <span slot="hint">MM/DD/YYYY</span>
+</m3e-form-field>

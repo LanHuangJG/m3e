@@ -29,6 +29,7 @@ const { Content, headings } = await render(entry);
   activeId={entry.id}
   toc={entry.data.toc}
   headings={headings}
+  script={entry.data.script}
 >
   <h1>{entry.data.title}</h1>
   <Content components={{ Demo }} />

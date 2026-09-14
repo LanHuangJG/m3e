@@ -1,0 +1,16 @@
+<m3e-form-field variant="outlined">
+  <label slot="label" for="field">Date Range Field</label>
+  <input autocomplete="off" id="field" />
+  <m3e-icon-button slot="suffix">
+    <m3e-icon name="calendar_today"></m3e-icon>
+    <m3e-datepicker-toggle for="range-picker"></m3e-datepicker-toggle>
+  </m3e-icon-button>
+  <span slot="hint">MM/DD/YYYY - MM/DD/YYYY</span>
+</m3e-form-field>
+
+<m3e-datepicker
+  id="range-picker"
+  range-start="2026-01-01"
+  range-end="2026-01-09"
+  start-at="2026-01-01"
+></m3e-datepicker>

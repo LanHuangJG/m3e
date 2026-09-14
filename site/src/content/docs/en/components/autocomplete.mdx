@@ -1,0 +1,175 @@
+---
+title: "Autocomplete"
+description: "The m3e-autocomplete component enhances an input field with a panel of suggested options."
+summary: "The m3e-autocomplete component enhances an input field with a panel of suggested options."
+script: "autocomplete"
+section: components
+category: "selection"
+order: 2
+---
+
+<p> The <code>m3e-autocomplete</code> component enhances an <code>input</code> field with a panel of suggested options. </p>
+
+```js
+import "m3e/autocomplete";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Begin by declaring the <code>m3e-autocomplete</code> element and populating it with a set of <code>m3e-option</code> elements. Each option represents a selectable value. When the user selects an option, its textual content becomes the input's displayed label and a <code>change</code> event is emitted. You can access the selected option via the <code>selected</code> property, or read its committed value through the <code>value</code> property. </p>
+<p> To bind the autocomplete panel to an input, use the <code>for</code> attribute on <code>m3e-autocomplete</code>, setting it to match the <code>id</code> of the target <code>input</code> element. </p>
+<p> The following example illustrates use of a <code>m3e-autocomplete</code> in conjunction with the <code>m3e-form-field</code>. See <a href="/components/form-field/">Form Field</a> for more information. </p>
+
+<Demo name="en/components/autocomplete/0" />
+
+### Filter modes
+
+<p> By default, <code>m3e-autocomplete</code> will filter options using a case insensitive substring match. You can use the <code>filter</code> attribute to control this behavior. Supported values include: <code>contains</code> (default), <code>starts-with</code>, <code>ends-with</code> and <code>none</code>. In addition, use the <code>case-sensitive</code> attribute to control whether matching is case-sensitive. </p>
+<p>The following example illustrates a case-sensitive prefix match.</p>
+
+<Demo name="en/components/autocomplete/1" />
+
+#### Custom filtering
+
+<p> Alternatively, you can provide a callback function using the <code>filter</code> property to control this behavior. Custom filters do not support automatic text highlighting, because the component cannot determine which parts of the text matched. </p>
+<p> The following example shows how to set <code>filter</code> with logic for a custom case-insensitive prefix match. </p>
+
+<Demo name="en/components/autocomplete/2" />
+
+```js
+window.addEventListener("DOMContentLoaded", () => {
+  for (const autocomplete of document.querySelectorAll("m3e-autocomplete.custom-filter")) {
+    autocomplete.filter = (option, term) =>
+      option.value.toLocaleLowerCase().startsWith(term.toLocaleLowerCase());
+  }
+});
+```
+
+### No data
+
+<p> Use the <code>no-data-label</code> attribute to control the text announced and displayed when no options match. The <code>no-data</code> slot can be used to provide custom visual content for the empty state. Alternatively, use the <code>hide-no-data</code> attribute to suppress the empty-state UI entirely. </p>
+
+<Demo name="en/components/autocomplete/3" />
+
+### Lazy loading
+
+<p> The <code>m3e-autocomplete</code> emits a <code>query</code> event that can be used to lazy-load options. The event fires only when the control is enabled and not read-only, under the following conditions: </p>
+<ul> <li> The <code>input</code> receives focus while no options are available. This can be used to load initial options. </li> <li> The <code>input</code> value changes. This can be used to fetch options that match the current term using the event's <code>detail.term</code> property. </li> </ul>
+
+<p> Use the <code>loading</code> attribute to control whether the <code>m3e-autocomplete</code> presents a loading UI. The <code>loading-label</code> attribute controls the text announced and displayed when enabled and the <code>loading</code> slot can be used to provide custom visual content for the loading state. Use the <code>hide-loading</code> attribute to suppress the loading-state UI entirely. <code>loading-label</code> will still be announced when hidden. </p>
+
+#### Initial load
+
+<p> The following example illustrates lazy loading initial data when the <code>input</code> is focused. In addition, a <code>m3e-loading-indicator</code> is presented in the <code>loading</code> slot. See <a href="/components/loading-indicator/">Loading Indicator</a> for more information. </p>
+
+<Demo name="en/components/autocomplete/4" />
+
+```js
+const lazy = document.querySelector("m3e-autocomplete.lazy");
+lazy.addEventListener("query", () => {
+  if (!lazy.querySelector("m3e-option")) {
+    lazy.loading = true;
+    setTimeout(() => {
+      usStates.forEach((state) => {
+        const option = document.createElement("m3e-option");
+        option.innerText = state;
+        lazy.appendChild(option);
+      });
+      lazy.loading = false;
+    }, 2000);
+  }
+});
+```
+
+#### Search as you type
+
+<p> The next example performs a search only after the user pauses typing. The loading indicator is not shown while the user is typing and appears only when an actual search request is made. If the user begins typing while a search is in progress, the loading indicator remains visible, the in-flight request is canceled, and a new search is started after debouncing. This example sets <code>filter="none"</code> to disable built-in filtering. </p>
+
+<Demo name="en/components/autocomplete/5" />
+
+```js
+const search = document.querySelector("m3e-autocomplete.search");
+
+let debounceTimer = -1;
+let activeRequest = null;
+
+search.addEventListener("query", (e) => {
+  const term = e.detail.term?.trim().toLowerCase();
+
+  // User is typing → reset debounce, but do NOT show loading yet
+  clearTimeout(debounceTimer);
+
+  // If user cleared the field
+  if (!term) {
+    // Cancel any in‑flight request
+    if (activeRequest) activeRequest.abort();
+
+    // Reset UI
+    search.querySelectorAll("m3e-option").forEach((x) => x.remove());
+    search.hideNoData = true;
+    search.loading = false;
+    return;
+  }
+
+  // Now a real search is happening → show loading
+  search.loading = true;
+  search.hideNoData = false;
+
+  // If a request is already loading, keep showing loading
+  // but cancel the old request
+  if (activeRequest) activeRequest.abort();
+
+  // Start debounce
+  debounceTimer = setTimeout(() => {
+    // Clear old results (so we don't show stale data)
+    search.querySelectorAll("m3e-option").forEach((x) => x.remove());
+
+    // Create a cancellable "request"
+    const controller = new AbortController();
+    activeRequest = controller;
+
+    // Simulate async search
+    setTimeout(() => {
+      // If canceled, do nothing
+      if (controller.signal.aborted) return;
+
+      // Populate results
+      usStates
+        .filter((x) => x.toLowerCase().includes(term))
+        .forEach((state) => {
+          const option = document.createElement("m3e-option");
+          option.innerText = state;
+          search.appendChild(option);
+        });
+
+      search.loading = false;
+
+      activeRequest = null;
+    }, 2000);
+  }, 300); // debounce delay
+});
+```
+
+### Requiring an option to be selected
+
+<p> By default, <code>m3e-autocomplete</code> accepts any value typed into the input field, regardless of whether it matches a listed option. To enforce selection from the available options, use the <code>required</code> attribute. </p>
+<p>When <code>required</code> is set, the autocomplete behaves as follows:</p>
+<ul> <li> If the user opens the panel with <strong>no selected option</strong> and types a new value, then closes the panel without selecting anything, the input resets to an empty string. </li> <li> If the user opens the panel with a <strong>selected option</strong> and types a value that does not match that option, then closes the panel without selecting anything, the input resets to the selected option's label. </li> <li>If the user opens and closes the panel without modifying the input, the existing value is retained.</li> </ul>
+
+<Demo name="en/components/autocomplete/6" />
+
+### Automatic activation
+
+<p> Use the <code>auto-activate</code> attribute to control whether the first option will automatically be activated. </p>
+
+<Demo name="en/components/autocomplete/7" />
+
+### Chips
+
+<p> The <code>m3e-autocomplete</code> pairs with <code>m3e-input-chip-set</code> to surface suggestions that users can select and convert into chips. See <a href="/components/chips/">Chips</a> for more information. </p>
+
+<Demo name="en/components/autocomplete/8" />

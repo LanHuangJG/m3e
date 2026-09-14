@@ -1,0 +1,28 @@
+---
+title: "Color 颜色"
+description: "M3E 应用 Material Design 3 颜色系统,让你能够创建可访问且个性化的配色方案,并级联到每个组件。"
+summary: "M3E 应用 Material Design 3 颜色系统,让你能够创建可访问且个性化的配色方案,并级联到每个组件。"
+script: ""
+section: styles
+order: 1
+---
+
+<p> M3E 应用 <a href="https://m3.material.io/styles/color/system/overview" target="_blank">Material Design 3 颜色系统</a>,让你能够创建可访问且个性化的配色方案,并级联到每个组件。 </p>
+
+## 设计令牌
+
+<p> <a href="https://m3.material.io/foundations/design-tokens/overview" target="_blank">Material Design 3 设计令牌</a> 以 CSS 自定义属性形式实现。设计令牌是具名、与平台无关的变量,以可复用且一致的格式表达视觉设计决策 —— 例如颜色、字体排版、间距与高度。 </p>
+<p> 颜色令牌使用标准前缀 <code>--md-sys-color-&#42;</code> 暴露,支持配合 <a href="https://material-foundation.github.io/material-theme-builder/" target="_blank">Material Theme Builder</a> 使用。 </p>
+
+## 静态颜色
+
+<p> 静态颜色指预定义、贴合规范的颜色,不会自动适应系统设置。<code>--md-sys-color-&#42;</code> CSS 自定义属性默认采用浅色模式的 <strong>baseline</strong> 取值。 </p>
+
+## 动态颜色
+
+<p> 动态颜色指在运行时基于单一源色生成的配色方案,可实现随系统设置自适应调整的个性化主题。 </p>
+<p> M3E 提供 <a href="/zh/components/theme/">Theme 主题</a> 组件,可为嵌套的主题感知元素应用动态颜色、表现力动效、密度与强焦点指示器。该组件借助 <code>@material/material-color-utils</code> 库,基于内容策略生成浅色与深色变体 —— 将经过感知调校的色调映射到 Material Design 3 的标准角色,如 <i>primary</i>、<i>surface</i> 与 <i>outline</i>。 </p>
+
+## 强制颜色
+
+<p> M3E 遵循 <code>forced-colors</code> 模式,通过动态调整组件样式,确保在高对比度环境下依然清晰、可读且语义明确。 </p>

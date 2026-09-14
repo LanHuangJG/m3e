@@ -1,0 +1,4 @@
+<!-- Trigger omitted for brevity -->
+<m3e-bottom-sheet id="bottomSheet" modal handle detents="fit half full">
+    <!-- Content omitted for brevity -->
+</m3e-bottom-sheet>

@@ -1,9 +1,8 @@
 ---
 title: "Menu"
-description: "The m3e-menu component presents a list of choices on a temporary surface, typically anchored to a
-          trigger element."
-summary: "The m3e-menu component presents a list of choices on a temporary surface, typically anchored to a
-          trigger element."
+description: "The m3e-menu component presents a list of choices on a temporary surface, typically anchored to a trigger element."
+summary: "The m3e-menu component presents a list of choices on a temporary surface, typically anchored to a trigger element."
+script: ""
 section: components
 category: "navigation"
 order: 28
@@ -23,13 +22,13 @@ import "m3e/menu";
 
 <p> The <code>m3e-menu</code> is used in conjunction with a <code>m3e-menu-trigger</code> to create a menu opened when the parenting element of the trigger is activated. Use the <code>for</code> attribute of the <code>m3e-menu-trigger</code> to designate the menu to open. </p>
 
-<Demo name="en/menu/0" />
+<Demo name="en/components/menu/0" />
 
 ### Variants
 
 <p> There are two appearance variants: <code>standard</code> (default) and <code>vibrant</code>. Use the <code>variant</code> attribute to change the appearance. </p>
 
-<Demo name="en/menu/1" />
+<Demo name="en/components/menu/1" />
 
 ### Menu items
 
@@ -40,32 +39,32 @@ import "m3e/menu";
 
 <p> All menu item types provide two named slots for icons. Use the <code>icon</code> slot to present an icon before an item's label and use the <code>trailing-icon</code> slot to present an icon after it. </p>
 
-<Demo name="en/menu/2" />
+<Demo name="en/components/menu/2" />
 
 #### Disabling
 
 <p>Use the <code>disabled</code> attribute to disable a menu item.</p>
 
-<Demo name="en/menu/3" />
+<Demo name="en/components/menu/3" />
 
 #### Checkboxes
 
 <p> Use a <code>m3e-menu-item-checkbox</code> to present a toggleable menu item that supports multi-select. The <code>checked</code> attribute reflects the checked state of the menu item. If a menu item specifies an icon using the <code>icon</code> slot, it will be replaced with a check icon when checked. </p>
 
-<Demo name="en/menu/4" />
+<Demo name="en/components/menu/4" />
 
 #### Radios
 
 <p> Use a <code>m3e-menu-item-radio</code> to present a toggleable menu item that supports single-select. The <code>checked</code> attribute reflects the checked state of the menu item. If a menu item specifies an icon using the <code>icon</code> slot, it will be replaced with a check icon when checked. </p>
 
-<Demo name="en/menu/5" />
+<Demo name="en/components/menu/5" />
 
 <p> Use a <code>m3e-menu-item-group</code> to organize multiple sets of radio items within a single <code>m3e-menu</code>. Each group maintains its own selection state, allowing distinct radio groups to coexist independently. </p>
 
-<Demo name="en/menu/6" />
+<Demo name="en/components/menu/6" />
 
 ### Submenus
 
 <p> Submenus are triggered by nesting a <code>m3e-menu-trigger</code> in a <code>m3e-menu-item</code> and designating the submenu to open using the <code>for</code> attribute. </p>
 
-<Demo name="en/menu/7" />
+<Demo name="en/components/menu/7" />

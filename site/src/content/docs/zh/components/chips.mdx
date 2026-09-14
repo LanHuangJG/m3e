@@ -1,7 +1,8 @@
 ---
 title: "Chips 芯片"
-description: "m3e/chips 模块提供富有表现力、可访问的芯片组件,用于操作、输入、过滤与建议。"
-summary: "m3e/chips 模块提供富有表现力、可访问的芯片组件,用于操作、输入、过滤与建议。"
+description: "@m3e/web/chips 模块提供富有表现力、可访问的芯片组件,用于操作、输入、过滤与建议。"
+summary: "@m3e/web/chips 模块提供富有表现力、可访问的芯片组件,用于操作、输入、过滤与建议。"
+script: ""
 section: components
 category: "selection"
 order: 12
@@ -19,43 +20,43 @@ import "m3e/chips";
 
 <p> 使用 <code>m3e-chip</code> 组件呈现一个非交互式芯片。你可以选择把芯片嵌套在 <code>m3e-chip-set</code> 中,它提供芯片之间的默认间距。 </p>
 
-<Demo name="zh/chips/0" />
+<Demo name="zh/components/chips/0" />
 
 #### 变体
 
 <p> 所有芯片类型都支持两种外观变体:<code>outlined</code>(默认)与 <code>elevated</code>。使用 <code>variant</code> 特性更改芯片的外观。 </p>
 
-<Demo name="zh/chips/1" />
+<Demo name="zh/components/chips/1" />
 
 #### 方向
 
 <p>使用 <code>m3e-chip-set</code> 的 <code>vertical</code> 特性可以将芯片垂直堆叠。</p>
 
-<Demo name="zh/chips/2" />
+<Demo name="zh/components/chips/2" />
 
 #### 图标
 
 <p> <code>m3e-chip</code> 为两个图标提供插槽。使用 <code>icon</code> 插槽在芯片标签之前呈现图标,使用 <code>trailing-icon</code> 插槽在其后呈现图标。以下示例虽非必需,但使用了来自 <code>m3e/icon</code> 的 <code>m3e-icon</code> 组件,通过 Material Symbols 呈现图标。 </p>
 
-<Demo name="zh/chips/3" />
+<Demo name="zh/components/chips/3" />
 
 ### 辅助芯片
 
 <p> 使用 <code>m3e-assist-chip</code> 执行可跨多个应用的智能或自动化操作。 </p>
 
-<Demo name="zh/chips/4" />
+<Demo name="zh/components/chips/4" />
 
 #### 图标
 
 <p> <code>m3e-assist-chip</code> 提供单个插槽 <code>icon</code>,用于在芯片标签之前呈现图标。此芯片类型不支持尾部图标。 </p>
 
-<Demo name="zh/chips/5" />
+<Demo name="zh/components/chips/5" />
 
 #### 禁用
 
 <p> 使用 <code>disabled</code> 特性禁用辅助芯片。默认情况下,禁用的芯片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">禁用控件的可聚焦性</a>,以提高其可发现性。 </p>
 
-<Demo name="zh/chips/6" />
+<Demo name="zh/components/chips/6" />
 
 #### 类型
 
@@ -65,43 +66,43 @@ import "m3e/chips";
 
 <p> 辅助芯片也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以像原生锚点标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
 
-<Demo name="zh/chips/7" />
+<Demo name="zh/components/chips/7" />
 
 ### 过滤芯片
 
 <p> 使用 <code>m3e-filter-chip</code> 与 <code>m3e-filter-chip-set</code> 组件呈现芯片,用户可选择或取消选择它们来过滤内容或数据集。 </p>
 
-<Demo name="zh/chips/8" />
+<Demo name="zh/components/chips/8" />
 
 #### 图标
 
 <p> <code>m3e-filter-chip</code> 为两个图标提供插槽。使用 <code>icon</code> 插槽在芯片标签之前呈现图标,使用 <code>trailing-icon</code> 插槽在其后呈现图标。 </p>
 <p>选中时,过滤芯片的图标会被替换为对勾图标。</p>
 
-<Demo name="zh/chips/9" />
+<Demo name="zh/components/chips/9" />
 
 #### 选择
 
 <p> 过滤芯片同时支持单选与多选模式。使用 <code>m3e-filter-chip-set</code> 的 <code>multi</code> 特性允许多个芯片同时被选中。 </p>
 <p> 使用 <code>selected</code> 特性控制 <code>m3e-filter-chip</code> 的选中状态。点击时,会先发出一个可取消的 <code>beforeinput</code> 事件,随后是 <code>input</code> 与 <code>change</code> 事件。要取消选择变更,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
 
-<Demo name="zh/chips/10" />
+<Demo name="zh/components/chips/10" />
 
 #### 禁用
 
 <p> 使用 <code>disabled</code> 特性禁用过滤芯片。默认情况下,禁用的芯片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">禁用控件的可聚焦性</a>,以提高其可发现性。 </p>
 
-<Demo name="zh/chips/11" />
+<Demo name="zh/components/chips/11" />
 
 <p> 你也可以使用 <code>m3e-filter-chip-set</code> 的 <code>disabled</code> 特性来整体禁用芯片集。 </p>
 
-<Demo name="zh/chips/12" />
+<Demo name="zh/components/chips/12" />
 
 #### 隐藏选择指示器
 
 <p> 使用 <code>m3e-filter-chip-set</code> 的 <code>hide-selection-indicator</code> 特性隐藏选择指示器。如果过滤芯片通过 <code>icon</code> 插槽带有图标,选中时该图标会被保留。 </p>
 
-<Demo name="zh/chips/13" />
+<Demo name="zh/components/chips/13" />
 
 #### 表单关联
 
@@ -114,13 +115,13 @@ import "m3e/chips";
 <p> 使用 <code>m3e-input-chip-set</code> 的 <code>input</code> 插槽指定与该组件关联的输入元素。当在输入框上触发 <code>change</code> 时,芯片集会向集合中添加一个新的可移除 <code>m3e-input-chip</code>。用户可以按 <code>BACKSPACE</code> 移除芯片,或点击单个芯片上的移除按钮。如果某个芯片已聚焦,用户可以按 <code>DELETE</code> 移除该芯片。 </p>
 <p> 当向集合中添加或移除芯片时,<code>m3e-input-chip-set</code> 组件会引发 <code>change</code> 事件。使用事件的 <code>detail.type</code> 判断变更类型是 <code>"add"</code> 还是 <code>"remove"</code>。事件的 <code>detail</code> 还包含 <code>value</code> 与 <code>chip</code> 属性。 </p>
 
-<Demo name="zh/chips/14" />
+<Demo name="zh/components/chips/14" />
 
 #### 预填充芯片
 
 <p> 你可以使用 <code>m3e-input-chip</code> 组件为 <code>m3e-input-chip-set</code> 预填充芯片。使用 <code>removable</code> 特性控制是否呈现一个允许用户移除输入芯片的按钮。这也控制是否可以使用 <code>BACKSPACE</code> 通过键盘删除芯片。 </p>
 
-<Demo name="zh/chips/15" />
+<Demo name="zh/components/chips/15" />
 
 #### 最大芯片数
 
@@ -128,13 +129,13 @@ import "m3e/chips";
 
 <p>当输入框聚焦时,无论 <code>max-chips</code> 设置如何,都会显示所有芯片。</p>
 
-<Demo name="zh/chips/16" />
+<Demo name="zh/components/chips/16" />
 
 #### 禁用
 
 <p> 使用 <code>m3e-input-chip-set</code> 的 <code>disabled</code> 特性整体禁用芯片集,包括其对应的 <code>input</code> 与任何预填充的芯片。此外,禁用时无法移除芯片。 </p>
 
-<Demo name="zh/chips/17" />
+<Demo name="zh/components/chips/17" />
 
 #### 表单关联
 
@@ -145,19 +146,19 @@ import "m3e/chips";
 
 <p> 使用 <code>m3e-suggestion-chip</code> 组件向用户提供与上下文相关的操作或响应。该组件在视觉与功能上等同于 <code>m3e-assist-chip</code>,仅在语义意图上有所不同。它编码的是上下文建议而非被动辅助,通过隐含的相关性引导用户操作。 </p>
 
-<Demo name="zh/chips/18" />
+<Demo name="zh/components/chips/18" />
 
 #### 图标
 
 <p> <code>m3e-suggestion-chip</code> 提供单个插槽 <code>icon</code>,用于在芯片标签之前呈现图标。此芯片类型不支持尾部图标。 </p>
 
-<Demo name="zh/chips/19" />
+<Demo name="zh/components/chips/19" />
 
 #### 禁用
 
 <p> 使用 <code>disabled</code> 特性禁用建议芯片。默认情况下,禁用的芯片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">禁用控件的可聚焦性</a>,以提高其可发现性。 </p>
 
-<Demo name="zh/chips/20" />
+<Demo name="zh/components/chips/20" />
 
 #### 类型
 
@@ -167,4 +168,4 @@ import "m3e/chips";
 
 <p> 建议芯片也可以通过 <code>href</code> 特性指定 URL 来表现得像链接。你还可以像原生锚点标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
 
-<Demo name="zh/chips/21" />
+<Demo name="zh/components/chips/21" />

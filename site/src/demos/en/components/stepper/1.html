@@ -1,0 +1,35 @@
+<m3e-stepper orientation="vertical">
+              <m3e-step for="step4">Fill out your name</m3e-step>
+              <m3e-step for="step5">Fill out your address</m3e-step>
+              <m3e-step for="step6">Done</m3e-step>
+              <m3e-step-panel id="step4">
+                <form>
+                  <m3e-form-field>
+                    <label slot="label" for="name2">Name</label>
+                    <input name="name2" id="name2" required />
+                  </m3e-form-field>
+                </form>
+                <div slot="actions">
+                  <m3e-button><m3e-stepper-next>Next</m3e-stepper-next></m3e-button>
+                </div>
+              </m3e-step-panel>
+              <m3e-step-panel id="step5">
+                <form>
+                  <m3e-form-field>
+                    <label slot="label" for="address2">Address</label>
+                    <input name="address2" id="address2" required />
+                  </m3e-form-field>
+                </form>
+                <div slot="actions">
+                  <m3e-button><m3e-stepper-previous>Back</m3e-stepper-previous></m3e-button>
+                  <m3e-button><m3e-stepper-next>Next</m3e-stepper-next></m3e-button>
+                </div>
+              </m3e-step-panel>
+              <m3e-step-panel id="step6">
+                Done
+                <div slot="actions">
+                  <m3e-button><m3e-stepper-previous>Back</m3e-stepper-previous></m3e-button>
+                  <m3e-button><m3e-stepper-reset>Reset</m3e-stepper-reset></m3e-button>
+                </div>
+              </m3e-step-panel>
+            </m3e-stepper>

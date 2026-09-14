@@ -1,9 +1,8 @@
 ---
 title: "Tree"
-description: "The m3e-tree component presents hierarchical data in a structure that users can navigate, with
-          nested levels that open and collapse as needed."
-summary: "The m3e-tree component presents hierarchical data in a structure that users can navigate, with
-          nested levels that open and collapse as needed."
+description: "The m3e-tree component presents hierarchical data in a structure that users can navigate, with nested levels that open and collapse as needed."
+summary: "The m3e-tree component presents hierarchical data in a structure that users can navigate, with nested levels that open and collapse as needed."
+script: ""
 section: components
 category: "containment"
 order: 54
@@ -23,34 +22,34 @@ import "m3e/tree";
 
 <p> A basic tree consists of an <code>m3e-tree</code> component containing one or more <code>m3e-tree-item</code>. Items can be nested to create deeper levels in the hierarchy. Each item supplies its text through the <code>label</code> slot. Use the <code>open</code> attribute to control whether an item with nested children is expanded. </p>
 
-<Demo name="en/tree/0" />
+<Demo name="en/components/tree/0" />
 
 ### Selection
 
 <p> Use the <code>selected</code> attribute to mark an item as selected. The <code>change</code> event fires when the user changes selection, and the <code>selected</code> property provides access to the currently selected item(s). </p>
 
-<Demo name="en/tree/1" />
+<Demo name="en/components/tree/1" />
 
 #### Multiple selection
 
 <p> Trees support both single-select and multi-select modes. Use the <code>multi</code> attribute of <code>m3e-tree</code> to allow multiple item to be selected simultaneously. </p>
 
-<Demo name="en/tree/2" />
+<Demo name="en/components/tree/2" />
 
 #### Cascade selection
 
 <p> Use the <code>cascade</code> attribute in conjunction with <code>multi</code> to enable cascade item selection. </p>
 
-<Demo name="en/tree/3" />
+<Demo name="en/components/tree/3" />
 
 ### Icons
 
 <p>Use the <code>icon</code> and <code>selected-icon</code> slots to present an icon for an item.</p>
 
-<Demo name="en/tree/4" />
+<Demo name="en/components/tree/4" />
 
 #### Toggle icons
 
 <p> Use the <code>toggle-icon</code> and <code>open-toggle-icon</code> to change the icons used to expand and collapse an item. </p>
 
-<Demo name="en/tree/5" />
+<Demo name="en/components/tree/5" />

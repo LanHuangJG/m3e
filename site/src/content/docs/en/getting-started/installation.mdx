@@ -1,0 +1,43 @@
+---
+title: "Installation"
+description: "The M3E Web Component library is distributed as a single package under the @m3e/web namespace."
+summary: "The M3E Web Component library is distributed as a single package under the @m3e/web namespace."
+script: ""
+section: getting-started
+order: 2
+---
+
+<p> The M3E Web Component library is distributed as a single package under the <strong>m3e</strong> namespace. </p>
+
+```js
+npm i m3e
+```
+
+<p>After installing the package, each component can be imported individually through its own module.</p>
+<p>For example:</p>
+
+```js
+import "m3e/button";
+```
+
+<p> <strong>Alternatively, import the <code>m3e/all</code> module to load every component at once.</strong> This option is convenient when you want full access to the M3E ecosystem without managing individual modules. </p>
+
+```js
+import "m3e/all";
+```
+
+## Editor integration
+
+<p> The <code>m3e</code> package includes a <a href="https://github.com/webcomponents/custom-elements-manifest" target="_blank">Custom Elements Manifest</a> to support enhanced editor tooling and developer experience. </p>
+
+### Visual Studio Code
+
+<p> To enable autocomplete and hover documentation, install the <a href="https://marketplace.visualstudio.com/items?itemName=pwrs.cem-language-server-vscode" target="_blank">Custom Elements Manifest Language Server</a> extension. It will automatically detect the manifest bundled with this package and surface tag names, attributes, slots, and events in supported files. </p>
+<p> Alternatively, you can explicitly reference the <code>html-custom-data.json</code> and <code>css-custom-data.json</code> in your workspace settings. </p>
+
+```css
+{
+  "html.customData": ["./node_modules/m3e/dist/html-custom-data.json"],
+  "css.customData": ["./node_modules/m3e/dist/css-custom-data.json"]
+}
+```

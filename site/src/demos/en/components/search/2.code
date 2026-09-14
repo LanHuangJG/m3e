@@ -1,0 +1,4 @@
+<m3e-search-view mode="fullscreen">
+  <input slot="input" placeholder="Search..." />
+  <!-- Results omitted for brevity -->
+</m3e-search-view>

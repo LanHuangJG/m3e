@@ -1,0 +1,123 @@
+---
+title: "Timepicker"
+description: "The m3e-timepicker component presents a temporary surface for selecting time using dial and keyboard modes. It supports hour and minute selection across 12-hour and 24-hour formats, enforces minimum and maximum constraints, and adapts between docked and modal layouts based on available space."
+summary: "The m3e-timepicker component presents a temporary surface for selecting time using dial and keyboard modes. It supports hour and minute selection across 12-hour and 24-hour formats, enforces minimum and maximum constraints, and adapts between docked and modal layouts based on available space."
+script: "timepicker"
+section: components
+category: "selection"
+order: 50
+---
+
+<p> The <code>m3e-timepicker</code> component presents a temporary surface for selecting time using dial and keyboard modes. It supports hour and minute selection across 12-hour and 24-hour formats, enforces minimum and maximum constraints, and adapts between docked and modal layouts based on available space. </p>
+
+```js
+import "m3e/timepicker";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Use the <code>m3e-timepicker-toggle</code> to open a <code>m3e-timepicker</code>. This component should be nested inside a clickable element and be associated with a picker by setting the for attribute to the id of the picker to open. </p>
+
+<Demo name="en/components/timepicker/0" />
+
+### Time input
+
+<p> The <code>m3e-date-input</code> can also provide a segmented time field when configured with <code>type="time"</code>. It integrates directly with <code>m3e-timepicker</code> and can be used in place of a standard <code>input</code> when you want built-in parsing, formatting, and precise segment editing. </p>
+<p> The examples on this page use a standard <code>input</code> to demonstrate the full <code>m3e-timepicker</code> API. When using <code>m3e-date-input</code> with <code>type="time"</code>, many of these props are not required because the input manages the value and the picker simply writes the selected time back to the field. </p>
+<p>See <a href="/components/date-input/">Date Input</a> for details.</p>
+
+<Demo name="en/components/timepicker/1" />
+
+### Variants
+
+<p> The <code>m3e-timepicker</code> supports three appearance variants: <code>docked</code> (default), <code>modal</code>, and <code>auto</code>. Use the <code>variant</code> attribute to control how the picker is presented. When set to <code>auto</code>, the picker automatically selects the appropriate appearance based on the current screen size. </p>
+<p>All examples in this page use <code>variant="auto"</code>.</p>
+
+```html
+<m3e-timepicker variant="auto"></m3e-timepicker>
+```
+
+### Orientation
+
+<p> The <code>m3e-timepicker</code> supports three orientations: <code>vertical</code> (default), <code>horizontal</code>, and <code>auto</code>. Use the <code>orientation</code> attribute to control how the picker is orientated. When set to <code>auto</code>, the picker automatically selects the appropriate orientation based on the current screen size. </p>
+<p> Typically, <code>orientation="auto"</code> should be pared with <code>variant="auto"</code> so that the picker will swap between orientation and variant depending on viewport constraints. </p>
+
+<Demo name="en/components/timepicker/2" />
+
+### Modes
+
+<p> The <code>m3e-timepicker</code> supports two modes, <code>dial</code> (default), and <code>input</code>. Use the <code>mode</code> attribute to set the default mode. Use the <code>hide-mode-toggle</code> attribute to hide the button used to toggle between modes. </p>
+<p> The following example illustrates the use of <code>mode="input"</code> and <code>hide-mode-toggle</code> to force the timepicker to open in keyboard entry mode while preventing the user from switching back to the dial. </p>
+
+<Demo name="en/components/timepicker/3" />
+
+### Time selection
+
+<p>Use the <code>date</code> attribute to set the currently selected time.</p>
+<p> The OK button becomes enabled whenever the picker holds a complete, valid time, including cases where the initial value was already valid and the user made no changes. Both the hour and minute fields must contain valid, non-null values for the picker to construct a time; incomplete or invalid states keep the OK button disabled. Clicking OK commits the current time to <code>date</code> and emits a <code>change</code> event. If <code>date</code> is <code>null</code>, today's date is used. </p>
+<p> Clicking Cancel dismisses the picker without committing any value. The current <code>date</code> and time remain unchanged, and no <code>change</code> event is emitted. Cancel is always a non-committing action, regardless of whether the selection was complete, valid, or modified. </p>
+
+<Demo name="en/components/timepicker/4" />
+
+```js
+const picker = document.querySelector("#timepicker");
+const field = document.querySelector("#field");
+field.value = toLocaleTimeString(picker.date);
+picker.addEventListener("change", () => {
+  field.value = toLocaleTimeString(picker.date);
+});
+```
+
+### Date string handling
+
+<p> Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO date but does not include a time or timezone. To ensure predictable behavior across environments, <code>m3e-timepicker</code> uses a consistent, standards-aligned parsing model instead of relying on the browser's built-in <code>Date.parse()</code> rules. </p>
+<p> When <code>m3e-timepicker</code> receives a date string, it automatically detects whether the value matches one of the ISO-8601 formats that can be parsed safely and unambiguously: </p>
+<ul> <li><code>yyyy-MM-dd</code> — local date (no time, no timezone)</li> <li><code>yyyy-MM-ddTHH:mm:ss</code> — local date and time</li> <li><code>yyyy-MM-ddTHH:mm:ssZ</code> — UTC date and time</li> <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> — date and time with an explicit timezone offset</li> </ul>
+<p> Strings in these formats are converted into local <code>Date</code> objects without unexpected timezone shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or unsupported. For the most reliable results, use one of the formats above. </p>
+
+### Hour format
+
+<p> The <code>format</code> attribute controls the hour cycle used by the timepicker. It accepts <code>"12"</code> (default), <code>"24"</code>, or <code>"auto"</code>. </p>
+
+<ul> <li><code>"12"</code> — forces a 12-hour clock with an AM/PM meridiem.</li> <li><code>"24"</code> — forces a 24-hour clock without a meridiem.</li> <li><code>"auto"</code> — selects 12-hour or 24-hour based on the user's locale.</li> </ul>
+
+<p>The following example illustrates a 24-hour clock without a meridiem.</p>
+
+<Demo name="en/components/timepicker/5" />
+
+### Min and max times
+
+<p> Use the <code>min-time</code> and <code>max-time</code> attributes to disable all times in the picker before or after the respective values. </p>
+
+<Demo name="en/components/timepicker/6" />
+
+### Blackout times
+
+<p> In addition to <code>min-time</code> and <code>max-time</code> constraints, the <code>blackoutTimes</code> property lets you provide a function that determines whether a given time is disabled and cannot be selected. The function receives a <code>TimeParts</code> object containing the <code>hour</code>, <code>minute</code>, and <code>second</code>values for the time being evaluated. </p>
+
+<Demo name="en/components/timepicker/7" />
+
+### Seconds
+
+<p>Use the <code>show-seconds</code> attribute to display the seconds segment in the timepicker.</p>
+
+<Demo name="en/components/timepicker/8" />
+
+### À-la-carte usage
+
+<p> The package includes the <code>m3e-timepicker-input</code> and <code>m3e-timepicker-dial</code> components, allowing you to use them in custom layouts or independently of <code>m3e-timepicker</code>. </p>
+<p> The <code>for</code> attribute can be used on <code>m3e-timepicker-input</code> to reference a <code>m3e-timepicker-dial</code> by ID. When present, the input automatically synchronizes its properties to the referenced dial, keeping both components in sync without requiring manual event wiring. </p>
+
+<Demo name="en/components/timepicker/9" />
+
+```js
+document.querySelector("#input").addEventListener("change", (e) => {
+  const picker = e.target;
+  document.querySelector("#inputValue").innerText =
+    `hour = ${picker.hour ?? ""}, minute = ${picker.minute ?? ""}`;
+});
+```

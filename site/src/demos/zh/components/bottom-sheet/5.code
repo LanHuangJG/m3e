@@ -1,0 +1,8 @@
+<m3e-button>
+  <m3e-bottom-sheet-trigger for="bottomSheet" detent="1">
+    Open draggable modal bottom sheet with detents at half via trigger
+  </m3e-bottom-sheet-trigger>
+</m3e-button>
+<m3e-bottom-sheet id="bottomSheet" modal handle detents="fit half full">
+  <!-- Content omitted for brevity -->
+</m3e-bottom-sheet>

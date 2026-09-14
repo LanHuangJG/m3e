@@ -1,0 +1,42 @@
+---
+title: "Snackbar"
+description: "The @m3e/web/snackbar module provides the M3eSnackbar global service on window (globalThis) used to present short updates about application processes at the bottom of the screen from anywhere in an application."
+summary: "The @m3e/web/snackbar module provides the M3eSnackbar global service on window (globalThis) used to present short updates about application processes at the bottom of the screen from anywhere in an application."
+script: "snackbar"
+section: components
+category: "communication"
+order: 42
+---
+
+<p> The <code>m3e/snackbar</code> module provides the <code>M3eSnackbar</code> global service on <code>window</code> (<code>globalThis</code>) used to present short updates about application processes at the bottom of the screen from anywhere in an application. </p>
+
+```js
+import "m3e/snackbar";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Snackbar service
+
+<p>Use the <code>open</code> method of the <code>M3eSnackbar</code> service to open a snackbar.</p>
+
+<Demo name="en/components/snackbar/0" />
+
+### Actions
+
+<p>You can include a single action and callback when opening a snackbar message.</p>
+
+<Demo name="en/components/snackbar/1" />
+
+### Dismissal
+
+<p>A snackbar message can optionally include a dismiss button.</p>
+
+<Demo name="en/components/snackbar/2" />
+
+### Options
+
+<p> When opening a snackbar message, you can pass a <code>SnackbarOptions</code> object that includes the following properties. </p>
+<ul> <li> <code>duration?: number</code> — The length of time, in milliseconds, to wait before automatically dismissing the snackbar. </li> <li> <code>closeLabel?: string</code> — The accessible label given to the close button used to dismiss the snackbar. </li> <li> <code>actionCallback?: () =&gt; void</code> — The callback function invoked when the action is clicked. </li> </ul>

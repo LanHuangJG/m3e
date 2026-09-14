@@ -1,0 +1,23 @@
+---
+title: "Angular"
+description: "M3E does not require a dedicated Angular bindings package. Angular provides first-class support for Web Components, allowing all M3E components to be used directly in Angular templates without additional wrappers."
+summary: "M3E does not require a dedicated Angular bindings package. Angular provides first-class support for Web Components, allowing all M3E components to be used directly in Angular templates without additional wrappers."
+script: ""
+section: frameworks
+order: 3
+---
+
+<p> M3E does not require a dedicated Angular bindings package. Angular provides first-class support for Web Components, allowing all M3E components to be used directly in Angular templates without additional wrappers. </p>
+
+<p> However, Angular requires the <code>CUSTOM&#95;ELEMENTS&#95;SCHEMA</code> to recognize custom elements. Add it to your module definition: </p>
+
+```html
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
+@NgModule({
+  declarations: [...],
+  imports: [...],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}
+```

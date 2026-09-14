@@ -2,6 +2,7 @@
 title: "Checkbox 复选框"
 description: "m3e-checkbox 组件让用户从一组选项中选中一个或多个。"
 summary: "m3e-checkbox 组件让用户从一组选项中选中一个或多个。"
+script: "checkbox"
 section: components
 category: "selection"
 order: 11
@@ -19,13 +20,13 @@ import "m3e/checkbox";
 
 <p> 复选框可以是独立、预先勾选或不确定状态。点击时会发出可取消的 <code>beforeinput</code> 事件,随后发出 <code>input</code> 与 <code>change</code> 事件。要取消勾选状态变化,请在 <code>beforeinput</code> 期间调用 <code>preventDefault</code>。 </p>
 
-<Demo name="zh/checkbox/0" />
+<Demo name="zh/components/checkbox/0" />
 
 ### 标签
 
 <p>使用 <code>label</code> 元素为复选框关联标签。</p>
 
-<Demo name="zh/checkbox/1" />
+<Demo name="zh/components/checkbox/1" />
 
 ### 表单关联
 
@@ -36,10 +37,10 @@ import "m3e/checkbox";
 
 <p> 使用 <code>disabled</code> 特性禁用复选框。关联的标签会自动呈现为禁用样式。 </p>
 
-<Demo name="zh/checkbox/2" />
+<Demo name="zh/components/checkbox/2" />
 
 ### 必填
 
 <p> 使用 <code>required</code> 特性控制复选框是否必须勾选。<code>invalid</code> 事件会在表单提交且该元素未通过约束校验时触发。处于无效状态时,标签会自动呈现相应样式。 </p>
 
-<Demo name="zh/checkbox/3" />
+<Demo name="zh/components/checkbox/3" />

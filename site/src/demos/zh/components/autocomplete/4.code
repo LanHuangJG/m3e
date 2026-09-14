@@ -1,0 +1,7 @@
+<m3e-form-field>
+  <label slot="label" for="state">State</label>
+  <input id="state" />
+</m3e-form-field>
+<m3e-autocomplete for="state" class="lazy">
+  <m3e-loading-indicator slot="loading"></m3e-loading-indicator>
+</m3e-autocomplete>

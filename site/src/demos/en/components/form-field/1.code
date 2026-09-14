@@ -1,0 +1,4 @@
+<m3e-form-field float-label="always">
+  <label slot="label" for="fld">Always float label</label>
+  <input id="fld" />
+</m3e-form-field>

@@ -1,0 +1,55 @@
+---
+title: "TOC 目录"
+description: "m3e-toc 组件用于生成层级式目录,供页内导航使用。"
+summary: "m3e-toc 组件用于生成层级式目录,供页内导航使用。"
+script: ""
+section: components
+category: "navigation"
+order: 51
+---
+
+<p><code>m3e-toc</code> 组件用于生成层级式目录,供页内导航使用。</p>
+
+```js
+import "m3e/toc";
+```
+
+## 用法
+
+### 生成目录
+
+<p> <code>m3e-toc</code> 组件会扫描指定容器内的标题元素 (<code>h1</code> 到 <code>h6</code>,以及 <code>m3e-hading</code>),自动生成目录。它会 创建一个可导航的大纲,反映文档结构,使用户能快速在各节之间跳转。 </p>
+<p> 要启用,请把 <code>for</code> 特性设为需要索引其标题的容器的 ID。 生成的目录会随着标题的添加、移除或重新排序而响应式更新。 </p>
+<p> 带有 <code>m3e-toc-ignore</code> 特性的标题会被目录生成器忽略。这 通常用于页面级标题,其文本与目录的标题重复。 </p>
+
+```html
+<div id="d1">
+  <m3e-toc for="d1">
+    <span slot="overline">Overline</span>
+    <span slot="title">Title</span>
+  </m3e-toc>
+  <div>
+    <h2 id="h1">Heading 1</h2>
+    <h3 id="h1.1">Heading 1.1</h3>
+    <h4 id="h1.1.1">Heading 1.1.1</h4>
+    <h3 id="h2">Heading 1.2</h3>
+    <h2 id="h2.1">Heading 2</h2>
+  </div>
+</div>
+```
+
+### Heading 标题
+
+<p> 使用 <code>overline</code> 与 <code>title</code> 插槽为目录提供标题内容。overline 限制为单行,title 限制为两行。若内容溢出,会被截断 并以省略号表示。 </p>
+
+```html
+<m3e-toc for="d1">
+    <span slot="overline">Overline</span>
+    <span slot="title">Title</span>
+  </m3e-toc>
+```
+
+### 最大深度
+
+<p> 生成目录时,你可以使用 <code>max-depth</code> 特性控制目录中出现标题的最大深度。默认最大深度为 2。 </p>
+<p> 标题深度由容器内找到的最高层级标题决定。例如,若 不存在 <code>h1</code> 但存在 <code>h2</code>,则深度从第 2 级开始。 </p>

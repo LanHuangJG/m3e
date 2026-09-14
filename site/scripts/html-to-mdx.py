@@ -44,13 +44,28 @@ ORDER = {
     "toc": 51, "toolbar": 52, "tooltip": 53, "tree": 54,
 }
 
-COMPONENTS = [
-    "app-bar", "avatar", "badge", "breadcrumb", "button", "button-group", "card", "checkbox",
-    "chips", "dialog", "divider", "expansion-panel", "fab", "fab-menu", "heading", "icon",
-    "icon-button", "list", "loading-indicator", "menu", "nav-bar", "nav-menu", "nav-rail",
-    "paginator", "progress-indicator", "radio-group", "segmented-button", "select", "shape",
-    "skeleton", "slide-group", "slider", "switch", "tabs", "toolbar", "tooltip", "tree",
-]
+COMPONENTS = list(ORDER)
+
+# 非组件页（章节 -> 页面 -> 排序）
+NONCOMP = {
+    "getting-started": {"overview": 1, "installation": 2, "browser-support": 3},
+    "styles": {"color": 1, "density": 2, "motion": 3, "typography": 4},
+    "frameworks": {"react": 1, "vue": 2, "angular": 3},
+}
+DROP_TITLES = {"原生模块支持", "Native module support", "API 参考", "API Reference"}
+
+
+def drop_sections(body: str) -> str:
+    """按 level-2 标题丢弃样板章节，其余保留。"""
+    hs = list(re.finditer(r'<m3e-heading[^>]*level="2"[^>]*>(.*?)</m3e-heading>', body, re.S))
+    if not hs:
+        return body
+    keep = [body[: hs[0].start()]]
+    for i, h in enumerate(hs):
+        end = hs[i + 1].start() if i + 1 < len(hs) else len(body)
+        if strip_tags(h.group(1)) not in DROP_TITLES:
+            keep.append(body[h.start() : end])
+    return "".join(keep)
 
 # 组件分类（对齐 Material 3 的五类 + 基础）
 CATEGORY = {
@@ -148,6 +163,16 @@ def normalize_tags(s: str) -> str:
     return re.sub(r"<[^<>]*>", fix, s, flags=re.S)
 
 
+def escape_md(s: str) -> str:
+    """转义标签外的 Markdown 特殊字符（* _ ~），避免被当成强调/删除线。"""
+    parts = re.split(r"(<[^<>]*>)", s)
+    for i in range(len(parts)):
+        if i % 2 == 1:
+            continue
+        parts[i] = parts[i].replace("*", "&#42;").replace("_", "&#95;").replace("~", "&#126;")
+    return "".join(parts)
+
+
 def flatten_blocks(s: str) -> str:
     for tag in ("ul", "ol", "p", "li", "blockquote"):
         s = re.sub(
@@ -174,20 +199,20 @@ def keep_intro_and_usage(body: str) -> str:
     return intro + body[hs[usage].start() : end]
 
 
-def convert(src: str, component: str, lang: str) -> tuple[str, str, str, list[dict]]:
+def convert(src: str, component: str, lang: str, section: str = "components", section_prefix: str = "components") -> tuple[str, str, str, list[dict]]:
     demos: list[dict] = []
     m = re.search(r'<m3e-content-pane id="body">(.*?)</m3e-content-pane>', src, re.S)
     body = m.group(1) if m else src
 
     h1 = re.search(r'<m3e-heading[^>]*level="1"[^>]*>(.*?)</m3e-heading>', body, re.S)
-    title = strip_tags(h1.group(1)) if h1 else component
+    title = re.sub(r"\s+", " ", strip_tags(h1.group(1))).strip() if h1 else component
     if h1:
         body = body[: h1.start()] + body[h1.end() :]
 
-    body = keep_intro_and_usage(body)
+    body = keep_intro_and_usage(body) if section == "components" else drop_sections(body)
 
     pm = re.search(r"<p>(.*?)</p>", body, re.S)
-    summary = strip_tags(pm.group(1)) if pm else title
+    summary = re.sub(r"\s+", " ", strip_tags(pm.group(1))).strip() if pm else title
 
     # 扫描所有卡片，showcase 与紧随的 example 配对
     cards: list[tuple[str, str, int, int]] = []
@@ -221,7 +246,7 @@ def convert(src: str, component: str, lang: str) -> tuple[str, str, str, list[di
             demos.append({"html": inner, "code": "", "lang": "html"})
             last_demo = len(demos) - 1
             last_demo_end = end
-            out.append(f'\n<Demo name="{lang}/{component}/{last_demo}" />\n')
+            out.append(f'\n<Demo name="{lang}/{section_prefix}/{component}/{last_demo}" />\n')
         elif kind == "install":
             out.append("\n" + fence(extract_code(card), "js") + "\n")
             last_demo = -1
@@ -265,7 +290,7 @@ def convert(src: str, component: str, lang: str) -> tuple[str, str, str, list[di
         )
         seg = flatten_blocks(seg)
         seg = "\n".join(line.lstrip() for line in seg.split("\n"))
-        parts[i] = seg.replace("{", "&#123;").replace("}", "&#125;")
+        parts[i] = escape_md(seg.replace("{", "&#123;").replace("}", "&#125;"))
     body = "".join(parts)
 
     body = rename_pkgs(body)
@@ -283,13 +308,16 @@ def main() -> int:
     out_dir = out_root / lang / "components"
     out_dir.mkdir(parents=True, exist_ok=True)
     count = 0
-    for name in COMPONENTS:
-        f = src_dir / "components" / f"{name}.html"
+    jobs = [("components", n, ORDER.get(n, 100)) for n in COMPONENTS]
+    for sec, pages in NONCOMP.items():
+        jobs += [(sec, n, o) for n, o in pages.items()]
+    for section, name, order in jobs:
+        f = src_dir / section / f"{name}.html"
         if not f.exists():
             print("MISS", f)
             continue
-        title, summary, body, demos = convert(f.read_text(encoding="utf-8"), name, lang)
-        d = demos_root / lang / name
+        title, summary, body, demos = convert(f.read_text(encoding="utf-8"), name, lang, section, section)
+        d = demos_root / lang / section / name
         legacy = demos_root / name
         if legacy.exists():
             for old in legacy.glob("*"):
@@ -302,16 +330,20 @@ def main() -> int:
             (d / f"{i}.html").write_text(demo["html"] + "\n", encoding="utf-8")
             (d / f"{i}.code").write_text(demo["code"] + "\n", encoding="utf-8")
 
+        script = name if (src_dir / "components" / f"{name}.js").exists() else ""
         fm = (
             "---\n"
             f'title: "{title.replace(chr(34), chr(92) + chr(34))}"\n'
             f'description: "{summary.replace(chr(34), chr(92) + chr(34))}"\n'            f'summary: "{summary.replace(chr(34), chr(92) + chr(34))}"\n'
-            "section: components\n"
-            f'category: "{CATEGORY.get(name, "basics")}"\n'
-            f"order: {ORDER.get(name, 100)}\n"
+            f'script: "{script}"\n'
+            f"section: {section}\n"
+            + (f'category: "{CATEGORY.get(name, "basics")}"\n' if section == "components" else "")
+            + f"order: {order}\n"
             "---\n\n"
         )
-        (out_dir / f"{name}.mdx").write_text(fm + body + "\n", encoding="utf-8")
+        dest = out_dir if section == "components" else (out_root / lang / section)
+        dest.mkdir(parents=True, exist_ok=True)
+        (dest / f"{name}.mdx").write_text(fm + body + "\n", encoding="utf-8")
         count += 1
     print(f"[{lang}] {count} MDX, {sum(1 for _ in demos_root.rglob('*.html'))} demos -> {demos_root}")
     return 0

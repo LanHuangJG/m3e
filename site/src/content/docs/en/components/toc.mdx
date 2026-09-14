@@ -1,0 +1,57 @@
+---
+title: "TOC"
+description: "The m3e-toc component generates a hierarchical table of contents for in-page navigation."
+summary: "The m3e-toc component generates a hierarchical table of contents for in-page navigation."
+script: ""
+section: components
+category: "navigation"
+order: 51
+---
+
+<p>The <code>m3e-toc</code> component generates a hierarchical table of contents for in-page navigation.</p>
+
+```js
+import "m3e/toc";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Generating a TOC
+
+<p> The <code>m3e-toc</code> component automatically generates a table of contents by scanning heading elements (<code>h1</code> through <code>h6</code>, and <code>m3e-hading</code>) within a specified container. It creates a navigable outline that reflects the document's structure, enabling users to quickly jump between sections. </p>
+<p> To activate, set the <code>for</code> attribute to the ID of the container whose headings should be indexed. The generated TOC updates reactively as headings are added, removed, or reordered. </p>
+<p> Headers having the <code>m3e-toc-ignore</code> attribute will be ignored by the TOC generator. This is typically used for page-level headings whose text is mirrored by the TOC's title. </p>
+
+```html
+<div id="d1">
+  <m3e-toc for="d1">
+    <span slot="overline">Overline</span>
+    <span slot="title">Title</span>
+  </m3e-toc>
+  <div>
+    <h2 id="h1">Heading 1</h2>
+    <h3 id="h1.1">Heading 1.1</h3>
+    <h4 id="h1.1.1">Heading 1.1.1</h4>
+    <h3 id="h2">Heading 1.2</h3>
+    <h2 id="h2.1">Heading 2</h2>
+  </div>
+</div>
+```
+
+### Heading
+
+<p> Use the <code>overline</code> and <code>title</code> slots to provide heading content for a TOC. The overline is limited to a single line and the title is limited to two lines. If content overflows, it will be truncated with an ellipsis. </p>
+
+```html
+<m3e-toc for="d1">
+    <span slot="overline">Overline</span>
+    <span slot="title">Title</span>
+  </m3e-toc>
+```
+
+### Maximum depth
+
+<p> When generating a TOC, you can control the maximum depth of headers that appear in the TOC using the <code>max-depth</code> attribute. By default, the maximum depth is 2. </p>
+<p> The heading depth is determined by the highest-level heading found within the container. For example, if no <code>h1</code> is present but an <code>h2</code> is, the depth starts at level 2. </p>

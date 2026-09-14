@@ -1,0 +1,23 @@
+<m3e-button>
+              <m3e-bottom-sheet-trigger for="bottomSheet9">
+                Open draggable modal bottom sheet with detents at collapsed with custom peek
+              </m3e-bottom-sheet-trigger>
+            </m3e-button>
+            <m3e-bottom-sheet
+              id="bottomSheet9"
+              modal
+              handle
+              detents="collapsed fit half full"
+              style="--m3e-bottom-sheet-peek-height: 36px"
+            >
+              <m3e-action-list>
+                <m3e-list-action>
+                  <m3e-bottom-sheet-action>Google Keep</m3e-bottom-sheet-action>
+                  <span slot="supporting-text">Add to a note</span>
+                </m3e-list-action>
+                <m3e-list-action>
+                  <m3e-bottom-sheet-action>Google Docs</m3e-bottom-sheet-action>
+                  <span slot="supporting-text">Embed in a document</span>
+                </m3e-list-action>
+              </m3e-action-list>
+            </m3e-bottom-sheet>

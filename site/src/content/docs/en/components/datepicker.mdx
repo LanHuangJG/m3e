@@ -1,0 +1,110 @@
+---
+title: "Datepicker"
+description: "The m3e-datepicker component presents a temporary, structured surface for selecting dates across month, year, and multi-year views. It supports single-date and range selection, enforces minimum, maximum, and blackout constraints, and exposes styling hooks for highlighting special date states."
+summary: "The m3e-datepicker component presents a temporary, structured surface for selecting dates across month, year, and multi-year views. It supports single-date and range selection, enforces minimum, maximum, and blackout constraints, and exposes styling hooks for highlighting special date states."
+script: "datepicker"
+section: components
+category: "selection"
+order: 15
+---
+
+<p> The <code>m3e-datepicker</code> component presents a temporary, structured surface for selecting dates across month, year, and multi-year views. It supports single-date and range selection, enforces minimum, maximum, and blackout constraints, and exposes styling hooks for highlighting special date states. </p>
+
+```js
+import "m3e/datepicker";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Use the <code>m3e-datepicker-toggle</code> to open a <code>m3e-datepicker</code>. This component should be nested inside a clickable element and be associated with a picker by setting the for attribute to the id of the picker to open. </p>
+
+<Demo name="en/components/datepicker/0" />
+
+### Date input
+
+<p> The <code>m3e-date-input</code> provides a segmented date field that integrates directly with <code>m3e-datepicker</code>. It can be used in place of a standard <code>input</code> when you want built-in parsing, formatting, and precise segment editing. </p>
+<p> The examples on this page use a standard <code>input</code> to demonstrate the full <code>m3e-datepicker</code> API. When using <code>m3e-date-input</code>, many of these props are not required because the input manages the value and the picker simply writes the selected date back to the field. </p>
+<p>See <a href="/components/date-input/">Date Input</a> for details.</p>
+
+<Demo name="en/components/datepicker/1" />
+
+### Variants
+
+<p> The <code>m3e-datepicker</code> supports three appearance variants: <code>docked</code> (default), <code>modal</code>, and <code>auto</code>. Use the <code>variant</code> attribute to control how the picker is presented. When set to <code>auto</code>, the picker automatically selects the appropriate appearance based on the current screen size. </p>
+<p> When using the <code>modal</code> variant, the value of the <code>label</code> attribute is used as the header text for the modal dialog. </p>
+<p>All examples in this page use <code>variant="auto"</code>.</p>
+
+```html
+<m3e-datepicker variant="auto"></m3e-datepicker>
+```
+
+### Date selection
+
+<p> Use the <code>date</code> attribute to set the currently selected date, and listen for the <code>change</code> event to react when the user selects a new one. You can also enable the <code>clearable</code> attribute to display a button that clears the current selection. </p>
+
+<Demo name="en/components/datepicker/2" />
+
+```js
+const picker = document.querySelector("#datepicker");
+const field = document.querySelector("#field");
+field.value = toLocaleDateString(picker.date);
+picker.addEventListener("change", () => {
+  field.value = toLocaleDateString(picker.date);
+});
+```
+
+### Date string handling
+
+<p> Different browsers interpret date strings in inconsistent ways, especially when the string resembles an ISO date but does not include a time or timezone. To ensure predictable behavior across environments, <code>m3e-datepicker</code> uses a consistent, standards-aligned parsing model instead of relying on the browser's built-in <code>Date.parse()</code> rules. </p>
+<p> When <code>m3e-datepicker</code> receives a date string, it automatically detects whether the value matches one of the ISO-8601 formats that can be parsed safely and unambiguously: </p>
+<ul> <li><code>yyyy-MM-dd</code> — local date (no time, no timezone)</li> <li><code>yyyy-MM-ddTHH:mm:ss</code> — local date and time</li> <li><code>yyyy-MM-ddTHH:mm:ssZ</code> — UTC date and time</li> <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> — date and time with an explicit timezone offset</li> </ul>
+<p> Strings in these formats are converted into local <code>Date</code> objects without unexpected timezone shifts. This prevents issues such as date-only values drifting into the previous or next day when interpreted as UTC. If a string does not follow one of these ISO-compatible patterns, parsing may be ambiguous or unsupported. For the most reliable results, use one of the formats above. </p>
+
+### Start date
+
+<p> By default, a datepicker opens to the selected date, or to today if no date is set. You can override this by using the <code>start-at</code> attribute to specify the date that <code>m3e-datepicker</code> should initially display. </p>
+
+<Demo name="en/components/datepicker/3" />
+
+### Start view
+
+<p> The <code>start-view</code> attribute can be used to set the view that will show up when the calendar first opens. It can be set to <code>month</code>, <code>year</code>, or <code>multi-year</code>; by default it will open to <code>month</code> view. </p>
+
+<Demo name="en/components/datepicker/4" />
+
+### Date ranges
+
+<p> To select a range of dates instead of a single date, use the <code>range</code>, or <code>range-start</code> and <code>range-end</code> attributes. Setting <code>range</code> or <code>range-start</code> puts the calendar into range-selection mode. </p>
+
+<Demo name="en/components/datepicker/5" />
+
+```js
+const picker = document.querySelector("#range-picker");
+const field = document.querySelector("#field");
+field.value = toLocaleDateString(picker.rangeStart) + " - " + toLocaleDateString(picker.rangeEnd);
+picker.addEventListener("change", () => {
+  field.value = toLocaleDateString(picker.rangeStart) + " - " + toLocaleDateString(picker.rangeEnd);
+});
+```
+
+### Min and max dates
+
+<p> Use the <code>min-date</code> and <code>max-date</code> to disable all dates on the calendar before or after the respective values and prevent the user from advancing the calendar past the month or year (depending on current view) containing the minimum or maximum date. </p>
+
+<Demo name="en/components/datepicker/6" />
+
+### Blackout dates
+
+<p> In addition to <code>min-date</code> and <code>max-date</code> constraints, you can use the <code>blackoutDates</code> property to specify a function used to determine whether a date is disabled and cannot be selected by the user. </p>
+
+<Demo name="en/components/datepicker/7" />
+
+### Special dates
+
+<p> Use the <code>specialDates</code> property to specify a function used to determine whether a date has a highlighted look and feel. You can use the <code>--m3e-calendar-item-special-container-color</code>, <code>--m3e-calendar-item-special-color</code>, <code>--m3e-calendar-item-special-ripple-color</code>, <code>--m3e-calendar-item-special-hover-color</code>, and <code>--m3e-calendar-item-special-focus-color</code> CSS properties to style special dates. </p>
+
+<Demo name="en/components/datepicker/8" />

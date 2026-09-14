@@ -2,6 +2,7 @@
 title: "Card 卡片"
 description: "m3e-card 组件是一个灵活、富有表现力的容器,用于在一个视觉上独立于背景的表面上呈现统一的主题——文本、媒体与操作。"
 summary: "m3e-card 组件是一个灵活、富有表现力的容器,用于在一个视觉上独立于背景的表面上呈现统一的主题——文本、媒体与操作。"
+script: ""
 section: components
 category: "containment"
 order: 10
@@ -20,48 +21,48 @@ import "m3e/card";
 <p> <code>m3e-card</code> 组件为结构化内容块提供模块化布局。它暴露以下具名插槽: </p>
 <ul> <li> <code>header</code> —— 渲染卡片的头部区域。通常用于标题、图标或引导性上下文。 </li> <li> <code>content</code> —— 渲染带内边距的内容区域。适合正文、表单字段或结构化信息。 </li> <li> <code>actions</code> —— 渲染操作区域。用于与卡片意图对齐的按钮、开关或交互控件。 </li> <li> <code>footer</code> —— 渲染页脚区域。适合元数据、免责声明或次要操作。 </li> <li> <code>(default)</code> —— 渲染卡片默认内容,不带内边距。用于通栏布局或自定义组合。 </li> </ul>
 
-<Demo name="zh/card/0" />
+<Demo name="zh/components/card/0" />
 
 <p> 你可以通过给插槽元素添加 <code>end</code> 特性,更改 <code>actions</code> 插槽的水平对齐方式。 </p>
 
-<Demo name="zh/card/1" />
+<Demo name="zh/components/card/1" />
 
 <p>使用默认插槽时,<code>m3e-card</code> 不会添加任何内边距。</p>
 
-<Demo name="zh/card/2" />
+<Demo name="zh/components/card/2" />
 
 ### 变体
 
 <p> 卡片有三种外观变体:<code>filled</code>(默认)、<code>outlined</code> 与 <code>elevated</code>。使用 <code>variant</code> 特性控制卡片的外观。 </p>
 
-<Demo name="zh/card/3" />
+<Demo name="zh/components/card/3" />
 
 ### 内联
 
 <p> 默认情况下,卡片渲染为块级元素。使用 <code>inline</code> 特性让卡片与周围内容同行渲染。 </p>
 
-<Demo name="zh/card/4" />
+<Demo name="zh/components/card/4" />
 
 ### 方向
 
 <p> 默认情况下,卡片为纵向排列。使用 <code>orientation</code> 特性把方向改为 <code>horizontal</code> 或 <code>vertical</code>(默认)。 </p>
 
-<Demo name="zh/card/5" />
+<Demo name="zh/components/card/5" />
 
 ### 可操作
 
 <p> 使用 <code>actionable</code> 特性把卡片配置为可操作表面,让用户把整张卡片作为单一交互目标进行交互。这种模式非常适合导航、选择或触发上下文相关的行为。 </p>
 
-<Demo name="zh/card/6" />
+<Demo name="zh/components/card/6" />
 
 #### 禁用
 
 <p> 使用 <code>disabled</code> 特性禁用可操作的卡片。默认情况下,被禁用的卡片无法通过键盘聚焦。你可以使用 <code>disabled-interactive</code> 特性支持 <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_disabled_controls" target="_blank">禁用控件的可聚焦性</a> 以提升其可发现性。 </p>
 
-<Demo name="zh/card/7" />
+<Demo name="zh/components/card/7" />
 
 #### 链接
 
 <p> 可操作的卡片也可以通过 <code>href</code> 特性指定 URL,表现得像链接。你还可以像原生 a 标签一样指定 <code>target</code>、<code>rel</code> 与 <code>download</code>。 </p>
 
-<Demo name="zh/card/8" />
+<Demo name="zh/components/card/8" />

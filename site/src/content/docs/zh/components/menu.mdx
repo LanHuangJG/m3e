@@ -2,6 +2,7 @@
 title: "Menu 菜单"
 description: "m3e-menu 组件在临时表面上呈现一组选择,通常锚定到触发元素。"
 summary: "m3e-menu 组件在临时表面上呈现一组选择,通常锚定到触发元素。"
+script: ""
 section: components
 category: "navigation"
 order: 28
@@ -19,13 +20,13 @@ import "m3e/menu";
 
 <p> <code>m3e-menu</code> 与 <code>m3e-menu-trigger</code> 配合使用,创建在触发器的父元素被激活时打开的菜单。使用 <code>m3e-menu-trigger</code> 的 <code>for</code> 特性指定要打开的菜单。 </p>
 
-<Demo name="zh/menu/0" />
+<Demo name="zh/components/menu/0" />
 
 ### 变体
 
 <p> 有两种外观变体:<code>standard</code>(默认)与 <code>vibrant</code>。使用 <code>variant</code> 特性更改外观。 </p>
 
-<Demo name="zh/menu/1" />
+<Demo name="zh/components/menu/1" />
 
 ### 菜单项
 
@@ -36,32 +37,32 @@ import "m3e/menu";
 
 <p> 所有菜单项类型都提供两个用于图标的具名插槽。使用 <code>icon</code> 插槽在项目标签前呈现图标,使用 <code>trailing-icon</code> 插槽在其后呈现图标。 </p>
 
-<Demo name="zh/menu/2" />
+<Demo name="zh/components/menu/2" />
 
 #### 禁用
 
 <p>使用 <code>disabled</code> 特性禁用菜单项。</p>
 
-<Demo name="zh/menu/3" />
+<Demo name="zh/components/menu/3" />
 
 #### 复选框
 
 <p> 使用 <code>m3e-menu-item-checkbox</code> 呈现支持多选的可切换菜单项。 <code>checked</code> 特性反映菜单项的选中状态。如果菜单项通过 <code>icon</code> 插槽指定了图标, 则在选中时该图标会被替换为对勾图标。 </p>
 
-<Demo name="zh/menu/4" />
+<Demo name="zh/components/menu/4" />
 
 #### 单选框
 
 <p> 使用 <code>m3e-menu-item-radio</code> 呈现支持单选的可切换菜单项。 <code>checked</code> 特性反映菜单项的选中状态。如果菜单项通过 <code>icon</code> 插槽指定了图标, 则在选中时该图标会被替换为对勾图标。 </p>
 
-<Demo name="zh/menu/5" />
+<Demo name="zh/components/menu/5" />
 
 <p> 使用 <code>m3e-menu-item-group</code> 在单个 <code>m3e-menu</code> 内组织多组单选项目。每个分组维护各自的选择状态,使不同的单选组可以 独立共存。 </p>
 
-<Demo name="zh/menu/6" />
+<Demo name="zh/components/menu/6" />
 
 ### 子菜单
 
 <p> 子菜单通过在 <code>m3e-menu-item</code> 中嵌套 <code>m3e-menu-trigger</code>,并使用 <code>for</code> 特性指定要打开的子菜单来触发。 </p>
 
-<Demo name="zh/menu/7" />
+<Demo name="zh/components/menu/7" />

@@ -1,0 +1,53 @@
+---
+title: "Drawer Container 抽屉容器"
+description: "m3e-drawer-container 是一个响应式布局容器,在主内容两侧管理可折叠的左侧与右侧抽屉。"
+summary: "m3e-drawer-container 是一个响应式布局容器,在主内容两侧管理可折叠的左侧与右侧抽屉。"
+script: ""
+section: components
+category: "navigation"
+order: 18
+---
+
+<p> <code>m3e-drawer-container</code> 是一个响应式布局容器,在主内容两侧管理可折叠的左侧与右侧抽屉。 </p>
+
+```js
+import "m3e/drawer-container";
+```
+
+## 用法
+
+### 抽屉
+
+<p> <code>m3e-drawer-container</code> 提供 <code>start</code> 与 <code>end</code> 插槽,用于指定抽屉元素。默认插槽呈现抽屉之间的内容。<code>start</code> 与 <code>end</code> 特性控制对应抽屉是否打开。 </p>
+
+<Demo name="zh/components/drawer-container/0" />
+
+### 尺寸
+
+<p> 你可以使用 <code>--m3e-drawer-container-width</code> CSS 自定义属性控制抽屉宽度,也可以显式设置某个抽屉的宽度。 </p>
+
+<Demo name="zh/components/drawer-container/1" />
+
+### 模式
+
+<p><code>&lt;m3e-drawer-container&gt;</code> 支持四种富有表现力的抽屉模式:</p>
+<ul> <li><code>side</code>(默认):抽屉始终显示在内容旁边。</li> <li><code>push</code>:抽屉打开时推移主内容。</li> <li><code>over</code>:抽屉覆盖在内容之上,不产生位移。</li> <li><code>auto</code>:模式根据视口大小自适应。</li> </ul>
+<p> <code>push</code> 与 <code>over</code> 模式会在主内容之上呈现一层遮罩,焦点陷阱会把焦点保持在抽屉内,主内容变为不可交互。点击遮罩会自动关闭抽屉。 </p>
+<p> 使用 <code>start-mode</code> 特性控制起始抽屉的行为,使用 <code>end-mode</code> 独立配置结束抽屉。 </p>
+
+<Demo name="zh/components/drawer-container/2" />
+
+<Demo name="zh/components/drawer-container/3" />
+
+### 分隔线
+
+<p> 当 <code>mode="side"</code> 时,使用 <code>start-divider</code> 或 <code>end-divider</code> 以分隔线把抽屉与内容隔开。当 <code>mode="auto"</code> 解析为 <code>side</code> 时, 也会显示分隔线。 </p>
+
+<Demo name="zh/components/drawer-container/4" />
+
+### 切换
+
+<p> 使用 <code>m3e-drawer-toggle</code> 切换抽屉的打开状态。该组件应嵌套 在一个可点击元素内部,并把 <code>for</code> 特性设为某个抽屉的 <code>id</code> 来建立关联。 </p>
+<p>下面的示例演示如何使用 <code>m3e-icon-button</code> 切换抽屉。更多信息请参阅 <a href="/zh/components/icon-button/">Icon Button 图标按钮</a>。 </p>
+
+<Demo name="zh/components/drawer-container/5" />

@@ -1,0 +1,4 @@
+<m3e-drawer-container start>
+  <div slot="start" style="width: 200px;">Start drawer</div>
+  <div>Main content</div>
+</m3e-drawer-container>

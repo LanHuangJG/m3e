@@ -1,0 +1,83 @@
+---
+title: "Calendar 日历"
+description: "m3e-calendar 组件提供一个结构化的界面,可在月、年、多年视图中导航与选择。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。"
+summary: "m3e-calendar 组件提供一个结构化的界面,可在月、年、多年视图中导航与选择。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。"
+script: "calendar"
+section: components
+category: "selection"
+order: 9
+---
+
+<p> <code>m3e-calendar</code> 组件提供一个结构化的界面,可在月、年、多年视图中导航与选择。它支持单日期与范围选择,强制最小/最大/禁用日期等约束,并暴露样式钩子用于高亮特殊日期状态。 </p>
+
+```js
+import "m3e/calendar";
+```
+
+## 用法
+
+### 日期字符串处理
+
+<p> 不同浏览器对日期字符串的解析并不一致,尤其是那些形似 ISO 日期但不含时间或时区的字符串。为了在各种环境下都有可预期的行为,<code>m3e-calendar</code> 采用一套一致、贴合标准的解析模型,而不依赖浏览器内置的 <code>Date.parse()</code> 规则。 </p>
+<p> 当 <code>m3e-calendar</code> 收到日期字符串时,会自动判断该值是否属于可安全、无歧义解析的 ISO-8601 格式: </p>
+<ul> <li><code>yyyy-MM-dd</code> —— 本地日期(不含时间与时区)</li> <li><code>yyyy-MM-ddTHH:mm:ss</code> —— 本地日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ssZ</code> —— UTC 日期与时间</li> <li><code>yyyy-MM-ddTHH:mm:ss±HH:mm</code> —— 带明确时区偏移的日期与时间</li> </ul>
+<p> 符合上述格式的字符串会被转换为本地 <code>Date</code> 对象,不会出现意外的时区偏移,从而避免“仅日期的值被按 UTC 解析后漂移到前一天或后一天”的问题。如果字符串不符合这些 ISO 兼容格式,解析可能不明确或不受支持。为获得最可靠的结果,请使用上面列出的格式。 </p>
+
+### 日期选择
+
+<p> 设置 <code>date</code> 特性以定义当前选中的日期。监听 <code>change</code> 事件,以便在用户选择新日期时作出响应。 </p>
+
+<Demo name="zh/components/calendar/0" />
+
+```js
+const calendar = document.querySelector("#calendar");
+const selectedDate = document.querySelector("#selected-date");
+selectedDate.textContent = "Selected Date:" + toLocaleDateString(calendar.date);
+calendar.addEventListener("change", () => {
+  selectedDate.textContent = "Selected Date:" + toLocaleDateString(calendar.date);
+});
+```
+
+### 起始日期
+
+<p> 默认情况下,日历打开时定位到已选日期;未设置则定位到今天。你可以用 <code>start-at</code> 特性指定 <code>m3e-calendar</code> 初始显示的日期。 </p>
+
+<Demo name="zh/components/calendar/1" />
+
+### 初始视图
+
+<p> <code>start-view</code> 特性可设置日历首次打开时显示的视图,可选 <code>month</code>、<code>year</code> 或 <code>multi-year</code>;默认打开 <code>month</code> 视图。 </p>
+
+<Demo name="zh/components/calendar/2" />
+
+### 日期范围
+
+<p> 要选择一段日期范围而非单个日期,使用 <code>range-start</code> 与 <code>range-end</code> 特性。设置 <code>range-start</code> 会让日历进入范围选择模式。当用户选择晚于当前 <code>range-start</code> 的日期时,<code>date</code> 与 <code>range-end</code> 都会更新为该值。如果用户选择早于 当前 <code>range-start</code> 的日期,范围会被重置,<code>date</code> 与 <code>range-start</code> 都会设为新选中的日期。 </p>
+
+<Demo name="zh/components/calendar/3" />
+
+### 最小与最大日期
+
+<p> 使用 <code>min-date</code> 与 <code>max-date</code> 禁用日历上早于/晚于对应值的全部日期,并阻止用户把日历翻到包含最小/最大日期的月或年之外(取决于当前视图)。 </p>
+
+<Demo name="zh/components/calendar/4" />
+
+### 禁用日期
+
+<p> 使用 <code>blackoutDates</code> 属性指定一个函数,用于判断某个日期是否被禁用、无法被用户选择。 </p>
+
+<Demo name="zh/components/calendar/5" />
+
+```js
+document.querySelector("#blackout-dates").blackoutDates = (date) => isWeekend(date);
+```
+
+### 特殊日期
+
+<p> 使用 <code>specialDates</code> 属性指定一个函数,用于判断某个日期是否以高亮样式展示。你可以用 <code>--m3e-calendar-item-special-container-color</code>、 <code>--m3e-calendar-item-special-color</code>、<code>--m3e-calendar-item-special-ripple-color</code>、 <code>--m3e-calendar-item-special-hover-color</code> 与 <code>--m3e-calendar-item-special-focus-color</code> 这些 CSS 属性来设置特殊日期的样式。 </p>
+
+<Demo name="zh/components/calendar/6" />
+
+```js
+document.querySelector("#special-dates").specialDates = (date) => isHoliday(date);
+```

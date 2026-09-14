@@ -1,9 +1,8 @@
 ---
 title: "Tree 树形控件"
-description: "m3e-tree 组件以用户可导航的结构呈现层级数据,其中的嵌套
-          层级可按需展开与折叠。"
-summary: "m3e-tree 组件以用户可导航的结构呈现层级数据,其中的嵌套
-          层级可按需展开与折叠。"
+description: "m3e-tree 组件以用户可导航的结构呈现层级数据,其中的嵌套 层级可按需展开与折叠。"
+summary: "m3e-tree 组件以用户可导航的结构呈现层级数据,其中的嵌套 层级可按需展开与折叠。"
+script: ""
 section: components
 category: "containment"
 order: 54
@@ -21,34 +20,34 @@ import "m3e/tree";
 
 <p> 基础树由一个 <code>m3e-tree</code> 组件构成,其中包含一个或多个 <code>m3e-tree-item</code>。 条目可以嵌套,以创建更深的层级。每个条目通过 <code>label</code> 插槽提供其文本。使用 <code>open</code> 特性控制带有嵌套子项的条目 是否展开。 </p>
 
-<Demo name="zh/tree/0" />
+<Demo name="zh/components/tree/0" />
 
 ### 选择
 
 <p> 使用 <code>selected</code> 特性把条目标记为已选中。当用户更改选择时 会触发 <code>change</code> 事件,<code>selected</code> 属性则提供 对当前选中条目的访问。 </p>
 
-<Demo name="zh/tree/1" />
+<Demo name="zh/components/tree/1" />
 
 #### 多选
 
 <p> 树形控件同时支持单选与多选模式。使用 <code>m3e-tree</code> 的 <code>multi</code> 特性允许同时选中多个条目。 </p>
 
-<Demo name="zh/tree/2" />
+<Demo name="zh/components/tree/2" />
 
 #### 级联选择
 
 <p> 将 <code>cascade</code> 特性与 <code>multi</code> 搭配使用,即可启用条目级联 选择。 </p>
 
-<Demo name="zh/tree/3" />
+<Demo name="zh/components/tree/3" />
 
 ### 图标
 
 <p>使用 <code>icon</code> 与 <code>selected-icon</code> 插槽为条目呈现图标。</p>
 
-<Demo name="zh/tree/4" />
+<Demo name="zh/components/tree/4" />
 
 #### 切换图标
 
 <p> 使用 <code>toggle-icon</code> 与 <code>open-toggle-icon</code> 更改用于展开与 折叠条目的图标。 </p>
 
-<Demo name="zh/tree/5" />
+<Demo name="zh/components/tree/5" />

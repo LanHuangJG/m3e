@@ -1,0 +1,25 @@
+<m3e-button>
+              <m3e-bottom-sheet-trigger for="bottomSheet10">
+                Open hideable modal bottom sheet with detents and header
+              </m3e-bottom-sheet-trigger>
+            </m3e-button>
+            <m3e-bottom-sheet
+              id="bottomSheet10"
+              modal
+              handle
+              hideable
+              detents="collapsed fit half full"
+              aria-labelledby="sheetTitle"
+            >
+              <m3e-heading id="sheetTitle" slot="header" variant="title" size="large">Choose a destination</m3e-heading>
+              <m3e-action-list>
+                <m3e-list-action>
+                  <m3e-bottom-sheet-action>Google Keep</m3e-bottom-sheet-action>
+                  <span slot="supporting-text">Add to a note</span>
+                </m3e-list-action>
+                <m3e-list-action>
+                  <m3e-bottom-sheet-action>Google Docs</m3e-bottom-sheet-action>
+                  <span slot="supporting-text">Embed in a document</span>
+                </m3e-list-action>
+              </m3e-action-list>
+            </m3e-bottom-sheet>

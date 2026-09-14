@@ -1,0 +1,73 @@
+---
+title: "Split Pane"
+description: "The m3e-split-pane component delivers a Material 3-inspired split view with a movable drag handle, enabling responsive layout composition and precise pane resizing. It supports keyboard interaction, adaptive orientation, and optional detent snapping for consistent, accessible content distribution."
+summary: "The m3e-split-pane component delivers a Material 3-inspired split view with a movable drag handle, enabling responsive layout composition and precise pane resizing. It supports keyboard interaction, adaptive orientation, and optional detent snapping for consistent, accessible content distribution."
+script: ""
+section: components
+category: "containment"
+order: 44
+---
+
+<p> The <code>m3e-split-pane</code> component delivers a Material 3-inspired split view with a movable drag handle, enabling responsive layout composition and precise pane resizing. It supports keyboard interaction, adaptive orientation, and optional detent snapping for consistent, accessible content distribution. </p>
+
+```js
+import "m3e/split-pane";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> The <code>m3e-split-pane</code> exposes two slots: <code>start</code>, which renders content on the logical start side of the layout, and <code>end</code>, which renders content on the logical end side. The <code>value</code> attribute controls the percentage of the available space occupied by the start pane, with the end pane automatically filling the remainder. By default, <code>value</code> is 50%. When a user interaction causes <code>value</code> to change, a cancellable <code>beforeinput</code> event is emitted, followed by an <code>input</code> and <code>change</code> event. This allows you to react to live resizing as well as commit final adjustments when the user finishes interacting with the drag handle. </p>
+
+<Demo name="en/components/split-pane/0" />
+
+### Orientation
+
+<p> The <code>m3e-split-pane</code> supports three orientations: <code>horizontal</code> (default), <code>vertical</code>, and <code>auto</code>. Using <code>auto</code>, the orientation is responsive and determined by viewport size. Use the <code>orientation</code> attribute to change the orientation. </p>
+
+<Demo name="en/components/split-pane/1" />
+
+### Min and max sizes
+
+<p> Use the <code>min</code> and <code>max</code> attributes to control the minimum and maximum percentage the start pane can occupy. </p>
+
+<Demo name="en/components/split-pane/2" />
+
+### Step size
+
+<p> Use the <code>step</code> attribute to control how much the split pane's <code>value</code> changes with each keyboard resize action, such as pressing the arrow keys. </p>
+
+<Demo name="en/components/split-pane/3" />
+
+### Detents
+
+<p> Use the <code>detents</code> attribute to define the positions a split pane can snap to during resizing. A split pane may have no detents, a single detent, or multiple detents. Detents influence how the pane resizes, how it responds to drag gestures, and how the drag handle behaves during keyboard interaction. When detents are present, the drag handle snaps to the nearest detent as the user moves it and <code>step</code> is ignored; when no detents are defined, the split pane resizes freely without snapping. </p>
+<p> Double-clicking the drag handle, or pressing <code>ENTER</code> or <code>SPACE</code> when it is focused, will cycle to the next detent. Use the <code>wrap-detents</code> attribute to allow cycling to wrap from the last detent back to the first. </p>
+
+<Demo name="en/components/split-pane/4" />
+
+### Disabling
+
+<p> Use the <code>disabled</code> attribute to disable resizing. When disabled, the drag handle is hidden from interaction, pointer and keyboard input are ignored, and the split pane remains fixed at its current value. </p>
+
+<Demo name="en/components/split-pane/5" />
+
+### Conditional rendering
+
+<p> You can conditionally render the start or end pane either by omitting content from the corresponding slot or by applying the <code>hidden</code> attribute to slotted elements. When all assigned elements in a slot are hidden, the split pane treats that side as empty and updates the layout so the visible pane fully occupies the available space without modifying the current <code>value</code>. </p>
+
+<Demo name="en/components/split-pane/6" />
+
+### Nested panes
+
+<p> Split panes can be nested to create complex layouts, allowing you to build multi-pane workspaces by combining multiple binary splits. </p>
+
+<Demo name="en/components/split-pane/7" />
+
+### Form Associated
+
+<p> This component participates in form submission as a <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face" target="_blank" rel="noopener noreferrer">form-associated custom element</a> (FACE), contributing its state to the form data. The <code>name</code> attribute defines the key under which the component's value is submitted in a form. When not disabled, the current <code>value</code> is submitted. </p>
+<p> The component honors the <code>disabled</code> state as a <strong>property-only</strong> control. When disabled at runtime, it does <em>not</em> sprout a <code>disabled</code> attribute into the DOM. </p>

@@ -1,0 +1,4 @@
+<m3e-drawer-container start start-mode="over">
+  <div slot="start">Start drawer</div>
+  <div>Main content</div>
+</m3e-drawer-container>

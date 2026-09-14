@@ -1,0 +1,15 @@
+<m3e-form-field variant="outlined">
+              <label slot="label" for="fld4">Date Field</label>
+              <input autocomplete="off" id="fld4" />
+              <m3e-icon-button aria-label="Open calendar" slot="suffix">
+                <m3e-icon name="calendar_today"></m3e-icon>
+                <m3e-datepicker-toggle for="picker1"></m3e-datepicker-toggle>
+              </m3e-icon-button>
+              <span slot="hint">MM/DD/YYYY</span>
+            </m3e-form-field>
+            <m3e-datepicker
+              id="picker1"
+              start-at="2026-04-01"
+              min-date="2026-01-01"
+              max-date="2026-04-30"
+            ></m3e-datepicker>

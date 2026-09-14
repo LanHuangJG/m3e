@@ -1,0 +1,39 @@
+---
+title: "Textarea Autosize"
+description: "The m3e-textarea-autosize component automatically adjusts the height of a linked textarea to fit its content, preserving layout integrity and user experience. This non-visual element listens to input changes and applies dynamic resizing, constrained by optional row limits."
+summary: "The m3e-textarea-autosize component automatically adjusts the height of a linked textarea to fit its content, preserving layout integrity and user experience. This non-visual element listens to input changes and applies dynamic resizing, constrained by optional row limits."
+script: ""
+section: components
+category: "selection"
+order: 48
+---
+
+<p> The <code>m3e-textarea-autosize</code> component automatically adjusts the height of a linked <code>textarea</code> to fit its content, preserving layout integrity and user experience. This non-visual element listens to input changes and applies dynamic resizing, constrained by optional row limits. </p>
+
+```js
+import "m3e/textarea-autosize";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Basic usage
+
+<p> Use the <code>m3e-textarea-autosize</code> component to make a <code>textarea</code> automatically resize to fit its content. Use the <code>for</code> attribute to specify the <code>textarea</code> to autosize. The following example illustrates use of the <code>m3e-textarea-autosize</code> alongside a <code>m3e-form-field</code>. See <a href="/components/form-field/">Form Field</a> for more information. </p>
+
+<Demo name="en/components/textarea-autosize/0" />
+
+### Min and max rows
+
+<p> Use the <code>min-rows</code> and <code>max-rows</code> attributes to control the minimum and maximum number of rows for a <code>textarea</code>. </p>
+
+<Demo name="en/components/textarea-autosize/1" />
+
+### Disabling
+
+<p>Use the <code>disabled</code> attribute to disable autosize.</p>
+
+```html
+<m3e-textarea-autosize for="field" disabled></m3e-textarea-autosize>
+```

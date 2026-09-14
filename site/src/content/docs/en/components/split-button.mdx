@@ -1,0 +1,40 @@
+---
+title: "Split Button"
+description: "The m3e-split-button component presents a primary action alongside a menu of related actions, uniting two buttons in a single expressive surface."
+summary: "The m3e-split-button component presents a primary action alongside a menu of related actions, uniting two buttons in a single expressive surface."
+script: ""
+section: components
+category: "actions"
+order: 43
+---
+
+<p> The <code>m3e-split-button</code> component presents a primary action alongside a menu of related actions, uniting two buttons in a single expressive surface. </p>
+
+```js
+import "m3e/split-button";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Anatomy
+
+<p> The <code>m3e-split-button</code> exposes two action slots: <code>leading-button</code> for the primary intent, and <code>trailing-button</code> for invoking a menu of secondary options. The leading button executes the main action directly, while the trailing button reveals contextual alternatives via an attached menu. </p>
+<p> The following example illustrates use of the <code>m3e-button</code> for the leading button, <code>m3e-icon-button</code> for the trailing button, and <code>m3e-menu</code> for presenting a menu of secondary options. </p>
+
+<Demo name="en/components/split-button/0" />
+
+### Variants
+
+<p> There are four split button appearance variants: <code>filled</code> (default), <code>tonal</code>, <code>outlined</code>, and <code>elevated</code>. Use the <code>variant</code> attribute to change the appearance. </p>
+
+<Demo name="en/components/split-button/1" />
+
+### Sizes
+
+### Sizes
+
+<p> There are five size variants which can be used to add or remove emphasis: <code>extra-small</code>, <code>small</code> (default), <code>medium</code>, <code>large</code>, and <code>extra-large</code>. Use the <code>size</code> attribute to control the split button's size. </p>
+
+<Demo name="en/components/split-button/2" />

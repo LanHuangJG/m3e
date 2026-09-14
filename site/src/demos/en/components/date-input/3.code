@@ -1,0 +1,37 @@
+<m3e-form-field variant="outlined">
+  <label slot="label" for="field1">Date Picker</label>
+  <m3e-date-input id="field1"></m3e-date-input>
+  <m3e-icon-button aria-label="Open calendar" slot="suffix">
+    <m3e-icon name="calendar_today"></m3e-icon>
+    <m3e-datepicker-toggle for="datepicker1"></m3e-datepicker-toggle>
+  </m3e-icon-button>
+  <span slot="hint">MM/DD/YYYY</span>
+</m3e-form-field>
+<m3e-datepicker id="datepicker1" for="field1"></m3e-datepicker>
+
+<m3e-form-field variant="outlined">
+  <label slot="label" for="field2">Time Picker</label>
+  <m3e-date-input id="field2" type="time"></m3e-date-input>
+  <m3e-icon-button aria-label="Open time picker" slot="suffix">
+    <m3e-icon name="schedule"></m3e-icon>
+    <m3e-timepicker-toggle for="timepicker1"></m3e-timepicker-toggle>
+  </m3e-icon-button>
+  <span slot="hint">HH:MM</span>
+</m3e-form-field>
+<m3e-timepicker id="timepicker1" for="field2"></m3e-timepicker>
+
+<m3e-form-field variant="outlined">
+  <label slot="label" for="field3">Datetime Picker</label>
+  <m3e-date-input id="field3" type="datetime"></m3e-date-input>
+  <m3e-icon-button aria-label="Open calendar" slot="suffix">
+    <m3e-icon name="calendar_today"></m3e-icon>
+    <m3e-datepicker-toggle for="datepicker2"></m3e-datepicker-toggle>
+  </m3e-icon-button>
+  <m3e-icon-button aria-label="Open time picker" slot="suffix">
+    <m3e-icon name="schedule"></m3e-icon>
+    <m3e-timepicker-toggle for="timepicker2"></m3e-timepicker-toggle>
+  </m3e-icon-button>
+  <span slot="hint">MM/DD/YYYY HH:MM</span>
+</m3e-form-field>
+<m3e-datepicker id="datepicker2" for="field3"></m3e-datepicker>
+<m3e-timepicker id="timepicker2" for="field3"></m3e-timepicker>

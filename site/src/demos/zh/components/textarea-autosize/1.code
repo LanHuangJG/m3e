@@ -1,0 +1,7 @@
+<m3e-form-field variant="filled">
+  <label slot="label" for="field">Textarea Autosize</label>
+  <textarea id="field">
+    <!-- Content omitted for brevity -->
+  </textarea>
+</m3e-form-field>
+<m3e-textarea-autosize for="field" max-rows="5"></m3e-textarea-autosize>

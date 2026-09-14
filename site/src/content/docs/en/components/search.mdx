@@ -1,0 +1,83 @@
+---
+title: "Search"
+description: "The m3e-search-bar and m3e-search-view components provide a Material 3 expressive search experience. The search bar offers a prominent entry point for text input, while the search view presents suggestions, history, and results in contained, docked, or full screen configurations."
+summary: "The m3e-search-bar and m3e-search-view components provide a Material 3 expressive search experience. The search bar offers a prominent entry point for text input, while the search view presents suggestions, history, and results in contained, docked, or full screen configurations."
+script: ""
+section: components
+category: "navigation"
+order: 35
+---
+
+<p> The <code>m3e-search-bar</code> and <code>m3e-search-view</code> components provide a Material 3 expressive search experience. The search bar offers a prominent entry point for text input, while the search view presents suggestions, history, and results in contained, docked, or full screen configurations. </p>
+
+```js
+import "m3e/search";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+
+### Search bar
+
+<p> Use the <code>m3e-search-bar</code> as the entry point for search. It provides the interactive affordance that activates search, but does not display results. To present suggestions, history, or results, use <code>m3e-search-view</code>, which provides a complete search experience. </p>
+
+#### Anatomy
+
+<p>The <code>m3e-search-bar</code> exposes the following named slots:</p>
+
+<ul> <li> <code>leading</code> — Content positioned at the start of the bar, such as an icon or navigation affordance. </li> <li><code>input</code> — The <code>input</code> element used to capture search text.</li> <li><code>trailing</code> — Content aligned to the end of the bar, such as an avatar or overflow menu.</li> </ul>
+
+#### Clearable
+
+<p> Use the <code>clearable</code> attribute to control whether the bar displays a clear button. When activated, this button clears the input and emits a <code>clear</code> event. </p>
+
+#### Typical usage
+
+<p> The following example illustrates typical usage of a <code>m3e-search-bar</code> with a leading icon and the ability to clear the current search text. </p>
+
+<Demo name="en/components/search/0" />
+
+### Search view
+
+<p> Use the <code>m3e-search-view</code> to display search suggestions and results. Unlike <code>m3e-search-bar</code>, which only provides the entry point, the search view presents the results of a search. </p>
+
+#### Anatomy
+
+<p>The <code>m3e-search-view</code> exposes the following named slots:</p>
+<ul> <li><code>closed-leading</code> — When the view is closed, renders content positioned before the input.</li> <li><code>closed-trailing</code> — When the view is closed, renders content positioned after the input.</li> <li><code>open-leading</code> — When the view is open, renders content positioned before the input.</li> <li><code>open-trailing</code> — When the view is open, renders content after the input.</li> <li><code>input</code> — Renders the <code>input</code> element used to capture search text.</li> <li><em>(default)</em> — When the view is open, renders the results content of the view.</li> </ul>
+
+#### Modes
+
+<p> Use the <code>mode</code> attribute to control how results are presented. Supported values include <code>fullscreen</code>, <code>docked</code> (default), and <code>auto</code>, which selects the appropriate mode based on the current viewport breakpoint. </p>
+
+<p> The following example illustrates the default <code>docked</code> mode. In this mode, the search view appears as a surface anchored to the search bar, allowing users to explore results while maintaining context within the surrounding layout. </p>
+
+<Demo name="en/components/search/1" />
+
+<p> The next example illustrates the <code>fullscreen</code> mode. In this mode, the search view occupies the entire viewport, creating an immersive, focused search that temporarily replaces the surrounding UI. </p>
+
+<Demo name="en/components/search/2" />
+
+#### Appearance variants
+
+<p>Use the <code>contained</code> attribute to a persistent, filled search container when open.</p>
+<p>The following example illustrates use of <code>contained</code> in the <code>docked</code> mode.</p>
+
+<Demo name="en/components/search/3" />
+
+<p>The next example illustrates use of <code>contained</code> in the <code>fullscreen</code> mode.</p>
+
+<Demo name="en/components/search/4" />
+
+#### Loading results
+
+<p> The <code>m3e-search-view</code> emits a <code>query</code> event that can be used to load results. The event fires under the following conditions: </p>
+<ul> <li>The <code>input</code> receives focus. This can be used to load initial suggestions.</li> <li> The <code>input</code> value changes. This can be used to fetch results that match the current term using the event's <code>detail.term</code> property. </li> </ul>
+<p> In addition, a <code>clear</code> event is emitted when the user clicks the clear button. This action also triggers a <code>query</code> event first, followed by <code>clear</code>, reflecting the component's input → query → clear event sequence. </p>
+
+#### Hiding the search icon
+
+<p> While its typical to show a search icon, you can use the <code>hide-search-icon</code> attribute to hide it when a search view is closed. </p>
+
+<Demo name="en/components/search/5" />

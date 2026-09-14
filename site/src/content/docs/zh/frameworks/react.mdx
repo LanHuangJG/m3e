@@ -1,0 +1,32 @@
+---
+title: "React"
+description: "@m3e/react 包为所有 M3E Web Components 提供地道的 React 绑定。每个组件都以独立的 React 模块暴露,提供类型化 props、事件映射,以及与 React 渲染模型的无缝集成。不过,React 绑定是 仅客户端 的。在 Next.js 中,你 必须 在 \"use client\" 边界内使用它们。"
+summary: "@m3e/react 包为所有 M3E Web Components 提供地道的 React 绑定。每个组件都以独立的 React 模块暴露,提供类型化 props、事件映射,以及与 React 渲染模型的无缝集成。不过,React 绑定是 仅客户端 的。在 Next.js 中,你 必须 在 \"use client\" 边界内使用它们。"
+script: ""
+section: frameworks
+order: 1
+---
+
+<p> <strong>m3e-react</strong> 包为所有 M3E Web Components 提供地道的 React 绑定。每个组件都以独立的 React 模块暴露,提供类型化 props、事件映射,以及与 React 渲染模型的无缝集成。不过,React 绑定是 <strong>仅客户端</strong> 的。在 Next.js 中,你 <strong>必须</strong> 在 <code>"use client"</code> 边界内使用它们。 </p>
+
+```js
+npm i m3e-react
+```
+
+<p> 安装后,为你想要使用的任意组件导入对应的 React 模块。每个模块都封装相应的 <code>m3e</code> 模块,并暴露熟悉的 React 组件 API。 </p>
+
+<p>例如:</p>
+
+```js
+import { M3eButton } from "m3e-react/button";
+```
+
+<p> React 模块会自动注册其底层的 Web Component,因此无需从 <code>m3e</code> 额外进行副作用导入。 </p>
+
+<p> <strong> 或者,导入 <code>m3e-react/all</code> 模块以一次性加载所有 React 绑定。 </strong> 当你希望完整使用 M3E 组件套件,又不想逐个管理模块时,这个选项很方便。 </p>
+
+```js
+import "m3e-react/all";
+```
+
+<p> 每个 React 模块都对应其 Web Component 对应物的结构,确保两种生态之间保持一致的心智模型。需要 tree-shaking 与最小化打包体积时使用单个模块,快速原型开发与全量套件开发时则使用聚合模块。 </p>

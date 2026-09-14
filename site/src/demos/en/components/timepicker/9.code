@@ -1,0 +1,3 @@
+<m3e-timepicker-input id="input" for="dial"></m3e-timepicker-input>
+<m3e-timepicker-dial id="dial"></m3e-timepicker-dial>
+<span id="inputValue"></span>

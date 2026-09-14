@@ -1,0 +1,103 @@
+---
+title: "Bottom Sheet"
+description: "The m3e-bottom-sheet component is a sheet used to show secondary content anchored to the bottom of the screen."
+summary: "The m3e-bottom-sheet component is a sheet used to show secondary content anchored to the bottom of the screen."
+script: ""
+section: components
+category: "containment"
+order: 5
+---
+
+<p> The <code>m3e-bottom-sheet</code> component is a sheet used to show secondary content anchored to the bottom of the screen. </p>
+
+```js
+import "m3e/bottom-sheet";
+```
+
+## Usage
+
+<p>This section outlines usage examples and configuration guidance for the components in this module.</p>
+<p> <strong>NOTE: this page is presented in a nested <code>iframe</code>.</strong> </p>
+<ul> <li>The modal bottom sheet scrim will only overlay the current window.</li> <li>The bottom sheet is positioned relative the current window.</li> </ul>
+
+### Basic usage
+
+<p> Use the <code>m3e-bottom-sheet</code> to present content anchored to the bottom of the screen. Bottom sheets are closed by default. You can open a sheet using a <code>m3e-bottom-sheet-trigger</code> nested inside any clickable element. You can also open a sheet declaratively with the <code>open</code> attribute or programmatically with the <code>show</code> method. To close a sheet, use a <code>m3e-bottom-sheet-action</code> inside a clickable element, remove the <code>open</code> attribute, or call the <code>hide</code> method programmatically. </p>
+
+<Demo name="en/components/bottom-sheet/0" />
+
+#### Lifecycle events
+
+<p> Bottom sheets emit four lifecycle events that reflect their transition between open and closed states. These events fire whether the sheet is opened programmatically, by a trigger, by keyboard interaction, or through user gestures. </p>
+<ul> <li> <code>opening</code> — Fired when the sheet begins opening. This event is cancelable, allowing you to prevent the sheet from opening by calling <code>event.preventDefault()</code>. </li> <li><code>opened</code> — Fired after the sheet finishes opening and reaches its initial detent.</li> <li> <code>closing</code> — Fired when the sheet begins closing. This event is also cancelable, allowing you to intercept or block dismissal (for example, to confirm unsaved changes). </li> <li><code>closed</code> — Fired after the sheet finishes closing and is fully hidden.</li> </ul>
+<p> These events give you full control over the sheet's lifecycle, including validation, analytics, and custom behaviors during open and close transitions. </p>
+
+### Variants
+
+<p> Bottom sheets come in two variants: <strong>standard</strong> and <strong>modal</strong>. Both share the same anatomy and resizing behavior, but they differ in how they interact with the rest of the page. A standard bottom sheet is non-blocking. It sits above the page without trapping focus or preventing interaction with the underlying UI. A modal bottom sheet blocks interaction with the rest of the page until dismissed. It presents a backdrop (scrim), traps focus, supports autofocus on open, and restores focus to the trigger when closed. </p>
+<p> Bottom sheets are standard by default. Add the <code>modal</code> attribute to <code>m3e-bottom-sheet</code> to create a modal bottom sheet. </p>
+
+<Demo name="en/components/bottom-sheet/1" />
+
+#### Modal behavior
+
+<p> When opened in modal mode, the bottom sheet behaves like a dialog and takes exclusive control of user interaction. Focus moves into the sheet automatically, and if any element inside the sheet has the <code>autofocus</code> attribute, it receives focus first. While the sheet is open, the rest of the document becomes inert, preventing keyboard and assistive-technology users from interacting with content behind the sheet. Page scrolling is also locked to keep the underlying layout stable. </p>
+<p> Modal sheets display a scrim behind the sheet. Activating the scrim triggers a cancelable <code>cancel</code> event, allowing the sheet to close unless the you intercept it. When the sheet closes, focus is restored to the trigger that opened it, ensuring users return to their previous position in the page without losing context. </p>
+
+### Drag handles
+
+<p> Bottom sheets support an optional drag handle at the top edge of the sheet. The handle consists of two parts: </p>
+<ul> <li><strong>A draggable bar</strong> — a visual affordance that indicates the sheet can be dragged.</li> <li> <strong>A handle button</strong> — an interactive control used to cycle detents, expand to full height, or close the sheet when no detents are defined. </li> </ul>
+<p> Add the <code>handle</code> attribute to <code>m3e-bottom-sheet</code> to display the drag handle and use the <code>handle-label</code> attribute to provide an accessible label (defaults to "Drag handle"). </p>
+
+<Demo name="en/components/bottom-sheet/2" />
+
+### Detents
+
+<p> Detents define the vertical positions a bottom sheet can rest at. A sheet may have no detents, a single detent, or multiple detents. Detents control how the sheet resizes, how it responds to drag gestures, and how the handle button behaves. </p>
+<p> Detents are declared using the <code>detents</code> attribute on <code>m3e-bottom-sheet</code>. Each detent represents a target height the sheet can snap to. </p>
+
+<Demo name="en/components/bottom-sheet/3" />
+
+#### Types of detents
+
+<p> Bottom sheets support two kinds of detents: <strong>named detents</strong> and <strong>unit-based detents</strong>. Both define the vertical positions the sheet can snap to, but they serve different purposes. </p>
+<p> Named detents are semantic height presets including <code>collapsed</code>, <code>fit</code>, <code>half</code>, and <code>full</code> that map to familiar bottom-sheet behaviors. They provide predictable, expressive sizing without requiring you to think in pixels or percentages. </p>
+<p> Unit-based detents use explicit measurements (percentages or pixels) to give you precise control over the sheet's height. These behave just like named detents but allow for custom layouts and fine-tuned sizing. </p>
+<p> You can mix and match named and unit-based detents in any order. The sheet snaps between them based on drag gestures, velocity, and the order in which they are declared. </p>
+
+#### Initial height
+
+<p>The initial height defines the sheet's entry point into the interaction model. For example:</p>
+<ul> <li>Starting at <code>collapsed</code> creates a “peek” experience.</li> <li>Starting at <code>fit</code> shows content immediately.</li> <li>Starting at <code>half</code> or <code>full</code> creates a more immersive modal feel.</li> </ul>
+<p> When a bottom sheet opens, it snaps to its initial detent. By default, this is the first detent listed in the <code>detents</code> attribute. You can override this by setting the <code>detent</code> attribute (zero-based index), which selects the detent the sheet should open to. </p>
+
+<p>In the following example, the sheet opens at <code>half</code> instead of <code>fit</code>.</p>
+
+<Demo name="en/components/bottom-sheet/4" />
+
+<p> You can also set the initial detent on a <code>m3e-bottom-sheet-trigger</code> using its <code>detent</code> attribute, allowing each trigger to open the sheet at a different height. </p>
+
+<Demo name="en/components/bottom-sheet/5" />
+
+#### Collapsed height
+
+<p> The collapsed state always includes the sheet's header. This ensures the sheet remains visible, discoverable, and interactive even at its lowest detent. You can optionally reveal a portion of the content area beneath the header by setting the <code>--m3e-bottom-sheet-peek-height</code> CSS custom property. This value applies only to the content area and defaults to <code>0px</code>, meaning the collapsed state shows the header alone. </p>
+<p> When the sheet is collapsed, the content area is always marked inert. This applies whenever the sheet's rendered height falls at or below the combined height of the header and the configured peek height. In this state, only the header is interactive; the content cannot receive focus, pointer events, or screen-reader navigation. This prevents users from interacting with partially hidden elements and ensures the collapsed state behaves as a non-interactive preview. The content becomes interactive again only after the sheet expands above the collapsed height. </p>
+
+<Demo name="en/components/bottom-sheet/6" />
+
+### Hideability
+
+<p> A bottom sheet is hideable when it can be dismissed by dragging downward past its lowest detent. This allows the sheet to behave like a modal dialog or a temporary surface that can be fully removed from view. You enable this behavior by adding the <code>hideable</code> attribute to <code>m3e-bottom-sheet</code>. </p>
+
+<Demo name="en/components/bottom-sheet/7" />
+
+<Demo name="en/components/bottom-sheet/8" />
+
+### Headers
+
+<p> The <code>m3e-bottom-sheet</code> provides a <code>header</code> named slot for supplying custom content within the sheet's draggable header region. When a header is provided, it appears directly below the optional drag handle. The handle, if enabled, is never replaced by custom header content. </p>
+<p> If the handle is not enabled, the entire header region—including any slotted header content—remains draggable. This ensures the sheet always preserves a reliable drag surface regardless of whether a handle is present. If dragging is undesired, place header content in the default slot and omit the <code>handle</code> attribute. </p>
+
+<Demo name="en/components/bottom-sheet/9" />

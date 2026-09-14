@@ -1,0 +1,173 @@
+---
+title: "Autocomplete 自动补全"
+description: "m3e-autocomplete 组件为 input 字段增强了一个建议选项面板。"
+summary: "m3e-autocomplete 组件为 input 字段增强了一个建议选项面板。"
+script: "autocomplete"
+section: components
+category: "selection"
+order: 2
+---
+
+<p> <code>m3e-autocomplete</code> 组件为 <code>input</code> 字段增强了一个建议选项面板。 </p>
+
+```js
+import "m3e/autocomplete";
+```
+
+## 用法
+
+### 基础用法
+
+<p> 首先声明 <code>m3e-autocomplete</code> 元素,并用一组 <code>m3e-option</code> 元素填充它。每个选项代表一个可选值。当用户选择某个选项时,它的文本内容会成为输入框显示的标签,同时触发 <code>change</code> 事件。你可以通过 <code>selected</code> 属性访问被选中的选项,或通过 <code>value</code> 属性读取其提交值。 </p>
+<p> 要把自动补全面板绑定到某个输入框,请在 <code>m3e-autocomplete</code> 上使用 <code>for</code> 特性,并将其设为目标 <code>input</code> 元素的 <code>id</code>。 </p>
+<p>下面的示例展示 <code>m3e-autocomplete</code> 与 <code>m3e-form-field</code> 搭配使用的效果。更多信息见 <a href="/zh/components/form-field/">Form Field 表单容器</a>。</p>
+
+<Demo name="zh/components/autocomplete/0" />
+
+### 过滤模式
+
+<p> 默认情况下,<code>m3e-autocomplete</code> 使用不区分大小写的子串匹配来过滤选项。你可以用 <code>filter</code> 特性控制这一行为。支持的取值包括: <code>contains</code>(默认)、<code>starts-with</code>、<code>ends-with</code> 与 <code>none</code>。此外,使用 <code>case-sensitive</code> 特性控制匹配是否区分大小写。 </p>
+<p>下面的示例展示区分大小写的前缀匹配。</p>
+
+<Demo name="zh/components/autocomplete/1" />
+
+#### 自定义过滤
+
+<p> 另一种做法是通过 <code>filter</code> 属性提供一个回调函数来控制该行为。自定义过滤器不支持自动文本高亮,因为组件无法判断文本的哪些部分匹配成功。 </p>
+<p> 下面的示例展示如何为自定义的不区分大小写前缀匹配设置 <code>filter</code> 逻辑。 </p>
+
+<Demo name="zh/components/autocomplete/2" />
+
+```js
+window.addEventListener("DOMContentLoaded", () => {
+  for (const autocomplete of document.querySelectorAll("m3e-autocomplete.custom-filter")) {
+    autocomplete.filter = (option, term) =>
+      option.value.toLocaleLowerCase().startsWith(term.toLocaleLowerCase());
+  }
+});
+```
+
+### 无数据
+
+<p> 使用 <code>no-data-label</code> 特性控制没有选项匹配时朗读并显示的文本。<code>no-data</code> 插槽可用于为空状态提供自定义视觉内容。另一种做法是用 <code>hide-no-data</code> 特性完全隐藏空状态界面。 </p>
+
+<Demo name="zh/components/autocomplete/3" />
+
+### 懒加载
+
+<p> <code>m3e-autocomplete</code> 会发出 <code>query</code> 事件,可用于懒加载选项。该事件仅在控件已启用且非只读时触发,条件如下: </p>
+<ul> <li> <code>input</code> 在没有任何可用选项时获得焦点。可用于加载初始选项。 </li> <li> <code>input</code> 的值发生变化。可利用事件的 <code>detail.term</code> 属性获取与当前词条匹配的选项。 </li> </ul>
+
+<p> 使用 <code>loading</code> 特性控制 <code>m3e-autocomplete</code> 是否显示加载界面。<code>loading-label</code> 特性控制启用时朗读并显示的文本,<code>loading</code> 插槽可用于为加载状态提供自定义视觉内容。使用 <code>hide-loading</code> 特性完全隐藏加载状态界面;即使隐藏,<code>loading-label</code> 仍会被朗读。 </p>
+
+#### 初始加载
+
+<p> 下面的示例展示当 <code>input</code> 获得焦点时懒加载初始数据。此外,<code>loading</code> 插槽中会显示一个 <code>m3e-loading-indicator</code>。更多信息见 <a href="/zh/components/loading-indicator/">Loading Indicator 加载指示器</a>。 </p>
+
+<Demo name="zh/components/autocomplete/4" />
+
+```js
+const lazy = document.querySelector("m3e-autocomplete.lazy");
+lazy.addEventListener("query", () => {
+  if (!lazy.querySelector("m3e-option")) {
+    lazy.loading = true;
+    setTimeout(() => {
+      usStates.forEach((state) => {
+        const option = document.createElement("m3e-option");
+        option.innerText = state;
+        lazy.appendChild(option);
+      });
+      lazy.loading = false;
+    }, 2000);
+  }
+});
+```
+
+#### 边输入边搜索
+
+<p> 下一个示例只在用户暂停输入后才执行搜索。用户输入过程中不显示加载指示器,只有在真正发出搜索请求时才出现。如果用户在搜索进行中又开始输入,加载指示器会保持可见,进行中的请求会被取消,并在防抖后启动新的搜索。该示例把 <code>filter="none"</code> 设为禁用内置过滤。 </p>
+
+<Demo name="zh/components/autocomplete/5" />
+
+```js
+const search = document.querySelector("m3e-autocomplete.search");
+
+let debounceTimer = -1;
+let activeRequest = null;
+
+search.addEventListener("query", (e) => {
+  const term = e.detail.term?.trim().toLowerCase();
+
+  // User is typing → reset debounce, but do NOT show loading yet
+  clearTimeout(debounceTimer);
+
+  // If user cleared the field
+  if (!term) {
+    // Cancel any in‑flight request
+    if (activeRequest) activeRequest.abort();
+
+    // Reset UI
+    search.querySelectorAll("m3e-option").forEach((x) => x.remove());
+    search.hideNoData = true;
+    search.loading = false;
+    return;
+  }
+
+  // Now a real search is happening → show loading
+  search.loading = true;
+  search.hideNoData = false;
+
+  // If a request is already loading, keep showing loading
+  // but cancel the old request
+  if (activeRequest) activeRequest.abort();
+
+  // Start debounce
+  debounceTimer = setTimeout(() => {
+    // Clear old results (so we don't show stale data)
+    search.querySelectorAll("m3e-option").forEach((x) => x.remove());
+
+    // Create a cancellable "request"
+    const controller = new AbortController();
+    activeRequest = controller;
+
+    // Simulate async search
+    setTimeout(() => {
+      // If canceled, do nothing
+      if (controller.signal.aborted) return;
+
+      // Populate results
+      usStates
+        .filter((x) => x.toLowerCase().includes(term))
+        .forEach((state) => {
+          const option = document.createElement("m3e-option");
+          option.innerText = state;
+          search.appendChild(option);
+        });
+
+      search.loading = false;
+
+      activeRequest = null;
+    }, 2000);
+  }, 300); // debounce delay
+});
+```
+
+### 要求必须选择某个选项
+
+<p> 默认情况下,<code>m3e-autocomplete</code> 接受输入框中键入的任意值,无论它是否匹配某个列出的选项。要强制用户从可用选项中选择,请使用 <code>required</code> 特性。 </p>
+<p>当设置了 <code>required</code> 时,自动补全的行为如下:</p>
+<ul> <li> 如果用户在<strong>没有选中选项</strong>的情况下打开面板并输入新值,然后未做任何选择就关闭面板,输入框会重置为空字符串。 </li> <li> 如果用户在<strong>已选中某个选项</strong>的情况下打开面板并输入一个与该选项不匹配的值,然后未做任何选择就关闭面板,输入框会重置为所选选项的标签。 </li> <li>如果用户打开并关闭面板但未修改输入内容,则保留原有值。</li> </ul>
+
+<Demo name="zh/components/autocomplete/6" />
+
+### 自动激活
+
+<p> 使用 <code>auto-activate</code> 特性控制是否自动激活第一个选项。 </p>
+
+<Demo name="zh/components/autocomplete/7" />
+
+### Chips 芯片
+
+<p> <code>m3e-autocomplete</code> 可与 <code>m3e-input-chip-set</code> 搭配,呈现用户可选择并转换为芯片的建议。更多信息见 <a href="/zh/components/chips/">Chips 芯片</a>。 </p>
+
+<Demo name="zh/components/autocomplete/8" />
