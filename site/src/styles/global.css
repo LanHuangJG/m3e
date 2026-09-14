@@ -622,3 +622,29 @@ body.nav-open .scrim {
     opacity: 1;
   }
 }
+
+/* 侧栏内的本页目录 */
+.sidebar-toc {
+  display: flex;
+  flex-direction: column;
+  margin-block: 8px 16px;
+  padding-block-start: 8px;
+  border-block-start: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+}
+.sidebar-toc__title {
+  margin: 8px 16px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--md-sys-color-on-surface-variant, #49454f);
+}
+.sidebar-toc a {
+  padding-block: 8px;
+  padding-inline-end: 16px;
+  color: var(--md-sys-color-on-surface-variant, #49454f);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.sidebar-toc a:hover {
+  background: var(--md-sys-color-surface-container-high, #ece6f0);
+  color: var(--md-sys-color-on-surface, #1c1b1e);
+}

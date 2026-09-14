@@ -203,6 +203,21 @@ const prefix = lang === "en" ? "" : "/zh";
               ))
             }
           </m3e-nav-menu>
+          {
+            headings.length > 0 && (
+              <nav class="sidebar-toc" aria-label={lang === "zh" ? "本页目录" : "On this page"}>
+                <p class="sidebar-toc__title">{lang === "zh" ? "本页目录" : "On this page"}</p>
+                {headings.map((h) => (
+                  <a
+                    href={`#${h.slug}`}
+                    style={`padding-inline-start:${(Math.max(h.depth, 2) - 1) * 12 + 16}px`}
+                  >
+                    {h.text}
+                  </a>
+                ))}
+              </nav>
+            )
+          }
         </aside>
         <div class="scrim"></div>
 
