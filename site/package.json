@@ -10,8 +10,8 @@
     "sync-lib": "cd .. && npm run build --workspace=m3e && cp packages/web/dist/all.min.js site/public/m3e/all.min.js"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/mdx": "^8.0.1",
     "@astrojs/sitemap": "^3.2.0",
-    "astro": "^5.0.0"
+    "astro": "^7.3.2"
   }
 }
