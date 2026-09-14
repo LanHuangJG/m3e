@@ -147,9 +147,6 @@ const prefix = lang === "en" ? "" : "/zh";
               </m3e-icon-button>
             )
           }
-          <m3e-icon-button class="menu-button" slot="leading" aria-label={UI.menu}>
-            <m3e-icon name="menu"></m3e-icon>
-          </m3e-icon-button>
           <a slot="title" class="title" href={homePath} aria-label="M3E">
             <span class="title-text">M3E</span>
           </a>
@@ -167,59 +164,7 @@ const prefix = lang === "en" ? "" : "/zh";
       </header>
 
       <div class="layout">
-        <aside class="sidebar" aria-label={UI.docs}>
-          <m3e-nav-menu>
-            {
-              nav.map((section) => (
-                <m3e-nav-menu-item open={section.key === active?.section ? true : undefined}>
-                  <m3e-icon slot="icon" name={section.icon}></m3e-icon>
-                  <span slot="label">{section.label}</span>
-                  {section.groups && (
-                    <m3e-nav-menu-item>
-                      <a slot="label" href={`${prefix}/components/`}>{lang === "zh" ? "全部组件" : "All components"}</a>
-                    </m3e-nav-menu-item>
-                  )}
-                  {section.groups
-                    ? section.groups.map((group) => (
-                        <m3e-nav-menu-item open={group.key === active?.category ? true : undefined}>
-                          <span slot="label">{group.label}</span>
-                          {group.items.map((item) => (
-                            <m3e-nav-menu-item selected={item.id === activeId ? true : undefined}>
-                              <a slot="label" href={item.path}>
-                                {item.title}
-                              </a>
-                            </m3e-nav-menu-item>
-                          ))}
-                        </m3e-nav-menu-item>
-                      ))
-                    : section.items.map((item) => (
-                        <m3e-nav-menu-item selected={item.id === activeId ? true : undefined}>
-                          <a slot="label" href={item.path}>
-                            {item.title}
-                          </a>
-                        </m3e-nav-menu-item>
-                      ))}
-                </m3e-nav-menu-item>
-              ))
-            }
-          </m3e-nav-menu>
-          {
-            headings.length > 0 && (
-              <nav class="sidebar-toc" aria-label={lang === "zh" ? "本页目录" : "On this page"}>
-                <p class="sidebar-toc__title">{lang === "zh" ? "本页目录" : "On this page"}</p>
-                {headings.map((h) => (
-                  <a
-                    href={`#${h.slug}`}
-                    style={`padding-inline-start:${(Math.max(h.depth, 2) - 1) * 12 + 16}px`}
-                  >
-                    {h.text}
-                  </a>
-                ))}
-              </nav>
-            )
-          }
-        </aside>
-        <div class="scrim"></div>
+        
 
         <main class="main">
           <div class="content">
@@ -265,13 +210,21 @@ const prefix = lang === "en" ? "" : "/zh";
       <!-- 手机 / 平板：底部导航（组件详情页隐藏） -->
       {showBottomNav && (
       <m3e-nav-bar class="docs-bottomnav" aria-label={UI.docs}>
-        <m3e-nav-item href={homePath} selected={active?.section === "getting-started" ? true : undefined}>
+        <m3e-nav-item href={`${prefix}/getting-started/overview/`} selected={active?.section === "getting-started" ? true : undefined}>
           <m3e-icon slot="icon" name="home"></m3e-icon>
           {lang === "zh" ? "概览" : "Overview"}
         </m3e-nav-item>
         <m3e-nav-item href={`${prefix}/components/`} selected={active?.section === "components" ? true : undefined}>
           <m3e-icon slot="icon" name="widgets"></m3e-icon>
           {lang === "zh" ? "组件" : "Components"}
+        </m3e-nav-item>
+        <m3e-nav-item href={`${prefix}/styles/color/`} selected={active?.section === "styles" ? true : undefined}>
+          <m3e-icon slot="icon" name="palette"></m3e-icon>
+          {lang === "zh" ? "样式" : "Styles"}
+        </m3e-nav-item>
+        <m3e-nav-item href={`${prefix}/frameworks/react/`} selected={active?.section === "frameworks" ? true : undefined}>
+          <m3e-icon slot="icon" name="integration_instructions"></m3e-icon>
+          {lang === "zh" ? "框架" : "Frameworks"}
         </m3e-nav-item>
         <m3e-nav-item data-bottom-action="toc">
           <m3e-icon slot="icon" name="list"></m3e-icon>
@@ -321,12 +274,6 @@ const prefix = lang === "en" ? "" : "/zh";
 
     <script is:inline>
       const body = document.body;
-      document.querySelector(".menu-button")?.addEventListener("click", () => body.classList.toggle("nav-open"));
-      document.querySelector(".scrim")?.addEventListener("click", () => body.classList.remove("nav-open"));
-      document.querySelectorAll(".sidebar a").forEach((a) =>
-        a.addEventListener("click", () => body.classList.remove("nav-open")),
-      );
-
       // demo 块：复制 / 查看代码
       document.addEventListener("click", async (e) => {
         const btn = e.target.closest("[data-demo-action]");
@@ -349,12 +296,11 @@ const prefix = lang === "en" ? "" : "/zh";
           } catch {}
         }
       });
-      // 底部导航：组件 -> 打开侧栏；目录 -> 打开底部抽屉
+      // 底部导航：目录 -> 打开底部抽屉
       const tocSheet = document.querySelector("#toc-sheet");
       document.querySelectorAll("[data-bottom-action]").forEach((el) =>
         el.addEventListener("click", () => {
           const action = el.getAttribute("data-bottom-action");
-          if (action === "menu") body.classList.add("nav-open");
           if (action === "toc") tocSheet?.removeAttribute("hidden");
         }),
       );
