@@ -30,6 +30,12 @@ const T = {
 }[lang];
 
 const prefix = lang === "en" ? "" : "/zh";
+const previews = import.meta.glob("../demos/**/*.html", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+const thumbFor = (id: string) => previews[`../demos/${lang}/components/${id.split("/").pop()}/0.html`] ?? "";
 const all = await getCollection("docs");
 const mine = all
   .filter((d) => d.id.startsWith(`${lang}/`) && d.data.section === "components")
@@ -59,10 +65,15 @@ const groups = CATEGORY_ORDER.map((cat) => ({
         <h2>{group.label}</h2>
         <div class="cards">
           {group.items.map((d) => (
-            <m3e-card variant="outlined" actionable href={pathFor(d.id)}>
-              <div slot="content" class="card-body">
-                <span class="card-name">{d.data.title}</span>
-                <span class="card-desc">{d.data.summary || d.data.title}</span>
+            <m3e-card variant="outlined" actionable href={pathFor(d.id)} class="component-card">
+              <div slot="content">
+                {thumbFor(d.id) && (
+                  <div class="card-thumb" aria-hidden="true" set:html={thumbFor(d.id)} />
+                )}
+                <div class="card-body">
+                  <span class="card-name">{d.data.title}</span>
+                  <span class="card-desc">{d.data.summary || d.data.title}</span>
+                </div>
               </div>
             </m3e-card>
           ))}

@@ -552,3 +552,27 @@ body.nav-open .scrim {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* 组件总览卡片缩略预览 */
+.component-card {
+  --m3e-card-content-padding: 0;
+}
+.card-thumb {
+  height: 112px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  pointer-events: none;
+  background: var(--md-sys-color-surface-container-low, #f7f2fa);
+  border-block-end: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+}
+.card-thumb > * {
+  transform: scale(0.82);
+  transform-origin: center;
+}
+.component-card .card-body {
+  padding: 12px 16px 16px;
+}
