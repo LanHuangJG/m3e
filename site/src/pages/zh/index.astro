@@ -1,19 +1,15 @@
 ---
 import DocsLayout from "../../layouts/DocsLayout.astro";
+import Home from "../../components/Home.astro";
 ---
 
 <DocsLayout
   lang="zh"
   title="面向所有框架的 Material 3 Expressive"
-  description="M3E 是一个现代、从零实现的 Material Design 3 Web Components 组件库。提供完整、贴合规范、无障碍的组件套件。"
+  description="M3E 是一个现代、从零实现的 Material Design 3 Web Components 组件库。"
   path="/zh/"
   altPath="/"
   toc={false}
 >
-  <h1>M3E</h1>
-  <m3e-divider variant="wavy"></m3e-divider>
-  <p>
-    一个现代、从零实现的 Material Design 3,完全以 Web Components 构建。提供完整、贴合规范的组件套件,具备动态颜色、表现力动效与完整的无障碍支持。
-  </p>
-  <p><a href="/zh/getting-started/overview/">开始使用 →</a></p>
+  <Home lang="zh" />
 </DocsLayout>

@@ -1,0 +1,107 @@
+---
+import { Code } from "astro:components";
+
+interface Props {
+  lang: "en" | "zh";
+}
+
+const { lang } = Astro.props;
+const isZh = lang === "zh";
+const prefix = isZh ? "/zh" : "";
+
+const T = {
+  tagline: isZh
+    ? "面向所有框架的 Material 3 Expressive Web Components 组件库"
+    : "Material 3 Expressive web components for every framework",
+  desc: isZh
+    ? "一个现代、从零实现的 Material Design 3,完全以 Web Components 构建。提供完整、贴合规范的组件套件,具备动态颜色、表现力动效与完整的无障碍支持。"
+    : "A modern, from-scratch implementation of Material Design 3, built entirely with Web Components. A complete, spec-aligned component suite with dynamic color, expressive motion, and full accessibility.",
+  getStarted: isZh ? "开始使用" : "Get started",
+  browse: isZh ? "浏览组件" : "Browse components",
+  features: isZh ? "为什么选择 M3E" : "Why M3E",
+  quickStart: isZh ? "快速上手" : "Quick start",
+  preview: isZh ? "组件预览" : "Component preview",
+  previewMore: isZh ? "查看全部组件 →" : "See all components →",
+  copy: isZh ? "复制" : "Copy",
+};
+
+const ITEMS: string[][] = isZh
+    ? [
+        ["表现力组件", "借助 Material 3 的设计令牌、动态颜色、形状与动效系统,打造高度可定制的界面元素。"],
+        ["统一架构", "ESM 优先,模块化入口并支持 tree-shaking,实现最小化打包体积。"],
+        ["无障碍优先", "内置对无障碍标准的支持,确保为所有用户提供包容性的体验。"],
+        ["主题与个性化", "轻松让组件适配你的品牌或用户偏好。"],
+        ["性能优化", "轻量、快速加载的组件,专为现代 Web 平台设计。"],
+        ["注重安全", "默认安全模式,包括 XSS 安全模板、Trusted Types 与 CSP 支持。"],
+      ]
+    : [
+        ["Expressive components", "Material 3 design tokens, dynamic color, shape and motion systems for highly customizable UI."],
+        ["Unified architecture", "ESM-first with modular entry points and tree-shaking for minimal bundles."],
+        ["Accessibility first", "Built-in support for accessibility standards, inclusive for all users."],
+        ["Theming", "Adapt components to your brand or user preferences."],
+        ["Performance", "Lightweight, fast-loading components for modern web platforms."],
+        ["Security", "Secure-by-default patterns: XSS-safe templating, Trusted Types, CSP."],
+      ];
+
+
+const ICONS = ["palette", "widgets", "accessibility_new", "brush", "bolt", "shield"];
+const installCode = "npm i m3e";
+const importCode = 'import "m3e/button";';
+const usageCode = '<m3e-button variant="filled">Filled</m3e-button>';
+---
+
+<section class="home-hero">
+  <h1>M3E</h1>
+  <p class="home-tagline">{T.tagline}</p>
+  <p class="home-desc">{T.desc}</p>
+  <div class="home-cta">
+    <m3e-button variant="filled" href={`${prefix}/getting-started/overview/`}>{T.getStarted}</m3e-button>
+    <m3e-button variant="tonal" href={`${prefix}/components/`}>{T.browse}</m3e-button>
+  </div>
+</section>
+
+<m3e-divider variant="wavy"></m3e-divider>
+
+<section>
+  <h2>{T.features}</h2>
+  <div class="cards">
+    {
+      ITEMS.map(([title, text], i) => (
+        <m3e-card variant="outlined">
+          <div slot="content" class="card-body">
+            <m3e-icon name={ICONS[i]}></m3e-icon>
+            <span class="card-name">{title}</span>
+            <span class="card-desc">{text}</span>
+          </div>
+        </m3e-card>
+      ))
+    }
+  </div>
+</section>
+
+<section>
+  <h2>{T.quickStart}</h2>
+  <Code code={installCode} lang="sh" theme="github-light" />
+  <Code code={importCode} lang="js" theme="github-light" />
+  <Code code={usageCode} lang="html" theme="github-light" />
+</section>
+
+<section>
+  <h2>{T.preview}</h2>
+  <div class="home-preview">
+    <m3e-button variant="elevated">Elevated</m3e-button>
+    <m3e-button variant="filled">Filled</m3e-button>
+    <m3e-button variant="tonal">Tonal</m3e-button>
+    <m3e-button variant="outlined">Outlined</m3e-button>
+    <m3e-chip-set>
+      <m3e-chip><m3e-icon slot="icon" name="palette"></m3e-icon>Design</m3e-chip>
+      <m3e-chip>Motion</m3e-chip>
+    </m3e-chip-set>
+    <m3e-switch></m3e-switch>
+    <m3e-slider style="min-width:180px">
+      <m3e-slider-thumb value="60"></m3e-slider-thumb>
+    </m3e-slider>
+    <m3e-linear-progress-indicator variant="wavy" value="65" style="min-width:180px"></m3e-linear-progress-indicator>
+  </div>
+  <p><a href={`${prefix}/components/`}>{T.previewMore}</a></p>
+</section>
