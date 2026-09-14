@@ -88,6 +88,15 @@ const nav = (Object.keys(SECTIONS) as Array<keyof typeof SECTIONS>)
   })
   .filter((s) => (s.groups ? s.groups.length > 0 : s.items.length > 0));
 
+const flat = nav.flatMap((section) =>
+  section.groups ? section.groups.flatMap((g) => g.items) : section.items,
+);
+const currentIndex = flat.findIndex((x) => x.id === activeId);
+const prevPage = currentIndex > 0 ? flat[currentIndex - 1] : null;
+const nextPage = currentIndex >= 0 && currentIndex < flat.length - 1 ? flat[currentIndex + 1] : null;
+const prevLabel = lang === "zh" ? "上一页" : "Previous";
+const nextLabel = lang === "zh" ? "下一页" : "Next";
+
 const canonical = new URL(path, Astro.site);
 const alternate = new URL(altPath, Astro.site);
 const homePath = lang === "en" ? "/" : "/zh/";
@@ -201,6 +210,28 @@ const prefix = lang === "en" ? "" : "/zh";
           <div class="content">
             <article class="prose" id="doc-content">
               <slot />
+              {
+                (prevPage || nextPage) && (
+                  <nav class="page-nav" aria-label={lang === "zh" ? "翻页" : "Pagination"}>
+                    {prevPage ? (
+                      <a class="page-nav__item" href={prevPage.path}>
+                        <span class="page-nav__dir">← {prevLabel}</span>
+                        <span class="page-nav__title">{prevPage.title}</span>
+                      </a>
+                    ) : (
+                      <span />
+                    )}
+                    {nextPage ? (
+                      <a class="page-nav__item page-nav__item--next" href={nextPage.path}>
+                        <span class="page-nav__dir">{nextLabel} →</span>
+                        <span class="page-nav__title">{nextPage.title}</span>
+                      </a>
+                    ) : (
+                      <span />
+                    )}
+                  </nav>
+                )
+              }
             </article>
             {
               toc && (

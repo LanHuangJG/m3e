@@ -515,3 +515,40 @@ body.nav-open .scrim {
     border-radius: 0;
   }
 }
+
+/* 上一页 / 下一页 */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-block-start: 40px;
+  padding-block-start: 16px;
+  border-top: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+}
+.page-nav__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--md-sys-color-on-surface, #1c1b1e);
+}
+.page-nav__item:hover {
+  background: var(--md-sys-color-surface-container-low, #f7f2fa);
+}
+.page-nav__item--next {
+  text-align: end;
+}
+.page-nav__dir {
+  font-size: 0.8rem;
+  color: var(--md-sys-color-on-surface-variant, #49454f);
+}
+.page-nav__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
