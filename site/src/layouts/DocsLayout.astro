@@ -52,7 +52,7 @@ const CATEGORY_LABELS = {
 
 function pathFor(id: string): string {
   const [, section, ...rest] = id.split("/");
-  const prefix = lang === "en" ? "" : `/${lang}`;
+  const prefix = lang === "zh" ? "" : `/${lang}`;
   return `${prefix}/${section}/${rest.join("/")}/`;
 }
 
@@ -70,7 +70,7 @@ const mine = all
   .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
 
 const active = mine.find((d) => d.id === activeId);
-const isDetail = new RegExp("^/(zh/)?components/[^/]+/$").test(path);
+const isDetail = new RegExp("^/(en/)?components/[^/]+/$").test(path);
 const showBottomNav = !isDetail;
 
 const nav = (Object.keys(SECTIONS) as Array<keyof typeof SECTIONS>)
@@ -99,9 +99,9 @@ const nextLabel = lang === "zh" ? "下一页" : "Next";
 
 const canonical = new URL(path, Astro.site);
 const alternate = new URL(altPath, Astro.site);
-const homePath = lang === "en" ? "/" : "/zh/";
-const homeAlt = lang === "en" ? "/zh/" : "/";
-const prefix = lang === "en" ? "" : "/zh";
+const homePath = lang === "zh" ? "/" : "/en/";
+const homeAlt = lang === "zh" ? "/en/" : "/";
+const prefix = lang === "zh" ? "" : "/en";
 ---
 
 <!doctype html>
@@ -116,7 +116,7 @@ const prefix = lang === "en" ? "" : "/zh";
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={lang === "zh" ? "en" : "zh"} href={alternate} />
     <link rel="alternate" hreflang={lang === "zh" ? "zh-CN" : "en"} href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={lang === "en" ? canonical : alternate} />
+    <link rel="alternate" hreflang="x-default" href={lang === "zh" ? canonical : alternate} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${title} · M3E`} />
     <meta property="og:description" content={description} />

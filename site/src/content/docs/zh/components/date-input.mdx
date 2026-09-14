@@ -8,7 +8,7 @@ category: "selection"
 order: 14
 ---
 
-<p> <code>m3e-date-input</code> 组件提供一个分段式输入框,用于编辑日期和/或时间值。它支持仅日期、仅时间以及日期/时间合并输入,并与 <code>m3e-form-field</code>、<code>m3e-datepicker</code> 及 <code>m3e-timepicker</code> 集成。每个分段都可独立编辑,以实现精确、可访问、对表单友好的交互。详情请参见 <a href="/zh/components/form-field/">Form Field 表单容器</a>、<a href="/zh/components/datepicker/">Datepicker 日期选择器</a> 与 <a href="/zh/components/timepicker/">Timepicker 时间选择器</a>。 </p>
+<p> <code>m3e-date-input</code> 组件提供一个分段式输入框,用于编辑日期和/或时间值。它支持仅日期、仅时间以及日期/时间合并输入,并与 <code>m3e-form-field</code>、<code>m3e-datepicker</code> 及 <code>m3e-timepicker</code> 集成。每个分段都可独立编辑,以实现精确、可访问、对表单友好的交互。详情请参见 <a href="/components/form-field/">Form Field 表单容器</a>、<a href="/components/datepicker/">Datepicker 日期选择器</a> 与 <a href="/components/timepicker/">Timepicker 时间选择器</a>。 </p>
 
 ```js
 import "m3e/date-input";
@@ -18,7 +18,7 @@ import "m3e/date-input";
 
 ### 基础用法
 
-<p> <code>m3e-date-input</code> 设计为在 <code>m3e-form-field</code> 内部使用。下面的示例展示了这种用法。详情请参见 <a href="/zh/components/form-field/">Form Field 表单容器</a>。 </p>
+<p> <code>m3e-date-input</code> 设计为在 <code>m3e-form-field</code> 内部使用。下面的示例展示了这种用法。详情请参见 <a href="/components/form-field/">Form Field 表单容器</a>。 </p>
 
 <Demo name="zh/components/date-input/0" />
 
@@ -52,7 +52,7 @@ import "m3e/date-input";
 
 ### 日期与时间选择器
 
-<p> <code>m3e-datepicker</code> 与 <code>m3e-timepicker</code> 通过 <code>for</code> 特性与 <code>m3e-date-input</code> 集成,该特性通过引用输入框的 ID 把选择器绑定到输入框。详情请参见 <a href="/zh/components/datepicker/">Datepicker 日期选择器</a> 与 <a href="/zh/components/timepicker/">Timepicker 时间选择器</a>。 </p>
+<p> <code>m3e-datepicker</code> 与 <code>m3e-timepicker</code> 通过 <code>for</code> 特性与 <code>m3e-date-input</code> 集成,该特性通过引用输入框的 ID 把选择器绑定到输入框。详情请参见 <a href="/components/datepicker/">Datepicker 日期选择器</a> 与 <a href="/components/timepicker/">Timepicker 时间选择器</a>。 </p>
 <p> 当选择器绑定到 <code>m3e-date-input</code> 时,输入框自身的配置优先。诸如 <code>min-date</code>、<code>max-date</code>、<code>blackoutDates</code>、<code>min-time</code>、<code>max-time</code>、<code>blackoutTimes</code>、<code>time-format</code> 与 <code>show-seconds</code> 等属性会覆盖选择器上的对应设置。这确保输入框与选择器保持一致并强制执行相同的约束。 </p>
 <p> 使用 <code>type="datetime"</code> 时,单个 <code>m3e-date-input</code> 可以同时链接到 <code>m3e-datepicker</code> 与 <code>m3e-timepicker</code>,以独立选择日期与时间。 </p>
 

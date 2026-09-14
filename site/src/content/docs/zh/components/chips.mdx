@@ -111,7 +111,7 @@ import "m3e/chips";
 
 ### 输入芯片
 
-<p> <code>m3e-input-chip-set</code> 组件让用户能够以输入芯片的形式输入、显示和管理一组离散值。它面向富有表现力、可访问的表单而设计,支持键盘导航、校验,以及与 <code>m3e-form-field</code> 的无缝集成。更多信息请参见 <a href="/zh/components/form-field/">Form Field 表单容器</a>。 </p>
+<p> <code>m3e-input-chip-set</code> 组件让用户能够以输入芯片的形式输入、显示和管理一组离散值。它面向富有表现力、可访问的表单而设计,支持键盘导航、校验,以及与 <code>m3e-form-field</code> 的无缝集成。更多信息请参见 <a href="/components/form-field/">Form Field 表单容器</a>。 </p>
 <p> 使用 <code>m3e-input-chip-set</code> 的 <code>input</code> 插槽指定与该组件关联的输入元素。当在输入框上触发 <code>change</code> 时,芯片集会向集合中添加一个新的可移除 <code>m3e-input-chip</code>。用户可以按 <code>BACKSPACE</code> 移除芯片,或点击单个芯片上的移除按钮。如果某个芯片已聚焦,用户可以按 <code>DELETE</code> 移除该芯片。 </p>
 <p> 当向集合中添加或移除芯片时,<code>m3e-input-chip-set</code> 组件会引发 <code>change</code> 事件。使用事件的 <code>detail.type</code> 判断变更类型是 <code>"add"</code> 还是 <code>"remove"</code>。事件的 <code>detail</code> 还包含 <code>value</code> 与 <code>chip</code> 属性。 </p>
 

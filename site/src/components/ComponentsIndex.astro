@@ -29,7 +29,7 @@ const T = {
   },
 }[lang];
 
-const prefix = lang === "en" ? "" : "/zh";
+const prefix = lang === "zh" ? "" : "/en";
 const previews = import.meta.glob("../demos/**/*.html", {
   query: "?raw",
   import: "default",

@@ -7,7 +7,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const isZh = lang === "zh";
-const prefix = isZh ? "/zh" : "";
+const prefix = isZh ? "" : "/en";
 
 const T = {
   tagline: isZh

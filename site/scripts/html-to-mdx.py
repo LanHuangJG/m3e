@@ -280,7 +280,7 @@ def convert(src: str, component: str, lang: str, section: str = "components", se
     body = re.sub(r"\n{3,}", "\n\n", body).strip()
 
     parts = re.split(r"(```.*?```)", body, flags=re.S)
-    prefix = "" if lang == "en" else "/zh"
+    prefix = "" if lang == "zh" else "/en"
     for i in range(0, len(parts), 2):
         seg = normalize_tags(parts[i])
         seg = re.sub(

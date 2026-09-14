@@ -8,7 +8,7 @@ category: "selection"
 order: 14
 ---
 
-<p> The <code>m3e-date-input</code> component provides a segmented input for editing date and/or time values. It supports date-only, time-only, and combined date/time entry, and integrates with <code>m3e-form-field</code>, <code>m3e-datepicker</code> and <code>m3e-timepicker</code>. Each segment is independently editable for precise, accessible, form-friendly interaction. See <a href="/components/form-field/">Form Field</a>, <a href="/components/datepicker/">Datepicker</a>, and <a href="/components/timepicker/">Timepicker</a> for details. </p>
+<p> The <code>m3e-date-input</code> component provides a segmented input for editing date and/or time values. It supports date-only, time-only, and combined date/time entry, and integrates with <code>m3e-form-field</code>, <code>m3e-datepicker</code> and <code>m3e-timepicker</code>. Each segment is independently editable for precise, accessible, form-friendly interaction. See <a href="/en/components/form-field/">Form Field</a>, <a href="/en/components/datepicker/">Datepicker</a>, and <a href="/en/components/timepicker/">Timepicker</a> for details. </p>
 
 ```js
 import "m3e/date-input";
@@ -20,7 +20,7 @@ import "m3e/date-input";
 
 ### Basic usage
 
-<p> The <code>m3e-date-input</code> is intended to be used inside <code>m3e-form-field</code>. The example below shows that usage. See <a href="/components/form-field/">Form Field</a> for details. </p>
+<p> The <code>m3e-date-input</code> is intended to be used inside <code>m3e-form-field</code>. The example below shows that usage. See <a href="/en/components/form-field/">Form Field</a> for details. </p>
 
 <Demo name="en/components/date-input/0" />
 
@@ -54,7 +54,7 @@ import "m3e/date-input";
 
 ### Date and time pickers
 
-<p> The <code>m3e-datepicker</code> and <code>m3e-timepicker</code> integrate with <code>m3e-date-input</code> using the <code>for</code> attribute, which binds the picker to the input by referencing the input's ID. See <a href="/components/datepicker/">Datepicker</a>, and <a href="/components/timepicker/">Timepicker</a> for details. </p>
+<p> The <code>m3e-datepicker</code> and <code>m3e-timepicker</code> integrate with <code>m3e-date-input</code> using the <code>for</code> attribute, which binds the picker to the input by referencing the input's ID. See <a href="/en/components/datepicker/">Datepicker</a>, and <a href="/en/components/timepicker/">Timepicker</a> for details. </p>
 <p> When a picker is bound to <code>m3e-date-input</code>, the input's own configuration takes precedence. Properties such as <code>min-date</code>, <code>max-date</code>, <code>blackoutDates</code>, <code>min-time</code>, <code>max-time</code>, <code>blackoutTimes</code>, <code>time-format</code>, and <code>show-seconds</code> override the corresponding settings on the picker. This ensures the input and picker remain consistent and enforce the same constraints. </p>
 <p> When <code>type="datetime"</code> is used, a single <code>m3e-date-input</code> may link to both a <code>m3e-datepicker</code> and a <code>m3e-timepicker</code> for independent date and time selection. </p>
 

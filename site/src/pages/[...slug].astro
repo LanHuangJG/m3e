@@ -6,12 +6,12 @@ import Demo from "../components/Demo.astro";
 export async function getStaticPaths() {
   const docs = await getCollection("docs");
   return docs
-    .filter((d) => d.id.startsWith("en/"))
+    .filter((d) => d.id.startsWith("zh/"))
     .map((d) => {
-      const slug = d.id.replace(/^en\//, "");
+      const slug = d.id.replace(/^zh\//, "");
       return {
         params: { slug },
-        props: { entry: d, lang: "en" as const, path: `/${slug}/`, altPath: `/zh/${slug}/` },
+        props: { entry: d, lang: "zh" as const, path: `/${slug}/`, altPath: `/en/${slug}/` },
       };
     });
 }

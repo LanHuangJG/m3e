@@ -13,8 +13,8 @@ export default defineConfig({
     shikiConfig: { themes: { light: "github-light", dark: "github-dark" } },
   },
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "zh"],
+    defaultLocale: "zh",
+    locales: ["zh", "en"],
     routing: { prefixDefaultLocale: false },
   },
 });

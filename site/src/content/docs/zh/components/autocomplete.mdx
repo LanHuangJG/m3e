@@ -20,7 +20,7 @@ import "m3e/autocomplete";
 
 <p> 首先声明 <code>m3e-autocomplete</code> 元素,并用一组 <code>m3e-option</code> 元素填充它。每个选项代表一个可选值。当用户选择某个选项时,它的文本内容会成为输入框显示的标签,同时触发 <code>change</code> 事件。你可以通过 <code>selected</code> 属性访问被选中的选项,或通过 <code>value</code> 属性读取其提交值。 </p>
 <p> 要把自动补全面板绑定到某个输入框,请在 <code>m3e-autocomplete</code> 上使用 <code>for</code> 特性,并将其设为目标 <code>input</code> 元素的 <code>id</code>。 </p>
-<p>下面的示例展示 <code>m3e-autocomplete</code> 与 <code>m3e-form-field</code> 搭配使用的效果。更多信息见 <a href="/zh/components/form-field/">Form Field 表单容器</a>。</p>
+<p>下面的示例展示 <code>m3e-autocomplete</code> 与 <code>m3e-form-field</code> 搭配使用的效果。更多信息见 <a href="/components/form-field/">Form Field 表单容器</a>。</p>
 
 <Demo name="zh/components/autocomplete/0" />
 
@@ -62,7 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 #### 初始加载
 
-<p> 下面的示例展示当 <code>input</code> 获得焦点时懒加载初始数据。此外,<code>loading</code> 插槽中会显示一个 <code>m3e-loading-indicator</code>。更多信息见 <a href="/zh/components/loading-indicator/">Loading Indicator 加载指示器</a>。 </p>
+<p> 下面的示例展示当 <code>input</code> 获得焦点时懒加载初始数据。此外,<code>loading</code> 插槽中会显示一个 <code>m3e-loading-indicator</code>。更多信息见 <a href="/components/loading-indicator/">Loading Indicator 加载指示器</a>。 </p>
 
 <Demo name="zh/components/autocomplete/4" />
 
@@ -168,6 +168,6 @@ search.addEventListener("query", (e) => {
 
 ### Chips 芯片
 
-<p> <code>m3e-autocomplete</code> 可与 <code>m3e-input-chip-set</code> 搭配,呈现用户可选择并转换为芯片的建议。更多信息见 <a href="/zh/components/chips/">Chips 芯片</a>。 </p>
+<p> <code>m3e-autocomplete</code> 可与 <code>m3e-input-chip-set</code> 搭配,呈现用户可选择并转换为芯片的建议。更多信息见 <a href="/components/chips/">Chips 芯片</a>。 </p>
 
 <Demo name="zh/components/autocomplete/8" />
