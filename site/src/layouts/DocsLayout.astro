@@ -145,6 +145,9 @@ const prefix = lang === "en" ? "" : "/zh";
             <span class="title-text">M3E</span>
           </a>
           <span slot="trailing">
+            <m3e-icon-button id="search-button" data-search-open aria-label={lang === "zh" ? "搜索" : "Search"}>
+              <m3e-icon name="search"></m3e-icon>
+            </m3e-icon-button>
             <m3e-icon-button id="github-button" aria-label={UI.github} href="https://github.com/matraic/m3e" target="_blank">
               <m3e-icon name="code"></m3e-icon>
             </m3e-icon-button>
@@ -250,6 +253,24 @@ const prefix = lang === "en" ? "" : "/zh";
           </nav>
         </div>
       </div>
+      <div class="docs-search" id="search" hidden>
+        <div class="docs-search__panel" role="dialog" aria-modal="true" aria-label={lang === "zh" ? "搜索" : "Search"}>
+          <div class="docs-search__bar">
+            <m3e-icon name="search"></m3e-icon>
+            <input
+              id="search-input"
+              type="search"
+              autocomplete="off"
+              placeholder={lang === "zh" ? "搜索组件、样式、指南…" : "Search components, styles, guides…"} />
+            <button type="button" class="demo-btn" data-search-close aria-label={lang === "zh" ? "关闭" : "Close"}>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="docs-search__results" id="search-results"></div>
+        </div>
+      </div>
     </m3e-theme>
 
     <script is:inline>
@@ -297,6 +318,60 @@ const prefix = lang === "en" ? "" : "/zh";
       document.querySelectorAll("[data-back]").forEach((el) =>
         el.addEventListener("click", () => history.back()),
       );
+
+      // 搜索（Pagefind 静态索引）
+      const searchEl = document.querySelector("#search");
+      const searchInput = document.querySelector("#search-input");
+      const searchResults = document.querySelector("#search-results");
+      let pagefindMod;
+      const closeSearch = () => searchEl?.setAttribute("hidden", "");
+      document.querySelectorAll("[data-search-open]").forEach((el) =>
+        el.addEventListener("click", async () => {
+          searchEl?.removeAttribute("hidden");
+          searchInput?.focus();
+          if (!pagefindMod) {
+            try {
+              pagefindMod = await import("/pagefind/pagefind.js");
+            } catch {
+              searchResults.textContent = "搜索索引未构建（先运行 npm run build）";
+            }
+          }
+        }),
+      );
+      document.querySelectorAll("[data-search-close]").forEach((el) => el.addEventListener("click", closeSearch));
+      searchEl?.addEventListener("click", (e) => {
+        if (e.target === searchEl) closeSearch();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeSearch();
+        if (e.key === "/" && e.target === document.body) {
+          e.preventDefault();
+          document.querySelector("[data-search-open]")?.click();
+        }
+      });
+      searchInput?.addEventListener("input", async () => {
+        if (!pagefindMod || !searchResults) return;
+        const q = searchInput.value.trim();
+        if (!q) {
+          searchResults.replaceChildren();
+          return;
+        }
+        const res = await pagefindMod.search(q);
+        const items = await Promise.all(res.results.slice(0, 12).map((r) => r.data()));
+        searchResults.replaceChildren(
+          ...items.map((i) => {
+            const a = document.createElement("a");
+            a.href = i.url;
+            const t = document.createElement("strong");
+            t.textContent = i.meta?.title ?? i.url;
+            const x = document.createElement("span");
+            x.innerHTML = i.excerpt;
+            a.append(t, x);
+            a.addEventListener("click", closeSearch);
+            return a;
+          }),
+        );
+      });
     </script>
   </body>
 </html>
